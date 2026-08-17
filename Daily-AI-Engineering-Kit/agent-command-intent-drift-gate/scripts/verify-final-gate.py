@@ -19,12 +19,7 @@ def normalize_intent(intent, policy):
     if not policy.get("normalization", {}).get("case_sensitive_executable", False):
         exe = exe.lower()
     data["executable"] = exe
-    args = [" ".join(x.split()) if policy.get("normalization", {}).get("collapse_whitespace", True) else x for x in data.get("arguments", [])]
-    if policy.get("normalization", {}).get("sort_unordered_flags", True):
-        positional = [x for x in args if not x.startswith("-")]
-        flags = sorted(x for x in args if x.startswith("-"))
-        args = positional + flags
-    data["arguments"] = args
+    data["arguments"] = [" ".join(x.split()) if policy.get("normalization", {}).get("collapse_whitespace", True) else x for x in data.get("arguments", [])]
     data["target"] = data["target"].strip()
     data["environment"] = data["environment"].strip().lower()
     return data
@@ -55,9 +50,9 @@ def main():
         if decision.get("status") == "blocked":
             print(json.dumps({"status":"blocked","reason":"deterministic-drift-blocker"})); return 2
         approval_action = intent.get("approval_action")
-        if approval_action in policy.get("approval_required_actions", []) and not ns.review:
-            print(json.dumps({"status":"blocked","reason":"approval-required"})); return 2
-        need_review = decision.get("status") == "review-required" or intent.get("risk") in policy.get("review", {}).get("require_independent_review_for_risk", []) or approval_action in policy.get("approval_required_actions", [])
+        dangerous = approval_action in policy.get("approval_required_actions", [])
+        need_review = decision.get("status") == "review-required" or intent.get("risk") in policy.get("review", {}).get("require_independent_review_for_risk", []) or dangerous
+        review = None
         if need_review:
             if not ns.review:
                 print(json.dumps({"status":"blocked","reason":"review-required"})); return 2
@@ -68,6 +63,11 @@ def main():
                 print(json.dumps({"status":"blocked","reason":"review-not-approved"})); return 2
             if policy.get("review", {}).get("allow_self_review") is False and review.get("reviewer_id") == ns.actor and intent.get("risk") in ("high","critical"):
                 print(json.dumps({"status":"blocked","reason":"self-review-forbidden"})); return 2
+        if dangerous:
+            if review is None or review.get("reviewer_type") != "human":
+                print(json.dumps({"status":"blocked","reason":"human-approval-required"})); return 2
+            if review.get("approval_action") != approval_action:
+                print(json.dumps({"status":"blocked","reason":"approval-action-mismatch"})); return 2
         print(json.dumps({"status":"verified","intent_id":intent["intent_id"],"execution_fingerprint":decision["execution_fingerprint"]}))
         return 0
     except Exception as exc:
