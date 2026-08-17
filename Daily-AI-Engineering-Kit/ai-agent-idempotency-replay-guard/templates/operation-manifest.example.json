@@ -9,7 +9,7 @@
     "template": "order-confirmation-v3",
     "locale": "en-US"
   },
-  "payload_fingerprint": "b4eae0bb8227f0845bcc875c2e4ea0a23044d861796724c15bf8033a9ae2543d",
+  "payload_fingerprint": "9d0691ba83febc1e694fda98d3a753e97fc4a180c96d2147dd3586810126edf8",
   "risk_category": "external-message",
   "executor_id": "agent-runner",
   "provider": {
