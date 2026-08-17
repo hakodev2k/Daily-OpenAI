@@ -21,8 +21,13 @@ try{
   write(low,inv({id:'s1',file:'tests/a.spec.ts',line:1,kind:'getByRole',expression:"getByRole('button',{name:'Save'})",risk:'low',score:0,evidence:['preferred-semantic-kind'],runtime_probe:null}));
   run('validate-selector-inventory.mjs',['--inventory',low,'--output',path.join(tmp,'low-validation.json')]);
   run('evaluate-selector-resilience.mjs',['--inventory',low,'--policy',policy,'--output',lowEval]);
-  run('evaluate-selector-gate.mjs',['--evaluation',lowEval,'--implementation-owner','impl','--output',lowGate]);
+  run('evaluate-selector-gate.mjs',['--evaluation',lowEval,'--policy',policy,'--implementation-owner','impl','--output',lowGate]);
   if(JSON.parse(fs.readFileSync(lowGate,'utf8')).status!=='verified') throw new Error('low-risk case not verified');
+
+  const missingProbe=path.join(tmp,'missing-probe.json'), missingProbeEval=path.join(tmp,'missing-probe-eval.json');
+  write(missingProbe,inv({id:'s-missing',file:'tests/missing.spec.ts',line:2,kind:'locator-xpath',expression:"locator('//button[@type=\"submit\"]')",risk:'high',score:4,evidence:['xpath-structure-coupled'],runtime_probe:null}));
+  run('evaluate-selector-resilience.mjs',['--inventory',missingProbe,'--policy',policy,'--output',missingProbeEval],1);
+  if(JSON.parse(fs.readFileSync(missingProbeEval,'utf8')).status!=='blocked') throw new Error('required runtime probe absence did not block');
 
   const high=path.join(tmp,'high.json'), highEval=path.join(tmp,'high-eval.json');
   write(high,inv({id:'s2',file:'tests/b.spec.ts',line:2,kind:'locator-xpath',expression:"locator('//button[@type=\"submit\"]')",risk:'high',score:4,evidence:['xpath-structure-coupled'],runtime_probe:{status:'passed',match_count:1,visible_count:1,url:'http://example.invalid',observed_at:new Date().toISOString(),error:null}}));
@@ -32,12 +37,16 @@ try{
   const review=path.join(tmp,'review.json');
   write(review,{version:'1.0.0',repository_revision:he.repository_revision,inventory_fingerprint:he.inventory_fingerprint,reviewer:'independent-reviewer',status:'approved',findings:[]});
   const highGate=path.join(tmp,'high-gate.json');
-  run('evaluate-selector-gate.mjs',['--evaluation',highEval,'--review',review,'--implementation-owner','impl','--output',highGate]);
+  run('evaluate-selector-gate.mjs',['--evaluation',highEval,'--policy',policy,'--review',review,'--implementation-owner','impl','--output',highGate]);
   if(JSON.parse(fs.readFileSync(highGate,'utf8')).status!=='verified') throw new Error('approved independent review did not verify');
 
   const selfReview=path.join(tmp,'self-review.json');
   write(selfReview,{version:'1.0.0',repository_revision:he.repository_revision,inventory_fingerprint:he.inventory_fingerprint,reviewer:'impl',status:'approved',findings:[]});
-  run('evaluate-selector-gate.mjs',['--evaluation',highEval,'--review',selfReview,'--implementation-owner','impl','--output',path.join(tmp,'self-gate.json')],1);
+  run('evaluate-selector-gate.mjs',['--evaluation',highEval,'--policy',policy,'--review',selfReview,'--implementation-owner','impl','--output',path.join(tmp,'self-gate.json')],1);
+
+  const changedPolicy=path.join(tmp,'changed-policy.json');
+  const cp=JSON.parse(fs.readFileSync(policy,'utf8')); cp.thresholds.review_required_score=5; write(changedPolicy,cp);
+  run('evaluate-selector-gate.mjs',['--evaluation',highEval,'--policy',changedPolicy,'--review',review,'--implementation-owner','impl','--output',path.join(tmp,'policy-mismatch-gate.json')],1);
 
   const dup=path.join(tmp,'dup.json'), dupEval=path.join(tmp,'dup-eval.json');
   write(dup,inv({id:'s3',file:'tests/c.spec.ts',line:3,kind:'locator-css',expression:"locator('.toolbar > div > div > button:nth-child(2)')",risk:'critical',score:8,evidence:['css-structure-coupled','fragile-pattern:nth-child'],runtime_probe:{status:'passed',match_count:2,visible_count:2,url:'http://example.invalid',observed_at:new Date().toISOString(),error:null}}));
