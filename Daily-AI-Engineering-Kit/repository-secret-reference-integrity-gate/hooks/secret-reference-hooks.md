@@ -17,7 +17,7 @@
 python scripts/scan-secret-references.py \
   --repo . \
   --policy config/secret-reference-policy.json \
-  --contracts contracts.json \
+  --contracts secret-contracts.json \
   --output artifacts/secret-inventory.json
 ```
 **Expected result:** value-free inventory plus fingerprint.  
