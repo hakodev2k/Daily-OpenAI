@@ -16,12 +16,7 @@ def normalize(intent, policy):
     if not policy.get("normalization", {}).get("case_sensitive_executable", False):
         exe = exe.lower()
     data["executable"] = exe
-    args = [" ".join(x.split()) if policy.get("normalization", {}).get("collapse_whitespace", True) else x for x in data.get("arguments", [])]
-    if policy.get("normalization", {}).get("sort_unordered_flags", True):
-        positional = [x for x in args if not x.startswith("-")]
-        flags = sorted(x for x in args if x.startswith("-"))
-        args = positional + flags
-    data["arguments"] = args
+    data["arguments"] = [" ".join(x.split()) if policy.get("normalization", {}).get("collapse_whitespace", True) else x for x in data.get("arguments", [])]
     data["target"] = data["target"].strip()
     data["environment"] = data["environment"].strip().lower()
     return data
