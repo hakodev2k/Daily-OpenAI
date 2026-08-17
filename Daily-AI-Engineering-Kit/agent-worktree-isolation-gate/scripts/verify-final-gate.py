@@ -9,6 +9,9 @@ def main():
  ap=argparse.ArgumentParser(); ap.add_argument('--report',required=True); ap.add_argument('--session',required=True); ap.add_argument('--policy',required=True); ap.add_argument('--review'); ns=ap.parse_args()
  try:
   report=json.load(open(ns.report,encoding='utf-8')); session=json.load(open(ns.session,encoding='utf-8')); policy=json.load(open(ns.policy,encoding='utf-8'))
+  expected_report=digest({k:v for k,v in report.items() if k!='fingerprint'})
+  if report.get('fingerprint')!=expected_report: print(json.dumps({'status':'blocked','reason':'report-integrity-mismatch'})); return 2
+  if report.get('phase')!='final': print(json.dumps({'status':'blocked','reason':'final-phase-required'})); return 2
   if report.get('session_id')!=session.get('session_id'): print(json.dumps({'status':'blocked','reason':'session-id-mismatch'})); return 2
   if report.get('session_fingerprint')!=digest(session): print(json.dumps({'status':'blocked','reason':'session-fingerprint-mismatch'})); return 2
   if report.get('policy_fingerprint')!=digest(policy): print(json.dumps({'status':'blocked','reason':'policy-fingerprint-mismatch'})); return 2
