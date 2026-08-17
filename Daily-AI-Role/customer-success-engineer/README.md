@@ -94,6 +94,12 @@ customer-success-engineer/
 ## Multi-task strategy
 Parallelize independent evidence gathering, usage analysis, stakeholder mapping, and documentation review. Do not parallelize work where one step establishes facts required by another. Consolidate at explicit checkpoints; the primary Customer Success Engineer owns the final customer-facing recommendation.
 
+## Main workflows
+- `workflows/new-customer-onboarding.md`: move from intent to verified first value.
+- `workflows/technical-escalation.md`: produce a reproducible, evidence-backed specialist handoff.
+- `workflows/health-review.md`: assess value, adoption, technical, stakeholder, and delivery health.
+- `workflows/renewal-risk-recovery.md`: reduce value risk without unauthorized commercial commitments.
+
 ## Review and quality gates
 Every major deliverable must trace to the customer objective, distinguish facts from assumptions, show evidence, identify risks/dependencies, name owners and dates, and avoid unauthorized commitments. Verification must be separate from work performed.
 
@@ -107,7 +113,14 @@ Use bounded retries only for transient failures. Repeated failure becomes a bloc
 A task is done only when required inputs were processed, deliverables exist, quality checks passed, evidence exists, risks and dependencies are handled, approvals are recorded where required, handoff is complete, and no blocking ambiguity remains.
 
 ## Usage
-Start with the relevant workflow, apply the operating rules, invoke specialized skills/subagents as needed, produce outputs using the templates, and validate structured artifacts with the included scripts.
+Start with the relevant workflow, apply `rules/operating-rules.md`, invoke specialized skills/subagents as needed, produce outputs using the templates, and validate structured artifacts with the included scripts.
+
+```bash
+python scripts/validate-package.py
+python scripts/validate-account-health.py examples/account-health.example.json
+```
+
+The validators use Python standard library only. `validate-package.py` returns `0` for a complete package and `1` for missing/invalid artifacts. `validate-account-health.py` returns `0` for a valid health document, `1` for contract violations, and `2` for file/parse/usage failures.
 
 ## Portability
 Core behavior is tool-neutral and can be adapted to ChatGPT, Codex, Claude Code, Cursor, Copilot, OpenCode, or other agent systems. Tool-specific permissions must remain isolated from professional decision rules.
