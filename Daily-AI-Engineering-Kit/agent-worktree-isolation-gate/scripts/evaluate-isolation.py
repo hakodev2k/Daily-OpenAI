@@ -11,17 +11,18 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--session',required=True); ap.add_argument('--state',required=True)
     ap.add_argument('--policy',required=True); ap.add_argument('--changed-paths',required=True)
-    ap.add_argument('--active-sessions'); ap.add_argument('--output',required=True)
+    ap.add_argument('--active-sessions'); ap.add_argument('--phase',choices=['working','final'],default='working'); ap.add_argument('--output',required=True)
     ns=ap.parse_args()
     try:
         session=json.load(open(ns.session,encoding='utf-8')); state=json.load(open(ns.state,encoding='utf-8'))
         policy=json.load(open(ns.policy,encoding='utf-8'))
         changed=[x.strip().replace('\\','/') for x in Path(ns.changed_paths).read_text(encoding='utf-8').splitlines() if x.strip()]
         blockers=[]; warnings=[]; collisions=[]
-        if state.get('head_revision') is None: blockers.append('missing-head-revision')
+        if not state.get('head_revision'): blockers.append('missing-head-revision')
         if policy.get('require_dedicated_branch') and state.get('branch')!=session.get('branch'): blockers.append('branch-mismatch')
         if policy.get('require_dedicated_worktree') and str(Path(state.get('worktree_path','')).resolve())!=str(Path(session.get('worktree_path','')).resolve()): blockers.append('worktree-path-mismatch')
         if policy.get('require_clean_start') and session.get('dirty_at_start',False): blockers.append('dirty-start')
+        if ns.phase=='final' and policy.get('require_clean_handoff') and state.get('dirty',False): blockers.append('dirty-handoff')
         allowed=session.get('allowed_paths',[])
         for p in changed:
             if not match_any(p,allowed): blockers.append('out-of-scope:'+p)
@@ -36,10 +37,10 @@ def main():
                 collisions += ['path-collision:'+p for p in sorted(overlap)]
         blockers += collisions
         status='blocked' if blockers else ('review-required' if warnings or session.get('risk') in ('high','critical') else 'pass')
-        report={'version':'1.0','session_id':session['session_id'],'status':status,'branch':state.get('branch',''),'worktree_path':state.get('worktree_path',''),'head_revision':state.get('head_revision',''),'changed_paths':changed,'collisions':sorted(set(collisions)),'blockers':sorted(set(blockers)),'warnings':sorted(set(warnings)),'session_fingerprint':digest(session),'policy_fingerprint':digest(policy)}
+        report={'version':'1.0','phase':ns.phase,'session_id':session['session_id'],'status':status,'branch':state.get('branch',''),'worktree_path':state.get('worktree_path',''),'head_revision':state.get('head_revision',''),'changed_paths':changed,'collisions':sorted(set(collisions)),'blockers':sorted(set(blockers)),'warnings':sorted(set(warnings)),'session_fingerprint':digest(session),'policy_fingerprint':digest(policy)}
         report['fingerprint']=digest(report)
         Path(ns.output).write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
-        print(json.dumps({'status':status,'fingerprint':report['fingerprint']}))
+        print(json.dumps({'status':status,'phase':ns.phase,'fingerprint':report['fingerprint']}))
         return 2 if status=='blocked' else (3 if status=='review-required' else 0)
     except Exception as e:
         print(json.dumps({'status':'error','error':str(e)})); return 1
