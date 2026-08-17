@@ -1,9 +1,10 @@
 {
   "$schema":"https://json-schema.org/draft/2020-12/schema",
   "type":"object",
-  "required":["version","session_id","status","branch","worktree_path","head_revision","changed_paths","collisions","blockers","session_fingerprint","policy_fingerprint","fingerprint"],
+  "required":["version","phase","session_id","status","branch","worktree_path","head_revision","changed_paths","collisions","blockers","session_fingerprint","policy_fingerprint","fingerprint"],
   "properties":{
     "version":{"const":"1.0"},
+    "phase":{"enum":["working","final"]},
     "session_id":{"type":"string"},
     "status":{"enum":["pass","review-required","blocked"]},
     "branch":{"type":"string"},
