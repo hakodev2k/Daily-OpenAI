@@ -20,12 +20,7 @@ def normalize_executable(value, policy):
 
 
 def normalize_args(values, policy):
-    values = [" ".join(x.split()) if policy.get("normalization", {}).get("collapse_whitespace", True) else x for x in values]
-    if policy.get("normalization", {}).get("sort_unordered_flags", True):
-        positional = [x for x in values if not x.startswith("-")]
-        flags = sorted(x for x in values if x.startswith("-"))
-        return positional + flags
-    return values
+    return [" ".join(x.split()) if policy.get("normalization", {}).get("collapse_whitespace", True) else x for x in values]
 
 
 def main():
@@ -65,7 +60,7 @@ def main():
             if removed:
                 warnings.append("reviewed-arguments-removed:" + ",".join(removed))
             if not added and not removed:
-                warnings.append("argument-order-or-normalization-drift")
+                warnings.append("argument-order-drift")
         status = "blocked" if blockers else ("review-required" if warnings else "pass")
         normalized_intent = dict(intent)
         normalized_intent["executable"] = normalize_executable(intent["executable"], policy)
