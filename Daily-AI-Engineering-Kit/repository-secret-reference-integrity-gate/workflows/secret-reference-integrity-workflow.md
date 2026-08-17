@@ -49,7 +49,7 @@ Identify changed paths, config consumers, workflows, deployment manifests, and r
 **Owner:** Secret Reference Analyst  
 Run:
 ```bash
-python scripts/scan-secret-references.py --repo . --policy config/secret-reference-policy.json --contracts contracts.json --output artifacts/secret-inventory.json
+python scripts/scan-secret-references.py --repo . --policy config/secret-reference-policy.json --contracts secret-contracts.json --output artifacts/secret-inventory.json
 ```
 
 **Artifact:** current inventory + fingerprint.
