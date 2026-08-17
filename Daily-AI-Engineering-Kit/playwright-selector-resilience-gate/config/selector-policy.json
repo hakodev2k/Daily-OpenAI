@@ -24,7 +24,7 @@
     "css_selector": 3,
     "xpath_selector": 4,
     "positional_selector": 5,
-    "missing_runtime_probe": 3,
+    "missing_runtime_probe": 5,
     "duplicate_runtime_match": 6,
     "zero_runtime_match": 6
   },
