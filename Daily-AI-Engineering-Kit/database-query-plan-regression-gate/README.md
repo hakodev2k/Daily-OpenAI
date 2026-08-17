@@ -96,12 +96,12 @@ database-query-plan-regression-gate/
 - `scripts/extract-sqlserver-showplan.py`: normalize SQL Server Showplan XML plus measured metrics.
 - `scripts/extract-postgres-explain.py`: normalize PostgreSQL `EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON)` output.
 - `scripts/validate-query-plan-evidence.py`: stdlib structural/domain validation.
-- `scripts/compare-query-plans.py`: deterministic threshold/operator/cardinality comparison and fingerprinting.
+- `scripts/compare-query-plans.py`: deterministic threshold/operator/cardinality/freshness comparison and fingerprinting.
 - `scripts/evaluate-query-plan-gate.py`: final evidence/review gate; deterministic blockers cannot be overridden by review.
 - `skills/`: agent procedures for comparable capture and focused regression investigation.
 - `subagents/`: separated analyst/reviewer ownership.
 - `hooks/`: lifecycle integration points for agent loops or CI.
-- `tests/smoke-test.py`: network-free smoke coverage of pass/warning/block/mismatch branches.
+- `tests/smoke-test.py`: network-free smoke coverage of pass/warning/block/mismatch/staleness branches.
 
 ## Dependencies
 
@@ -119,7 +119,7 @@ chmod +x scripts/*.py tests/smoke-test.py
 
 ## Configuration
 
-Edit `config/query-plan-policy.json` to match organizational thresholds. Defaults include warning/block percentages for duration, CPU, logical reads, cardinality-estimate ratios, and blocking policies for newly introduced full scans/spills.
+Edit `config/query-plan-policy.json` to match organizational thresholds. Defaults include warning/block percentages for duration, CPU, logical reads, cardinality-estimate ratios, blocking policies for newly introduced full scans/spills, and a 120-minute maximum evidence age.
 
 Policy changes should be separately reviewed. Do not weaken thresholds inside a query-change PR merely to make the candidate pass.
 
@@ -193,9 +193,9 @@ Comparison statuses:
 
 - `pass`: thresholds/operators are acceptable.
 - `review-required`: non-blocking warning exceeded policy threshold.
-- `blocked`: deterministic blocker such as incomparable evidence, new full scan/spill, or blocking metric/cardinality regression.
+- `blocked`: deterministic blocker such as stale/incomparable evidence, new full scan/spill, or blocking metric/cardinality regression.
 
-The comparison fingerprints the baseline, candidate, and policy version. Any evidence/policy change creates a new fingerprint and invalidates prior review.
+The comparison fingerprints the baseline, candidate, and full policy content. Any evidence or policy change creates a new fingerprint and invalidates prior review.
 
 ## Review
 
@@ -262,6 +262,7 @@ A permission failure must not cause an agent to silently increase privileges.
 - Validation failure: no blind retry; fix or recapture evidence.
 - Regression failure: investigate/remediate; do not retry unchanged evidence.
 - Incomparable engine/query/dataset profile: stop and recapture comparable evidence.
+- Baseline/candidate evidence older than the configured freshness window: stop and recapture.
 - Stale review fingerprint: block and re-review current comparison.
 - Missing permission/approval: stop without escalating privilege.
 - Repeated capture failure after one retry: preserve diagnostics and escalate.
@@ -282,6 +283,7 @@ The smoke test covers:
 2. Warning-level duration increase → review → `verified`.
 3. Blocking logical-read/full-scan regression → remains `blocked` even with attempted review override.
 4. Dataset-profile mismatch → `blocked`.
+5. Candidate evidence older than the configured freshness window → `blocked`.
 
 For a real repository, smoke-test success proves the kit behavior, not the query change itself. The real task additionally requires representative plan evidence, repository tests/build, and any project-specific acceptance checks.
 
@@ -289,7 +291,7 @@ For a real repository, smoke-test success proves the kit behavior, not the query
 
 The query-affecting task is complete only when:
 
-- Baseline and candidate evidence are valid and comparable.
+- Baseline and candidate evidence are valid, fresh, and comparable.
 - Evidence binds current source revisions and policy.
 - Original plans are preserved where material.
 - Deterministic comparison contains no unresolved blocker.
