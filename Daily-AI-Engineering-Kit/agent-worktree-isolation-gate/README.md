@@ -4,36 +4,17 @@ A reusable, tool-neutral AI engineering kit for preventing concurrent coding age
 
 ## Problem
 
-AI-assisted development increasingly runs multiple tasks in parallel. A common failure mode is not a merge conflict at the end; it is **silent workspace contamination during execution**:
-
-- two agents mutate the same checkout,
-- one agent accidentally tests another task's uncommitted change,
-- a generated file is attributed to the wrong task,
-- two sessions share a branch and move its HEAD independently,
-- a verifier accepts build/test evidence produced in a different worktree or revision,
-- a cleanup action discards changes whose ownership was never established.
-
-Git branches alone do not isolate uncommitted filesystem state. This kit makes worktree/branch identity, scope ownership, collision evidence, review, and final verification explicit and machine-checkable.
+Parallel AI-assisted development can fail before merge time. Two tasks may mutate the same checkout, tests may accidentally include another task's uncommitted changes, a verifier may trust evidence from a different revision/worktree, or cleanup may discard changes whose owner was never established. Git branches alone do not isolate uncommitted filesystem state.
 
 ## Purpose
 
-Use one dedicated Git worktree and branch per mutating agent session, bind the session to an immutable base revision and path scope, detect concurrent ownership collisions deterministically, and reject stale or cross-worktree verification evidence before completion.
+Bind every mutating session to one immutable base revision, dedicated branch, dedicated worktree path, explicit path scope, risk level, and actor. Detect shared branch/worktree/path ownership deterministically, require fresh final-phase evidence, reject report/session/policy drift, and hand off only verified isolated work.
 
 ## When to use
 
-Use for:
+Use for parallel features, bug fixes, refactors, test generation, QA, migrations, release preparation, long-running coding agents, or any repository mutation that can overlap another agent/human/automation.
 
-- multiple coding agents operating on one repository,
-- parallel bug fixes/features/refactors,
-- concurrent test-generation or QA tasks,
-- long-running agents that may overlap with new work,
-- CI/local automation sharing a repository clone,
-- humans and agents working concurrently in local clones,
-- high-risk migration, workflow, infrastructure, or release changes where independent isolation evidence matters.
-
-## When not to use
-
-This package is unnecessary for read-only analysis. It also does not replace Git merge/rebase strategy, distributed locking for external systems, or application-level transaction isolation. It protects repository workspace ownership and handoff boundaries.
+Do not use this as a replacement for application transactions, external-system locks, or merge/rebase strategy. Read-only analysis does not require a mutating worktree session.
 
 ## Architecture
 
@@ -42,20 +23,18 @@ flowchart TD
     A[Task trigger] --> B[Register session]
     B --> C[Dedicated branch + worktree]
     C --> D[Capture clean baseline]
-    D --> E[Implementation in isolated checkout]
-    E --> F[Capture HEAD + changed paths]
-    F --> G[Deterministic isolation evaluation]
-    G -->|blocked| H[Freeze + reconcile collision]
-    H --> F
-    G -->|review-required| I[Independent review]
-    G -->|pass| J[Task-specific build/tests]
-    I --> J
-    J --> K[Fresh recapture + evaluation]
-    K --> L[Final gate]
-    L --> M[Verified handoff to integration owner]
+    D --> E[Implement in isolated checkout]
+    E --> F[Working-phase isolation evaluation]
+    F -->|blocked| G[Freeze + reconcile collision]
+    G --> F
+    F -->|non-blocked| H[Task-specific tests/build]
+    H --> I[Fresh state + final-phase evaluation]
+    I -->|blocked| G
+    I -->|review-required| J[Independent review]
+    I -->|pass| K[Final gate]
+    J --> K
+    K --> L[Verified handoff]
 ```
-
-The core is tool-neutral. Any agent can follow the Markdown procedures. Deterministic Python scripts use only the standard library plus local Git for state capture.
 
 ## Package tree
 
@@ -93,83 +72,52 @@ agent-worktree-isolation-gate/
     └── smoke-test.py
 ```
 
-## Component responsibilities
+## Components
 
-### `config/worktree-policy.json`
-Defines hard isolation rules, allowed evidence directories, high-risk path globs, review independence, and bounded retries.
+- `config/worktree-policy.json` defines dedicated branch/worktree, clean-start/final-handoff, collision, high-risk path, review, and bounded retry policy.
+- `schemas/worktree-session.schema.json` defines session identity, actor, immutable base revision, branch, worktree path, path scope, clean-start state, and risk.
+- `schemas/isolation-report.schema.json` defines `working|final` phase, deterministic status, exact HEAD/path, blockers/collisions/warnings, and fingerprints binding report to session and policy.
+- `schemas/isolation-review.schema.json` binds an independent decision to one exact report fingerprint.
+- `scripts/capture-worktree-state.py` captures branch, HEAD, status, current resolved path, and `git worktree list --porcelain`.
+- `scripts/evaluate-isolation.py` checks branch/path alignment, clean start, final clean handoff, allowed paths, high-risk paths, shared branch/worktree, and changed-path collisions. It emits `pass`, `review-required`, or `blocked`.
+- `scripts/verify-final-gate.py` requires a `final` report, checks report self-integrity, recomputes session/policy fingerprints, enforces review binding, and rejects high-risk self-review when disabled.
+- Skills, rules, subagents, workflow, and hooks define reusable operational behavior around those deterministic contracts.
 
-### Schemas
-- `worktree-session.schema.json` defines exact session identity: actor, repository, immutable base revision, branch, worktree path, allowed paths, clean-start state, and risk.
-- `isolation-report.schema.json` defines deterministic result status, collisions/blockers/warnings, exact HEAD, and fingerprints binding the report to both current session and policy.
-- `isolation-review.schema.json` defines a fingerprint-bound human/independent reviewer decision.
+## Dependencies
 
-### Scripts
-- `capture-worktree-state.py` captures repository root, current worktree path, branch, HEAD, porcelain status, and Git worktree topology.
-- `evaluate-isolation.py` checks branch/path alignment, clean-start policy, changed-path scope, high-risk paths, shared branch/worktree ownership, and cross-session path overlap. It emits `pass`, `review-required`, or `blocked`.
-- `verify-final-gate.py` fails closed if session or policy changed after evaluation, deterministic blockers exist, required review is missing/stale, or high-risk self-review is forbidden.
+- Python 3, standard library only for deterministic evaluators/tests.
+- Git for `capture-worktree-state.py` and the host repository workflow.
 
-### Skills
-- `prepare-isolated-worktree.md` provides the reusable pre-edit procedure.
-- `reconcile-cross-worktree-collision.md` provides non-destructive collision recovery without resetting or deleting unknown work.
-
-### Subagents
-- `worktree-coordinator.md` owns topology/session metadata and collision handling.
-- `isolation-verifier.md` independently verifies final isolation evidence; it does not implement the task under review.
-
-### Workflow and hooks
-`worktree-isolation-workflow.md` defines the end-to-end bounded process. `worktree-isolation-hooks.md` maps lifecycle points to deterministic commands and blocking behavior.
-
-## Installation
-
-Copy this directory into the target repository or shared agent-engineering toolkit. Python 3 and Git are required. The deterministic scripts use Python standard-library modules only.
-
-Recommended ignored runtime directory:
+Recommended runtime evidence location:
 
 ```gitignore
 .agent-evidence/
 ```
 
-The package does not create or delete worktrees automatically. The host workflow may do so after applying its own permission and approval model.
+The package never deletes/reset/cleans worktrees automatically.
 
 ## Configuration
 
-Edit `config/worktree-policy.json` minimally:
-
-- set high-risk path patterns for your repository,
-- adjust allowed transient/untracked evidence directories,
-- keep dedicated branch/worktree requirements enabled for concurrent mutation,
-- keep independent review enabled for high/critical sessions,
-- do not weaken policy inside an active session merely to make a report pass.
-
-Per-task scope belongs in the session record under `allowed_paths`, not in the global policy.
+Adjust `config/worktree-policy.json` only for repository-specific needs such as high-risk path globs. Per-task ownership belongs in `allowed_paths` inside the session record. Do not weaken policy during an active run merely to make the gate pass.
 
 ## Permissions
 
-Default permissions should be:
-
-- read repository/worktree metadata,
-- read diffs/status/logs,
-- write evidence files in an ignored evidence directory,
-- optionally create a dedicated branch/worktree when the host explicitly grants that capability.
-
-Do not grant force push, destructive cleanup, production deployment, DB mutation, secret/infrastructure mutation, or worktree deletion merely to operate this gate.
+Default to read-only Git inspection plus evidence writes. Optionally allow non-destructive dedicated branch/worktree creation. Do not grant force push, destructive cleanup, deployment, database mutation, infrastructure/secret mutation, or worktree deletion simply to run this kit.
 
 ## Usage
 
-### 1. Create a session record
+### 1. Create an isolated session
 
-Start from `templates/worktree-session.example.json`. Record exact base revision, dedicated branch/worktree, allowed paths, actor, risk, and `dirty_at_start`.
-
-A typical host setup may use:
+Start from `templates/worktree-session.example.json`. Resolve an immutable base revision and, when permitted, create a dedicated branch/worktree:
 
 ```bash
 BASE=$(git rev-parse HEAD)
 git worktree add -b agent/feature-orders-20260817-01 ../service-wt-feature-orders "$BASE"
 ```
 
-Only use branch/worktree creation when permitted. Do not reuse an existing dirty checkout to save time.
+Never reuse a dirty shared checkout just to avoid creating isolation.
 
-### 2. Capture current state
+### 2. Capture state
 
 Run from the isolated worktree:
 
@@ -179,17 +127,17 @@ python path/to/agent-worktree-isolation-gate/scripts/capture-worktree-state.py \
   --output .agent-evidence/worktree-current.json
 ```
 
-### 3. Generate changed-path inventory
+### 3. Inventory changed paths
 
-Bind it to the session base revision. Example for committed changes:
+Generate a complete path list for the session's current relevant state. For committed changes:
 
 ```bash
 git diff --name-only <base-revision>...HEAD > .agent-evidence/changed-paths.txt
 ```
 
-If the session intentionally includes uncommitted changes, include those paths from `git status --porcelain`/`git diff --name-only` before evaluation. Do not silently ignore uncommitted state.
+Include intentional uncommitted changed paths when they exist; never silently exclude them.
 
-### 4. Evaluate isolation
+### 4. Working-phase evaluation
 
 ```bash
 python path/to/agent-worktree-isolation-gate/scripts/evaluate-isolation.py \
@@ -198,42 +146,40 @@ python path/to/agent-worktree-isolation-gate/scripts/evaluate-isolation.py \
   --policy path/to/agent-worktree-isolation-gate/config/worktree-policy.json \
   --changed-paths .agent-evidence/changed-paths.txt \
   --active-sessions .agent-evidence/active-sessions.json \
+  --phase working \
   --output .agent-evidence/isolation-report.json
 ```
 
-Exit codes:
+Exit codes: `0=pass`, `3=review-required`, `2=blocked`, `1=runtime/input error`.
 
-- `0`: `pass`
-- `3`: `review-required`
-- `2`: `blocked`
-- `1`: runtime/input/tool error
-
-A blocker cannot be reviewer-overridden. Remediate and create fresh evidence.
+A deterministic blocker cannot be overridden by review. Freeze mutations, preserve evidence, remediate safely, and rerun.
 
 ### 5. Run task-specific verification
 
-Build/test commands are repository-specific and intentionally remain outside the isolation script. Run them in this exact isolated worktree and preserve the exact HEAD/relevant state used.
+Run repository-specific build/tests in this exact worktree. Examples: `dotnet test`, `pytest`, `npm test`, `npx playwright test`. Preserve commands, result, and exact relevant HEAD/state. Green results from another worktree/revision are not final evidence.
 
-Examples:
+### 6. Final-phase evaluation
+
+Immediately before final verification, recapture state and changed paths. Then run:
 
 ```bash
-dotnet test
-npm test
-pytest
-npx playwright test
+python path/to/agent-worktree-isolation-gate/scripts/evaluate-isolation.py \
+  --session .agent-evidence/worktree-session.json \
+  --state .agent-evidence/worktree-current.json \
+  --policy path/to/agent-worktree-isolation-gate/config/worktree-policy.json \
+  --changed-paths .agent-evidence/changed-paths.txt \
+  --active-sessions .agent-evidence/active-sessions.json \
+  --phase final \
+  --output .agent-evidence/isolation-report.json
 ```
 
-Green tests from another worktree or revision are not valid final evidence for this session.
+`require_clean_handoff` is enforced only in `final` phase so working-phase evaluations can occur while the task still has intentional work in progress. The final gate refuses working-phase reports.
 
-### 6. Independent review when required
+### 7. Review when required
 
-For warning-bearing or high/critical sessions, create a review conforming to `schemas/isolation-review.schema.json`. Replace the placeholder fingerprint in `examples/isolation-review.example.json` with the exact current report fingerprint.
+For warning-bearing or high/critical sessions, create a review matching `schemas/isolation-review.schema.json`. Replace the placeholder fingerprint in `examples/isolation-review.example.json` with the exact current **final report** fingerprint. When policy forbids self-review, a high/critical implementation actor cannot approve its own isolation evidence.
 
-For high/critical risk, reviewer ID must differ from the implementation actor when self-review is disabled.
-
-### 7. Final gate
-
-Immediately before final completion, recapture state and rerun isolation evaluation. Then:
+### 8. Final gate
 
 ```bash
 python path/to/agent-worktree-isolation-gate/scripts/verify-final-gate.py \
@@ -245,106 +191,75 @@ python path/to/agent-worktree-isolation-gate/scripts/verify-final-gate.py \
 
 Omit `--review` only when report/risk/policy do not require one.
 
-The final gate recomputes session and policy fingerprints. Changing scope, actor/session data, risk, or policy invalidates the old report automatically.
+The final gate verifies:
 
-## Active-session registry contract
+1. report fingerprint matches the report contents,
+2. report phase is `final`,
+3. report/session ID matches,
+4. current session fingerprint matches the evaluated session,
+5. current policy fingerprint matches the evaluated policy,
+6. no deterministic blocker exists,
+7. required review is approved and bound to the exact report,
+8. forbidden high-risk self-review does not occur.
 
-`examples/active-sessions.example.json` demonstrates the minimal registry shape consumed by `evaluate-isolation.py`:
+Changing session scope, risk, actor, policy, or report content invalidates prior final evidence automatically.
 
-- `session_id`
-- `actor_id`
-- `branch`
-- `worktree_path`
-- `changed_paths`
+## Active-session registry
 
-The host may store more metadata. Do not include secrets. Registry freshness is operationally important: if another active session cannot be enumerated reliably, treat ownership certainty as an evidence gap and escalate rather than assuming isolation.
+`examples/active-sessions.example.json` shows the minimal external registry consumed by the evaluator: `session_id`, `actor_id`, `branch`, `worktree_path`, and `changed_paths`. Keep it fresh and secret-free. If active ownership cannot be enumerated reliably, treat that as an evidence gap rather than assuming isolation.
 
 ## Collision semantics
 
-The evaluator blocks on:
+Deterministic blockers include:
 
-- branch mismatch between session and current state,
-- worktree path mismatch,
-- policy-forbidden dirty start,
-- changed path outside session scope,
-- another active session sharing the same dedicated branch,
-- another active session sharing the same worktree path,
+- current branch differs from session branch,
+- current worktree path differs from session worktree path,
+- dirty start when clean start is required,
+- dirty final handoff when clean handoff is required,
+- changed file outside `allowed_paths`,
+- another active session shares the dedicated branch,
+- another active session shares the worktree path,
 - exact changed-path overlap with another active session.
 
-High-risk paths and high/critical sessions produce `review-required` when no deterministic blocker exists.
+High-risk paths and high/critical session risk produce `review-required` when no blocker exists.
 
-## Recovery
+## Failure and recovery
 
-### Transient Git/tool read failure
-Retry at most once. Preserve the first error. If the second read fails, stop because workspace ownership cannot be proven.
-
-### Dirty start
-Do not `git clean`, reset, or stash automatically. Allocate a fresh isolated worktree or escalate ownership.
-
-### Shared branch/worktree
-Freeze both mutating workflows. Capture both sides. Reassign one session to a new branch/worktree if this can be done without discarding work.
-
-### Overlapping changed paths
-Preserve both diffs and request an explicit ownership/integration decision. Do not auto-merge merely because Git can merge textually.
-
-### Scope drift
-Do not silently broaden `allowed_paths`. Either remove only clearly agent-owned unintended changes safely or obtain an explicit scope change, then regenerate evidence.
-
-### Stale evidence
-Any relevant branch/worktree/HEAD/scope/policy change requires a fresh capture, evaluation, tests/review as applicable.
+- **Transient read-only Git/tool failure:** retry at most once; preserve first error.
+- **Dirty start:** allocate a fresh worktree or establish ownership; do not clean/reset/stash automatically.
+- **Dirty final handoff:** resolve/commit only clearly session-owned intended changes via the normal repository workflow; never discard unrelated changes automatically.
+- **Shared branch/worktree:** freeze affected sessions, preserve state, then reassign isolation safely.
+- **Overlapping paths:** preserve both diffs and request explicit ownership/integration decision. Textual mergeability is not ownership proof.
+- **Scope drift:** do not silently broaden scope; safely remove only proven agent-owned unintended work or obtain an explicit scope change, then regenerate evidence.
+- **Session/policy/report drift:** regenerate report/review; never patch fingerprints manually.
+- **Build/test failure:** preserve result and return to implementation workflow; isolation retries do not fix implementation failures.
 
 ## Approval boundaries
 
-The isolation gate does **not** authorize dangerous operations. Explicit human approval is required before:
-
-- production deployment,
-- destructive SQL,
-- database schema changes,
-- data/file deletion,
-- force push or Git history rewriting,
-- deleting a worktree that contains unintegrated/uncommitted changes,
-- infrastructure changes,
-- secret changes,
-- production configuration changes,
-- breaking API contracts,
-- weakening security controls,
-- irreversible migrations,
-- large dependency upgrades.
-
-Agents stop before these actions even when the isolation gate is green.
+This gate never authorizes dangerous actions. Explicit human approval is required before production deployment, destructive SQL, DB schema change, data/file deletion, force push/history rewrite, deletion of changed worktrees, infrastructure changes, secret changes, production configuration changes, breaking API changes, security weakening, irreversible migrations, or large dependency upgrades.
 
 ## Verification model
 
-**Task executed** means implementation/build/tests were attempted in an isolated checkout.
+**Task executed** means repository work/build/tests were attempted in an isolated checkout.
 
-**Task verified successfully** requires all of the following:
-
-1. exact session/branch/worktree identity is established,
-2. changed paths remain in scope,
-3. no unresolved concurrent ownership collision exists,
-4. task-specific build/tests correspond to the exact relevant current state,
-5. current isolation report is non-blocked,
-6. required review is approved and fingerprint-bound,
-7. final gate returns `verified`,
-8. approval-required actions, if performed, had separate explicit approval.
-
-The gate deliberately fails closed on stale session/policy binding and never lets a reviewer waive deterministic collision blockers.
+**Task verified successfully** requires exact session/worktree identity, in-scope diff, no collision, fresh task-specific verification from the same relevant state, a non-blocked final report, required fingerprint-bound independent review, and final gate exit code `0`. Separate approval is still required for dangerous actions.
 
 ## Definition of Done
 
-- Session record is complete and exact.
+- Complete session contract exists.
 - Dedicated branch/worktree identity is proven.
-- Clean-start requirement is satisfied.
-- Changed-path inventory is complete for the session state being handed off.
+- Clean-start policy is satisfied.
+- Changed-path inventory is complete and in scope.
 - No shared branch/worktree/path collision remains.
-- No out-of-scope change remains unexplained.
-- Task-specific tests/build have fresh evidence from the exact isolated state.
-- Required independent review is valid.
-- Final gate returns exit code `0` with `status: verified`.
-- Remaining risks are documented in the handoff.
-- No dangerous action was silently executed.
+- Final handoff cleanliness satisfies policy.
+- Task-specific tests/build are fresh for the final relevant state.
+- Final report is self-integrity-valid and bound to the current session/policy.
+- Required independent review is current and approved.
+- `verify-final-gate.py` returns `verified`.
+- Remaining risks are documented in handoff.
+- No approval-required action was silently executed.
 
-## Testing this package
+## Testing the kit
 
 Run:
 
@@ -352,30 +267,14 @@ Run:
 python tests/smoke-test.py
 ```
 
-The smoke test uses temporary JSON fixtures and Python stdlib only. It covers:
-
-- clean medium-risk pass and final verification,
-- out-of-scope deterministic blocker,
-- shared-branch collision,
-- high-risk review requirement,
-- high-risk self-review rejection,
-- independent fingerprint-bound approval,
-- invalidation when policy changes after evaluation.
-
-`capture-worktree-state.py` itself requires a real Git worktree and is intentionally not mocked by the smoke test.
+The stdlib-only smoke test covers clean final verification, rejection of working-phase evidence at final gate, dirty final-handoff blocking, out-of-scope changes, shared-branch collision, high-risk self-review rejection, valid independent approval, policy-drift invalidation, and report-tampering detection. `capture-worktree-state.py` itself requires a real Git worktree and is intentionally not mocked.
 
 ## Portability
 
-The procedures can be used with Codex, Claude Code, Cursor, ChatGPT, GitHub Copilot, OpenCode, or another coding agent. Tool-specific adapters are unnecessary unless a host needs to translate session lifecycle events into its own hooks. Keep the core contracts and deterministic evaluation unchanged where possible.
+The core contracts and procedures work with Codex, Claude Code, Cursor, ChatGPT, GitHub Copilot, OpenCode, or other coding agents. Tool-specific adapters should only translate lifecycle events; they should not weaken the deterministic isolation contracts.
 
 ## Customization
 
-Useful repository-specific changes include:
+Useful extensions include deriving `allowed_paths` from an approved task plan, storing active sessions in a shared registry, adding organization-specific high-risk globs, binding CI evidence to the isolated revision, and creating a separate integration-owner workflow for combining already-verified session branches.
 
-- tighter `allowed_paths` generation from task plans,
-- richer active-session registry storage,
-- high-risk path patterns for migrations, infrastructure, generated code, or deployment files,
-- CI checks that reject PR evidence produced from a mismatched revision,
-- an integration-owner step that verifies each isolated session before combining branches.
-
-Do not customize away the central invariant: **one mutating session must have one provable isolated workspace identity, and final evidence must belong to that exact identity.**
+Central invariant: **one mutating session has one provable isolated workspace identity, and final evidence must belong to that exact identity.**
