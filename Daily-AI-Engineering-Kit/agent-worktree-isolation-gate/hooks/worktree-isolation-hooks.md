@@ -11,7 +11,7 @@
 ## post-edit-isolation-evaluation
 **Trigger:** after an implementation batch and before build/test evidence is accepted.  
 **Preconditions:** session record, current state, changed-path list, policy, and active-session registry are available.  
-**Action:** run:
+**Action:** run `scripts/evaluate-isolation.py` with `--phase working`.  
 ```bash
 python scripts/evaluate-isolation.py \
   --session .agent-evidence/worktree-session.json \
@@ -19,6 +19,7 @@ python scripts/evaluate-isolation.py \
   --policy config/worktree-policy.json \
   --changed-paths .agent-evidence/changed-paths.txt \
   --active-sessions .agent-evidence/active-sessions.json \
+  --phase working \
   --output .agent-evidence/isolation-report.json
 ```
 **Expected result:** `pass` or `review-required`.  
@@ -27,8 +28,18 @@ python scripts/evaluate-isolation.py \
 
 ## pre-verification-fresh-state
 **Trigger:** immediately before final verification.  
-**Action:** recapture worktree state, regenerate changed paths, and rerun isolation evaluation. Any HEAD/worktree/branch change invalidates older isolation evidence.  
-**Expected result:** a fresh report bound to current HEAD/path.  
+**Action:** recapture worktree state, regenerate changed paths, and rerun isolation evaluation with `--phase final`. This enforces clean-handoff policy and invalidates older working-phase evidence.  
+```bash
+python scripts/evaluate-isolation.py \
+  --session .agent-evidence/worktree-session.json \
+  --state .agent-evidence/worktree-current.json \
+  --policy config/worktree-policy.json \
+  --changed-paths .agent-evidence/changed-paths.txt \
+  --active-sessions .agent-evidence/active-sessions.json \
+  --phase final \
+  --output .agent-evidence/isolation-report.json
+```
+**Expected result:** a fresh final-phase report bound to current HEAD/path/session/policy.  
 **Failure:** final verification stops.  
 **Blocking:** yes.
 
@@ -42,7 +53,7 @@ python scripts/verify-final-gate.py \
   --policy config/worktree-policy.json \
   --review .agent-evidence/isolation-review.json
 ```
-Omit `--review` only when policy/risk/report do not require review.  
+Omit `--review` only when policy/risk/report do not require review. The gate requires `phase=final`, verifies report self-integrity, and rebinds the report to the current session and policy.  
 **Expected result:** `verified`, exit 0.  
 **Failure:** block completion.  
 **Blocking:** yes.
