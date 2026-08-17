@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "normalization": {
-    "sort_unordered_flags": true,
+    "preserve_argument_order": true,
     "collapse_whitespace": true,
     "case_sensitive_executable": false
   },
@@ -14,7 +14,7 @@
     "block_on_target_change": true,
     "block_on_environment_change": true,
     "block_on_side_effect_escalation": true,
-    "review_on_nonsemantic_argument_change": true,
+    "review_on_argument_removal_or_reordering": true,
     "max_unreviewed_added_flags": 0
   },
   "retry": {
