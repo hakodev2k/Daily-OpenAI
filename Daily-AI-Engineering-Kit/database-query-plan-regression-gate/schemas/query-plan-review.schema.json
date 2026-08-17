@@ -7,9 +7,7 @@
     "reviewer":{"type":"string","minLength":1},
     "comparison_fingerprint":{"type":"string","pattern":"^[a-f0-9]{64}$"},
     "status":{"enum":["approved","changes-required","blocked"]},
-    "findings":{"type":"array","items":{"type":"string"}},
-    "approved_exception":{"type":"boolean","default":false},
-    "exception_reason":{"type":"string"}
+    "findings":{"type":"array","items":{"type":"string"}}
   },
   "additionalProperties": false
 }
