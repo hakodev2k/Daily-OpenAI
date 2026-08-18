@@ -1,19 +1,23 @@
 # Evidence First Investigation Skill
 
 ## Purpose
-Investigate incidents using facts before changes.
+Investigate production incidents using evidence-driven reasoning.
 
-## Steps
-1. Identify impacted service and symptoms.
-2. Collect logs, metrics, traces, deployments, and configuration evidence.
-3. Separate facts, hypotheses, and unknowns.
-4. Trace execution paths.
-5. Validate each hypothesis with evidence.
-6. Recommend smallest safe action.
-7. Verify outcome.
+## Preconditions
+- Incident symptoms identified
+- Access to approved logs, metrics, traces, and repository context
 
-## Stop Conditions
-Stop when evidence is insufficient or approval is required.
+## Procedure
+1. Identify impacted service, timeframe, and user impact.
+2. Collect observable evidence.
+3. Separate facts, hypotheses, decisions, and unknowns.
+4. Trace execution paths and recent changes.
+5. Validate hypotheses independently.
+6. Recommend the smallest safe action.
+7. Verify the result with evidence.
 
 ## Output
-Finding, evidence, confidence, risk, recommendation, verification status.
+Finding, evidence, confidence, affected component, risk, recommendation, verification status.
+
+## Failure Handling
+Stop when evidence is insufficient, access is missing, or approval is required.
