@@ -1,28 +1,31 @@
-# Production Incident Root Cause Agent
+# Production Incident Root Cause Agent Kit
 
-Reusable AI engineering kit for evidence-driven production incident investigation.
+## Problem
+Standardize AI-assisted production incident investigation using evidence, bounded hypotheses, and verification.
 
-## Purpose
-Helps agents investigate incidents using logs, metrics, traces, code, and deployment history while preventing unsupported conclusions.
+## Use when
+- Production alerts occur
+- Error rates increase
+- Performance regressions appear
+- Logs need correlation
 
 ## Workflow
-
 ```mermaid
 flowchart TD
-A[Incident Trigger] --> B[Collect Evidence]
-B --> C[Form Hypotheses]
-C --> D[Validate]
-D --> E[Recommend Fix]
-E --> F[Verify]
+A[Trigger] --> B[Evidence Collection]
+B --> C[Hypothesis Validation]
+C --> D[Recommendation]
+D --> E[Verification]
 ```
 
 ## Components
-- skills: investigation procedures
-- rules: safety constraints
-- subagents: specialized reviewers
-- workflows: bounded execution flow
-- hooks: deterministic checks
-- scripts: evidence collection helpers
+- skills/evidence-driven-investigation.md
+- skills/hypothesis-validation.md
+- rules/incident-safety.md
+- subagents/incident-investigator.md
+- workflows/incident-analysis.md
+- hooks/pre-investigation.md
+- scripts/collect-runtime-evidence.py
 
 ## Safety
-Production changes, data changes, and deployments require human approval.
+Production changes, destructive operations, deployments, and data modifications require explicit approval.
