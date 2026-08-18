@@ -1,25 +1,25 @@
-# AI Production Incident Triage Agent
-
-Reusable agent package for structured production incident investigation.
+# AI Production Incident Triage Agent Kit
 
 ## Problem
-Reduce unstructured debugging by forcing evidence collection, hypothesis tracking, bounded investigation, and verification.
+Production incidents require fast diagnosis but agents can produce unsafe guesses without evidence discipline.
+
+## Purpose
+A reusable AI engineering package for incident investigation using context collection, bounded reasoning, specialist review, and verification.
 
 ## Workflow
-Trigger -> Collect context -> Analyze evidence -> Form hypotheses -> Validate -> Recommend fix -> Verify
+```mermaid
+flowchart LR
+A[Incident Trigger] --> B[Context Collection] --> C[Hypothesis Analysis] --> D[Review] --> E[Verification]
+```
 
-## Components
-- skills: investigation procedures
-- rules: safety boundaries
-- subagents: specialized responsibilities
-- workflows: execution lifecycle
-- hooks/scripts: deterministic checks
+## Usage
+Use for API failures, background jobs, database issues, performance regressions, and service outages.
 
 ## Safety
-No production changes, data deletion, deployments, or configuration changes without approval.
+Agents must not deploy, delete data, change production configuration, or execute destructive operations without approval.
 
-## Definition of Done
+## Done Criteria
 - Evidence collected
-- Root cause confidence documented
-- Verification completed
-- Remaining risks recorded
+- Findings separated from assumptions
+- Root cause validated
+- Verification evidence recorded
