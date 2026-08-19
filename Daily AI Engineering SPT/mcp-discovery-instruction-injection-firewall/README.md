@@ -9,10 +9,12 @@ Security
 ## Problem
 MCP servers can provide free-form natural-language instructions. When an MCP client inserts that text into trusted model instructions, the server gains a channel that can attempt to override intended behavior, request secrets, alter tool choices, or influence later actions. Shared caching can amplify the impact if untrusted instructions are reused outside their original trust boundary.
 
-## Evidence
-The package was selected after reviewing current public signals, including MCP issue #3213 (opened 2026-08-07), MCP security/risk guidance, and OpenAI guidance describing prompt injection as a continuing security problem that cannot be solved merely by restricting network access.
+The package treats remote MCP instructions as **untrusted data, never authority**. The enforcement boundary is host-side deterministic policy, taint tracking, cache isolation, and sensitive-tool authorization—not prompt wording.
 
-See [`evidence/research.md`](evidence/research.md) for the evidence/interpretation boundary and source links.
+## Evidence
+The package was selected after reviewing current public signals, including MCP issue #3213 (opened 2026-08-07 and still open when generated), MCP security/risk guidance, and OpenAI guidance describing prompt injection as a continuing security problem that cannot be solved merely by restricting network access.
+
+See [`evidence/research.md`](evidence/research.md) for current public signals, existing approaches, limitations, root-cause hypotheses, and the evidence/interpretation/proposed-solution boundary.
 
 ## Existing approach
 Common defenses include prompt delimiters, warning language, tool confirmation dialogs, broad network lockdown, server-supplied tool annotations, and model-level refusal behavior.
@@ -69,7 +71,7 @@ Discovery Instructions -> isolated key / short TTL / revalidation
                        -> never public/global by default
 ```
 
-The enforcement boundary is host-side code and policy, not the textual envelope shown to the model.
+The enforcement boundary is host-side code and policy, not the textual envelope shown to the model. Detailed assets, actors, trust boundaries, taint propagation, cache rules, attack paths, and security invariants are documented in [`architecture/threat-model.md`](architecture/threat-model.md).
 
 ## Package structure
 
@@ -77,6 +79,8 @@ The enforcement boundary is host-side code and policy, not the textual envelope 
 mcp-discovery-instruction-injection-firewall/
 ├── README.md
 ├── guide-intergration.md
+├── architecture/
+│   └── threat-model.md
 ├── config/
 │   └── policy.json
 ├── evidence/
@@ -157,18 +161,24 @@ Lifecycle enforcement points are defined in [`hooks/hooks.md`](hooks/hooks.md).
 ## Skills
 [`skills/core-skills.md`](skills/core-skills.md) defines reusable procedures for:
 - trust classification;
+- deterministic guarded context construction;
 - taint-aware authorization;
-- discovery cache isolation.
+- discovery cache isolation;
+- security verification and recovery.
 
 ## Rules
 [`rules/engineering-rules.md`](rules/engineering-rules.md) defines observable `MUST`, `MUST NOT`, and `SHOULD` controls.
 
 ## Subagents
-[`subagents/subagents.md`](subagents/subagents.md) separates research, policy, implementation, and independent verification responsibilities to avoid allowing the implementer to be the only verifier of high-risk security changes.
+[`subagents/subagents.md`](subagents/subagents.md) separates research, policy, implementation, testing, and independent verification responsibilities so the implementer is not the only verifier of high-risk security changes.
+
+## Hooks
+[`hooks/hooks.md`](hooks/hooks.md) defines predictable enforcement points for ingestion, context assembly, cache admission, tool authorization, post-action checks, and final verification.
 
 ## Metrics
 Recommended operational metrics:
-- percentage of remote instruction payloads classified;
+- percentage of remote instruction payloads classified (target 100%);
+- raw remote instructions entering trusted system/developer channels (target 0);
 - allow/taint/block distribution;
 - validation failure reasons;
 - sensitive calls attempted under taint;
@@ -210,6 +220,8 @@ For malformed content, missing policy, ambiguous trust identity, authorization f
 4. do not fall back to unguarded prompt insertion;
 5. bypass ambiguous caches;
 6. escalate sensitive operations rather than retrying indefinitely.
+
+Retries must be bounded. No retry path may weaken trust, verification, or authorization.
 
 ## Definition of Done
 The reusable package is complete when:
