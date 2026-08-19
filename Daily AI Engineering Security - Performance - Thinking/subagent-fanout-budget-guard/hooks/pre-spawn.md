@@ -4,7 +4,7 @@
 Immediately before an orchestrator launches two or more subagents.
 
 ## Preconditions
-`config/budget.json` is valid and parent-context/work estimates are available.
+`config/budget.json` is valid; parent-context/work estimates are available; proposed child tasks were reviewed for distinct deliverables according to `rules/subagent-budget-rules.md`.
 
 ## Action
 Run:
@@ -18,12 +18,12 @@ python scripts/fanout_budget.py check \
   --serial-baseline-tokens "$SERIAL_BASELINE_TOKENS"
 ```
 
-Optionally pass `--tasks-json tasks.json` to detect exact normalized duplicate task descriptions.
+Task-overlap review is a semantic policy check performed by the Budget Controller before this deterministic numeric gate.
 
 ## Expected result
-Exit `0`: allowed or warning-level proposal within hard policy limits.
+Exit `0`: allowed or warning-level proposal within hard numeric limits.
 
-Exit `2`: hard budget violation or duplicate task; redesign before spawn.
+Exit `2`: hard budget violation; redesign before spawn.
 
 ## Failure behavior
 Exit `3` means config/input error. Retry input collection once, then block large fan-out rather than assuming unlimited capacity.
