@@ -13,6 +13,8 @@ except ImportError:
     print("ERROR: PyYAML is required: pip install pyyaml", file=sys.stderr)
     sys.exit(2)
 
+PACKAGE_ROOT = Path(__file__).resolve().parents[1]
+
 
 def load_policy(path: Path):
     try:
@@ -31,13 +33,24 @@ def excluded(rel: str, globs):
     return any(fnmatch.fnmatch(normalized, pat) or fnmatch.fnmatch(normalized + "/", pat) for pat in globs)
 
 
+def is_within(path: Path, parent: Path):
+    try:
+        path.resolve().relative_to(parent.resolve())
+        return True
+    except ValueError:
+        return False
+
+
 def iter_files(root: Path, policy):
     scan = policy["scan"]
     extensions = {x.lower() for x in scan.get("include_extensions", [])}
     excludes = scan.get("exclude_paths", [])
     max_bytes = int(scan.get("max_file_bytes", 1048576))
+    package_is_inside_scan_root = is_within(PACKAGE_ROOT, root)
     for path in root.rglob("*"):
         if not path.is_file():
+            continue
+        if package_is_inside_scan_root and is_within(path, PACKAGE_ROOT):
             continue
         rel = str(path.relative_to(root))
         if excluded(rel, excludes):
