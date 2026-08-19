@@ -9,6 +9,7 @@ scan:
     - "obj/**"
     - "vendor/**"
     - "dist/**"
+    - "artifacts/**"
   max_file_bytes: 1048576
 severity:
   block: ["high"]
