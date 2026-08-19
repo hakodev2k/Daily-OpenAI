@@ -26,7 +26,7 @@
 3. **MUST NOT store hidden chain-of-thought.** Checkpoints contain observable state, decisions, short rationale, evidence, and next actions only.
 4. **MUST NOT summarize away unresolved blockers or failed tests.**
 5. **MUST NOT silently drop large tool outputs that are required for later verification.**
-6. **MUST NOT assume a free-form summary is complete without validation against required fields.
+6. **MUST NOT assume a free-form summary is complete without validation against required fields.**
 7. **MUST NOT compact after checkpoint validation fails.**
 8. **MUST NOT continue after an artifact hash mismatch** until the discrepancy is resolved or explicitly accepted by a human.
 9. **MUST NOT use unlimited compaction/recovery loops.**
