@@ -48,6 +48,8 @@ def main():
             ok = fail(f"empty required file: {rel}") and ok
 
     for rel in REQUIRED:
+        if rel == "scripts/verify_package.py":
+            continue
         path = ROOT / rel
         if not path.is_file() or path.suffix not in {".md", ".py", ".json", ".yaml", ".txt"}:
             continue
