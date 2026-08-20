@@ -52,4 +52,5 @@ No TOEIC skill, part, timing or strategy introduced.
 ## Assessment Availability
 
 - Day-001 contains lesson-level mastery evidence for course operation.
+- Day-002 contains a corrected lesson draft, but its skills are not merged into accepted skill state until an independent re-review passes the publishing gate.
 - No learner response or assessment outcome has been recorded.
