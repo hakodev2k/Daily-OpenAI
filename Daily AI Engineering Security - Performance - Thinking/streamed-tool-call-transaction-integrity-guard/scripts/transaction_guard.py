@@ -38,8 +38,8 @@ def main():
         if prev.get("call_id")==cid and isinstance(prev.get("raw_arguments"),str) and prev["raw_arguments"]!=raw:
             out={"decision":"block","reason":"call id reused with different raw arguments","call_id":cid}; print(json.dumps(out,indent=2)); return 3
         evidence=hashlib.sha256((cid+"\n"+tool+"\n"+raw).encode("utf-8")).hexdigest()
-        if state in {"started","unknown"}:
-            out={"decision":"reconcile","reason":f"execution state is {state}; automatic replay is unsafe","evidence_sha256":evidence}; print(json.dumps(out,indent=2)); return 3
+        if state in {"started","failed","unknown"}:
+            out={"decision":"reconcile","reason":f"execution state is {state}; automatic replay requires explicit side-effect evidence","evidence_sha256":evidence}; print(json.dumps(out,indent=2)); return 3
         if state=="succeeded":
             out={"decision":"block","reason":"transaction already succeeded; do not execute twice","evidence_sha256":evidence}; print(json.dumps(out,indent=2)); return 3
         max_retries=int(p.get("max_retries",2))
