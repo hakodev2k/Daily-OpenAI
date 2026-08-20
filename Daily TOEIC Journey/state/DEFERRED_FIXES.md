@@ -31,4 +31,4 @@ None.
 - Latest review is authoritative for both open entries.
 - These are content-quality defects, not learner errors and not learner remediation evidence.
 - Do not remove or mark an entry resolved until the lesson is fixed and a later validation confirms resolution.
-- Day-002 is not accepted because its latest authoritative review is `FAIL`; its CRITICAL, MAJOR and MINOR findings are publishing-gate work, not deferred-fix backlog entries.
+- Day-002 passed independent re-review with no unresolved CRITICAL, MAJOR or MINOR issue; no Day-002 entry is required here.
