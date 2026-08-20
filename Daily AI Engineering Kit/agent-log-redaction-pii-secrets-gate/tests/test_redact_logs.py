@@ -31,4 +31,9 @@ class RedactionTests(unittest.TestCase):
         self.assertEqual(code,0)
         code2,r2,_,_=run(out)
         self.assertEqual(code2,0); self.assertEqual(r2['findings_count'],0)
+    def test_private_key_redaction_preserves_line_count(self):
+        text='before\n-----BEGIN PRIVATE KEY-----\nabcDEF1234567890\n-----END PRIVATE KEY-----\nafter\n'
+        code,r,out,_=run(text)
+        self.assertEqual(code,2); self.assertEqual(r['status'],'blocked_sensitive_input')
+        self.assertEqual(out.count('\n'),text.count('\n')); self.assertNotIn('abcDEF1234567890',out)
 if __name__=='__main__': unittest.main()
