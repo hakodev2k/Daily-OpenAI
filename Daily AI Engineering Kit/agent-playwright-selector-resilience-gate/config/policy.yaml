@@ -4,6 +4,8 @@ scan_globs:
   - "**/*.test.ts"
   - "**/*.spec.js"
   - "**/*.test.js"
+exclude_globs:
+  - "examples/**"
 block_patterns:
   - "nth-child("
   - ":nth-of-type("
