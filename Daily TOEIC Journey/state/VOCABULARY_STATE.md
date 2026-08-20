@@ -36,5 +36,5 @@ None. No prior vocabulary existed and no later curriculum review event has occur
 ## Notes
 
 - Do not treat incidental English meta-language in Day-001 as target vocabulary.
-- Day-002 may introduce its own approved target labels only after its blueprint is created.
+- Day-002 has a blueprint and corrected lesson draft, but its latest authoritative review is `FAIL`; do not merge its planned labels into accepted vocabulary state until independent re-review passes the publishing gate.
 - Deduplicate by canonical written form and preserve the original introduction source.
