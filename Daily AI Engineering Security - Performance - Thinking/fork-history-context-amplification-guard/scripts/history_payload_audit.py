@@ -31,8 +31,14 @@ def audit(path: Path, cfg: dict) -> dict:
             total += len(raw); largest = max(largest, len(raw))
             try: obj = json.loads(raw)
             except (UnicodeDecodeError, json.JSONDecodeError): bad.append(line_no); continue
+            if not isinstance(obj, dict):
+                bad.append(line_no); continue
             text = raw.decode("utf-8", errors="ignore")
-            is_compacted = '"compacted"' in text or obj.get("type") == "compacted" or obj.get("item", {}).get("type") == "compacted"
+            item = obj.get("item")
+            item_type = item.get("type") if isinstance(item, dict) else None
+            payload = obj.get("payload")
+            payload_type = payload.get("type") if isinstance(payload, dict) else None
+            is_compacted = obj.get("type") == "compacted" or item_type == "compacted" or payload_type == "compacted"
             if is_compacted: compacted += len(raw); compact_count += 1
             for match in DATA_RE.finditer(text):
                 b64 = match.group(1); size = len(b64); inline += size
@@ -58,7 +64,7 @@ def main() -> int:
     p = argparse.ArgumentParser(); p.add_argument("rollout"); p.add_argument("--config"); p.add_argument("--pretty", action="store_true")
     a = p.parse_args()
     try: result = audit(Path(a.rollout), load_config(a.config))
-    except ValueError as exc: print(json.dumps({"status":"error","error":str(exc)}), file=sys.stderr); return 2
+    except (ValueError, TypeError, KeyError) as exc: print(json.dumps({"status":"error","error":str(exc)}), file=sys.stderr); return 2
     print(json.dumps(result, indent=2 if a.pretty else None, sort_keys=True))
     return 1 if result["status"] == "block" else 0
 if __name__ == "__main__": raise SystemExit(main())
