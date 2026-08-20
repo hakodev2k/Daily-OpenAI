@@ -4,7 +4,7 @@
 
 None.
 
-Day-001 intentionally teaches no English grammar. No grammar concept may be marked introduced merely because English interface labels appear in the lesson.
+Day-001 and Day-002 intentionally teach no English grammar. No grammar concept may be marked introduced merely because English interface labels appear in the lessons.
 
 ## Concepts Reinforced
 
@@ -23,5 +23,5 @@ English grammar remains not introduced in accepted course content. Future sequen
 ## Notes
 
 - Day-001 course-operation concepts belong in `state/SKILL_STATE.md`, not grammar state.
-- The unaccepted Day-002 draft intentionally teaches no grammar and does not change this state.
+- Accepted Day-002 intentionally teaches no grammar and does not change this state.
 - Do not infer grammar knowledge from lesson generation or from the learner's native-language reading ability.
