@@ -48,13 +48,17 @@ def main():
         if isinstance(item,dict) and item.get('name') and item.get('pattern'):
             regexes[item['name']]=re.compile(item['pattern'],re.I|re.M)
     findings=[]; replacement=policy.get('replacement','[REDACTED:{type}]')
+    preserve_lines=bool(policy.get('preserve_line_count',True))
     def redact_one(kind,pattern,current):
         def repl(m):
             val=m.group(0)
             if kind=='credit_card' and not luhn_candidate(val): return val
             if any(x.fullmatch(val) for x in allow): return val
             findings.append({'type':kind,'start':m.start(),'length':len(val)})
-            return replacement.replace('{type}',kind)
+            marker=replacement.replace('{type}',kind)
+            if preserve_lines:
+                marker += '\n' * val.count('\n')
+            return marker
         return pattern.sub(repl,current)
     out=text
     for kind,rgx in regexes.items(): out=redact_one(kind,rgx,out)
