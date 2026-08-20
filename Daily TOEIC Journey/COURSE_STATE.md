@@ -5,7 +5,7 @@
 | Field | Current Value |
 |---|---|
 | State Purpose | Theo dõi tiến trình tạo nội dung, vị trí curriculum, kế hoạch retrieval và learner evidence mà không phụ thuộc conversation memory |
-| Course Generation Status | In progress |
+| Course Generation Status | Blocked at Day-002 publishing gate pending independent re-review |
 | Phase Generation Status | Phase 0 in progress |
 | Learner Performance Status | Not evaluated |
 | Learner Study Status | No learner completion recorded |
@@ -23,7 +23,7 @@
 | Next Lesson Title | Nghe trước, transcript sau |
 | Next Lesson Type | Foundation / Listening routine |
 | Next Module | P00-M01 — Học cách học và dùng hệ thống |
-| Next Action | Create the approved lesson blueprint for Day-002 from the active phase curriculum |
+| Next Action | Independently re-review the corrected Day-002 lesson; do not plan Day-003 until the publishing gate passes |
 | Phase Transition Status | Not applicable; Phase 0 remains active |
 
 ## 3. Generation Progress
@@ -36,7 +36,9 @@
 
 ### Generated but Not Accepted
 
-None.
+| Lesson | Title | Current Gate | Latest Review | Required Pipeline Action |
+|---|---|---|---|---|
+| Day-002 | Nghe trước, transcript sau | Not accepted | `reviews/Day-002-review.md` — FAIL | Re-review the corrected lesson; the existing review predates the latest lesson fix |
 
 ### Module Progress
 
@@ -107,25 +109,29 @@ No TOEIC parts, questions, timing or score targets introduced.
 
 | Field | Current Value |
 |---|---|
-| Latest Review | `reviews/Day-001-review.md` |
-| Review Status | PASS WITH MINOR FIXES |
-| Critical Issues | 0 |
-| Major Issues | 0 |
-| Deferred Minor Issues | 2 |
-| Publishing Gate | Accepted with deferred minor fixes under owner-authorized policy |
+| Latest Review | `reviews/Day-002-review.md` |
+| Review Status | FAIL |
+| Critical Issues | 1 |
+| Major Issues | 1 |
+| Minor Issues | 2 |
+| Deferred Minor Issues | 2 open issues from accepted Day-001 only |
+| Publishing Gate | Blocked; latest authoritative review contains CRITICAL and MAJOR issues |
 | Deferred Fix Backlog | `state/DEFERRED_FIXES.md` |
 
-Content-quality debt is separate from learner remediation. No learner remediation has been inferred from review findings.
+The Day-002 lesson file was corrected after the cited FAIL review, but no independent re-review artifact exists yet. State therefore remains blocked by the latest authoritative review. Content-quality debt is separate from learner remediation, and no learner remediation has been inferred from review findings.
 
 ## 8. Next Pipeline Action
 
-The next AI run must plan exactly **Day-002 — Nghe trước, transcript sau** using:
+The next AI run must independently re-review the corrected **Day-002 — Nghe trước, transcript sau** using:
 
 - the architecture files;
 - `CURRICULUM_MASTER.md`;
 - `curriculum/phase-00-english-orientation.md`;
 - this state file;
 - `state/REVIEW_QUEUE.md`;
+- `lesson-plans/Day-002-blueprint.md`;
+- `lessons/phase-00/Day-002.md`;
+- `reviews/Day-002-review.md` as the prior review contract;
 - vocabulary and skill state files.
 
-Day-002 must retrieve the Day-001 navigation/attempt routine. Do not generate Day-003, update learner mastery or treat deferred content fixes as learner errors.
+Do not generate Day-003, advance `Next Lesson`, update learner mastery, or treat content-review defects as learner errors. If the new independent review passes the configured gate, run the State Manager again.
