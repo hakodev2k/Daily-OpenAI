@@ -7,93 +7,98 @@
 - **Phase:** Phase 0 — English Orientation (`P00`)
 - **Module:** P00-M01 — Học cách học và dùng hệ thống
 - **Level:** Zero → Pre-A1
-- **Review Status:** FAIL
-- **Overall Quality Score:** 78/100
+- **Review Status:** PASS
+- **Overall Quality Score:** 96/100
 
 ---
 
 ## 2. Executive Review
 
-Day-003 is conceptually accurate and strongly aligned with the intended feedback-cycle curriculum. It correctly distinguishes response, correct answer, explanation with clue/reason, and reason-based retry; uses neutral non-English mock tasks; retrieves Day-001 and conditionally retrieves Day-002; separates mock errors from learner evidence; and provides accurate answer keys, useful explanations, remediation, spacing, and preparation for Day-004.
+The corrected Day-003 lesson is curriculum-aligned, conceptually accurate, accessible to a Vietnamese Zero → Pre-A1 learner, and operationally safe to publish. It teaches the intended distinction among learner response, correct answer, explanation with clue/reason, and reason-based retry without introducing grammar, pronunciation, TOEIC pressure, or a premature Day-004 logging system.
 
-The lesson is not safe to publish in its current form for two reasons. First, the answer to nearly every retry—including both mastery retries—is displayed in the same expanded `<details>` block as the retry prompt. When the learner opens feedback for the initial attempt, the retry answer becomes visible at the same time. This defeats the lesson's core construct: demonstrating transfer from reason rather than copying or position memory. Second, learner-facing instructions and explanations repeatedly depend on unglossed English meta-language beyond the five approved functional labels. This is a systematic accessibility violation for a Zero → Pre-A1 Vietnamese learner and directly contradicts the blueprint's Vietnamese-first terminology policy.
+The previous review's two MAJOR issues and one MINOR issue have been fully resolved. Every assessed retry now has a distinct post-response answer disclosure; incidental English metalanguage has been replaced by Vietnamese-first wording while preserving and glossing approved labels; and the session map covers Sections 1–34. All 64 objectively scorable response units were revalidated. No invalid question, ambiguity, wrong key, unsupported explanation, or missing answer was found.
 
-All 64 objectively scorable response units were independently checked. No ambiguous keyed question or wrong answer key was found. The failure is operational and pedagogical, not answer-key accuracy.
+The lesson is safe to publish as-is. One optional accessibility suggestion remains for symbol-heavy tasks, but it is not required for approval.
 
 ## 3. Severity Summary
 
 | Severity | Count |
 |---|---:|
 | CRITICAL | 0 |
-| MAJOR | 2 |
-| MINOR | 1 |
+| MAJOR | 0 |
+| MINOR | 0 |
 | SUGGESTION | 1 |
 
 ## 4. Quality Scores
 
 | Category | Score | Notes |
 |---|---:|---|
-| Curriculum Alignment | 8/10 | Correct lesson and scope, but answer reveal violates a central blueprint constraint. |
-| Concept Accuracy | 10/10 | Core feedback distinctions and mistake/misconception boundary are correct. |
-| Beginner Accessibility | 6/10 | Vietnamese explanations are substantial, but incidental meta-English is pervasive and often unglossed. |
-| Explanation Depth | 9/10 | Strong what/why/how coverage and useful contrasts. |
-| Example Quality | 9/10 | Neutral, internally valid examples with gradual variation. |
-| Vocabulary Quality | 8/10 | Five targets are accurate; incidental English load is not adequately controlled. |
+| Curriculum Alignment | 10/10 | Executes the authorized Day-003 scope and prepares Day-004 correctly. |
+| Concept Accuracy | 10/10 | Feedback roles, reason-based retry, and mistake/misconception distinction are accurate. |
+| Beginner Accessibility | 9/10 | Vietnamese-first wording is clear; approved English labels are glossed. |
+| Explanation Depth | 10/10 | Strong what/why/how coverage without future-topic leakage. |
+| Example Quality | 9/10 | Neutral, valid examples progress through distinct response formats. |
+| Vocabulary Quality | 10/10 | Five approved labels are accurate, functional, and appropriately limited. |
 | Pronunciation Quality | N/A | Correctly excluded by blueprint. |
-| Listening Quality | N/A | No audio task is claimed; conditional Day-002 policy is accurate. |
-| Reading Quality | 9/10 | Short feedback block is level-appropriate and evidence-supported. |
-| TOEIC Quality | N/A | Correctly excluded at this phase. |
-| Exercise Design | 6/10 | Good progression on paper, but retry answers are exposed during the retry attempt. |
-| Answer Accuracy | 10/10 | All keyed objective responses checked; no wrong keys found. |
-| Answer Explanations | 9/10 | Explanations normally include clue/reason and useful why-wrong analysis. |
-| Cognitive Load | 7/10 | Core load is controlled; code-switching adds avoidable lexical burden. |
-| Review & Mastery Design | 6/10 | Dimensions and remediation are good, but mastery transfer evidence is invalidated by answer exposure. |
-| Overall Coherence | 8/10 | One coherent lesson with a clear learning cycle; operational reveal design breaks the central loop. |
+| Listening Quality | N/A | No audio task is required; conditional transcript policy is handled correctly. |
+| Reading Quality | 9/10 | Micro-reading task is accessible and evidence-supported. |
+| TOEIC Quality | N/A | Correctly excluded at this curriculum point. |
+| Exercise Design | 10/10 | Support fades appropriately and every assessed retry has a separate answer gate. |
+| Answer Accuracy | 10/10 | All objectively scorable responses were independently re-solved; no wrong key found. |
+| Answer Explanations | 10/10 | Explanations identify answer, clue, reason, and useful alternative failures. |
+| Cognitive Load | 9/10 | Core load remains small despite deep practice; incidental language burden is controlled. |
+| Review & Mastery Design | 10/10 | Two uncontaminated mastery retries, dimension-based interpretation, and specific remediation. |
+| Overall Coherence | 10/10 | One clear learning cycle connects teaching, practice, assessment, and future review. |
 
 ## 5. Blueprint Compliance Matrix
 
 | Blueprint Requirement | Status | Evidence / Issue |
 |---|---|---|
 | Lesson identity and curriculum position | Complete | Correct Day-003, P00, P00-M01, Zero → Pre-A1, Learn Mode. |
-| Central learning question | Complete | Present in Section 2 and revisited in summary/self-explanation. |
-| Measurable objectives | Complete | Section 3 covers role recognition, cycle use, formats, retry, and comparison. |
-| Prerequisite retrieval | Complete | Section 4 retrieves Day-001 attempt-before-feedback and Day-002 transcript order. |
-| Core four-role model | Complete | Sections 7–9 teach response, answer, clue/reason, and retry. |
-| Feedback cycle | Complete | Six-step cycle is explicitly taught. |
-| Correct answer versus explanation | Complete | Section 10 gives a clear functional comparison. |
-| Mistake versus misconception | Complete | Section 13 correctly requires recurring actual evidence for a pattern. |
-| Response formats | Complete | `choose`, `match`, and short response all appear. |
-| Target vocabulary | Complete | `choose`, `match`, `correct`, `incorrect`, `try again` are introduced with Vietnamese meanings. |
-| Vocabulary-load control | Partially complete | Target set is controlled, but incidental meta-English creates hidden vocabulary burden; see MAJOR-002. |
-| Pronunciation exclusion | Not applicable | No pronunciation content added, as required. |
-| Listening support only | Complete | Section 14 preserves conditional transcript timing and does not invent audio. |
-| Reading feedback block | Complete | Section 12 requires finding response, answer, clue, reason, and next step. |
-| TOEIC exclusion | Not applicable | No TOEIC item or score pressure introduced. |
-| `try again` ↔ “làm lại” | Complete | Functional equivalence is explicitly taught. |
-| Vietnamese-first explanations | Partially complete | Core prose is Vietnamese, but recurring unglossed meta-English violates the terminology plan; see MAJOR-002. |
-| Intuitive mental model | Complete | Map/route analogy supports answer–reason–retry distinction. |
-| Example progression | Complete | Answer-only → full explanation → changed layout → match → short response. |
-| Detailed example analysis | Complete | Important examples identify answer, clue, reason, and wrong alternatives. |
-| Common risks | Complete | Copying, position memory, early reveal, mock-state inference, and access issues are addressed. |
-| Guided practice | Partially complete | Initial attempts are gated, but retry answers remain visible in the same disclosure block. |
-| Hint fading | Partially complete | Support reduces across sections, but reveal mechanics compromise independent retry. |
-| Independent practice | Incorrect | Initial attempt is independent; changed-layout retry is not answer-hidden. See MAJOR-001. |
+| Central learning question | Complete | Section 2 asks how feedback changes understanding rather than enabling answer copying. |
+| Learning objectives | Complete | Section 3 covers roles, cycle, formats, comparison, transfer, and conditional transcript discipline. |
+| Prerequisite retrieval | Complete | Section 4 retrieves Day-001 attempt order and conditional Day-002 transcript order. |
+| New core knowledge budget | Complete | Four roles and one six-step feedback cycle remain the only core concepts. |
+| Supporting knowledge | Complete | Choose, match, short response, and introductory mistake/misconception awareness are included. |
+| Review knowledge | Complete | Prior process rules are retrieved without full re-teaching. |
+| Useful extension | Complete | Learner restates clue/reason in their own Vietnamese words. |
+| Future preview | Complete | Day-004 is previewed without teaching full logging or error taxonomy. |
+| Teaching sequence | Complete | Retrieval → diagnostic → roles → comparison → guided → independent → mastery. |
+| Explanation angles | Complete | Function, contrast, sequence, evidence, and learner safety are all addressed. |
+| Mental model | Complete | Map/route analogy accurately distinguishes destination, directions, and independent reuse. |
+| Example progression | Complete | Answer-only → full explanation → changed layout → matching → short response. |
+| Detailed example analysis | Complete | Key examples identify response, answer, clue, reason, and wrong-alternative logic. |
+| Target vocabulary | Complete | `choose`, `match`, `correct`, `incorrect`, `try again` are taught with Vietnamese meanings. |
+| Terminology policy | Complete | Support terminology is Vietnamese-first; remaining English labels are targets, stable labels, or glossed. |
+| Pronunciation | Not applicable | Correctly omitted. |
+| Listening | Complete | Supporting-only policy is accurate; no asset is invented; text route remains complete. |
+| Reading | Complete | Section 12 asks learner to locate response, answer, clue, reason, and next step. |
+| TOEIC application | Not applicable | Correctly omitted. |
+| Paraphrasing | Complete | `try again` ↔ “làm lại” is explicitly taught as a functional equivalence. |
+| Correct answer versus explanation | Complete | Section 10 gives a clear, accurate comparison. |
+| Mistake versus misconception | Complete | Section 13 requires recurring actual evidence before treating an error as a pattern. |
+| Common risks | Complete | Early reveal, copying, position memory, incomplete feedback, mock-state inference, and access issues are handled. |
+| Vietnamese learner considerations | Complete | Instructions do not test English-reading ability and use non-shaming Vietnamese wording. |
+| Guided practice | Complete | Two formats provide substantial but purposeful support. |
+| Hint fading | Complete | Support reduces from worked examples to reduced-support and independent cycles. |
+| Independent practice | Complete | Initial and retry responses occur before separately gated answers. |
 | Mixed practice | Complete | Day-001, conditional Day-002, and Day-003 knowledge are interleaved. |
-| Error correction | Complete | Three mock process failures are analyzed and answered later. |
-| Conceptual questions | Complete | Section 22 includes why/how questions with model answers. |
-| Self-explanation | Complete | Multiple Vietnamese self-explanation frames are provided. |
-| Mini quiz | Complete | Five varied, valid questions with separated detailed answers. |
-| Answer explanations | Complete | Correct answers, clues, reasons, and useful distractor analysis are present. |
-| Changed-layout retry | Partially complete | Many retries change layout correctly, but their answers are simultaneously visible. |
-| Mastery check | Incorrect | Both required sample cycles exist, but answer exposure invalidates independent transfer evidence. See MAJOR-001. |
-| Remediation | Complete | Section 27 maps specific evidence gaps to concrete actions and fresh items. |
-| Learner record safety | Complete | Section 28 is explicitly not Day-004's mistake log and does not fabricate data. |
-| Spaced repetition | Complete | Day-004, Day-005, Day-006, Day-007+, and delayed retrieval are planned. |
-| Checklist and summary | Complete | Both correspond to the taught core; summary adds no new content. |
-| Flashcards | Complete | Small functional set matches blueprint. |
-| Homework | Partially complete | Content is aligned, but homework retry answer is visible beside the retry prompt. |
-| Next-lesson connection | Complete | Correctly previews Day-004 without teaching full logging workflow. |
-| Content boundaries | Complete | No grammar, IPA, full error taxonomy, real TOEIC, scoring pressure, or invented learner state. |
+| Error correction | Complete | Three fictional process failures are diagnosed and repaired. |
+| Conceptual questions | Complete | Section 22 tests explanation, transfer, evidence, and first-answer reasoning. |
+| Self-explanation | Complete | Vietnamese frames and acceptable semantic variation are provided. |
+| Mini quiz | Complete | Five distinct, unambiguous items cover all core distinctions. |
+| Answer explanations | Complete | Keys, clues, reasons, and why-wrong analysis are proportionate and accurate. |
+| Changed-layout retries | Complete | Nine assessed retries use separate answer disclosures; layouts/values change appropriately. |
+| Mastery check | Complete | Two response formats, reduced support, separate answer gates, and multidimensional evidence. |
+| Remediation | Complete | Specific gaps map to targeted actions and fresh equivalent tasks. |
+| Learner record safety | Complete | Practice record is explicitly not the Day-004 log and contains no fabricated data. |
+| Spaced repetition | Complete | Day-004, Day-005, Day-006, Day-007+, and delayed transfer are scheduled. |
+| Checklist and summary | Complete | Both correspond directly to taught and assessed capabilities. |
+| Flashcards | Complete | Seven concise cards target functional labels and core process retrieval. |
+| Homework | Complete | Reinforces the same cycle with separately gated initial and retry answers. |
+| Session splitting | Complete | Four sessions now cover Sections 1–34 with natural stopping points. |
+| Next-lesson connection | Complete | Exact Day-004 title is preserved and English labels are glossed. |
+| Content boundaries | Complete | No grammar, IPA, TOEIC item, score pressure, full taxonomy, or state update. |
 
 ## 6. Critical Issues
 
@@ -101,233 +106,135 @@ No critical issues found.
 
 ## 7. Major Issues
 
-### MAJOR-001 — Retry answers are exposed before the retry attempt can be completed
-
-**Location:**  
-- Section 15, Guided Practice 1, `Try again`: prompt and answer are both inside lines 534–544 of the same expanded feedback block.  
-- Section 16, Guided Practice 2, `Try again`: mapping and answer are both visible at lines 574–581.  
-- Section 18, both changed-layout retries: answers appear immediately after the retry prompt.  
-- Section 19, Independent Practice 1: retry mapping and keyed mapping share the same `<details>` block.  
-- Section 20, Independent Practice 2: retry and answer share the same `<details>` block.  
-- Section 26, Mastery Activities 1 and 2: each retry prompt and answer are displayed together inside the initial-feedback disclosure.  
-- Section 33, Homework: retry choices and correct answer share the homework feedback block.
-
-**Problem:**  
-Opening the initial feedback reveals the retry task and its keyed answer at the same time. Text such as “Sau khi trả lời, kiểm tra” does not create an actual answer boundary in rendered Markdown. The learner can see or scan the answer before recording the retry.
-
-**Why This Is Major:**  
-Reason-based changed-layout retry is the lesson's primary mastery construct. The blueprint explicitly prohibits showing feedback/answer before the required attempt and requires two sample activities that demonstrate retry based on reason. Because both mastery retry answers are exposed, the lesson cannot distinguish transfer from copying, visual scanning, or answer awareness. The mastery evidence is therefore not trustworthy.
-
-**Affected Content:**  
-- Guided retry progression
-- Reduced-support practice
-- Both independent-practice blocks
-- Both mastery activities
-- Mastery interpretation and checklist claims about two retries
-- Homework transfer task
-- Any future state update that would treat retry success as evidence
-
-**Required Fix:**  
-Move every retry task outside the initial-feedback disclosure and place each retry answer in a separate, later `<details>` block. The operational sequence must be:
-
-1. initial attempt;
-2. reveal initial feedback and reason;
-3. close/leave initial feedback;
-4. display retry prompt with a response field and no keyed answer;
-5. learner records retry response;
-6. reveal a separate retry-answer block.
-
-At minimum, both mastery retries and all independent/homework retries must receive independent answer gates. Guided retries should use the same structure for consistency.
-
-**Validation After Fix:**  
-Render the Markdown and verify that no retry key is visible until the learner deliberately opens a second disclosure after the retry response. Re-solve every moved retry to ensure its keyed answer and explanation still match the revised prompt.
-
-### MAJOR-002 — Systematic unglossed meta-English exceeds the Zero → Pre-A1 language policy
-
-**Location:**  
-Recurring throughout Sections 1–34. High-impact examples include Sections 3, 5, 7–10, 13–14, 17–23, 26–32, and 34. Phrases include unglossed or only intermittently glossed uses of `attempt`, `answer`, `clue`, `reason`, `response`, `retry`, `position`, `layout`, `rule`, `mock`, `pattern`, `mastery`, `dimension`, `success`, `transfer`, `choices`, `learner`, and mixed strings such as “actual recurring evidence”, “same underlying reason”, and “old answer position”.
-
-**Problem:**  
-The lesson often uses English learning terminology as if the learner already understands it, even though the target learner may begin at zero and the curriculum explicitly says not to assess English-instruction reading. The blueprint requires Vietnamese-first labels for support concepts and specifically warns against unexplained meta-English.
-
-**Why This Is Major:**  
-This is not one isolated wording issue. It is a recurring dependency across objectives, explanations, instructions, answer keys, mastery interpretation, flashcards, and homework. A learner can understand the symbol tasks but still fail to follow what to do because the instructional metalanguage itself becomes a hidden vocabulary test. It also repeats the precise risk already identified in earlier course quality history: unnecessary English meta-language.
-
-**Affected Content:**  
-- Objective comprehension
-- Core explanations and comparisons
-- Exercise instructions and feedback
-- Error/misconception explanation
-- Conceptual question comprehension
-- Mastery and remediation instructions
-- Checklist, flashcards, homework, and Day-004 preview
-
-**Required Fix:**  
-Use Vietnamese-first phrasing consistently. Retain the five approved functional targets (`choose`, `match`, `correct`, `incorrect`, `try again`) and stable course labels only when they are immediately glossed. Recommended mappings include:
-
-- `response` → “câu trả lời của tôi”;
-- `answer` → “đáp án”;
-- `clue` → “dấu hiệu”;
-- `reason` → “lý do”;
-- `retry` → “lần làm lại”;
-- `position` → “vị trí”;
-- `layout` → “bố cục/thứ tự”;
-- `rule` → “quy tắc”;
-- `mock` → “tình huống giả định”;
-- `pattern` → “mẫu lỗi lặp lại” where relevant;
-- `mastery` → “mức độ làm chủ/mức hiểu”;
-- `dimension` → “khía cạnh đánh giá”.
-
-Do not mechanically remove all English; keep intentional target labels and English that has already been established. Remove incidental code-switching that adds no learning value.
-
-**Validation After Fix:**  
-Read every learner-facing instruction from the perspective of a Vietnamese learner with no English. Confirm that completion depends only on Vietnamese plus the five explicitly taught functional labels. Search the final file for the recurring meta-English list and verify each remaining occurrence is either a target, previously taught stable label, immediately glossed, or unnecessary to understand the task.
+No major issues found.
 
 ## 8. Minor Issues
 
-### MINOR-001 — Session plan omits Sections 33–34
-
-**Location:**  
-Opening “Cách chia bài thành nhiều phiên”, bullet “Phiên D — Kiểm tra mức hiểu (Phần 24–32)”.
-
-**Problem:**  
-The lesson continues through Section 34, but the session map ends at Section 32. Homework and the next-lesson preview are outside all declared sessions.
-
-**Why This Is Minor:**  
-The content remains usable and sections are correctly numbered, but navigation is slightly inconsistent in a long self-study lesson.
-
-**Affected Content:**  
-Opening session map only.
-
-**Required Fix:**  
-Change Session D to cover Sections 24–34, or explicitly add a short Session E for Sections 33–34.
-
-**Validation After Fix:**  
-Confirm every numbered section belongs to exactly one suggested session and stopping points remain logical.
+No minor issues found.
 
 ## 9. Suggestions
 
-### SUGGESTION-001 — Add accessible text alternatives for symbol-only tasks
+### SUGGESTION-001 — Add optional text alternatives for symbol-heavy tasks
 
-Several tasks depend on visual distinctions among `○`, `●`, `□`, `■`, `△`, `▲`, and `◆`. Consider adding a short note or text-equivalent label for learners using screen readers or fonts that render these symbols poorly. This is optional because the current symbols are not color-only and the target task is otherwise valid.
+Several neutral activities distinguish `○`, `●`, `□`, `■`, `△`, `▲`, and `◆`. A future maintenance pass could add brief text equivalents for screen-reader users or environments with poor symbol rendering. This is optional: the current tasks do not depend on color, the symbols render distinctly in normal Markdown, and the issue does not affect curriculum validity or publishing safety.
 
 ## 10. Curriculum & Dependency Audit
 
 ### Curriculum Position
 
-The lesson is correctly placed at Day-003 in Phase 0, module P00-M01. It executes the exact curriculum goal: distinguish response, answer, explanation, and retry.
+The lesson is the exact authorized Day-003 in Phase 0, module P00-M01. It does not advance to Day-004 content prematurely.
 
 ### Prerequisite Validation
 
-Day-001 attempt-before-feedback is retrieved rather than fully retaught. Day-002 transcript timing appears conditionally and accurately. No grammar or pronunciation prerequisite is introduced.
+Day-001's response-before-feedback rule and Day-002's conditional transcript timing are accurately retrieved. The lesson does not assume grammar, pronunciation, vocabulary production, or TOEIC knowledge.
 
 ### Hidden Prerequisites
 
-The neutral symbol/number tasks do not require English language knowledge. The primary hidden prerequisite is instructional meta-English, documented in MAJOR-002.
+No blocking hidden prerequisite found. Symbol counting, alternation, and matching are explained by Vietnamese instructions and do not require English knowledge.
 
 ### Future-Concept Leakage
 
-No full error taxonomy, mistake-log workflow, TOEIC strategy, grammar, pronunciation, or state-editing procedure is taught. Mistake versus misconception remains at the required awareness level.
+No full mistake-log workflow, error taxonomy, spaced-interval system, grammar lesson, pronunciation work, or TOEIC strategy leaks into Day-003.
 
 ### Previous-Lesson Consistency
 
-The lesson preserves Day-001's honest attempt rule and Day-002's response-before-transcript sequence. It correctly keeps technical audio failure separate from language performance.
+The lesson preserves honest attempt, access-versus-performance separation, and transcript-after-response discipline from accepted prior lessons.
 
 ### Next-Lesson Preparation
 
-The final section correctly names Day-004 and prepares the four inputs needed there without teaching review dates or log categories early.
+The lesson produces the conceptual inputs required for Day-004: original response, correct answer, clue/reason, and changed retry behavior.
 
 ## 11. Concept Accuracy Audit
 
 ### Correct Rules
 
-- Correct answer and explanation serve different functions.
-- Explanation supplies a clue/reason reusable in changed contexts.
-- Retry should follow understanding and vary irrelevant surface features.
-- A single mistake does not establish a misconception.
-- Mock errors are not learner evidence.
+- A correct answer states what is right; an explanation supplies a reusable clue/reason.
+- Retry follows feedback and should vary irrelevant surface features.
+- Correct initial responses still benefit from reason checking.
+- One mistake does not establish a recurring misconception.
+- Mock responses cannot become learner-state evidence.
 
 ### Problematic Rules
 
-No conceptually incorrect rule found.
+No problematic rule found.
 
 ### Oversimplifications
 
-No materially misleading simplification found. The introductory mistake/misconception distinction is appropriately bounded.
+No materially misleading shortcut found. The mistake/misconception distinction is appropriately introductory and bounded.
 
 ### Missing Exceptions
 
-No exception is required for this non-language learning-strategy lesson.
+No exception is required for this learning-strategy construct.
 
 ### Terminology
 
-Concept definitions are accurate, but learner-facing terminology implementation is not sufficiently Vietnamese-first; see MAJOR-002.
+Terms are introduced in Vietnamese-first form. Intentional English labels are preserved only where they support course operation and are glossed.
 
 ## 12. Learner Accessibility Audit
 
 ### Vietnamese Learner Accessibility
 
-Most explanations are clear Vietnamese and the mock content does not test English. However, pervasive English metalanguage creates a significant avoidable barrier.
+Core explanations, instructions, feedback, remediation, and mastery interpretation are in natural Vietnamese.
 
 ### Cognitive Load
 
-The core conceptual load is manageable: four roles, one cycle, and two comparisons. Repeated code-switching adds extraneous load rather than useful challenge.
+The lesson stays focused on four roles and one cycle. Variation deepens practice without expanding core knowledge.
 
 ### Unknown Vocabulary Burden
 
-The five intended labels are reasonable. The unintended support vocabulary is too broad and inconsistently glossed.
+The target set is limited to five functional labels. Stable prior labels such as `transcript`, `audio`, and `replay` are glossed when reused.
 
 ### Instruction Clarity
 
-Initial-attempt instructions are usually clear. Retry answer separation is operationally unclear because “answer after responding” appears in the same visible block.
+Initial attempt, feedback reveal, self-explanation, retry, and retry-answer reveal are now operationally distinct.
 
 ### Technical Jargon
 
-No grammar jargon appears, but instructional jargon such as `dimension`, `transfer`, `pattern`, and `mastery` should be translated or glossed.
+No unexplained grammar or assessment jargon blocks task completion.
 
 ## 13. Example Audit
 
 ### Naturalness
 
-Examples are deliberately non-linguistic and natural for process training.
+Neutral shape and number tasks are appropriate for process training and avoid testing English knowledge.
 
 ### Accuracy
 
-All shape, number, count, alternation, and matching examples were independently solved and found correct.
+All counts, matching relations, alternation rules, and changed-layout answers were independently solved and confirmed.
 
 ### Difficulty Progression
 
-The sequence progresses appropriately from obvious choice to matching, short response, changed layout, and reduced support.
+Examples move from obvious identification to changed position, matching by quantity, and short sequence completion.
 
 ### Example Analysis
 
-Key examples identify the learner/mock response, correct answer, exact clue, reason, and why alternatives fail.
+Important examples explicitly locate answer, clue, reason, and relevant alternative failure.
 
 ### Required Contrasts
 
-Correct answer versus explanation and mistake versus misconception are both explicitly and accurately taught.
+Both blueprint-mandated comparisons are complete and accurate.
 
 ## 14. Vocabulary Audit
 
 ### Target Vocabulary
 
-`choose`, `match`, `correct`, `incorrect`, and `try again` are spelled correctly and assigned the intended functional meanings.
+All five functional labels are correctly spelled and mapped to the intended action or status.
 
 ### Support Vocabulary
 
-`feedback`, `response`, `clue`, `reason`, and `retry` are conceptually useful, but their learner-facing treatment is inconsistent; see MAJOR-002.
+Support concepts are expressed primarily in Vietnamese; stable English forms are parenthetical and non-mandatory.
 
 ### Load
 
-Target load is suitable; incidental meta-English load is not.
+Appropriate for Zero → Pre-A1.
 
 ### Definitions
 
-Definitions are functional and level-appropriate where supplied.
+Functional definitions are concise and sufficient for task operation.
 
 ### Vietnamese Meanings
 
-The core mappings are accurate. `incorrect` → “chưa đúng” is an acceptable non-shaming functional gloss in this lesson.
+Mappings are accurate. `incorrect` → “chưa đúng” is a valid learner-safe gloss in this context.
 
 ### Collocations
 
@@ -339,11 +246,11 @@ Not applicable.
 
 ### Paraphrases
 
-`try again` ↔ “làm lại” is valid in the instructional context.
+`try again` ↔ “làm lại” preserves the intended instructional function.
 
 ### Confusions
 
-The lesson correctly distinguishes `correct`/`incorrect` as response labels rather than judgments about the learner.
+The lesson correctly states that `correct`/`incorrect` describe a response, not a person's value.
 
 ## 15. Pronunciation Audit
 
@@ -361,13 +268,13 @@ Not applicable.
 
 ### Practice Quality
 
-Not applicable. Pronunciation is correctly excluded by curriculum and blueprint.
+Not applicable. Pronunciation is correctly excluded.
 
 ## 16. Listening Audit
 
 ### Script Quality
 
-Not applicable; no script is generated.
+Not applicable; no listening script is generated.
 
 ### Difficulty
 
@@ -379,7 +286,7 @@ No scored Listening question exists.
 
 ### Transcript Policy
 
-The conditional sequence in Section 14 is correct: listen with transcript closed, record response, reveal feedback/transcript, then replay.
+The conditional sequence is correct: listen with transcript closed, record response, reveal feedback/transcript, then replay.
 
 ### Answer Evidence
 
@@ -393,11 +300,11 @@ Not applicable and correctly omitted.
 
 ### Passage Quality
 
-The short feedback block in Section 12 is appropriate to the planned micro-reading task.
+The Section 12 micro-reading input is a coherent feedback block rather than an inappropriate passage.
 
 ### Difficulty
 
-Very low and Vietnamese-led, suitable for Zero → Pre-A1.
+Very low, Vietnamese-led, and suitable for the phase.
 
 ### Question Validation
 
@@ -405,11 +312,11 @@ All five questions have direct, unique answers.
 
 ### Evidence
 
-The task explicitly supplies response C, answer A, clue “nhỏ hơn”, and the reason that 3 is smaller than 8 and 6.
+Response C, answer A, clue “nhỏ hơn”, reason, and next action are explicitly present.
 
 ### Strategy
 
-The learner locates labeled regions rather than performing advanced passage reading.
+The learner locates functional fields; no advanced reading strategy is assumed.
 
 ### Inference
 
@@ -427,7 +334,7 @@ Not applicable.
 
 ### Difficulty
 
-No TOEIC difficulty or timing pressure introduced.
+No TOEIC-format practice or timing is introduced.
 
 ### Authenticity
 
@@ -443,203 +350,200 @@ Not applicable.
 
 ### TOEIC-Style Labeling
 
-No generated content is misrepresented as official or TOEIC-style.
+No content is misrepresented as official or TOEIC-style.
 
 ## 19. Exercise Design Audit
 
 ### Recognition
 
-Label matching and feedback-region identification are sufficient and accurate.
+Functional-label matching and feedback-role identification are sufficient.
 
 ### Guided Practice
 
-Two guided formats provide appropriate clues and why-wrong explanation. Retry answer gating must be fixed.
+Two guided formats provide answer, clue, reason, and relevant why-wrong support after the initial response.
 
 ### Controlled Practice
 
-Sections 18A–18B vary sequence recognition and counting appropriately.
+Sequence and counting tasks vary the decision while preserving the feedback process.
 
 ### Independent Practice
 
-Initial attempts are independent, but retry attempts are contaminated by visible keys; see MAJOR-001.
+Both independent blocks require an initial response, explanation work, changed retry, and a distinct post-retry answer reveal.
 
 ### Mixed Practice
 
-Six items interleave prior and current process knowledge without future concepts.
+Six items interleave only previously taught and current process knowledge.
 
 ### Error Correction
 
-The three mock scenarios target copying, position memory, and incomplete feedback.
+The lesson repairs copying, position memory, and incomplete-feedback scenarios.
 
 ### Production
 
-Vietnamese self-explanation is appropriately constrained; no English production is required.
+Vietnamese self-explanation is constrained, accessible, and accepts semantic variation.
 
 ### Conceptual Questions
 
-Six prompts test understanding beyond selection, and model answers accept semantic variation.
+Questions test why answer copying fails, what explanation adds, transfer, pattern evidence, and correct-answer reasoning.
 
 ### Quiz
 
-Five varied items accurately sample sequence, role, retry, feedback quality, and evidence rules.
+Five valid questions cover sequence, role identification, changed-layout behavior, feedback quality, and evidence discipline.
 
 ### Challenge
 
-The optional incomplete-feedback rewrite is aligned and clearly non-core.
+Optional feedback reconstruction is aligned, modelled, and excluded from core mastery.
 
 ## 20. Question & Answer Validation
 
 - **Total scored questions reviewed:** 64 objectively scorable response units.
 - **Additional open-ended content reviewed:** 6 conceptual/self-explanation prompts and 1 optional design challenge.
-- **Invalid questions:** 0 by answer/content logic; retry attempt conditions are operationally invalid under MAJOR-001.
+- **Invalid questions:** 0.
 - **Ambiguous questions:** 0.
 - **Wrong answer keys:** 0.
-- **Incomplete explanations:** 0 for the keyed core blocks.
+- **Incomplete explanations:** 0.
 
-Counting treats each independently keyed matching pair or blank as one response unit. All review, diagnostic, label matching, feedback-reading, guided, controlled, independent, mixed, quiz, mastery, and homework objective responses were solved against their keys.
+Each independently keyed matching pair or response blank is counted as one response unit. All review, diagnostic, label matching, feedback-reading, guided, controlled, independent, mixed, quiz, mastery, and homework objective responses were independently re-solved.
 
-Problematic locations:
+Post-fix reveal validation confirmed nine distinct retry-answer disclosures:
 
-- Section 15 retry answer exposure.
-- Section 16 retry answer exposure.
-- Section 18A and 18B retry answer exposure.
-- Section 19 independent retry answer exposure.
-- Section 20 independent retry answer exposure.
-- Section 26 Mastery Retry 1 and Retry 2 answer exposure.
-- Section 33 homework retry answer exposure.
+1. Guided `choose` retry;
+2. Guided `match` retry;
+3. Reduced-support sequence retry;
+4. Reduced-support counting retry;
+5. Independent matching retry;
+6. Independent short-response retry;
+7. Mastery Retry 1;
+8. Mastery Retry 2;
+9. Homework retry.
+
+No retry key is displayed before its corresponding retry response field.
 
 ## 21. Answer Explanation Audit
 
 ### Correctness
 
-All explanations match their tasks and keyed answers.
+All keys and explanations agree with their prompts.
 
 ### Depth
 
-Explanations usually identify the answer, observable clue, reasoning path, and relevant alternative failure.
+Major exercise blocks provide answer, clue, reason, and a reusable decision path.
 
 ### Why-Wrong Coverage
 
-Coverage is proportionate. Key multiple-choice and contrast examples explain why alternatives fail.
+Wrong alternatives are explained where they represent a useful confusion, especially count and alternation tasks.
 
 ### Evidence
 
-Number, count, shape, and sequence claims are directly verifiable from the displayed task.
+Every numerical, visual, and sequence claim is directly verifiable from the displayed input.
 
 ### Common-Mistake Guidance
 
-The lesson consistently warns against answer copying and position memory. The reveal implementation unfortunately contradicts that guidance; see MAJOR-001.
+Copying, position memory, incomplete feedback, and premature inference of learner patterns are addressed explicitly.
 
 ## 22. Retrieval & Spaced Repetition Audit
 
 ### Previous Knowledge Retrieval
 
-Day-001 attempt-before-feedback and `choose` are retrieved. Day-002 transcript order is retrieved conditionally.
+Day-001 attempt order and Day-002 conditional transcript order are actively retrieved.
 
 ### Current Lesson Review Targets
 
-The cycle, role distinctions, functional labels, and changed-context transfer are correctly selected.
+Role distinction, functional labels, explanation use, and changed-context retry are correctly prioritized.
 
 ### Interleaving
 
-Mixed practice combines only previously introduced process skills and current concepts.
+Mixed practice uses only established process labels and current knowledge.
 
 ### Future Review Guidance
 
-Spacing targets for Day-004, Day-005, Day-006, Day-007+, and about one week are aligned with blueprint/state.
+Day-004, Day-005, Day-006, Day-007+, and delayed-transfer targets match the blueprint/state queue.
 
 ## 23. Mastery & Remediation Audit
 
 ### Objective Coverage
 
-All major objectives have corresponding teaching and planned evidence.
+Every core objective is taught, practiced, and represented in the mastery section.
 
 ### Mastery Evidence
 
-The two sample activities cover different response formats and changed surface forms, but their retry evidence is invalid until answers are separately gated.
+Two different response formats require clue/reason use and changed-surface retry. Answers are separately gated, so evidence is no longer contaminated.
 
 ### Self-Assessment
 
-The dimension table appropriately separates process, answer, clue, reason, transfer, and comparison.
+The learner rates process, answer recognition, clue, reason, transfer, and comparison separately.
 
 ### Remediation Guidance
 
-Guidance is specific and uses fresh equivalent tasks rather than identical repetition.
+Specific branches address early reveal, answer/explanation confusion, missing clue, weak reason, position memory, and technical audio failure.
 
 ### Mistake Log
 
-The lesson correctly avoids teaching the full Day-004 log. Section 28 is a limited practice record and explicitly prohibits fabricated data.
+The lesson correctly uses a limited practice record and defers the actual mistake-log workflow to Day-004.
 
 ### Learner Checklist
 
-Items correspond to meaningful lesson abilities. Claims about completing two retries should only be trusted after MAJOR-001 is fixed.
+Checklist items correspond to taught and assessable abilities; no automatic mastery is claimed.
 
 ## 24. Structural & Usability Audit
 
 ### Markdown
 
-Heading hierarchy, tables, fences, and 13 `<details>` pairs are structurally balanced.
+Heading hierarchy, tables, 22 `<details>` pairs, 24 code fences, and checkboxes are valid and balanced.
 
 ### Navigation
 
-Section numbering is complete, but the session plan omits Sections 33–34; see MINOR-001.
+Sections 1–34 are complete, and all are covered by the four-session map.
 
 ### Answer Separation
 
-Initial attempts are usually separated correctly. Retry answers are not separately gated; see MAJOR-001.
+Initial answers, mixed practice, quiz, mastery attempts, and all nine retries are properly separated.
 
 ### Transcript Separation
 
-No transcript is supplied; conditional policy is correct.
+No transcript asset is presented; conditional reveal guidance is correct.
 
 ### Session Splits
 
-Natural stopping points exist. Opening ranges need the minor correction above.
+Session A–D boundaries are usable and align with stopping points.
 
 ### Audio References
 
-The lesson does not claim a nonexistent asset and explicitly states no new TTS script is required.
+No nonexistent audio path or playback control is claimed.
 
 ## 25. Cross-Impact Fix Map
 
 | Root Issue | Sections / Questions Affected | Required Revalidation |
 |---|---|---|
-| MAJOR-001 — Retry answer exposure | Sections 15, 16, 18A, 18B, 19, 20, Mastery Activities 1–2, Homework; mastery rubric/checklist | Render disclosure flow; confirm each retry key is hidden; re-solve all moved retries; ensure mastery claims use uncontaminated attempts. |
-| MAJOR-002 — Unglossed meta-English | Objectives; core model; examples; instructions; feedback; comparison; diagnostic; conceptual questions; mastery; remediation; checklist; flashcards; homework; preview | Zero-English learner read-through; terminology search; preserve only approved/glossed English labels. |
-| MINOR-001 — Session range | Opening session map | Confirm Sections 1–34 are fully assigned and stopping points remain coherent. |
+| No unresolved required issue | None | Normal regression checks only; completed in this review. |
 
 ## 26. Required Fix Checklist
 
-- [ ] MAJOR-001 — Separate every retry prompt from its keyed answer, especially both mastery retries and all independent/homework retries.
-- [ ] MAJOR-002 — Replace or immediately gloss recurring incidental English meta-language using Vietnamese-first learner-facing wording.
-- [ ] MINOR-001 — Extend the session map to include Sections 33–34.
+No CRITICAL, MAJOR, or MINOR fixes required.
 
 ## 27. Post-Fix Validation Requirements
 
-The Fixer/reviewer must re-check:
+No further required fix cycle is needed. Before any future maintenance release, preserve:
 
-1. rendered Markdown hides every retry answer until a distinct post-retry action;
-2. both mastery activities produce uncontaminated reason-based transfer evidence;
-3. all moved retry answer keys still match their prompts;
-4. no initial answer, clue, or explanation becomes accidentally exposed early during restructuring;
-5. every learner-facing instruction is understandable with Vietnamese plus explicitly taught labels;
-6. remaining English meta-terms are targets, previously established labels, or immediately glossed;
-7. the five target labels remain intact and are not accidentally translated away;
-8. question numbering, `<details>` balance, internal section references, and session ranges remain valid;
-9. no future Day-004 workflow or learner-state claim is introduced during fixes;
-10. all 64 objective response units retain a single defensible key.
+1. separate retry-answer disclosures;
+2. Vietnamese-first learner instructions;
+3. the five-label vocabulary boundary;
+4. the distinction between mock content and learner evidence;
+5. conditional transcript timing and audio-access honesty;
+6. the exact Day-004 connection;
+7. all 64 currently valid objective response keys.
 
 ## 28. Final Verdict
 
-**Status:** FAIL
+**Status:** PASS
 
 ### Reason
 
-The lesson's concepts and answer keys are accurate, but the main changed-layout retry construct is not operationally protected from answer exposure, including in both mastery activities. Systematic unglossed meta-English also violates the required Zero → Pre-A1 Vietnamese-first language policy. These are substantial publishing blockers.
+The lesson now satisfies the blueprint, course language policy, answer-separation rules, question-quality requirements, mastery design, and content boundaries. No correctness or pedagogy failure remains.
 
 ### Publish Decision
 
-`Not safe to publish until CRITICAL/MAJOR issues are corrected and revalidated.`
+`Safe to publish as-is.`
 
 ## 29. Reviewer Final Audit
 
