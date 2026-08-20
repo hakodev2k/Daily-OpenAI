@@ -23,4 +23,5 @@ English grammar remains not introduced in accepted course content. Future sequen
 ## Notes
 
 - Day-001 course-operation concepts belong in `state/SKILL_STATE.md`, not grammar state.
+- The unaccepted Day-002 draft intentionally teaches no grammar and does not change this state.
 - Do not infer grammar knowledge from lesson generation or from the learner's native-language reading ability.
