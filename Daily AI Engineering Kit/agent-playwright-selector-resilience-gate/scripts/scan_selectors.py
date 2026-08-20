@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, json, re, sys
+import argparse, fnmatch, json, re, sys
 from pathlib import Path
 try:
     import yaml
@@ -12,11 +12,13 @@ def main():
     a=p.parse_args(); root=Path(a.root)
     try: policy=yaml.safe_load(Path(a.policy).read_text(encoding='utf-8')) or {}
     except Exception as e: print(json.dumps({'status':'error','error':str(e)})); return 3
-    findings=[]; files=[]
-    seen=set()
+    findings=[]; files=[]; seen=set(); excludes=policy.get('exclude_globs',[])
     for glob in policy.get('scan_globs',[]):
         for f in root.glob(glob):
-            if f.is_file() and f not in seen: seen.add(f); files.append(f)
+            if not f.is_file() or f in seen: continue
+            rel=f.relative_to(root).as_posix()
+            if any(fnmatch.fnmatch(rel,pat) for pat in excludes): continue
+            seen.add(f); files.append(f)
     for f in files:
         text=f.read_text(encoding='utf-8',errors='replace'); warnings=0
         for line_no,line in enumerate(text.splitlines(),1):
