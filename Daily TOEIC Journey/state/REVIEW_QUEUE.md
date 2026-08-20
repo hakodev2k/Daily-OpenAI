@@ -22,6 +22,7 @@ None. No learner review or curriculum retrieval event has been completed yet.
 ## Notes
 
 - Day-002 should embed the four High-priority immediate targets without fully reteaching Day-001.
+- The corrected Day-002 draft contains these retrieval opportunities, but the latest authoritative review is still `FAIL`; keep the queue entries pending until Day-002 passes independent re-review.
 - Review windows use lesson sequence, not calendar dates.
 - If future learner evidence shows access or navigation difficulty, learner remediation must be recorded separately and only from that evidence.
 - Merge future entries with these targets when the knowledge/skill and source are the same.
