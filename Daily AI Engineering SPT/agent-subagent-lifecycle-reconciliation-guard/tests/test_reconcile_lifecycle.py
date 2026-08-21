@@ -2,8 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
-import json
-import tempfile
+import sys
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
@@ -13,8 +12,9 @@ SCRIPT = ROOT / "scripts" / "reconcile_lifecycle.py"
 POLICY = ROOT / "config" / "lifecycle-policy.json"
 
 spec = importlib.util.spec_from_file_location("reconcile_lifecycle", SCRIPT)
-module = importlib.util.module_from_spec(spec)
 assert spec and spec.loader
+module = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = module
 spec.loader.exec_module(module)
 
 
