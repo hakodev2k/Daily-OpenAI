@@ -46,7 +46,7 @@ def find_run_blocks(lines: list[str]) -> list[tuple[int, int, str]]:
     blocks: list[tuple[int, int, str]] = []
     i = 0
     while i < len(lines):
-        m = re.match(r"^(\s*)run\s*:\s*(.*)$", lines[i])
+        m = re.match(r"^(\s*)(?:-\s*)?run\s*:\s*(.*)$", lines[i])
         if not m:
             i += 1
             continue
