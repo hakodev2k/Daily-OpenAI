@@ -7,6 +7,7 @@ SQL_START = re.compile(r'\b(SELECT|INSERT|UPDATE|DELETE|WITH)\b', re.I)
 NUMBER = re.compile(r'(?<![\w])[-+]?\d+(?:\.\d+)?(?![\w])')
 STRING = re.compile(r"N?'(?:''|[^'])*'")
 PARAM_VALUE = re.compile(r"(@[A-Za-z0-9_]+)='(?:''|[^'])*'|(@[A-Za-z0-9_]+)=([^,\)]+)")
+PARAM_BLOCK = re.compile(r'Parameters=\[(.*?)\]', re.I)
 
 def load_policy(path):
     text = Path(path).read_text(encoding='utf-8')
@@ -28,7 +29,7 @@ def load_policy(path):
 def normalize_sql(sql, policy):
     s=' '.join(sql.split())
     if policy.get('normalize_literals', True):
-        s=STRING.sub("'?" , s)
+        s=STRING.sub("'?", s)
         s=NUMBER.sub('?', s)
     if policy.get('normalize_parameter_values', True):
         s=PARAM_VALUE.sub(lambda m: (m.group(1) or m.group(2))+'=?', s)
@@ -44,12 +45,16 @@ def parse_log(text, policy):
         if m:
             request=m.groupdict().get('request_id') or m.group(1); i+=1; continue
         if marker in line:
-            params=''; sql=[]; j=i+1
+            param_match=PARAM_BLOCK.search(line)
+            params=param_match.group(1).strip() if param_match else ''
+            sql=[]; j=i+1
             while j < len(lines):
                 cur=lines[j].strip()
                 if req_re.match(cur) or marker in cur: break
-                if cur.startswith(policy.get('parameter_line_prefix','Parameters=')): params=cur
-                elif SQL_START.search(cur) or sql: sql.append(cur)
+                if cur.startswith(policy.get('parameter_line_prefix','Parameters=')):
+                    params=cur
+                elif SQL_START.search(cur) or sql:
+                    sql.append(cur)
                 j+=1
             statement=' '.join(sql).strip()
             if statement: rows.append({'request_id':request,'sql':statement,'parameters':params})
