@@ -1,11 +1,11 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TEST-001",
-    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-TEST-001-green-test-wrong-fallback",
+    "unitId": "UNIT-CACHE-001",
+    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-CACHE-001-shared-mutable-cache-entry",
     "status": "READY",
-    "createdAt": "2026-09-08T00:08:38+07:00"
+    "createdAt": "2026-09-08T01:08:58+07:00"
   },
-  "generation": {"totalRunSlotsAttempted": 7, "totalGenerated": 7, "totalFailed": 0},
+  "generation": {"totalRunSlotsAttempted": 8, "totalGenerated": 8, "totalFailed": 0},
   "learning": {"totalAttempted": 0, "totalCompleted": 0, "totalMastered": 0},
   "difficultyProgram": {"startedAt": "2026-09-07", "elapsedDays": 1, "currentPhase": "foundation-depth", "currentBand": ["D1", "D2"]}
 }
