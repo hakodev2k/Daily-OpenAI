@@ -1104,7 +1104,7 @@ Not every unit needs every file, but executable units must contain enough materi
 
 Because this job runs hourly, **do not generate boilerplate files that add no learning value**.
 
-Prefer a compact L1 unit such as:
+Prefer a compact L1 executable bug/failure unit such as:
 
 ```text
 UNIT-*/
@@ -1113,8 +1113,11 @@ UNIT-*/
 ├── starter/
 ├── solution/
 ├── run.ps1
+├── reproduce.ps1
 └── verify.ps1
 ```
+
+For design/architecture labs with no executable failure, `reproduce.ps1` may be omitted when genuinely inapplicable.
 
 Only add:
 
@@ -1550,6 +1553,30 @@ The learner must be able to verify both:
 - correctness
 - the specific engineering property being improved
 
+For executable bug, failure or investigation labs, **reproduction and verification are different phases and must not be conflated**.
+
+Use this contract:
+
+```text
+reproduce.ps1
+→ runs the original starter state
+→ proves the intended failure/symptom exists
+
+learner edits starter/ or the designated workspace
+→ implements their own fix
+
+verify.ps1
+→ runs the learner-editable code path
+→ proves the failure is resolved
+→ proves required behavior did not regress
+```
+
+The reference solution is for comparison after the learner's attempt.
+
+**Do NOT make `verify.ps1` validate only the reference solution.**
+
+The reference solution may have its own optional self-check, but it must not replace validation of the learner's work.
+
 Verification may include:
 
 - unit tests
@@ -1561,11 +1588,12 @@ Verification may include:
 - request latency comparison
 - failure-path tests
 
-Provide:
+For executable bug/failure/investigation labs, provide both:
 
-`scripts/verify.ps1`
+- `reproduce.ps1`
+- `verify.ps1`
 
-when reasonable.
+unless the lab format genuinely makes one inapplicable.
 
 A fix is not complete merely because the application starts.
 
