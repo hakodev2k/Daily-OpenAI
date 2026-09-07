@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-DOTNET-001",
+  "runSlot": "2026-09-07-17",
+  "title": "Cancellation Đã Xảy Ra Nhưng Downstream Work Vẫn Chạy",
+  "domain": "dotnet-async",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-07T17:04:34+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["cancellation-token", "async-await", "cooperative-cancellation", "task-delay"],
+  "prerequisites": ["task-basics", "async-await-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "customer-profile-api",
+    "scenarioType": "abandoned-request-keeps-working",
+    "primaryRootCause": "cancellation-token-not-propagated",
+    "failureMode": "orphaned-downstream-work",
+    "solutionPattern": "propagate-cancellation-through-call-chain",
+    "labFormat": "async-concurrency-lab"
+  }
+}

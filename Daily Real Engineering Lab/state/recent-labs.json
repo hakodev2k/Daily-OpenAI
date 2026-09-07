@@ -18,21 +18,30 @@
       "solutionPattern": "materialize-once-at-side-effect-boundary",
       "labFormat": "runtime-failure",
       "createdAt": "2026-09-07T16:05:28+07:00"
+    },
+    {
+      "runSlot": "2026-09-07-17",
+      "unitId": "UNIT-DOTNET-001",
+      "path": "Daily Real Engineering Lab/units/2026/09/07/UNIT-DOTNET-001-cancellation-token-propagation",
+      "title": "Cancellation Đã Xảy Ra Nhưng Downstream Work Vẫn Chạy",
+      "domain": "dotnet-async",
+      "primarySkill": "cancellation-token-propagation",
+      "maturityLevel": "L1",
+      "difficulty": "D2",
+      "businessContext": "customer-profile-api",
+      "scenarioType": "abandoned-request-keeps-working",
+      "primaryRootCause": "cancellation-token-not-propagated",
+      "failureMode": "orphaned-downstream-work",
+      "solutionPattern": "propagate-cancellation-through-call-chain",
+      "labFormat": "async-concurrency-lab",
+      "createdAt": "2026-09-07T17:04:34+07:00"
     }
   ],
   "rolling24": {
-    "total": 1,
-    "byDomain": {
-      "csharp-linq": 1
-    },
-    "byDifficulty": {
-      "D2": 1
-    },
-    "byMaturity": {
-      "L1": 1
-    },
-    "byFormat": {
-      "runtime-failure": 1
-    }
+    "total": 2,
+    "byDomain": {"csharp-linq": 1, "dotnet-async": 1},
+    "byDifficulty": {"D2": 2},
+    "byMaturity": {"L1": 2},
+    "byFormat": {"runtime-failure": 1, "async-concurrency-lab": 1}
   }
 }
