@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-EF-002",
+  "runSlot": "2026-09-08-04",
+  "title": "Trang navigation nhanh ở dev nhưng chậm dần theo số menu",
+  "domain": "ef-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-08T04:06:25+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["ef-core-query-shaping", "database-roundtrips", "projection", "performance-investigation"],
+  "prerequisites": ["basic-ef-core-querying", "linq"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "cms-storefront-navigation",
+    "scenarioType": "query-count-scales-with-result-size",
+    "primaryRootCause": "query-inside-navigation-loop",
+    "failureMode": "database-roundtrip-amplification",
+    "solutionPattern": "set-based-projection",
+    "labFormat": "ef-core-performance-investigation"
+  }
+}
