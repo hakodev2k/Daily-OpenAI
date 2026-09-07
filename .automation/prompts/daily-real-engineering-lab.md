@@ -4,7 +4,7 @@ Generate and maintain the user's **Real Engineering Lab** learning program for t
 
 Do not create, modify, explain, or suggest an automation or schedule.
 Do not turn this workflow into an interview-question generator.
-Every scheduled run MUST generate and save exactly one new lab. Never skip lab generation because previous labs are unfinished.
+Every new hourly RUN_SLOT MUST attempt to generate and save exactly one **validated** new lab. Previous unfinished labs never block generation, but Quality Gate failures must never be ignored merely to satisfy the schedule.
 Do not ask follow-up questions before executing the run.
 
 Use the actual current Vietnam time:
@@ -348,6 +348,15 @@ When enough history exists, `recent-labs.json` should normally retain only the m
 
 The long-term history remains in `generation-ledger.jsonl` and individual unit metadata.
 
+When practical, `recent-labs.json` should also maintain a compact rolling profile for approximately the most recent 24 labs, such as counts by:
+
+- domain
+- difficulty
+- maturity
+- format
+
+Use this profile to detect overrepresented domains or difficulty bands without rescanning the repository.
+
 If the directory or state files do not exist, initialize them before generating the first lab.
 
 Do not infer completion from:
@@ -395,11 +404,41 @@ A later hourly slot must still generate a new lab.
 
 ---
 
-# 8. Always Generate a New Lab
+# 8. Always Attempt One Validated New Lab
 
-Every run MUST generate exactly **one new Real Engineering Lab**.
+Every new `RUN_SLOT` MUST attempt to produce exactly **one validated new Real Engineering Lab**.
 
-This rule is unconditional with respect to previous completion state.
+Never publish a broken, inconsistent or duplicate lab merely to satisfy the hourly schedule.
+
+Use at most **3 candidate-generation attempts per RUN_SLOT**:
+
+```text
+Candidate #1
+→ Duplication Gate
+→ Quality Gate
+→ FAIL: regenerate
+
+Candidate #2
+→ Duplication Gate
+→ Quality Gate
+→ FAIL: regenerate
+
+Candidate #3
+→ Duplication Gate
+→ Quality Gate
+→ FAIL: record GENERATION_FAILED and stop
+```
+
+If all 3 candidates fail:
+
+- publish no lab for that attempt
+- append a `GENERATION_FAILED` event to `generation-ledger.jsonl`
+- include `runSlot`, `status`, `attempts`, `reason`, and timestamp
+- allow a later retry in the same RUN_SLOT because no successful lab exists
+
+A RUN_SLOT becomes idempotently complete only after a lab has been successfully saved.
+
+The attempt requirement is unconditional with respect to previous completion state.
 
 Previous labs may be:
 
@@ -496,33 +535,24 @@ architecture decision involving CPU-bound vs I/O-bound workloads,
 bounded concurrency and service capacity
 ```
 
-## Diversity window
+## Diversity policy
 
-Use recent history to create spacing between similar labs.
+Use **Section 11 — High-Frequency Diversity Windows** as the single source of truth for anti-repetition spacing.
 
-As a default:
+Do not define or apply any competing diversity-window values elsewhere in this prompt.
 
-- avoid the same primary root cause within roughly the most recent 10 generated labs
-- avoid the same lab format within the most recent 3 labs when reasonable
-- avoid the same business scenario/context within the most recent 5 labs
-- avoid the same primary skill in back-to-back runs unless deliberate depth progression strongly justifies it
+If a deliberate progression needs to violate one of those windows, the unit metadata must include:
 
-These are diversity defaults, not rigid curriculum limits.
+```json
+{
+  "diversityOverride": {
+    "enabled": true,
+    "reason": "Explain the concrete learning progression that justifies the exception."
+  }
+}
+```
 
-If revisiting a skill, explicitly increase one or more of:
-
-- mechanism depth
-- ambiguity
-- evidence complexity
-- number of plausible hypotheses
-- production realism
-- scale
-- concurrency
-- failure interactions
-- security constraints
-- operational constraints
-- architecture trade-offs
-- business constraints
+An override is valid only when the new lab materially changes depth, ambiguity, evidence, system scope, production realism or architecture trade-offs.
 
 The next lab must add learning value beyond previous labs.
 
@@ -648,6 +678,21 @@ When revisiting a skill, increase one or more of:
 ---
 
 # 12. Lab Maturity Levels
+
+**Lab Maturity (L1–L6) and Difficulty (D1–D7) are independent dimensions.**
+
+- `L1–L6` describes **what kind of engineering activity** the learner performs.
+- `D1–D7` describes **how difficult that activity is**.
+
+Never infer Difficulty from Maturity and never infer Maturity from Difficulty.
+
+Valid examples include:
+
+```text
+L3 Production Incident + D3
+L2 Investigation + D5
+L5 Design Decision + D4
+```
 
 Use multiple lab formats. Do not make every lab a single obvious bug.
 
@@ -822,6 +867,8 @@ This is valid.
 The learner may return to easier historical labs while the generator continues building harder future material.
 
 ## Difficulty Scale
+
+This D-scale is separate from the L1–L6 Lab Maturity scale.
 
 Use a practical 7-band scale for generated difficulty:
 
@@ -1940,7 +1987,11 @@ Possible values:
 - `partial-execution`
 - `static-review`
 
-If the lab is obviously incomplete or inconsistent, do not publish it.
+If the lab is incomplete, inconsistent, materially repetitive or fails required validation, reject that candidate.
+
+Try the next candidate until the maximum of 3 candidate attempts for the RUN_SLOT is reached.
+
+Never lower the Quality Gate to force hourly publication.
 
 ---
 
@@ -1956,7 +2007,7 @@ Example shape:
   "runSlot": "2026-09-07-14",
   "title": "ASP.NET Core ThreadPool Starvation",
   "domain": "dotnet-runtime",
-  "level": "L1",
+  "maturityLevel": "L1",
   "status": "READY",
   "createdAt": "2026-09-07T14:30:00+07:00",
   "estimatedMinutes": 35,
@@ -2001,7 +2052,7 @@ Preferred shape:
 {
   "latestGeneratedUnit": {
     "unitId": "UNIT-DOTNET-003",
-    "path": "Daily Real Engineering Lab/units/UNIT-DOTNET-003-aspnet-core-threadpool-starvation",
+    "path": "Daily Real Engineering Lab/units/2026/09/07/UNIT-DOTNET-003-aspnet-core-threadpool-starvation",
     "status": "READY",
     "createdAt": "2026-09-07T14:30:00+07:00"
   },
@@ -2026,9 +2077,29 @@ Persist difficulty-program information in `state/learning-state.json` when usefu
 }
 ```
 
-Use actual program start state when present.
+Initialize `difficultyProgram.startedAt` exactly once: on the **first successfully generated lab**, using the actual Vietnam calendar date.
 
-Do not reset the difficulty program because the learner was inactive.
+After initialization, `startedAt` is **immutable**.
+
+Never reset, rewrite or recalculate it because of:
+
+- learner inactivity
+- job downtime
+- latest lab date
+- latest attempt date
+- Git commit date
+- scheduled-job restarts
+
+Calculate:
+
+```text
+elapsedDays =
+current Vietnam calendar date
+-
+difficultyProgram.startedAt
+```
+
+If the job is inactive for several days, calendar progression still advances naturally when it resumes.
 
 Preserve older unit statuses and learning evidence.
 
@@ -2281,55 +2352,53 @@ Get actual Vietnam time
       ↓
 Calculate RUN_SLOT
       ↓
-RUN_SLOT already generated?
+Successful lab already exists for RUN_SLOT?
       ├─ YES → return existing lab path
       └─ NO
            ↓
-Read current state
+Read current state + recent-labs.json
            ↓
-Read recent-labs.json
+Initialize difficultyProgram.startedAt
+only if this will become the first successful lab
            ↓
-Build anti-repetition profile:
-- recent domains
-- recent formats
-- recent scenarios
-- recent root causes
-- recent failure modes
-- recent solution patterns
-      ↓
-Read skill matrix / gaps / progression
-      ↓
-Calculate calendar-driven library difficulty band
-      ↓
-Choose exactly ONE new lab inside or near that band
-      ↓
-Check:
-Is it materially different from previous labs?
-      ├─ NO → reject candidate and choose another
-      └─ YES
+Calculate elapsedDays from immutable startedAt
            ↓
-Can it deepen/reinforce an old skill without repeating the same lab?
-      ↓
-Set appropriate maturity level
-      ↓
-Generate complete reproducible lab
-      ↓
-Run quality gate
-      ↓
-Run explicit duplication gate
-      ↓
-Save to GitHub
-      ↓
-Append generation-ledger.jsonl
-      ↓
-Update recent-labs.json
-      ↓
-Update daily catalog
-      ↓
-Update state
+Calculate today's Library Difficulty band
+           ↓
+Read rolling domain / difficulty / maturity profile
+           ↓
+Apply:
+curriculum + diversity + calendar progression
+           ↓
+Use User Mastery / Knowledge Gaps only as secondary signals
+           ↓
+Generate Candidate #1
+           ↓
+Duplication Gate + Quality Gate
+      ├─ PASS → save
+      └─ FAIL → Candidate #2
+                     ↓
+                gates again
+                ├─ PASS → save
+                └─ FAIL → Candidate #3
+                               ↓
+                          gates again
+                          ├─ PASS → save
+                          └─ FAIL
+                               ↓
+                    record GENERATION_FAILED
+                    and publish no broken lab
+           ↓
+On successful save:
+append generation-ledger.jsonl
+update recent-labs.json
+update daily catalog
+update state
 ```
 
-Every run must end with one newly generated lab unless a genuine tool/write failure prevents saving.
+Every new RUN_SLOT must attempt to produce one validated lab.
+
+A successful lab is preferred, but correctness and quality take priority over forced publication.
 
 An unfinished previous lab is never a reason to skip generation.
 
@@ -2337,19 +2406,35 @@ An unfinished previous lab is never a reason to skip generation.
 
 # 54. Lab Selection and Anti-Repetition Algorithm
 
-When choosing the next unit, consider:
+When choosing the next unit, apply this priority order:
 
-0. the current calendar-driven Library Difficulty band
+1. **Calendar-driven Library Difficulty band**
+2. **Anti-repetition / novelty constraints**
+3. **Curriculum coverage balance**
+4. **Long-term Middle → Senior → Technical Lead → Solution Architect progression**
+5. **Domain rotation**
+6. **Underrepresented skills / technologies**
+7. **Interleaving and regression value**
+8. **User Mastery as a secondary personalization signal**
+9. **Knowledge gaps as a secondary personalization signal**
 
-1. critical or important knowledge gaps
-2. weak core skills
-3. dependencies for advanced topics
-4. skills that can now be revisited at greater depth
-5. curriculum breadth
-6. underrepresented technologies from the candidate profile
-7. Senior-level engineering progression
-8. Technical / Solution architecture progression
-9. diversity versus recent generated labs
+Library generation must not become trapped around a weak skill merely because the learner has not yet completed enough labs.
+
+User Mastery and Knowledge Gaps MAY influence the scenario, prerequisites or depth inside a selected domain, but MUST NOT dominate hourly library generation.
+
+The primary driver of what gets generated is:
+
+```text
+curriculum + diversity + calendar progression
+```
+
+The primary driver of how hard it is is:
+
+```text
+calendar-driven Library Difficulty
+```
+
+User Mastery remains evidence-driven and separate.
 
 Before committing to a candidate lab, compare it against recent unit history.
 
@@ -2428,13 +2513,15 @@ L1 deterministic failure
 
 # 55. Final Chat Response
 
-Every successful run creates a new lab.
-
-If a new lab is successfully created, return only:
+For a newly created validated lab, return only:
 
 `Saved to GitHub: {UNIT_PATH}`
 
-If creation or save fails, return only:
+For an idempotent retry where the RUN_SLOT already has a successful lab, return only:
+
+`Already generated for this RUN_SLOT: {UNIT_PATH}`
+
+If all candidate attempts fail or saving fails, return only:
 
 `Error: [short reason]`
 
@@ -2469,6 +2556,19 @@ The long-term goal is not merely to accumulate lab files.
 However, the scheduled job is intentionally designed to build a **large, progressively harder engineering-lab library over time**.
 
 The library should mature from foundation labs toward Senior, Technical Lead and Solution Architecture scenarios according to calendar progression, while User Mastery remains evidence-driven and independent.
+
+Remember the final separation:
+
+```text
+WHAT gets generated
+= curriculum + diversity + calendar progression
+
+HOW HARD it is
+= calendar-driven Library Difficulty
+
+HOW GOOD the learner actually is
+= evidence-driven User Mastery
+```
 
 The ultimate goal is to combine:
 
