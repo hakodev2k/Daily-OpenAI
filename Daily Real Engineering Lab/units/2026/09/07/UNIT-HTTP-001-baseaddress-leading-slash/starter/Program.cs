@@ -15,6 +15,20 @@ var response = await client.GetAsync(requestTarget);
 Console.WriteLine($"FinalUri={recorder.LastRequestUri}");
 Console.WriteLine($"Status={(int)response.StatusCode}");
 
+if (args.Contains("--verify", StringComparer.OrdinalIgnoreCase))
+{
+    var expected = new Uri("https://fulfillment.local/gateway/v1/orders/42");
+    if (recorder.LastRequestUri != expected || response.StatusCode != HttpStatusCode.OK)
+    {
+        Environment.ExitCode = 1;
+        Console.WriteLine("VERIFY=FAIL");
+    }
+    else
+    {
+        Console.WriteLine("VERIFY=PASS");
+    }
+}
+
 sealed class RecordingHandler : HttpMessageHandler
 {
     public Uri? LastRequestUri { get; private set; }
