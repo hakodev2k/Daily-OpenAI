@@ -35,13 +35,30 @@
       "solutionPattern": "propagate-cancellation-through-call-chain",
       "labFormat": "async-concurrency-lab",
       "createdAt": "2026-09-07T17:04:34+07:00"
+    },
+    {
+      "runSlot": "2026-09-07-19",
+      "unitId": "UNIT-ASPNET-001",
+      "path": "Daily Real Engineering Lab/units/2026/09/07/UNIT-ASPNET-001-authentication-pipeline-order",
+      "title": "Request Có Identity Header Nhưng Vẫn Bị Từ Chối",
+      "domain": "aspnet-core",
+      "primarySkill": "aspnet-core-request-pipeline",
+      "maturityLevel": "L1",
+      "difficulty": "D2",
+      "businessContext": "internal-gateway-authenticated-api",
+      "scenarioType": "authenticated-request-rejected-before-endpoint",
+      "primaryRootCause": "authentication-middleware-runs-after-access-gate",
+      "failureMode": "false-unauthorized-response",
+      "solutionPattern": "establish-authentication-before-dependent-middleware",
+      "labFormat": "request-pipeline-investigation",
+      "createdAt": "2026-09-07T19:13:50+07:00"
     }
   ],
   "rolling24": {
-    "total": 2,
-    "byDomain": {"csharp-linq": 1, "dotnet-async": 1},
-    "byDifficulty": {"D2": 2},
-    "byMaturity": {"L1": 2},
-    "byFormat": {"runtime-failure": 1, "async-concurrency-lab": 1}
+    "total": 3,
+    "byDomain": {"csharp-linq": 1, "dotnet-async": 1, "aspnet-core": 1},
+    "byDifficulty": {"D2": 3},
+    "byMaturity": {"L1": 3},
+    "byFormat": {"runtime-failure": 1, "async-concurrency-lab": 1, "request-pipeline-investigation": 1}
   }
 }

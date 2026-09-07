@@ -1,13 +1,17 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DOTNET-001",
-    "path": "Daily Real Engineering Lab/units/2026/09/07/UNIT-DOTNET-001-cancellation-token-propagation",
+    "unitId": "UNIT-ASPNET-001",
+    "path": "Daily Real Engineering Lab/units/2026/09/07/UNIT-ASPNET-001-authentication-pipeline-order",
     "status": "READY",
-    "createdAt": "2026-09-07T17:04:34+07:00"
+    "createdAt": "2026-09-07T19:13:50+07:00"
   },
   "generation": {
-    "totalAttempted": 2,
-    "totalGenerated": 2,
+    "totalRunSlotsAttempted": 3,
+    "totalGenerated": 3,
+    "totalFailed": 0
+  },
+  "learning": {
+    "totalAttempted": 0,
     "totalCompleted": 0,
     "totalMastered": 0
   },
