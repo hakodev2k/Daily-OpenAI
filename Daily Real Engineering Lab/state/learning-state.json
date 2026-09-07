@@ -1,13 +1,13 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ASPNET-001",
-    "path": "Daily Real Engineering Lab/units/2026/09/07/UNIT-ASPNET-001-authentication-pipeline-order",
+    "unitId": "UNIT-EF-001",
+    "path": "Daily Real Engineering Lab/units/2026/09/07/UNIT-EF-001-detached-entity-silent-update",
     "status": "READY",
-    "createdAt": "2026-09-07T19:13:50+07:00"
+    "createdAt": "2026-09-07T20:44:00+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 3,
-    "totalGenerated": 3,
+    "totalRunSlotsAttempted": 4,
+    "totalGenerated": 4,
     "totalFailed": 0
   },
   "learning": {
