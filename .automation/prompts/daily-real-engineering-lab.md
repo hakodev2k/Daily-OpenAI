@@ -143,7 +143,7 @@ Treat technologies listed in the candidate profile as **exposure evidence**, not
 
 A technology may be present in the CV while the underlying mechanism, failure modes or trade-offs remain weak.
 
-Use this hierarchy:
+For **User Mastery and personalization decisions**, use this hierarchy:
 
 1. actual learning evidence from previous Real Engineering Labs
 2. structured skill state
@@ -151,6 +151,8 @@ Use this hierarchy:
 4. prior lab outcomes
 5. candidate project exposure
 6. CV technology list
+
+This hierarchy does not override calendar-driven Library Difficulty, curriculum coverage or anti-repetition rules.
 
 Never assume mastery only because a technology appears in the CV.
 
@@ -296,7 +298,7 @@ Initial priority order:
 
 Do not jump to sophisticated architecture merely because it sounds senior.
 
-Foundation gaps may block advanced units.
+Foundation gaps may influence prerequisites, companion regression labs or personalization, but they must not freeze the calendar-driven progression of the overall library.
 
 ---
 
@@ -1014,11 +1016,15 @@ The rolling window should expose a mix of:
 
 ---
 
-# 15. Adaptive Difficulty
+# 15. Adaptive Difficulty Within the Calendar Band
 
-Difficulty must follow demonstrated mastery.
+The **overall library difficulty is calendar-driven**.
 
-Typical progression:
+User Mastery does not control whether the library is allowed to progress.
+
+Within the current calendar-driven difficulty band, mastery and gaps may be used as secondary personalization signals.
+
+Typical library progression may evolve through:
 
 ```text
 clear bug
@@ -1031,14 +1037,17 @@ clear bug
 → architecture
 ```
 
-If the user repeatedly struggles with a prerequisite:
+If the learner has a known prerequisite gap:
 
 - record the gap
-- block the dependent advanced unit when necessary
-- create a smaller repair unit
-- resume the original progression later
+- optionally generate a foundation or regression lab when diversity and curriculum balance allow
+- label advanced labs with the relevant prerequisite
+- do not repeatedly generate the same remediation topic
+- do not block the overall library from continuing toward higher difficulty bands
 
-Do not punish the learner with harder content merely because time passed.
+The library may become harder over calendar time even when the learner has not completed earlier labs.
+
+User Mastery remains unchanged until supported by actual learning evidence.
 
 ---
 
@@ -1887,12 +1896,14 @@ Reviews must not create an ever-growing backlog.
 
 # 41. Busy User and Backlog Rule
 
-The learner has limited time, but this scheduled job must still create one new lab every run.
+The learner has limited time, but each new hourly RUN_SLOT must still **attempt to create one validated new lab**.
 
 Therefore:
 
 - unfinished labs remain unfinished
-- a new lab is still generated every run
+- unfinished labs never block the next generation attempt
+- a validated new lab is generated when the candidate passes the required gates
+- a failed RUN_SLOT records failure rather than publishing broken content
 - generation count must never be treated as learning progress
 - do not mark older labs completed automatically
 - do not delete or overwrite older labs
@@ -2555,7 +2566,7 @@ The long-term goal is not merely to accumulate lab files.
 
 However, the scheduled job is intentionally designed to build a **large, progressively harder engineering-lab library over time**.
 
-The library should mature from foundation labs toward Senior, Technical Lead and Solution Architecture scenarios according to calendar progression, while User Mastery remains evidence-driven and independent.
+The library should mature from foundation labs toward Senior, Technical Lead and Solution Architecture scenarios according to calendar progression, while User Mastery remains evidence-driven, independent and non-blocking for library progression.
 
 Remember the final separation:
 
