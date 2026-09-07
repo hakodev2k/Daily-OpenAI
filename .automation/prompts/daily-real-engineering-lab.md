@@ -15,6 +15,19 @@ All editorial learning content must be written in **Vietnamese**, while preservi
 
 The primary deliverable is the GitHub lab content. Do not paste the full lab into chat.
 
+This scheduled job is expected to run approximately **once per hour**. Therefore the prompt must optimize for:
+
+- high-frequency generation
+- anti-duplication
+- idempotent retries
+- compact persistent state
+- scalable repository organization
+- long-term diversity
+- bounded context usage
+- maintainable shared lab infrastructure
+
+A one-hour cadence must never cause repeated labs, duplicated retry output, uncontrolled state growth or misleading learning progress.
+
 ---
 
 # 1. Objective
@@ -280,7 +293,7 @@ Foundation gaps may block advanced units.
 
 ---
 
-# 6. Persistent State
+# 6. Persistent State and High-Frequency Indexes
 
 Repository:
 
@@ -290,21 +303,43 @@ Use this root directory:
 
 `Daily Real Engineering Lab`
 
-State files:
+Recommended structure:
 
 ```text
 Daily Real Engineering Lab/
 ├── README.md
+├── shared/
+│   └── EngineeringLabKit/
 ├── state/
 │   ├── learning-state.json
 │   ├── skill-matrix.json
 │   ├── knowledge-gaps.json
 │   ├── review-queue.json
+│   ├── recent-labs.json
+│   ├── generation-ledger.jsonl
 │   └── learning-events.jsonl
+├── catalog/
+│   └── YYYY/
+│       └── MM/
+│           └── YYYY-MM-DD.md
 └── units/
+    └── YYYY/
+        └── MM/
+            └── DD/
+                └── UNIT-*/
 ```
 
-Treat `state/learning-state.json` as authoritative.
+Treat `state/learning-state.json` as authoritative for current global state.
+
+Use `state/recent-labs.json` as the compact anti-repetition index.
+
+Use `state/generation-ledger.jsonl` as the append-only full generation history.
+
+Do NOT scan every historical unit on every hourly run.
+
+When enough history exists, `recent-labs.json` should normally retain only the most relevant recent metadata needed for anti-repetition, preferably around **50–100 recent labs**.
+
+The long-term history remains in `generation-ledger.jsonl` and individual unit metadata.
 
 If the directory or state files do not exist, initialize them before generating the first lab.
 
@@ -318,7 +353,42 @@ Do not infer completion from:
 
 ---
 
-# 7. Always Generate a New Lab
+# 7. Hourly Run Slot Idempotency
+
+Because the scheduled job runs approximately once per hour, retries or duplicate executions may occur.
+
+Define a Vietnam-time hourly slot:
+
+```text
+RUN_SLOT = YYYY-MM-DD-HH
+Timezone = Asia/Ho_Chi_Minh
+```
+
+Example format only:
+
+`2026-09-07-15`
+
+The example must never be reused as a real slot.
+
+Before generating a lab:
+
+1. obtain the actual current Vietnam time
+2. calculate `RUN_SLOT`
+3. check whether `generation-ledger.jsonl` or current state already records a successful lab for that exact slot
+
+If the same `RUN_SLOT` already has a successfully saved lab:
+
+- do NOT generate another lab for that slot
+- return the existing lab path
+- treat this as idempotent retry handling, not as skipping a scheduled generation
+
+This is the only normal case where an execution may avoid creating a new lab.
+
+A later hourly slot must still generate a new lab.
+
+---
+
+# 8. Always Generate a New Lab
 
 Every run MUST generate exactly **one new Real Engineering Lab**.
 
@@ -451,7 +521,7 @@ The next lab must add learning value beyond previous labs.
 
 ---
 
-# 8. Learning Unit Identity
+# 9. Learning Unit Identity
 
 Use stable human-readable IDs.
 
@@ -476,11 +546,101 @@ Never reuse a unit ID.
 
 Unit folder:
 
-`Daily Real Engineering Lab/units/{UNIT_ID}-{slug}/`
+`Daily Real Engineering Lab/units/YYYY/MM/DD/{UNIT_ID}-{slug}/`
 
 ---
 
-# 9. Lab Maturity Levels
+# 10. Novelty Fingerprint
+
+Every generated lab must contain a novelty fingerprint in `metadata.json`.
+
+Recommended shape:
+
+```json
+{
+  "novelty": {
+    "businessContext": "ecommerce-checkout",
+    "scenarioType": "dependency-degradation",
+    "primaryRootCause": "connection-pool-exhaustion",
+    "failureMode": "latency-spike",
+    "solutionPattern": "bounded-concurrency",
+    "labFormat": "production-incident"
+  }
+}
+```
+
+The exact labels may vary, but the metadata must capture enough structure to compare labs semantically.
+
+Before publishing a candidate lab, compare its fingerprint with recent history.
+
+Reject the candidate when it is materially too similar to recent labs.
+
+Similarity must be evaluated across combinations, not just titles.
+
+For example:
+
+```text
+User API + .Result + ThreadPool starvation
+Order API + .Wait() + ThreadPool starvation
+Product API + GetAwaiter().GetResult() + ThreadPool starvation
+```
+
+These are effectively the same lab and must not be published close together.
+
+---
+
+# 11. High-Frequency Diversity Windows
+
+Because generation occurs roughly 24 times per day, use stronger spacing defaults.
+
+Unless deliberate progression justifies an exception:
+
+- avoid the same primary root cause within roughly the **24 most recent labs**
+- avoid the same primary skill in consecutive runs
+- normally separate the same primary skill by roughly **4–6 labs**
+- avoid the same lab format within the most recent **3 labs**
+- avoid the same business context within roughly the most recent **6–8 labs**
+- avoid the same solution pattern within roughly the most recent **10–12 labs**
+
+These are diversity defaults, not rigid curriculum laws.
+
+A repeated skill is acceptable only when the engineering dimension changes materially.
+
+Examples of valid progression:
+
+```text
+Redis:
+stale cache
+→ hot key
+→ outage and graceful degradation
+→ cache stampede
+→ whether Redis should exist at all
+```
+
+Examples of invalid progression:
+
+```text
+SQL Orders query missing composite index
+→ Products query missing composite index
+→ Users query missing composite index
+```
+
+When revisiting a skill, increase one or more of:
+
+- ambiguity
+- mechanism depth
+- evidence complexity
+- number of hypotheses
+- scale
+- concurrency
+- failure interactions
+- operational constraints
+- architecture trade-offs
+- business constraints
+
+---
+
+# 12. Lab Maturity Levels
 
 Use multiple lab formats. Do not make every lab a single obvious bug.
 
@@ -596,7 +756,46 @@ The reference answer must be a defensible architecture, not “the one correct a
 
 ---
 
-# 10. Adaptive Difficulty
+# 13. Rolling Difficulty Mix
+
+Do not monotonically increase difficulty with every hourly run.
+
+A high-frequency generator must keep a healthy mix of foundational and advanced labs.
+
+Across a rolling window of approximately 24 generated labs, use a balanced distribution similar to:
+
+- L1 Foundation / deterministic: ~6
+- L2 Investigation: ~6
+- L3 Production incident: ~5
+- L4 Refactoring / modernization: ~3
+- L5 Design decision: ~3
+- L6 Architecture / solution: ~1
+
+This distribution may adapt to demonstrated skill state, but do not let the system drift into:
+
+- all beginner labs
+- all architecture labs
+- one domain dominating the day
+
+The rolling window should expose a mix of:
+
+- runtime
+- framework
+- database
+- networking
+- distributed systems
+- cloud
+- testing
+- security
+- observability
+- performance
+- deployment
+- design
+- architecture
+
+---
+
+# 14. Adaptive Difficulty
 
 Difficulty must follow demonstrated mastery.
 
@@ -624,7 +823,7 @@ Do not punish the learner with harder content merely because time passed.
 
 ---
 
-# 11. Required Unit Structure
+# 15. Required Unit Structure
 
 Every executable engineering unit should use the following structure where relevant:
 
@@ -675,9 +874,36 @@ UNIT-*/
 
 Not every unit needs every file, but executable units must contain enough material to satisfy the Reproducibility Contract.
 
+Because this job runs hourly, **do not generate boilerplate files that add no learning value**.
+
+Prefer a compact L1 unit such as:
+
+```text
+UNIT-*/
+├── README.md
+├── metadata.json
+├── starter/
+├── solution/
+├── run.ps1
+└── verify.ps1
+```
+
+Only add:
+
+- `evidence/`
+- `hints/`
+- `docs/`
+- `expected-results/`
+- `workspace/`
+- `extensions/`
+
+when they materially improve that specific lab.
+
+Avoid repository growth caused by empty or repetitive scaffolding.
+
 ---
 
-# 12. Reproducibility Contract
+# 16. Reproducibility Contract
 
 Do not publish an executable lab unless the learner can reasonably answer all five questions:
 
@@ -703,7 +929,50 @@ in a small number of commands.
 
 ---
 
-# 13. Local-First Rule
+# 17. Shared EngineeringLabKit
+
+High-frequency generation must avoid re-implementing common simulators in every unit.
+
+Prefer reusable infrastructure under:
+
+`Daily Real Engineering Lab/shared/EngineeringLabKit/`
+
+Possible reusable components:
+
+- Fake HTTP server
+- Failure injection
+- deterministic latency simulator
+- retry/error simulator
+- lightweight load generator
+- fake message broker
+- test-data generator
+- metrics collector
+- common assertions
+
+Example conceptual APIs:
+
+```csharp
+failureInjector.FailEveryNthCall(5);
+failureInjector.InjectLatency(TimeSpan.FromSeconds(2));
+fakeHttp.ReturnStatusEvery(3, 503);
+messageBroker.DuplicateNextMessage();
+```
+
+A new lab should reference or extend shared infrastructure when doing so reduces duplication.
+
+Do not modify shared infrastructure recklessly on every run.
+
+Only update shared components when:
+
+- the change is backward compatible where practical
+- multiple labs can reuse it
+- the new behavior is clearly valuable
+
+If modifying shared infrastructure could break older labs, prefer a unit-local helper instead.
+
+---
+
+# 18. Local-First Rule
 
 Core labs should be runnable locally without requiring paid external services.
 
@@ -744,7 +1013,7 @@ For messaging topics, provide local simulation when possible for:
 
 ---
 
-# 14. Dependency Reproducibility
+# 19. Dependency Reproducibility
 
 Pin versions where practical.
 
@@ -764,7 +1033,7 @@ Do not use vague `latest` dependency versions unless there is a compelling reaso
 
 ---
 
-# 15. Failure Injection
+# 20. Failure Injection
 
 Create reusable or unit-local simulation mechanisms when useful.
 
@@ -787,7 +1056,7 @@ Randomness must not make the exercise impossible to reproduce.
 
 ---
 
-# 16. Scenario Design
+# 21. Scenario Design
 
 Every lab must begin with a realistic engineering context.
 
@@ -818,7 +1087,7 @@ Good:
 
 ---
 
-# 17. Progressive Hints
+# 22. Progressive Hints
 
 Hints must not spoil the answer too early.
 
@@ -870,7 +1139,7 @@ Prefer:
 
 ---
 
-# 18. Evidence-Driven Investigation
+# 23. Evidence-Driven Investigation
 
 Higher-level labs must provide evidence rather than a highlighted buggy line.
 
@@ -904,7 +1173,7 @@ Teach:
 
 ---
 
-# 19. Investigation Workspace
+# 24. Investigation Workspace
 
 Every investigation-oriented lab should include:
 
@@ -944,7 +1213,7 @@ The learner should be able to record reasoning before viewing the reference solu
 
 ---
 
-# 20. Expected Results
+# 25. Expected Results
 
 Provide expected behavior for both starter and fixed states.
 
@@ -970,7 +1239,7 @@ Also provide troubleshooting steps if the learner cannot reproduce the intended 
 
 ---
 
-# 21. Reference Solution
+# 26. Reference Solution
 
 The learner explicitly wants a reference solution for self-comparison.
 
@@ -997,7 +1266,7 @@ Required explanation:
 
 ---
 
-# 22. Multiple Solutions and Trade-offs
+# 27. Multiple Solutions and Trade-offs
 
 Do not teach that sophisticated technology is automatically the best answer.
 
@@ -1023,7 +1292,7 @@ A Senior answer may be the simplest design that satisfies the constraints.
 
 ---
 
-# 23. Wrong Fixes
+# 28. Wrong Fixes
 
 Every suitable lab should include a **Wrong Fixes / Tempting Fixes** section.
 
@@ -1046,7 +1315,7 @@ Do not label something universally wrong if it can be valid under different cons
 
 ---
 
-# 24. Verification
+# 29. Verification
 
 The learner must be able to verify both:
 
@@ -1074,7 +1343,7 @@ A fix is not complete merely because the application starts.
 
 ---
 
-# 25. Testing Quality
+# 30. Testing Quality
 
 Starter tests must not accidentally reveal the exact solution.
 
@@ -1092,7 +1361,7 @@ Examples:
 
 ---
 
-# 26. Documentation Strategy
+# 31. Documentation Strategy
 
 Do not dump a full textbook before the lab.
 
@@ -1131,7 +1400,7 @@ Do not invent documentation URLs.
 
 ---
 
-# 27. Real Engineering Lab Formats
+# 32. Real Engineering Lab Formats
 
 Rotate formats to avoid monotony.
 
@@ -1162,7 +1431,7 @@ Do not repeat the same failure pattern too frequently.
 
 ---
 
-# 28. Curriculum Coverage
+# 33. Curriculum Coverage
 
 Over time, deliberately cover the candidate's breadth while prioritizing depth.
 
@@ -1238,7 +1507,7 @@ Do not permanently omit lower-frequency skills.
 
 ---
 
-# 29. Interleaving and Regression
+# 34. Interleaving and Regression
 
 Do not test old knowledge only through direct recall.
 
@@ -1257,7 +1526,7 @@ Use review state to schedule future regression exposure.
 
 ---
 
-# 30. Design and Architecture Labs
+# 35. Design and Architecture Labs
 
 Not every lab must contain a bug.
 
@@ -1295,7 +1564,7 @@ not:
 
 ---
 
-# 31. Requirement Change Simulation
+# 36. Requirement Change Simulation
 
 At higher maturity, occasionally include changing requirements.
 
@@ -1315,7 +1584,7 @@ Teach architecture evolution, not static diagram drawing.
 
 ---
 
-# 32. Skill Measurement
+# 37. Skill Measurement
 
 Do not measure progress only as “lab completed”.
 
@@ -1345,7 +1614,7 @@ A user who quickly copies a correct fix but cannot explain root cause must not b
 
 ---
 
-# 33. Knowledge Gaps
+# 38. Knowledge Gaps
 
 Record discovered gaps in:
 
@@ -1374,7 +1643,7 @@ Do not create unnecessary remediation units for every minor mistake.
 
 ---
 
-# 34. Review Queue
+# 39. Review Queue
 
 Record future review or regression needs in:
 
@@ -1397,7 +1666,7 @@ Reviews must not create an ever-growing backlog.
 
 ---
 
-# 35. Busy User and Backlog Rule
+# 40. Busy User and Backlog Rule
 
 The learner has limited time, but this scheduled job must still create one new lab every run.
 
@@ -1412,6 +1681,15 @@ Therefore:
 
 The repository may intentionally accumulate a backlog of generated labs.
 
+Track these counts separately when useful:
+
+- generated
+- attempted
+- completed
+- mastered
+
+Never treat `generated` as equivalent to `completed` or `mastered`.
+
 This is acceptable because the repository serves as a long-term engineering lab library.
 
 When the learner later chooses an older lab:
@@ -1424,7 +1702,7 @@ If a lab is untouched for a long period, it may remain `READY` or be marked `STA
 
 ---
 
-# 36. Time Budget
+# 41. Time Budget
 
 Prefer manageable labs.
 
@@ -1442,7 +1720,7 @@ Do not generate a 4-hour lab when a 45-minute lab can teach the same core mechan
 
 ---
 
-# 37. Quality Gate
+# 42. Quality Gate
 
 Before publishing a new lab, validate the following.
 
@@ -1462,6 +1740,9 @@ Before publishing a new lab, validate the following.
 - dependencies are pinned where practical
 - the lab fits the current roadmap / skill state
 - the lab does not duplicate a recent unit
+- novelty fingerprint is present and materially different from recent labs
+- diversity windows are respected unless deliberate progression justifies an exception
+- RUN_SLOT has not already been successfully generated
 - no unrelated repository files are modified
 
 ## Runtime validation
@@ -1491,7 +1772,7 @@ If the lab is obviously incomplete or inconsistent, do not publish it.
 
 ---
 
-# 38. Metadata
+# 43. Metadata
 
 Each lab must include `metadata.json`.
 
@@ -1500,6 +1781,7 @@ Example shape:
 ```json
 {
   "unitId": "UNIT-DOTNET-003",
+  "runSlot": "2026-09-07-14",
   "title": "ASP.NET Core ThreadPool Starvation",
   "domain": "dotnet-runtime",
   "level": "L1",
@@ -1512,7 +1794,15 @@ Example shape:
     "aspnet-core"
   ],
   "prerequisites": [],
-  "validationMode": "executed"
+  "validationMode": "executed",
+  "novelty": {
+    "businessContext": "internal-api",
+    "scenarioType": "high-concurrency-degradation",
+    "primaryRootCause": "sync-over-async",
+    "failureMode": "threadpool-starvation",
+    "solutionPattern": "async-all-the-way",
+    "labFormat": "runtime-failure"
+  }
 }
 ```
 
@@ -1520,7 +1810,7 @@ Use the actual runtime timestamp.
 
 ---
 
-# 39. State Transition After Generation
+# 44. State Transition After Generation
 
 After successfully publishing a new lab, update:
 
@@ -1550,13 +1840,19 @@ Preserve older unit statuses and learning evidence.
 
 Do not overwrite learning history.
 
-Append a generation event to:
+Append every successful generation to:
+
+`state/generation-ledger.jsonl`
+
+and append learning-state changes to:
 
 `state/learning-events.jsonl`
 
-The event should record enough metadata to support future anti-repetition decisions, including when available:
+Each generation ledger event should include at least:
 
+- runSlot
 - unitId
+- path
 - domain
 - format
 - primary skill
@@ -1565,10 +1861,39 @@ The event should record enough metadata to support future anti-repetition decisi
 - failure mode
 - solution pattern
 - maturity level
+- createdAt
+
+After a successful generation, update `state/recent-labs.json`.
+
+Keep it compact and focused on anti-repetition metadata.
+
+Do not let `recent-labs.json` grow indefinitely.
 
 ---
 
-# 40. GitHub Save Rules
+# 45. Daily Catalog
+
+Because hourly generation may create up to roughly 24 labs per day, maintain a daily catalog:
+
+`Daily Real Engineering Lab/catalog/YYYY/MM/YYYY-MM-DD.md`
+
+Append one concise row per generated lab.
+
+Recommended columns:
+
+```markdown
+| Time | Unit | Domain | Level | Format | Scenario | Root Cause |
+```
+
+The catalog exists for browsing and discovery.
+
+Do not use catalog row count as learning progress.
+
+Do not rewrite the full catalog unnecessarily if the GitHub integration supports safe append-like updates; otherwise preserve all existing rows when updating.
+
+---
+
+# 46. GitHub Save Rules
 
 Repository:
 
@@ -1576,7 +1901,7 @@ Repository:
 
 Create all files for the generated unit under:
 
-`Daily Real Engineering Lab/units/{UNIT_ID}-{slug}/`
+`Daily Real Engineering Lab/units/YYYY/MM/DD/{UNIT_ID}-{slug}/`
 
 Update only files under:
 
@@ -1599,7 +1924,7 @@ Never overwrite an existing unit.
 
 ---
 
-# 41. README for Each Unit
+# 47. README for Each Unit
 
 The unit `README.md` must be practical and concise.
 
@@ -1647,7 +1972,7 @@ Do not place the full answer directly in the README.
 
 ---
 
-# 42. Starter Code Rules
+# 48. Starter Code Rules
 
 Starter code must look like plausible production code.
 
@@ -1679,7 +2004,7 @@ Do not intentionally create insecure code unless the lab is specifically a contr
 
 ---
 
-# 43. Production Mindset
+# 49. Production Mindset
 
 Teach the learner to measure before optimizing.
 
@@ -1711,7 +2036,7 @@ Sophisticated architecture is not automatically senior architecture.
 
 ---
 
-# 44. AI-Assisted Engineering
+# 50. AI-Assisted Engineering
 
 Occasionally create labs where AI-generated code or advice is part of the problem.
 
@@ -1729,7 +2054,7 @@ Teach the learner to use AI as an accelerator while validating output with sourc
 
 ---
 
-# 45. Existing Daily Jobs
+# 51. Existing Daily Jobs
 
 This program complements but does not replace:
 
@@ -1753,15 +2078,23 @@ Do not make Real Engineering Lab another assessment-only job.
 
 ---
 
-# 46. Run Decision Algorithm
+# 52. Run Decision Algorithm
 
 At the beginning of every run:
 
 ```text
+Get actual Vietnam time
+      ↓
+Calculate RUN_SLOT
+      ↓
+RUN_SLOT already generated?
+      ├─ YES → return existing lab path
+      └─ NO
+           ↓
 Read current state
-      ↓
-Inspect recent generated labs
-      ↓
+           ↓
+Read recent-labs.json
+           ↓
 Build anti-repetition profile:
 - recent domains
 - recent formats
@@ -1791,7 +2124,11 @@ Run explicit duplication gate
       ↓
 Save to GitHub
       ↓
-Append generation history
+Append generation-ledger.jsonl
+      ↓
+Update recent-labs.json
+      ↓
+Update daily catalog
       ↓
 Update state
 ```
@@ -1802,7 +2139,7 @@ An unfinished previous lab is never a reason to skip generation.
 
 ---
 
-# 47. Lab Selection and Anti-Repetition Algorithm
+# 53. Lab Selection and Anti-Repetition Algorithm
 
 When choosing the next unit, consider:
 
@@ -1891,7 +2228,7 @@ L1 deterministic failure
 
 ---
 
-# 48. Final Chat Response
+# 54. Final Chat Response
 
 Every successful run creates a new lab.
 
@@ -1915,7 +2252,7 @@ into the final chat response.
 
 ---
 
-# 49. Success Criteria
+# 55. Success Criteria
 
 A successful Real Engineering Lab should cause the learner to say:
 
