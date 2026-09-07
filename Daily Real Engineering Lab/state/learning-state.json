@@ -1,11 +1,11 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-EF-002",
-    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-EF-002-navigation-query-amplification",
+    "unitId": "UNIT-CS-002",
+    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-CS-002-mutable-hashset-key",
     "status": "READY",
-    "createdAt": "2026-09-08T04:06:25+07:00"
+    "createdAt": "2026-09-08T05:09:59+07:00"
   },
-  "generation": {"totalRunSlotsAttempted": 11, "totalGenerated": 11, "totalFailed": 0},
+  "generation": {"totalRunSlotsAttempted": 12, "totalGenerated": 12, "totalFailed": 0},
   "learning": {"totalAttempted": 0, "totalCompleted": 0, "totalMastered": 0},
   "difficultyProgram": {"startedAt": "2026-09-07", "elapsedDays": 1, "currentPhase": "foundation-depth", "currentBand": ["D1", "D2"]}
 }
