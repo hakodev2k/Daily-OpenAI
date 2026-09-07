@@ -32,7 +32,14 @@ A one-hour cadence must never cause repeated labs, duplicated retry output, unco
 
 # 1. Objective
 
-Build a long-running, adaptive, hands-on engineering curriculum for a .NET-focused developer with approximately **3–4 years of real hands-on experience** whose CV contains broad technology exposure but whose main growth goal is to deepen root-cause understanding, engineering judgment and production reasoning.
+Build a long-running, adaptive, hands-on engineering curriculum and a **long-term Real Engineering Lab library** for a .NET-focused developer with approximately **3–4 years of real hands-on experience** whose CV contains broad technology exposure but whose main growth goal is to deepen root-cause understanding, engineering judgment and production reasoning.
+
+The scheduled job has two parallel goals:
+
+1. continuously generate a diverse, reusable engineering-lab library that becomes progressively more challenging over time
+2. preserve user mastery separately so library growth never falsely implies learner mastery
+
+The library is intentionally allowed to grow faster than the learner can complete it.
 
 The target progression is:
 
@@ -756,7 +763,172 @@ The reference answer must be a defensible architecture, not “the one correct a
 
 ---
 
-# 13. Rolling Difficulty Mix
+# 13. Calendar-Driven Difficulty Progression
+
+The primary difficulty progression for newly generated labs must be driven by **calendar time since the Real Engineering Lab program started**, not by the number of labs the learner has completed.
+
+Reason:
+
+- this job runs approximately once per hour
+- the learner may complete only a small subset of generated labs
+- the repository is intended to become a long-term engineering lab library
+- generated library difficulty should continue maturing even when the learner is temporarily inactive
+
+Therefore maintain two independent concepts:
+
+## Library Difficulty
+
+Controls the difficulty of newly generated labs.
+
+Library Difficulty increases gradually according to elapsed days/weeks/months since program start.
+
+## User Mastery
+
+Represents the learner's demonstrated capability.
+
+User Mastery changes only from actual learning evidence such as:
+
+- attempted labs
+- completed labs
+- investigation quality
+- root-cause understanding
+- verification quality
+- trade-off reasoning
+- production reasoning
+
+Never increase User Mastery because:
+
+- time passed
+- more labs were generated
+- the scheduled job ran many times
+
+Library Difficulty and User Mastery must remain independent.
+
+Example:
+
+```text
+Library:
+Month 6
+Typical generated difficulty = D4–D5
+
+User mastery:
+SQL = D2
+Async = D3
+Azure = D1
+```
+
+This is valid.
+
+The learner may return to easier historical labs while the generator continues building harder future material.
+
+## Difficulty Scale
+
+Use a practical 7-band scale for generated difficulty:
+
+- D1 — Guided Foundation
+- D2 — Independent Foundation
+- D3 — Investigation
+- D4 — Production Troubleshooting
+- D5 — Senior Engineering
+- D6 — Technical Decision
+- D7 — Architecture / Solution
+
+Difficulty should increase through dimensions such as:
+
+- fewer hints
+- less explicit symptoms
+- more code and components
+- more plausible hypotheses
+- noisier evidence
+- concurrency
+- scale
+- partial failures
+- distributed interactions
+- security constraints
+- operational constraints
+- cost constraints
+- business ambiguity
+- multiple valid solutions
+- architecture trade-offs
+
+Do not equate difficulty only with code complexity.
+
+## Suggested Calendar Progression
+
+Use a gradual progression similar to:
+
+```text
+Weeks 1–2:
+primarily D1–D2
+
+Weeks 3–4:
+primarily D2–D3
+
+Month 2:
+mix D2–D4
+
+Months 3–4:
+primarily D3–D4
+
+Months 5–6:
+mix D3–D5
+
+Months 7–9:
+primarily D4–D5
+
+Months 10–12:
+mix D4–D6
+
+After 12 months:
+primarily D5–D7 with continued lower-level regression labs
+```
+
+This is a progression guideline, not a rigid calendar ladder.
+
+Do not jump directly from foundation to architecture merely because a date threshold was crossed.
+
+## Daily Difficulty Band
+
+Each calendar day should have a target difficulty band.
+
+Example:
+
+```text
+Daily band:
+D2–D3
+```
+
+Across that day's hourly labs, prefer a mix roughly like:
+
+- ~20% easier reinforcement
+- ~60% current-band labs
+- ~20% stretch labs one level above the main band
+
+The exact mix may vary to preserve curriculum diversity.
+
+Do not increase difficulty every hour.
+
+Difficulty progression happens at the **day / week / month level**.
+
+## Foundation Preservation
+
+As library difficulty rises, do not eliminate lower-level labs.
+
+Continue generating periodic foundational and regression labs.
+
+A mature library should contain:
+
+- foundation refreshers
+- intermediate investigations
+- production incidents
+- senior design decisions
+- architecture / solution exercises
+
+Later foundation labs should still become richer and more realistic rather than repeating beginner examples.
+
+---
+
+# 14. Rolling Difficulty Mix
 
 Do not monotonically increase difficulty with every hourly run.
 
@@ -795,7 +967,7 @@ The rolling window should expose a mix of:
 
 ---
 
-# 14. Adaptive Difficulty
+# 15. Adaptive Difficulty
 
 Difficulty must follow demonstrated mastery.
 
@@ -823,7 +995,7 @@ Do not punish the learner with harder content merely because time passed.
 
 ---
 
-# 15. Required Unit Structure
+# 16. Required Unit Structure
 
 Every executable engineering unit should use the following structure where relevant:
 
@@ -903,7 +1075,7 @@ Avoid repository growth caused by empty or repetitive scaffolding.
 
 ---
 
-# 16. Reproducibility Contract
+# 17. Reproducibility Contract
 
 Do not publish an executable lab unless the learner can reasonably answer all five questions:
 
@@ -929,7 +1101,7 @@ in a small number of commands.
 
 ---
 
-# 17. Shared EngineeringLabKit
+# 18. Shared EngineeringLabKit
 
 High-frequency generation must avoid re-implementing common simulators in every unit.
 
@@ -972,7 +1144,7 @@ If modifying shared infrastructure could break older labs, prefer a unit-local h
 
 ---
 
-# 18. Local-First Rule
+# 19. Local-First Rule
 
 Core labs should be runnable locally without requiring paid external services.
 
@@ -1013,7 +1185,7 @@ For messaging topics, provide local simulation when possible for:
 
 ---
 
-# 19. Dependency Reproducibility
+# 20. Dependency Reproducibility
 
 Pin versions where practical.
 
@@ -1033,7 +1205,7 @@ Do not use vague `latest` dependency versions unless there is a compelling reaso
 
 ---
 
-# 20. Failure Injection
+# 21. Failure Injection
 
 Create reusable or unit-local simulation mechanisms when useful.
 
@@ -1056,7 +1228,7 @@ Randomness must not make the exercise impossible to reproduce.
 
 ---
 
-# 21. Scenario Design
+# 22. Scenario Design
 
 Every lab must begin with a realistic engineering context.
 
@@ -1087,7 +1259,7 @@ Good:
 
 ---
 
-# 22. Progressive Hints
+# 23. Progressive Hints
 
 Hints must not spoil the answer too early.
 
@@ -1139,7 +1311,7 @@ Prefer:
 
 ---
 
-# 23. Evidence-Driven Investigation
+# 24. Evidence-Driven Investigation
 
 Higher-level labs must provide evidence rather than a highlighted buggy line.
 
@@ -1173,7 +1345,7 @@ Teach:
 
 ---
 
-# 24. Investigation Workspace
+# 25. Investigation Workspace
 
 Every investigation-oriented lab should include:
 
@@ -1213,7 +1385,7 @@ The learner should be able to record reasoning before viewing the reference solu
 
 ---
 
-# 25. Expected Results
+# 26. Expected Results
 
 Provide expected behavior for both starter and fixed states.
 
@@ -1239,7 +1411,7 @@ Also provide troubleshooting steps if the learner cannot reproduce the intended 
 
 ---
 
-# 26. Reference Solution
+# 27. Reference Solution
 
 The learner explicitly wants a reference solution for self-comparison.
 
@@ -1266,7 +1438,7 @@ Required explanation:
 
 ---
 
-# 27. Multiple Solutions and Trade-offs
+# 28. Multiple Solutions and Trade-offs
 
 Do not teach that sophisticated technology is automatically the best answer.
 
@@ -1292,7 +1464,7 @@ A Senior answer may be the simplest design that satisfies the constraints.
 
 ---
 
-# 28. Wrong Fixes
+# 29. Wrong Fixes
 
 Every suitable lab should include a **Wrong Fixes / Tempting Fixes** section.
 
@@ -1315,7 +1487,7 @@ Do not label something universally wrong if it can be valid under different cons
 
 ---
 
-# 29. Verification
+# 30. Verification
 
 The learner must be able to verify both:
 
@@ -1343,7 +1515,7 @@ A fix is not complete merely because the application starts.
 
 ---
 
-# 30. Testing Quality
+# 31. Testing Quality
 
 Starter tests must not accidentally reveal the exact solution.
 
@@ -1361,7 +1533,7 @@ Examples:
 
 ---
 
-# 31. Documentation Strategy
+# 32. Documentation Strategy
 
 Do not dump a full textbook before the lab.
 
@@ -1400,7 +1572,7 @@ Do not invent documentation URLs.
 
 ---
 
-# 32. Real Engineering Lab Formats
+# 33. Real Engineering Lab Formats
 
 Rotate formats to avoid monotony.
 
@@ -1431,7 +1603,7 @@ Do not repeat the same failure pattern too frequently.
 
 ---
 
-# 33. Curriculum Coverage
+# 34. Curriculum Coverage
 
 Over time, deliberately cover the candidate's breadth while prioritizing depth.
 
@@ -1507,7 +1679,7 @@ Do not permanently omit lower-frequency skills.
 
 ---
 
-# 34. Interleaving and Regression
+# 35. Interleaving and Regression
 
 Do not test old knowledge only through direct recall.
 
@@ -1526,7 +1698,7 @@ Use review state to schedule future regression exposure.
 
 ---
 
-# 35. Design and Architecture Labs
+# 36. Design and Architecture Labs
 
 Not every lab must contain a bug.
 
@@ -1564,7 +1736,7 @@ not:
 
 ---
 
-# 36. Requirement Change Simulation
+# 37. Requirement Change Simulation
 
 At higher maturity, occasionally include changing requirements.
 
@@ -1584,7 +1756,7 @@ Teach architecture evolution, not static diagram drawing.
 
 ---
 
-# 37. Skill Measurement
+# 38. Skill Measurement
 
 Do not measure progress only as “lab completed”.
 
@@ -1614,7 +1786,7 @@ A user who quickly copies a correct fix but cannot explain root cause must not b
 
 ---
 
-# 38. Knowledge Gaps
+# 39. Knowledge Gaps
 
 Record discovered gaps in:
 
@@ -1643,7 +1815,7 @@ Do not create unnecessary remediation units for every minor mistake.
 
 ---
 
-# 39. Review Queue
+# 40. Review Queue
 
 Record future review or regression needs in:
 
@@ -1666,7 +1838,7 @@ Reviews must not create an ever-growing backlog.
 
 ---
 
-# 40. Busy User and Backlog Rule
+# 41. Busy User and Backlog Rule
 
 The learner has limited time, but this scheduled job must still create one new lab every run.
 
@@ -1702,7 +1874,7 @@ If a lab is untouched for a long period, it may remain `READY` or be marked `STA
 
 ---
 
-# 41. Time Budget
+# 42. Time Budget
 
 Prefer manageable labs.
 
@@ -1720,7 +1892,7 @@ Do not generate a 4-hour lab when a 45-minute lab can teach the same core mechan
 
 ---
 
-# 42. Quality Gate
+# 43. Quality Gate
 
 Before publishing a new lab, validate the following.
 
@@ -1772,7 +1944,7 @@ If the lab is obviously incomplete or inconsistent, do not publish it.
 
 ---
 
-# 43. Metadata
+# 44. Metadata
 
 Each lab must include `metadata.json`.
 
@@ -1795,6 +1967,11 @@ Example shape:
   ],
   "prerequisites": [],
   "validationMode": "executed",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": ["D2", "D3"],
+    "programPhase": "foundation-to-investigation"
+  },
   "novelty": {
     "businessContext": "internal-api",
     "scenarioType": "high-concurrency-degradation",
@@ -1810,7 +1987,7 @@ Use the actual runtime timestamp.
 
 ---
 
-# 44. State Transition After Generation
+# 45. State Transition After Generation
 
 After successfully publishing a new lab, update:
 
@@ -1835,6 +2012,23 @@ Preferred shape:
 ```
 
 The system may maintain additional per-unit progress state.
+
+Persist difficulty-program information in `state/learning-state.json` when useful, for example:
+
+```json
+{
+  "difficultyProgram": {
+    "startedAt": "2026-09-07",
+    "elapsedDays": 0,
+    "currentPhase": "foundation-depth",
+    "currentBand": ["D1", "D2"]
+  }
+}
+```
+
+Use actual program start state when present.
+
+Do not reset the difficulty program because the learner was inactive.
 
 Preserve older unit statuses and learning evidence.
 
@@ -1871,7 +2065,7 @@ Do not let `recent-labs.json` grow indefinitely.
 
 ---
 
-# 45. Daily Catalog
+# 46. Daily Catalog
 
 Because hourly generation may create up to roughly 24 labs per day, maintain a daily catalog:
 
@@ -1893,7 +2087,7 @@ Do not rewrite the full catalog unnecessarily if the GitHub integration supports
 
 ---
 
-# 46. GitHub Save Rules
+# 47. GitHub Save Rules
 
 Repository:
 
@@ -1924,7 +2118,7 @@ Never overwrite an existing unit.
 
 ---
 
-# 47. README for Each Unit
+# 48. README for Each Unit
 
 The unit `README.md` must be practical and concise.
 
@@ -1972,7 +2166,7 @@ Do not place the full answer directly in the README.
 
 ---
 
-# 48. Starter Code Rules
+# 49. Starter Code Rules
 
 Starter code must look like plausible production code.
 
@@ -2004,7 +2198,7 @@ Do not intentionally create insecure code unless the lab is specifically a contr
 
 ---
 
-# 49. Production Mindset
+# 50. Production Mindset
 
 Teach the learner to measure before optimizing.
 
@@ -2036,7 +2230,7 @@ Sophisticated architecture is not automatically senior architecture.
 
 ---
 
-# 50. AI-Assisted Engineering
+# 51. AI-Assisted Engineering
 
 Occasionally create labs where AI-generated code or advice is part of the problem.
 
@@ -2054,7 +2248,7 @@ Teach the learner to use AI as an accelerator while validating output with sourc
 
 ---
 
-# 51. Existing Daily Jobs
+# 52. Existing Daily Jobs
 
 This program complements but does not replace:
 
@@ -2078,7 +2272,7 @@ Do not make Real Engineering Lab another assessment-only job.
 
 ---
 
-# 52. Run Decision Algorithm
+# 53. Run Decision Algorithm
 
 At the beginning of every run:
 
@@ -2105,7 +2299,9 @@ Build anti-repetition profile:
       ↓
 Read skill matrix / gaps / progression
       ↓
-Choose exactly ONE new lab
+Calculate calendar-driven library difficulty band
+      ↓
+Choose exactly ONE new lab inside or near that band
       ↓
 Check:
 Is it materially different from previous labs?
@@ -2139,9 +2335,11 @@ An unfinished previous lab is never a reason to skip generation.
 
 ---
 
-# 53. Lab Selection and Anti-Repetition Algorithm
+# 54. Lab Selection and Anti-Repetition Algorithm
 
 When choosing the next unit, consider:
+
+0. the current calendar-driven Library Difficulty band
 
 1. critical or important knowledge gaps
 2. weak core skills
@@ -2228,7 +2426,7 @@ L1 deterministic failure
 
 ---
 
-# 54. Final Chat Response
+# 55. Final Chat Response
 
 Every successful run creates a new lab.
 
@@ -2252,7 +2450,7 @@ into the final chat response.
 
 ---
 
-# 55. Success Criteria
+# 56. Success Criteria
 
 A successful Real Engineering Lab should cause the learner to say:
 
@@ -2266,6 +2464,15 @@ or:
 
 > “Tôi đã trả lời đúng một câu interview.”
 
-The long-term goal is not to accumulate lab files.
+The long-term goal is not merely to accumulate lab files.
 
-The long-term goal is to convert broad project exposure into deep, transferable engineering judgment.
+However, the scheduled job is intentionally designed to build a **large, progressively harder engineering-lab library over time**.
+
+The library should mature from foundation labs toward Senior, Technical Lead and Solution Architecture scenarios according to calendar progression, while User Mastery remains evidence-driven and independent.
+
+The ultimate goal is to combine:
+
+- a rich long-term practice library
+- progressively harder engineering scenarios
+- real learner evidence
+- deep, transferable engineering judgment.
