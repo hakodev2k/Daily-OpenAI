@@ -4,7 +4,7 @@ Generate and maintain the user's **Real Engineering Lab** learning program for t
 
 Do not create, modify, explain, or suggest an automation or schedule.
 Do not turn this workflow into an interview-question generator.
-Do not create a new lab merely because a new calendar day has started.
+Every scheduled run MUST generate and save exactly one new lab. Never skip lab generation because previous labs are unfinished.
 Do not ask follow-up questions before executing the run.
 
 Use the actual current Vietnam time:
@@ -318,11 +318,13 @@ Do not infer completion from:
 
 ---
 
-# 7. One Active Lab Rule
+# 7. Always Generate a New Lab
 
-There must never be multiple newly generated unfinished labs competing for attention.
+Every run MUST generate exactly **one new Real Engineering Lab**.
 
-If `learning-state.json` contains an active unit with status:
+This rule is unconditional with respect to previous completion state.
+
+Previous labs may be:
 
 - `READY`
 - `WAITING_FOR_USER`
@@ -331,22 +333,121 @@ If `learning-state.json` contains an active unit with status:
 - `PAUSED`
 - `STALE`
 - `REVIEW_REQUIRED`
-
-then **do not generate a new lab**.
-
-Instead return a short reminder pointing to the active lab.
-
-A generated lab is NOT a completed lab.
-
-Only these states allow creation of the next new unit:
-
 - `COMPLETED`
 - `MASTERED`
 - `SKIPPED`
 - `ABANDONED`
-- no active unit
 
-Do not automatically mark any lab completed.
+None of these states may prevent creation of the current run's new lab.
+
+The scheduled job is a **lab generation pipeline**, not a single-active-lesson workflow.
+
+However, generating a new lab does NOT mean older labs are completed. Preserve their individual state exactly.
+
+The system must therefore distinguish:
+
+- generated labs
+- attempted labs
+- completed labs
+- mastered labs
+
+Never inflate learning progress merely because the scheduled job generated more content.
+
+## Mandatory historical inspection before generation
+
+Before selecting the new lab, inspect enough previous Real Engineering Lab history to avoid repetition and improve progression.
+
+At minimum consider, when available:
+
+- recent unit metadata
+- unit titles
+- domain
+- lab format
+- scenario
+- primary skill
+- secondary skills
+- root cause
+- failure mode
+- solution pattern
+- maturity level
+- skill matrix
+- knowledge gaps
+- review history
+
+Use old state and history to make the new lab **different, deeper, broader or more advanced**.
+
+## Strict non-duplication rule
+
+The new lab must NOT duplicate an old lab in substance.
+
+Do not generate:
+
+- the same scenario with renamed classes/entities
+- the same root cause with cosmetic changes
+- the same failure mode repeatedly
+- the same solution pattern repeatedly
+- the same lab format too close together
+- the same business context too close together
+- the same combination of technology + failure + fix too close together
+
+Example of unacceptable repetition:
+
+```text
+Previous:
+ASP.NET Core API slow because .Result blocks async I/O.
+
+New:
+Order API slow because .Wait() blocks async I/O.
+```
+
+This is essentially the same lab and must be rejected.
+
+A repeated skill is allowed only when the new lab increases depth or changes the engineering dimension.
+
+Example of valid progression:
+
+```text
+Earlier:
+sync-over-async in one ASP.NET Core endpoint
+
+Later:
+ThreadPool starvation across multiple dependencies under load,
+with traces, connection-pool evidence and competing hypotheses
+
+Later:
+architecture decision involving CPU-bound vs I/O-bound workloads,
+bounded concurrency and service capacity
+```
+
+## Diversity window
+
+Use recent history to create spacing between similar labs.
+
+As a default:
+
+- avoid the same primary root cause within roughly the most recent 10 generated labs
+- avoid the same lab format within the most recent 3 labs when reasonable
+- avoid the same business scenario/context within the most recent 5 labs
+- avoid the same primary skill in back-to-back runs unless deliberate depth progression strongly justifies it
+
+These are diversity defaults, not rigid curriculum limits.
+
+If revisiting a skill, explicitly increase one or more of:
+
+- mechanism depth
+- ambiguity
+- evidence complexity
+- number of plausible hypotheses
+- production realism
+- scale
+- concurrency
+- failure interactions
+- security constraints
+- operational constraints
+- architecture trade-offs
+- business constraints
+
+The next lab must add learning value beyond previous labs.
 
 ---
 
@@ -1296,23 +1397,30 @@ Reviews must not create an ever-growing backlog.
 
 ---
 
-# 35. Busy User Rule
+# 35. Busy User and Backlog Rule
 
-The learner has limited time.
+The learner has limited time, but this scheduled job must still create one new lab every run.
 
-Do not punish inactivity.
+Therefore:
 
-If an active lab remains unfinished:
+- unfinished labs remain unfinished
+- a new lab is still generated every run
+- generation count must never be treated as learning progress
+- do not mark older labs completed automatically
+- do not delete or overwrite older labs
+- preserve independent status for every unit
 
-- keep it active
-- do not generate another
-- do not count it as completed
-- do not inflate progress
-- do not accumulate daily lesson backlog
+The repository may intentionally accumulate a backlog of generated labs.
 
-If a lab has been untouched for a long period, it may become `STALE`.
+This is acceptable because the repository serves as a long-term engineering lab library.
 
-When the learner returns, provide a short recap or re-run instructions, not a full restart unless necessary.
+When the learner later chooses an older lab:
+
+- use that unit's own instructions and state
+- do not require them to complete labs chronologically
+- preserve their actual attempt/completion evidence
+
+If a lab is untouched for a long period, it may remain `READY` or be marked `STALE`, but that status must not affect new-lab generation.
 
 ---
 
@@ -1418,28 +1526,45 @@ After successfully publishing a new lab, update:
 
 `state/learning-state.json`
 
-with the new active unit.
+to record the most recently generated unit without replacing the state of older units.
 
-Example:
+Preferred shape:
 
 ```json
 {
-  "activeUnit": {
+  "latestGeneratedUnit": {
     "unitId": "UNIT-DOTNET-003",
     "path": "Daily Real Engineering Lab/units/UNIT-DOTNET-003-aspnet-core-threadpool-starvation",
-    "status": "WAITING_FOR_USER",
+    "status": "READY",
     "createdAt": "2026-09-07T14:30:00+07:00"
+  },
+  "generation": {
+    "totalGenerated": 42
   }
 }
 ```
 
-Preserve other state fields.
+The system may maintain additional per-unit progress state.
+
+Preserve older unit statuses and learning evidence.
 
 Do not overwrite learning history.
 
-Append state-change events to:
+Append a generation event to:
 
 `state/learning-events.jsonl`
+
+The event should record enough metadata to support future anti-repetition decisions, including when available:
+
+- unitId
+- domain
+- format
+- primary skill
+- scenario category
+- root cause category
+- failure mode
+- solution pattern
+- maturity level
 
 ---
 
@@ -1633,61 +1758,142 @@ Do not make Real Engineering Lab another assessment-only job.
 At the beginning of every run:
 
 ```text
-Read state
-   ↓
-Active unfinished unit?
-   ├─ YES → do not generate a new lab
-   │        return short active-lab reminder
-   │
-   └─ NO
-       ↓
-Critical blocking gap?
-       ├─ YES → generate focused repair lab
-       └─ NO
+Read current state
+      ↓
+Inspect recent generated labs
+      ↓
+Build anti-repetition profile:
+- recent domains
+- recent formats
+- recent scenarios
+- recent root causes
+- recent failure modes
+- recent solution patterns
+      ↓
+Read skill matrix / gaps / progression
+      ↓
+Choose exactly ONE new lab
+      ↓
+Check:
+Is it materially different from previous labs?
+      ├─ NO → reject candidate and choose another
+      └─ YES
            ↓
-Review/regression requires dedicated lab?
-           ├─ YES → generate regression lab
-           └─ NO
-               ↓
-Select next curriculum unit
-               ↓
+Can it deepen/reinforce an old skill without repeating the same lab?
+      ↓
+Set appropriate maturity level
+      ↓
 Generate complete reproducible lab
-               ↓
+      ↓
 Run quality gate
-               ↓
+      ↓
+Run explicit duplication gate
+      ↓
 Save to GitHub
-               ↓
+      ↓
+Append generation history
+      ↓
 Update state
 ```
 
-Do not create content solely to satisfy a schedule.
+Every run must end with one newly generated lab unless a genuine tool/write failure prevents saving.
+
+An unfinished previous lab is never a reason to skip generation.
 
 ---
 
-# 47. Lab Selection Algorithm
+# 47. Lab Selection and Anti-Repetition Algorithm
 
-When choosing the next unit, consider in order:
+When choosing the next unit, consider:
 
-1. blocking foundation gaps
+1. critical or important knowledge gaps
 2. weak core skills
-3. dependencies for upcoming advanced topics
-4. stale skills needing practical regression
+3. dependencies for advanced topics
+4. skills that can now be revisited at greater depth
 5. curriculum breadth
-6. technology exposure in the candidate profile
-7. preparation for Senior-level engineering
-8. preparation for Technical / Solution architecture
+6. underrepresented technologies from the candidate profile
+7. Senior-level engineering progression
+8. Technical / Solution architecture progression
+9. diversity versus recent generated labs
 
-Avoid repeating the same domain too many times consecutively unless remediation requires it.
+Before committing to a candidate lab, compare it against recent unit history.
+
+Reject the candidate if it is materially too similar in:
+
+- scenario
+- root cause
+- failure mode
+- investigation path
+- final fix
+- architecture decision
+- lab format
+
+A lab may revisit the same technology only when the challenge changes materially.
+
+Examples:
+
+```text
+Redis #1:
+cache-aside stale data
+
+Redis #2:
+hot-key / load concentration
+
+Redis #3:
+Redis outage and graceful degradation
+
+Redis #4:
+whether Redis should exist at all under new consistency constraints
+```
+
+These are valid because the engineering problems differ.
+
+Bad progression:
+
+```text
+SQL API query missing composite index
+↓
+Orders query missing composite index
+↓
+Products query missing composite index
+```
+
+This is repetition and must be rejected.
+
+Favor rotation across:
+
+- runtime
+- framework
+- database
+- networking
+- distributed systems
+- cloud
+- testing
+- security
+- observability
+- performance
+- deployment
+- design
+- architecture
+
+while still allowing deliberate deepening.
+
+For repeated skills, increase maturity where evidence supports it:
+
+```text
+L1 deterministic failure
+→ L2 investigation
+→ L3 multi-cause incident
+→ L4 refactoring/modernization
+→ L5 design decision
+→ L6 architecture/solution
+```
 
 ---
 
 # 48. Final Chat Response
 
-If an unfinished active lab already exists, return only a concise message such as:
-
-`Active lab pending: {UNIT_ID} — {TITLE} — {GITHUB_PATH}`
-
-Do not generate another lab.
+Every successful run creates a new lab.
 
 If a new lab is successfully created, return only:
 
