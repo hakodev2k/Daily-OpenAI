@@ -1066,8 +1066,8 @@ UNIT-*/
 ├── scripts/
 │   ├── setup.ps1
 │   ├── run.ps1
-│   ├── reproduce.ps1
-│   ├── verify.ps1
+│   ├── reproduce.ps1      # validates original starter failure
+│   ├── verify.ps1         # validates learner-modified starter/workspace
 │   └── reset.ps1          # when useful
 │
 ├── docs/
@@ -1911,14 +1911,37 @@ Therefore:
 
 The repository may intentionally accumulate a backlog of generated labs.
 
-Track these counts separately when useful:
+Track generation activity and learner activity in separate namespaces.
 
-- generated
-- attempted
-- completed
-- mastered
+Recommended state shape:
 
-Never treat `generated` as equivalent to `completed` or `mastered`.
+```json
+{
+  "generation": {
+    "totalRunSlotsAttempted": 1,
+    "totalGenerated": 1,
+    "totalFailed": 0
+  },
+  "learning": {
+    "totalAttempted": 0,
+    "totalCompleted": 0,
+    "totalMastered": 0
+  }
+}
+```
+
+Definitions:
+
+- `generation.totalRunSlotsAttempted` = scheduler/generator attempted a RUN_SLOT
+- `generation.totalGenerated` = validated labs successfully saved
+- `generation.totalFailed` = RUN_SLOT attempts ending in GENERATION_FAILED
+- `learning.totalAttempted` = learner actually started a lab
+- `learning.totalCompleted` = learner completed a lab
+- `learning.totalMastered` = mastery supported by evidence
+
+Never use the generic name `totalAttempted` inside the generation namespace.
+
+Never treat generated content as learner activity.
 
 This is acceptable because the repository serves as a long-term engineering lab library.
 
@@ -1962,6 +1985,9 @@ Before publishing a new lab, validate the following.
 - setup instructions are complete
 - run instructions are complete
 - reproduction instructions are concrete
+- reproduce and verify semantics are not conflated
+- `verify.ps1` validates the learner-editable code path rather than only the reference solution
+- README observations do not spoil the root cause or exact fix
 - expected behavior is described
 - hints do not immediately reveal the answer
 - the reference solution addresses the actual root cause
@@ -2068,7 +2094,14 @@ Preferred shape:
     "createdAt": "2026-09-07T14:30:00+07:00"
   },
   "generation": {
-    "totalGenerated": 42
+    "totalRunSlotsAttempted": 42,
+    "totalGenerated": 41,
+    "totalFailed": 1
+  },
+  "learning": {
+    "totalAttempted": 6,
+    "totalCompleted": 4,
+    "totalMastered": 2
   }
 }
 ```
@@ -2119,6 +2152,8 @@ Do not overwrite learning history.
 Append every successful generation to:
 
 `state/generation-ledger.jsonl`
+
+Generation-attempt counters must remain separate from learner-attempt counters.
 
 and append learning-state changes to:
 
@@ -2204,6 +2239,27 @@ Never overwrite an existing unit.
 
 The unit `README.md` must be practical and concise.
 
+The README must **not reveal the root cause, exact failing mechanism, exact fix, or solution path before the learner investigates**.
+
+The README may describe:
+
+- business context
+- observable symptoms
+- expected failing behavior
+- what evidence to collect
+- what success looks like
+
+The README must avoid statements such as:
+
+- naming the exact root cause
+- pointing directly to the exact problematic API call
+- explaining which line re-executes work
+- prescribing `ToList()`, `await`, a specific index, cache, retry policy, transaction pattern or other exact fix
+
+Those details belong in progressive hints and the reference solution.
+
+A good README describes **what to observe**, not **why it happens**.
+
 Required sections:
 
 ```markdown
@@ -2222,6 +2278,8 @@ Required sections:
 ## Cách reproduce vấn đề
 
 ## Những gì cần quan sát
+
+Describe symptoms and measurable evidence only. Do not reveal the root cause or exact mechanism here.
 
 ## Quy tắc làm lab
 
@@ -2579,6 +2637,10 @@ HOW HARD it is
 
 HOW GOOD the learner actually is
 = evidence-driven User Mastery
+
+GENERATOR ATTEMPTS
+≠
+LEARNER ATTEMPTS
 ```
 
 The ultimate goal is to combine:
