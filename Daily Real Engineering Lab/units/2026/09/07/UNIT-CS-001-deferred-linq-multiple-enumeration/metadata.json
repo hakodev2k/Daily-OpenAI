@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-CS-001",
+  "runSlot": "2026-09-07-16",
+  "title": "Deferred LINQ Pipeline Gọi Dependency Hai Lần",
+  "domain": "csharp-linq",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-07T16:05:28+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "linq",
+    "ienumerable",
+    "deferred-execution",
+    "multiple-enumeration"
+  ],
+  "prerequisites": [
+    "csharp-basics",
+    "linq-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": [
+      "D1",
+      "D2"
+    ],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "order-inventory-reservation",
+    "scenarioType": "scheduled-job-hidden-dependency-amplification",
+    "primaryRootCause": "deferred-query-multiple-enumeration",
+    "failureMode": "duplicate-dependency-calls",
+    "solutionPattern": "materialize-once-at-side-effect-boundary",
+    "labFormat": "runtime-failure"
+  }
+}
