@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-TEST-001",
+  "runSlot": "2026-09-08-00",
+  "title": "Test xanh nhưng fallback quote sai",
+  "domain": "testing",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-08T00:08:38+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["failure-path-testing", "behavioral-assertions", "test-oracle-quality"],
+  "prerequisites": ["csharp-async-basics", "unit-testing-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "checkout-shipping-pricing",
+    "scenarioType": "green-ci-hidden-contract-violation",
+    "primaryRootCause": "interaction-only-test-oracle",
+    "failureMode": "green-suite-invalid-fallback",
+    "solutionPattern": "behavioral-failure-path-assertion",
+    "labFormat": "testing-contract-investigation"
+  }
+}
