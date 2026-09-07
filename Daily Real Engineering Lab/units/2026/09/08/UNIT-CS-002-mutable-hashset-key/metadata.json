@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-CS-002",
+  "runSlot": "2026-09-08-05",
+  "title": "Recipient đã có trong set nhưng vẫn bị thêm lần nữa",
+  "domain": "csharp-collections",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-08T05:09:59+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "hashset-semantics",
+    "equality-and-hashcode",
+    "immutable-keys"
+  ],
+  "prerequisites": [
+    "csharp-equality-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "notification-recipient-deduplication",
+    "scenarioType": "hash-collection-lookup-corruption",
+    "primaryRootCause": "mutable-field-changes-hash-after-insert",
+    "failureMode": "logical-duplicate-accepted-by-set",
+    "solutionPattern": "stable-immutable-business-key",
+    "labFormat": "collection-invariant-investigation"
+  }
+}
