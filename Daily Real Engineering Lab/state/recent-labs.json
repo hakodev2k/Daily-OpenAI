@@ -186,10 +186,25 @@
       "solutionPattern": "exception-safe-acquire-release-lifecycle",
       "labFormat": "async-resource-invariant-investigation",
       "createdAt": "2026-09-08T11:34:00+07:00"
+    },
+    {
+      "runSlot": "2026-09-08-13",
+      "unitId": "UNIT-OBS-001",
+      "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-OBS-001-ambient-correlation-context-leak",
+      "domain": "observability",
+      "primarySkill": "async-context-lifetime",
+      "maturityLevel": "L2",
+      "difficulty": "D2",
+      "businessContext": "background-job-observability",
+      "primaryRootCause": "ambient-context-not-restored-after-operation",
+      "failureMode": "incorrect-correlation-trace-stitching",
+      "solutionPattern": "scoped-ambient-context-restoration",
+      "labFormat": "observability-context-investigation",
+      "createdAt": "2026-09-08T13:06:00+07:00"
     }
   ],
   "rolling24": {
-    "total": 14,
+    "total": 15,
     "byDomain": {
       "csharp-linq": 1,
       "dotnet-async": 2,
@@ -201,14 +216,15 @@
       "caching": 1,
       "dependency-injection": 1,
       "messaging": 1,
-      "csharp-collections": 1
+      "csharp-collections": 1,
+      "observability": 1
     },
     "byDifficulty": {
-      "D2": 14
+      "D2": 15
     },
     "byMaturity": {
       "L1": 9,
-      "L2": 5
+      "L2": 6
     },
     "byFormat": {
       "runtime-failure": 1,
@@ -224,7 +240,8 @@
       "ef-core-performance-investigation": 1,
       "collection-invariant-investigation": 1,
       "request-body-investigation": 1,
-      "async-resource-invariant-investigation": 1
+      "async-resource-invariant-investigation": 1,
+      "observability-context-investigation": 1
     }
   }
 }
