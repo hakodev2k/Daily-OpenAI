@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-DOTNET-002",
+  "runSlot": "2026-09-08-11",
+  "title": "Worker dần ngừng xử lý sau vài lỗi downstream",
+  "domain": "dotnet-async",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-08T11:34:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["semaphoreslim", "bounded-concurrency", "exception-safety", "async-failure-paths"],
+  "prerequisites": ["task-basics", "async-await", "exceptions"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "product-price-sync-worker",
+    "scenarioType": "gradual-throughput-collapse-after-failures",
+    "primaryRootCause": "semaphore-permit-not-released-on-exception",
+    "failureMode": "bounded-concurrency-capacity-leak",
+    "solutionPattern": "exception-safe-acquire-release-lifecycle",
+    "labFormat": "async-resource-invariant-investigation"
+  }
+}
