@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-ASPNET-002",
+  "runSlot": "2026-09-08-09",
+  "title": "Webhook hợp lệ nhưng endpoint nhận body rỗng",
+  "domain": "aspnet-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-08T09:37:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["aspnet-core-request-body", "middleware", "stream-semantics", "failure-path-debugging"],
+  "prerequisites": ["aspnet-core-middleware-basics", "http-request-body"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "payment-webhook-ingestion",
+    "scenarioType": "middleware-observability-regression",
+    "primaryRootCause": "request-body-consumed-without-rewind",
+    "failureMode": "valid-webhook-rejected-after-audit-read",
+    "solutionPattern": "buffer-and-rewind-request-body",
+    "labFormat": "request-body-investigation"
+  }
+}
