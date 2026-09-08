@@ -1,0 +1,31 @@
+{
+  "unitId": "UNIT-SEC-001",
+  "runSlot": "2026-09-08-14",
+  "title": "Internal-only endpoint đôi khi mở cho request từ Internet",
+  "domain": "security",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-08T14:09:00+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "aspnet-core-forwarded-headers",
+    "reverse-proxy-trust-boundary",
+    "client-ip-attribution",
+    "authorization-input-validation"
+  ],
+  "prerequisites": ["aspnet-core-request-pipeline", "http-headers", "reverse-proxy-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "internal-operations-api-behind-reverse-proxy",
+    "scenarioType": "network-identity-trust-confusion",
+    "primaryRootCause": "client-controlled-forwarding-header-treated-as-trusted-identity",
+    "failureMode": "internal-endpoint-authorization-bypass",
+    "solutionPattern": "explicit-trusted-proxy-boundary-and-normalized-client-identity",
+    "labFormat": "security-trust-boundary-investigation"
+  }
+}
