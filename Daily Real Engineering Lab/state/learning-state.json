@@ -1,13 +1,13 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ASPNET-002",
-    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-ASPNET-002-request-body-audit-drains-stream",
+    "unitId": "UNIT-DOTNET-002",
+    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-DOTNET-002-semaphore-permit-leak",
     "status": "READY",
-    "createdAt": "2026-09-08T09:37:00+07:00"
+    "createdAt": "2026-09-08T11:34:00+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 13,
-    "totalGenerated": 13,
+    "totalRunSlotsAttempted": 14,
+    "totalGenerated": 14,
     "totalFailed": 0
   },
   "learning": {
