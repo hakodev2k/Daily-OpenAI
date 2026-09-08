@@ -1,13 +1,13 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OBS-001",
-    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-OBS-001-ambient-correlation-context-leak",
+    "unitId": "UNIT-SEC-001",
+    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-SEC-001-forwarded-headers-trust-boundary",
     "status": "READY",
-    "createdAt": "2026-09-08T13:06:00+07:00"
+    "createdAt": "2026-09-08T14:09:00+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 15,
-    "totalGenerated": 15,
+    "totalRunSlotsAttempted": 16,
+    "totalGenerated": 16,
     "totalFailed": 0
   },
   "learning": {
