@@ -1,13 +1,13 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SEC-001",
-    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-SEC-001-forwarded-headers-trust-boundary",
+    "unitId": "UNIT-CS-003",
+    "path": "Daily Real Engineering Lab/units/2026/09/08/UNIT-CS-003-datetime-unspecified-dst-shift",
     "status": "READY",
-    "createdAt": "2026-09-08T14:09:00+07:00"
+    "createdAt": "2026-09-08T15:07:16+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 16,
-    "totalGenerated": 16,
+    "totalRunSlotsAttempted": 17,
+    "totalGenerated": 17,
     "totalFailed": 0
   },
   "learning": {
