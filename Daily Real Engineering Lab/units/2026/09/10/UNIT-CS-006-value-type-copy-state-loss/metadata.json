@@ -1,0 +1,34 @@
+{
+  "unitId": "UNIT-CS-006",
+  "runSlot": "2026-09-10-05",
+  "title": "Counter tăng trong log nhưng state lưu trữ không đổi",
+  "domain": "csharp-runtime",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-10T05:10:11+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "csharp-value-types",
+    "struct-copy-semantics",
+    "dictionary-value-semantics",
+    "state-modeling"
+  ],
+  "prerequisites": [
+    "basic-csharp-struct-and-class"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Strict static consistency review performed. dotnet CLI was unavailable in the execution environment, so the code was not executed.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "tenant-api-quota-counter",
+    "scenarioType": "state-update-not-retained",
+    "primaryRootCause": "mutable-value-type-copied-out-of-dictionary-before-mutation",
+    "failureMode": "local-counter-increments-but-stored-state-remains-unchanged",
+    "solutionPattern": "explicit-value-writeback-or-reference-semantics",
+    "labFormat": "value-semantics-investigation"
+  }
+}
