@@ -60,8 +60,6 @@ README chỉ mô tả evidence cần thu thập; không giả định nguyên nh
 ## Hints
 
 - [Hint 01](hints/hint-01.md)
-- [Hint 02](hints/hint-02.md)
-- [Hint 03](hints/hint-03.md)
 
 ## Reference Solution
 
