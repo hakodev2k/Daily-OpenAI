@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-SEC-002",
+  "runSlot": "2026-09-09-21",
+  "title": "Document Preview Boundary",
+  "domain": "security",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-09T21:11:26+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "filesystem-security",
+    "path-canonicalization",
+    "trust-boundaries",
+    "csharp-string-comparison"
+  ],
+  "prerequisites": [
+    ".NET file I/O basics",
+    "Path.GetFullPath"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review completed. Runtime execution was attempted but the available execution environment does not contain the dotnet CLI, so no execution claim is made.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "support-document-preview",
+    "scenarioType": "filesystem-access-boundary-confusion",
+    "primaryRootCause": "filesystem-prefix-check-confuses-sibling-directory-with-descendant",
+    "failureMode": "unauthorized-file-disclosure",
+    "solutionPattern": "canonical-directory-boundary-validation",
+    "labFormat": "security-boundary-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}
