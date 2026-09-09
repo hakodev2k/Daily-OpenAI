@@ -1,0 +1,22 @@
+{
+  "unitId":"UNIT-API-001",
+  "runSlot":"2026-09-09-09",
+  "title":"Offset pagination drift under concurrent inserts",
+  "domain":"api-engineering",
+  "maturityLevel":"L2",
+  "status":"READY",
+  "createdAt":"2026-09-09T09:11:00+07:00",
+  "estimatedMinutes":40,
+  "skills":["api-pagination","keyset-pagination","ordering-consistency"],
+  "prerequisites":["linq-ordering","rest-api-basics"],
+  "validationMode":"static-review",
+  "difficulty":{"generatedLevel":"D2","dailyBand":["D1","D2"],"programPhase":"foundation-depth"},
+  "novelty":{
+    "businessContext":"activity-feed-api",
+    "scenarioType":"pagination-under-concurrent-inserts",
+    "primaryRootCause":"offset-position-drift-after-leading-insert",
+    "failureMode":"duplicate-and-missing-items-across-pages",
+    "solutionPattern":"stable-keyset-cursor-pagination",
+    "labFormat":"api-pagination-consistency-investigation"
+  }
+}
