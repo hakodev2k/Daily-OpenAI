@@ -32,6 +32,19 @@ var databaseValue = await db.Orders
 
 Console.WriteLine($"DATABASE={databaseValue}");
 
+if (args.Contains("--verify", StringComparer.OrdinalIgnoreCase))
+{
+    if (affected != 1 || order.Status != "Approved" || databaseValue != "Approved")
+    {
+        Console.Error.WriteLine("VERIFY_FAILED: persisted state and response state are not consistent.");
+        return 2;
+    }
+
+    Console.WriteLine("VERIFY_PASSED");
+}
+
+return 0;
+
 public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
     public DbSet<Order> Orders => Set<Order>();
