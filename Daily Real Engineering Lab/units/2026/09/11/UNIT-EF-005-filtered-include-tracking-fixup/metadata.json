@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-EF-005",
+  "runSlot": "2026-09-11-03",
+  "title": "Filtered Include Tracking Surprise",
+  "domain": "ef-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T03:11:54+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["ef-core", "change-tracking", "filtered-include", "query-behavior"],
+  "prerequisites": ["ef-core-query-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "order-admin-api",
+    "scenarioType": "tracked-graph-query-surprise",
+    "primaryRootCause": "navigation-fixup-reintroduces-already-tracked-children-after-filtered-include",
+    "failureMode": "filtered-child-collection-contains-out-of-filter-entities",
+    "solutionPattern": "isolate-read-query-from-existing-tracking-state",
+    "labFormat": "ef-core-query-state-investigation"
+  }
+}
