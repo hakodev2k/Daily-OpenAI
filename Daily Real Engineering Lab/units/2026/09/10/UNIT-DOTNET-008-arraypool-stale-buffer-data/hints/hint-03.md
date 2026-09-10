@@ -1,0 +1,1 @@
+Kiểm tra overload của `ArrayPool<T>.Return`. Với dữ liệu nhạy cảm, hãy xác định rõ ai chịu trách nhiệm làm sạch buffer trước khi resource được tái sử dụng.
