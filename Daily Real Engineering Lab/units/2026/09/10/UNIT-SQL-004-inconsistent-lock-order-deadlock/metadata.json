@@ -1,22 +1,22 @@
 {
   "unitId": "UNIT-SQL-004",
   "runSlot": "2026-09-10-22",
-  "title": "Inconsistent Lock Order Deadlock",
+  "title": "Inventory Transfer Concurrency Design",
   "domain": "sql",
-  "maturityLevel": "L3",
+  "maturityLevel": "L5",
   "status": "READY",
   "createdAt": "2026-09-10T22:07:49+07:00",
-  "estimatedMinutes": 55,
-  "skills": ["sql-server-deadlocks", "transactions", "lock-ordering", "concurrency-debugging"],
+  "estimatedMinutes": 60,
+  "skills": ["sql-server-concurrency", "transactions", "resource-ordering", "concurrency-design"],
   "prerequisites": ["basic-sql-transactions"],
   "validationMode": "static-review",
   "difficulty": {"generatedLevel": "D2", "dailyBand": ["D1", "D2"], "programPhase": "foundation-depth"},
   "novelty": {
     "businessContext": "inventory-transfer-service",
-    "scenarioType": "concurrent-opposite-direction-transfers",
-    "primaryRootCause": "inconsistent-row-lock-acquisition-order",
-    "failureMode": "sql-server-deadlock-error-1205",
-    "solutionPattern": "deterministic-resource-lock-order",
-    "labFormat": "database-concurrency-production-incident"
+    "scenarioType": "concurrency-control-decision",
+    "primaryRootCause": "inconsistent-resource-order",
+    "failureMode": "concurrent-transaction-conflict",
+    "solutionPattern": "deterministic-resource-order",
+    "labFormat": "database-concurrency-design-decision"
   }
 }
