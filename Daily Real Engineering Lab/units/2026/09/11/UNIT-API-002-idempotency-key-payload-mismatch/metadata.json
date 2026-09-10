@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-API-002",
+  "runSlot": "2026-09-11-04",
+  "title": "Idempotency Key Payload Mismatch",
+  "domain": "api-engineering",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T04:10:11+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["rest-api", "idempotency", "failure-path-testing", "payment-api-contracts"],
+  "prerequisites": ["http-api-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "mobile-payment-charge-api",
+    "scenarioType": "idempotency-contract-violation",
+    "primaryRootCause": "idempotency-entry-not-bound-to-original-request-payload",
+    "failureMode": "different-request-receives-prior-idempotent-response",
+    "solutionPattern": "bind-idempotency-key-to-request-fingerprint-and-reject-mismatch",
+    "labFormat": "api-failure-investigation"
+  }
+}
