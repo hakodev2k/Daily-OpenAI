@@ -1,56 +1,52 @@
-# UNIT-SQL-004 — Inconsistent Lock Order Deadlock
+# UNIT-SQL-004 — Inventory Transfer Concurrency Design
 
 ## Mục tiêu
 
-Điều tra một production-style SQL Server concurrency failure nơi hai transaction hợp lệ khi chạy riêng lẻ nhưng có thể deadlock khi chạy đồng thời.
+Đưa ra một quyết định concurrency design có thể bảo vệ correctness và availability cho luồng inventory transfer khi hai request cập nhật cùng một cặp location theo hướng ngược nhau.
 
 ## Bối cảnh thực tế
 
-Một dịch vụ inventory xử lý chuyển tồn kho giữa hai location. Mỗi transfer cập nhật hai row trong cùng bảng. Ở tải thấp hệ thống ổn định, nhưng khi nhiều transfer ngược chiều chạy cùng lúc, một số request thất bại với SQL Server deadlock victim error dù CPU và I/O đều thấp.
+Một inventory service trên SQL Server xử lý chuyển quantity giữa các location. Trong production, hai request ngược chiều đôi khi tạo circular lock dependency và SQL Server phải hủy một transaction để hệ thống tiếp tục. Business muốn giảm lỗi nhưng không chấp nhận giải pháp chỉ retry vô hạn hoặc serialize toàn bộ hệ thống.
 
 ## Bạn cần làm gì
 
-1. Reproduce deadlock bằng starter app.
-2. Ghi lại evidence và ít nhất hai hypothesis.
-3. Xác định transaction interaction tạo circular wait.
-4. Sửa code trong `starter/` để loại bỏ điều kiện deadlock mà vẫn giữ tính đúng đắn của transfer.
-5. Chạy `verify.ps1`.
+1. Đọc schema trong `starter/setup.sql` và evidence trong `evidence/incident.md`.
+2. Xác định invariant cần giữ và failure mode cần loại bỏ.
+3. So sánh ít nhất ba phương án concurrency control.
+4. Chọn một phương án primary và mô tả transaction boundary, lock/order rule, retry policy nếu có, observability và rollout plan.
+5. Ghi quyết định vào `workspace/my-decision.md` trước khi xem solution.
 
 ## Yêu cầu môi trường
 
-- Windows
-- .NET 8 SDK
-- SQL Server LocalDB (`MSSQLLocalDB`)
+Không bắt buộc chạy SQL Server. Nếu có SQL Server LocalDB hoặc SQL Server dev instance, bạn có thể dùng schema kèm theo để tự dựng thêm reproduction riêng.
 
 ## Chạy nhanh
 
-```powershell
-./run.ps1
+Không có executable reproduction bắt buộc cho lab này. Bắt đầu từ:
+
+```text
+starter/setup.sql
+→ evidence/incident.md
+→ workspace/my-decision.md
 ```
 
 ## Cách reproduce vấn đề
 
-```powershell
-./reproduce.ps1
-```
-
-Script sẽ chạy nhiều cặp transfer đồng thời để tăng xác suất tái hiện. Kết quả trước fix phải xuất hiện ít nhất một `SqlException` có error number `1205` trong số các vòng thử.
+Lab sử dụng captured incident evidence thay vì một timing-sensitive local deadlock reproduction. Hãy dựng wait-for graph từ timeline và lock evidence được cung cấp, sau đó xác định điều kiện tạo cycle.
 
 ## Những gì cần quan sát
 
-- Hai transaction đều cập nhật cùng hai inventory row nhưng theo hướng ngược nhau.
-- Khi chạy tuần tự, cả hai đều thành công.
-- Khi chạy đồng thời, lỗi xuất hiện không phụ thuộc vào thiếu CPU hay network timeout.
-- SQL Server chọn một transaction làm deadlock victim để phá circular wait.
-
-Không cần đo timing tuyệt đối; tập trung vào transaction order, lock ownership và error `1205`.
+- Mỗi request riêng lẻ đều hợp lệ.
+- Hai request cạnh tranh cùng hai resources nhưng không tuân theo cùng một acquisition order.
+- Correctness của stock total vẫn phải được giữ khi một transaction bị rollback.
+- Giải pháp phải cân bằng throughput, latency, implementation risk và operational complexity.
 
 ## Quy tắc làm lab
 
-1. Reproduce trước.
-2. Ghi hypothesis vào `workspace/my-investigation.md`.
-3. Thử fix trong `starter/`.
-4. Verify.
+1. Đọc evidence trước.
+2. Ghi ít nhất ba options.
+3. Chọn option dựa trên constraints, không dựa trên độ “xịn” của công nghệ.
+4. Nêu failure modes còn lại và cách monitor.
 5. Chỉ sau đó mới xem solution.
 
 ## Hints
@@ -61,24 +57,14 @@ Không cần đo timing tuyệt đối; tập trung vào transaction order, lock
 
 ## Reference Solution
 
-> Reference Solution — inspect only after reproducing the issue and attempting your own fix.
+> Reference Solution — inspect only after completing your own decision record.
 
 - [Reference Solution](solution/README.md)
 
 ## Expected Results
 
-### Before
-
-- Sequential transfers succeed.
-- Concurrent opposite-direction transfers intermittently produce error `1205`.
-- Database remains transactionally consistent because one transaction is rolled back.
-
-### After
-
-- Concurrent transfers complete without deadlock across the verification run.
-- Final stock totals remain unchanged.
-- No retry loop is required merely to hide the underlying ordering problem.
+Một đáp án tốt phải giữ inventory invariant, loại bỏ hoặc giới hạn rõ circular-wait condition, không biến retry thành primary correctness mechanism, và có rollout/verification plan đo được.
 
 ## Estimated Time
 
-45–60 phút.
+45–75 phút.
