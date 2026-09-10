@@ -1,0 +1,27 @@
+{
+  "unitId": "UNIT-DOTNET-007",
+  "runSlot": "2026-09-10-07",
+  "title": "Background work biến mất khi host shutdown",
+  "domain": "dotnet-hosting",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-10T07:07:15+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["backgroundservice", "hosted-service-lifecycle", "async-await", "graceful-shutdown"],
+  "prerequisites": ["task-basics", "cancellation-token-basics"],
+  "validationMode": "static-review",
+  "validationNote": "GitHub connector run cannot execute the generated .NET project; source, scripts, lifecycle ordering and expected output were statically checked for consistency.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "audit-export-worker-deployment",
+    "scenarioType": "host-shutdown-work-loss",
+    "primaryRootCause": "owned-child-tasks-not-awaited-before-executeasync-completes",
+    "failureMode": "accepted-background-jobs-lost-during-graceful-shutdown",
+    "solutionPattern": "structured-ownership-await-owned-work-before-lifecycle-completion",
+    "labFormat": "hosted-service-shutdown-investigation"
+  }
+}
