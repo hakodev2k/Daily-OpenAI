@@ -1,0 +1,22 @@
+{
+  "unitId": "UNIT-SQL-004",
+  "runSlot": "2026-09-10-22",
+  "title": "Inconsistent Lock Order Deadlock",
+  "domain": "sql",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-10T22:07:49+07:00",
+  "estimatedMinutes": 55,
+  "skills": ["sql-server-deadlocks", "transactions", "lock-ordering", "concurrency-debugging"],
+  "prerequisites": ["basic-sql-transactions"],
+  "validationMode": "static-review",
+  "difficulty": {"generatedLevel": "D2", "dailyBand": ["D1", "D2"], "programPhase": "foundation-depth"},
+  "novelty": {
+    "businessContext": "inventory-transfer-service",
+    "scenarioType": "concurrent-opposite-direction-transfers",
+    "primaryRootCause": "inconsistent-row-lock-acquisition-order",
+    "failureMode": "sql-server-deadlock-error-1205",
+    "solutionPattern": "deterministic-resource-lock-order",
+    "labFormat": "database-concurrency-production-incident"
+  }
+}
