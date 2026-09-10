@@ -15,8 +15,11 @@ var app = builder.Build();
 app.UseOutputCache();
 
 app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
+app.MapGet("/flags", GetFlags).CacheOutput("tenant-flags");
 
-app.MapGet("/flags", (HttpRequest request) =>
+app.Run();
+
+static IResult GetFlags(HttpRequest request)
 {
     var tenantId = request.Headers["X-Tenant-Id"].ToString();
 
@@ -40,7 +43,4 @@ app.MapGet("/flags", (HttpRequest request) =>
         featurePlan,
         generatedAt = DateTimeOffset.UtcNow
     });
-})
-.CacheOutput("tenant-flags");
-
-app.Run();
+}
