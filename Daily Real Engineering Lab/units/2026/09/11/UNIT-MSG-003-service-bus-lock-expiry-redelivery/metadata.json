@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-MSG-003",
+  "runSlot": "2026-09-11-15",
+  "title": "Service Bus Lock Expiry Redelivery",
+  "domain": "messaging",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T15:11:57+07:00",
+  "estimatedMinutes": 50,
+  "skills": ["azure-service-bus", "message-locks", "redelivery", "background-processing"],
+  "prerequisites": ["basic-message-processing", "async-await"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "document-preview-worker",
+    "scenarioType": "long-running-message-processing",
+    "primaryRootCause": "message-lock-expires-before-handler-completes-without-renewal",
+    "failureMode": "same-message-redelivered-while-first-handler-still-processing",
+    "solutionPattern": "maintain-message-lock-through-long-running-handler",
+    "labFormat": "azure-service-bus-lock-investigation"
+  }
+}
