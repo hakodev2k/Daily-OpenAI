@@ -1,16 +1,21 @@
 var tenants = new[] { "alpha", "bravo", "charlie" };
-var callbacks = new List<Func<string>>();
+var callbacks = new List<Func<Task<string>>>();
 
 for (var i = 0; i < tenants.Length; i++)
 {
-    callbacks.Add(() => tenants[i]);
+    callbacks.Add(async () =>
+    {
+        await Task.Yield();
+        return tenants[i];
+    });
 }
 
 try
 {
-    var results = callbacks.Select(callback => callback()).OrderBy(x => x).ToArray();
-    Console.WriteLine(string.Join(",", results));
-    return results.SequenceEqual(tenants.OrderBy(x => x)) ? 0 : 43;
+    var results = await Task.WhenAll(callbacks.Select(callback => callback()));
+    var ordered = results.OrderBy(x => x).ToArray();
+    Console.WriteLine(string.Join(",", ordered));
+    return ordered.SequenceEqual(tenants.OrderBy(x => x)) ? 0 : 43;
 }
 catch (Exception ex)
 {
