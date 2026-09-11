@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-CS-008",
+  "runSlot": "2026-09-11-17",
+  "title": "Async Fan-out Uses the Wrong Tenant",
+  "domain": "csharp-runtime",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-11T17:09:15+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["csharp-closures", "async-await", "task-fanout"],
+  "prerequisites": ["basic-csharp-delegates", "task-await-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-scheduled-export",
+    "scenarioType": "deferred-delegate-state-capture",
+    "primaryRootCause": "for-loop-variable-captured-by-async-delegate-and-read-after-loop-completes",
+    "failureMode": "fanout-work-items-read-final-loop-index",
+    "solutionPattern": "capture-stable-per-iteration-value-before-creating-delegate",
+    "labFormat": "csharp-closure-runtime-failure"
+  }
+}
