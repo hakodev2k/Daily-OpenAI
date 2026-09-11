@@ -1,0 +1,1 @@
+Starter project files are added by this lab generation run.
