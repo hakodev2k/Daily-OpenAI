@@ -1,0 +1,34 @@
+{
+  "unitId": "UNIT-PG-001",
+  "runSlot": "2026-09-11-10",
+  "title": "Transaction Aborted After Error",
+  "domain": "postgresql",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T10:06:38+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "postgresql-transactions",
+    "sqlstate",
+    "conflict-handling",
+    "npgsql"
+  ],
+  "prerequisites": [
+    "basic-sql-transactions",
+    "basic-dotnet-data-access"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "partner-customer-batch-import",
+    "scenarioType": "transaction-state-after-handled-statement-error",
+    "primaryRootCause": "postgresql-transaction-remains-aborted-after-statement-error",
+    "failureMode": "valid-command-after-caught-error-fails-with-25p02",
+    "solutionPattern": "database-native-conflict-handling-with-on-conflict",
+    "labFormat": "postgresql-transaction-investigation"
+  }
+}
