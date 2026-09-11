@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-DOTNET-010",
+  "runSlot": "2026-09-11-13",
+  "title": "Admission Check Race",
+  "domain": "dotnet-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T13:07:36+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["semaphores", "concurrency", "admission-control", "race-conditions"],
+  "prerequisites": ["task-basics", "semaphores-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "background-export-admission-control",
+    "scenarioType": "concurrent-check-then-act-admission",
+    "primaryRootCause": "semaphore-currentcount-used-as-preflight-before-separate-acquisition",
+    "failureMode": "multiple-callers-accepted-into-single-slot-policy",
+    "solutionPattern": "atomic-zero-timeout-semaphore-acquisition",
+    "labFormat": "concurrency-admission-control-investigation"
+  }
+}
