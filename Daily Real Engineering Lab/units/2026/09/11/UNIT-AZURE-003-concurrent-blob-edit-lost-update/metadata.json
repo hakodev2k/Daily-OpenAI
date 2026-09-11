@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-AZURE-003",
+  "runSlot": "2026-09-11-14",
+  "title": "Concurrent Blob Edit Loses an Update",
+  "domain": "azure-storage",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T14:07:04+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["azure-blob-storage", "optimistic-concurrency", "etag", "data-consistency"],
+  "prerequisites": ["basic-http-preconditions", "basic-concurrency"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "cms-document-editing",
+    "scenarioType": "concurrent-object-storage-write",
+    "primaryRootCause": "blob-write-ignores-version-read-by-editor",
+    "failureMode": "stale-editor-silently-overwrites-newer-content",
+    "solutionPattern": "conditional-write-with-expected-etag",
+    "labFormat": "azure-storage-concurrency-investigation"
+  }
+}
