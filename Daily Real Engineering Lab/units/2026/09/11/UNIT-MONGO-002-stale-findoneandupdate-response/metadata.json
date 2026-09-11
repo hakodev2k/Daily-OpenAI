@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-MONGO-002",
+  "runSlot": "2026-09-11-21",
+  "title": "Update thành công nhưng API trả state cũ",
+  "domain": "mongodb",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-11T21:07:08+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["mongodb-find-one-and-update", "mongodb-driver", "write-return-contracts"],
+  "prerequisites": ["basic-mongodb-crud", "csharp-async-await"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "fulfillment-status-api",
+    "scenarioType": "write-succeeds-response-state-is-stale",
+    "primaryRootCause": "find-one-and-update-returns-pre-update-document-by-default",
+    "failureMode": "successful-update-returns-stale-document-state",
+    "solutionPattern": "request-post-update-document-from-atomic-operation",
+    "labFormat": "mongodb-return-contract-runtime-failure"
+  }
+}
