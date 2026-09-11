@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-REDIS-001",
+  "runSlot": "2026-09-11-18",
+  "title": "Redis Client Churn Under Concurrent Requests",
+  "domain": "redis",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T18:10:26+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["redis-client-lifecycle", "connection-reuse", "concurrency", "performance-diagnostics"],
+  "prerequisites": ["basic-async-await", "dependency-injection-lifetimes"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "pricing-api-cache-read",
+    "scenarioType": "connection-lifecycle-amplification",
+    "primaryRootCause": "connection-oriented-cache-client-created-per-request",
+    "failureMode": "latency-and-handshake-amplification-under-concurrency",
+    "solutionPattern": "reuse-long-lived-thread-safe-cache-client",
+    "labFormat": "redis-client-lifecycle-investigation"
+  }
+}
