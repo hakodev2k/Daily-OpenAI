@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-HTTP-005",
+  "runSlot": "2026-09-11-16",
+  "title": "Stale Pooled Connection After Endpoint Rotation",
+  "domain": "http-networking",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T16:10:51+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["httpclient", "connection-pooling", "dns-service-discovery", "socketshttphandler"],
+  "prerequisites": ["basic-httpclient"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "background-worker-partner-endpoint-rotation",
+    "scenarioType": "service-endpoint-rotation-not-observed",
+    "primaryRootCause": "pooled-http-connection-outlives-endpoint-resolution-change",
+    "failureMode": "long-lived-process-continues-calling-retired-backend-instance",
+    "solutionPattern": "bounded-pooled-connection-lifetime-with-client-reuse",
+    "labFormat": "http-connection-lifetime-investigation"
+  }
+}
