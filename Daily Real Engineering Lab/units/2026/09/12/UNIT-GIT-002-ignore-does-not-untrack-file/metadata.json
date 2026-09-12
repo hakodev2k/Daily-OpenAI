@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-GIT-002",
+  "runSlot": "2026-09-12-19",
+  "title": "File vẫn xuất hiện trong diff dù đã thêm vào .gitignore",
+  "domain": "git-ci",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-12T19:09:54+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["git-index", "gitignore", "working-tree"],
+  "prerequisites": ["basic-git-status", "basic-git-commit"],
+  "validationMode": "partial-execution",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "dotnet-service-local-configuration",
+    "scenarioType": "repository-index-ignore-divergence",
+    "primaryRootCause": "ignore-rule-added-after-file-was-already-tracked",
+    "failureMode": "local-config-keeps-appearing-as-modified-despite-ignore-rule",
+    "solutionPattern": "remove-path-from-index-while-preserving-working-copy-and-ignore-rule",
+    "labFormat": "git-index-state-investigation"
+  }
+}
