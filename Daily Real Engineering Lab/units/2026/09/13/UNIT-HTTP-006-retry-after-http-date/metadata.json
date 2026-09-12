@@ -1,0 +1,28 @@
+{
+  "unitId": "UNIT-HTTP-006",
+  "runSlot": "2026-09-13-01",
+  "title": "Retry-After HTTP-date",
+  "domain": "http-networking",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-13T01:23:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["http-retry-semantics", "retry-after", "http-date", "resilience"],
+  "prerequisites": ["HTTP status codes", "basic HttpClient usage"],
+  "validationMode": "static-review",
+  "validationNotes": "Static consistency review completed; no runtime execution claim is made.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "partner-inventory-api",
+    "scenarioType": "rate-limit-retry-scheduling",
+    "primaryRootCause": "retry-after-parser-handles-only-delta-seconds-and-ignores-http-date",
+    "failureMode": "client-retries-immediately-and-amplifies-429-rate-limiting",
+    "solutionPattern": "parse-both-standard-retry-after-representations-and-clamp-delay",
+    "labFormat": "http-protocol-semantics-investigation"
+  },
+  "diversityOverride": {"enabled": false}
+}
