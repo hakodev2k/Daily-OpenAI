@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-ASPNET-006",
+  "runSlot": "2026-09-12-20",
+  "title": "Webhook body biến mất sau middleware",
+  "domain": "aspnet-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-12T20:07:51+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["aspnet-core-middleware", "http-request-body", "stream-lifecycle", "model-binding"],
+  "prerequisites": ["aspnet-core-request-pipeline"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "commerce-partner-webhook",
+    "scenarioType": "middleware-downstream-interference",
+    "primaryRootCause": "middleware-consumes-non-rewound-request-body-stream",
+    "failureMode": "downstream-json-binding-sees-empty-request-body",
+    "solutionPattern": "buffer-read-and-rewind-request-body-before-next-middleware",
+    "labFormat": "aspnet-middleware-pipeline-investigation"
+  }
+}
