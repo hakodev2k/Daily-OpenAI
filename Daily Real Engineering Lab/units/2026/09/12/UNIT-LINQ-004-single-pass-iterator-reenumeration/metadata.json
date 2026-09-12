@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-LINQ-004",
+  "runSlot": "2026-09-12-22",
+  "title": "Một pipeline dữ liệu, hai kết quả không nhất quán",
+  "domain": "linq",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-12T22:11:05+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["linq-deferred-execution", "ienumerable", "iterator-state"],
+  "prerequisites": ["LINQ query operators", "IEnumerable<T> basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "invoice-batch-reconciliation",
+    "scenarioType": "single-pass-source-reused",
+    "primaryRootCause": "deferred-iterator-reenumerated-over-consuming-source",
+    "failureMode": "first-aggregate-correct-second-view-empty",
+    "solutionPattern": "materialize-once-at-ownership-boundary",
+    "labFormat": "linq-deferred-execution-runtime-failure"
+  }
+}
