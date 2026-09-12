@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-SQL-005",
+  "runSlot": "2026-09-13-05",
+  "title": "Reporting đọc dữ liệu mà không làm nghẽn checkout",
+  "domain": "sql-server",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-09-13T05:10:02+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "sql-server-isolation-levels",
+    "read-committed-snapshot",
+    "database-concurrency",
+    "engineering-tradeoffs"
+  ],
+  "prerequisites": [
+    "basic-sql-transactions",
+    "basic-locking",
+    "basic-query-plans"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Design-decision lab; constraints, evidence, decision criteria and reference recommendation were statically reviewed for internal consistency. No runtime execution is claimed.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "checkout-reporting-reconciliation",
+    "scenarioType": "oltp-read-write-contention-decision",
+    "primaryRootCause": "long-running-lock-based-report-reads-contend-with-oltp-writes",
+    "failureMode": "checkout-write-latency-spikes-while-reporting-runs",
+    "solutionPattern": "evidence-driven-row-versioning-isolation-with-query-governance",
+    "labFormat": "database-isolation-design-decision"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}
