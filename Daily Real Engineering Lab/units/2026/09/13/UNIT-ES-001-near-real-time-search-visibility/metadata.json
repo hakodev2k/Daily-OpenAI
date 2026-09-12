@@ -1,0 +1,15 @@
+{
+  "unitId":"UNIT-ES-001",
+  "runSlot":"2026-09-13-01",
+  "title":"Search vừa ghi xong nhưng chưa thấy ngay",
+  "domain":"elasticsearch",
+  "maturityLevel":"L2",
+  "status":"READY",
+  "createdAt":"2026-09-13T01:37:00+07:00",
+  "estimatedMinutes":45,
+  "skills":["elasticsearch-near-real-time-search","read-after-write-consistency","http-api-investigation"],
+  "prerequisites":["basic-http","basic-elasticsearch"],
+  "validationMode":"static-review",
+  "difficulty":{"generatedLevel":"D2","dailyBand":["D1","D2"],"programPhase":"foundation-depth"},
+  "novelty":{"businessContext":"catalog-publish-preview","scenarioType":"write-search-visibility-gap","primaryRootCause":"search-refresh-boundary-not-complete-when-write-acknowledged","failureMode":"immediate-search-misses-newly-indexed-document","solutionPattern":"workflow-scoped-wait-for-search-visibility","labFormat":"elasticsearch-consistency-investigation"}
+}
