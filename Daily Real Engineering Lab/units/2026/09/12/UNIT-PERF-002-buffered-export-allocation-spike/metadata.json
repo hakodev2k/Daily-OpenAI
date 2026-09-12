@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-PERF-002",
+  "runSlot": "2026-09-12-16",
+  "title": "Buffered Export Allocation Spike",
+  "domain": "performance",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-12T16:10:21+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["dotnet-memory", "streaming", "allocation-analysis", "gc-pressure"],
+  "prerequisites": ["streams", "basic-gc-concepts"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-report-export",
+    "scenarioType": "concurrent-large-payload-memory-pressure",
+    "primaryRootCause": "full-payload-buffered-before-copy-to-stream-destination",
+    "failureMode": "allocation-spike-and-gc-pressure-under-concurrent-exports",
+    "solutionPattern": "write-directly-to-destination-stream",
+    "labFormat": "performance-memory-production-incident"
+  }
+}
