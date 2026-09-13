@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-AZURE-004",
+  "runSlot": "2026-09-13-21",
+  "title": "Secret đã rotate nhưng ứng dụng vẫn dùng credential cũ",
+  "domain": "azure-security",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-13T21:07:15+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "azure-key-vault",
+    "secret-versioning",
+    "credential-rotation",
+    "configuration-diagnostics"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "validationNotes": "dotnet CLI không có trong execution environment; đã kiểm tra tĩnh project, control flow, reproduce/verify contract và reference solution.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "payment-provider-credential-rotation",
+    "scenarioType": "rotated-secret-not-observed-by-running-application",
+    "primaryRootCause": "application-configuration-pins-a-specific-secret-version-after-credential-rotation",
+    "failureMode": "application-keeps-sending-retired-credential-and-downstream-returns-401",
+    "solutionPattern": "versionless-secret-reference-with-explicit-refresh-boundary",
+    "labFormat": "azure-secret-rotation-investigation"
+  }
+}
