@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-CS-010",
+  "runSlot": "2026-09-14-00",
+  "title": "Invoice total sai nhưng vẫn hợp lệ về kiểu dữ liệu",
+  "domain": "csharp",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-14T00:11:10+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["csharp-numeric-semantics", "integer-overflow", "type-conversion"],
+  "prerequisites": ["csharp-value-types", "basic-arithmetic"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "usage-billing-batch",
+    "scenarioType": "plausible-financial-miscalculation",
+    "primaryRootCause": "integer-multiplication-overflows-before-result-is-widened",
+    "failureMode": "calculation-returns-plausible-but-materially-understated-total",
+    "solutionPattern": "promote-operands-and-use-checked-arithmetic-at-domain-boundary",
+    "labFormat": "csharp-numeric-semantics-investigation"
+  }
+}
