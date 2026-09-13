@@ -2,7 +2,6 @@ using System.Net;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Hosting;
 
 const string token = "lab-token";
 const string entryUrl = "http://127.0.0.1:5181/start";
@@ -17,7 +16,7 @@ resourceApp.Urls.Add("http://127.0.0.1:5182");
 resourceApp.MapGet("/resource", (HttpRequest request) =>
 {
     var expected = $"Bearer {token}";
-    return string.Equals(request.Headers.Authorization, expected, StringComparison.Ordinal)
+    return string.Equals(request.Headers.Authorization.ToString(), expected, StringComparison.Ordinal)
         ? Results.Ok("document-body")
         : Results.Unauthorized();
 });
