@@ -1,16 +1,16 @@
 # UNIT-API-004 — PATCH không phân biệt `null` và field bị bỏ qua
 
-Một Customer Profile API hỗ trợ partial update với contract:
+Một API cấu hình hỗ trợ partial update với contract:
 
 - field không có trong JSON: giữ nguyên giá trị cũ
 - field có giá trị `null`: đặt field nullable thành `null`
 - field có value: cập nhật value mới
 
-Hiện tại request `{}` và request `{"middleName":null}` tạo ra cùng kết quả. Nhiệm vụ của bạn là reproduce, điều tra serialization boundary, sửa code trong `starter/`, rồi verify mà không làm field bị bỏ qua bị ghi đè.
+Starter dùng field `tag`. Hiện tại request `{}` và request `{"tag":null}` bị collapse thành cùng một CLR state. Nhiệm vụ là reproduce, thu thập evidence, sửa code trong `starter/`, rồi verify mà không làm missing field vô tình ghi đè dữ liệu.
 
 ## Mục tiêu
 
-Phân biệt được **property presence** và **property value** trong partial-update contract.
+Phân biệt **property presence** và **property value** trong partial-update contract.
 
 ## Yêu cầu môi trường
 
@@ -23,17 +23,21 @@ Phân biệt được **property presence** và **property value** trong partial
 ./reproduce.ps1
 ```
 
+Script setup tạo project .NET 8 từ source trong `starter/`, sau đó chạy ba case: missing, explicit-null và new-value.
+
 ## Những gì cần quan sát
 
-- Hai payload có intent khác nhau nhưng starter xử lý giống nhau.
-- Explicit `null` không đạt contract mong đợi.
+- Hai payload có intent khác nhau nhưng starter xử lý giống nhau ở case explicit-null.
+- Missing phải giữ `tag = "blue"`.
+- Explicit null phải tạo `tag = null`.
+- New value phải tạo `tag = "green"`.
 - Ghi ít nhất ba hypothesis vào `workspace/my-investigation.md`.
 
 ## Quy tắc làm lab
 
 1. Reproduce.
-2. Ghi hypothesis.
-3. Sửa `starter/`.
+2. Ghi hypothesis và evidence.
+3. Sửa `starter/Program.cs`.
 4. Chạy `./verify.ps1`.
 5. Sau đó mới xem solution.
 
@@ -53,20 +57,16 @@ Phân biệt được **property presence** và **property value** trong partial
 ## Expected Results
 
 Before:
-- `{}` giữ `middleName = "Quang"`.
-- `{"middleName":null}` cũng giữ `middleName = "Quang"` và starter fail.
+- missing: PASS
+- explicit-null: FAIL
+- new-value: PASS
+- starter exit code `1`; `reproduce.ps1` coi đây là reproduction thành công
 
 After:
-- `{}` giữ nguyên `middleName`.
-- `{"middleName":null}` đặt `middleName = null`.
-- `{"middleName":"Minh"}` cập nhật thành `"Minh"`.
-- `verify.ps1` exit code `0`.
+- cả ba case PASS
+- `verify.ps1` exit code `0`
 
-Nếu script không chạy, dùng:
-
-```powershell
-dotnet run --project starter/PartialUpdateLab.csproj
-```
+Nếu script setup gặp lỗi, kiểm tra `dotnet --version` phải hỗ trợ .NET 8 và chạy lại `./reproduce.ps1`.
 
 ## Estimated Time
 
