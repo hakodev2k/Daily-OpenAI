@@ -9,7 +9,7 @@ var service = new CatalogService(cache, store);
 
 cache.Set(hotKey, new Product(42, "Flash-sale keyboard", 0), TimeSpan.FromMilliseconds(-1));
 
-var startGate = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+var startGate = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
 var requests = Enumerable.Range(0, concurrentRequests)
     .Select(async _ =>
     {
@@ -18,7 +18,7 @@ var requests = Enumerable.Range(0, concurrentRequests)
     })
     .ToArray();
 
-startGate.SetResult();
+startGate.SetResult(true);
 var results = await Task.WhenAll(requests);
 
 var first = results[0];
