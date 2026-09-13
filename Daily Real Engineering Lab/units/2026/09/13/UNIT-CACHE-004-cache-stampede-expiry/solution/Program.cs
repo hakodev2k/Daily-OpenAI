@@ -88,10 +88,9 @@ internal sealed class CatalogService
 
         var operation = _inflight.GetOrAdd(
             key,
-            static (cacheKey, state) => new Lazy<Task<Product>>(
-                () => state.LoadAndCacheAsync(cacheKey),
-                LazyThreadSafetyMode.ExecutionAndPublication),
-            this);
+            cacheKey => new Lazy<Task<Product>>(
+                () => LoadAndCacheAsync(cacheKey),
+                LazyThreadSafetyMode.ExecutionAndPublication));
 
         try
         {
@@ -101,7 +100,7 @@ internal sealed class CatalogService
         {
             if (operation.IsValueCreated && operation.Value.IsCompleted)
             {
-                _inflight.TryRemove(new KeyValuePair<string, Lazy<Task<Product>>>(key, operation));
+                _inflight.TryRemove(key, out _);
             }
         }
     }
