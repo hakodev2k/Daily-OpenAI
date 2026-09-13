@@ -1,8 +1,6 @@
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
-const string Pattern = @"^(A+)+Z$";
-
 var validator = new ExternalCodeValidator();
 var cases = new[]
 {
@@ -38,6 +36,8 @@ if (args.Contains("--assert-fixed") && failed)
 
 internal sealed class ExternalCodeValidator
 {
+    private const string Pattern = @"^(A+)+Z$";
+
     private static readonly Regex CodeRegex = new(
         Pattern,
         RegexOptions.CultureInvariant,
