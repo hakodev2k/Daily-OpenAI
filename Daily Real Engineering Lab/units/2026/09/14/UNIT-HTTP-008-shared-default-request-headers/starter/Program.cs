@@ -89,7 +89,7 @@ internal sealed class RecordingHandler : HttpMessageHandler
 internal sealed class AsyncGate
 {
     private readonly int _requiredSignals;
-    private readonly TaskCompletionSource _ready = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    private readonly TaskCompletionSource<bool> _ready = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private int _signals;
 
     public AsyncGate(int requiredSignals) => _requiredSignals = requiredSignals;
@@ -98,7 +98,7 @@ internal sealed class AsyncGate
     {
         if (Interlocked.Increment(ref _signals) == _requiredSignals)
         {
-            _ready.TrySetResult();
+            _ready.TrySetResult(true);
         }
 
         return _ready.Task;
