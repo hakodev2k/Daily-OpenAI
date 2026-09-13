@@ -1,5 +1,6 @@
 using System.Text.Json;
 
+var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
 var cases = new[]
 {
     (Name: "missing", Json: "{}", Expected: "blue"),
@@ -10,7 +11,7 @@ var cases = new[]
 var failed = false;
 foreach (var test in cases)
 {
-    var request = JsonSerializer.Deserialize<PatchRequest>(test.Json)!;
+    var request = JsonSerializer.Deserialize<PatchRequest>(test.Json, options)!;
     var actual = Apply("blue", request);
     var ok = actual == test.Expected;
     Console.WriteLine($"{test.Name}: actual={Show(actual)}, expected={Show(test.Expected)}, result={(ok ? "PASS" : "FAIL")}");
