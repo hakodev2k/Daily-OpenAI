@@ -1,0 +1,1 @@
+{"name":"unit-test-005-playwright-hard-wait-flake","private":true,"version":"1.0.0","scripts":{"test":"playwright test","reproduce":"cross-env LAB_MODE=reproduce playwright test","verify":"cross-env LAB_MODE=verify playwright test"},"devDependencies":{"@playwright/test":"1.55.0","cross-env":"7.0.3"}}
