@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-CACHE-004",
+  "runSlot": "2026-09-13-22",
+  "title": "Hot cache expiry làm downstream tăng tải đột biến",
+  "domain": "caching",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-13T22:10:11+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "cache-stampede",
+    "concurrency",
+    "cache-expiration",
+    "request-coalescing"
+  ],
+  "prerequisites": [
+    "Task/async/await cơ bản",
+    "cache-aside cơ bản"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "dotnet CLI không khả dụng trong execution environment; đã kiểm tra tĩnh project structure, code path, reproduce/verify contract và expected behavior.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "flash-sale-product-catalog",
+    "scenarioType": "hot-key-expiry-load-amplification",
+    "primaryRootCause": "concurrent-cache-misses-independently-reload-same-hot-key",
+    "failureMode": "downstream-call-spike-at-expiration-boundary",
+    "solutionPattern": "per-key-single-flight-request-coalescing",
+    "labFormat": "cache-production-incident"
+  }
+}
