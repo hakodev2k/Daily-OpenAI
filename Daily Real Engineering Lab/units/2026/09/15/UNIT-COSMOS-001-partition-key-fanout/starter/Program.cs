@@ -7,7 +7,7 @@ const string invoiceId = "invoice-03";
 // Investigation note:
 // This API receives both tenantId and invoiceId. Observe how much of the store
 // must be visited to return one document.
-var result = store.QueryByInvoiceId(invoiceId);
+var result = store.QueryByInvoiceId(tenantId, invoiceId);
 
 Console.WriteLine($"FOUND_INVOICE={result.Document?.Id ?? "<none>"}");
 Console.WriteLine($"FOUND_TENANT={result.Document?.TenantId ?? "<none>"}");
@@ -38,10 +38,10 @@ static PartitionedDocumentStore SeedStore(int tenantCount, int invoicesPerTenant
     var store = new PartitionedDocumentStore();
     for (var t = 0; t < tenantCount; t++)
     {
-        var tenantId = $"tenant-{t:00}";
+        var tenant = $"tenant-{t:00}";
         for (var i = 0; i < invoicesPerTenant; i++)
         {
-            store.Add(new InvoiceDocument(tenantId, $"invoice-{i:00}", 100 + i));
+            store.Add(new InvoiceDocument(tenant, $"invoice-{i:00}", 100 + i));
         }
     }
 
@@ -61,7 +61,7 @@ internal sealed class PartitionedDocumentStore
         partition.Add(document);
     }
 
-    public ReadResult QueryByInvoiceId(string invoiceId)
+    public ReadResult QueryByInvoiceId(string tenantId, string invoiceId)
     {
         var touched = 0;
         InvoiceDocument? found = null;
@@ -69,7 +69,7 @@ internal sealed class PartitionedDocumentStore
         foreach (var partition in _partitions.OrderBy(x => x.Key))
         {
             touched++;
-            found = partition.Value.FirstOrDefault(x => x.Id == invoiceId && x.TenantId == "tenant-17");
+            found = partition.Value.FirstOrDefault(x => x.Id == invoiceId && x.TenantId == tenantId);
             if (found is not null)
             {
                 break;
