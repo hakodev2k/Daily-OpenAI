@@ -1,0 +1,1 @@
+Tạo một snapshot per-iteration trước khi delegate escape khỏi iteration hiện tại, rồi để delegate dùng snapshot đó.
