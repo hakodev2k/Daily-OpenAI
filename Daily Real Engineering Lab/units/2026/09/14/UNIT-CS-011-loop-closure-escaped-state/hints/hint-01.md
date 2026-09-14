@@ -1,1 +1,0 @@
-So sánh lifetime của biến điều khiển vòng lặp với lifetime của các delegate đã được lưu lại để chạy sau.
