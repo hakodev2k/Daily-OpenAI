@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-OBS-005",
+  "runSlot": "2026-09-14-18",
+  "title": "Metric Series Explosion",
+  "domain": "observability",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-14T18:06:45+07:00",
+  "estimatedMinutes": 55,
+  "skills": ["system-diagnostics-metrics", "metric-cardinality", "observability", "production-diagnostics"],
+  "prerequisites": ["basic-dotnet", "metrics-tags"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "search-api-telemetry",
+    "scenarioType": "telemetry-cardinality-growth",
+    "primaryRootCause": "unbounded-user-identifier-recorded-as-metric-tag",
+    "failureMode": "metric-series-count-grows-with-traffic",
+    "solutionPattern": "bounded-operational-dimensions-with-high-cardinality-context-moved-to-logs-or-traces",
+    "labFormat": "observability-production-incident"
+  }
+}
