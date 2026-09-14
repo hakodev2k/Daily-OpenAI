@@ -1,0 +1,1 @@
+Kiểm tra xem mỗi delegate có một giá trị iteration riêng hay tất cả đang đọc cùng một biến sau khi vòng lặp kết thúc.
