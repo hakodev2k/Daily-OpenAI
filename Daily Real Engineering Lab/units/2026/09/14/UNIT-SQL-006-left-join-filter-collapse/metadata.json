@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-SQL-006",
+  "runSlot": "2026-09-14-23",
+  "title": "LEFT JOIN Result Set Collapse",
+  "domain": "sql",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-14T23:07:37+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["sql-join-semantics", "sql-null-extension", "sql-query-correctness"],
+  "prerequisites": ["basic-joins", "where-filtering"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "warehouse-inventory-dashboard",
+    "scenarioType": "silent-report-row-loss",
+    "primaryRootCause": "right-side-filter-in-where-collapses-left-join-semantics",
+    "failureMode": "parent-rows-without-matching-active-child-disappear-from-report",
+    "solutionPattern": "place-optional-side-filter-in-join-predicate",
+    "labFormat": "sql-join-semantics-investigation"
+  }
+}
