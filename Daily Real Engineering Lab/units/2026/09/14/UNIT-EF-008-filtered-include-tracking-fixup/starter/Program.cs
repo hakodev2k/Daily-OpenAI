@@ -31,16 +31,16 @@ Console.WriteLine($"Endpoint Orders: {statuses}");
 
 var contractIsCorrect = customer.Orders.All(o => o.Status == OrderStatus.Open);
 
-if (mode.Equals("verify", StringComparison.OrdinalIgnoreCase))
+if (mode.Equals("check", StringComparison.OrdinalIgnoreCase))
 {
     if (!contractIsCorrect)
     {
-        Console.Error.WriteLine("VERIFY FAILED: endpoint object graph contains an order outside the requested status.");
+        Console.Error.WriteLine("CHECK FAILED: endpoint object graph contains an order outside the requested status.");
         Environment.ExitCode = 1;
         return;
     }
 
-    Console.WriteLine("VERIFY PASSED: endpoint object graph contains open orders only.");
+    Console.WriteLine("CHECK PASSED: endpoint object graph contains open orders only.");
     return;
 }
 
