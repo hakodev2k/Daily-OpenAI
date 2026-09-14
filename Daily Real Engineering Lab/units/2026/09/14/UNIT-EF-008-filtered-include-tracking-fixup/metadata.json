@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-EF-008",
+  "runSlot": "2026-09-14-10",
+  "title": "Filtered Include Tracking Surprise",
+  "domain": "ef-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-14T10:08:23+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["ef-core-tracking", "filtered-include", "navigation-fixup", "query-shaping"],
+  "prerequisites": ["basic-ef-core-querying", "include", "change-tracking"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "customer-support-order-dashboard",
+    "scenarioType": "tracked-query-object-graph-contract-drift",
+    "primaryRootCause": "navigation-fixup-reintroduces-previously-tracked-entities-into-filtered-navigation",
+    "failureMode": "filtered-navigation-contains-rows-outside-requested-status",
+    "solutionPattern": "shape-read-model-with-no-tracking-or-projection-boundary",
+    "labFormat": "ef-core-tracking-investigation"
+  }
+}
