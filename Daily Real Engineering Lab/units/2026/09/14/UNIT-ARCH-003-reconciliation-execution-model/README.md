@@ -1,45 +1,46 @@
-# UNIT-ARCH-003 — Chọn execution model cho reconciliation job
+# UNIT-ARCH-003 — Thiết kế audit retention boundary
 
 ## Mục tiêu
 
-Đưa ra quyết định kỹ thuật có căn cứ cho một workload reconciliation định kỳ: chạy bên trong ASP.NET Core bằng `BackgroundService`, tách thành worker service, hay dùng Azure Functions.
+Đưa ra quyết định lưu trữ lịch sử thay đổi cho dữ liệu nghiệp vụ cần truy vết 7 năm mà không làm mô hình transactional chính trở nên khó vận hành.
 
 ## Bối cảnh thực tế
 
-Một hệ thống commerce cần đối soát trạng thái khoảng 200.000 bản ghi mỗi đêm với hệ thống đối tác. Job hiện chạy trong web application. Trong các đợt deploy hoặc scale-in, job đôi khi bị gián đoạn; đội vận hành cũng muốn giảm coupling giữa API traffic và batch workload. Tuy nhiên team nhỏ, ngân sách vận hành hạn chế và chưa muốn tạo thêm quá nhiều infrastructure.
+Một hệ thống B2B cần lưu lịch sử thay đổi trạng thái đơn hàng phục vụ audit. Hiện tại bảng `Orders` chỉ giữ trạng thái hiện tại. Business yêu cầu tra cứu ai thay đổi gì, khi nào, giá trị trước/sau và giữ dữ liệu 7 năm. Team đang cân nhắc: nhồi history vào bảng nghiệp vụ, dùng SQL temporal tables, hoặc tách append-only audit store.
 
 ## Bạn cần làm gì
 
 1. Đọc constraints trong `docs/scenario.md`.
 2. Ghi assumptions và decision criteria vào `workspace/my-decision.md`.
 3. So sánh ít nhất 3 phương án.
-4. Chọn một phương án cho hiện tại và nêu rõ điều kiện khiến bạn đổi quyết định sau này.
+4. Chọn một phương án cho hiện tại và nêu điều kiện khiến bạn đổi quyết định.
 5. Chỉ sau đó mới xem reference solution.
 
 ## Yêu cầu môi trường
 
-Không cần runtime hay cloud account. Đây là Design Decision Lab.
+Không cần runtime. Đây là Design Decision Lab.
 
 ## Chạy nhanh
 
-Không có bước execute bắt buộc. Bắt đầu từ `docs/scenario.md`.
+Bắt đầu từ `docs/scenario.md`.
 
 ## Cách reproduce vấn đề
 
-Không áp dụng. Vấn đề là lựa chọn execution model dưới các ràng buộc production cụ thể.
+Không áp dụng. Bài toán là lựa chọn data-retention architecture theo constraints thực tế.
 
 ## Những gì cần quan sát
 
-- failure boundary khi process bị recycle hoặc deploy
-- retry và checkpoint semantics
-- resource isolation giữa API và batch
+- write-path coupling
+- queryability của lịch sử
+- retention và purge
+- schema evolution
 - operational complexity
-- deployment topology
-- cost và khả năng vận hành của team
+- cost
+- khả năng reconstruct timeline
 
 ## Quy tắc làm lab
 
-1. Ghi assumptions trước.
+1. Ghi assumptions.
 2. Xác định decision criteria.
 3. So sánh alternatives.
 4. Chọn và bảo vệ quyết định.
@@ -47,7 +48,7 @@ Không áp dụng. Vấn đề là lựa chọn execution model dưới các rà
 
 ## Hints
 
-Không cần hint mặc định. Nếu bí, hãy bắt đầu từ failure boundary và ownership của workload.
+Nếu bí, hãy bắt đầu bằng câu hỏi: lịch sử audit có phải là cùng một model và cùng một lifecycle với transactional state hiện tại hay không?
 
 ## Reference Solution
 
@@ -57,7 +58,7 @@ Không cần hint mặc định. Nếu bí, hãy bắt đầu từ failure bound
 
 ## Expected Results
 
-Một quyết định có thể bảo vệ được bằng constraints, không phải câu trả lời kiểu “dịch vụ cloud luôn tốt hơn” hoặc “BackgroundService luôn đơn giản hơn”.
+Một quyết định có thể bảo vệ bằng constraints, bao gồm trade-offs về consistency, retention, queryability, cost và operational burden.
 
 ## Estimated Time
 
