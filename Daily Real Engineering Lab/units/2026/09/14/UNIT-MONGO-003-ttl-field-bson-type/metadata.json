@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-MONGO-003",
+  "runSlot": "2026-09-14-10",
+  "title": "TTL Field BSON Type",
+  "domain": "mongodb",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-14T10:08:23+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["mongodb-ttl-index", "bson-serialization", "data-contracts"],
+  "prerequisites": ["mongodb-basic-documents", "csharp-types"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "temporary-session-store",
+    "scenarioType": "silent-data-retention-policy-failure",
+    "primaryRootCause": "ttl-indexed-expiration-field-serialized-as-string-instead-of-bson-date",
+    "failureMode": "expired-session-documents-are-not-eligible-for-ttl-removal",
+    "solutionPattern": "persist-expiration-as-utc-bson-date",
+    "labFormat": "mongodb-storage-contract-runtime-failure"
+  }
+}
