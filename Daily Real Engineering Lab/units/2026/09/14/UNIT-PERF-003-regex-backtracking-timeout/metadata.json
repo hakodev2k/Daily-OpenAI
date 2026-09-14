@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-PERF-003",
+  "runSlot": "2026-09-14-11",
+  "title": "Regex Validation Latency Spike",
+  "domain": "performance",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-14T11:11:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "dotnet-regex",
+    "performance-diagnostics",
+    "input-validation"
+  ],
+  "prerequisites": [
+    "basic-csharp",
+    "basic-regular-expressions"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "cms-route-slug-validation",
+    "scenarioType": "input-dependent-cpu-degradation",
+    "primaryRootCause": "nested-quantifier-regex-causes-catastrophic-backtracking",
+    "failureMode": "validation-timeout-on-near-match-input",
+    "solutionPattern": "linear-time-regex-or-structurally-bounded-validation",
+    "labFormat": "regex-performance-investigation"
+  }
+}
