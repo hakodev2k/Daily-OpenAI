@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-SQL-006",
+  "runSlot": "2026-09-14-23",
+  "title": "Missing Rows in Exclusion Query",
+  "domain": "sql",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-14T23:07:37+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "sql-three-valued-logic",
+    "sql-query-correctness",
+    "sql-null-semantics"
+  ],
+  "prerequisites": [
+    "basic-select-filtering",
+    "subqueries"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "customer-notification-eligibility-job",
+    "scenarioType": "silent-query-correctness-failure",
+    "primaryRootCause": "null-in-not-in-subquery-invokes-sql-three-valued-logic",
+    "failureMode": "eligible-rows-disappear-without-query-error",
+    "solutionPattern": "null-safe-anti-semi-join-with-not-exists",
+    "labFormat": "sql-query-semantics-investigation"
+  }
+}
