@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-MSG-003",
+  "runSlot": "2026-09-14-09",
+  "title": "Message Disappears After Consumer Crash",
+  "domain": "messaging",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-14T09:11:50+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["message-consumer-lifecycle", "acknowledgement-boundaries", "failure-recovery"],
+  "prerequisites": ["basic-csharp", "basic-background-processing"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "invoice-projection-worker",
+    "scenarioType": "consumer-crash-window",
+    "primaryRootCause": "message-acknowledged-before-durable-business-work-completes",
+    "failureMode": "message-not-redelivered-while-required-projection-is-missing",
+    "solutionPattern": "acknowledge-only-after-durable-work-succeeds",
+    "labFormat": "messaging-runtime-failure"
+  }
+}
