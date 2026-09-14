@@ -6,14 +6,12 @@ sealed class FakeQueue
     private bool _completed;
 
     public FakeQueue(Message message) => _message = message;
-
     public Message? Receive() => _completed ? null : _message;
 
     public void Complete(string messageId)
     {
         if (messageId != _message.Id)
             throw new InvalidOperationException("Unknown message.");
-
         _completed = true;
     }
 
@@ -23,9 +21,7 @@ sealed class FakeQueue
 sealed class ProjectionStore
 {
     private readonly HashSet<string> _invoiceIds = new();
-
     public void Save(string invoiceId) => _invoiceIds.Add(invoiceId);
-
     public bool Exists(string invoiceId) => _invoiceIds.Contains(invoiceId);
 }
 
@@ -73,7 +69,6 @@ static class Lab
         var happyStore = new ProjectionStore();
         var happyConsumer = new InvoiceConsumer(happyQueue, happyStore);
         happyConsumer.ProcessNext(simulateCrash: false);
-
         var happyPathOk = happyQueue.IsCompleted && happyStore.Exists(InvoiceId);
 
         var recoveryQueue = new FakeQueue(new Message("recovery", InvoiceId));
@@ -81,20 +76,24 @@ static class Lab
         var recoveryConsumer = new InvoiceConsumer(recoveryQueue, recoveryStore);
         recoveryConsumer.ProcessNext(simulateCrash: true);
         recoveryConsumer.ProcessNext(simulateCrash: false);
-
         var recoveryOk = recoveryQueue.IsCompleted && recoveryStore.Exists(InvoiceId);
 
         Console.WriteLine($"happyPath={happyPathOk}");
         Console.WriteLine($"crashRecovery={recoveryOk}");
-
         return happyPathOk && recoveryOk ? 0 : 1;
     }
 }
 
-var mode = args.FirstOrDefault() ?? "--reproduce";
-return mode switch
+static class Program
 {
-    "--reproduce" => Lab.Reproduce(),
-    "--verify" => Lab.Verify(),
-    _ => throw new ArgumentException($"Unknown mode: {mode}")
-};
+    public static int Main(string[] args)
+    {
+        var mode = args.FirstOrDefault() ?? "--reproduce";
+        return mode switch
+        {
+            "--reproduce" => Lab.Reproduce(),
+            "--verify" => Lab.Verify(),
+            _ => throw new ArgumentException($"Unknown mode: {mode}")
+        };
+    }
+}
