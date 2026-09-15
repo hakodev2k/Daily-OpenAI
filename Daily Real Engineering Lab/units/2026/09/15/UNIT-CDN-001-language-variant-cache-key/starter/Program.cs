@@ -2,9 +2,11 @@ var edge = new EdgeCache();
 
 Run("warm-en", edge, "/article/42", "en-US", "EN:42");
 Run("then-vi", edge, "/article/42", "vi-VN", "VI:42");
+Run("repeat-en", edge, "/article/42", "en-US", "EN:42");
 edge.Clear();
 Run("warm-vi", edge, "/article/42", "vi-VN", "VI:42");
 Run("then-en", edge, "/article/42", "en-US", "EN:42");
+Run("repeat-vi", edge, "/article/42", "vi-VN", "VI:42");
 
 static void Run(string name, EdgeCache edge, string path, string language, string expected)
 {
