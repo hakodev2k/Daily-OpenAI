@@ -2,8 +2,10 @@ var pod = new PodSimulator();
 
 await pod.SendAsync("R1");
 pod.BeginTermination();
-await pod.SendAsync("R2");
+var duringTermination = pod.SendAsync("R2");
+await Task.Delay(10);
 pod.StopApplication();
+await duringTermination;
 await pod.SendAsync("R3");
 
 Console.WriteLine($"SUMMARY success={pod.SuccessCount} failed={pod.FailedCount} rejected={pod.RejectedCount}");
@@ -41,7 +43,7 @@ sealed class PodSimulator
             return;
         }
 
-        await Task.Delay(20);
+        await Task.Delay(30);
         if (_applicationRunning)
         {
             SuccessCount++;
