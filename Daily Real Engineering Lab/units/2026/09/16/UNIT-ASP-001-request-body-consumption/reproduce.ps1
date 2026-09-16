@@ -1,0 +1,5 @@
+$ErrorActionPreference = 'Stop'
+Write-Host 'Terminal 1: dotnet run --project ./starter/RequestBodyLab.csproj --no-launch-profile'
+Write-Host 'Terminal 2: run the following request:'
+Write-Host 'Invoke-WebRequest http://127.0.0.1:5081/orders -Method Post -ContentType application/json -Body ''{"orderId":"11111111-1111-1111-1111-111111111111","sku":"BOOK-42"}'''
+Write-Host 'Expected starter evidence: console audit output contains BOOK-42 while the HTTP response is 400.'
