@@ -19,35 +19,37 @@ sealed class PersistenceScope(Store store)
     public void SaveChanges() { foreach (var entity in _tracked.Values) store.Save(entity); }
 }
 
-var store = new Store();
-
-// Hai repository được refactor để tự tạo persistence scope riêng.
-var customerRepositoryScope = new PersistenceScope(store);
-var accountRepositoryScope = new PersistenceScope(store);
-
-var accountSeenByCustomerFlow = customerRepositoryScope.Load(10);
-var accountSeenByAccountFlow = accountRepositoryScope.Load(10);
-
-Console.WriteLine($"customer-flow scope={customerRepositoryScope.ScopeId} instance={System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(accountSeenByCustomerFlow)} hold={accountSeenByCustomerFlow.CreditHold}");
-Console.WriteLine($"account-flow  scope={accountRepositoryScope.ScopeId} instance={System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(accountSeenByAccountFlow)} hold={accountSeenByAccountFlow.CreditHold}");
-
-accountSeenByCustomerFlow.CreditHold = true;
-Console.WriteLine("business-step: credit hold requested");
-
-// Operation cuối cùng chỉ flush scope của repository chịu trách nhiệm lưu account.
-accountRepositoryScope.SaveChanges();
-Console.WriteLine($"persisted hold={store.Persisted.CreditHold}");
-
-if (args.Contains("reproduce"))
+static class Program
 {
-    if (!store.Persisted.CreditHold) { Console.WriteLine("REPRODUCED"); return 2; }
-    Console.WriteLine("NOT_REPRODUCED"); return 1;
-}
+    public static int Main(string[] args)
+    {
+        var store = new Store();
+        var customerRepositoryScope = new PersistenceScope(store);
+        var accountRepositoryScope = new PersistenceScope(store);
 
-if (args.Contains("verify"))
-{
-    if (store.Persisted.CreditHold && ReferenceEquals(accountSeenByCustomerFlow, accountSeenByAccountFlow)) { Console.WriteLine("VERIFY_PASS"); return 0; }
-    Console.WriteLine("VERIFY_FAIL"); return 3;
-}
+        var accountSeenByCustomerFlow = customerRepositoryScope.Load(10);
+        var accountSeenByAccountFlow = accountRepositoryScope.Load(10);
 
-return 0;
+        Console.WriteLine($"customer-flow scope={customerRepositoryScope.ScopeId} instance={System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(accountSeenByCustomerFlow)} hold={accountSeenByCustomerFlow.CreditHold}");
+        Console.WriteLine($"account-flow  scope={accountRepositoryScope.ScopeId} instance={System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(accountSeenByAccountFlow)} hold={accountSeenByAccountFlow.CreditHold}");
+
+        accountSeenByCustomerFlow.CreditHold = true;
+        Console.WriteLine("business-step: credit hold requested");
+        accountRepositoryScope.SaveChanges();
+        Console.WriteLine($"persisted hold={store.Persisted.CreditHold}");
+
+        if (args.Contains("reproduce"))
+        {
+            if (!store.Persisted.CreditHold) { Console.WriteLine("REPRODUCED"); return 2; }
+            Console.WriteLine("NOT_REPRODUCED"); return 1;
+        }
+
+        if (args.Contains("verify"))
+        {
+            if (store.Persisted.CreditHold && ReferenceEquals(accountSeenByCustomerFlow, accountSeenByAccountFlow)) { Console.WriteLine("VERIFY_PASS"); return 0; }
+            Console.WriteLine("VERIFY_FAIL"); return 3;
+        }
+
+        return 0;
+    }
+}
