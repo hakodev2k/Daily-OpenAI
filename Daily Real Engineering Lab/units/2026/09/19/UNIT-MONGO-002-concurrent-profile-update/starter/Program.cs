@@ -24,7 +24,9 @@ if (args.Contains("reproduce"))
 
 if (args.Contains("verify"))
 {
-    var acceptable = !lostChange || !preferenceResult;
+    var conflictSafelyRejected = addressResult && !preferenceResult && final.Address == "New Avenue";
+    var bothChangesPreserved = addressResult && preferenceResult && final.Address == "New Avenue" && final.MarketingEmail;
+    var acceptable = conflictSafelyRejected || bothChangesPreserved;
     Console.WriteLine(acceptable ? "VERIFY_PASS" : "VERIFY_FAIL");
     return acceptable ? 0 : 3;
 }
