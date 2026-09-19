@@ -11,12 +11,12 @@ app.Use(async (context, next) =>
     var sink = context.RequestServices.GetRequiredService<AuditSink>();
     var requestId = context.Request.Headers["X-Lab-Request-Id"].FirstOrDefault() ?? context.TraceIdentifier;
 
-    await next();
-
     // Investigation note:
     // Does this middleware execute exactly once for every logical client request
     // on every path through the application?
     sink.Add(requestId, context.Request.Path);
+
+    await next();
 });
 
 app.MapGet("/tickets/ok", () => Results.Ok(new { status = "ok" }));
