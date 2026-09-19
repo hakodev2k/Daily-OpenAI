@@ -9,7 +9,7 @@ try {
   if (-not $ready) { throw 'Lab server did not become ready.' }
   Invoke-RestMethod -Method Delete "$base/__lab/audits" | Out-Null
   $id = 'repro-001'
-  try { Invoke-WebRequest "$base/tickets/fail" -Headers @{ 'X-Lab-Request-Id' = $id } -SkipHttpErrorCheck | Out-Null } catch { }
+  try { Invoke-WebRequest "$base/tickets/fail" -Headers @{ 'X-Lab-Request-Id' = $id } | Out-Null } catch { }
   $count = Invoke-RestMethod "$base/__lab/audits/$id"
   Write-Host "audit-count=$count"
   if ($count -eq 2) { Write-Host 'REPRODUCED'; exit 0 }
