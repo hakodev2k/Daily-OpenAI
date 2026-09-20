@@ -1,19 +1,17 @@
-using System.Diagnostics.CodeAnalysis;
-
 var rules = new Dictionary<RuleKey, decimal>();
-var key = new RuleKey("vn", "retail");
+var key = new RuleKey("vn ", "retail");
 rules[key] = 0.15m;
 
 Console.WriteLine($"count-before={rules.Count}");
-Console.WriteLine($"lookup-before={rules.ContainsKey(new RuleKey("vn", "retail"))}");
+Console.WriteLine($"lookup-before={rules.ContainsKey(new RuleKey("vn ", "retail"))}");
 Console.WriteLine($"hash-before={key.GetHashCode()}");
 
 // A legacy normalization step mutates the object reused by later pipeline stages.
-key.Market = key.Market.ToUpperInvariant();
+key.Market = key.Market.Trim();
 
 Console.WriteLine($"hash-after={key.GetHashCode()}");
 Console.WriteLine($"count-after={rules.Count}");
-Console.WriteLine($"lookup-after={rules.ContainsKey(new RuleKey("VN", "retail"))}");
+Console.WriteLine($"lookup-after={rules.ContainsKey(new RuleKey("vn", "retail"))}");
 
 public sealed class RuleKey : IEquatable<RuleKey>
 {
