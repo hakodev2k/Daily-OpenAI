@@ -20,21 +20,23 @@ Task ProcessBatchAsync()
     return Task.CompletedTask;
 }
 
-await ProcessBatchAsync();
-var completedBeforeRelease = events.Contains("batch-completed") && !events.Contains("item-1-completed");
+var batchTask = ProcessBatchAsync();
+await Task.Delay(20);
+var completedBeforeRelease = batchTask.IsCompleted;
 gate.SetResult();
+var failureObserved = false;
+try { await batchTask; }
+catch (InvalidOperationException) { failureObserved = true; }
 await Task.Delay(50);
 
 Console.WriteLine(string.Join(Environment.NewLine, events));
 Console.WriteLine($"completed-before-required-work={completedBeforeRelease}");
+Console.WriteLine($"failure-observed-by-batch={failureObserved}");
 
 if (args.Contains("--reproduce"))
-    return completedBeforeRelease ? 0 : 2;
+    return completedBeforeRelease && !failureObserved ? 0 : 2;
 
 if (args.Contains("--verify"))
-{
-    var batchSucceeded = events.Contains("batch-completed");
-    return !completedBeforeRelease && !batchSucceeded ? 0 : 3;
-}
+    return !completedBeforeRelease && failureObserved && !events.Contains("batch-completed") ? 0 : 3;
 
 return 0;
