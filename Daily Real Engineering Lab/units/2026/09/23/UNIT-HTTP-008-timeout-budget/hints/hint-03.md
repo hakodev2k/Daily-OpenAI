@@ -1,0 +1,2 @@
+# Hint 3
+Xem `requestCancellation` có thực sự tham gia vào token được truyền xuống dependency không. Sau đó giới hạn retry/attempt theo thời gian còn lại của end-to-end operation, thay vì để mỗi attempt sở hữu một budget độc lập.
