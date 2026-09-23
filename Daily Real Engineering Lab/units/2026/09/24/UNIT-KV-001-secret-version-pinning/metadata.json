@@ -1,0 +1,22 @@
+{
+  "unitId": "UNIT-KV-001",
+  "runSlot": "2026-09-24-02",
+  "title": "Key Vault Secret Version Pinning",
+  "domain": "azure-key-vault",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-24T02:09:42+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["azure-key-vault", "secret-rotation", "configuration-lifecycle"],
+  "prerequisites": ["dotnet-configuration-basics"],
+  "validationMode": "static-review",
+  "difficulty": {"generatedLevel": "D3", "dailyBand": ["D2", "D3"], "programPhase": "foundation-to-investigation"},
+  "novelty": {
+    "businessContext": "payment-provider-credential-rotation",
+    "scenarioType": "configuration-rotation-investigation",
+    "primaryRootCause": "application-configuration-pins-a-specific-secret-version-instead-of-resolving-the-current-secret-version",
+    "failureMode": "credential-rotation-succeeds-in-vault-but-running-application-continues-using-retired-credential",
+    "solutionPattern": "version-independent-secret-reference-with-explicit-refresh-lifecycle",
+    "labFormat": "cloud-configuration-lifecycle-investigation"
+  }
+}
