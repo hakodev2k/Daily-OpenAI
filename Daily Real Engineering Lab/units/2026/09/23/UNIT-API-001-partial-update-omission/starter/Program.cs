@@ -1,6 +1,8 @@
 var settings = new NotificationSettings("Merchant A", true);
 Console.WriteLine($"Before: {settings}");
-var request = new UpdateNotificationSettingsRequest { DisplayName = "Merchant Alpha" };
+var request = args.Contains("--explicit-false")
+    ? new UpdateNotificationSettingsRequest { EmailEnabled = false }
+    : new UpdateNotificationSettingsRequest { DisplayName = "Merchant Alpha" };
 ApplyUpdate(settings, request);
 Console.WriteLine($"After : {settings}");
 
