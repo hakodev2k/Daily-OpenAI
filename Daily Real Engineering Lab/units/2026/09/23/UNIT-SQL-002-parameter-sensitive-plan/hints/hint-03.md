@@ -1,0 +1,2 @@
+# Hint 3
+Nghiên cứu parameter-sensitive plan behavior. Với SQL Server 2022, xem Parameter Sensitive Plan optimization; với version cũ hơn, cân nhắc các lựa chọn như statement-level `OPTION (RECOMPILE)`, `OPTIMIZE FOR`, hoặc tách query shape. Đừng chọn một option trước khi đánh giá compile cost và workload distribution.
