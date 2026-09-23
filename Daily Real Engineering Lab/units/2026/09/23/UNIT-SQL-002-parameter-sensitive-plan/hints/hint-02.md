@@ -1,0 +1,2 @@
+# Hint 2
+Trong Actual Execution Plan, so sánh Estimated Number of Rows và Actual Number of Rows cho tenant nhỏ và tenant lớn. Kiểm tra plan được compile dưới parameter value nào và plan đó có phù hợp với cả hai cardinality shape không.
