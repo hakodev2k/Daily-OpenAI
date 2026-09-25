@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-CS-016",
+  "runSlot": "2026-09-25-14",
+  "title": "Identifier Lookup Changes Across Server Culture",
+  "domain": "csharp",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T14:06:47+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "string-comparison",
+    "globalization",
+    "collection-semantics"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "invoice-template-routing",
+    "scenarioType": "environment-dependent-identifier-lookup",
+    "primaryRootCause": "culture-sensitive-comparer-used-for-machine-identifier-key",
+    "failureMode": "valid-identifier-misses-only-under-specific-server-culture",
+    "solutionPattern": "explicit-ordinal-identifier-comparison-contract",
+    "labFormat": "globalization-behavior-investigation"
+  }
+}
