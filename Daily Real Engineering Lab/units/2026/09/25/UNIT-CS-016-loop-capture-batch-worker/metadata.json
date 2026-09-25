@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-CS-016",
+  "runSlot": "2026-09-25-20",
+  "title": "Batch Worker Processes the Wrong Slot",
+  "domain": "csharp",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T20:11:19+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "csharp-closures",
+    "async-concurrency",
+    "task-coordination"
+  ],
+  "prerequisites": [
+    "basic-async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "media-transcoding-batch",
+    "scenarioType": "concurrent-work-item-dispatch",
+    "primaryRootCause": "async-lambdas-capture-a-mutable-for-loop-index-that-changes-before-delegates-read-it",
+    "failureMode": "workers-observe-an-invalid-or-wrong-work-item-index-after-coordinated-release",
+    "solutionPattern": "capture-stable-per-iteration-state-before-scheduling-concurrent-work",
+    "labFormat": "csharp-closure-concurrency-investigation"
+  }
+}
