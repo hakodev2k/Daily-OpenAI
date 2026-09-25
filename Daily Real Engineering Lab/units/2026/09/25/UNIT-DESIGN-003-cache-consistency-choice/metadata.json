@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-DESIGN-003",
+  "runSlot": "2026-09-25-10",
+  "title": "Choose a Consistency Strategy for Product Availability",
+  "domain": "software-design",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-09-25T10:09:49+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "caching",
+    "consistency",
+    "trade-off-reasoning"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "regional-product-availability",
+    "scenarioType": "consistency-strategy-decision",
+    "primaryRootCause": "read-latency-and-freshness-requirements-conflict-under-bursty-updates",
+    "failureMode": "design-choice-can-serve-stale-availability-or-overload-primary-store",
+    "solutionPattern": "constraint-driven-read-model-and-invalidation-policy",
+    "labFormat": "consistency-design-decision"
+  }
+}
