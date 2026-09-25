@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-GIT-002",
+  "runSlot": "2026-09-25-10",
+  "title": "Case-only Rename Across Developer and CI Filesystems",
+  "domain": "git",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T10:09:49+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "git",
+    "cross-platform-filesystems",
+    "ci"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "cross-platform-web-build",
+    "scenarioType": "repository-path-casing-drift",
+    "primaryRootCause": "case-only-path-change-is-not-recorded-consistently-across-filesystem-boundaries",
+    "failureMode": "local-build-passes-while-linux-ci-cannot-resolve-import-path",
+    "solutionPattern": "explicit-versioned-rename-with-canonical-path-casing",
+    "labFormat": "cross-platform-source-control-investigation"
+  }
+}
