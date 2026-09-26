@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-SQL-001",
+  "runSlot": "2026-09-27-03",
+  "title": "Covering Index That Makes Writes Expensive",
+  "domain": "sql-server",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-27T03:10:36+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "sql-indexes",
+    "execution-plans",
+    "write-amplification"
+  ],
+  "prerequisites": [
+    "basic-sql-index-concepts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "warehouse-stock-ledger",
+    "scenarioType": "read-write-index-tradeoff-investigation",
+    "primaryRootCause": "over-wide-covering-index-includes-frequently-updated-columns",
+    "failureMode": "read-query-improves-while-update-throughput-and-log-volume-regress",
+    "solutionPattern": "workload-aware-narrow-index-and-query-shape-tradeoff",
+    "labFormat": "sql-workload-tradeoff-investigation"
+  }
+}
