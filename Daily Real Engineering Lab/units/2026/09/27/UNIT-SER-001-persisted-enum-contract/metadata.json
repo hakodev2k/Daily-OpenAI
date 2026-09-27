@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-SER-001",
+  "runSlot": "2026-09-27-14",
+  "title": "Persisted Enum Contract Breaks After Refactor",
+  "domain": "serialization",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-09-27T14:38:00+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "system-text-json",
+    "contract-versioning",
+    "backward-compatibility",
+    "refactoring"
+  ],
+  "prerequisites": [
+    "csharp-enums",
+    "json-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "order-workflow-state-persistence",
+    "scenarioType": "backward-compatibility-regression",
+    "primaryRootCause": "persisted-numeric-enum-values-are-coupled-to-refactored-enum-semantics",
+    "failureMode": "historical-json-is-deserialized-into-the-wrong-business-state-after-deployment",
+    "solutionPattern": "explicit-stable-wire-contract-with-migration-aware-parsing",
+    "labFormat": "serialization-contract-modernization"
+  }
+}
