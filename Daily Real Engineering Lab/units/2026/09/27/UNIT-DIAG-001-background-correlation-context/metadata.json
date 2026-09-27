@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-DIAG-001",
+  "runSlot": "2026-09-27-20",
+  "title": "Request và background log không nối được cùng operation",
+  "domain": "observability",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-27T20:09:33+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "structured-logging",
+    "background-processing",
+    "correlation"
+  ],
+  "prerequisites": [
+    "ASP.NET Core"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "receipt-processing",
+    "scenarioType": "async-boundary-diagnostics",
+    "primaryRootCause": "operation-metadata-not-carried-in-work-item",
+    "failureMode": "background-events-cannot-be-correlated-to-origin-request",
+    "solutionPattern": "explicit-minimal-correlation-metadata-contract",
+    "labFormat": "diagnostics-investigation"
+  }
+}
