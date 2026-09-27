@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TEST-012",
-    "runSlot": "2026-09-28-03",
-    "path": "Daily Real Engineering Lab/units/2026/09/28/UNIT-TEST-012-timeout-orphan-work",
+    "unitId": "UNIT-CS-016",
+    "runSlot": "2026-09-28-04",
+    "path": "Daily Real Engineering Lab/units/2026/09/28/UNIT-CS-016-exception-filter-unwind",
     "status": "READY",
-    "createdAt": "2026-09-28T03:08:07+07:00"
+    "createdAt": "2026-09-28T04:11:46+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 207,
-    "totalGenerated": 202,
+    "totalRunSlotsAttempted": 208,
+    "totalGenerated": 203,
     "totalFailed": 5
   },
   "learning": {

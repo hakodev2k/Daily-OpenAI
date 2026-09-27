@@ -300,10 +300,23 @@
       "failureMode": "timed-out-test-leaves-orphan-work-that-mutates-shared-state-after-test-boundary",
       "solutionPattern": "structured-task-ownership-with-propagated-cancellation-and-terminal-cleanup",
       "labFormat": "failure-path-testing-investigation"
+    },
+    {
+      "runSlot": "2026-09-28-04",
+      "unitId": "UNIT-CS-016",
+      "domain": "csharp",
+      "primarySkill": "csharp-exception-semantics",
+      "maturityLevel": "L2",
+      "difficulty": "D3",
+      "businessContext": "background-job-operation-lifecycle",
+      "primaryRootCause": "exception-filter-is-evaluated-before-stack-unwind-runs-inner-finally-cleanup",
+      "failureMode": "filter-policy-observes-transient-pre-cleanup-state-and-makes-wrong-handler-decision",
+      "solutionPattern": "move-state-dependent-policy-after-unwind-or-make-filter-independent-of-cleanup-state",
+      "labFormat": "csharp-exception-semantics-investigation"
     }
   ],
   "rolling24": {
-    "total": 23,
+    "total": 24,
     "byDomain": {
       "dotnet-configuration": 1,
       "kubernetes": 1,
@@ -311,7 +324,7 @@
       "cosmos-db": 1,
       "azure-service-bus": 1,
       "ef-core": 1,
-      "csharp": 1,
+      "csharp": 2,
       "http-networking": 1,
       "observability": 1,
       "api-engineering": 1,
@@ -329,17 +342,17 @@
     },
     "byDifficulty": {
       "D2": 3,
-      "D3": 20
+      "D3": 21
     },
     "byMaturity": {
       "L1": 4,
-      "L2": 12,
+      "L2": 13,
       "L3": 4,
       "L5": 2,
       "L4": 1
     },
     "byFormat": {
-      "distinctFormats": 23
+      "distinctFormats": 24
     }
   }
 }
