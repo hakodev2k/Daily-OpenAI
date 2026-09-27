@@ -1,1 +1,28 @@
-{"latestGeneratedUnit":{"unitId":"UNIT-ARCH-006","runSlot":"2026-09-27-16","path":"Daily Real Engineering Lab/units/2026/09/27/UNIT-ARCH-006-large-upload-boundary","status":"READY","createdAt":"2026-09-27T16:15:00+07:00"},"generation":{"totalRunSlotsAttempted":206,"totalGenerated":201,"totalFailed":5},"learning":{"totalAttempted":0,"totalCompleted":0,"totalMastered":0},"difficultyProgram":{"startedAt":"2026-09-07","elapsedDays":20,"currentPhase":"foundation-to-investigation","currentBand":["D2","D3"]}}
+{
+  "latestGeneratedUnit": {
+    "unitId": "UNIT-TEST-012",
+    "runSlot": "2026-09-28-03",
+    "path": "Daily Real Engineering Lab/units/2026/09/28/UNIT-TEST-012-timeout-orphan-work",
+    "status": "READY",
+    "createdAt": "2026-09-28T03:08:07+07:00"
+  },
+  "generation": {
+    "totalRunSlotsAttempted": 207,
+    "totalGenerated": 202,
+    "totalFailed": 5
+  },
+  "learning": {
+    "totalAttempted": 0,
+    "totalCompleted": 0,
+    "totalMastered": 0
+  },
+  "difficultyProgram": {
+    "startedAt": "2026-09-07",
+    "elapsedDays": 21,
+    "currentPhase": "foundation-to-investigation",
+    "currentBand": [
+      "D2",
+      "D3"
+    ]
+  }
+}
