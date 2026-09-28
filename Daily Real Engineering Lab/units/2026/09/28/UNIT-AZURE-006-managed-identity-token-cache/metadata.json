@@ -1,0 +1,22 @@
+{
+  "unitId": "UNIT-AZURE-006",
+  "runSlot": "2026-09-28-11",
+  "title": "Token cache không tôn trọng vòng đời credential",
+  "domain": "azure-identity",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-28T11:11:29+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["managed-identity-concepts", "access-token-lifecycle", "credential-caching"],
+  "prerequisites": ["oauth-access-token-basics"],
+  "validationMode": "static-review",
+  "difficulty": {"generatedLevel":"D3","dailyBand":["D2","D3"],"programPhase":"foundation-to-investigation"},
+  "novelty": {
+    "businessContext": "background-document-indexer",
+    "scenarioType": "long-running-credential-lifecycle",
+    "primaryRootCause": "application-caches-access-token-value-beyond-its-expiry",
+    "failureMode": "long-running-worker-starts-receiving-401-after-token-expiration",
+    "solutionPattern": "expiry-aware-token-reuse-with-refresh-skew",
+    "labFormat": "cloud-identity-lifecycle-investigation"
+  }
+}
