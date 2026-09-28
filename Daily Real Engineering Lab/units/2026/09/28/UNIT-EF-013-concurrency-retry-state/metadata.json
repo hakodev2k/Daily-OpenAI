@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-EF-013",
+  "runSlot": "2026-09-28-12",
+  "title": "EF Core Concurrency Retry State",
+  "domain": "ef-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-28T12:06:27+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "ef-core-optimistic-concurrency",
+    "change-tracking",
+    "retry-semantics"
+  ],
+  "prerequisites": [
+    "basic-ef-core-change-tracking"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "warehouse-inventory-sync",
+    "scenarioType": "concurrent-write-conflict",
+    "primaryRootCause": "retry-reuses-stale-concurrency-original-values-after-conflict",
+    "failureMode": "bounded-retry-repeats-the-same-concurrency-conflict",
+    "solutionPattern": "refresh-concurrency-baseline-and-reapply-explicit-merge-policy",
+    "labFormat": "ef-core-concurrency-investigation"
+  }
+}
