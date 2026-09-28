@@ -313,12 +313,24 @@
       "failureMode": "filter-policy-observes-transient-pre-cleanup-state-and-makes-wrong-handler-decision",
       "solutionPattern": "move-state-dependent-policy-after-unwind-or-make-filter-independent-of-cleanup-state",
       "labFormat": "csharp-exception-semantics-investigation"
+    },
+    {
+      "runSlot": "2026-09-28-10",
+      "unitId": "UNIT-OBS-008",
+      "domain": "observability",
+      "primarySkill": "metrics-cardinality",
+      "maturityLevel": "L2",
+      "difficulty": "D3",
+      "businessContext": "multi-tenant-order-observability",
+      "primaryRootCause": "raw-request-path-with-user-identifier-is-used-as-metric-dimension",
+      "failureMode": "metric-series-count-grows-with-user-cardinality",
+      "solutionPattern": "bounded-route-template-dimensions-with-high-cardinality-context-moved-to-logs-traces",
+      "labFormat": "metrics-cardinality-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-configuration": 1,
       "kubernetes": 1,
       "aspnet-core": 2,
       "cosmos-db": 1,
@@ -326,7 +338,7 @@
       "ef-core": 1,
       "csharp": 2,
       "http-networking": 1,
-      "observability": 1,
+      "observability": 2,
       "api-engineering": 1,
       "azure-blob-storage": 1,
       "elasticsearch": 1,
@@ -341,12 +353,12 @@
       "architecture": 1
     },
     "byDifficulty": {
-      "D2": 3,
-      "D3": 21
+      "D2": 2,
+      "D3": 22
     },
     "byMaturity": {
-      "L1": 4,
-      "L2": 13,
+      "L2": 14,
+      "L1": 3,
       "L3": 4,
       "L5": 2,
       "L4": 1

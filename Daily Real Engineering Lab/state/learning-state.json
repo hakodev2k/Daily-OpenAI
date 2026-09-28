@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CS-016",
-    "runSlot": "2026-09-28-04",
-    "path": "Daily Real Engineering Lab/units/2026/09/28/UNIT-CS-016-exception-filter-unwind",
+    "unitId": "UNIT-OBS-008",
+    "runSlot": "2026-09-28-10",
+    "path": "Daily Real Engineering Lab/units/2026/09/28/UNIT-OBS-008-metric-cardinality",
     "status": "READY",
-    "createdAt": "2026-09-28T04:11:46+07:00"
+    "createdAt": "2026-09-28T10:06:21+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 208,
-    "totalGenerated": 203,
+    "totalRunSlotsAttempted": 209,
+    "totalGenerated": 204,
     "totalFailed": 5
   },
   "learning": {
