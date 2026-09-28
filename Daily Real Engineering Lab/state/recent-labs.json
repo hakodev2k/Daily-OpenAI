@@ -326,12 +326,24 @@
       "failureMode": "metric-series-count-grows-with-user-cardinality",
       "solutionPattern": "bounded-route-template-dimensions-with-high-cardinality-context-moved-to-logs-traces",
       "labFormat": "metrics-cardinality-investigation"
+    },
+    {
+      "runSlot": "2026-09-29-00",
+      "unitId": "UNIT-SQL-008",
+      "domain": "sql-server",
+      "primarySkill": "sql-aggregate-type-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D2",
+      "businessContext": "merchant-settlement-report",
+      "primaryRootCause": "sum-over-int-expression-uses-int-accumulator-and-overflows",
+      "failureMode": "arithmetic-overflow-only-after-valid-rows-cross-aggregate-type-range",
+      "solutionPattern": "widen-expression-type-before-aggregation",
+      "labFormat": "sql-type-semantics-deterministic-failure"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "kubernetes": 1,
       "aspnet-core": 2,
       "cosmos-db": 1,
       "azure-service-bus": 1,
@@ -350,15 +362,16 @@
       "csharp-enumeration": 1,
       "serialization": 1,
       "redis-caching": 1,
-      "architecture": 1
+      "architecture": 1,
+      "sql-server": 1
     },
     "byDifficulty": {
       "D2": 2,
       "D3": 22
     },
     "byMaturity": {
-      "L2": 14,
-      "L1": 3,
+      "L1": 4,
+      "L2": 13,
       "L3": 4,
       "L5": 2,
       "L4": 1
