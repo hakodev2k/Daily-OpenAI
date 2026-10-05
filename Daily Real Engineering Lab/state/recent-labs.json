@@ -339,17 +339,29 @@
       "failureMode": "arithmetic-overflow-only-after-valid-rows-cross-aggregate-type-range",
       "solutionPattern": "widen-expression-type-before-aggregation",
       "labFormat": "sql-type-semantics-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-05-23",
+      "unitId": "UNIT-HTTP-010",
+      "domain": "http-networking",
+      "primarySkill": "http-content-encoding-resource-bounds",
+      "maturityLevel": "L2",
+      "difficulty": "D3",
+      "businessContext": "partner-data-export-worker",
+      "primaryRootCause": "response-size-policy-is-evaluated-on-header-metadata-while-automatic-decompression-expands-the-consumed-body",
+      "failureMode": "high-compression-ratio-response-bypasses-intended-memory-bound-and-is-fully-materialized",
+      "solutionPattern": "stream-and-enforce-a-running-limit-on-the-post-decompression-byte-boundary",
+      "labFormat": "http-resource-boundary-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "aspnet-core": 2,
       "cosmos-db": 1,
       "azure-service-bus": 1,
       "ef-core": 1,
       "csharp": 2,
-      "http-networking": 1,
+      "http-networking": 2,
       "observability": 2,
       "api-engineering": 1,
       "azure-blob-storage": 1,
@@ -357,6 +369,7 @@
       "testing": 2,
       "ci-cd": 1,
       "mongodb": 1,
+      "aspnet-core": 1,
       "performance": 1,
       "web-performance": 1,
       "csharp-enumeration": 1,
@@ -366,13 +379,13 @@
       "sql-server": 1
     },
     "byDifficulty": {
-      "D2": 2,
-      "D3": 22
+      "D3": 23,
+      "D2": 1
     },
     "byMaturity": {
-      "L1": 4,
-      "L2": 13,
+      "L2": 14,
       "L3": 4,
+      "L1": 3,
       "L5": 2,
       "L4": 1
     },
