@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-TEST-013",
+  "runSlot": "2026-10-06-00",
+  "title": "Test pass local nhưng fail trên CI Linux",
+  "domain": "testing",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-06T00:11:12+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "globalization",
+    "test-portability",
+    "integration-contracts"
+  ],
+  "prerequisites": [
+    "dotnet-testing-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "billing-legacy-partner-integration",
+    "scenarioType": "environment-dependent-test-failure",
+    "primaryRootCause": "wire-formatting-implicitly-depends-on-process-current-culture",
+    "failureMode": "same-input-produces-different-partner-date-string-across-runner-cultures",
+    "solutionPattern": "explicit-invariant-wire-format-at-integration-boundary",
+    "labFormat": "cross-environment-test-investigation"
+  }
+}

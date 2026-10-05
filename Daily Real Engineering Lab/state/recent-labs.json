@@ -352,12 +352,24 @@
       "failureMode": "high-compression-ratio-response-bypasses-intended-memory-bound-and-is-fully-materialized",
       "solutionPattern": "stream-and-enforce-a-running-limit-on-the-post-decompression-byte-boundary",
       "labFormat": "http-resource-boundary-investigation"
+    },
+    {
+      "runSlot": "2026-10-06-00",
+      "unitId": "UNIT-TEST-013",
+      "domain": "testing",
+      "primarySkill": "globalization-test-portability",
+      "maturityLevel": "L2",
+      "difficulty": "D3",
+      "businessContext": "billing-legacy-partner-integration",
+      "primaryRootCause": "wire-formatting-implicitly-depends-on-process-current-culture",
+      "failureMode": "same-input-produces-different-partner-date-string-across-runner-cultures",
+      "solutionPattern": "explicit-invariant-wire-format-at-integration-boundary",
+      "labFormat": "cross-environment-test-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "cosmos-db": 1,
       "azure-service-bus": 1,
       "ef-core": 1,
       "csharp": 2,
@@ -366,7 +378,7 @@
       "api-engineering": 1,
       "azure-blob-storage": 1,
       "elasticsearch": 1,
-      "testing": 2,
+      "testing": 3,
       "ci-cd": 1,
       "mongodb": 1,
       "aspnet-core": 1,
@@ -383,8 +395,8 @@
       "D2": 1
     },
     "byMaturity": {
-      "L2": 14,
       "L3": 4,
+      "L2": 14,
       "L1": 3,
       "L5": 2,
       "L4": 1
