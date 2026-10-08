@@ -365,12 +365,24 @@
       "failureMode": "same-input-produces-different-partner-date-string-across-runner-cultures",
       "solutionPattern": "explicit-invariant-wire-format-at-integration-boundary",
       "labFormat": "cross-environment-test-investigation"
+    },
+    {
+      "runSlot": "2026-10-08-16",
+      "unitId": "UNIT-CHAN-001",
+      "domain": "dotnet-concurrency",
+      "primarySkill": "system-threading-channels",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "administrative-access-audit-pipeline",
+      "scenarioType": "bursty-in-memory-audit-ingestion",
+      "primaryRootCause": "bounded-channel-overflow-policy-displaces-queued-events-without-signaling-publisher",
+      "failureMode": "publisher-reports-accepted-events-but-consumer-observes-only-tail-of-burst",
+      "solutionPattern": "bounded-wait-backpressure-with-concurrent-consumer-and-explicit-completion",
+      "labFormat": "concurrency-data-loss-incident"
     }
   ],
   "rolling24": {
-    "total": 24,
-    "byDomain": {
-      "azure-service-bus": 1,
+    "domainCounts": {
       "ef-core": 1,
       "csharp": 2,
       "http-networking": 2,
@@ -388,21 +400,46 @@
       "serialization": 1,
       "redis-caching": 1,
       "architecture": 1,
-      "sql-server": 1
+      "sql-server": 1,
+      "dotnet-concurrency": 1
     },
-    "byDifficulty": {
-      "D3": 23,
-      "D2": 1
+    "difficultyCounts": {
+      "D3": 22,
+      "D2": 1,
+      "D4": 1
     },
-    "byMaturity": {
-      "L3": 4,
+    "maturityLevelCounts": {
       "L2": 14,
+      "L3": 4,
       "L1": 3,
       "L5": 2,
       "L4": 1
     },
-    "byFormat": {
-      "distinctFormats": 24
+    "labFormatCounts": {
+      "ef-core-query-investigation": 1,
+      "csharp-collection-invariant-investigation": 1,
+      "http-resilience-production-incident": 1,
+      "observability-evidence-gap-investigation": 1,
+      "api-contract-deterministic-failure": 1,
+      "storage-pipeline-deterministic-failure": 1,
+      "search-consistency-production-incident": 1,
+      "parallel-test-investigation": 1,
+      "release-engineering-design-decision": 1,
+      "mongodb-concurrency-investigation": 1,
+      "aspnet-response-lifecycle-investigation": 1,
+      "performance-production-incident": 1,
+      "web-cache-contract-investigation": 1,
+      "linq-temporal-semantics-investigation": 1,
+      "serialization-contract-modernization": 1,
+      "cache-dependency-degradation-investigation": 1,
+      "architecture-design-decision": 1,
+      "failure-path-testing-investigation": 1,
+      "csharp-exception-semantics-investigation": 1,
+      "metrics-cardinality-investigation": 1,
+      "sql-type-semantics-deterministic-failure": 1,
+      "http-resource-boundary-investigation": 1,
+      "cross-environment-test-investigation": 1,
+      "concurrency-data-loss-incident": 1
     }
   }
 }

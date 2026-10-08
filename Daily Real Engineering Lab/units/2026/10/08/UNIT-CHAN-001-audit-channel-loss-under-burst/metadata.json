@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-CHAN-001",
+  "runSlot": "2026-10-08-16",
+  "title": "Audit events disappear during traffic bursts",
+  "domain": "dotnet-concurrency",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-08T16:11:00+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "system-threading-channels",
+    "bounded-backpressure",
+    "data-loss-diagnostics",
+    "async-streaming"
+  ],
+  "prerequisites": [
+    "task-await",
+    "async-enumerable-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "administrative-access-audit-pipeline",
+    "scenarioType": "bursty-in-memory-audit-ingestion",
+    "primaryRootCause": "bounded-channel-overflow-policy-displaces-queued-events-without-signaling-publisher",
+    "failureMode": "publisher-reports-accepted-events-but-consumer-observes-only-tail-of-burst",
+    "solutionPattern": "bounded-wait-backpressure-with-concurrent-consumer-and-explicit-completion",
+    "labFormat": "concurrency-data-loss-incident"
+  }
+}
