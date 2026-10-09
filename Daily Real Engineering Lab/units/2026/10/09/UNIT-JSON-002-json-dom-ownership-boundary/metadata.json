@@ -1,0 +1,43 @@
+{
+  "unitId": "UNIT-JSON-002",
+  "runSlot": "2026-10-09-14",
+  "title": "JSON DOM ownership across a delayed dispatch boundary",
+  "domain": "serialization",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-09T14:05:51+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "json-dom-lifetime-ownership",
+    "csharp-object-lifetime",
+    "webhook-queue-handoff",
+    "regression-testing"
+  ],
+  "primarySkill": "json-dom-lifetime-ownership",
+  "prerequisites": [
+    "System.Text.Json basics",
+    "using/IDisposable",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review of code, scripts and expected marker contracts; .NET SDK and PowerShell unavailable in execution environment. Runtime build/test not claimed.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "partner-webhook-queue",
+    "scenarioType": "capture-to-delayed-dispatch-refactoring",
+    "primaryRootCause": "json-element-view-outlives-disposed-json-document",
+    "failureMode": "post-capture-dispatch-throws-objectdisposedexception",
+    "solutionPattern": "detach-json-dom-data-at-ownership-handoff",
+    "labFormat": "json-dom-ownership-refactoring"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

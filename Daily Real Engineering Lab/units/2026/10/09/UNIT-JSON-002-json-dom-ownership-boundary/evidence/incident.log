@@ -1,0 +1,7 @@
+# Synthetic incident timeline (illustrative production evidence, not output from the CLI harness)
+2026-10-09T13:55:10+07:00 INFO  webhook.accepted partner=north correlation=wh-781 response=202 duration_ms=8
+2026-10-09T13:55:10+07:00 INFO  capture.completed correlation=wh-781 queued=true
+2026-10-09T13:55:11+07:00 ERROR dispatch.failed correlation=wh-781 exception=System.ObjectDisposedException
+2026-10-09T13:55:11+07:00 INFO  healthcheck.ok component=webhook-receiver
+2026-10-09T13:55:12+07:00 INFO  dispatch.retries correlation=wh-781 attempt=2 outcome=failed
+# The real local reproduction prints CAPTURE / DISPATCH / CHECK_FAILED markers.

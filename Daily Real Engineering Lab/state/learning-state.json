@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TEST-013",
-    "runSlot": "2026-10-06-00",
-    "path": "Daily Real Engineering Lab/units/2026/10/06/UNIT-TEST-013-culture-dependent-tests",
+    "unitId": "UNIT-JSON-002",
+    "runSlot": "2026-10-09-14",
+    "path": "Daily Real Engineering Lab/units/2026/10/09/UNIT-JSON-002-json-dom-ownership-boundary",
     "status": "READY",
-    "createdAt": "2026-10-06T00:11:12+07:00"
+    "createdAt": "2026-10-09T14:05:51+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 212,
-    "totalGenerated": 207,
+    "totalRunSlotsAttempted": 213,
+    "totalGenerated": 208,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 29,
+    "elapsedDays": 32,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
