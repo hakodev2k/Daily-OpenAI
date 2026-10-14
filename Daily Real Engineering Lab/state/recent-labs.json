@@ -365,12 +365,24 @@
       "failureMode": "same-input-produces-different-partner-date-string-across-runner-cultures",
       "solutionPattern": "explicit-invariant-wire-format-at-integration-boundary",
       "labFormat": "cross-environment-test-investigation"
+    },
+    {
+      "runSlot": "2026-10-15-01",
+      "unitId": "UNIT-BG-001",
+      "domain": "dotnet-background-jobs",
+      "primarySkill": "dotnet-background-jobs",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "partner-order-status-sync-worker",
+      "primaryRootCause": "timer-callback-dispatches-async-work-without-awaiting-previous-invocation",
+      "failureMode": "multiple-inflight-batches-and-unowned-shutdown-work",
+      "solutionPattern": "single-owner-awaitable-periodic-loop-with-cooperative-shutdown",
+      "labFormat": "scheduled-job-overlap-production-incident"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "azure-service-bus": 1,
       "ef-core": 1,
       "csharp": 2,
       "http-networking": 2,
@@ -388,15 +400,17 @@
       "serialization": 1,
       "redis-caching": 1,
       "architecture": 1,
-      "sql-server": 1
+      "sql-server": 1,
+      "dotnet-background-jobs": 1
     },
     "byDifficulty": {
-      "D3": 23,
-      "D2": 1
+      "D3": 22,
+      "D2": 1,
+      "D4": 1
     },
     "byMaturity": {
-      "L3": 4,
       "L2": 14,
+      "L3": 4,
       "L1": 3,
       "L5": 2,
       "L4": 1
