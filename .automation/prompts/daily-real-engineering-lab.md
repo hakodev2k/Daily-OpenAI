@@ -2234,32 +2234,89 @@ Do not rewrite the full catalog unnecessarily if the GitHub integration supports
 
 # 47. GitHub Save Rules
 
-Repository:
+# GitHub Multi-File Write Safety & Consistency Contract
 
-`hakodev2k/Daily-OpenAI`
+## Authorized Scope
 
-Create all files for the generated unit under:
+Repository: `hakodev2k/Daily-OpenAI`
+
+Allowed new files:
 
 `Daily Real Engineering Lab/units/YYYY/MM/DD/{UNIT_ID}-{slug}/`
 
-Update only files under:
+Allowed state and index updates, subject to the existing state-management rules:
 
-- `Daily Real Engineering Lab/`
+- `Daily Real Engineering Lab/state/`
+- `Daily Real Engineering Lab/catalog/`
+- `Daily Real Engineering Lab/shared/EngineeringLabKit/` only when necessary for the validated lab
 
-Do not modify:
+All modifications must remain inside `Daily Real Engineering Lab/`.
 
-- Daily Developer Tips & Design files
-- Daily Interview & Code Review Challenge files
-- unrelated prompts
-- unrelated repository content
+Never modify unrelated repositories, prompts, jobs or existing unit implementations.
 
-Prefer one atomic Git commit for the unit and state update when the GitHub integration supports it.
+## Prepare Before Publishing
 
-Suggested commit message:
+1. Resolve the current Vietnam-time RUN_SLOT.
+2. Check the existing generation ledger and unit history for a successfully published lab belonging to that RUN_SLOT.
+3. Generate the candidate lab.
+4. Complete the existing duplication, reproducibility, security and quality gates.
+5. Build the required file manifest.
+6. Generate and validate all required files.
+7. Prepare the complete set of intended state and catalog changes.
+8. Check every target path against the authorized scope.
+9. Inspect for unrelated modifications.
+10. Only then begin GitHub publishing.
 
-`Real Engineering Lab {UNIT_ID}: {short title}`
+## Atomic Publishing
 
-Never overwrite an existing unit.
+Prefer one atomic Git commit that includes the validated unit and all required state, ledger and catalog updates.
+
+If atomic publishing is unavailable:
+
+- Use only the supported GitHub write operations.
+- Write new unit files before advancing authoritative generation state.
+- Verify every required unit file before updating state.
+- Preserve existing learning history and concurrent remote changes.
+- If a later state update fails, treat the run as incomplete.
+- On the next run, reconcile any previously written unit against the ledger and RUN_SLOT before generating new content.
+- Never duplicate a successfully published unit to recover from an incomplete state update.
+- Never claim overall success while the required files or state transitions remain incomplete.
+
+## Concurrent Write Recovery
+
+For a genuine stale-SHA or non-fast-forward conflict:
+
+1. Fetch the latest `main` state.
+2. Re-read affected state files.
+3. Preserve unrelated changes.
+4. Recalculate the required updates.
+5. Retry with a bounded attempt count of at most 3.
+
+Never force-push, reset the branch, discard remote state or overwrite unrelated files.
+
+## Platform Safety and Approval
+
+- Respect OpenAI safety checks and approval requirements.
+- Stop when approval is required and unavailable.
+- Treat safety-denied writes as terminal for the current attempt.
+- Never change tools or routes for the purpose of bypassing a safety denial.
+- Do not continue publishing dependent state files after a blocked required write.
+
+## Verification
+
+Before reporting a completed lab:
+
+- All manifest files exist.
+- Unit content passes the existing quality gates.
+- References and paths are consistent.
+- Required state and catalog entries agree with the new unit.
+- RUN_SLOT uniqueness is preserved.
+- The GitHub commit or file-write results are verified.
+- No unrelated files changed.
+
+On failure, return the existing short-error format with the supported error classification.
+
+A partial GitHub publication is not a completed lab.
 
 ---
 
