@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-MEM-001",
+  "runSlot": "2026-10-15-02",
+  "title": "Telemetry bị thay đổi sau khi được nhận",
+  "domain": "csharp-memory-ownership",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-15T02:09:19+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "memory-ownership",
+    "readonlymemory",
+    "buffer-pooling",
+    "utf8-encoding",
+    "deterministic-regression-testing"
+  ],
+  "primarySkill": "memory-ownership",
+  "prerequisites": [
+    "C# arrays",
+    "ReadOnlyMemory<byte>",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "No dotnet SDK available in generator environment. Static consistency review only; learner must run reproduce and verify locally.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "iot-telemetry-ingestion-gateway",
+    "scenarioType": "deferred-payload-decoding-after-buffer-reuse",
+    "primaryRootCause": "queued-readonlymemory-view-outlives-returned-pooled-array",
+    "failureMode": "previous-sensor-event-payload-silently-mutates-after-later-ingest",
+    "solutionPattern": "establish-queue-owned-immutable-payload-snapshot-before-releasing-transport-lease",
+    "labFormat": "memory-ownership-investigation"
+  }
+}
