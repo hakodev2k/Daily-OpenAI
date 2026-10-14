@@ -2105,11 +2105,11 @@ Use the actual runtime timestamp.
 
 # 45. State Transition After Generation
 
-After successfully publishing a new lab, update:
+Prepare the update to:
 
 `state/learning-state.json`
 
-to record the most recently generated unit without replacing the state of older units.
+before publishing the validated lab. Persist it with the lab, preferably in the same atomic commit, and verify it before reporting success. Preserve the state of older units.
 
 Preferred shape:
 
@@ -2177,15 +2177,19 @@ Preserve older unit statuses and learning evidence.
 
 Do not overwrite learning history.
 
-Append every successful generation to:
+Prepare a generation entry for each validated publication in:
 
 `state/generation-ledger.jsonl`
 
+Persist the entry with the publication and do not record a successful generation until required files are verified.
+
 Generation-attempt counters must remain separate from learner-attempt counters.
 
-and append learning-state changes to:
+and prepare required learning-state events in:
 
 `state/learning-events.jsonl`
+
+Do not record completion of an incompletely published lab.
 
 Each generation ledger event should include at least:
 
@@ -2202,7 +2206,7 @@ Each generation ledger event should include at least:
 - maturity level
 - createdAt
 
-After a successful generation, update `state/recent-labs.json`.
+Prepare the `state/recent-labs.json` update before publishing and verify that it matches the published lab.
 
 Keep it compact and focused on anti-repetition metadata.
 
@@ -2216,7 +2220,7 @@ Because hourly generation may create up to roughly 24 labs per day, maintain a d
 
 `Daily Real Engineering Lab/catalog/YYYY/MM/YYYY-MM-DD.md`
 
-Append one concise row per generated lab.
+Prepare one concise row per validated lab and persist it with the verified publication.
 
 Recommended columns:
 
@@ -2234,9 +2238,36 @@ Do not rewrite the full catalog unnecessarily if the GitHub integration supports
 
 # 47. GitHub Save Rules
 
-# GitHub Multi-File Write Safety & Consistency Contract
+Repository:
 
-## Authorized Scope
+`hakodev2k/Daily-OpenAI`
+
+Create all files for the generated unit under:
+
+`Daily Real Engineering Lab/units/YYYY/MM/DD/{UNIT_ID}-{slug}/`
+
+Update only files under:
+
+- `Daily Real Engineering Lab/`
+
+Do not modify:
+
+- Daily Developer Tips & Design files
+- Daily Interview & Code Review Challenge files
+- unrelated prompts
+- unrelated repository content
+
+Prefer one atomic Git commit for the unit and state update when the GitHub integration supports it.
+
+Suggested commit message:
+
+`Real Engineering Lab {UNIT_ID}: {short title}`
+
+Never overwrite an existing unit.
+
+## GitHub Multi-File Write Safety & Consistency Contract
+
+### Authorized Scope
 
 Repository: `hakodev2k/Daily-OpenAI`
 
@@ -2244,20 +2275,27 @@ Allowed new files:
 
 `Daily Real Engineering Lab/units/YYYY/MM/DD/{UNIT_ID}-{slug}/`
 
-Allowed state and index updates, subject to the existing state-management rules:
+Allowed existing files for state/index updates only as needed by the current run:
 
-- `Daily Real Engineering Lab/state/`
-- `Daily Real Engineering Lab/catalog/`
-- `Daily Real Engineering Lab/shared/EngineeringLabKit/` only when necessary for the validated lab
+- `Daily Real Engineering Lab/state/learning-state.json`
+- `Daily Real Engineering Lab/state/recent-labs.json`
+- `Daily Real Engineering Lab/state/generation-ledger.jsonl`
+- `Daily Real Engineering Lab/state/learning-events.jsonl`
+- `Daily Real Engineering Lab/state/skill-matrix.json`
+- `Daily Real Engineering Lab/state/knowledge-gaps.json`
+- `Daily Real Engineering Lab/state/review-queue.json`
+- `Daily Real Engineering Lab/catalog/YYYY/MM/YYYY-MM-DD.md` for the current Vietnam date
+- `Daily Real Engineering Lab/README.md` when maintaining the library index
+- `Daily Real Engineering Lab/shared/EngineeringLabKit/` only for validated shared infrastructure required by the lab
 
-All modifications must remain inside `Daily Real Engineering Lab/`.
+All modifications must remain inside `Daily Real Engineering Lab/`. Previously published unit directories are immutable.
 
 Never modify unrelated repositories, prompts, jobs or existing unit implementations.
 
-## Prepare Before Publishing
+### Prepare Before Publishing
 
 1. Resolve the current Vietnam-time RUN_SLOT.
-2. Check the existing generation ledger and unit history for a successfully published lab belonging to that RUN_SLOT.
+2. Inspect the ledger, authoritative state and unit directories for fully or partially published labs for the current RUN_SLOT; reconcile incomplete publications before generating a new unit.
 3. Generate the candidate lab.
 4. Complete the existing duplication, reproducibility, security and quality gates.
 5. Build the required file manifest.
@@ -2267,7 +2305,7 @@ Never modify unrelated repositories, prompts, jobs or existing unit implementati
 9. Inspect for unrelated modifications.
 10. Only then begin GitHub publishing.
 
-## Atomic Publishing
+### Atomic Publishing
 
 Prefer one atomic Git commit that includes the validated unit and all required state, ledger and catalog updates.
 
@@ -2278,11 +2316,12 @@ If atomic publishing is unavailable:
 - Verify every required unit file before updating state.
 - Preserve existing learning history and concurrent remote changes.
 - If a later state update fails, treat the run as incomplete.
-- On the next run, reconcile any previously written unit against the ledger and RUN_SLOT before generating new content.
-- Never duplicate a successfully published unit to recover from an incomplete state update.
+- On the next run, reconcile previously written units using the original RUN_SLOT, the unit manifest, the ledger and current state before generating new content.
+- If a write outcome is ambiguous, re-read its original target and compare content before any retry.
+- Never duplicate a validated unit to recover from an incomplete state update; write only the missing permitted state changes.
 - Never claim overall success while the required files or state transitions remain incomplete.
 
-## Concurrent Write Recovery
+### Concurrent Write Recovery
 
 For a genuine stale-SHA or non-fast-forward conflict:
 
@@ -2294,15 +2333,16 @@ For a genuine stale-SHA or non-fast-forward conflict:
 
 Never force-push, reset the branch, discard remote state or overwrite unrelated files.
 
-## Platform Safety and Approval
+### Platform Safety and Approval
 
 - Respect OpenAI safety checks and approval requirements.
 - Stop when approval is required and unavailable.
 - Treat safety-denied writes as terminal for the current attempt.
 - Never change tools or routes for the purpose of bypassing a safety denial.
 - Do not continue publishing dependent state files after a blocked required write.
+- An approval or safety denial is terminal for that attempt; never disguise it as a transient concurrency error.
 
-## Verification
+### Verification
 
 Before reporting a completed lab:
 
@@ -2502,52 +2542,40 @@ Do not make Real Engineering Lab another assessment-only job.
 At the beginning of every run:
 
 ```text
-Get actual Vietnam time
+Get actual Vietnam time → calculate RUN_SLOT
       ↓
-Calculate RUN_SLOT
+Inspect generation ledger, current state and unit directories
       ↓
-Successful lab already exists for RUN_SLOT?
-      ├─ YES → return existing lab path
-      └─ NO
-           ↓
-Read current state + recent-labs.json
-           ↓
-Initialize difficultyProgram.startedAt
-only if this will become the first successful lab
-           ↓
-Calculate elapsedDays from immutable startedAt
-           ↓
-Calculate today's Library Difficulty band
-           ↓
-Read rolling domain / difficulty / maturity profile
-           ↓
-Apply:
-curriculum + diversity + calendar progression
-           ↓
-Use User Mastery / Knowledge Gaps only as secondary signals
-           ↓
-Generate Candidate #1
-           ↓
-Duplication Gate + Quality Gate
-      ├─ PASS → save
-      └─ FAIL → Candidate #2
-                     ↓
-                gates again
-                ├─ PASS → save
-                └─ FAIL → Candidate #3
-                               ↓
-                          gates again
-                          ├─ PASS → save
-                          └─ FAIL
-                               ↓
-                    record GENERATION_FAILED
-                    and publish no broken lab
-           ↓
-On successful save:
-append generation-ledger.jsonl
-update recent-labs.json
-update daily catalog
-update state
+Reconcile any incomplete publication first
+      ↓
+Fully published and verified lab already exists for RUN_SLOT?
+      ├─ YES → return existing unit path
+      └─ NO → continue
+      ↓
+Read current state + recent-labs and immutable difficulty start date
+      ↓
+Calculate calendar difficulty, rolling profile and curriculum rotation
+      ↓
+Generate candidate (at most 3 attempts)
+      ↓
+Apply Duplication Gate and Quality Gate
+      ├─ ALL FAIL → record GENERATION_FAILED only when a permitted
+      │             persistent state write is available; report error
+      └─ PASS → build and validate the complete file manifest
+      ↓
+Prepare unit files + ledger + catalog + recent-labs + state updates
+      ↓
+Validate authorized paths and absence of unrelated changes
+      ↓
+Prefer one atomic commit for all required changes
+Otherwise publish in phases, verifying every required write
+      ↓
+On ambiguous result: re-read the original destination before retry
+On safety denial or unavailable approval: stop and report blocker
+      ↓
+Verify unit manifest + ledger + catalog + state + RUN_SLOT uniqueness
+      ↓
+Only after complete verification → report Saved to GitHub
 ```
 
 Every new RUN_SLOT must attempt to produce one validated lab.
