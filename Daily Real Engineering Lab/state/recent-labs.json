@@ -515,16 +515,29 @@
       "failureMode": "processed-events-are-logged-but-per-technician-counters-remain-zero",
       "solutionPattern": "explicit-write-back-of-updated-value-type-to-dictionary",
       "labFormat": "value-type-copy-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-25-01",
+      "unitId": "UNIT-SER-002",
+      "domain": "serialization",
+      "primarySkill": "system-text-json-polymorphism",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "compliance-document-approval-audit",
+      "scenarioType": "heterogeneous-approval-events-persisted-as-base-contract",
+      "primaryRootCause": "base-type-json-serialization-omits-derived-event-fields",
+      "failureMode": "persisted-audit-events-lose-subtype-fields-and-cannot-be-replayed",
+      "solutionPattern": "explicit-discriminator-polymorphic-wire-contract",
+      "labFormat": "serialization-replay-contract-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "aspnet-core": 2,
       "performance": 1,
       "web-performance": 1,
       "csharp-enumeration": 1,
-      "serialization": 1,
+      "serialization": 2,
       "redis-caching": 1,
       "architecture": 1,
       "testing": 2,
@@ -536,6 +549,7 @@
       "csharp-memory-ownership": 1,
       "dotnet-timekeeping": 1,
       "dotnet-concurrency": 1,
+      "aspnet-core": 1,
       "dotnet-text-encoding": 1,
       "financial-calculation": 1,
       "dotnet-caching-concurrency": 1,
@@ -543,13 +557,13 @@
       "csharp-value-semantics": 1
     },
     "byDifficulty": {
-      "D3": 15,
+      "D3": 14,
       "D2": 1,
-      "D4": 8
+      "D4": 9
     },
     "byMaturity": {
-      "L2": 13,
       "L3": 4,
+      "L2": 13,
       "L4": 3,
       "L5": 1,
       "L1": 3
@@ -563,11 +577,10 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "aspnet-core": 2,
         "performance": 1,
         "web-performance": 1,
         "csharp-enumeration": 1,
-        "serialization": 1,
+        "serialization": 2,
         "redis-caching": 1,
         "architecture": 1,
         "testing": 2,
@@ -579,6 +592,7 @@
         "csharp-memory-ownership": 1,
         "dotnet-timekeeping": 1,
         "dotnet-concurrency": 1,
+        "aspnet-core": 1,
         "dotnet-text-encoding": 1,
         "financial-calculation": 1,
         "dotnet-caching-concurrency": 1,
@@ -586,19 +600,18 @@
         "csharp-value-semantics": 1
       },
       "difficulty": {
-        "D3": 15,
+        "D3": 14,
         "D2": 1,
-        "D4": 8
+        "D4": 9
       },
       "maturityLevel": {
-        "L2": 13,
         "L3": 4,
+        "L2": 13,
         "L4": 3,
         "L5": 1,
         "L1": 3
       },
       "labFormat": {
-        "aspnet-response-lifecycle-investigation": 1,
         "performance-production-incident": 1,
         "web-cache-contract-investigation": 1,
         "linq-temporal-semantics-investigation": 1,
@@ -621,7 +634,8 @@
         "cache-initialization-contention-investigation": 1,
         "http-request-context-isolation-investigation": 1,
         "event-lifecycle-refactoring-workshop": 1,
-        "value-type-copy-deterministic-failure": 1
+        "value-type-copy-deterministic-failure": 1,
+        "serialization-replay-contract-investigation": 1
       }
     }
   }

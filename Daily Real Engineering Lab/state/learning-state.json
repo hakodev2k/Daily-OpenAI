@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CS-017",
-    "runSlot": "2026-10-25-00",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CS-017-value-type-rollup-lost-updates",
+    "unitId": "UNIT-SER-002",
+    "runSlot": "2026-10-25-01",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SER-002-polymorphic-approval-events",
     "status": "READY",
-    "createdAt": "2026-10-25T00:05:31+07:00"
+    "createdAt": "2026-10-25T01:10:13+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 223,
-    "totalGenerated": 218,
+    "totalRunSlotsAttempted": 224,
+    "totalGenerated": 219,
     "totalFailed": 5
   },
   "learning": {
