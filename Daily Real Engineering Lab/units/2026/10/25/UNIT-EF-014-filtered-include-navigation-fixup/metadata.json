@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-EF-014",
+  "runSlot": "2026-10-25-05",
+  "title": "Filtered Include trả về enrollment không thuộc bộ lọc",
+  "domain": "ef-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-25T05:12:49+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "ef-core-navigation-fixup",
+    "filtered-include",
+    "change-tracker-identity-map",
+    "query-correctness"
+  ],
+  "prerequisites": [
+    "ef-core-basic-relationships",
+    "linq-query-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "enterprise-training-cohort-reporting",
+    "scenarioType": "read-only-report-after-context-warmup",
+    "primaryRootCause": "ef-core-tracking-navigation-fixup-adds-previously-tracked-entities-to-filtered-include-collection",
+    "failureMode": "inactive-enrollments-leak-into-active-roster-only-after-an-earlier-query-in-same-dbcontext",
+    "solutionPattern": "separate-read-model-materialization-from-existing-tracked-graph",
+    "labFormat": "ef-core-context-history-investigation"
+  }
+}

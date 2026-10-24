@@ -571,12 +571,25 @@
       "failureMode": "legacy-pods-throw-sql-207-and-rollback-cannot-restore-database-contract",
       "solutionPattern": "staged-expand-compatibility-backfill-cutover-contract-with-rollback-floor",
       "labFormat": "database-migration-design-decision"
+    },
+    {
+      "runSlot": "2026-10-25-05",
+      "unitId": "UNIT-EF-014",
+      "domain": "ef-core",
+      "primarySkill": "ef-core-navigation-fixup",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "enterprise-training-cohort-reporting",
+      "scenarioType": "read-only-report-after-context-warmup",
+      "primaryRootCause": "ef-core-tracking-navigation-fixup-adds-previously-tracked-entities-to-filtered-include-collection",
+      "failureMode": "inactive-enrollments-leak-into-active-roster-only-after-an-earlier-query-in-same-dbcontext",
+      "solutionPattern": "separate-read-model-materialization-from-existing-tracked-graph",
+      "labFormat": "ef-core-context-history-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "serialization": 2,
       "redis-caching": 1,
       "architecture": 1,
       "testing": 2,
@@ -594,21 +607,23 @@
       "dotnet-caching-concurrency": 1,
       "dotnet-event-lifecycle": 1,
       "csharp-value-semantics": 1,
+      "serialization": 1,
       "reverse-proxy-networking": 1,
       "dotnet-cancellation-lifecycle": 1,
-      "database-schema-evolution": 1
+      "database-schema-evolution": 1,
+      "ef-core": 1
     },
     "byDifficulty": {
-      "D3": 11,
+      "D3": 10,
       "D2": 1,
-      "D4": 12
+      "D4": 13
     },
     "byMaturity": {
-      "L4": 4,
-      "L2": 11,
+      "L2": 12,
       "L5": 2,
       "L1": 3,
-      "L3": 4
+      "L3": 4,
+      "L4": 3
     },
     "byFormat": {
       "distinctFormats": 24
@@ -619,7 +634,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "serialization": 2,
         "redis-caching": 1,
         "architecture": 1,
         "testing": 2,
@@ -637,24 +651,25 @@
         "dotnet-caching-concurrency": 1,
         "dotnet-event-lifecycle": 1,
         "csharp-value-semantics": 1,
+        "serialization": 1,
         "reverse-proxy-networking": 1,
         "dotnet-cancellation-lifecycle": 1,
-        "database-schema-evolution": 1
+        "database-schema-evolution": 1,
+        "ef-core": 1
       },
       "difficulty": {
-        "D3": 11,
+        "D3": 10,
         "D2": 1,
-        "D4": 12
+        "D4": 13
       },
       "maturityLevel": {
-        "L4": 4,
-        "L2": 11,
+        "L2": 12,
         "L5": 2,
         "L1": 3,
-        "L3": 4
+        "L3": 4,
+        "L4": 3
       },
       "labFormat": {
-        "serialization-contract-modernization": 1,
         "cache-dependency-degradation-investigation": 1,
         "architecture-design-decision": 1,
         "failure-path-testing-investigation": 1,
@@ -677,7 +692,8 @@
         "serialization-replay-contract-investigation": 1,
         "reverse-proxy-production-incident": 1,
         "async-cancellation-lifecycle-refactoring-workshop": 1,
-        "database-migration-design-decision": 1
+        "database-migration-design-decision": 1,
+        "ef-core-context-history-investigation": 1
       }
     }
   }
