@@ -473,14 +473,25 @@
       "failureMode": "duplicate-expensive-compilation-despite-correct-single-cached-value",
       "solutionPattern": "cache-lazy-single-flight-initializer-per-key",
       "labFormat": "cache-initialization-contention-investigation"
+    },
+    {
+      "runSlot": "2026-10-24-22",
+      "unitId": "UNIT-HTTP-011",
+      "domain": "http-networking",
+      "primarySkill": "httpclient-request-context-isolation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "multi-tenant-logistics-partner-proxy",
+      "scenarioType": "overlapping-outbound-requests-with-tenant-specific-context",
+      "primaryRootCause": "shared-httpclient-default-request-headers-mutated-per-request",
+      "failureMode": "outbound-requests-carry-another-tenants-routing-header",
+      "solutionPattern": "isolate-tenant-context-on-each-http-request-message",
+      "labFormat": "http-request-context-isolation-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "azure-blob-storage": 1,
-      "elasticsearch": 1,
-      "testing": 3,
       "ci-cd": 1,
       "mongodb": 1,
       "aspnet-core": 2,
@@ -490,27 +501,30 @@
       "serialization": 1,
       "redis-caching": 1,
       "architecture": 1,
+      "testing": 2,
       "csharp": 1,
       "observability": 1,
       "sql-server": 1,
-      "http-networking": 1,
+      "http-networking": 2,
       "dotnet-background-jobs": 1,
       "csharp-memory-ownership": 1,
       "dotnet-timekeeping": 1,
       "dotnet-concurrency": 1,
-      "dotnet-text-encoding": 1
+      "dotnet-text-encoding": 1,
+      "financial-calculation": 1,
+      "dotnet-caching-concurrency": 1
     },
     "byDifficulty": {
-      "D3": 19,
+      "D3": 16,
       "D2": 1,
-      "D4": 4
+      "D4": 7
     },
     "byMaturity": {
-      "L1": 3,
-      "L3": 4,
-      "L2": 13,
       "L5": 2,
-      "L4": 2
+      "L2": 14,
+      "L3": 4,
+      "L4": 2,
+      "L1": 2
     },
     "byFormat": {
       "distinctFormats": 24
@@ -521,7 +535,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "testing": 3,
         "ci-cd": 1,
         "mongodb": 1,
         "aspnet-core": 2,
@@ -531,10 +544,11 @@
         "serialization": 1,
         "redis-caching": 1,
         "architecture": 1,
+        "testing": 2,
         "csharp": 1,
         "observability": 1,
         "sql-server": 1,
-        "http-networking": 1,
+        "http-networking": 2,
         "dotnet-background-jobs": 1,
         "csharp-memory-ownership": 1,
         "dotnet-timekeeping": 1,
@@ -544,19 +558,18 @@
         "dotnet-caching-concurrency": 1
       },
       "difficulty": {
-        "D3": 17,
+        "D3": 16,
         "D2": 1,
-        "D4": 6
+        "D4": 7
       },
       "maturityLevel": {
-        "L2": 14,
         "L5": 2,
+        "L2": 14,
         "L3": 4,
         "L4": 2,
         "L1": 2
       },
       "labFormat": {
-        "parallel-test-investigation": 1,
         "release-engineering-design-decision": 1,
         "mongodb-concurrency-investigation": 1,
         "aspnet-response-lifecycle-investigation": 1,
@@ -579,7 +592,8 @@
         "middleware-regression-workshop": 1,
         "wire-encoding-deterministic-failure": 1,
         "billing-reconciliation-production-incident": 1,
-        "cache-initialization-contention-investigation": 1
+        "cache-initialization-contention-investigation": 1,
+        "http-request-context-isolation-investigation": 1
       }
     }
   }
