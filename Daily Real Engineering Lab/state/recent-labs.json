@@ -585,6 +585,19 @@
       "failureMode": "inactive-enrollments-leak-into-active-roster-only-after-an-earlier-query-in-same-dbcontext",
       "solutionPattern": "separate-read-model-materialization-from-existing-tracked-graph",
       "labFormat": "ef-core-context-history-investigation"
+    },
+    {
+      "runSlot": "2026-10-25-06",
+      "unitId": "UNIT-OUTBOX-001",
+      "domain": "messaging-outbox",
+      "primarySkill": "outbox-checkpoint-ordering",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "loyalty-reward-redemption-events",
+      "primaryRootCause": "high-watermark-advances-past-unacknowledged-gap",
+      "failureMode": "earlier-outbox-event-permanently-skipped-after-transient-publish-error",
+      "solutionPattern": "advance-only-contiguous-acknowledged-prefix-and-retry-gap",
+      "labFormat": "messaging-partial-failure-production-incident"
     }
   ],
   "rolling24": {
@@ -634,7 +647,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "redis-caching": 1,
         "architecture": 1,
         "testing": 2,
         "csharp": 1,
@@ -655,22 +667,22 @@
         "reverse-proxy-networking": 1,
         "dotnet-cancellation-lifecycle": 1,
         "database-schema-evolution": 1,
-        "ef-core": 1
+        "ef-core": 1,
+        "messaging-outbox": 1
       },
       "difficulty": {
-        "D3": 10,
+        "D3": 9,
         "D2": 1,
-        "D4": 13
+        "D4": 14
       },
       "maturityLevel": {
-        "L2": 12,
         "L5": 2,
+        "L2": 11,
         "L1": 3,
-        "L3": 4,
+        "L3": 5,
         "L4": 3
       },
       "labFormat": {
-        "cache-dependency-degradation-investigation": 1,
         "architecture-design-decision": 1,
         "failure-path-testing-investigation": 1,
         "csharp-exception-semantics-investigation": 1,
@@ -693,7 +705,8 @@
         "reverse-proxy-production-incident": 1,
         "async-cancellation-lifecycle-refactoring-workshop": 1,
         "database-migration-design-decision": 1,
-        "ef-core-context-history-investigation": 1
+        "ef-core-context-history-investigation": 1,
+        "messaging-partial-failure-production-incident": 1
       }
     }
   }
