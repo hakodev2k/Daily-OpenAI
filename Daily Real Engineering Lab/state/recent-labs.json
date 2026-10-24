@@ -501,13 +501,25 @@
       "failureMode": "duplicate-and-post-disconnect-notifications",
       "solutionPattern": "symmetric-event-subscription-lifecycle",
       "labFormat": "event-lifecycle-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-25-00",
+      "unitId": "UNIT-CS-017",
+      "domain": "csharp-value-semantics",
+      "primarySkill": "csharp-value-type-copy-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "field-service-daily-completion-rollup",
+      "scenarioType": "batch-event-aggregation-produces-zero-dashboard-totals",
+      "primaryRootCause": "dictionary-trygetvalue-returns-a-copy-of-a-mutable-value-type-and-local-updates-are-not-persisted",
+      "failureMode": "processed-events-are-logged-but-per-technician-counters-remain-zero",
+      "solutionPattern": "explicit-write-back-of-updated-value-type-to-dictionary",
+      "labFormat": "value-type-copy-deterministic-failure"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "ci-cd": 1,
-      "mongodb": 1,
       "aspnet-core": 2,
       "performance": 1,
       "web-performance": 1,
@@ -526,19 +538,21 @@
       "dotnet-concurrency": 1,
       "dotnet-text-encoding": 1,
       "financial-calculation": 1,
-      "dotnet-caching-concurrency": 1
+      "dotnet-caching-concurrency": 1,
+      "dotnet-event-lifecycle": 1,
+      "csharp-value-semantics": 1
     },
     "byDifficulty": {
-      "D3": 16,
+      "D3": 15,
       "D2": 1,
-      "D4": 7
+      "D4": 8
     },
     "byMaturity": {
-      "L5": 2,
-      "L2": 14,
+      "L2": 13,
       "L3": 4,
-      "L4": 2,
-      "L1": 2
+      "L4": 3,
+      "L5": 1,
+      "L1": 3
     },
     "byFormat": {
       "distinctFormats": 24
@@ -549,7 +563,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "mongodb": 1,
         "aspnet-core": 2,
         "performance": 1,
         "web-performance": 1,
@@ -569,7 +582,8 @@
         "dotnet-text-encoding": 1,
         "financial-calculation": 1,
         "dotnet-caching-concurrency": 1,
-        "dotnet-event-lifecycle": 1
+        "dotnet-event-lifecycle": 1,
+        "csharp-value-semantics": 1
       },
       "difficulty": {
         "D3": 15,
@@ -577,14 +591,13 @@
         "D4": 8
       },
       "maturityLevel": {
-        "L2": 14,
+        "L2": 13,
         "L3": 4,
         "L4": 3,
         "L5": 1,
-        "L1": 2
+        "L1": 3
       },
       "labFormat": {
-        "mongodb-concurrency-investigation": 1,
         "aspnet-response-lifecycle-investigation": 1,
         "performance-production-incident": 1,
         "web-cache-contract-investigation": 1,
@@ -607,7 +620,8 @@
         "billing-reconciliation-production-incident": 1,
         "cache-initialization-contention-investigation": 1,
         "http-request-context-isolation-investigation": 1,
-        "event-lifecycle-refactoring-workshop": 1
+        "event-lifecycle-refactoring-workshop": 1,
+        "value-type-copy-deterministic-failure": 1
       }
     }
   }

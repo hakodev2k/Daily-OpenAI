@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-EVT-001",
-    "runSlot": "2026-10-24-23",
-    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-EVT-001-dashboard-reconnect-event-lifecycle",
+    "unitId": "UNIT-CS-017",
+    "runSlot": "2026-10-25-00",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CS-017-value-type-rollup-lost-updates",
     "status": "READY",
-    "createdAt": "2026-10-24T23:06:24+07:00"
+    "createdAt": "2026-10-25T00:05:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 222,
-    "totalGenerated": 217,
+    "totalRunSlotsAttempted": 223,
+    "totalGenerated": 218,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 47,
+    "elapsedDays": 48,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
