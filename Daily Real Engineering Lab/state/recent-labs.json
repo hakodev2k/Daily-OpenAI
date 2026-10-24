@@ -417,6 +417,20 @@
       "failureMode": "queued-work-and-memory-grow-with-input-burst-while-producer-never-slows",
       "solutionPattern": "bounded-channel-with-awaitable-backpressure-and-drain-on-shutdown",
       "labFormat": "queue-capacity-investigation"
+    },
+    {
+      "runSlot": "2026-10-24-18",
+      "unitId": "UNIT-ASP-005",
+      "domain": "aspnet-core",
+      "primarySkill": "aspnet-core-request-body-lifecycle",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "supplier-shipment-ingest-api",
+      "scenarioType": "audit-middleware-precedes-json-deserialization",
+      "primaryRootCause": "request-body-stream-consumed-before-downstream-json-binding",
+      "failureMode": "valid-shipment-events-return-400-after-audit-rollout",
+      "solutionPattern": "bounded-request-buffering-and-rewind-before-next-middleware",
+      "labFormat": "middleware-regression-workshop"
     }
   ],
   "rolling24": {
@@ -457,6 +471,70 @@
     },
     "byFormat": {
       "distinctFormats": 24
+    }
+  },
+  "rollingProfile": {
+    "window": 24,
+    "byDomain": {
+      "api-engineering": 1,
+      "azure-blob-storage": 1,
+      "elasticsearch": 1,
+      "testing": 3,
+      "ci-cd": 1,
+      "mongodb": 1,
+      "aspnet-core": 2,
+      "performance": 1,
+      "web-performance": 1,
+      "csharp-enumeration": 1,
+      "serialization": 1,
+      "redis-caching": 1,
+      "architecture": 1,
+      "csharp": 1,
+      "observability": 1,
+      "sql-server": 1,
+      "http-networking": 1,
+      "dotnet-background-jobs": 1,
+      "csharp-memory-ownership": 1,
+      "dotnet-timekeeping": 1,
+      "dotnet-concurrency": 1
+    },
+    "byDifficulty": {
+      "D3": 19,
+      "D2": 1,
+      "D4": 4
+    },
+    "byMaturity": {
+      "L1": 3,
+      "L3": 4,
+      "L2": 13,
+      "L5": 2,
+      "L4": 2
+    },
+    "byFormat": {
+      "api-contract-deterministic-failure": 1,
+      "storage-pipeline-deterministic-failure": 1,
+      "search-consistency-production-incident": 1,
+      "parallel-test-investigation": 1,
+      "release-engineering-design-decision": 1,
+      "mongodb-concurrency-investigation": 1,
+      "aspnet-response-lifecycle-investigation": 1,
+      "performance-production-incident": 1,
+      "web-cache-contract-investigation": 1,
+      "linq-temporal-semantics-investigation": 1,
+      "serialization-contract-modernization": 1,
+      "cache-dependency-degradation-investigation": 1,
+      "architecture-design-decision": 1,
+      "failure-path-testing-investigation": 1,
+      "csharp-exception-semantics-investigation": 1,
+      "metrics-cardinality-investigation": 1,
+      "sql-type-semantics-deterministic-failure": 1,
+      "http-resource-boundary-investigation": 1,
+      "cross-environment-test-investigation": 1,
+      "scheduled-job-overlap-production-incident": 1,
+      "memory-ownership-investigation": 1,
+      "timekeeping-production-incident": 1,
+      "queue-capacity-investigation": 1,
+      "middleware-regression-workshop": 1
     }
   }
 }

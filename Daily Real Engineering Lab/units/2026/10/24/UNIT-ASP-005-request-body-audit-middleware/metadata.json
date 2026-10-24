@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-ASP-005",
+  "runSlot": "2026-10-24-18",
+  "title": "Audit middleware khiến shipment API từ chối payload hợp lệ",
+  "domain": "aspnet-core",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-24T18:13:43+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "aspnet-core-middleware",
+    "request-body-streams",
+    "http-pipeline",
+    "regression-testing",
+    "stream-buffering"
+  ],
+  "primarySkill": "aspnet-core-request-body-lifecycle",
+  "prerequisites": [
+    "C# streams",
+    "ASP.NET Core middleware basics",
+    ".NET 8 CLI"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review. No .NET SDK execution in this GitHub-only run.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "supplier-shipment-ingest-api",
+    "scenarioType": "audit-middleware-precedes-json-deserialization",
+    "primaryRootCause": "request-body-stream-consumed-before-downstream-json-binding",
+    "failureMode": "valid-shipment-events-return-400-after-audit-rollout",
+    "solutionPattern": "bounded-request-buffering-and-rewind-before-next-middleware",
+    "labFormat": "middleware-regression-workshop"
+  }
+}
