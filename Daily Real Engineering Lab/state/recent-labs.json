@@ -391,12 +391,24 @@
       "failureMode": "previous-sensor-event-payload-silently-mutates-after-later-ingest",
       "solutionPattern": "establish-queue-owned-immutable-payload-snapshot-before-releasing-transport-lease",
       "labFormat": "memory-ownership-investigation"
+    },
+    {
+      "runSlot": "2026-10-24-16",
+      "unitId": "UNIT-TIME-001",
+      "domain": "dotnet-timekeeping",
+      "primarySkill": "monotonic-elapsed-time",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "fulfillment-batch-lease-watchdog",
+      "primaryRootCause": "wall-clock-time-difference-used-to-measure-elapsed-time",
+      "failureMode": "batch-deadline-fires-prematurely-or-is-delayed-after-clock-adjustment",
+      "solutionPattern": "use-monotonic-timestamps-for-in-process-elapsed-budget",
+      "labFormat": "timekeeping-production-incident"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "csharp": 2,
       "http-networking": 2,
       "observability": 2,
       "api-engineering": 1,
@@ -412,18 +424,20 @@
       "serialization": 1,
       "redis-caching": 1,
       "architecture": 1,
+      "csharp": 1,
       "sql-server": 1,
       "dotnet-background-jobs": 1,
-      "csharp-memory-ownership": 1
+      "csharp-memory-ownership": 1,
+      "dotnet-timekeeping": 1
     },
     "byDifficulty": {
-      "D3": 22,
+      "D3": 21,
       "D2": 1,
-      "D4": 1
+      "D4": 2
     },
     "byMaturity": {
-      "L2": 14,
-      "L3": 4,
+      "L3": 5,
+      "L2": 13,
       "L1": 3,
       "L5": 2,
       "L4": 1
