@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-PROXY-001",
+  "runSlot": "2026-10-25-02",
+  "title": "HTTPS Redirect Loop Sau Khi Triển Khai Qua Reverse Proxy",
+  "domain": "reverse-proxy-networking",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-25T02:12:46+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "aspnet-core-forwarded-headers",
+    "reverse-proxy-tls-termination",
+    "http-redirect-troubleshooting",
+    "trusted-proxy-security"
+  ],
+  "prerequisites": [
+    "ASP.NET Core middleware pipeline",
+    "HTTP 307 redirect",
+    "TLS termination basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "partner-shipment-api-ingress",
+    "scenarioType": "tls-terminating-edge-redirect-loop",
+    "primaryRootCause": "https-redirection-runs-before-trusted-forwarded-proto-processing",
+    "failureMode": "edge-https-request-gets-redirected-back-to-itself-indefinitely",
+    "solutionPattern": "process-trusted-proxy-scheme-before-https-enforcement",
+    "labFormat": "reverse-proxy-production-incident"
+  }
+}
