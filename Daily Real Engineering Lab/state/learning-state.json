@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ENC-001",
-    "runSlot": "2026-10-24-19",
-    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-ENC-001-utf8-payload-budget",
+    "unitId": "UNIT-BILL-001",
+    "runSlot": "2026-10-24-20",
+    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-BILL-001-usage-charge-reconciliation",
     "status": "READY",
-    "createdAt": "2026-10-24T19:10:47+07:00"
+    "createdAt": "2026-10-24T20:05:46+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 218,
-    "totalGenerated": 213,
+    "totalRunSlotsAttempted": 219,
+    "totalGenerated": 214,
     "totalFailed": 5
   },
   "learning": {

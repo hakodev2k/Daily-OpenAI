@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-BILL-001",
+  "runSlot": "2026-10-24-20",
+  "title": "Sai lệch đối soát hóa đơn usage-based billing",
+  "domain": "financial-calculation",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-24T20:05:46+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "decimal-arithmetic",
+    "financial-reconciliation",
+    "rounding-policy",
+    "incident-investigation"
+  ],
+  "primarySkill": "decimal-rounding-boundaries",
+  "prerequisites": [
+    "C# decimal",
+    "LINQ Sum",
+    ".NET CLI"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Static consistency review of fixtures, code, project paths and verify/reproduce semantics; no .NET SDK execution.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "usage-based-saas-billing",
+    "scenarioType": "fractional-charge-settlement-drift",
+    "primaryRootCause": "per-event-rounding-before-invoice-sum",
+    "failureMode": "local-invoice-totals-diverge-from-partner-settlement",
+    "solutionPattern": "round-once-after-raw-decimal-aggregation",
+    "labFormat": "billing-reconciliation-production-incident"
+  }
+}
