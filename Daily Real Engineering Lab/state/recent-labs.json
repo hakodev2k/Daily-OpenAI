@@ -557,12 +557,25 @@
       "failureMode": "upstream-request-or-host-cancellation-does-not-stop-pending-scanner-call",
       "solutionPattern": "retain-linked-cancellation-source-lifetime-through-awaited-operation",
       "labFormat": "async-cancellation-lifecycle-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-25-04",
+      "unitId": "UNIT-DBM-001",
+      "domain": "database-schema-evolution",
+      "primarySkill": "database-schema-evolution",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "b2b-partner-contact-directory",
+      "scenarioType": "mixed-version-schema-contract-rollout",
+      "primaryRootCause": "destructive-column-rename-before-legacy-application-instances-drain",
+      "failureMode": "legacy-pods-throw-sql-207-and-rollback-cannot-restore-database-contract",
+      "solutionPattern": "staged-expand-compatibility-backfill-cutover-contract-with-rollback-floor",
+      "labFormat": "database-migration-design-decision"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "csharp-enumeration": 1,
       "serialization": 2,
       "redis-caching": 1,
       "architecture": 1,
@@ -582,17 +595,18 @@
       "dotnet-event-lifecycle": 1,
       "csharp-value-semantics": 1,
       "reverse-proxy-networking": 1,
-      "dotnet-cancellation-lifecycle": 1
+      "dotnet-cancellation-lifecycle": 1,
+      "database-schema-evolution": 1
     },
     "byDifficulty": {
-      "D3": 12,
+      "D3": 11,
       "D2": 1,
-      "D4": 11
+      "D4": 12
     },
     "byMaturity": {
-      "L2": 12,
       "L4": 4,
-      "L5": 1,
+      "L2": 11,
+      "L5": 2,
       "L1": 3,
       "L3": 4
     },
@@ -605,7 +619,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "csharp-enumeration": 1,
         "serialization": 2,
         "redis-caching": 1,
         "architecture": 1,
@@ -625,22 +638,22 @@
         "dotnet-event-lifecycle": 1,
         "csharp-value-semantics": 1,
         "reverse-proxy-networking": 1,
-        "dotnet-cancellation-lifecycle": 1
+        "dotnet-cancellation-lifecycle": 1,
+        "database-schema-evolution": 1
       },
       "difficulty": {
-        "D3": 12,
+        "D3": 11,
         "D2": 1,
-        "D4": 11
+        "D4": 12
       },
       "maturityLevel": {
-        "L2": 12,
         "L4": 4,
-        "L5": 1,
+        "L2": 11,
+        "L5": 2,
         "L1": 3,
         "L3": 4
       },
       "labFormat": {
-        "linq-temporal-semantics-investigation": 1,
         "serialization-contract-modernization": 1,
         "cache-dependency-degradation-investigation": 1,
         "architecture-design-decision": 1,
@@ -663,7 +676,8 @@
         "value-type-copy-deterministic-failure": 1,
         "serialization-replay-contract-investigation": 1,
         "reverse-proxy-production-incident": 1,
-        "async-cancellation-lifecycle-refactoring-workshop": 1
+        "async-cancellation-lifecycle-refactoring-workshop": 1,
+        "database-migration-design-decision": 1
       }
     }
   }

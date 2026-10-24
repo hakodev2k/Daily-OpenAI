@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CANCEL-001",
-    "runSlot": "2026-10-25-03",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CANCEL-001-linked-token-lifetime",
+    "unitId": "UNIT-DBM-001",
+    "runSlot": "2026-10-25-04",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-DBM-001-rolling-schema-compatibility",
     "status": "READY",
-    "createdAt": "2026-10-25T03:16:20+07:00"
+    "createdAt": "2026-10-25T04:10:33+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 226,
-    "totalGenerated": 221,
+    "totalRunSlotsAttempted": 227,
+    "totalGenerated": 222,
     "totalFailed": 5
   },
   "learning": {

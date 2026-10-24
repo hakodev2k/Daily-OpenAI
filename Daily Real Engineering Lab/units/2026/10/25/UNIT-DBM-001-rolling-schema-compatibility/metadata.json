@@ -1,0 +1,53 @@
+{
+  "unitId": "UNIT-DBM-001",
+  "runSlot": "2026-10-25-04",
+  "title": "Giữ tương thích database trong rolling deployment",
+  "domain": "database-schema-evolution",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-25T04:10:33+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "database-schema-evolution",
+    "sql-server-migrations",
+    "rolling-deployments",
+    "backward-compatibility",
+    "rollback-design"
+  ],
+  "prerequisites": [
+    "sql-transactions",
+    "optimistic-concurrency",
+    "aspnet-core-deployment"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "b2b-partner-contact-directory",
+    "scenarioType": "mixed-version-schema-contract-rollout",
+    "primaryRootCause": "destructive-column-rename-before-legacy-application-instances-drain",
+    "failureMode": "legacy-pods-throw-sql-207-and-rollback-cannot-restore-database-contract",
+    "solutionPattern": "staged-expand-compatibility-backfill-cutover-contract-with-rollback-floor",
+    "labFormat": "database-migration-design-decision"
+  },
+  "manifest": [
+    "README.md",
+    "docs/references.md",
+    "docs/scenario.md",
+    "evidence/incident.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "solution/README.md",
+    "workspace/my-decision.md"
+  ]
+}
