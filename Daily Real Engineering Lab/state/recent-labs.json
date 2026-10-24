@@ -404,6 +404,19 @@
       "failureMode": "batch-deadline-fires-prematurely-or-is-delayed-after-clock-adjustment",
       "solutionPattern": "use-monotonic-timestamps-for-in-process-elapsed-budget",
       "labFormat": "timekeeping-production-incident"
+    },
+    {
+      "runSlot": "2026-10-24-17",
+      "unitId": "UNIT-CHAN-001",
+      "domain": "dotnet-concurrency",
+      "primarySkill": "channel-backpressure",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "warehouse-stock-reconciliation-stream",
+      "primaryRootCause": "unbounded-channel-accepts-work-faster-than-single-consumer-can-drain",
+      "failureMode": "queued-work-and-memory-grow-with-input-burst-while-producer-never-slows",
+      "solutionPattern": "bounded-channel-with-awaitable-backpressure-and-drain-on-shutdown",
+      "labFormat": "queue-capacity-investigation"
     }
   ],
   "rolling24": {

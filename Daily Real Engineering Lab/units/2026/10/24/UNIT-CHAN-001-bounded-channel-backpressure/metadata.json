@@ -1,0 +1,43 @@
+{
+  "unitId": "UNIT-CHAN-001",
+  "runSlot": "2026-10-24-17",
+  "title": "Hàng đợi nhập kho tăng không giới hạn khi downstream chậm",
+  "domain": "dotnet-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-24T17:14:51+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "system-threading-channels",
+    "producer-consumer",
+    "backpressure",
+    "async-await",
+    "capacity-planning",
+    "regression-testing"
+  ],
+  "primarySkill": "channel-backpressure",
+  "prerequisites": [
+    "C# async/await",
+    "Task",
+    "dotnet CLI",
+    "producer-consumer basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review only; .NET SDK was not executed. Reproduce and verify on a machine with .NET 8 SDK.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "warehouse-stock-reconciliation-stream",
+    "scenarioType": "downstream-slow-consumer-under-ingestion-burst",
+    "primaryRootCause": "unbounded-channel-accepts-work-faster-than-single-consumer-can-drain",
+    "failureMode": "queued-work-and-memory-grow-with-input-burst-while-producer-never-slows",
+    "solutionPattern": "bounded-channel-with-awaitable-backpressure-and-drain-on-shutdown",
+    "labFormat": "queue-capacity-investigation"
+  }
+}

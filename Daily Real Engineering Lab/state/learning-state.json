@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TIME-001",
-    "runSlot": "2026-10-24-16",
-    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-TIME-001-wall-clock-vs-monotonic-time",
+    "unitId": "UNIT-CHAN-001",
+    "runSlot": "2026-10-24-17",
+    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-CHAN-001-bounded-channel-backpressure",
     "status": "READY",
-    "createdAt": "2026-10-24T16:13:24+07:00"
+    "createdAt": "2026-10-24T17:14:51+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 215,
-    "totalGenerated": 210,
+    "totalRunSlotsAttempted": 216,
+    "totalGenerated": 211,
     "totalFailed": 5
   },
   "learning": {
