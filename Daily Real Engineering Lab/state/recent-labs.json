@@ -431,52 +431,25 @@
       "failureMode": "valid-shipment-events-return-400-after-audit-rollout",
       "solutionPattern": "bounded-request-buffering-and-rewind-before-next-middleware",
       "labFormat": "middleware-regression-workshop"
+    },
+    {
+      "runSlot": "2026-10-24-19",
+      "unitId": "UNIT-ENC-001",
+      "domain": "dotnet-text-encoding",
+      "primarySkill": "utf8-wire-size-contract",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "customer-sms-delivery-gateway",
+      "scenarioType": "partner-wire-payload-budget-mismatch",
+      "primaryRootCause": "utf16-code-unit-length-used-as-utf8-wire-byte-size",
+      "failureMode": "gateway-accepts-request-locally-but-partner-rejects-multibyte-text-with-413",
+      "solutionPattern": "enforce-wire-byte-budget-at-payload-policy-boundary",
+      "labFormat": "wire-encoding-deterministic-failure"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "http-networking": 2,
-      "observability": 2,
-      "api-engineering": 1,
-      "azure-blob-storage": 1,
-      "elasticsearch": 1,
-      "testing": 3,
-      "ci-cd": 1,
-      "mongodb": 1,
-      "aspnet-core": 1,
-      "performance": 1,
-      "web-performance": 1,
-      "csharp-enumeration": 1,
-      "serialization": 1,
-      "redis-caching": 1,
-      "architecture": 1,
-      "csharp": 1,
-      "sql-server": 1,
-      "dotnet-background-jobs": 1,
-      "csharp-memory-ownership": 1,
-      "dotnet-timekeeping": 1
-    },
-    "byDifficulty": {
-      "D3": 21,
-      "D2": 1,
-      "D4": 2
-    },
-    "byMaturity": {
-      "L3": 5,
-      "L2": 13,
-      "L1": 3,
-      "L5": 2,
-      "L4": 1
-    },
-    "byFormat": {
-      "distinctFormats": 24
-    }
-  },
-  "rollingProfile": {
-    "window": 24,
-    "byDomain": {
-      "api-engineering": 1,
       "azure-blob-storage": 1,
       "elasticsearch": 1,
       "testing": 3,
@@ -496,7 +469,8 @@
       "dotnet-background-jobs": 1,
       "csharp-memory-ownership": 1,
       "dotnet-timekeeping": 1,
-      "dotnet-concurrency": 1
+      "dotnet-concurrency": 1,
+      "dotnet-text-encoding": 1
     },
     "byDifficulty": {
       "D3": 19,
@@ -511,7 +485,47 @@
       "L4": 2
     },
     "byFormat": {
-      "api-contract-deterministic-failure": 1,
+      "distinctFormats": 24
+    }
+  },
+  "rollingProfile": {
+    "window": 24,
+    "byDomain": {
+      "azure-blob-storage": 1,
+      "elasticsearch": 1,
+      "testing": 3,
+      "ci-cd": 1,
+      "mongodb": 1,
+      "aspnet-core": 2,
+      "performance": 1,
+      "web-performance": 1,
+      "csharp-enumeration": 1,
+      "serialization": 1,
+      "redis-caching": 1,
+      "architecture": 1,
+      "csharp": 1,
+      "observability": 1,
+      "sql-server": 1,
+      "http-networking": 1,
+      "dotnet-background-jobs": 1,
+      "csharp-memory-ownership": 1,
+      "dotnet-timekeeping": 1,
+      "dotnet-concurrency": 1,
+      "dotnet-text-encoding": 1
+    },
+    "byDifficulty": {
+      "D3": 19,
+      "D2": 1,
+      "D4": 4
+    },
+    "byMaturity": {
+      "L1": 3,
+      "L3": 4,
+      "L2": 13,
+      "L5": 2,
+      "L4": 2
+    },
+    "byFormat": {
       "storage-pipeline-deterministic-failure": 1,
       "search-consistency-production-incident": 1,
       "parallel-test-investigation": 1,
@@ -534,7 +548,8 @@
       "memory-ownership-investigation": 1,
       "timekeeping-production-incident": 1,
       "queue-capacity-investigation": 1,
-      "middleware-regression-workshop": 1
+      "middleware-regression-workshop": 1,
+      "wire-encoding-deterministic-failure": 1
     }
   }
 }

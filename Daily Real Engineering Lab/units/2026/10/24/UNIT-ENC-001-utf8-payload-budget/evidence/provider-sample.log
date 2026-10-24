@@ -1,0 +1,5 @@
+# Sample from the original starter; run ./run.ps1 to reproduce locally.
+ascii-exact-boundary | localAllowed=True | providerStatus=202 | utf16Units=16 | wireBytes=16
+vietnamese-over-boundary | localAllowed=True | providerStatus=413 | utf16Units=9 | wireBytes=18
+emoji-over-boundary | localAllowed=True | providerStatus=413 | utf16Units=10 | wireBytes=20
+order-notice | localAllowed=True | providerStatus=413 | utf16Units=15 | wireBytes=25

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ASP-005",
-    "runSlot": "2026-10-24-18",
-    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-ASP-005-request-body-audit-middleware",
+    "unitId": "UNIT-ENC-001",
+    "runSlot": "2026-10-24-19",
+    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-ENC-001-utf8-payload-budget",
     "status": "READY",
-    "createdAt": "2026-10-24T18:13:43+07:00"
+    "createdAt": "2026-10-24T19:10:47+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 217,
-    "totalGenerated": 212,
+    "totalRunSlotsAttempted": 218,
+    "totalGenerated": 213,
     "totalFailed": 5
   },
   "learning": {
