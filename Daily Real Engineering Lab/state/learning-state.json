@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PROXY-001",
-    "runSlot": "2026-10-25-02",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-PROXY-001-tls-termination-redirect-loop",
+    "unitId": "UNIT-CANCEL-001",
+    "runSlot": "2026-10-25-03",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CANCEL-001-linked-token-lifetime",
     "status": "READY",
-    "createdAt": "2026-10-25T02:12:46+07:00"
+    "createdAt": "2026-10-25T03:16:20+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 225,
-    "totalGenerated": 220,
+    "totalRunSlotsAttempted": 226,
+    "totalGenerated": 221,
     "totalFailed": 5
   },
   "learning": {
