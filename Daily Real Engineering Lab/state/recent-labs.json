@@ -487,6 +487,20 @@
       "failureMode": "outbound-requests-carry-another-tenants-routing-header",
       "solutionPattern": "isolate-tenant-context-on-each-http-request-message",
       "labFormat": "http-request-context-isolation-investigation"
+    },
+    {
+      "runSlot": "2026-10-24-23",
+      "unitId": "UNIT-EVT-001",
+      "domain": "dotnet-event-lifecycle",
+      "primarySkill": "event-subscription-lifecycle",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "real-time-operations-dashboard",
+      "scenarioType": "dashboard-session-disconnect-reconnect",
+      "primaryRootCause": "event-subscription-not-released-at-session-disconnect",
+      "failureMode": "duplicate-and-post-disconnect-notifications",
+      "solutionPattern": "symmetric-event-subscription-lifecycle",
+      "labFormat": "event-lifecycle-refactoring-workshop"
     }
   ],
   "rolling24": {
@@ -535,7 +549,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "ci-cd": 1,
         "mongodb": 1,
         "aspnet-core": 2,
         "performance": 1,
@@ -555,22 +568,22 @@
         "dotnet-concurrency": 1,
         "dotnet-text-encoding": 1,
         "financial-calculation": 1,
-        "dotnet-caching-concurrency": 1
+        "dotnet-caching-concurrency": 1,
+        "dotnet-event-lifecycle": 1
       },
       "difficulty": {
-        "D3": 16,
+        "D3": 15,
         "D2": 1,
-        "D4": 7
+        "D4": 8
       },
       "maturityLevel": {
-        "L5": 2,
         "L2": 14,
         "L3": 4,
-        "L4": 2,
+        "L4": 3,
+        "L5": 1,
         "L1": 2
       },
       "labFormat": {
-        "release-engineering-design-decision": 1,
         "mongodb-concurrency-investigation": 1,
         "aspnet-response-lifecycle-investigation": 1,
         "performance-production-incident": 1,
@@ -593,7 +606,8 @@
         "wire-encoding-deterministic-failure": 1,
         "billing-reconciliation-production-incident": 1,
         "cache-initialization-contention-investigation": 1,
-        "http-request-context-isolation-investigation": 1
+        "http-request-context-isolation-investigation": 1,
+        "event-lifecycle-refactoring-workshop": 1
       }
     }
   }

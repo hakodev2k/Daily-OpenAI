@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HTTP-011",
-    "runSlot": "2026-10-24-22",
-    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-HTTP-011-tenant-header-cross-request-leak",
+    "unitId": "UNIT-EVT-001",
+    "runSlot": "2026-10-24-23",
+    "path": "Daily Real Engineering Lab/units/2026/10/24/UNIT-EVT-001-dashboard-reconnect-event-lifecycle",
     "status": "READY",
-    "createdAt": "2026-10-24T22:13:17+07:00"
+    "createdAt": "2026-10-24T23:06:24+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 221,
-    "totalGenerated": 216,
+    "totalRunSlotsAttempted": 222,
+    "totalGenerated": 217,
     "totalFailed": 5
   },
   "learning": {
