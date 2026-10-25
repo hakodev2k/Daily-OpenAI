@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TEST-014",
-    "runSlot": "2026-10-25-18",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-TEST-014-permit-approval-test-double",
+    "unitId": "UNIT-SLO-001",
+    "runSlot": "2026-10-25-19",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SLO-001-alert-burn-rate-policy",
     "status": "READY",
-    "createdAt": "2026-10-25T18:07:37+07:00"
+    "createdAt": "2026-10-25T19:10:12+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 241,
-    "totalGenerated": 236,
+    "totalRunSlotsAttempted": 242,
+    "totalGenerated": 237,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-SLO-001",
+  "runSlot": "2026-10-25-19",
+  "title": "Alert Policy: High Traffic Pages, Quiet Outage",
+  "domain": "observability-slo-engineering",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-25T19:10:12+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "slo-error-budget",
+    "alert-burn-rate",
+    "metrics-aggregation",
+    "incident-triage",
+    "engineering-tradeoffs"
+  ],
+  "prerequisites": [
+    "C#/.NET 8",
+    "service-level indicators",
+    "basic percentages and rolling windows"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "healthcare-appointment-notification-slo",
+    "scenarioType": "sustained-low-volume-failure-and-high-volume-normal-error-baseline",
+    "primaryRootCause": "absolute-error-count-alert-threshold-ignores-request-volume-and-slo-error-budget",
+    "failureMode": "false-page-at-high-volume-and-missed-severe-low-volume-outage",
+    "solutionPattern": "ratio-based-multiwindow-error-budget-burn-policy-with-complete-window-evidence",
+    "labFormat": "slo-alert-policy-design-decision"
+  }
+}

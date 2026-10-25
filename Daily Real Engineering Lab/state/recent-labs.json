@@ -774,6 +774,21 @@
       "failureMode": "approval-command-reports-success-but-persisted-permit-remains-pending",
       "solutionPattern": "enforce-explicit-save-boundary-and-test-against-detached-persistence-semantics",
       "labFormat": "persistence-test-double-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-25-19",
+      "unitId": "UNIT-SLO-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SLO-001-alert-burn-rate-policy",
+      "domain": "observability-slo-engineering",
+      "primarySkill": "slo-error-budget",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "healthcare-appointment-notification-slo",
+      "scenarioType": "sustained-low-volume-failure-and-high-volume-normal-error-baseline",
+      "primaryRootCause": "absolute-error-count-alert-threshold-ignores-request-volume-and-slo-error-budget",
+      "failureMode": "false-page-at-high-volume-and-missed-severe-low-volume-outage",
+      "solutionPattern": "ratio-based-multiwindow-error-budget-burn-policy-with-complete-window-evidence",
+      "labFormat": "slo-alert-policy-design-decision"
     }
   ],
   "rolling24": {
@@ -824,7 +839,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-text-encoding": 1,
         "financial-calculation": 1,
         "dotnet-caching-concurrency": 1,
         "http-networking": 1,
@@ -847,21 +861,21 @@
         "api-integration-security": 1,
         "dotnet-stream-io": 1,
         "kubernetes-operations": 1,
-        "testing-persistence-contracts": 1
+        "testing-persistence-contracts": 1,
+        "observability-slo-engineering": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 20,
+        "D3": 4
       },
       "maturityLevel": {
-        "L1": 5,
         "L3": 6,
         "L2": 8,
         "L4": 4,
-        "L5": 1
+        "L1": 4,
+        "L5": 2
       },
       "labFormat": {
-        "wire-encoding-deterministic-failure": 1,
         "billing-reconciliation-production-incident": 1,
         "cache-initialization-contention-investigation": 1,
         "http-request-context-isolation-investigation": 1,
@@ -884,7 +898,8 @@
         "webhook-integrity-contract-refactoring-workshop": 1,
         "stream-fragmentation-deterministic-failure": 1,
         "health-probe-incident-investigation": 1,
-        "persistence-test-double-contract-investigation": 1
+        "persistence-test-double-contract-investigation": 1,
+        "slo-alert-policy-design-decision": 1
       }
     }
   }
