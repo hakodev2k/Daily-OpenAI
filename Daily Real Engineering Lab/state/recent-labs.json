@@ -924,12 +924,26 @@
       "failureMode": "exported-zip-omits-final-directory-and-is-not-readable",
       "solutionPattern": "finalize-ziparchive-before-materializing-response-payload",
       "labFormat": "archive-finalization-lifecycle-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-05",
+      "unitId": "UNIT-SQL-009",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SQL-009-partner-confirmation-null-antijoin",
+      "domain": "postgresql-sql-semantics",
+      "primarySkill": "sql-three-valued-logic",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "insurance-partner-coverage-confirmation",
+      "scenarioType": "nightly-batch-reconciliation-empty-result",
+      "primaryRootCause": "nullable-subquery-membership-yields-unknown-for-not-in",
+      "failureMode": "missing-active-coverages-omitted-from-reconciliation-when-partner-import-has-null-id",
+      "solutionPattern": "correlated-not-exists-anti-semi-join-with-explicit-scope",
+      "labFormat": "sql-three-valued-logic-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "ef-core": 1,
       "messaging-outbox": 1,
       "distributed-systems": 1,
       "dotnet-regex-performance": 1,
@@ -952,15 +966,16 @@
       "aspnet-core-middleware": 1,
       "dotnet-async-streams": 1,
       "http-client-lifecycle": 1,
-      "dotnet-zip-archive": 1
+      "dotnet-zip-archive": 1,
+      "postgresql-sql-semantics": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
       "L3": 6,
+      "L2": 8,
       "L1": 5,
       "L4": 3,
       "L5": 1,
@@ -975,7 +990,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "ef-core": 1,
         "messaging-outbox": 1,
         "distributed-systems": 1,
         "dotnet-regex-performance": 1,
@@ -998,22 +1012,22 @@
         "aspnet-core-middleware": 1,
         "dotnet-async-streams": 1,
         "http-client-lifecycle": 1,
-        "dotnet-zip-archive": 1
+        "dotnet-zip-archive": 1,
+        "postgresql-sql-semantics": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
         "L3": 6,
+        "L2": 8,
         "L1": 5,
         "L4": 3,
         "L5": 1,
         "L6": 1
       },
       "labFormat": {
-        "ef-core-context-history-investigation": 1,
         "messaging-partial-failure-production-incident": 1,
         "distributed-lease-investigation": 1,
         "regex-input-validation-deterministic-failure": 1,
@@ -1036,7 +1050,8 @@
         "middleware-branch-deterministic-failure": 1,
         "async-stream-consumer-cancellation-investigation": 1,
         "http-retry-request-lifecycle-production-incident": 1,
-        "archive-finalization-lifecycle-investigation": 1
+        "archive-finalization-lifecycle-investigation": 1,
+        "sql-three-valued-logic-investigation": 1
       }
     }
   }

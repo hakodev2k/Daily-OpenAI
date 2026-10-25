@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-SQL-009",
+  "runSlot": "2026-10-26-05",
+  "title": "Đối soát xác nhận đối tác trả về danh sách trống",
+  "domain": "postgresql-sql-semantics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-26T05:07:03+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "sql-three-valued-logic",
+    "sql-anti-join",
+    "tenant-scoped-query-contract"
+  ],
+  "prerequisites": [
+    "basic-select-and-subqueries",
+    "docker-compose-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "insurance-partner-coverage-confirmation",
+    "scenarioType": "nightly-batch-reconciliation-empty-result",
+    "primaryRootCause": "nullable-subquery-membership-yields-unknown-for-not-in",
+    "failureMode": "missing-active-coverages-omitted-from-reconciliation-when-partner-import-has-null-id",
+    "solutionPattern": "correlated-not-exists-anti-semi-join-with-explicit-scope",
+    "labFormat": "sql-three-valued-logic-investigation"
+  },
+  "expectedEvidence": [
+    "baseline-zero-missing-rows",
+    "nullable-confirmation-in-target-batch",
+    "fixed-exact-missing-set"
+  ],
+  "validationNotes": "Strict static consistency review; Docker/PostgreSQL commands not executed in generation runtime."
+}

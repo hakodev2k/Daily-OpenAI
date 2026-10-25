@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ZIP-001",
-    "runSlot": "2026-10-26-04",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ZIP-001-conservation-evidence-zip-export-finalization",
+    "unitId": "UNIT-SQL-009",
+    "runSlot": "2026-10-26-05",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SQL-009-partner-confirmation-null-antijoin",
     "status": "READY",
-    "createdAt": "2026-10-26T04:14:10.165+07:00"
+    "createdAt": "2026-10-26T05:07:03+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 251,
-    "totalGenerated": 246,
+    "totalRunSlotsAttempted": 252,
+    "totalGenerated": 247,
     "totalFailed": 5
   },
   "learning": {
