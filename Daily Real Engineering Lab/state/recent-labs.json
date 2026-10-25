@@ -714,12 +714,26 @@
       "failureMode": "authenticated-tenant-can-read-file-from-sibling-tenant-backup-directory",
       "solutionPattern": "canonical-relative-path-boundary-validation-before-file-access",
       "labFormat": "filesystem-authorization-incident"
+    },
+    {
+      "runSlot": "2026-10-25-15",
+      "unitId": "UNIT-HMAC-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-HMAC-001-payroll-webhook-signature-payload",
+      "domain": "api-integration-security",
+      "primarySkill": "webhook-hmac-integrity",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "payroll-provider-webhook-ingress",
+      "scenarioType": "valid-signed-json-webhooks-intermittently-rejected-by-format",
+      "primaryRootCause": "receiver-computes-hmac-over-reserialized-json-instead-of-signed-raw-bytes",
+      "failureMode": "legitimate-pretty-printed-webhooks-fail-signature-verification",
+      "solutionPattern": "authenticate-original-body-byte-sequence-before-deserialization",
+      "labFormat": "webhook-integrity-contract-refactoring-workshop"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "csharp-memory-ownership": 1,
       "dotnet-timekeeping": 1,
       "dotnet-concurrency": 1,
       "aspnet-core": 1,
@@ -742,16 +756,17 @@
       "aspnet-core-options": 1,
       "http-uri-resolution": 1,
       "dotnet-execution-context": 1,
-      "dotnet-filesystem-security": 1
+      "dotnet-filesystem-security": 1,
+      "api-integration-security": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L2": 9,
       "L3": 6,
-      "L4": 4,
+      "L2": 8,
+      "L4": 5,
       "L1": 4,
       "L5": 1
     },
@@ -764,7 +779,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "csharp-memory-ownership": 1,
         "dotnet-timekeeping": 1,
         "dotnet-concurrency": 1,
         "aspnet-core": 1,
@@ -787,21 +801,21 @@
         "aspnet-core-options": 1,
         "http-uri-resolution": 1,
         "dotnet-execution-context": 1,
-        "dotnet-filesystem-security": 1
+        "dotnet-filesystem-security": 1,
+        "api-integration-security": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 20,
+        "D3": 4
       },
       "maturityLevel": {
-        "L2": 9,
         "L3": 6,
-        "L4": 4,
+        "L2": 8,
+        "L4": 5,
         "L1": 4,
         "L5": 1
       },
       "labFormat": {
-        "memory-ownership-investigation": 1,
         "timekeeping-production-incident": 1,
         "queue-capacity-investigation": 1,
         "middleware-regression-workshop": 1,
@@ -824,7 +838,8 @@
         "credential-rotation-refactoring-workshop": 1,
         "http-uri-routing-deterministic-failure": 1,
         "execution-context-propagation-investigation": 1,
-        "filesystem-authorization-incident": 1
+        "filesystem-authorization-incident": 1,
+        "webhook-integrity-contract-refactoring-workshop": 1
       }
     }
   }

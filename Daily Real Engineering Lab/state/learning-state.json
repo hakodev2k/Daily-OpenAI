@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PATH-001",
-    "runSlot": "2026-10-25-14",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-PATH-001-tenant-document-path-boundary",
+    "unitId": "UNIT-HMAC-001",
+    "runSlot": "2026-10-25-15",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-HMAC-001-payroll-webhook-signature-payload",
     "status": "READY",
-    "createdAt": "2026-10-25T14:08:33+07:00"
+    "createdAt": "2026-10-25T15:14:57.006+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 237,
-    "totalGenerated": 232,
+    "totalRunSlotsAttempted": 238,
+    "totalGenerated": 233,
     "totalFailed": 5
   },
   "learning": {
