@@ -656,12 +656,25 @@
       "failureMode": "independent-upstream-errors-and-successful-feed-results-disappear-from-batch-report",
       "solutionPattern": "inspect-each-completed-task-and-attribute-all-faults-while-preserving-cancellation",
       "labFormat": "multi-fault-batch-diagnostics-production-incident"
+    },
+    {
+      "runSlot": "2026-10-25-11",
+      "unitId": "UNIT-OPT-001",
+      "domain": "aspnet-core-options",
+      "primarySkill": "dotnet-options-reload-lifecycle",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "clinical-laboratory-results-partner-gateway",
+      "scenarioType": "partner-credential-version-rotated-during-long-running-host",
+      "primaryRootCause": "singleton-gateway-captures-startup-IOptions-value-despite-configuration-reload",
+      "failureMode": "partner-returns-unauthorized-after-rotation-while-configuration-provider-reports-new-version",
+      "solutionPattern": "resolve-current-options-at-outbound-operation-boundary-with-controlled-validation",
+      "labFormat": "credential-rotation-refactoring-workshop"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "sql-server": 1,
       "http-networking": 2,
       "testing": 1,
       "dotnet-background-jobs": 1,
@@ -683,18 +696,18 @@
       "distributed-systems": 1,
       "dotnet-regex-performance": 1,
       "aspnet-core-rate-limiting": 1,
-      "dotnet-async-diagnostics": 1
+      "dotnet-async-diagnostics": 1,
+      "aspnet-core-options": 1
     },
     "byDifficulty": {
-      "D2": 1,
       "D3": 6,
-      "D4": 17
+      "D4": 18
     },
     "byMaturity": {
-      "L1": 4,
       "L2": 10,
       "L3": 6,
-      "L4": 3,
+      "L4": 4,
+      "L1": 3,
       "L5": 1
     },
     "byFormat": {
@@ -706,7 +719,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "sql-server": 1,
         "http-networking": 2,
         "testing": 1,
         "dotnet-background-jobs": 1,
@@ -728,22 +740,21 @@
         "distributed-systems": 1,
         "dotnet-regex-performance": 1,
         "aspnet-core-rate-limiting": 1,
-        "dotnet-async-diagnostics": 1
+        "dotnet-async-diagnostics": 1,
+        "aspnet-core-options": 1
       },
       "difficulty": {
-        "D2": 1,
         "D3": 6,
-        "D4": 17
+        "D4": 18
       },
       "maturityLevel": {
-        "L1": 4,
         "L2": 10,
         "L3": 6,
-        "L4": 3,
+        "L4": 4,
+        "L1": 3,
         "L5": 1
       },
       "labFormat": {
-        "sql-type-semantics-deterministic-failure": 1,
         "http-resource-boundary-investigation": 1,
         "cross-environment-test-investigation": 1,
         "scheduled-job-overlap-production-incident": 1,
@@ -766,7 +777,8 @@
         "distributed-lease-investigation": 1,
         "regex-input-validation-deterministic-failure": 1,
         "tenant-quota-partition-investigation": 1,
-        "multi-fault-batch-diagnostics-production-incident": 1
+        "multi-fault-batch-diagnostics-production-incident": 1,
+        "credential-rotation-refactoring-workshop": 1
       }
     }
   }

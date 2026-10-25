@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ASYNC-001",
-    "runSlot": "2026-10-25-10",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-ASYNC-001-batch-fault-aggregation",
+    "unitId": "UNIT-OPT-001",
+    "runSlot": "2026-10-25-11",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-OPT-001-partner-credential-rotation",
     "status": "READY",
-    "createdAt": "2026-10-25T10:05:34+07:00"
+    "createdAt": "2026-10-25T11:10:45+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 233,
-    "totalGenerated": 228,
+    "totalRunSlotsAttempted": 234,
+    "totalGenerated": 229,
     "totalFailed": 5
   },
   "learning": {
