@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-CTX-001",
+  "runSlot": "2026-10-25-13",
+  "title": "Audit thiếu correlation ID sau khi chuyển việc sang ThreadPool",
+  "domain": "dotnet-execution-context",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-25T13:15:03+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "executioncontext-flow",
+    "asynclocal",
+    "threadpool-unsafe-queue",
+    "audit-context-propagation"
+  ],
+  "primarySkill": "executioncontext-flow",
+  "prerequisites": [
+    "C# async/await",
+    "Task.Run",
+    "AsyncLocal<T>",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "fraud-risk-audit-pipeline",
+    "scenarioType": "audit-workitem-dispatched-across-execution-context-boundary",
+    "primaryRootCause": "unsafe-threadpool-queue-does-not-flow-ambient-executioncontext",
+    "failureMode": "audit-records-lose-per-request-correlation-while-control-async-work-preserves-it",
+    "solutionPattern": "explicitly-capture-request-correlation-as-immutable-workitem-data",
+    "labFormat": "execution-context-propagation-investigation"
+  },
+  "qualityNotes": "Reviewed source and PowerShell command paths statically; no .NET runtime was executed in this GitHub-only run."
+}

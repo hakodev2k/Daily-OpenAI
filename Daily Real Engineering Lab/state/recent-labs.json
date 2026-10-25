@@ -684,13 +684,26 @@
       "failureMode": "partner-label-submit-returns-404-while-status-endpoint-remains-healthy",
       "solutionPattern": "preserve-base-path-with-relative-uri-resolution-and-contract-regression-tests",
       "labFormat": "http-uri-routing-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-25-13",
+      "unitId": "UNIT-CTX-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CTX-001-audit-correlation-execution-context",
+      "domain": "dotnet-execution-context",
+      "primarySkill": "executioncontext-flow",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "fraud-risk-audit-pipeline",
+      "scenarioType": "audit-workitem-dispatched-across-execution-context-boundary",
+      "primaryRootCause": "unsafe-threadpool-queue-does-not-flow-ambient-executioncontext",
+      "failureMode": "audit-records-lose-per-request-correlation-while-control-async-work-preserves-it",
+      "solutionPattern": "explicitly-capture-request-correlation-as-immutable-workitem-data",
+      "labFormat": "execution-context-propagation-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "http-networking": 2,
-      "testing": 1,
       "dotnet-background-jobs": 1,
       "csharp-memory-ownership": 1,
       "dotnet-timekeeping": 1,
@@ -699,6 +712,7 @@
       "dotnet-text-encoding": 1,
       "financial-calculation": 1,
       "dotnet-caching-concurrency": 1,
+      "http-networking": 1,
       "dotnet-event-lifecycle": 1,
       "csharp-value-semantics": 1,
       "serialization": 1,
@@ -711,17 +725,19 @@
       "dotnet-regex-performance": 1,
       "aspnet-core-rate-limiting": 1,
       "dotnet-async-diagnostics": 1,
-      "aspnet-core-options": 1
+      "aspnet-core-options": 1,
+      "http-uri-resolution": 1,
+      "dotnet-execution-context": 1
     },
     "byDifficulty": {
-      "D3": 6,
-      "D4": 18
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 10,
       "L3": 6,
+      "L2": 9,
       "L4": 4,
-      "L1": 3,
+      "L1": 4,
       "L5": 1
     },
     "byFormat": {
@@ -733,7 +749,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "testing": 1,
         "dotnet-background-jobs": 1,
         "csharp-memory-ownership": 1,
         "dotnet-timekeeping": 1,
@@ -756,21 +771,21 @@
         "aspnet-core-rate-limiting": 1,
         "dotnet-async-diagnostics": 1,
         "aspnet-core-options": 1,
-        "http-uri-resolution": 1
+        "http-uri-resolution": 1,
+        "dotnet-execution-context": 1
       },
       "difficulty": {
-        "D3": 6,
-        "D4": 18
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L2": 9,
         "L3": 6,
+        "L2": 9,
         "L4": 4,
         "L1": 4,
         "L5": 1
       },
       "labFormat": {
-        "cross-environment-test-investigation": 1,
         "scheduled-job-overlap-production-incident": 1,
         "memory-ownership-investigation": 1,
         "timekeeping-production-incident": 1,
@@ -793,7 +808,8 @@
         "tenant-quota-partition-investigation": 1,
         "multi-fault-batch-diagnostics-production-incident": 1,
         "credential-rotation-refactoring-workshop": 1,
-        "http-uri-routing-deterministic-failure": 1
+        "http-uri-routing-deterministic-failure": 1,
+        "execution-context-propagation-investigation": 1
       }
     }
   }
