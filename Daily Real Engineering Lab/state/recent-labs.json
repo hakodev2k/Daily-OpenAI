@@ -641,12 +641,26 @@
       "failureMode": "unrelated-tenants-share-429-budget-while-one-tenant-can-evade-quota-across-endpoints",
       "solutionPattern": "stable-trusted-tenant-scoped-partition-with-explicit-anonymous-fallback",
       "labFormat": "tenant-quota-partition-investigation"
+    },
+    {
+      "runSlot": "2026-10-25-10",
+      "unitId": "UNIT-ASYNC-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-ASYNC-001-batch-fault-aggregation",
+      "domain": "dotnet-async-diagnostics",
+      "primarySkill": "task-whenall-fault-aggregation",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "city-transit-arrival-feed-sync",
+      "scenarioType": "multi-upstream-nightly-ingestion-with-partial-faults",
+      "primaryRootCause": "await-whenall-surfaces-one-exception-while-catch-reduces-entire-batch-to-one-generic-failure",
+      "failureMode": "independent-upstream-errors-and-successful-feed-results-disappear-from-batch-report",
+      "solutionPattern": "inspect-each-completed-task-and-attribute-all-faults-while-preserving-cancellation",
+      "labFormat": "multi-fault-batch-diagnostics-production-incident"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "observability": 1,
       "sql-server": 1,
       "http-networking": 2,
       "testing": 1,
@@ -668,17 +682,18 @@
       "messaging-outbox": 1,
       "distributed-systems": 1,
       "dotnet-regex-performance": 1,
-      "aspnet-core-rate-limiting": 1
+      "aspnet-core-rate-limiting": 1,
+      "dotnet-async-diagnostics": 1
     },
     "byDifficulty": {
-      "D3": 7,
       "D2": 1,
-      "D4": 16
+      "D3": 6,
+      "D4": 17
     },
     "byMaturity": {
-      "L2": 11,
       "L1": 4,
-      "L3": 5,
+      "L2": 10,
+      "L3": 6,
       "L4": 3,
       "L5": 1
     },
@@ -691,7 +706,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "observability": 1,
         "sql-server": 1,
         "http-networking": 2,
         "testing": 1,
@@ -713,22 +727,22 @@
         "messaging-outbox": 1,
         "distributed-systems": 1,
         "dotnet-regex-performance": 1,
-        "aspnet-core-rate-limiting": 1
+        "aspnet-core-rate-limiting": 1,
+        "dotnet-async-diagnostics": 1
       },
       "difficulty": {
-        "D3": 7,
         "D2": 1,
-        "D4": 16
+        "D3": 6,
+        "D4": 17
       },
       "maturityLevel": {
-        "L2": 11,
         "L1": 4,
-        "L3": 5,
+        "L2": 10,
+        "L3": 6,
         "L4": 3,
         "L5": 1
       },
       "labFormat": {
-        "metrics-cardinality-investigation": 1,
         "sql-type-semantics-deterministic-failure": 1,
         "http-resource-boundary-investigation": 1,
         "cross-environment-test-investigation": 1,
@@ -751,7 +765,8 @@
         "messaging-partial-failure-production-incident": 1,
         "distributed-lease-investigation": 1,
         "regex-input-validation-deterministic-failure": 1,
-        "tenant-quota-partition-investigation": 1
+        "tenant-quota-partition-investigation": 1,
+        "multi-fault-batch-diagnostics-production-incident": 1
       }
     }
   }

@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-ASYNC-001",
+  "runSlot": "2026-10-25-10",
+  "title": "Báo cáo đồng bộ dữ liệu giao thông bỏ sót sự cố đối tác",
+  "domain": "dotnet-async-diagnostics",
+  "primarySkill": "task-whenall-fault-aggregation",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-25T10:05:34+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "task-whenall-fault-aggregation",
+    "async-error-observability",
+    "partial-success-contracts",
+    "cancellation-semantics"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "Task.WhenAll",
+    "Task.Status",
+    "OperationCanceledException",
+    ".NET SDK 10"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "city-transit-arrival-feed-sync",
+    "scenarioType": "multi-upstream-nightly-ingestion-with-partial-faults",
+    "primaryRootCause": "await-whenall-surfaces-one-exception-while-catch-reduces-entire-batch-to-one-generic-failure",
+    "failureMode": "independent-upstream-errors-and-successful-feed-results-disappear-from-batch-report",
+    "solutionPattern": "inspect-each-completed-task-and-attribute-all-faults-while-preserving-cancellation",
+    "labFormat": "multi-fault-batch-diagnostics-production-incident"
+  },
+  "qualityNotes": "GitHub-only run: static review of C# control flow, deterministic cases, PowerShell entrypoints, and reference/verification contract; code was not executed."
+}
