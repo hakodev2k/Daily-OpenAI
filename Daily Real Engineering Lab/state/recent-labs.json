@@ -849,12 +849,26 @@
       "failureMode": "more-than-configured-concurrent-renderers-after-client-aborts-queued-request",
       "solutionPattern": "release-semaphore-only-after-successful-acquisition",
       "labFormat": "cancellation-capacity-contract-incident"
+    },
+    {
+      "runSlot": "2026-10-26-00",
+      "unitId": "UNIT-TZ-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-TZ-001-interview-reminder-calendar-offset",
+      "domain": "dotnet-calendar-timezone",
+      "primarySkill": "timezone-calendar-conversion",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "international-university-admissions-interview-reminders",
+      "scenarioType": "fixed-local-morning-schedule-spans-seasonal-offset-transition",
+      "primaryRootCause": "one-calendar-day-offset-reused-for-later-local-dates",
+      "failureMode": "interview-reminders-shift-one-hour-across-seasonal-time-change",
+      "solutionPattern": "resolve-timezone-rules-for-each-target-local-occurrence",
+      "labFormat": "calendar-timezone-refactoring-workshop"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "csharp-value-semantics": 1,
       "serialization": 1,
       "reverse-proxy-networking": 1,
       "dotnet-cancellation-lifecycle": 1,
@@ -877,18 +891,19 @@
       "dotnet-priority-queue-semantics": 1,
       "privacy-data-architecture": 1,
       "aspnet-core-authorization": 1,
-      "dotnet-concurrency-capacity": 1
+      "dotnet-concurrency-capacity": 1,
+      "dotnet-calendar-timezone": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 5,
       "L2": 7,
       "L3": 6,
-      "L4": 3,
+      "L4": 4,
       "L5": 2,
+      "L1": 4,
       "L6": 1
     },
     "byFormat": {
@@ -900,7 +915,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "csharp-value-semantics": 1,
         "serialization": 1,
         "reverse-proxy-networking": 1,
         "dotnet-cancellation-lifecycle": 1,
@@ -923,22 +937,22 @@
         "dotnet-priority-queue-semantics": 1,
         "privacy-data-architecture": 1,
         "aspnet-core-authorization": 1,
-        "dotnet-concurrency-capacity": 1
+        "dotnet-concurrency-capacity": 1,
+        "dotnet-calendar-timezone": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 20,
+        "D3": 4
       },
       "maturityLevel": {
-        "L1": 5,
         "L2": 7,
         "L3": 6,
-        "L4": 3,
+        "L4": 4,
         "L5": 2,
+        "L1": 4,
         "L6": 1
       },
       "labFormat": {
-        "value-type-copy-deterministic-failure": 1,
         "serialization-replay-contract-investigation": 1,
         "reverse-proxy-production-incident": 1,
         "async-cancellation-lifecycle-refactoring-workshop": 1,
@@ -961,7 +975,8 @@
         "priority-scheduler-order-contract-deterministic-failure": 1,
         "cross-store-erasure-architecture-case-study": 1,
         "federated-role-claim-contract-investigation": 1,
-        "cancellation-capacity-contract-incident": 1
+        "cancellation-capacity-contract-incident": 1,
+        "calendar-timezone-refactoring-workshop": 1
       }
     }
   }

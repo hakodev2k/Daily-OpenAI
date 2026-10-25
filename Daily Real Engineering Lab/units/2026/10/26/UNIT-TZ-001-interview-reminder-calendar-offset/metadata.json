@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-TZ-001",
+  "runSlot": "2026-10-26-00",
+  "title": "Interview Reminders: 09:00 Local Time Drifts Across Calendar Boundaries",
+  "domain": "dotnet-calendar-timezone",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-26T00:13:50+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "timezone-calendar-conversion",
+    "datetime-kind-semantics",
+    "scheduler-regression-testing",
+    "business-time-contracts"
+  ],
+  "prerequisites": [
+    "C# DateTime and DateOnly",
+    "dotnet CLI",
+    "basic UTC vs local time"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "international-university-admissions-interview-reminders",
+    "scenarioType": "fixed-local-morning-schedule-spans-seasonal-offset-transition",
+    "primaryRootCause": "one-calendar-day-offset-reused-for-later-local-dates",
+    "failureMode": "interview-reminders-shift-one-hour-across-seasonal-time-change",
+    "solutionPattern": "resolve-timezone-rules-for-each-target-local-occurrence",
+    "labFormat": "calendar-timezone-refactoring-workshop"
+  }
+}
