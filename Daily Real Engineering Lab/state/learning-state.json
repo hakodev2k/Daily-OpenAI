@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HMAC-001",
-    "runSlot": "2026-10-25-15",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-HMAC-001-payroll-webhook-signature-payload",
+    "unitId": "UNIT-IO-001",
+    "runSlot": "2026-10-25-16",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-IO-001-fragmented-meter-frame-read",
     "status": "READY",
-    "createdAt": "2026-10-25T15:14:57.006+07:00"
+    "createdAt": "2026-10-25T16:14:53.930+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 238,
-    "totalGenerated": 233,
+    "totalRunSlotsAttempted": 239,
+    "totalGenerated": 234,
     "totalFailed": 5
   },
   "learning": {

@@ -729,12 +729,26 @@
       "failureMode": "legitimate-pretty-printed-webhooks-fail-signature-verification",
       "solutionPattern": "authenticate-original-body-byte-sequence-before-deserialization",
       "labFormat": "webhook-integrity-contract-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-25-16",
+      "unitId": "UNIT-IO-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-IO-001-fragmented-meter-frame-read",
+      "domain": "dotnet-stream-io",
+      "primarySkill": "dotnet-stream-read-contract",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "smart-meter-telemetry-binary-ingestion",
+      "scenarioType": "valid-length-prefixed-frames-arrive-in-small-network-chunks",
+      "primaryRootCause": "single-readasync-call-assumed-to-fill-requested-buffer",
+      "failureMode": "valid-meter-frames-rejected-when-transport-fragments-header-or-payload",
+      "solutionPattern": "read-exactly-until-requested-byte-count-with-eof-handling",
+      "labFormat": "stream-fragmentation-deterministic-failure"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-timekeeping": 1,
       "dotnet-concurrency": 1,
       "aspnet-core": 1,
       "dotnet-text-encoding": 1,
@@ -757,17 +771,18 @@
       "http-uri-resolution": 1,
       "dotnet-execution-context": 1,
       "dotnet-filesystem-security": 1,
-      "api-integration-security": 1
+      "api-integration-security": 1,
+      "dotnet-stream-io": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
       "L2": 8,
       "L4": 5,
-      "L1": 4,
+      "L1": 5,
+      "L3": 5,
       "L5": 1
     },
     "byFormat": {
@@ -779,7 +794,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-timekeeping": 1,
         "dotnet-concurrency": 1,
         "aspnet-core": 1,
         "dotnet-text-encoding": 1,
@@ -802,21 +816,21 @@
         "http-uri-resolution": 1,
         "dotnet-execution-context": 1,
         "dotnet-filesystem-security": 1,
-        "api-integration-security": 1
+        "api-integration-security": 1,
+        "dotnet-stream-io": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
         "L2": 8,
         "L4": 5,
-        "L1": 4,
+        "L1": 5,
+        "L3": 5,
         "L5": 1
       },
       "labFormat": {
-        "timekeeping-production-incident": 1,
         "queue-capacity-investigation": 1,
         "middleware-regression-workshop": 1,
         "wire-encoding-deterministic-failure": 1,
@@ -839,7 +853,8 @@
         "http-uri-routing-deterministic-failure": 1,
         "execution-context-propagation-investigation": 1,
         "filesystem-authorization-incident": 1,
-        "webhook-integrity-contract-refactoring-workshop": 1
+        "webhook-integrity-contract-refactoring-workshop": 1,
+        "stream-fragmentation-deterministic-failure": 1
       }
     }
   }

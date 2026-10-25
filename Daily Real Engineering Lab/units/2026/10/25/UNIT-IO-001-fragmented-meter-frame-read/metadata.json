@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-IO-001",
+  "runSlot": "2026-10-25-16",
+  "title": "Smart Meter Frames: Intermittent Ingestion Failures",
+  "domain": "dotnet-stream-io",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-25T16:14:53.930+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "dotnet-stream-read-contract",
+    "binary-framing",
+    "async-io",
+    "cancellation"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "Stream basics",
+    "byte[] and UTF-8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "smart-meter-telemetry-binary-ingestion",
+    "scenarioType": "valid-length-prefixed-frames-arrive-in-small-network-chunks",
+    "primaryRootCause": "single-readasync-call-assumed-to-fill-requested-buffer",
+    "failureMode": "valid-meter-frames-rejected-when-transport-fragments-header-or-payload",
+    "solutionPattern": "read-exactly-until-requested-byte-count-with-eof-handling",
+    "labFormat": "stream-fragmentation-deterministic-failure"
+  }
+}
