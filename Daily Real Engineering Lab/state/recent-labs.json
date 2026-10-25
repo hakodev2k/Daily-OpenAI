@@ -699,12 +699,26 @@
       "failureMode": "audit-records-lose-per-request-correlation-while-control-async-work-preserves-it",
       "solutionPattern": "explicitly-capture-request-correlation-as-immutable-workitem-data",
       "labFormat": "execution-context-propagation-investigation"
+    },
+    {
+      "runSlot": "2026-10-25-14",
+      "unitId": "UNIT-PATH-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-PATH-001-tenant-document-path-boundary",
+      "domain": "dotnet-filesystem-security",
+      "primarySkill": "filesystem-path-containment",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "multi-tenant-compliance-document-download",
+      "scenarioType": "tenant-document-access-incident-with-sibling-directory",
+      "primaryRootCause": "string-prefix-check-treats-sibling-directory-as-child-of-authorized-root",
+      "failureMode": "authenticated-tenant-can-read-file-from-sibling-tenant-backup-directory",
+      "solutionPattern": "canonical-relative-path-boundary-validation-before-file-access",
+      "labFormat": "filesystem-authorization-incident"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-background-jobs": 1,
       "csharp-memory-ownership": 1,
       "dotnet-timekeeping": 1,
       "dotnet-concurrency": 1,
@@ -727,15 +741,16 @@
       "dotnet-async-diagnostics": 1,
       "aspnet-core-options": 1,
       "http-uri-resolution": 1,
-      "dotnet-execution-context": 1
+      "dotnet-execution-context": 1,
+      "dotnet-filesystem-security": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L3": 6,
       "L2": 9,
+      "L3": 6,
       "L4": 4,
       "L1": 4,
       "L5": 1
@@ -749,7 +764,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-background-jobs": 1,
         "csharp-memory-ownership": 1,
         "dotnet-timekeeping": 1,
         "dotnet-concurrency": 1,
@@ -772,21 +786,21 @@
         "dotnet-async-diagnostics": 1,
         "aspnet-core-options": 1,
         "http-uri-resolution": 1,
-        "dotnet-execution-context": 1
+        "dotnet-execution-context": 1,
+        "dotnet-filesystem-security": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L3": 6,
         "L2": 9,
+        "L3": 6,
         "L4": 4,
         "L1": 4,
         "L5": 1
       },
       "labFormat": {
-        "scheduled-job-overlap-production-incident": 1,
         "memory-ownership-investigation": 1,
         "timekeeping-production-incident": 1,
         "queue-capacity-investigation": 1,
@@ -809,7 +823,8 @@
         "multi-fault-batch-diagnostics-production-incident": 1,
         "credential-rotation-refactoring-workshop": 1,
         "http-uri-routing-deterministic-failure": 1,
-        "execution-context-propagation-investigation": 1
+        "execution-context-propagation-investigation": 1,
+        "filesystem-authorization-incident": 1
       }
     }
   }
