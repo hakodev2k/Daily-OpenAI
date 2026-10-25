@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-K8S-002",
+  "runSlot": "2026-10-25-17",
+  "title": "Exam Session Service: Probe-Driven Availability Incident",
+  "domain": "kubernetes-operations",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-25T17:08:07+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "kubernetes-probe-semantics",
+    "aspnet-core-health-check-contracts",
+    "graceful-degradation",
+    "production-incident-analysis"
+  ],
+  "prerequisites": [
+    "C# basics",
+    ".NET 8 CLI",
+    "Kubernetes liveness/readiness concepts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-remote-exam-proctoring",
+    "scenarioType": "optional-risk-scoring-outage-during-active-exam",
+    "primaryRootCause": "kubernetes-liveness-and-readiness-treat-optional-dependency-as-critical",
+    "failureMode": "healthy-exam-session-service-restarts-and-routes-no-traffic-during-optional-outage",
+    "solutionPattern": "separate-process-liveness-from-critical-serving-readiness-and-degrade-optional-feature",
+    "labFormat": "health-probe-incident-investigation"
+  }
+}

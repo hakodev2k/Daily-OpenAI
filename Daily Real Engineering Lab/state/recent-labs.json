@@ -744,12 +744,26 @@
       "failureMode": "valid-meter-frames-rejected-when-transport-fragments-header-or-payload",
       "solutionPattern": "read-exactly-until-requested-byte-count-with-eof-handling",
       "labFormat": "stream-fragmentation-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-25-17",
+      "unitId": "UNIT-K8S-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-K8S-002-optional-risk-engine-probe-storm",
+      "domain": "kubernetes-operations",
+      "primarySkill": "kubernetes-probe-semantics",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "university-remote-exam-proctoring",
+      "scenarioType": "optional-risk-scoring-outage-during-active-exam",
+      "primaryRootCause": "kubernetes-liveness-and-readiness-treat-optional-dependency-as-critical",
+      "failureMode": "healthy-exam-session-service-restarts-and-routes-no-traffic-during-optional-outage",
+      "solutionPattern": "separate-process-liveness-from-critical-serving-readiness-and-degrade-optional-feature",
+      "labFormat": "health-probe-incident-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-concurrency": 1,
       "aspnet-core": 1,
       "dotnet-text-encoding": 1,
       "financial-calculation": 1,
@@ -772,17 +786,18 @@
       "dotnet-execution-context": 1,
       "dotnet-filesystem-security": 1,
       "api-integration-security": 1,
-      "dotnet-stream-io": 1
+      "dotnet-stream-io": 1,
+      "kubernetes-operations": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
       "L4": 5,
       "L1": 5,
-      "L3": 5,
+      "L3": 6,
+      "L2": 7,
       "L5": 1
     },
     "byFormat": {
@@ -794,7 +809,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-concurrency": 1,
         "aspnet-core": 1,
         "dotnet-text-encoding": 1,
         "financial-calculation": 1,
@@ -817,21 +831,21 @@
         "dotnet-execution-context": 1,
         "dotnet-filesystem-security": 1,
         "api-integration-security": 1,
-        "dotnet-stream-io": 1
+        "dotnet-stream-io": 1,
+        "kubernetes-operations": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
         "L4": 5,
         "L1": 5,
-        "L3": 5,
+        "L3": 6,
+        "L2": 7,
         "L5": 1
       },
       "labFormat": {
-        "queue-capacity-investigation": 1,
         "middleware-regression-workshop": 1,
         "wire-encoding-deterministic-failure": 1,
         "billing-reconciliation-production-incident": 1,
@@ -854,7 +868,8 @@
         "execution-context-propagation-investigation": 1,
         "filesystem-authorization-incident": 1,
         "webhook-integrity-contract-refactoring-workshop": 1,
-        "stream-fragmentation-deterministic-failure": 1
+        "stream-fragmentation-deterministic-failure": 1,
+        "health-probe-incident-investigation": 1
       }
     }
   }
