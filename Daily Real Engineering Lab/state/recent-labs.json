@@ -939,12 +939,26 @@
       "failureMode": "missing-active-coverages-omitted-from-reconciliation-when-partner-import-has-null-id",
       "solutionPattern": "correlated-not-exists-anti-semi-join-with-explicit-scope",
       "labFormat": "sql-three-valued-logic-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-06",
+      "unitId": "UNIT-UNICODE-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-UNICODE-001-visitor-pass-canonical-equivalence",
+      "domain": "dotnet-unicode-identity",
+      "primarySkill": "unicode-normalization-string-identity",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "regional-museum-visitor-pass-gate-import",
+      "scenarioType": "cross-device-equivalent-identifier-duplicate-admission",
+      "primaryRootCause": "canonically-equivalent-unicode-pass-identifiers-are-compared-without-normalization",
+      "failureMode": "one-visitor-pass-is-admitted-twice-when-inputs-use-different-unicode-compositions",
+      "solutionPattern": "normalize-to-a-canonical-unicode-form-before-ordinal-identity-comparison",
+      "labFormat": "unicode-identity-contract-deterministic-failure"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "messaging-outbox": 1,
       "distributed-systems": 1,
       "dotnet-regex-performance": 1,
       "aspnet-core-rate-limiting": 1,
@@ -967,16 +981,17 @@
       "dotnet-async-streams": 1,
       "http-client-lifecycle": 1,
       "dotnet-zip-archive": 1,
-      "postgresql-sql-semantics": 1
+      "postgresql-sql-semantics": 1,
+      "dotnet-unicode-identity": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D4": 18,
+      "D3": 6
     },
     "byMaturity": {
-      "L3": 6,
       "L2": 8,
-      "L1": 5,
+      "L1": 6,
+      "L3": 5,
       "L4": 3,
       "L5": 1,
       "L6": 1
@@ -990,7 +1005,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "messaging-outbox": 1,
         "distributed-systems": 1,
         "dotnet-regex-performance": 1,
         "aspnet-core-rate-limiting": 1,
@@ -1013,22 +1027,22 @@
         "dotnet-async-streams": 1,
         "http-client-lifecycle": 1,
         "dotnet-zip-archive": 1,
-        "postgresql-sql-semantics": 1
+        "postgresql-sql-semantics": 1,
+        "dotnet-unicode-identity": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D4": 18,
+        "D3": 6
       },
       "maturityLevel": {
-        "L3": 6,
         "L2": 8,
-        "L1": 5,
+        "L1": 6,
+        "L3": 5,
         "L4": 3,
         "L5": 1,
         "L6": 1
       },
       "labFormat": {
-        "messaging-partial-failure-production-incident": 1,
         "distributed-lease-investigation": 1,
         "regex-input-validation-deterministic-failure": 1,
         "tenant-quota-partition-investigation": 1,
@@ -1051,7 +1065,8 @@
         "async-stream-consumer-cancellation-investigation": 1,
         "http-retry-request-lifecycle-production-incident": 1,
         "archive-finalization-lifecycle-investigation": 1,
-        "sql-three-valued-logic-investigation": 1
+        "sql-three-valued-logic-investigation": 1,
+        "unicode-identity-contract-deterministic-failure": 1
       }
     }
   }

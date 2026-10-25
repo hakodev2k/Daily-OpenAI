@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-UNICODE-001",
+  "runSlot": "2026-10-26-06",
+  "title": "Một vé tham quan được ghi nhận hai lần sau đồng bộ từ hai thiết bị",
+  "domain": "dotnet-unicode-identity",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-26T06:04:52+07:00",
+  "estimatedMinutes": 35,
+  "primarySkill": "unicode-normalization-string-identity",
+  "skills": [
+    "csharp-string-semantics",
+    "unicode-normalization",
+    "deterministic-regression-testing"
+  ],
+  "prerequisites": [
+    "C# HashSet và StringComparer.Ordinal",
+    "dotnet CLI cơ bản"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-museum-visitor-pass-gate-import",
+    "scenarioType": "cross-device-equivalent-identifier-duplicate-admission",
+    "primaryRootCause": "canonically-equivalent-unicode-pass-identifiers-are-compared-without-normalization",
+    "failureMode": "one-visitor-pass-is-admitted-twice-when-inputs-use-different-unicode-compositions",
+    "solutionPattern": "normalize-to-a-canonical-unicode-form-before-ordinal-identity-comparison",
+    "labFormat": "unicode-identity-contract-deterministic-failure"
+  }
+}

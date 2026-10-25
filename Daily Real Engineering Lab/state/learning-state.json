@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SQL-009",
-    "runSlot": "2026-10-26-05",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SQL-009-partner-confirmation-null-antijoin",
+    "unitId": "UNIT-UNICODE-001",
+    "runSlot": "2026-10-26-06",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-UNICODE-001-visitor-pass-canonical-equivalence",
     "status": "READY",
-    "createdAt": "2026-10-26T05:07:03+07:00"
+    "createdAt": "2026-10-26T06:04:52+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 252,
-    "totalGenerated": 247,
+    "totalRunSlotsAttempted": 253,
+    "totalGenerated": 248,
     "totalFailed": 5
   },
   "learning": {
