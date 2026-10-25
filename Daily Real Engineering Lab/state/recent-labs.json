@@ -864,12 +864,26 @@
       "failureMode": "interview-reminders-shift-one-hour-across-seasonal-time-change",
       "solutionPattern": "resolve-timezone-rules-for-each-target-local-occurrence",
       "labFormat": "calendar-timezone-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-26-01",
+      "unitId": "UNIT-ASP-006",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ASP-006-conditional-audit-middleware-branch",
+      "domain": "aspnet-core-middleware",
+      "primarySkill": "aspnet-core-middleware-branch-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "factory-equipment-maintenance-api",
+      "scenarioType": "conditional-audit-policy-deployment-breaks-maintenance-routes",
+      "primaryRootCause": "mapwhen-branch-does-not-rejoin-main-pipeline",
+      "failureMode": "api-routes-404-with-audit-header-while-health-remains-200",
+      "solutionPattern": "usewhen-rejoining-branch-for-conditional-audit-middleware",
+      "labFormat": "middleware-branch-deterministic-failure"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "serialization": 1,
       "reverse-proxy-networking": 1,
       "dotnet-cancellation-lifecycle": 1,
       "database-schema-evolution": 1,
@@ -892,18 +906,19 @@
       "privacy-data-architecture": 1,
       "aspnet-core-authorization": 1,
       "dotnet-concurrency-capacity": 1,
-      "dotnet-calendar-timezone": 1
+      "dotnet-calendar-timezone": 1,
+      "aspnet-core-middleware": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 7,
       "L3": 6,
       "L4": 4,
       "L5": 2,
-      "L1": 4,
+      "L2": 6,
+      "L1": 5,
       "L6": 1
     },
     "byFormat": {
@@ -915,7 +930,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "serialization": 1,
         "reverse-proxy-networking": 1,
         "dotnet-cancellation-lifecycle": 1,
         "database-schema-evolution": 1,
@@ -938,22 +952,22 @@
         "privacy-data-architecture": 1,
         "aspnet-core-authorization": 1,
         "dotnet-concurrency-capacity": 1,
-        "dotnet-calendar-timezone": 1
+        "dotnet-calendar-timezone": 1,
+        "aspnet-core-middleware": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L2": 7,
         "L3": 6,
         "L4": 4,
         "L5": 2,
-        "L1": 4,
+        "L2": 6,
+        "L1": 5,
         "L6": 1
       },
       "labFormat": {
-        "serialization-replay-contract-investigation": 1,
         "reverse-proxy-production-incident": 1,
         "async-cancellation-lifecycle-refactoring-workshop": 1,
         "database-migration-design-decision": 1,
@@ -976,7 +990,8 @@
         "cross-store-erasure-architecture-case-study": 1,
         "federated-role-claim-contract-investigation": 1,
         "cancellation-capacity-contract-incident": 1,
-        "calendar-timezone-refactoring-workshop": 1
+        "calendar-timezone-refactoring-workshop": 1,
+        "middleware-branch-deterministic-failure": 1
       }
     }
   }

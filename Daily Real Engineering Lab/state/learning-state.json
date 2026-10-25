@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TZ-001",
-    "runSlot": "2026-10-26-00",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-TZ-001-interview-reminder-calendar-offset",
+    "unitId": "UNIT-ASP-006",
+    "runSlot": "2026-10-26-01",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ASP-006-conditional-audit-middleware-branch",
     "status": "READY",
-    "createdAt": "2026-10-26T00:13:50+07:00"
+    "createdAt": "2026-10-26T01:13:13+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 247,
-    "totalGenerated": 242,
+    "totalRunSlotsAttempted": 248,
+    "totalGenerated": 243,
     "totalFailed": 5
   },
   "learning": {
