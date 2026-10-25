@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-ITER-001",
+  "runSlot": "2026-10-26-02",
+  "title": "Rail Seat Availability Stream Ignores Subscriber Cancellation",
+  "domain": "dotnet-async-streams",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-26T02:13:23+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "async-iterator-cancellation-contract",
+    "iasyncenumerable-enumerator-lifecycle",
+    "cancellation-regression-testing"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "CancellationToken",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "intercity-rail-seat-availability-stream",
+    "scenarioType": "subscriber-disconnect-mid-stream",
+    "primaryRootCause": "async-iterator-token-parameter-not-bound-to-enumerator-cancellation",
+    "failureMode": "canceled-subscriber-continues-receiving-seat-updates",
+    "solutionPattern": "bind-consumer-cancellation-to-async-iterator-token-contract",
+    "labFormat": "async-stream-consumer-cancellation-investigation"
+  }
+}

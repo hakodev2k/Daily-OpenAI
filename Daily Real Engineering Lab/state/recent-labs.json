@@ -879,12 +879,26 @@
       "failureMode": "api-routes-404-with-audit-header-while-health-remains-200",
       "solutionPattern": "usewhen-rejoining-branch-for-conditional-audit-middleware",
       "labFormat": "middleware-branch-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-26-02",
+      "unitId": "UNIT-ITER-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ITER-001-rail-seat-stream-consumer-cancellation",
+      "domain": "dotnet-async-streams",
+      "primarySkill": "async-iterator-cancellation-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "intercity-rail-seat-availability-stream",
+      "scenarioType": "subscriber-disconnect-mid-stream",
+      "primaryRootCause": "async-iterator-token-parameter-not-bound-to-enumerator-cancellation",
+      "failureMode": "canceled-subscriber-continues-receiving-seat-updates",
+      "solutionPattern": "bind-consumer-cancellation-to-async-iterator-token-contract",
+      "labFormat": "async-stream-consumer-cancellation-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "reverse-proxy-networking": 1,
       "dotnet-cancellation-lifecycle": 1,
       "database-schema-evolution": 1,
       "ef-core": 1,
@@ -907,17 +921,18 @@
       "aspnet-core-authorization": 1,
       "dotnet-concurrency-capacity": 1,
       "dotnet-calendar-timezone": 1,
-      "aspnet-core-middleware": 1
+      "aspnet-core-middleware": 1,
+      "dotnet-async-streams": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
       "L4": 4,
       "L5": 2,
-      "L2": 6,
+      "L2": 7,
+      "L3": 5,
       "L1": 5,
       "L6": 1
     },
@@ -930,7 +945,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "reverse-proxy-networking": 1,
         "dotnet-cancellation-lifecycle": 1,
         "database-schema-evolution": 1,
         "ef-core": 1,
@@ -953,22 +967,22 @@
         "aspnet-core-authorization": 1,
         "dotnet-concurrency-capacity": 1,
         "dotnet-calendar-timezone": 1,
-        "aspnet-core-middleware": 1
+        "aspnet-core-middleware": 1,
+        "dotnet-async-streams": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
         "L4": 4,
         "L5": 2,
-        "L2": 6,
+        "L2": 7,
+        "L3": 5,
         "L1": 5,
         "L6": 1
       },
       "labFormat": {
-        "reverse-proxy-production-incident": 1,
         "async-cancellation-lifecycle-refactoring-workshop": 1,
         "database-migration-design-decision": 1,
         "ef-core-context-history-investigation": 1,
@@ -991,7 +1005,8 @@
         "federated-role-claim-contract-investigation": 1,
         "cancellation-capacity-contract-incident": 1,
         "calendar-timezone-refactoring-workshop": 1,
-        "middleware-branch-deterministic-failure": 1
+        "middleware-branch-deterministic-failure": 1,
+        "async-stream-consumer-cancellation-investigation": 1
       }
     }
   }
