@@ -15,7 +15,7 @@ internal static class Program
         var service = new EvidenceExportService();
         var documents = new Dictionary<string, string>(StringComparer.Ordinal)
         {
-            ["manifest.json"] = "{\\"batch\\":\\"CV-2026-41\\",\\"count\\":1}",
+            ["manifest.json"] = "{\"batch\":\"CV-2026-41\",\"count\":1}",
             ["reports/site-inspection.txt"] = "Inspection CV-2026-41: signed and archived."
         };
         var results = new List<ProbeResult>();
