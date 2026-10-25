@@ -909,12 +909,26 @@
       "failureMode": "second-attempt-throws-before-partner-receives-retry",
       "solutionPattern": "new-request-and-content-per-attempt-with-stable-idempotency-key",
       "labFormat": "http-retry-request-lifecycle-production-incident"
+    },
+    {
+      "runSlot": "2026-10-26-04",
+      "unitId": "UNIT-ZIP-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ZIP-001-conservation-evidence-zip-export-finalization",
+      "domain": "dotnet-zip-archive",
+      "primarySkill": "ziparchive-finalization-lifecycle",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "cultural-heritage-inspection-evidence-export",
+      "scenarioType": "downloaded-evidence-package-rejected-by-standard-zip-reader",
+      "primaryRootCause": "ziparchive-central-directory-written-after-response-byte-snapshot",
+      "failureMode": "exported-zip-omits-final-directory-and-is-not-readable",
+      "solutionPattern": "finalize-ziparchive-before-materializing-response-payload",
+      "labFormat": "archive-finalization-lifecycle-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "database-schema-evolution": 1,
       "ef-core": 1,
       "messaging-outbox": 1,
       "distributed-systems": 1,
@@ -937,18 +951,19 @@
       "dotnet-calendar-timezone": 1,
       "aspnet-core-middleware": 1,
       "dotnet-async-streams": 1,
-      "http-client-lifecycle": 1
+      "http-client-lifecycle": 1,
+      "dotnet-zip-archive": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L5": 2,
-      "L2": 7,
+      "L2": 8,
       "L3": 6,
       "L1": 5,
       "L4": 3,
+      "L5": 1,
       "L6": 1
     },
     "byFormat": {
@@ -960,7 +975,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "database-schema-evolution": 1,
         "ef-core": 1,
         "messaging-outbox": 1,
         "distributed-systems": 1,
@@ -983,22 +997,22 @@
         "dotnet-calendar-timezone": 1,
         "aspnet-core-middleware": 1,
         "dotnet-async-streams": 1,
-        "http-client-lifecycle": 1
+        "http-client-lifecycle": 1,
+        "dotnet-zip-archive": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L5": 2,
-        "L2": 7,
+        "L2": 8,
         "L3": 6,
         "L1": 5,
         "L4": 3,
+        "L5": 1,
         "L6": 1
       },
       "labFormat": {
-        "database-migration-design-decision": 1,
         "ef-core-context-history-investigation": 1,
         "messaging-partial-failure-production-incident": 1,
         "distributed-lease-investigation": 1,
@@ -1021,7 +1035,8 @@
         "calendar-timezone-refactoring-workshop": 1,
         "middleware-branch-deterministic-failure": 1,
         "async-stream-consumer-cancellation-investigation": 1,
-        "http-retry-request-lifecycle-production-incident": 1
+        "http-retry-request-lifecycle-production-incident": 1,
+        "archive-finalization-lifecycle-investigation": 1
       }
     }
   }
