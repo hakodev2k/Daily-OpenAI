@@ -894,12 +894,26 @@
       "failureMode": "canceled-subscriber-continues-receiving-seat-updates",
       "solutionPattern": "bind-consumer-cancellation-to-async-iterator-token-contract",
       "labFormat": "async-stream-consumer-cancellation-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-03",
+      "unitId": "UNIT-HTTP-012",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-HTTP-012-library-transfer-retry-request-lifecycle",
+      "domain": "http-client-lifecycle",
+      "primarySkill": "httpclient-request-lifecycle",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "regional-library-interbranch-book-transfer",
+      "scenarioType": "transient-partner-503-on-first-transfer-dispatch",
+      "primaryRootCause": "http-request-message-reused-across-sendasync-retry-attempts",
+      "failureMode": "second-attempt-throws-before-partner-receives-retry",
+      "solutionPattern": "new-request-and-content-per-attempt-with-stable-idempotency-key",
+      "labFormat": "http-retry-request-lifecycle-production-incident"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-cancellation-lifecycle": 1,
       "database-schema-evolution": 1,
       "ef-core": 1,
       "messaging-outbox": 1,
@@ -922,18 +936,19 @@
       "dotnet-concurrency-capacity": 1,
       "dotnet-calendar-timezone": 1,
       "aspnet-core-middleware": 1,
-      "dotnet-async-streams": 1
+      "dotnet-async-streams": 1,
+      "http-client-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L4": 4,
       "L5": 2,
       "L2": 7,
-      "L3": 5,
+      "L3": 6,
       "L1": 5,
+      "L4": 3,
       "L6": 1
     },
     "byFormat": {
@@ -945,7 +960,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-cancellation-lifecycle": 1,
         "database-schema-evolution": 1,
         "ef-core": 1,
         "messaging-outbox": 1,
@@ -968,22 +982,22 @@
         "dotnet-concurrency-capacity": 1,
         "dotnet-calendar-timezone": 1,
         "aspnet-core-middleware": 1,
-        "dotnet-async-streams": 1
+        "dotnet-async-streams": 1,
+        "http-client-lifecycle": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L4": 4,
         "L5": 2,
         "L2": 7,
-        "L3": 5,
+        "L3": 6,
         "L1": 5,
+        "L4": 3,
         "L6": 1
       },
       "labFormat": {
-        "async-cancellation-lifecycle-refactoring-workshop": 1,
         "database-migration-design-decision": 1,
         "ef-core-context-history-investigation": 1,
         "messaging-partial-failure-production-incident": 1,
@@ -1006,7 +1020,8 @@
         "cancellation-capacity-contract-incident": 1,
         "calendar-timezone-refactoring-workshop": 1,
         "middleware-branch-deterministic-failure": 1,
-        "async-stream-consumer-cancellation-investigation": 1
+        "async-stream-consumer-cancellation-investigation": 1,
+        "http-retry-request-lifecycle-production-incident": 1
       }
     }
   }

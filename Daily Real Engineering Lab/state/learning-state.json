@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ITER-001",
-    "runSlot": "2026-10-26-02",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ITER-001-rail-seat-stream-consumer-cancellation",
+    "unitId": "UNIT-HTTP-012",
+    "runSlot": "2026-10-26-03",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-HTTP-012-library-transfer-retry-request-lifecycle",
     "status": "READY",
-    "createdAt": "2026-10-26T02:13:23+07:00"
+    "createdAt": "2026-10-26T03:13:13.659+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 249,
-    "totalGenerated": 244,
+    "totalRunSlotsAttempted": 250,
+    "totalGenerated": 245,
     "totalFailed": 5
   },
   "learning": {
