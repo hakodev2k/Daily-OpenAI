@@ -598,6 +598,20 @@
       "failureMode": "earlier-outbox-event-permanently-skipped-after-transient-publish-error",
       "solutionPattern": "advance-only-contiguous-acknowledged-prefix-and-retry-gap",
       "labFormat": "messaging-partial-failure-production-incident"
+    },
+    {
+      "runSlot": "2026-10-25-07",
+      "unitId": "UNIT-FENCE-001",
+      "domain": "distributed-systems",
+      "primarySkill": "distributed-fencing-tokens",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "fleet-route-plan-materialization",
+      "scenarioType": "lease-expiry-while-previous-worker-computes",
+      "primaryRootCause": "expired-lease-holder-writes-after-newer-lease-owner-without-storage-fencing",
+      "failureMode": "stale-route-plan-overwrites-newer-committed-route-plan",
+      "solutionPattern": "atomic-monotonic-fencing-epoch-check-at-resource-write",
+      "labFormat": "distributed-lease-investigation"
     }
   ],
   "rolling24": {
@@ -647,7 +661,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "architecture": 1,
         "testing": 2,
         "csharp": 1,
         "observability": 1,
@@ -668,22 +681,22 @@
         "dotnet-cancellation-lifecycle": 1,
         "database-schema-evolution": 1,
         "ef-core": 1,
-        "messaging-outbox": 1
+        "messaging-outbox": 1,
+        "distributed-systems": 1
       },
       "difficulty": {
-        "D3": 9,
+        "D3": 8,
         "D2": 1,
-        "D4": 14
+        "D4": 15
       },
       "maturityLevel": {
-        "L5": 2,
-        "L2": 11,
+        "L2": 12,
         "L1": 3,
         "L3": 5,
-        "L4": 3
+        "L4": 3,
+        "L5": 1
       },
       "labFormat": {
-        "architecture-design-decision": 1,
         "failure-path-testing-investigation": 1,
         "csharp-exception-semantics-investigation": 1,
         "metrics-cardinality-investigation": 1,
@@ -706,7 +719,8 @@
         "async-cancellation-lifecycle-refactoring-workshop": 1,
         "database-migration-design-decision": 1,
         "ef-core-context-history-investigation": 1,
-        "messaging-partial-failure-production-incident": 1
+        "messaging-partial-failure-production-incident": 1,
+        "distributed-lease-investigation": 1
       }
     }
   }

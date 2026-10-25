@@ -1,0 +1,66 @@
+{
+  "unitId": "UNIT-FENCE-001",
+  "runSlot": "2026-10-25-07",
+  "title": "Bản kế hoạch tuyến xe bị ghi đè sau khi worker chuyển quyền",
+  "domain": "distributed-systems",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-25T07:10:18+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "distributed-fencing-tokens",
+    "lease-expiry-semantics",
+    "atomic-conditional-writes",
+    "failure-path-testing"
+  ],
+  "prerequisites": [
+    "C# collections and locking",
+    "worker concurrency basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "fleet-route-plan-materialization",
+    "scenarioType": "lease-expiry-while-previous-worker-computes",
+    "primaryRootCause": "expired-lease-holder-writes-after-newer-lease-owner-without-storage-fencing",
+    "failureMode": "stale-route-plan-overwrites-newer-committed-route-plan",
+    "solutionPattern": "atomic-monotonic-fencing-epoch-check-at-resource-write",
+    "labFormat": "distributed-lease-investigation"
+  },
+  "assumptions": [
+    "single in-memory lease authority for deterministic reproduction",
+    "lease epochs strictly increase per route",
+    "store's compare-and-write is atomic within one process",
+    "scope is stale write after newer epoch was committed"
+  ],
+  "manifest": [
+    "README.md",
+    "evidence/incident-timeline.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/Harness.csproj",
+    "harness/Program.cs",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/LeaseAndPlan.cs",
+    "solution/README.md",
+    "solution/RouteLab.csproj",
+    "starter/LeaseAndPlan.cs",
+    "starter/RouteLab.csproj",
+    "workspace/my-investigation.md"
+  ]
+}

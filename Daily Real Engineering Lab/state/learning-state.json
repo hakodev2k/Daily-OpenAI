@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OUTBOX-001",
-    "runSlot": "2026-10-25-06",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-OUTBOX-001-dispatch-watermark-gap",
+    "unitId": "UNIT-FENCE-001",
+    "runSlot": "2026-10-25-07",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-FENCE-001-expired-lease-stale-writer",
     "status": "READY",
-    "createdAt": "2026-10-25T06:09:20+07:00"
+    "createdAt": "2026-10-25T07:10:18+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 229,
-    "totalGenerated": 224,
+    "totalRunSlotsAttempted": 230,
+    "totalGenerated": 225,
     "totalFailed": 5
   },
   "learning": {
