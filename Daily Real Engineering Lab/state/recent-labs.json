@@ -834,12 +834,26 @@
       "failureMode": "authenticated-reviewers-denied-while-other-roles-are-denied-correctly",
       "solutionPattern": "align-trusted-role-claim-mapping-with-authorization-policy",
       "labFormat": "federated-role-claim-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-25-23",
+      "unitId": "UNIT-SEM-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SEM-001-canceled-wait-expands-worker-capacity",
+      "domain": "dotnet-concurrency-capacity",
+      "primarySkill": "semaphore-permit-ownership",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "regional-gis-map-tile-export",
+      "scenarioType": "cancelled-queued-work-during-single-worker-tile-render",
+      "primaryRootCause": "semaphore-release-executes-after-cancelled-wait-that-never-acquired-a-permit",
+      "failureMode": "more-than-configured-concurrent-renderers-after-client-aborts-queued-request",
+      "solutionPattern": "release-semaphore-only-after-successful-acquisition",
+      "labFormat": "cancellation-capacity-contract-incident"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-event-lifecycle": 1,
       "csharp-value-semantics": 1,
       "serialization": 1,
       "reverse-proxy-networking": 1,
@@ -862,17 +876,18 @@
       "observability-slo-engineering": 1,
       "dotnet-priority-queue-semantics": 1,
       "privacy-data-architecture": 1,
-      "aspnet-core-authorization": 1
+      "aspnet-core-authorization": 1,
+      "dotnet-concurrency-capacity": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L4": 4,
       "L1": 5,
       "L2": 7,
-      "L3": 5,
+      "L3": 6,
+      "L4": 3,
       "L5": 2,
       "L6": 1
     },
@@ -885,7 +900,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-event-lifecycle": 1,
         "csharp-value-semantics": 1,
         "serialization": 1,
         "reverse-proxy-networking": 1,
@@ -908,22 +922,22 @@
         "observability-slo-engineering": 1,
         "dotnet-priority-queue-semantics": 1,
         "privacy-data-architecture": 1,
-        "aspnet-core-authorization": 1
+        "aspnet-core-authorization": 1,
+        "dotnet-concurrency-capacity": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L4": 4,
         "L1": 5,
         "L2": 7,
-        "L3": 5,
+        "L3": 6,
+        "L4": 3,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "event-lifecycle-refactoring-workshop": 1,
         "value-type-copy-deterministic-failure": 1,
         "serialization-replay-contract-investigation": 1,
         "reverse-proxy-production-incident": 1,
@@ -946,7 +960,8 @@
         "slo-alert-policy-design-decision": 1,
         "priority-scheduler-order-contract-deterministic-failure": 1,
         "cross-store-erasure-architecture-case-study": 1,
-        "federated-role-claim-contract-investigation": 1
+        "federated-role-claim-contract-investigation": 1,
+        "cancellation-capacity-contract-incident": 1
       }
     }
   }

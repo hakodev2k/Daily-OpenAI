@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CLAIMS-001",
-    "runSlot": "2026-10-25-22",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CLAIMS-001-reviewer-role-claim-contract",
+    "unitId": "UNIT-SEM-001",
+    "runSlot": "2026-10-25-23",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SEM-001-canceled-wait-expands-worker-capacity",
     "status": "READY",
-    "createdAt": "2026-10-25T22:17:40+07:00"
+    "createdAt": "2026-10-25T23:16:04.457+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 245,
-    "totalGenerated": 240,
+    "totalRunSlotsAttempted": 246,
+    "totalGenerated": 241,
     "totalFailed": 5
   },
   "learning": {
