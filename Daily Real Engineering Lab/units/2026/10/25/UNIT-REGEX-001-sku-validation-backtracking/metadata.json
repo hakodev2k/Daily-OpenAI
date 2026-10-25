@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-REGEX-001",
+  "runSlot": "2026-10-25-08",
+  "title": "SKU import: kiểm tra dữ liệu bị treo ở một đầu vào bất thường",
+  "domain": "dotnet-regex-performance",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-25T08:13:56+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "regex-engine-backtracking",
+    "input-validation",
+    "dotnet-performance-diagnostics"
+  ],
+  "prerequisites": [
+    "C# string",
+    "Regex.IsMatch",
+    ".NET SDK 10"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "supplier-catalog-sku-import",
+    "scenarioType": "untrusted-bulk-catalog-identifier-validation",
+    "primaryRootCause": "nested-quantifiers-cause-exponential-regex-backtracking-on-near-match",
+    "failureMode": "single-invalid-sku-consumes-regex-timeout-and-fails-entire-import-batch",
+    "solutionPattern": "linear-time-anchored-grammar-with-bounded-input-and-nonbacktracking-engine",
+    "labFormat": "regex-input-validation-deterministic-failure"
+  },
+  "primarySkill": "regex-engine-backtracking",
+  "qualityNotes": "Strict static consistency review; no .NET runtime execution in this GitHub-only run."
+}

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-FENCE-001",
-    "runSlot": "2026-10-25-07",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-FENCE-001-expired-lease-stale-writer",
+    "unitId": "UNIT-REGEX-001",
+    "runSlot": "2026-10-25-08",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-REGEX-001-sku-validation-backtracking",
     "status": "READY",
-    "createdAt": "2026-10-25T07:10:18+07:00"
+    "createdAt": "2026-10-25T08:13:56+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 230,
-    "totalGenerated": 225,
+    "totalRunSlotsAttempted": 231,
+    "totalGenerated": 226,
     "totalFailed": 5
   },
   "learning": {
