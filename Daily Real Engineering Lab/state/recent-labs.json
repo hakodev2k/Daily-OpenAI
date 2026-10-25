@@ -759,12 +759,26 @@
       "failureMode": "healthy-exam-session-service-restarts-and-routes-no-traffic-during-optional-outage",
       "solutionPattern": "separate-process-liveness-from-critical-serving-readiness-and-degrade-optional-feature",
       "labFormat": "health-probe-incident-investigation"
+    },
+    {
+      "runSlot": "2026-10-25-18",
+      "unitId": "UNIT-TEST-014",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-TEST-014-permit-approval-test-double",
+      "domain": "testing-persistence-contracts",
+      "primarySkill": "test-double-behavioral-fidelity",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-building-permit-approval",
+      "scenarioType": "green-unit-tests-but-status-reverts-after-production-reload",
+      "primaryRootCause": "in-memory-test-double-exposes-shared-entity-reference-while-production-repository-returns-detached-snapshot",
+      "failureMode": "approval-command-reports-success-but-persisted-permit-remains-pending",
+      "solutionPattern": "enforce-explicit-save-boundary-and-test-against-detached-persistence-semantics",
+      "labFormat": "persistence-test-double-contract-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "aspnet-core": 1,
       "dotnet-text-encoding": 1,
       "financial-calculation": 1,
       "dotnet-caching-concurrency": 1,
@@ -787,17 +801,18 @@
       "dotnet-filesystem-security": 1,
       "api-integration-security": 1,
       "dotnet-stream-io": 1,
-      "kubernetes-operations": 1
+      "kubernetes-operations": 1,
+      "testing-persistence-contracts": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L4": 5,
       "L1": 5,
       "L3": 6,
-      "L2": 7,
+      "L2": 8,
+      "L4": 4,
       "L5": 1
     },
     "byFormat": {
@@ -809,7 +824,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "aspnet-core": 1,
         "dotnet-text-encoding": 1,
         "financial-calculation": 1,
         "dotnet-caching-concurrency": 1,
@@ -832,21 +846,21 @@
         "dotnet-filesystem-security": 1,
         "api-integration-security": 1,
         "dotnet-stream-io": 1,
-        "kubernetes-operations": 1
+        "kubernetes-operations": 1,
+        "testing-persistence-contracts": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L4": 5,
         "L1": 5,
         "L3": 6,
-        "L2": 7,
+        "L2": 8,
+        "L4": 4,
         "L5": 1
       },
       "labFormat": {
-        "middleware-regression-workshop": 1,
         "wire-encoding-deterministic-failure": 1,
         "billing-reconciliation-production-incident": 1,
         "cache-initialization-contention-investigation": 1,
@@ -869,7 +883,8 @@
         "filesystem-authorization-incident": 1,
         "webhook-integrity-contract-refactoring-workshop": 1,
         "stream-fragmentation-deterministic-failure": 1,
-        "health-probe-incident-investigation": 1
+        "health-probe-incident-investigation": 1,
+        "persistence-test-double-contract-investigation": 1
       }
     }
   }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-K8S-002",
-    "runSlot": "2026-10-25-17",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-K8S-002-optional-risk-engine-probe-storm",
+    "unitId": "UNIT-TEST-014",
+    "runSlot": "2026-10-25-18",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-TEST-014-permit-approval-test-double",
     "status": "READY",
-    "createdAt": "2026-10-25T17:08:07+07:00"
+    "createdAt": "2026-10-25T18:07:37+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 240,
-    "totalGenerated": 235,
+    "totalRunSlotsAttempted": 241,
+    "totalGenerated": 236,
     "totalFailed": 5
   },
   "learning": {
