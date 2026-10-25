@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-CLAIMS-001",
+  "runSlot": "2026-10-25-22",
+  "title": "Certification Review: Valid Identity, Unexpected Access Denial",
+  "domain": "aspnet-core-authorization",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-25T22:17:40+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "claimsidentity-role-claim-type",
+    "aspnet-core-role-authorization",
+    "identity-provider-claim-contracts",
+    "security-regression-testing"
+  ],
+  "prerequisites": [
+    "C# ClaimsPrincipal / ClaimsIdentity",
+    "ASP.NET Core authorization policies",
+    "basic federated identity concepts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "industrial-equipment-certification-review",
+    "scenarioType": "federated-reviewer-identity-authorization-mismatch",
+    "primaryRootCause": "default-claimsidentity-roleclaimtype-does-not-match-validated-roles-claim",
+    "failureMode": "authenticated-reviewers-denied-while-other-roles-are-denied-correctly",
+    "solutionPattern": "align-trusted-role-claim-mapping-with-authorization-policy",
+    "labFormat": "federated-role-claim-contract-investigation"
+  }
+}
