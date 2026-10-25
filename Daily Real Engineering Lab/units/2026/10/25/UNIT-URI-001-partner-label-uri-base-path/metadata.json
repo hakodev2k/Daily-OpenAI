@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-URI-001",
+  "runSlot": "2026-10-25-12",
+  "title": "Một API đối tác trả 404 dù endpoint khác vẫn hoạt động",
+  "domain": "http-uri-resolution",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-25T12:09:16+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "httpclient-baseaddress-uri-resolution",
+    "http-route-contract-testing",
+    "http-failure-diagnostics"
+  ],
+  "primarySkill": "httpclient-baseaddress-uri-resolution",
+  "prerequisites": [
+    "C# async/await",
+    "HttpClient",
+    "URI path concepts",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "warehouse-shipping-label-partner-adapter",
+    "scenarioType": "base-uri-path-prefix-with-relative-outbound-endpoints",
+    "primaryRootCause": "leading-slash-relative-uri-replaces-configured-httpclient-baseaddress-path",
+    "failureMode": "partner-label-submit-returns-404-while-status-endpoint-remains-healthy",
+    "solutionPattern": "preserve-base-path-with-relative-uri-resolution-and-contract-regression-tests",
+    "labFormat": "http-uri-routing-deterministic-failure"
+  },
+  "qualityNotes": "Strict static consistency review; .NET execution unavailable in GitHub-only run."
+}
