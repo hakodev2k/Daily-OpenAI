@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-REGEX-001",
-    "runSlot": "2026-10-25-08",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-REGEX-001-sku-validation-backtracking",
+    "unitId": "UNIT-RL-001",
+    "runSlot": "2026-10-25-09",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-RL-001-tenant-quota-partition",
     "status": "READY",
-    "createdAt": "2026-10-25T08:13:56+07:00"
+    "createdAt": "2026-10-25T09:16:33+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 231,
-    "totalGenerated": 226,
+    "totalRunSlotsAttempted": 232,
+    "totalGenerated": 227,
     "totalFailed": 5
   },
   "learning": {

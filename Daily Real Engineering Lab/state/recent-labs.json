@@ -626,12 +626,26 @@
       "failureMode": "single-invalid-sku-consumes-regex-timeout-and-fails-entire-import-batch",
       "solutionPattern": "linear-time-anchored-grammar-with-bounded-input-and-nonbacktracking-engine",
       "labFormat": "regex-input-validation-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-25-09",
+      "unitId": "UNIT-RL-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-RL-001-tenant-quota-partition",
+      "domain": "aspnet-core-rate-limiting",
+      "primarySkill": "aspnet-core-rate-limit-partitioning",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "multi-tenant-document-rendering-platform",
+      "scenarioType": "authenticated-tenant-request-budget-enforcement",
+      "primaryRootCause": "rate-limit-partition-key-uses-route-path-instead-of-authenticated-tenant-identity",
+      "failureMode": "unrelated-tenants-share-429-budget-while-one-tenant-can-evade-quota-across-endpoints",
+      "solutionPattern": "stable-trusted-tenant-scoped-partition-with-explicit-anonymous-fallback",
+      "labFormat": "tenant-quota-partition-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "csharp": 1,
       "observability": 1,
       "sql-server": 1,
       "http-networking": 2,
@@ -653,12 +667,13 @@
       "ef-core": 1,
       "messaging-outbox": 1,
       "distributed-systems": 1,
-      "dotnet-regex-performance": 1
+      "dotnet-regex-performance": 1,
+      "aspnet-core-rate-limiting": 1
     },
     "byDifficulty": {
-      "D3": 8,
+      "D3": 7,
       "D2": 1,
-      "D4": 15
+      "D4": 16
     },
     "byMaturity": {
       "L2": 11,
@@ -676,7 +691,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "csharp": 1,
         "observability": 1,
         "sql-server": 1,
         "http-networking": 2,
@@ -698,12 +712,13 @@
         "ef-core": 1,
         "messaging-outbox": 1,
         "distributed-systems": 1,
-        "dotnet-regex-performance": 1
+        "dotnet-regex-performance": 1,
+        "aspnet-core-rate-limiting": 1
       },
       "difficulty": {
-        "D3": 8,
+        "D3": 7,
         "D2": 1,
-        "D4": 15
+        "D4": 16
       },
       "maturityLevel": {
         "L2": 11,
@@ -713,7 +728,6 @@
         "L5": 1
       },
       "labFormat": {
-        "csharp-exception-semantics-investigation": 1,
         "metrics-cardinality-investigation": 1,
         "sql-type-semantics-deterministic-failure": 1,
         "http-resource-boundary-investigation": 1,
@@ -736,7 +750,8 @@
         "ef-core-context-history-investigation": 1,
         "messaging-partial-failure-production-incident": 1,
         "distributed-lease-investigation": 1,
-        "regex-input-validation-deterministic-failure": 1
+        "regex-input-validation-deterministic-failure": 1,
+        "tenant-quota-partition-investigation": 1
       }
     }
   }

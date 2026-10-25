@@ -1,0 +1,67 @@
+{
+  "unitId": "UNIT-RL-001",
+  "runSlot": "2026-10-25-09",
+  "title": "Hai tenant cùng nhận 429 dù quota còn trống",
+  "domain": "aspnet-core-rate-limiting",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-25T09:16:33+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "aspnet-core-rate-limit-partitioning",
+    "authenticated-tenant-context",
+    "partitioned-rate-limiter",
+    "failure-path-testing"
+  ],
+  "prerequisites": [
+    "C#/.NET 8 basics",
+    "ASP.NET Core authentication claims",
+    "HTTP 429 concept"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-document-rendering-platform",
+    "scenarioType": "authenticated-tenant-request-budget-enforcement",
+    "primaryRootCause": "rate-limit-partition-key-uses-route-path-instead-of-authenticated-tenant-identity",
+    "failureMode": "unrelated-tenants-share-429-budget-while-one-tenant-can-evade-quota-across-endpoints",
+    "solutionPattern": "stable-trusted-tenant-scoped-partition-with-explicit-anonymous-fallback",
+    "labFormat": "tenant-quota-partition-investigation"
+  },
+  "assumptions": [
+    "2 permits per five-minute fixed window",
+    "each scenario creates a fresh in-memory limiter",
+    "auth middleware has already verified tenant_id claims",
+    "no distributed quota guarantee",
+    "harness checks limiter lease, not HTTP status code"
+  ],
+  "manifest": [
+    "README.md",
+    "evidence/incident-brief.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/Program.cs",
+    "harness/TenantQuotaHarness.csproj",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/README.md",
+    "solution/TenantQuotaPolicy.cs",
+    "starter/TenantQuotaLab.csproj",
+    "starter/TenantQuotaPolicy.cs",
+    "workspace/my-investigation.md"
+  ]
+}
