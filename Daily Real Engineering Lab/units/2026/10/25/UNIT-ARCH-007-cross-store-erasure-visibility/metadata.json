@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-ARCH-007",
+  "runSlot": "2026-10-25-21",
+  "title": "Hồ sơ đã xoá nhưng vẫn xuất hiện trên cổng tra cứu",
+  "domain": "privacy-data-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-10-25T21:11:35+07:00",
+  "estimatedMinutes": 80,
+  "skills": [
+    "cross-store-consistency",
+    "data-erasure-architecture",
+    "distributed-projections",
+    "privacy-boundaries",
+    "failure-recovery",
+    "architecture-decision-records"
+  ],
+  "primarySkill": "cross-store-erasure-consistency",
+  "prerequisites": [
+    "sql-transaction-basics",
+    "eventual-consistency",
+    "http-authz-basics",
+    "search-index-projections"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-public-archive-search",
+    "scenarioType": "personal-record-erasure-with-asynchronous-projections-and-backup-restore",
+    "primaryRootCause": "deletion-intent-not-enforced-consistently-at-public-read-and-projection-boundaries",
+    "failureMode": "removed-public-record-resurfaces-in-search-and-remains-accessible-through-existing-links",
+    "solutionPattern": "durable-suppression-invariant-with-idempotent-erasure-workflow-and-restore-reconciliation",
+    "labFormat": "cross-store-erasure-architecture-case-study"
+  }
+}

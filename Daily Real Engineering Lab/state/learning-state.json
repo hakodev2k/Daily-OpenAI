@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PQ-001",
-    "runSlot": "2026-10-25-20",
-    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-PQ-001-baggage-alert-tie-order",
+    "unitId": "UNIT-ARCH-007",
+    "runSlot": "2026-10-25-21",
+    "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-ARCH-007-cross-store-erasure-visibility",
     "status": "READY",
-    "createdAt": "2026-10-25T20:11:03.808+07:00"
+    "createdAt": "2026-10-25T21:11:35+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 243,
-    "totalGenerated": 238,
+    "totalRunSlotsAttempted": 244,
+    "totalGenerated": 239,
     "totalFailed": 5
   },
   "learning": {

@@ -804,12 +804,26 @@
       "failureMode": "same-severity-baggage-alerts-break-first-received-first-served-contract",
       "solutionPattern": "lexicographic-severity-and-monotonic-sequence-priority",
       "labFormat": "priority-scheduler-order-contract-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-25-21",
+      "unitId": "UNIT-ARCH-007",
+      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-ARCH-007-cross-store-erasure-visibility",
+      "domain": "privacy-data-architecture",
+      "primarySkill": "cross-store-erasure-consistency",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "municipal-public-archive-search",
+      "scenarioType": "personal-record-erasure-with-asynchronous-projections-and-backup-restore",
+      "primaryRootCause": "deletion-intent-not-enforced-consistently-at-public-read-and-projection-boundaries",
+      "failureMode": "removed-public-record-resurfaces-in-search-and-remains-accessible-through-existing-links",
+      "solutionPattern": "durable-suppression-invariant-with-idempotent-erasure-workflow-and-restore-reconciliation",
+      "labFormat": "cross-store-erasure-architecture-case-study"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-caching-concurrency": 1,
       "http-networking": 1,
       "dotnet-event-lifecycle": 1,
       "csharp-value-semantics": 1,
@@ -832,18 +846,20 @@
       "kubernetes-operations": 1,
       "testing-persistence-contracts": 1,
       "observability-slo-engineering": 1,
-      "dotnet-priority-queue-semantics": 1
+      "dotnet-priority-queue-semantics": 1,
+      "privacy-data-architecture": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
+      "L2": 7,
       "L4": 4,
       "L1": 5,
       "L3": 5,
-      "L5": 2
+      "L5": 2,
+      "L6": 1
     },
     "byFormat": {
       "distinctFormats": 24
@@ -854,7 +870,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-caching-concurrency": 1,
         "http-networking": 1,
         "dotnet-event-lifecycle": 1,
         "csharp-value-semantics": 1,
@@ -877,21 +892,22 @@
         "kubernetes-operations": 1,
         "testing-persistence-contracts": 1,
         "observability-slo-engineering": 1,
-        "dotnet-priority-queue-semantics": 1
+        "dotnet-priority-queue-semantics": 1,
+        "privacy-data-architecture": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
+        "L2": 7,
         "L4": 4,
         "L1": 5,
         "L3": 5,
-        "L5": 2
+        "L5": 2,
+        "L6": 1
       },
       "labFormat": {
-        "cache-initialization-contention-investigation": 1,
         "http-request-context-isolation-investigation": 1,
         "event-lifecycle-refactoring-workshop": 1,
         "value-type-copy-deterministic-failure": 1,
@@ -914,7 +930,8 @@
         "health-probe-incident-investigation": 1,
         "persistence-test-double-contract-investigation": 1,
         "slo-alert-policy-design-decision": 1,
-        "priority-scheduler-order-contract-deterministic-failure": 1
+        "priority-scheduler-order-contract-deterministic-failure": 1,
+        "cross-store-erasure-architecture-case-study": 1
       }
     }
   }
