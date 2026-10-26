@@ -1058,10 +1058,24 @@
       "failureMode": "tenant-a-session-cookie-forwarded-on-tenant-b-request-causing-cross-tenant-session-confusion",
       "solutionPattern": "tenant-scoped-cookiecontainer-and-httpclient-lifecycle-isolation",
       "labFormat": "http-cookie-isolation-production-incident"
+    },
+    {
+      "runSlot": "2026-10-26-14",
+      "unitId": "UNIT-LINQ-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LINQ-001-ferry-crew-roster-revision-reconciliation",
+      "domain": "dotnet-linq-data-reconciliation",
+      "primarySkill": "linq-distinctby-order-and-revision-semantics",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-ferry-crew-duty-roster",
+      "scenarioType": "out-of-order-replayed-crew-assignment-feed",
+      "primaryRootCause": "linq-distinctby-selects-first-seen-record-instead-of-highest-revision",
+      "failureMode": "stale-crew-duty-revision-wins-when-feed-arrival-order-changes",
+      "solutionPattern": "revision-aware-group-reconciliation-with-deterministic-replay-tiebreak-and-conflict-rejection",
+      "labFormat": "linq-feed-order-invariance-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-PATH-001",
     "UNIT-HMAC-001",
     "UNIT-IO-001",
     "UNIT-K8S-002",
@@ -1084,14 +1098,14 @@
     "UNIT-EF-015",
     "UNIT-RECORD-001",
     "UNIT-API-002",
-    "UNIT-COOKIE-001"
+    "UNIT-COOKIE-001",
+    "UNIT-LINQ-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-filesystem-security": 1,
         "api-integration-security": 1,
         "dotnet-stream-io": 1,
         "kubernetes-operations": 1,
@@ -1114,22 +1128,22 @@
         "ef-core": 1,
         "csharp-record-value-semantics": 1,
         "api-concurrency-contracts": 1,
-        "http-client-session-security": 1
+        "http-client-session-security": 1,
+        "dotnet-linq-data-reconciliation": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
         "L4": 3,
         "L1": 5,
-        "L2": 7,
+        "L3": 5,
+        "L2": 8,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "filesystem-authorization-incident": 1,
         "webhook-integrity-contract-refactoring-workshop": 1,
         "stream-fragmentation-deterministic-failure": 1,
         "health-probe-incident-investigation": 1,
@@ -1152,7 +1166,8 @@
         "ef-core-bulk-update-refactoring-workshop": 1,
         "record-nested-array-equality-deterministic-failure": 1,
         "conditional-write-race-investigation": 1,
-        "http-cookie-isolation-production-incident": 1
+        "http-cookie-isolation-production-incident": 1,
+        "linq-feed-order-invariance-investigation": 1
       }
     }
   }

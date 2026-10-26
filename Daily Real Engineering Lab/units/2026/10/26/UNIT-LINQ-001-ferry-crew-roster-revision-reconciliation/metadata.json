@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-LINQ-001",
+  "runSlot": "2026-10-26-14",
+  "title": "Bảng phân ca phà hiển thị bản phân công cũ sau đồng bộ",
+  "domain": "dotnet-linq-data-reconciliation",
+  "primarySkill": "linq-distinctby-order-and-revision-semantics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-26T14:15:34+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "linq-distinctby",
+    "feed-reconciliation",
+    "revision-ordering",
+    "permutation-regression-tests"
+  ],
+  "prerequisites": [
+    "C# records",
+    "LINQ",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "GitHub integration only; source, scripts, fixtures and expected assertions statically reviewed; no .NET build or execution.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-ferry-crew-duty-roster",
+    "scenarioType": "out-of-order-replayed-crew-assignment-feed",
+    "primaryRootCause": "linq-distinctby-selects-first-seen-record-instead-of-highest-revision",
+    "failureMode": "stale-crew-duty-revision-wins-when-feed-arrival-order-changes",
+    "solutionPattern": "revision-aware-group-reconciliation-with-deterministic-replay-tiebreak-and-conflict-rejection",
+    "labFormat": "linq-feed-order-invariance-investigation"
+  }
+}
