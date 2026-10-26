@@ -984,12 +984,26 @@
       "failureMode": "queued-alert-processing-throws-objectdisposedexception-despite-valid-input",
       "solutionPattern": "detach-json-value-at-document-ownership-boundary-with-clone",
       "labFormat": "json-dom-lifetime-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-09",
+      "unitId": "UNIT-HOST-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-HOST-001-air-quality-report-host-working-directory",
+      "domain": "dotnet-hosting-deployment",
+      "primarySkill": "application-content-paths",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "air-quality-compliance-nightly-reports",
+      "scenarioType": "same-dotnet-artifact-fails-under-scheduler-launch-context",
+      "primaryRootCause": "relative-template-path-resolves-against-launcher-working-directory",
+      "failureMode": "report-job-file-not-found-only-in-scheduled-host",
+      "solutionPattern": "anchor-packaged-template-to-application-base-directory",
+      "labFormat": "deployment-launch-context-production-incident"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "aspnet-core-rate-limiting": 1,
       "dotnet-async-diagnostics": 1,
       "aspnet-core-options": 1,
       "http-uri-resolution": 1,
@@ -1012,17 +1026,18 @@
       "postgresql-sql-semantics": 1,
       "dotnet-unicode-identity": 1,
       "search-index-operations": 1,
-      "dotnet-json-dom": 1
+      "dotnet-json-dom": 1,
+      "dotnet-hosting-deployment": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
-      "L3": 5,
+      "L3": 6,
       "L4": 3,
       "L1": 5,
+      "L2": 7,
       "L5": 2,
       "L6": 1
     },
@@ -1035,7 +1050,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "aspnet-core-rate-limiting": 1,
         "dotnet-async-diagnostics": 1,
         "aspnet-core-options": 1,
         "http-uri-resolution": 1,
@@ -1058,22 +1072,22 @@
         "postgresql-sql-semantics": 1,
         "dotnet-unicode-identity": 1,
         "search-index-operations": 1,
-        "dotnet-json-dom": 1
+        "dotnet-json-dom": 1,
+        "dotnet-hosting-deployment": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
-        "L3": 5,
+        "L3": 6,
         "L4": 3,
         "L1": 5,
+        "L2": 7,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "tenant-quota-partition-investigation": 1,
         "multi-fault-batch-diagnostics-production-incident": 1,
         "credential-rotation-refactoring-workshop": 1,
         "http-uri-routing-deterministic-failure": 1,
@@ -1096,7 +1110,8 @@
         "sql-three-valued-logic-investigation": 1,
         "unicode-identity-contract-deterministic-failure": 1,
         "search-index-migration-design-decision": 1,
-        "json-dom-lifetime-investigation": 1
+        "json-dom-lifetime-investigation": 1,
+        "deployment-launch-context-production-incident": 1
       }
     }
   }
