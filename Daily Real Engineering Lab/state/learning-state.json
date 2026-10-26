@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LINQ-001",
-    "runSlot": "2026-10-26-14",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LINQ-001-ferry-crew-roster-revision-reconciliation",
+    "unitId": "UNIT-TCS-001",
+    "runSlot": "2026-10-26-15",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-TCS-001-cold-chain-receipt-continuation-critical-section",
     "status": "READY",
-    "createdAt": "2026-10-26T14:15:34+07:00"
+    "createdAt": "2026-10-26T15:18:34+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 261,
-    "totalGenerated": 256,
+    "totalRunSlotsAttempted": 262,
+    "totalGenerated": 257,
     "totalFailed": 5
   },
   "learning": {

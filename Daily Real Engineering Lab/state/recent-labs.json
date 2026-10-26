@@ -1073,10 +1073,24 @@
       "failureMode": "stale-crew-duty-revision-wins-when-feed-arrival-order-changes",
       "solutionPattern": "revision-aware-group-reconciliation-with-deterministic-replay-tiebreak-and-conflict-rejection",
       "labFormat": "linq-feed-order-invariance-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-15",
+      "unitId": "UNIT-TCS-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-TCS-001-cold-chain-receipt-continuation-critical-section",
+      "domain": "dotnet-async-coordination",
+      "primarySkill": "taskcompletionsource-continuation-scheduling",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "cold-chain-warehouse-pallet-receipt-ingestion",
+      "scenarioType": "acknowledgement-completion-under-critical-section-triggers-slow-audit",
+      "primaryRootCause": "taskcompletionsource-synchronous-continuation-executes-inside-producer-monitor-lock",
+      "failureMode": "receipt-ingestion-lock-held-during-unrelated-audit-work-causing-head-of-line-blocking",
+      "solutionPattern": "asynchronous-task-continuation-scheduling-at-completion-boundary",
+      "labFormat": "async-coordination-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-HMAC-001",
     "UNIT-IO-001",
     "UNIT-K8S-002",
     "UNIT-TEST-014",
@@ -1099,14 +1113,14 @@
     "UNIT-RECORD-001",
     "UNIT-API-002",
     "UNIT-COOKIE-001",
-    "UNIT-LINQ-001"
+    "UNIT-LINQ-001",
+    "UNIT-TCS-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "api-integration-security": 1,
         "dotnet-stream-io": 1,
         "kubernetes-operations": 1,
         "testing-persistence-contracts": 1,
@@ -1129,22 +1143,22 @@
         "csharp-record-value-semantics": 1,
         "api-concurrency-contracts": 1,
         "http-client-session-security": 1,
-        "dotnet-linq-data-reconciliation": 1
+        "dotnet-linq-data-reconciliation": 1,
+        "dotnet-async-coordination": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L4": 3,
         "L1": 5,
         "L3": 5,
         "L2": 8,
         "L5": 2,
-        "L6": 1
+        "L6": 1,
+        "L4": 3
       },
       "labFormat": {
-        "webhook-integrity-contract-refactoring-workshop": 1,
         "stream-fragmentation-deterministic-failure": 1,
         "health-probe-incident-investigation": 1,
         "persistence-test-double-contract-investigation": 1,
@@ -1167,7 +1181,8 @@
         "record-nested-array-equality-deterministic-failure": 1,
         "conditional-write-race-investigation": 1,
         "http-cookie-isolation-production-incident": 1,
-        "linq-feed-order-invariance-investigation": 1
+        "linq-feed-order-invariance-investigation": 1,
+        "async-coordination-refactoring-workshop": 1
       }
     }
   }

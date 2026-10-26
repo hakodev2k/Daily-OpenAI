@@ -1,0 +1,64 @@
+{
+  "unitId": "UNIT-TCS-001",
+  "runSlot": "2026-10-26-15",
+  "title": "Tín hiệu xác nhận pallet làm chậm vòng tiếp nhận dù không có lỗi",
+  "domain": "dotnet-async-coordination",
+  "primarySkill": "taskcompletionsource-continuation-scheduling",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-26T15:18:34+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "taskcompletionsource",
+    "task-continuations",
+    "monitor-lock",
+    "concurrency-diagnostics",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "Task",
+    "Monitor lock",
+    ".NET CLI"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "GitHub integration only; static consistency review of C# and PowerShell; no runtime execution performed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "cold-chain-warehouse-pallet-receipt-ingestion",
+    "scenarioType": "acknowledgement-completion-under-critical-section-triggers-slow-audit",
+    "primaryRootCause": "taskcompletionsource-synchronous-continuation-executes-inside-producer-monitor-lock",
+    "failureMode": "receipt-ingestion-lock-held-during-unrelated-audit-work-causing-head-of-line-blocking",
+    "solutionPattern": "asynchronous-task-continuation-scheduling-at-completion-boundary",
+    "labFormat": "async-coordination-refactoring-workshop"
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/README.md",
+    "solution/ReceiptCoordinator.cs",
+    "starter/ColdChainReceiptLab.csproj",
+    "starter/Program.cs",
+    "starter/ReceiptCoordinator.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

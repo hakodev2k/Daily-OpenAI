@@ -1,0 +1,2 @@
+# Senior extension — 30 phút tùy chọn
+Thiết kế một load test 1000 pallet, 8 producer và audit adapter có tail latency biến động. Đo p95 producer latency, thời gian giữ gate và số acknowledgement trùng. Thêm cancellation cho waiter nhưng không làm mất acknowledgement đã claim. Trình bày vì sao callback scheduling và lock ownership là hai contract riêng, và chọn cách kiểm soát audit backpressure khi adapter chậm.
