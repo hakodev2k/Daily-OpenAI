@@ -1238,6 +1238,21 @@
       "failureMode": "valid-v1-manifests-rejected-and-invalid-v2-variants-silently-accepted",
       "solutionPattern": "explicit-versioned-ingress-adapters-to-stable-canonical-model-with-phased-retirement",
       "labFormat": "b2b-contract-evolution-design-decision"
+    },
+    {
+      "runSlot": "2026-10-27-02",
+      "unitId": "UNIT-DAG-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-DAG-001-fiber-cabinet-rollout-dependency-plan",
+      "domain": "dotnet-workflow-dependency-planning",
+      "primarySkill": "dependency-graph-validation",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "regional-telecom-fiber-cabinet-firmware-rollout",
+      "scenarioType": "nightly-firmware-rollout-reports-success-with-unprocessed-dependent-steps",
+      "primaryRootCause": "dependency-planner-treats-no-ready-work-as-normal-completion-without-validating-the-dependency-graph",
+      "failureMode": "cyclic-or-unknown-prerequisites-yield-successful-partial-rollout-plan",
+      "solutionPattern": "validate-dependency-identities-and-use-complete-topological-plan-with-explicit-cycle-rejection",
+      "labFormat": "dependency-graph-production-incident"
     }
   ],
   "rolling24": [
@@ -1271,7 +1286,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-async-streams": 1,
         "http-client-lifecycle": 1,
         "dotnet-zip-archive": 1,
         "postgresql-sql-semantics": 1,
@@ -1294,21 +1308,21 @@
         "dotnet-json-serialization-options": 1,
         "dotnet-binary-protocols": 1,
         "dotnet-periodic-scheduling": 1,
-        "api-contract-evolution": 1
+        "api-contract-evolution": 1,
+        "dotnet-workflow-dependency-planning": 1
       },
       "difficulty": {
         "D4": 20,
         "D3": 4
       },
       "maturityLevel": {
-        "L2": 10,
-        "L3": 5,
+        "L3": 6,
+        "L2": 9,
         "L1": 4,
         "L5": 2,
         "L4": 3
       },
       "labFormat": {
-        "async-stream-consumer-cancellation-investigation": 1,
         "http-retry-request-lifecycle-production-incident": 1,
         "archive-finalization-lifecycle-investigation": 1,
         "sql-three-valued-logic-investigation": 1,
@@ -1331,7 +1345,8 @@
         "json-serializer-options-lifecycle-deterministic-failure": 1,
         "binary-protocol-evidence-led-investigation": 1,
         "scheduled-window-reconciliation-refactoring-workshop": 1,
-        "b2b-contract-evolution-design-decision": 1
+        "b2b-contract-evolution-design-decision": 1,
+        "dependency-graph-production-incident": 1
       }
     }
   }
