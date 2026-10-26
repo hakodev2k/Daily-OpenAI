@@ -1088,10 +1088,24 @@
       "failureMode": "receipt-ingestion-lock-held-during-unrelated-audit-work-causing-head-of-line-blocking",
       "solutionPattern": "asynchronous-task-continuation-scheduling-at-completion-boundary",
       "labFormat": "async-coordination-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-26-16",
+      "unitId": "UNIT-CSV-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-CSV-001-clinical-trial-import-column-drift",
+      "domain": "dotnet-csv-data-ingestion",
+      "primarySkill": "csv-record-grammar",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "clinical-trial-site-report-import",
+      "scenarioType": "partner-csv-export-with-quoted-multiline-clinical-notes",
+      "primaryRootCause": "line-and-delimiter-splitting-ignores-csv-quoted-record-grammar",
+      "failureMode": "valid-clinical-notes-shift-columns-and-split-one-record-into-multiple-patients",
+      "solutionPattern": "stateful-csv-record-parser-respecting-quoted-delimiters-escaped-quotes-and-record-boundaries",
+      "labFormat": "partner-data-import-deterministic-failure"
     }
   ],
   "rolling24": [
-    "UNIT-IO-001",
     "UNIT-K8S-002",
     "UNIT-TEST-014",
     "UNIT-SLO-001",
@@ -1114,14 +1128,14 @@
     "UNIT-API-002",
     "UNIT-COOKIE-001",
     "UNIT-LINQ-001",
-    "UNIT-TCS-001"
+    "UNIT-TCS-001",
+    "UNIT-CSV-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-stream-io": 1,
         "kubernetes-operations": 1,
         "testing-persistence-contracts": 1,
         "observability-slo-engineering": 1,
@@ -1144,22 +1158,22 @@
         "api-concurrency-contracts": 1,
         "http-client-session-security": 1,
         "dotnet-linq-data-reconciliation": 1,
-        "dotnet-async-coordination": 1
+        "dotnet-async-coordination": 1,
+        "dotnet-csv-data-ingestion": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L1": 5,
         "L3": 5,
         "L2": 8,
         "L5": 2,
+        "L1": 5,
         "L6": 1,
         "L4": 3
       },
       "labFormat": {
-        "stream-fragmentation-deterministic-failure": 1,
         "health-probe-incident-investigation": 1,
         "persistence-test-double-contract-investigation": 1,
         "slo-alert-policy-design-decision": 1,
@@ -1182,7 +1196,8 @@
         "conditional-write-race-investigation": 1,
         "http-cookie-isolation-production-incident": 1,
         "linq-feed-order-invariance-investigation": 1,
-        "async-coordination-refactoring-workshop": 1
+        "async-coordination-refactoring-workshop": 1,
+        "partner-data-import-deterministic-failure": 1
       }
     }
   }
