@@ -1029,12 +1029,26 @@
       "failureMode": "unchanged-calibration-snapshots-trigger-redundant-device-config-pushes-and-mutated-input-can-mask-real-change",
       "solutionPattern": "structural-array-comparison-plus-defensive-cached-snapshot",
       "labFormat": "record-nested-array-equality-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-26-12",
+      "unitId": "UNIT-API-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-API-002-park-checklist-conditional-update-race",
+      "domain": "api-concurrency-contracts",
+      "primarySkill": "http-conditional-update-optimistic-concurrency",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-park-maintenance-checklist",
+      "scenarioType": "two-editors-submit-conditional-updates-from-same-revision",
+      "primaryRootCause": "etag-precondition-checked-before-non-atomic-write",
+      "failureMode": "two-conflicting-writes-return-success-while-one-edit-is-lost",
+      "solutionPattern": "atomic-revision-compare-and-swap-with-precondition-failure",
+      "labFormat": "conditional-write-race-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "http-uri-resolution": 1,
       "dotnet-execution-context": 1,
       "dotnet-filesystem-security": 1,
       "api-integration-security": 1,
@@ -1057,17 +1071,18 @@
       "dotnet-json-dom": 1,
       "dotnet-hosting-deployment": 1,
       "ef-core": 1,
-      "csharp-record-value-semantics": 1
+      "csharp-record-value-semantics": 1,
+      "api-concurrency-contracts": 1
     },
     "byDifficulty": {
-      "D3": 6,
-      "D4": 18
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L1": 6,
-      "L2": 7,
+      "L2": 8,
       "L3": 5,
       "L4": 3,
+      "L1": 5,
       "L5": 2,
       "L6": 1
     },
@@ -1080,7 +1095,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "http-uri-resolution": 1,
         "dotnet-execution-context": 1,
         "dotnet-filesystem-security": 1,
         "api-integration-security": 1,
@@ -1103,22 +1117,22 @@
         "dotnet-json-dom": 1,
         "dotnet-hosting-deployment": 1,
         "ef-core": 1,
-        "csharp-record-value-semantics": 1
+        "csharp-record-value-semantics": 1,
+        "api-concurrency-contracts": 1
       },
       "difficulty": {
-        "D3": 6,
-        "D4": 18
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L1": 6,
-        "L2": 7,
+        "L2": 8,
         "L3": 5,
         "L4": 3,
+        "L1": 5,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "http-uri-routing-deterministic-failure": 1,
         "execution-context-propagation-investigation": 1,
         "filesystem-authorization-incident": 1,
         "webhook-integrity-contract-refactoring-workshop": 1,
@@ -1141,7 +1155,8 @@
         "json-dom-lifetime-investigation": 1,
         "deployment-launch-context-production-incident": 1,
         "ef-core-bulk-update-refactoring-workshop": 1,
-        "record-nested-array-equality-deterministic-failure": 1
+        "record-nested-array-equality-deterministic-failure": 1,
+        "conditional-write-race-investigation": 1
       }
     }
   }

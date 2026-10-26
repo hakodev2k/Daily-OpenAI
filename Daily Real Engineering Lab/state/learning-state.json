@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RECORD-001",
-    "runSlot": "2026-10-26-11",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-RECORD-001-greenhouse-calibration-array-equality",
+    "unitId": "UNIT-API-002",
+    "runSlot": "2026-10-26-12",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-API-002-park-checklist-conditional-update-race",
     "status": "READY",
-    "createdAt": "2026-10-26T11:05:54+07:00"
+    "createdAt": "2026-10-26T12:09:03+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 258,
-    "totalGenerated": 253,
+    "totalRunSlotsAttempted": 259,
+    "totalGenerated": 254,
     "totalFailed": 5
   },
   "learning": {
