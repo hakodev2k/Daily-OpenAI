@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-FS-001",
+  "runSlot": "2026-10-26-18",
+  "title": "Bảng lịch vận hành đập đọc phải snapshot đang cập nhật",
+  "domain": "dotnet-filesystem-consistency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-26T18:15:59+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "filesystem-publication-consistency",
+    "file-io",
+    "concurrent-readers",
+    "failure-path-testing"
+  ],
+  "primarySkill": "filesystem-publication-consistency",
+  "prerequisites": [
+    "C# async/await",
+    "FileStream"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "hydroelectric-dam-gate-operation-schedule",
+    "scenarioType": "daily-control-snapshot-refresh-with-concurrent-read",
+    "primaryRootCause": "in-place-file-truncation-exposes-incomplete-snapshot-before-publish-completes",
+    "failureMode": "control-console-reads-malformed-intermediate-schedule-during-refresh",
+    "solutionPattern": "write-complete-same-directory-staging-file-then-atomic-name-replacement-with-cleanup",
+    "labFormat": "filesystem-snapshot-consistency-investigation"
+  }
+}

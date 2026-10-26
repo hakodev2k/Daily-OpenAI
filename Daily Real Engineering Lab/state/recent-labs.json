@@ -1118,10 +1118,24 @@
       "failureMode": "gateway-accepts-authenticated-request-but-redirected-validation-returns-401",
       "solutionPattern": "explicit-same-origin-redirect-policy-with-per-hop-authorized-request",
       "labFormat": "outbound-auth-redirect-production-incident"
+    },
+    {
+      "runSlot": "2026-10-26-18",
+      "unitId": "UNIT-FS-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-FS-001-dam-gate-schedule-snapshot-publication",
+      "domain": "dotnet-filesystem-consistency",
+      "primarySkill": "filesystem-publication-consistency",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "hydroelectric-dam-gate-operation-schedule",
+      "scenarioType": "daily-control-snapshot-refresh-with-concurrent-read",
+      "primaryRootCause": "in-place-file-truncation-exposes-incomplete-snapshot-before-publish-completes",
+      "failureMode": "control-console-reads-malformed-intermediate-schedule-during-refresh",
+      "solutionPattern": "write-complete-same-directory-staging-file-then-atomic-name-replacement-with-cleanup",
+      "labFormat": "filesystem-snapshot-consistency-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-TEST-014",
     "UNIT-SLO-001",
     "UNIT-PQ-001",
     "UNIT-ARCH-007",
@@ -1144,14 +1158,14 @@
     "UNIT-LINQ-001",
     "UNIT-TCS-001",
     "UNIT-CSV-001",
-    "UNIT-REDIR-001"
+    "UNIT-REDIR-001",
+    "UNIT-FS-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "testing-persistence-contracts": 1,
         "observability-slo-engineering": 1,
         "dotnet-priority-queue-semantics": 1,
         "privacy-data-architecture": 1,
@@ -1174,22 +1188,22 @@
         "dotnet-linq-data-reconciliation": 1,
         "dotnet-async-coordination": 1,
         "dotnet-csv-data-ingestion": 1,
-        "http-redirect-authentication": 1
+        "http-redirect-authentication": 1,
+        "dotnet-filesystem-consistency": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
         "L5": 2,
         "L1": 5,
         "L6": 1,
+        "L2": 8,
         "L3": 5,
         "L4": 3
       },
       "labFormat": {
-        "persistence-test-double-contract-investigation": 1,
         "slo-alert-policy-design-decision": 1,
         "priority-scheduler-order-contract-deterministic-failure": 1,
         "cross-store-erasure-architecture-case-study": 1,
@@ -1212,7 +1226,8 @@
         "linq-feed-order-invariance-investigation": 1,
         "async-coordination-refactoring-workshop": 1,
         "partner-data-import-deterministic-failure": 1,
-        "outbound-auth-redirect-production-incident": 1
+        "outbound-auth-redirect-production-incident": 1,
+        "filesystem-snapshot-consistency-investigation": 1
       }
     }
   }
