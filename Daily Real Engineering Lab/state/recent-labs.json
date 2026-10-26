@@ -1283,6 +1283,20 @@
       "failureMode": "grant-submission-client-retries-too-early-and-extends-partner-throttling",
       "solutionPattern": "normalize-retry-after-delta-or-date-against-injected-clock-and-clamp-budget",
       "labFormat": "http-rate-limit-policy-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-27-05",
+      "unitId": "UNIT-KEY-001",
+      "domain": "dotnet-cache-key-identity",
+      "primarySkill": "tenant-scoped-cache-identity",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-bridge-safety-inspection-briefings",
+      "scenarioType": "different-tenant-report-pairs-share-an-in-memory-cache-entry",
+      "primaryRootCause": "ambiguous-delimiter-concatenation-maps-distinct-tenant-report-tuples-to-one-cache-key",
+      "failureMode": "cached-briefing-crosses-tenant-boundary-and-missing-origin-record-appears-present",
+      "solutionPattern": "versioned-unambiguous-tuple-encoding-for-tenant-scoped-cache-keys",
+      "labFormat": "tenant-cache-identity-evidence-investigation"
     }
   ],
   "rolling24": [
@@ -1316,7 +1330,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "postgresql-sql-semantics": 1,
         "dotnet-unicode-identity": 1,
         "search-index-operations": 1,
         "dotnet-json-dom": 1,
@@ -1339,21 +1352,21 @@
         "api-contract-evolution": 1,
         "dotnet-workflow-dependency-planning": 1,
         "dotnet-buffer-serialization": 1,
-        "http-rate-limit-recovery": 1
+        "http-rate-limit-recovery": 1,
+        "dotnet-cache-key-identity": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L2": 8,
         "L1": 5,
         "L5": 2,
+        "L2": 8,
         "L3": 5,
         "L4": 4
       },
       "labFormat": {
-        "sql-three-valued-logic-investigation": 1,
         "unicode-identity-contract-deterministic-failure": 1,
         "search-index-migration-design-decision": 1,
         "json-dom-lifetime-investigation": 1,
@@ -1376,7 +1389,8 @@
         "b2b-contract-evolution-design-decision": 1,
         "dependency-graph-production-incident": 1,
         "pooled-buffer-serialization-deterministic-failure": 1,
-        "http-rate-limit-policy-refactoring-workshop": 1
+        "http-rate-limit-policy-refactoring-workshop": 1,
+        "tenant-cache-identity-evidence-investigation": 1
       }
     }
   }

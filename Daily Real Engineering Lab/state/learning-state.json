@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RATE-001",
-    "runSlot": "2026-10-27-04",
-    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-RATE-001-research-grant-api-retry-after-date-contract",
+    "unitId": "UNIT-KEY-001",
+    "runSlot": "2026-10-27-05",
+    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-KEY-001-bridge-inspection-tenant-cache-key-collision",
     "status": "READY",
-    "createdAt": "2026-10-27T04:10:01.223+07:00"
+    "createdAt": "2026-10-27T05:10:12+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 275,
-    "totalGenerated": 270,
+    "totalRunSlotsAttempted": 276,
+    "totalGenerated": 271,
     "totalFailed": 5
   },
   "learning": {
