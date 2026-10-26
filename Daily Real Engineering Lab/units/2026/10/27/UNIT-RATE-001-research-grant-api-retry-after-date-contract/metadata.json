@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-RATE-001",
+  "runSlot": "2026-10-27-04",
+  "title": "Research grant partner 429: Retry-After representation contract",
+  "domain": "http-rate-limit-recovery",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-27T04:10:01.223+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "http-retry-after-header-semantics",
+    "http-429",
+    "csharp-datetimeoffset",
+    "resilience-policy-regression-testing"
+  ],
+  "prerequisites": [
+    "HTTP response headers",
+    "C# nullable properties",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "research-grant-submission-portal",
+    "scenarioType": "partner-rate-limiter-emits-two-legal-retry-after-representations",
+    "primaryRootCause": "retry-after-http-date-is-ignored-by-delta-only-policy",
+    "failureMode": "grant-submission-client-retries-too-early-and-extends-partner-throttling",
+    "solutionPattern": "normalize-retry-after-delta-or-date-against-injected-clock-and-clamp-budget",
+    "labFormat": "http-rate-limit-policy-refactoring-workshop"
+  }
+}

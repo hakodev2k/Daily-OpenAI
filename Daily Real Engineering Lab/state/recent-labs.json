@@ -1268,10 +1268,24 @@
       "failureMode": "outbound-telemetry-frame-includes-extra-stale-bytes-and-violates-partner-length-contract",
       "solutionPattern": "serialize-only-populated-buffer-segment-and-return-rental-in-finally",
       "labFormat": "pooled-buffer-serialization-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-27-04",
+      "unitId": "UNIT-RATE-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-RATE-001-research-grant-api-retry-after-date-contract",
+      "domain": "http-rate-limit-recovery",
+      "primarySkill": "http-retry-after-header-semantics",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "research-grant-submission-portal",
+      "scenarioType": "partner-rate-limiter-emits-two-legal-retry-after-representations",
+      "primaryRootCause": "retry-after-http-date-is-ignored-by-delta-only-policy",
+      "failureMode": "grant-submission-client-retries-too-early-and-extends-partner-throttling",
+      "solutionPattern": "normalize-retry-after-delta-or-date-against-injected-clock-and-clamp-budget",
+      "labFormat": "http-rate-limit-policy-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-ZIP-001",
     "UNIT-SQL-009",
     "UNIT-UNICODE-001",
     "UNIT-SEARCH-001",
@@ -1294,14 +1308,14 @@
     "UNIT-SCHED-001",
     "UNIT-CONTRACT-001",
     "UNIT-DAG-001",
-    "UNIT-POOL-001"
+    "UNIT-POOL-001",
+    "UNIT-RATE-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-zip-archive": 1,
         "postgresql-sql-semantics": 1,
         "dotnet-unicode-identity": 1,
         "search-index-operations": 1,
@@ -1324,21 +1338,21 @@
         "dotnet-periodic-scheduling": 1,
         "api-contract-evolution": 1,
         "dotnet-workflow-dependency-planning": 1,
-        "dotnet-buffer-serialization": 1
+        "dotnet-buffer-serialization": 1,
+        "http-rate-limit-recovery": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 9,
+        "L2": 8,
         "L1": 5,
         "L5": 2,
         "L3": 5,
-        "L4": 3
+        "L4": 4
       },
       "labFormat": {
-        "archive-finalization-lifecycle-investigation": 1,
         "sql-three-valued-logic-investigation": 1,
         "unicode-identity-contract-deterministic-failure": 1,
         "search-index-migration-design-decision": 1,
@@ -1361,7 +1375,8 @@
         "scheduled-window-reconciliation-refactoring-workshop": 1,
         "b2b-contract-evolution-design-decision": 1,
         "dependency-graph-production-incident": 1,
-        "pooled-buffer-serialization-deterministic-failure": 1
+        "pooled-buffer-serialization-deterministic-failure": 1,
+        "http-rate-limit-policy-refactoring-workshop": 1
       }
     }
   }
