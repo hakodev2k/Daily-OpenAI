@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-FS-001",
-    "runSlot": "2026-10-26-18",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-FS-001-dam-gate-schedule-snapshot-publication",
+    "unitId": "UNIT-PAR-001",
+    "runSlot": "2026-10-26-19",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PAR-001-permit-ocr-io-concurrency-capacity",
     "status": "READY",
-    "createdAt": "2026-10-26T18:15:59+07:00"
+    "createdAt": "2026-10-26T19:16:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 265,
-    "totalGenerated": 260,
+    "totalRunSlotsAttempted": 266,
+    "totalGenerated": 261,
     "totalFailed": 5
   },
   "learning": {

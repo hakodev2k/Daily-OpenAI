@@ -1133,10 +1133,24 @@
       "failureMode": "control-console-reads-malformed-intermediate-schedule-during-refresh",
       "solutionPattern": "write-complete-same-directory-staging-file-then-atomic-name-replacement-with-cleanup",
       "labFormat": "filesystem-snapshot-consistency-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-19",
+      "unitId": "UNIT-PAR-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PAR-001-permit-ocr-io-concurrency-capacity",
+      "domain": "dotnet-io-parallelism",
+      "primarySkill": "io-bound-parallelism-capacity-planning",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-permit-document-ocr-import",
+      "scenarioType": "independent-io-bound-document-batch-misses-sla-despite-partner-headroom",
+      "primaryRootCause": "cpu-derived-low-parallelism-policy-ignores-operator-io-concurrency-setting",
+      "failureMode": "batch-throughput-limited-to-two-inflight-ocr-calls-while-downstream-allows-eight",
+      "solutionPattern": "configurable-bounded-io-parallelism-clamped-to-downstream-capacity",
+      "labFormat": "io-capacity-configuration-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-SLO-001",
     "UNIT-PQ-001",
     "UNIT-ARCH-007",
     "UNIT-CLAIMS-001",
@@ -1159,14 +1173,14 @@
     "UNIT-TCS-001",
     "UNIT-CSV-001",
     "UNIT-REDIR-001",
-    "UNIT-FS-001"
+    "UNIT-FS-001",
+    "UNIT-PAR-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "observability-slo-engineering": 1,
         "dotnet-priority-queue-semantics": 1,
         "privacy-data-architecture": 1,
         "aspnet-core-authorization": 1,
@@ -1189,22 +1203,22 @@
         "dotnet-async-coordination": 1,
         "dotnet-csv-data-ingestion": 1,
         "http-redirect-authentication": 1,
-        "dotnet-filesystem-consistency": 1
+        "dotnet-filesystem-consistency": 1,
+        "dotnet-io-parallelism": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L5": 2,
         "L1": 5,
         "L6": 1,
-        "L2": 8,
+        "L2": 9,
         "L3": 5,
-        "L4": 3
+        "L4": 3,
+        "L5": 1
       },
       "labFormat": {
-        "slo-alert-policy-design-decision": 1,
         "priority-scheduler-order-contract-deterministic-failure": 1,
         "cross-store-erasure-architecture-case-study": 1,
         "federated-role-claim-contract-investigation": 1,
@@ -1227,7 +1241,8 @@
         "async-coordination-refactoring-workshop": 1,
         "partner-data-import-deterministic-failure": 1,
         "outbound-auth-redirect-production-incident": 1,
-        "filesystem-snapshot-consistency-investigation": 1
+        "filesystem-snapshot-consistency-investigation": 1,
+        "io-capacity-configuration-investigation": 1
       }
     }
   }
