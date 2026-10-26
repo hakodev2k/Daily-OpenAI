@@ -1,0 +1,58 @@
+{
+  "unitId": "UNIT-JOPT-001",
+  "runSlot": "2026-10-26-22",
+  "title": "Museum condition JSON export: format switch failure",
+  "domain": "dotnet-json-serialization-options",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-26T22:23:40.761+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "jsonserializeroptions-mutation-lifecycle",
+    "system-text-json",
+    "shared-configuration-lifecycle",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "json-serialization-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "museum-artifact-condition-report-export",
+    "scenarioType": "same-process-alternating-machine-and-human-json-export",
+    "primaryRootCause": "jsonserializeroptions-frozen-after-first-serialization-but-reconfigured-per-export",
+    "failureMode": "second-report-format-switch-throws-invalidoperationexception",
+    "solutionPattern": "preconfigure-separate-reusable-readonly-json-serializer-option-profiles",
+    "labFormat": "json-serializer-options-lifecycle-deterministic-failure"
+  },
+  "manifest": [
+    "README.md",
+    "docs/concepts-after-lab.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/ConditionReportExporter.cs",
+    "solution/README.md",
+    "starter/ConditionLab.csproj",
+    "starter/ConditionReportExporter.cs",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ],
+  "validationNotes": "Strict static review only; code was not executed (GitHub-only tool scope)."
+}

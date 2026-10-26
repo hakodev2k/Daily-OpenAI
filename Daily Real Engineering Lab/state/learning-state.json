@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LOG-001",
-    "runSlot": "2026-10-26-21",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LOG-001-aircraft-warranty-claim-structured-logging",
+    "unitId": "UNIT-JOPT-001",
+    "runSlot": "2026-10-26-22",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-JOPT-001-museum-condition-json-format-switch",
     "status": "READY",
-    "createdAt": "2026-10-26T21:24:17.674+07:00"
+    "createdAt": "2026-10-26T22:23:40.761+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 268,
-    "totalGenerated": 263,
+    "totalRunSlotsAttempted": 269,
+    "totalGenerated": 264,
     "totalFailed": 5
   },
   "learning": {

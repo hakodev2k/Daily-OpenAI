@@ -1178,10 +1178,24 @@
       "failureMode": "human-readable-warning-present-but-structured-claim-and-part-fields-absent",
       "solutionPattern": "parameterized-message-template-preserves-named-structured-properties",
       "labFormat": "structured-logging-evidence-production-incident"
+    },
+    {
+      "runSlot": "2026-10-26-22",
+      "unitId": "UNIT-JOPT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-JOPT-001-museum-condition-json-format-switch",
+      "domain": "dotnet-json-serialization-options",
+      "primarySkill": "jsonserializeroptions-mutation-lifecycle",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "museum-artifact-condition-report-export",
+      "scenarioType": "same-process-alternating-machine-and-human-json-export",
+      "primaryRootCause": "jsonserializeroptions-frozen-after-first-serialization-but-reconfigured-per-export",
+      "failureMode": "second-report-format-switch-throws-invalidoperationexception",
+      "solutionPattern": "preconfigure-separate-reusable-readonly-json-serializer-option-profiles",
+      "labFormat": "json-serializer-options-lifecycle-deterministic-failure"
     }
   ],
   "rolling24": [
-    "UNIT-CLAIMS-001",
     "UNIT-SEM-001",
     "UNIT-TZ-001",
     "UNIT-ASP-006",
@@ -1204,14 +1218,14 @@
     "UNIT-FS-001",
     "UNIT-PAR-001",
     "UNIT-PGIDX-001",
-    "UNIT-LOG-001"
+    "UNIT-LOG-001",
+    "UNIT-JOPT-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "aspnet-core-authorization": 1,
         "dotnet-concurrency-capacity": 1,
         "dotnet-calendar-timezone": 1,
         "aspnet-core-middleware": 1,
@@ -1234,21 +1248,21 @@
         "dotnet-filesystem-consistency": 1,
         "dotnet-io-parallelism": 1,
         "postgresql-index-inference": 1,
-        "dotnet-structured-logging": 1
+        "dotnet-structured-logging": 1,
+        "dotnet-json-serialization-options": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L2": 10,
         "L3": 6,
         "L4": 3,
-        "L1": 4,
+        "L1": 5,
+        "L2": 9,
         "L5": 1
       },
       "labFormat": {
-        "federated-role-claim-contract-investigation": 1,
         "cancellation-capacity-contract-incident": 1,
         "calendar-timezone-refactoring-workshop": 1,
         "middleware-branch-deterministic-failure": 1,
@@ -1271,7 +1285,8 @@
         "filesystem-snapshot-consistency-investigation": 1,
         "io-capacity-configuration-investigation": 1,
         "postgresql-upsert-index-contract-investigation": 1,
-        "structured-logging-evidence-production-incident": 1
+        "structured-logging-evidence-production-incident": 1,
+        "json-serializer-options-lifecycle-deterministic-failure": 1
       }
     }
   }
