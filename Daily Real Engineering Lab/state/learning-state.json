@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ENDIAN-001",
-    "runSlot": "2026-10-26-23",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ENDIAN-001-stadium-turnstile-frame-byte-order",
+    "unitId": "UNIT-SCHED-001",
+    "runSlot": "2026-10-27-00",
+    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-SCHED-001-ad-impression-hourly-window-reconciliation",
     "status": "READY",
-    "createdAt": "2026-10-26T23:15:05+07:00"
+    "createdAt": "2026-10-27T00:13:48+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 270,
-    "totalGenerated": 265,
+    "totalRunSlotsAttempted": 271,
+    "totalGenerated": 266,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 49,
+    "elapsedDays": 50,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",

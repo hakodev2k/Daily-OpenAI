@@ -1,0 +1,2 @@
+# Hint 3 — Hướng cơ chế
+`PeriodicTimer` không giữ một hàng đợi vô hạn các tick đã trôi qua. Dùng checkpoint của cửa sổ hoàn thành và mốc `now` để xác định công việc còn nợ; chỉ tiến checkpoint sau khi xử lý thành công.

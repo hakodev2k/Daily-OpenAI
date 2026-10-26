@@ -1208,10 +1208,24 @@
       "failureMode": "valid-gate-frame-maps-to-unknown-gate-and-inflated-entry-count",
       "solutionPattern": "protocol-explicit-byte-order-decoding-with-binary-primitives-and-contract-fixtures",
       "labFormat": "binary-protocol-evidence-led-investigation"
+    },
+    {
+      "runSlot": "2026-10-27-00",
+      "unitId": "UNIT-SCHED-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-SCHED-001-ad-impression-hourly-window-reconciliation",
+      "domain": "dotnet-periodic-scheduling",
+      "primarySkill": "periodictimer-tick-coalescing-and-window-checkpoints",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "digital-advertising-hourly-impression-settlement",
+      "scenarioType": "slow-hourly-settlement-leaves-unprocessed-accounting-windows",
+      "primaryRootCause": "periodic-timer-wakeup-treated-as-one-logical-window-despite-coalesced-ticks",
+      "failureMode": "hourly-ad-impression-windows-remain-unsettled-after-worker-lag",
+      "solutionPattern": "watermark-driven-due-window-reconciliation-with-checkpoint-after-success",
+      "labFormat": "scheduled-window-reconciliation-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-TZ-001",
     "UNIT-ASP-006",
     "UNIT-ITER-001",
     "UNIT-HTTP-012",
@@ -1234,14 +1248,14 @@
     "UNIT-PGIDX-001",
     "UNIT-LOG-001",
     "UNIT-JOPT-001",
-    "UNIT-ENDIAN-001"
+    "UNIT-ENDIAN-001",
+    "UNIT-SCHED-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-calendar-timezone": 1,
         "aspnet-core-middleware": 1,
         "dotnet-async-streams": 1,
         "http-client-lifecycle": 1,
@@ -1264,21 +1278,21 @@
         "postgresql-index-inference": 1,
         "dotnet-structured-logging": 1,
         "dotnet-json-serialization-options": 1,
-        "dotnet-binary-protocols": 1
+        "dotnet-binary-protocols": 1,
+        "dotnet-periodic-scheduling": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L4": 3,
         "L1": 5,
         "L2": 10,
         "L3": 5,
-        "L5": 1
+        "L5": 1,
+        "L4": 3
       },
       "labFormat": {
-        "calendar-timezone-refactoring-workshop": 1,
         "middleware-branch-deterministic-failure": 1,
         "async-stream-consumer-cancellation-investigation": 1,
         "http-retry-request-lifecycle-production-incident": 1,
@@ -1301,7 +1315,8 @@
         "postgresql-upsert-index-contract-investigation": 1,
         "structured-logging-evidence-production-incident": 1,
         "json-serializer-options-lifecycle-deterministic-failure": 1,
-        "binary-protocol-evidence-led-investigation": 1
+        "binary-protocol-evidence-led-investigation": 1,
+        "scheduled-window-reconciliation-refactoring-workshop": 1
       }
     }
   }
