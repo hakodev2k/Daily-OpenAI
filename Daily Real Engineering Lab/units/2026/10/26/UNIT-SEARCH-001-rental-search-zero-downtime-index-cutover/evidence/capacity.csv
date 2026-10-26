@@ -1,0 +1,5 @@
+scenario,documents,backfillDocsPerSec,sourceEventsPerSec,replayEventsPerSec,cdcRetentionHours
+baseline,18000000,900,350,500,72
+campaign-surge,18000000,900,600,500,72
+replay-degraded,18000000,900,350,320,72
+slow-backfill,18000000,450,350,500,72

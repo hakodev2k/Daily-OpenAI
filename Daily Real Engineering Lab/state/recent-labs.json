@@ -954,12 +954,26 @@
       "failureMode": "one-visitor-pass-is-admitted-twice-when-inputs-use-different-unicode-compositions",
       "solutionPattern": "normalize-to-a-canonical-unicode-form-before-ordinal-identity-comparison",
       "labFormat": "unicode-identity-contract-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-26-07",
+      "unitId": "UNIT-SEARCH-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SEARCH-001-rental-search-zero-downtime-index-cutover",
+      "domain": "search-index-operations",
+      "primarySkill": "search-index-zero-downtime-migration",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "short-term-rental-discovery-marketplace",
+      "scenarioType": "search-schema-v2-rollout-with-live-source-updates",
+      "primaryRootCause": "in-place-index-rebuild-has-no-consistent-snapshot-and-catchup-cutover-boundary",
+      "failureMode": "live-search-availability-and-freshness-regress-during-index-schema-replacement",
+      "solutionPattern": "versioned-index-snapshot-plus-cdc-catchup-validated-alias-cutover-with-rollback",
+      "labFormat": "search-index-migration-design-decision"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "distributed-systems": 1,
       "dotnet-regex-performance": 1,
       "aspnet-core-rate-limiting": 1,
       "dotnet-async-diagnostics": 1,
@@ -982,18 +996,19 @@
       "http-client-lifecycle": 1,
       "dotnet-zip-archive": 1,
       "postgresql-sql-semantics": 1,
-      "dotnet-unicode-identity": 1
+      "dotnet-unicode-identity": 1,
+      "search-index-operations": 1
     },
     "byDifficulty": {
-      "D4": 18,
-      "D3": 6
+      "D3": 6,
+      "D4": 18
     },
     "byMaturity": {
-      "L2": 8,
       "L1": 6,
+      "L2": 7,
       "L3": 5,
       "L4": 3,
-      "L5": 1,
+      "L5": 2,
       "L6": 1
     },
     "byFormat": {
@@ -1005,7 +1020,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "distributed-systems": 1,
         "dotnet-regex-performance": 1,
         "aspnet-core-rate-limiting": 1,
         "dotnet-async-diagnostics": 1,
@@ -1028,22 +1042,22 @@
         "http-client-lifecycle": 1,
         "dotnet-zip-archive": 1,
         "postgresql-sql-semantics": 1,
-        "dotnet-unicode-identity": 1
+        "dotnet-unicode-identity": 1,
+        "search-index-operations": 1
       },
       "difficulty": {
-        "D4": 18,
-        "D3": 6
+        "D3": 6,
+        "D4": 18
       },
       "maturityLevel": {
-        "L2": 8,
         "L1": 6,
+        "L2": 7,
         "L3": 5,
         "L4": 3,
-        "L5": 1,
+        "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "distributed-lease-investigation": 1,
         "regex-input-validation-deterministic-failure": 1,
         "tenant-quota-partition-investigation": 1,
         "multi-fault-batch-diagnostics-production-incident": 1,
@@ -1066,7 +1080,8 @@
         "http-retry-request-lifecycle-production-incident": 1,
         "archive-finalization-lifecycle-investigation": 1,
         "sql-three-valued-logic-investigation": 1,
-        "unicode-identity-contract-deterministic-failure": 1
+        "unicode-identity-contract-deterministic-failure": 1,
+        "search-index-migration-design-decision": 1
       }
     }
   }
