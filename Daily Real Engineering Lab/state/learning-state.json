@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CSV-001",
-    "runSlot": "2026-10-26-16",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-CSV-001-clinical-trial-import-column-drift",
+    "unitId": "UNIT-REDIR-001",
+    "runSlot": "2026-10-26-17",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-REDIR-001-transit-pass-redirect-auth-boundary",
     "status": "READY",
-    "createdAt": "2026-10-26T16:16:54.058+07:00"
+    "createdAt": "2026-10-26T17:05:14+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 263,
-    "totalGenerated": 258,
+    "totalRunSlotsAttempted": 264,
+    "totalGenerated": 259,
     "totalFailed": 5
   },
   "learning": {
