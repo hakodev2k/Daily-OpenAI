@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PAR-001",
-    "runSlot": "2026-10-26-19",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PAR-001-permit-ocr-io-concurrency-capacity",
+    "unitId": "UNIT-PGIDX-001",
+    "runSlot": "2026-10-26-20",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PGIDX-001-library-patron-upsert-partial-unique-index",
     "status": "READY",
-    "createdAt": "2026-10-26T19:16:31+07:00"
+    "createdAt": "2026-10-26T20:20:02.951+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 266,
-    "totalGenerated": 261,
+    "totalRunSlotsAttempted": 267,
+    "totalGenerated": 262,
     "totalFailed": 5
   },
   "learning": {

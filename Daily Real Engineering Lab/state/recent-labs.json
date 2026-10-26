@@ -1148,10 +1148,24 @@
       "failureMode": "batch-throughput-limited-to-two-inflight-ocr-calls-while-downstream-allows-eight",
       "solutionPattern": "configurable-bounded-io-parallelism-clamped-to-downstream-capacity",
       "labFormat": "io-capacity-configuration-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-20",
+      "unitId": "UNIT-PGIDX-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PGIDX-001-library-patron-upsert-partial-unique-index",
+      "domain": "postgresql-index-inference",
+      "primarySkill": "postgresql-on-conflict-partial-index-inference",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-library-patron-card-import",
+      "scenarioType": "idempotent-patron-import-fails-after-soft-delete-index-policy-rollout",
+      "primaryRootCause": "on-conflict-target-does-not-match-partial-unique-index-predicate",
+      "failureMode": "valid-import-raises-no-matching-unique-constraint-error-despite-active-uniqueness-index",
+      "solutionPattern": "infer-partial-unique-index-using-matching-conflict-target-predicate-and-regression-fixtures",
+      "labFormat": "postgresql-upsert-index-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-PQ-001",
     "UNIT-ARCH-007",
     "UNIT-CLAIMS-001",
     "UNIT-SEM-001",
@@ -1174,14 +1188,14 @@
     "UNIT-CSV-001",
     "UNIT-REDIR-001",
     "UNIT-FS-001",
-    "UNIT-PAR-001"
+    "UNIT-PAR-001",
+    "UNIT-PGIDX-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-priority-queue-semantics": 1,
         "privacy-data-architecture": 1,
         "aspnet-core-authorization": 1,
         "dotnet-concurrency-capacity": 1,
@@ -1204,22 +1218,22 @@
         "dotnet-csv-data-ingestion": 1,
         "http-redirect-authentication": 1,
         "dotnet-filesystem-consistency": 1,
-        "dotnet-io-parallelism": 1
+        "dotnet-io-parallelism": 1,
+        "postgresql-index-inference": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 20,
+        "D3": 4
       },
       "maturityLevel": {
-        "L1": 5,
         "L6": 1,
-        "L2": 9,
+        "L2": 10,
         "L3": 5,
         "L4": 3,
+        "L1": 4,
         "L5": 1
       },
       "labFormat": {
-        "priority-scheduler-order-contract-deterministic-failure": 1,
         "cross-store-erasure-architecture-case-study": 1,
         "federated-role-claim-contract-investigation": 1,
         "cancellation-capacity-contract-incident": 1,
@@ -1242,7 +1256,8 @@
         "partner-data-import-deterministic-failure": 1,
         "outbound-auth-redirect-production-incident": 1,
         "filesystem-snapshot-consistency-investigation": 1,
-        "io-capacity-configuration-investigation": 1
+        "io-capacity-configuration-investigation": 1,
+        "postgresql-upsert-index-contract-investigation": 1
       }
     }
   }
