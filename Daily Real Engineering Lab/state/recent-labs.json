@@ -1163,10 +1163,24 @@
       "failureMode": "valid-import-raises-no-matching-unique-constraint-error-despite-active-uniqueness-index",
       "solutionPattern": "infer-partial-unique-index-using-matching-conflict-target-predicate-and-regression-fixtures",
       "labFormat": "postgresql-upsert-index-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-21",
+      "unitId": "UNIT-LOG-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LOG-001-aircraft-warranty-claim-structured-logging",
+      "domain": "dotnet-structured-logging",
+      "primarySkill": "ilogger-message-template-structured-state",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "aviation-spare-parts-warranty-claims",
+      "scenarioType": "incident-triage-cannot-filter-claim-logs-by-part-number",
+      "primaryRootCause": "interpolated-logging-message-is-rendered-before-structured-state-capture",
+      "failureMode": "human-readable-warning-present-but-structured-claim-and-part-fields-absent",
+      "solutionPattern": "parameterized-message-template-preserves-named-structured-properties",
+      "labFormat": "structured-logging-evidence-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-ARCH-007",
     "UNIT-CLAIMS-001",
     "UNIT-SEM-001",
     "UNIT-TZ-001",
@@ -1189,14 +1203,14 @@
     "UNIT-REDIR-001",
     "UNIT-FS-001",
     "UNIT-PAR-001",
-    "UNIT-PGIDX-001"
+    "UNIT-PGIDX-001",
+    "UNIT-LOG-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "privacy-data-architecture": 1,
         "aspnet-core-authorization": 1,
         "dotnet-concurrency-capacity": 1,
         "dotnet-calendar-timezone": 1,
@@ -1219,22 +1233,21 @@
         "http-redirect-authentication": 1,
         "dotnet-filesystem-consistency": 1,
         "dotnet-io-parallelism": 1,
-        "postgresql-index-inference": 1
+        "postgresql-index-inference": 1,
+        "dotnet-structured-logging": 1
       },
       "difficulty": {
         "D4": 20,
         "D3": 4
       },
       "maturityLevel": {
-        "L6": 1,
         "L2": 10,
-        "L3": 5,
+        "L3": 6,
         "L4": 3,
         "L1": 4,
         "L5": 1
       },
       "labFormat": {
-        "cross-store-erasure-architecture-case-study": 1,
         "federated-role-claim-contract-investigation": 1,
         "cancellation-capacity-contract-incident": 1,
         "calendar-timezone-refactoring-workshop": 1,
@@ -1257,7 +1270,8 @@
         "outbound-auth-redirect-production-incident": 1,
         "filesystem-snapshot-consistency-investigation": 1,
         "io-capacity-configuration-investigation": 1,
-        "postgresql-upsert-index-contract-investigation": 1
+        "postgresql-upsert-index-contract-investigation": 1,
+        "structured-logging-evidence-production-incident": 1
       }
     }
   }

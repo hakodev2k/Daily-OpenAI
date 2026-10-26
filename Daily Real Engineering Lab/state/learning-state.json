@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PGIDX-001",
-    "runSlot": "2026-10-26-20",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PGIDX-001-library-patron-upsert-partial-unique-index",
+    "unitId": "UNIT-LOG-001",
+    "runSlot": "2026-10-26-21",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LOG-001-aircraft-warranty-claim-structured-logging",
     "status": "READY",
-    "createdAt": "2026-10-26T20:20:02.951+07:00"
+    "createdAt": "2026-10-26T21:24:17.674+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 267,
-    "totalGenerated": 262,
+    "totalRunSlotsAttempted": 268,
+    "totalGenerated": 263,
     "totalFailed": 5
   },
   "learning": {
