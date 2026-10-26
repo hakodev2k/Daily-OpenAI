@@ -969,12 +969,26 @@
       "failureMode": "live-search-availability-and-freshness-regress-during-index-schema-replacement",
       "solutionPattern": "versioned-index-snapshot-plus-cdc-catchup-validated-alias-cutover-with-rollback",
       "labFormat": "search-index-migration-design-decision"
+    },
+    {
+      "runSlot": "2026-10-26-08",
+      "unitId": "UNIT-JSON-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-JSON-001-flood-alert-dispatch-lifetime",
+      "domain": "dotnet-json-dom",
+      "primarySkill": "jsondocument-jsonelement-ownership",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "coastal-flood-warning-bulletin-routing",
+      "scenarioType": "parsed-json-alert-queued-for-deferred-delivery",
+      "primaryRootCause": "jsonelement-escapes-disposed-jsondocument",
+      "failureMode": "queued-alert-processing-throws-objectdisposedexception-despite-valid-input",
+      "solutionPattern": "detach-json-value-at-document-ownership-boundary-with-clone",
+      "labFormat": "json-dom-lifetime-investigation"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-regex-performance": 1,
       "aspnet-core-rate-limiting": 1,
       "dotnet-async-diagnostics": 1,
       "aspnet-core-options": 1,
@@ -997,17 +1011,18 @@
       "dotnet-zip-archive": 1,
       "postgresql-sql-semantics": 1,
       "dotnet-unicode-identity": 1,
-      "search-index-operations": 1
+      "search-index-operations": 1,
+      "dotnet-json-dom": 1
     },
     "byDifficulty": {
-      "D3": 6,
-      "D4": 18
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L1": 6,
-      "L2": 7,
+      "L2": 8,
       "L3": 5,
       "L4": 3,
+      "L1": 5,
       "L5": 2,
       "L6": 1
     },
@@ -1020,7 +1035,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-regex-performance": 1,
         "aspnet-core-rate-limiting": 1,
         "dotnet-async-diagnostics": 1,
         "aspnet-core-options": 1,
@@ -1043,22 +1057,22 @@
         "dotnet-zip-archive": 1,
         "postgresql-sql-semantics": 1,
         "dotnet-unicode-identity": 1,
-        "search-index-operations": 1
+        "search-index-operations": 1,
+        "dotnet-json-dom": 1
       },
       "difficulty": {
-        "D3": 6,
-        "D4": 18
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L1": 6,
-        "L2": 7,
+        "L2": 8,
         "L3": 5,
         "L4": 3,
+        "L1": 5,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "regex-input-validation-deterministic-failure": 1,
         "tenant-quota-partition-investigation": 1,
         "multi-fault-batch-diagnostics-production-incident": 1,
         "credential-rotation-refactoring-workshop": 1,
@@ -1081,7 +1095,8 @@
         "archive-finalization-lifecycle-investigation": 1,
         "sql-three-valued-logic-investigation": 1,
         "unicode-identity-contract-deterministic-failure": 1,
-        "search-index-migration-design-decision": 1
+        "search-index-migration-design-decision": 1,
+        "json-dom-lifetime-investigation": 1
       }
     }
   }

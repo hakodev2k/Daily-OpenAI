@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SEARCH-001",
-    "runSlot": "2026-10-26-07",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SEARCH-001-rental-search-zero-downtime-index-cutover",
+    "unitId": "UNIT-JSON-001",
+    "runSlot": "2026-10-26-08",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-JSON-001-flood-alert-dispatch-lifetime",
     "status": "READY",
-    "createdAt": "2026-10-26T07:10:11+07:00"
+    "createdAt": "2026-10-26T08:05:43+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 254,
-    "totalGenerated": 249,
+    "totalRunSlotsAttempted": 255,
+    "totalGenerated": 250,
     "totalFailed": 5
   },
   "learning": {
