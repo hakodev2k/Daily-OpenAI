@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-EF-015",
+  "runSlot": "2026-10-26-10",
+  "title": "Điểm thi đã công bố bất ngờ quay về Draft sau khi bổ sung ghi chú",
+  "domain": "ef-core",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-26T10:14:52.651+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "ef-core-executeupdate",
+    "change-tracker-state-management",
+    "detached-vs-tracked-updates",
+    "persistence-regression-testing"
+  ],
+  "prerequisites": [
+    "ef-core-change-tracking-basics",
+    "sql-update-semantics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "vocational-certification-exam-grade-publication",
+    "scenarioType": "bulk-grade-release-followed-by-review-note-amendment",
+    "primaryRootCause": "executeupdate-bypasses-change-tracker-then-full-entity-update-overwrites-database-state",
+    "failureMode": "published-exam-grade-silently-reverts-to-draft-after-review-note-save",
+    "solutionPattern": "reload-tracked-entity-after-set-based-update-and-persist-only-intended-property",
+    "labFormat": "ef-core-bulk-update-refactoring-workshop"
+  }
+}

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HOST-001",
-    "runSlot": "2026-10-26-09",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-HOST-001-air-quality-report-host-working-directory",
+    "unitId": "UNIT-EF-015",
+    "runSlot": "2026-10-26-10",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-EF-015-exam-grades-bulk-publish-tracker-divergence",
     "status": "READY",
-    "createdAt": "2026-10-26T09:15:35.926+07:00"
+    "createdAt": "2026-10-26T10:14:52.651+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 256,
-    "totalGenerated": 251,
+    "totalRunSlotsAttempted": 257,
+    "totalGenerated": 252,
     "totalFailed": 5
   },
   "learning": {

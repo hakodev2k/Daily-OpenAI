@@ -999,12 +999,26 @@
       "failureMode": "report-job-file-not-found-only-in-scheduled-host",
       "solutionPattern": "anchor-packaged-template-to-application-base-directory",
       "labFormat": "deployment-launch-context-production-incident"
+    },
+    {
+      "runSlot": "2026-10-26-10",
+      "unitId": "UNIT-EF-015",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-EF-015-exam-grades-bulk-publish-tracker-divergence",
+      "domain": "ef-core",
+      "primarySkill": "ef-core-bulk-update-tracker-coherence",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "vocational-certification-exam-grade-publication",
+      "scenarioType": "bulk-grade-release-followed-by-review-note-amendment",
+      "primaryRootCause": "executeupdate-bypasses-change-tracker-then-full-entity-update-overwrites-database-state",
+      "failureMode": "published-exam-grade-silently-reverts-to-draft-after-review-note-save",
+      "solutionPattern": "reload-tracked-entity-after-set-based-update-and-persist-only-intended-property",
+      "labFormat": "ef-core-bulk-update-refactoring-workshop"
     }
   ],
   "rolling24": {
     "total": 24,
     "byDomain": {
-      "dotnet-async-diagnostics": 1,
       "aspnet-core-options": 1,
       "http-uri-resolution": 1,
       "dotnet-execution-context": 1,
@@ -1027,17 +1041,18 @@
       "dotnet-unicode-identity": 1,
       "search-index-operations": 1,
       "dotnet-json-dom": 1,
-      "dotnet-hosting-deployment": 1
+      "dotnet-hosting-deployment": 1,
+      "ef-core": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
-      "L4": 3,
+      "L4": 4,
       "L1": 5,
       "L2": 7,
+      "L3": 5,
       "L5": 2,
       "L6": 1
     },
@@ -1050,7 +1065,6 @@
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-async-diagnostics": 1,
         "aspnet-core-options": 1,
         "http-uri-resolution": 1,
         "dotnet-execution-context": 1,
@@ -1073,22 +1087,22 @@
         "dotnet-unicode-identity": 1,
         "search-index-operations": 1,
         "dotnet-json-dom": 1,
-        "dotnet-hosting-deployment": 1
+        "dotnet-hosting-deployment": 1,
+        "ef-core": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
-        "L4": 3,
+        "L4": 4,
         "L1": 5,
         "L2": 7,
+        "L3": 5,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "multi-fault-batch-diagnostics-production-incident": 1,
         "credential-rotation-refactoring-workshop": 1,
         "http-uri-routing-deterministic-failure": 1,
         "execution-context-propagation-investigation": 1,
@@ -1111,7 +1125,8 @@
         "unicode-identity-contract-deterministic-failure": 1,
         "search-index-migration-design-decision": 1,
         "json-dom-lifetime-investigation": 1,
-        "deployment-launch-context-production-incident": 1
+        "deployment-launch-context-production-incident": 1,
+        "ef-core-bulk-update-refactoring-workshop": 1
       }
     }
   }
