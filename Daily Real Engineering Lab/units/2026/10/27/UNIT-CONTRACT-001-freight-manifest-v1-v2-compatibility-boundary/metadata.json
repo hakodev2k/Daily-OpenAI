@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-CONTRACT-001",
+  "runSlot": "2026-10-27-01",
+  "title": "Tiến hóa hợp đồng manifest v1 → v2 mà không làm gián đoạn đối tác",
+  "domain": "api-contract-evolution",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-27T01:17:06+07:00",
+  "estimatedMinutes": 85,
+  "primarySkill": "versioned-api-ingress-compatibility",
+  "skills": [
+    "api-contract-versioning",
+    "backward-compatibility",
+    "json-payload-validation",
+    "contract-testing",
+    "migration-rollout",
+    "architecture-decision-record"
+  ],
+  "prerequisites": [
+    "C# records và System.Text.Json cơ bản",
+    "JSON request contract",
+    "dotnet CLI và PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "intermodal-freight-manifest-partner-integration",
+    "scenarioType": "parallel-v1-v2-b2b-payload-rollout-with-legacy-partners",
+    "primaryRootCause": "single-v2-ingress-schema-replaces-v1-wire-contract-before-partner-migration",
+    "failureMode": "valid-v1-manifests-rejected-and-invalid-v2-variants-silently-accepted",
+    "solutionPattern": "explicit-versioned-ingress-adapters-to-stable-canonical-model-with-phased-retirement",
+    "labFormat": "b2b-contract-evolution-design-decision"
+  }
+}

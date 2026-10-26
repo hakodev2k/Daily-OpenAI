@@ -1223,10 +1223,24 @@
       "failureMode": "hourly-ad-impression-windows-remain-unsettled-after-worker-lag",
       "solutionPattern": "watermark-driven-due-window-reconciliation-with-checkpoint-after-success",
       "labFormat": "scheduled-window-reconciliation-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-27-01",
+      "unitId": "UNIT-CONTRACT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CONTRACT-001-freight-manifest-v1-v2-compatibility-boundary",
+      "domain": "api-contract-evolution",
+      "primarySkill": "versioned-api-ingress-compatibility",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "intermodal-freight-manifest-partner-integration",
+      "scenarioType": "parallel-v1-v2-b2b-payload-rollout-with-legacy-partners",
+      "primaryRootCause": "single-v2-ingress-schema-replaces-v1-wire-contract-before-partner-migration",
+      "failureMode": "valid-v1-manifests-rejected-and-invalid-v2-variants-silently-accepted",
+      "solutionPattern": "explicit-versioned-ingress-adapters-to-stable-canonical-model-with-phased-retirement",
+      "labFormat": "b2b-contract-evolution-design-decision"
     }
   ],
   "rolling24": [
-    "UNIT-ASP-006",
     "UNIT-ITER-001",
     "UNIT-HTTP-012",
     "UNIT-ZIP-001",
@@ -1249,14 +1263,14 @@
     "UNIT-LOG-001",
     "UNIT-JOPT-001",
     "UNIT-ENDIAN-001",
-    "UNIT-SCHED-001"
+    "UNIT-SCHED-001",
+    "UNIT-CONTRACT-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "aspnet-core-middleware": 1,
         "dotnet-async-streams": 1,
         "http-client-lifecycle": 1,
         "dotnet-zip-archive": 1,
@@ -1279,21 +1293,21 @@
         "dotnet-structured-logging": 1,
         "dotnet-json-serialization-options": 1,
         "dotnet-binary-protocols": 1,
-        "dotnet-periodic-scheduling": 1
+        "dotnet-periodic-scheduling": 1,
+        "api-contract-evolution": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 20,
+        "D3": 4
       },
       "maturityLevel": {
-        "L1": 5,
         "L2": 10,
         "L3": 5,
-        "L5": 1,
+        "L1": 4,
+        "L5": 2,
         "L4": 3
       },
       "labFormat": {
-        "middleware-branch-deterministic-failure": 1,
         "async-stream-consumer-cancellation-investigation": 1,
         "http-retry-request-lifecycle-production-incident": 1,
         "archive-finalization-lifecycle-investigation": 1,
@@ -1316,7 +1330,8 @@
         "structured-logging-evidence-production-incident": 1,
         "json-serializer-options-lifecycle-deterministic-failure": 1,
         "binary-protocol-evidence-led-investigation": 1,
-        "scheduled-window-reconciliation-refactoring-workshop": 1
+        "scheduled-window-reconciliation-refactoring-workshop": 1,
+        "b2b-contract-evolution-design-decision": 1
       }
     }
   }
