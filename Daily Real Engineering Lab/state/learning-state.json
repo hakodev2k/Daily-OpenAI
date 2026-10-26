@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JOPT-001",
-    "runSlot": "2026-10-26-22",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-JOPT-001-museum-condition-json-format-switch",
+    "unitId": "UNIT-ENDIAN-001",
+    "runSlot": "2026-10-26-23",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ENDIAN-001-stadium-turnstile-frame-byte-order",
     "status": "READY",
-    "createdAt": "2026-10-26T22:23:40.761+07:00"
+    "createdAt": "2026-10-26T23:15:05+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 269,
-    "totalGenerated": 264,
+    "totalRunSlotsAttempted": 270,
+    "totalGenerated": 265,
     "totalFailed": 5
   },
   "learning": {

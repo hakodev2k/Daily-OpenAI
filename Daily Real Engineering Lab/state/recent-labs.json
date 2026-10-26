@@ -1193,10 +1193,24 @@
       "failureMode": "second-report-format-switch-throws-invalidoperationexception",
       "solutionPattern": "preconfigure-separate-reusable-readonly-json-serializer-option-profiles",
       "labFormat": "json-serializer-options-lifecycle-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-26-23",
+      "unitId": "UNIT-ENDIAN-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ENDIAN-001-stadium-turnstile-frame-byte-order",
+      "domain": "dotnet-binary-protocols",
+      "primarySkill": "binary-protocol-field-decoding",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "stadium-turnstile-offline-entry-telemetry",
+      "scenarioType": "binary-device-frames-reported-as-impossible-gate-and-entry-count-values",
+      "primaryRootCause": "binary-frame-multi-byte-fields-decoded-with-opposite-byte-order",
+      "failureMode": "valid-gate-frame-maps-to-unknown-gate-and-inflated-entry-count",
+      "solutionPattern": "protocol-explicit-byte-order-decoding-with-binary-primitives-and-contract-fixtures",
+      "labFormat": "binary-protocol-evidence-led-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-SEM-001",
     "UNIT-TZ-001",
     "UNIT-ASP-006",
     "UNIT-ITER-001",
@@ -1219,14 +1233,14 @@
     "UNIT-PAR-001",
     "UNIT-PGIDX-001",
     "UNIT-LOG-001",
-    "UNIT-JOPT-001"
+    "UNIT-JOPT-001",
+    "UNIT-ENDIAN-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-concurrency-capacity": 1,
         "dotnet-calendar-timezone": 1,
         "aspnet-core-middleware": 1,
         "dotnet-async-streams": 1,
@@ -1249,21 +1263,21 @@
         "dotnet-io-parallelism": 1,
         "postgresql-index-inference": 1,
         "dotnet-structured-logging": 1,
-        "dotnet-json-serialization-options": 1
+        "dotnet-json-serialization-options": 1,
+        "dotnet-binary-protocols": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
         "L4": 3,
         "L1": 5,
-        "L2": 9,
+        "L2": 10,
+        "L3": 5,
         "L5": 1
       },
       "labFormat": {
-        "cancellation-capacity-contract-incident": 1,
         "calendar-timezone-refactoring-workshop": 1,
         "middleware-branch-deterministic-failure": 1,
         "async-stream-consumer-cancellation-investigation": 1,
@@ -1286,7 +1300,8 @@
         "io-capacity-configuration-investigation": 1,
         "postgresql-upsert-index-contract-investigation": 1,
         "structured-logging-evidence-production-incident": 1,
-        "json-serializer-options-lifecycle-deterministic-failure": 1
+        "json-serializer-options-lifecycle-deterministic-failure": 1,
+        "binary-protocol-evidence-led-investigation": 1
       }
     }
   }

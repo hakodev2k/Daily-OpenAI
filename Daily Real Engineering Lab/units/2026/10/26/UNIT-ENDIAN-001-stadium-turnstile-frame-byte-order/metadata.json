@@ -1,0 +1,59 @@
+{
+  "unitId": "UNIT-ENDIAN-001",
+  "runSlot": "2026-10-26-23",
+  "title": "Stadium turnstile telemetry: binary frame interpretation drift",
+  "domain": "dotnet-binary-protocols",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-26T23:15:05+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "binary-protocol-field-decoding",
+    "system-buffers-binary",
+    "contract-testing",
+    "production-evidence-analysis"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "byte-and-ushort-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "stadium-turnstile-offline-entry-telemetry",
+    "scenarioType": "binary-device-frames-reported-as-impossible-gate-and-entry-count-values",
+    "primaryRootCause": "binary-frame-multi-byte-fields-decoded-with-opposite-byte-order",
+    "failureMode": "valid-gate-frame-maps-to-unknown-gate-and-inflated-entry-count",
+    "solutionPattern": "protocol-explicit-byte-order-decoding-with-binary-primitives-and-contract-fixtures",
+    "labFormat": "binary-protocol-evidence-led-investigation"
+  },
+  "manifest": [
+    "README.md",
+    "docs/concepts-after-lab.md",
+    "evidence/device-contract.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/GateFrameDecoder.cs",
+    "solution/README.md",
+    "starter/GateFrameDecoder.cs",
+    "starter/GateFrameLab.csproj",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ],
+  "validationNotes": "Strict static consistency review; source code was not executed (GitHub-only tool scope)."
+}
