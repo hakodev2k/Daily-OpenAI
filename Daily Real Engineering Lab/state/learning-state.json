@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DAG-001",
-    "runSlot": "2026-10-27-02",
-    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-DAG-001-fiber-cabinet-rollout-dependency-plan",
+    "unitId": "UNIT-POOL-001",
+    "runSlot": "2026-10-27-03",
+    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-POOL-001-harbor-sensor-payload-buffer-boundary",
     "status": "READY",
-    "createdAt": "2026-10-27T02:07:37+07:00"
+    "createdAt": "2026-10-27T03:11:19+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 273,
-    "totalGenerated": 268,
+    "totalRunSlotsAttempted": 274,
+    "totalGenerated": 269,
     "totalFailed": 5
   },
   "learning": {

@@ -1253,11 +1253,24 @@
       "failureMode": "cyclic-or-unknown-prerequisites-yield-successful-partial-rollout-plan",
       "solutionPattern": "validate-dependency-identities-and-use-complete-topological-plan-with-explicit-cycle-rejection",
       "labFormat": "dependency-graph-production-incident"
+    },
+    {
+      "runSlot": "2026-10-27-03",
+      "unitId": "UNIT-POOL-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-POOL-001-harbor-sensor-payload-buffer-boundary",
+      "domain": "dotnet-buffer-serialization",
+      "primarySkill": "arraypool-valid-length-boundary",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "harbor-navigation-sensor-telemetry-relay",
+      "scenarioType": "short-telemetry-payload-encoded-into-oversized-transport-frame",
+      "primaryRootCause": "pooled-array-capacity-used-instead-of-valid-payload-length-during-base64-serialization",
+      "failureMode": "outbound-telemetry-frame-includes-extra-stale-bytes-and-violates-partner-length-contract",
+      "solutionPattern": "serialize-only-populated-buffer-segment-and-return-rental-in-finally",
+      "labFormat": "pooled-buffer-serialization-deterministic-failure"
     }
   ],
   "rolling24": [
-    "UNIT-ITER-001",
-    "UNIT-HTTP-012",
     "UNIT-ZIP-001",
     "UNIT-SQL-009",
     "UNIT-UNICODE-001",
@@ -1279,14 +1292,15 @@
     "UNIT-JOPT-001",
     "UNIT-ENDIAN-001",
     "UNIT-SCHED-001",
-    "UNIT-CONTRACT-001"
+    "UNIT-CONTRACT-001",
+    "UNIT-DAG-001",
+    "UNIT-POOL-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "http-client-lifecycle": 1,
         "dotnet-zip-archive": 1,
         "postgresql-sql-semantics": 1,
         "dotnet-unicode-identity": 1,
@@ -1309,21 +1323,21 @@
         "dotnet-binary-protocols": 1,
         "dotnet-periodic-scheduling": 1,
         "api-contract-evolution": 1,
-        "dotnet-workflow-dependency-planning": 1
+        "dotnet-workflow-dependency-planning": 1,
+        "dotnet-buffer-serialization": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
         "L2": 9,
-        "L1": 4,
+        "L1": 5,
         "L5": 2,
+        "L3": 5,
         "L4": 3
       },
       "labFormat": {
-        "http-retry-request-lifecycle-production-incident": 1,
         "archive-finalization-lifecycle-investigation": 1,
         "sql-three-valued-logic-investigation": 1,
         "unicode-identity-contract-deterministic-failure": 1,
@@ -1346,7 +1360,8 @@
         "binary-protocol-evidence-led-investigation": 1,
         "scheduled-window-reconciliation-refactoring-workshop": 1,
         "b2b-contract-evolution-design-decision": 1,
-        "dependency-graph-production-incident": 1
+        "dependency-graph-production-incident": 1,
+        "pooled-buffer-serialization-deterministic-failure": 1
       }
     }
   }
