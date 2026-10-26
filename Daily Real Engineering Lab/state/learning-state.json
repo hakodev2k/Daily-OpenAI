@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-API-002",
-    "runSlot": "2026-10-26-12",
-    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-API-002-park-checklist-conditional-update-race",
+    "unitId": "UNIT-COOKIE-001",
+    "runSlot": "2026-10-26-13",
+    "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-COOKIE-001-partner-session-cross-tenant-cookie",
     "status": "READY",
-    "createdAt": "2026-10-26T12:09:03+07:00"
+    "createdAt": "2026-10-26T13:10:04+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 259,
-    "totalGenerated": 254,
+    "totalRunSlotsAttempted": 260,
+    "totalGenerated": 255,
     "totalFailed": 5
   },
   "learning": {

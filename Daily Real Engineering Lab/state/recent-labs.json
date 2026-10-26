@@ -1044,58 +1044,53 @@
       "failureMode": "two-conflicting-writes-return-success-while-one-edit-is-lost",
       "solutionPattern": "atomic-revision-compare-and-swap-with-precondition-failure",
       "labFormat": "conditional-write-race-investigation"
+    },
+    {
+      "runSlot": "2026-10-26-13",
+      "unitId": "UNIT-COOKIE-001",
+      "domain": "http-client-session-security",
+      "primarySkill": "httpclient-cookiecontainer-isolation",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "multi-tenant-procurement-partner-quote-gateway",
+      "scenarioType": "sequential-tenant-sessions-through-one-outbound-http-handler",
+      "primaryRootCause": "httpclienthandler-shares-cookiecontainer-across-tenant-security-contexts",
+      "failureMode": "tenant-a-session-cookie-forwarded-on-tenant-b-request-causing-cross-tenant-session-confusion",
+      "solutionPattern": "tenant-scoped-cookiecontainer-and-httpclient-lifecycle-isolation",
+      "labFormat": "http-cookie-isolation-production-incident"
     }
   ],
-  "rolling24": {
-    "total": 24,
-    "byDomain": {
-      "dotnet-execution-context": 1,
-      "dotnet-filesystem-security": 1,
-      "api-integration-security": 1,
-      "dotnet-stream-io": 1,
-      "kubernetes-operations": 1,
-      "testing-persistence-contracts": 1,
-      "observability-slo-engineering": 1,
-      "dotnet-priority-queue-semantics": 1,
-      "privacy-data-architecture": 1,
-      "aspnet-core-authorization": 1,
-      "dotnet-concurrency-capacity": 1,
-      "dotnet-calendar-timezone": 1,
-      "aspnet-core-middleware": 1,
-      "dotnet-async-streams": 1,
-      "http-client-lifecycle": 1,
-      "dotnet-zip-archive": 1,
-      "postgresql-sql-semantics": 1,
-      "dotnet-unicode-identity": 1,
-      "search-index-operations": 1,
-      "dotnet-json-dom": 1,
-      "dotnet-hosting-deployment": 1,
-      "ef-core": 1,
-      "csharp-record-value-semantics": 1,
-      "api-concurrency-contracts": 1
-    },
-    "byDifficulty": {
-      "D4": 19,
-      "D3": 5
-    },
-    "byMaturity": {
-      "L2": 8,
-      "L3": 5,
-      "L4": 3,
-      "L1": 5,
-      "L5": 2,
-      "L6": 1
-    },
-    "byFormat": {
-      "distinctFormats": 24
-    }
-  },
+  "rolling24": [
+    "UNIT-PATH-001",
+    "UNIT-HMAC-001",
+    "UNIT-IO-001",
+    "UNIT-K8S-002",
+    "UNIT-TEST-014",
+    "UNIT-SLO-001",
+    "UNIT-PQ-001",
+    "UNIT-ARCH-007",
+    "UNIT-CLAIMS-001",
+    "UNIT-SEM-001",
+    "UNIT-TZ-001",
+    "UNIT-ASP-006",
+    "UNIT-ITER-001",
+    "UNIT-HTTP-012",
+    "UNIT-ZIP-001",
+    "UNIT-SQL-009",
+    "UNIT-UNICODE-001",
+    "UNIT-SEARCH-001",
+    "UNIT-JSON-001",
+    "UNIT-HOST-001",
+    "UNIT-EF-015",
+    "UNIT-RECORD-001",
+    "UNIT-API-002",
+    "UNIT-COOKIE-001"
+  ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-execution-context": 1,
         "dotnet-filesystem-security": 1,
         "api-integration-security": 1,
         "dotnet-stream-io": 1,
@@ -1118,22 +1113,22 @@
         "dotnet-hosting-deployment": 1,
         "ef-core": 1,
         "csharp-record-value-semantics": 1,
-        "api-concurrency-contracts": 1
+        "api-concurrency-contracts": 1,
+        "http-client-session-security": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
-        "L3": 5,
+        "L3": 6,
         "L4": 3,
         "L1": 5,
+        "L2": 7,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "execution-context-propagation-investigation": 1,
         "filesystem-authorization-incident": 1,
         "webhook-integrity-contract-refactoring-workshop": 1,
         "stream-fragmentation-deterministic-failure": 1,
@@ -1156,7 +1151,8 @@
         "deployment-launch-context-production-incident": 1,
         "ef-core-bulk-update-refactoring-workshop": 1,
         "record-nested-array-equality-deterministic-failure": 1,
-        "conditional-write-race-investigation": 1
+        "conditional-write-race-investigation": 1,
+        "http-cookie-isolation-production-incident": 1
       }
     }
   }
