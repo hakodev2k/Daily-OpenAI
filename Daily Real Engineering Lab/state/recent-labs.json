@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-21-13",
-      "unitId": "UNIT-CONFIG-001",
-      "domain": "dotnet-configuration",
-      "primarySkill": "dotnet-configuration",
-      "maturityLevel": "L1",
-      "difficulty": "D2",
-      "businessContext": "linux-hosted-payment-api",
-      "primaryRootCause": "hierarchical-configuration-environment-variable-uses-single-underscore-instead-of-double-underscore-separator",
-      "failureMode": "deployment-specific-timeout-override-is-not-bound-and-default-value-remains-active",
-      "solutionPattern": "encode-hierarchical-configuration-path-with-provider-specific-double-underscore-separator",
-      "labFormat": "configuration-precedence-deterministic-failure"
-    },
-    {
       "runSlot": "2026-09-21-18",
       "unitId": "UNIT-K8S-001",
       "domain": "kubernetes",
@@ -1417,10 +1404,24 @@
       "failureMode": "independent-note-lost-stale-status-accepted-and-retry-not-idempotent",
       "solutionPattern": "per-field-base-revision-with-immutable-change-id-deduplication-and-explicit-conflicts",
       "labFormat": "offline-sync-contract-design-decision-with-executable-fixture"
+    },
+    {
+      "runSlot": "2026-10-27-14",
+      "unitId": "UNIT-CHAN-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CHAN-002-pharma-batch-audit-channel-loss",
+      "domain": "dotnet-channel-delivery-semantics",
+      "primarySkill": "bounded-channel-full-mode-delivery-contract",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "pharmaceutical-batch-release-audit-trail",
+      "scenarioType": "bounded-in-memory-audit-pipeline-burst-before-drain",
+      "primaryRootCause": "bounded-channel-dropoldest-mode-silently-discards-unread-audit-events",
+      "failureMode": "successful-publisher-completion-with-missing-regulated-audit-records",
+      "solutionPattern": "lossless-bounded-channel-wait-mode-with-observable-backpressure-and-cancellation",
+      "labFormat": "audit-event-loss-production-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-LINQ-001",
     "UNIT-TCS-001",
     "UNIT-CSV-001",
     "UNIT-REDIR-001",
@@ -1443,14 +1444,14 @@
     "UNIT-SEMA-001",
     "UNIT-DP-001",
     "UNIT-CMP-001",
-    "UNIT-OFFSYNC-001"
+    "UNIT-OFFSYNC-001",
+    "UNIT-CHAN-002"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-linq-data-reconciliation": 1,
         "dotnet-async-coordination": 1,
         "dotnet-csv-data-ingestion": 1,
         "http-redirect-authentication": 1,
@@ -1473,21 +1474,21 @@
         "dotnet-semaphore-admission-control": 1,
         "aspnet-core-data-protection": 1,
         "csharp-comparer-contract": 1,
-        "offline-sync-consistency": 1
+        "offline-sync-consistency": 1,
+        "dotnet-channel-delivery-semantics": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
         "L4": 4,
         "L1": 5,
-        "L3": 5,
+        "L3": 6,
+        "L2": 7,
         "L5": 2
       },
       "labFormat": {
-        "linq-feed-order-invariance-investigation": 1,
         "async-coordination-refactoring-workshop": 1,
         "partner-data-import-deterministic-failure": 1,
         "outbound-auth-redirect-production-incident": 1,
@@ -1510,7 +1511,8 @@
         "semaphore-admission-invariant-investigation": 1,
         "multi-replica-security-lifecycle-refactoring-workshop": 1,
         "deterministic-collection-order-contract": 1,
-        "offline-sync-contract-design-decision-with-executable-fixture": 1
+        "offline-sync-contract-design-decision-with-executable-fixture": 1,
+        "audit-event-loss-production-investigation": 1
       }
     }
   }

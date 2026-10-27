@@ -1,0 +1,51 @@
+{
+  "unitId": "UNIT-CHAN-002",
+  "runSlot": "2026-10-27-14",
+  "title": "Nhật ký kiểm định lô dược phẩm thiếu sự kiện",
+  "domain": "dotnet-channel-delivery-semantics",
+  "primarySkill": "bounded-channel-full-mode-delivery-contract",
+  "secondarySkills": [
+    "system-threading-channels",
+    "delivery-semantics",
+    "backpressure",
+    "cancellation",
+    "failure-path-verification"
+  ],
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-27T14:05:59+07:00",
+  "estimatedMinutes": 70,
+  "prerequisites": [
+    "C# async/await",
+    "Channel<T> fundamentals",
+    ".NET 10 SDK",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Đối chiếu tĩnh hai project net10.0 cùng harness, contract Channel bounded, synchronous completion before first await, cancellation of pending WriteAsync, compile item paths và exit-code semantics. Chưa thực thi dotnet; chỉ sử dụng GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "pharmaceutical-batch-release-audit-trail",
+    "scenarioType": "bounded-in-memory-audit-pipeline-burst-before-drain",
+    "primaryRootCause": "bounded-channel-dropoldest-mode-silently-discards-unread-audit-events",
+    "failureMode": "successful-publisher-completion-with-missing-regulated-audit-records",
+    "solutionPattern": "lossless-bounded-channel-wait-mode-with-observable-backpressure-and-cancellation",
+    "labFormat": "audit-event-loss-production-investigation"
+  },
+  "businessImpact": "Audit bước phê duyệt của lô dược phẩm bị mất âm thầm dù publisher báo hoàn thành; ảnh hưởng truy vết compliance.",
+  "expectedArtifacts": [
+    "reproduction output",
+    "two or more hypotheses",
+    "modified starter/AuditPipeline.cs",
+    "verify output",
+    "production trade-off notes"
+  ],
+  "executable": true
+}
