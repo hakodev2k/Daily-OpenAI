@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-23-16",
-      "unitId": "UNIT-API-001",
-      "domain": "api-engineering",
-      "primarySkill": "rest-api-contracts",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "merchant-notification-settings-api",
-      "primaryRootCause": "non-nullable-update-dto-collapses-omitted-boolean-and-explicit-false-into-the-same-default-value",
-      "failureMode": "patching-an-unrelated-field-silently-disables-an-existing-notification-setting",
-      "solutionPattern": "represent-field-presence-explicitly-at-the-partial-update-boundary",
-      "labFormat": "api-contract-deterministic-failure"
-    },
-    {
       "runSlot": "2026-09-24-14",
       "unitId": "UNIT-BLOB-001",
       "domain": "azure-blob-storage",
@@ -1434,10 +1421,24 @@
       "failureMode": "local-guid-roundtrip-passes-but-cross-language-identifier-lookup-fails",
       "solutionPattern": "explicit-network-order-guid-encoding-and-decoding-with-cross-language-golden-vectors",
       "labFormat": "binary-uuid-cross-language-incident"
+    },
+    {
+      "runSlot": "2026-10-27-23",
+      "unitId": "UNIT-CFG-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CFG-001-airport-baggage-sla-override-drift",
+      "domain": "dotnet-configuration",
+      "primarySkill": "configuration-provider-precedence",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "airport-baggage-transfer-sla-monitoring",
+      "scenarioType": "deployment-env-override-not-reflected-in-runtime-policy",
+      "primaryRootCause": "configuration-providers-registered-in-wrong-precedence-order",
+      "failureMode": "production-escalation-remains-at-development-threshold-despite-deployment-override",
+      "solutionPattern": "explicit-json-then-environment-provider-order-with-override-and-fallback-regression-contracts",
+      "labFormat": "configuration-source-forensics-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-ENDIAN-001",
     "UNIT-SCHED-001",
     "UNIT-CONTRACT-001",
     "UNIT-DAG-001",
@@ -1460,14 +1461,14 @@
     "UNIT-NUM-001",
     "UNIT-EF-016",
     "UNIT-HOST-002",
-    "UNIT-GUID-001"
+    "UNIT-GUID-001",
+    "UNIT-CFG-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-binary-protocols": 1,
         "dotnet-periodic-scheduling": 1,
         "api-contract-evolution": 1,
         "dotnet-workflow-dependency-planning": 1,
@@ -1490,22 +1491,22 @@
         "dotnet-json-numeric-identity": 1,
         "ef-core-change-tracking": 1,
         "dotnet-host-lifecycle": 1,
-        "dotnet-guid-wire-interoperability": 1
+        "dotnet-guid-wire-interoperability": 1,
+        "dotnet-configuration": 1
       },
       "difficulty": {
         "D4": 20,
         "D3": 4
       },
       "maturityLevel": {
-        "L2": 7,
         "L4": 4,
         "L5": 2,
         "L3": 6,
         "L1": 4,
+        "L2": 7,
         "L6": 1
       },
       "labFormat": {
-        "binary-protocol-evidence-led-investigation": 1,
         "scheduled-window-reconciliation-refactoring-workshop": 1,
         "b2b-contract-evolution-design-decision": 1,
         "dependency-graph-production-incident": 1,
@@ -1528,7 +1529,8 @@
         "numeric-identifier-integrity-deterministic-failure": 1,
         "efcore-batch-import-lifecycle-refactoring-workshop": 1,
         "hosted-service-startup-evidence-investigation": 1,
-        "binary-uuid-cross-language-incident": 1
+        "binary-uuid-cross-language-incident": 1,
+        "configuration-source-forensics-investigation": 1
       }
     }
   }

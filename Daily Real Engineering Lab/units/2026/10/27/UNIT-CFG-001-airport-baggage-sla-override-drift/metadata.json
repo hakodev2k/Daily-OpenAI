@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-CFG-001",
+  "runSlot": "2026-10-27-23",
+  "title": "Airport Baggage SLA: cấu hình triển khai không khớp hành vi",
+  "domain": "dotnet-configuration",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-27T23:13:15.572+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "configuration-provider-precedence",
+    "environment-variable-binding",
+    "deployment-configuration-diagnostics"
+  ],
+  "primarySkill": "configuration-provider-precedence",
+  "prerequisites": [
+    "dotnet-configuration-basics",
+    "powershell-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "airport-baggage-transfer-sla-monitoring",
+    "scenarioType": "deployment-env-override-not-reflected-in-runtime-policy",
+    "primaryRootCause": "configuration-providers-registered-in-wrong-precedence-order",
+    "failureMode": "production-escalation-remains-at-development-threshold-despite-deployment-override",
+    "solutionPattern": "explicit-json-then-environment-provider-order-with-override-and-fallback-regression-contracts",
+    "labFormat": "configuration-source-forensics-investigation"
+  }
+}
