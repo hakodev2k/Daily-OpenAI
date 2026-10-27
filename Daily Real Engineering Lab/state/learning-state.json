@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JSON-002",
-    "runSlot": "2026-10-28-02",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-JSON-002-port-clearance-duplicate-field-ambiguity",
+    "unitId": "UNIT-PROC-001",
+    "runSlot": "2026-10-28-03",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PROC-001-caption-batch-child-process-pipe-stall",
     "status": "READY",
-    "createdAt": "2026-10-28T02:06:56.967+07:00"
+    "createdAt": "2026-10-28T03:05:14+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 297,
-    "totalGenerated": 292,
+    "totalRunSlotsAttempted": 298,
+    "totalGenerated": 293,
     "totalFailed": 5
   },
   "learning": {

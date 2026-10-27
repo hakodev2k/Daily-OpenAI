@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-24-18",
-      "unitId": "UNIT-CICD-002",
-      "domain": "ci-cd",
-      "primarySkill": "artifact-promotion",
-      "maturityLevel": "L5",
-      "difficulty": "D3",
-      "businessContext": "multi-environment-dotnet-release",
-      "primaryRootCause": "pipeline-rebuilds-source-independently-for-each-environment",
-      "failureMode": "production-binary-is-not-provably-identical-to-the-binary-validated-in-staging",
-      "solutionPattern": "immutable-versioned-artifact-promotion-with-runtime-environment-configuration",
-      "labFormat": "release-engineering-design-decision"
-    },
-    {
       "runSlot": "2026-09-24-19",
       "unitId": "UNIT-MONGO-001",
       "domain": "mongodb",
@@ -1442,10 +1429,24 @@
       "failureMode": "ambiguous-declaration-silently-downgrades-mandatory-cargo-inspection",
       "solutionPattern": "reject-duplicate-top-level-logical-property-names-before-typed-deserialization",
       "labFormat": "partner-payload-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-03",
+      "unitId": "UNIT-PROC-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PROC-001-caption-batch-child-process-pipe-stall",
+      "domain": "dotnet-process-io",
+      "primarySkill": "process-redirected-streams",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "media-accessibility-caption-batch",
+      "scenarioType": "external-caption-converter-hangs-with-low-cpu-and-large-diagnostic-output",
+      "primaryRootCause": "parent-waits-for-child-exit-before-draining-redirected-standard-error-pipe",
+      "failureMode": "child-blocks-on-full-stderr-pipe-while-parent-times-out-waiting-for-exit",
+      "solutionPattern": "concurrently-drain-both-redirected-streams-while-awaiting-process-exit-with-deadline",
+      "labFormat": "external-process-stream-lifecycle-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-POOL-001",
     "UNIT-RATE-001",
     "UNIT-KEY-001",
     "UNIT-RANGE-001",
@@ -1468,14 +1469,14 @@
     "UNIT-CFG-001",
     "UNIT-INIT-001",
     "UNIT-CRYPTO-001",
-    "UNIT-JSON-002"
+    "UNIT-JSON-002",
+    "UNIT-PROC-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-buffer-serialization": 1,
         "http-rate-limit-recovery": 1,
         "dotnet-cache-key-identity": 1,
         "http-partial-content": 1,
@@ -1498,22 +1499,22 @@
         "dotnet-configuration": 1,
         "dotnet-async-initialization": 1,
         "dotnet-cryptographic-protocols": 1,
-        "api-json-contracts": 1
+        "api-json-contracts": 1,
+        "dotnet-process-io": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 20,
+        "D3": 4
       },
       "maturityLevel": {
-        "L1": 5,
-        "L4": 3,
+        "L4": 4,
         "L2": 8,
         "L3": 6,
+        "L1": 4,
         "L5": 1,
         "L6": 1
       },
       "labFormat": {
-        "pooled-buffer-serialization-deterministic-failure": 1,
         "http-rate-limit-policy-refactoring-workshop": 1,
         "tenant-cache-identity-evidence-investigation": 1,
         "byte-range-resume-production-incident": 1,
@@ -1536,7 +1537,8 @@
         "configuration-source-forensics-investigation": 1,
         "async-initializer-transient-failure-deterministic-lab": 1,
         "cryptographic-envelope-production-forensics": 1,
-        "partner-payload-contract-investigation": 1
+        "partner-payload-contract-investigation": 1,
+        "external-process-stream-lifecycle-refactoring-workshop": 1
       }
     }
   }

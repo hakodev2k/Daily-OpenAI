@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-PROC-001",
+  "runSlot": "2026-10-28-03",
+  "title": "Pipeline tạo phụ đề treo dù converter vẫn khởi chạy",
+  "domain": "dotnet-process-io",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-28T03:05:14+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "process-redirected-streams",
+    "dotnet-process-lifecycle",
+    "async-io",
+    "timeout-cleanup",
+    "regression-testing"
+  ],
+  "primarySkill": "process-redirected-streams",
+  "prerequisites": [
+    "C# async/await",
+    "System.Diagnostics.Process",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "media-accessibility-caption-batch",
+    "scenarioType": "external-caption-converter-hangs-with-low-cpu-and-large-diagnostic-output",
+    "primaryRootCause": "parent-waits-for-child-exit-before-draining-redirected-standard-error-pipe",
+    "failureMode": "child-blocks-on-full-stderr-pipe-while-parent-times-out-waiting-for-exit",
+    "solutionPattern": "concurrently-drain-both-redirected-streams-while-awaiting-process-exit-with-deadline",
+    "labFormat": "external-process-stream-lifecycle-refactoring-workshop"
+  }
+}
