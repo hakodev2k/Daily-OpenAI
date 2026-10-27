@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-21-18",
-      "unitId": "UNIT-K8S-001",
-      "domain": "kubernetes",
-      "primarySkill": "kubernetes-probes",
-      "maturityLevel": "L2",
-      "difficulty": "D2",
-      "businessContext": "warehouse-api-kubernetes-deployment",
-      "primaryRootCause": "kubernetes-readiness-probe-targets-a-port-that-is-not-the-application-listen-port",
-      "failureMode": "application-is-running-but-pod-never-becomes-ready-and-receives-no-service-traffic",
-      "solutionPattern": "align-probe-target-with-the-container-listener-contract",
-      "labFormat": "kubernetes-deployment-investigation"
-    },
-    {
       "runSlot": "2026-09-22-23",
       "unitId": "UNIT-ASP-003",
       "domain": "aspnet-core",
@@ -1419,10 +1406,23 @@
       "failureMode": "successful-publisher-completion-with-missing-regulated-audit-records",
       "solutionPattern": "lossless-bounded-channel-wait-mode-with-observable-backpressure-and-cancellation",
       "labFormat": "audit-event-loss-production-investigation"
+    },
+    {
+      "runSlot": "2026-10-27-15",
+      "unitId": "UNIT-UTF8-001",
+      "domain": "dotnet-streaming-text",
+      "primarySkill": "utf8-incremental-decoder-state",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "coastal-rescue-dispatch-jsonl-telemetry",
+      "scenarioType": "multibyte-utf8-sequences-split-across-network-read-boundaries",
+      "primaryRootCause": "per-chunk-utf8-decoding-resets-state-between-read-calls",
+      "failureMode": "valid-json-lines-have-corrupted-vietnamese-text-and-emoji-without-json-error",
+      "solutionPattern": "per-stream-stateful-utf8-decoder-with-strict-eof-validation",
+      "labFormat": "network-stream-decoding-evidence-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-TCS-001",
     "UNIT-CSV-001",
     "UNIT-REDIR-001",
     "UNIT-FS-001",
@@ -1445,14 +1445,14 @@
     "UNIT-DP-001",
     "UNIT-CMP-001",
     "UNIT-OFFSYNC-001",
-    "UNIT-CHAN-002"
+    "UNIT-CHAN-002",
+    "UNIT-UTF8-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-async-coordination": 1,
         "dotnet-csv-data-ingestion": 1,
         "http-redirect-authentication": 1,
         "dotnet-filesystem-consistency": 1,
@@ -1475,21 +1475,21 @@
         "aspnet-core-data-protection": 1,
         "csharp-comparer-contract": 1,
         "offline-sync-consistency": 1,
-        "dotnet-channel-delivery-semantics": 1
+        "dotnet-channel-delivery-semantics": 1,
+        "dotnet-streaming-text": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L4": 4,
         "L1": 5,
         "L3": 6,
-        "L2": 7,
+        "L2": 8,
+        "L4": 3,
         "L5": 2
       },
       "labFormat": {
-        "async-coordination-refactoring-workshop": 1,
         "partner-data-import-deterministic-failure": 1,
         "outbound-auth-redirect-production-incident": 1,
         "filesystem-snapshot-consistency-investigation": 1,
@@ -1512,7 +1512,8 @@
         "multi-replica-security-lifecycle-refactoring-workshop": 1,
         "deterministic-collection-order-contract": 1,
         "offline-sync-contract-design-decision-with-executable-fixture": 1,
-        "audit-event-loss-production-investigation": 1
+        "audit-event-loss-production-investigation": 1,
+        "network-stream-decoding-evidence-investigation": 1
       }
     }
   }
