@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-EF-016",
+  "runSlot": "2026-10-27-20",
+  "title": "Food inspection batch import leaves subsequent review state unsaved",
+  "domain": "ef-core-change-tracking",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-27T20:11:44+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "ef-core-autodetectchanges-lifecycle",
+    "dbcontext-unit-of-work",
+    "sqlite-regression-testing",
+    "exception-safe-refactoring"
+  ],
+  "primarySkill": "ef-core-autodetectchanges-lifecycle",
+  "prerequisites": [
+    "EF Core tracking states",
+    "SaveChanges",
+    "try/finally"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "food-safety-inspection-review-workflow",
+    "scenarioType": "bulk-import-succeeds-but-follow-up-review-update-not-persisted",
+    "primaryRootCause": "ef-core-autodetectchanges-disabled-by-batch-import-and-not-restored",
+    "failureMode": "subsequent-tracked-scalar-review-change-silently-not-saved",
+    "solutionPattern": "restore-original-dbcontext-change-detection-setting-in-finally-across-success-and-failure",
+    "labFormat": "efcore-batch-import-lifecycle-refactoring-workshop"
+  }
+}

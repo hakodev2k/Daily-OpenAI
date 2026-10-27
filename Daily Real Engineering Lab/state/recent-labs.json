@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-23-03",
-      "unitId": "UNIT-CS-015",
-      "domain": "csharp",
-      "primarySkill": "csharp-equality-hashing",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "promotion-rule-evaluation",
-      "primaryRootCause": "dictionary-key-state-that-participates-in-hash-code-is-mutated-after-insertion",
-      "failureMode": "lookup-for-the-same-object-logically-disappears-after-a-valid-business-state-change",
-      "solutionPattern": "use-stable-immutable-key-identity-for-hash-based-collection-membership",
-      "labFormat": "csharp-collection-invariant-investigation"
-    },
-    {
       "runSlot": "2026-09-23-04",
       "unitId": "UNIT-HTTP-008",
       "domain": "http-networking",
@@ -1428,10 +1415,24 @@
       "failureMode": "distinct-roaming-events-collapse-into-one-dedup-key-and-underbill-usage",
       "solutionPattern": "parse-json-integer-directly-to-int64-and-preserve-exact-identity-through-deduplication",
       "labFormat": "numeric-identifier-integrity-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-27-20",
+      "unitId": "UNIT-EF-016",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-EF-016-food-inspection-batch-tracking-lifecycle",
+      "domain": "ef-core-change-tracking",
+      "primarySkill": "ef-core-autodetectchanges-lifecycle",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "food-safety-inspection-review-workflow",
+      "scenarioType": "bulk-import-succeeds-but-follow-up-review-update-not-persisted",
+      "primaryRootCause": "ef-core-autodetectchanges-disabled-by-batch-import-and-not-restored",
+      "failureMode": "subsequent-tracked-scalar-review-change-silently-not-saved",
+      "solutionPattern": "restore-original-dbcontext-change-detection-setting-in-finally-across-success-and-failure",
+      "labFormat": "efcore-batch-import-lifecycle-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-PGIDX-001",
     "UNIT-LOG-001",
     "UNIT-JOPT-001",
     "UNIT-ENDIAN-001",
@@ -1454,14 +1455,14 @@
     "UNIT-LEGAL-001",
     "UNIT-GIT-001",
     "UNIT-HPOOL-001",
-    "UNIT-NUM-001"
+    "UNIT-NUM-001",
+    "UNIT-EF-016"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "postgresql-index-inference": 1,
         "dotnet-structured-logging": 1,
         "dotnet-json-serialization-options": 1,
         "dotnet-binary-protocols": 1,
@@ -1484,22 +1485,22 @@
         "legal-platform-architecture": 1,
         "git-ci-diff-semantics": 1,
         "http-connection-pooling": 1,
-        "dotnet-json-numeric-identity": 1
+        "dotnet-json-numeric-identity": 1,
+        "ef-core-change-tracking": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 7,
         "L3": 6,
         "L1": 5,
-        "L4": 3,
+        "L2": 6,
+        "L4": 4,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "postgresql-upsert-index-contract-investigation": 1,
         "structured-logging-evidence-production-incident": 1,
         "json-serializer-options-lifecycle-deterministic-failure": 1,
         "binary-protocol-evidence-led-investigation": 1,
@@ -1522,7 +1523,8 @@
         "architecture-tabletop-failure-contract-decision": 1,
         "git-history-boundary-ci-investigation": 1,
         "http-connection-lease-production-incident": 1,
-        "numeric-identifier-integrity-deterministic-failure": 1
+        "numeric-identifier-integrity-deterministic-failure": 1,
+        "efcore-batch-import-lifecycle-refactoring-workshop": 1
       }
     }
   }
