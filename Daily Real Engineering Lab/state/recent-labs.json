@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-24-17",
-      "unitId": "UNIT-TEST-011",
-      "domain": "testing",
-      "primarySkill": "integration-test-isolation",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "inventory-reservation-service",
-      "primaryRootCause": "parallel-tests-share-and-reset-the-same-mutable-fixture-state",
-      "failureMode": "suite-is-flaky-only-under-parallel-execution",
-      "solutionPattern": "isolate-test-owned-state-with-unique-fixture-scope",
-      "labFormat": "parallel-test-investigation"
-    },
-    {
       "runSlot": "2026-09-24-18",
       "unitId": "UNIT-CICD-002",
       "domain": "ci-cd",
@@ -1440,10 +1427,24 @@
       "failureMode": "ciphertext-xor-exposes-plaintext-xor-despite-successful-authenticated-decryption",
       "solutionPattern": "fresh-cryptographically-random-nonce-per-encryption-with-authenticated-batch-context",
       "labFormat": "cryptographic-envelope-production-forensics"
+    },
+    {
+      "runSlot": "2026-10-28-02",
+      "unitId": "UNIT-JSON-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-JSON-002-port-clearance-duplicate-field-ambiguity",
+      "domain": "api-json-contracts",
+      "primarySkill": "json-duplicate-logical-property-detection",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "port-customs-clearance-declaration",
+      "scenarioType": "partner-json-payload-changes-inspection-decision-without-schema-error",
+      "primaryRootCause": "case-insensitive-json-deserializer-accepts-conflicting-logical-property-names-with-last-value-winning",
+      "failureMode": "ambiguous-declaration-silently-downgrades-mandatory-cargo-inspection",
+      "solutionPattern": "reject-duplicate-top-level-logical-property-names-before-typed-deserialization",
+      "labFormat": "partner-payload-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-DAG-001",
     "UNIT-POOL-001",
     "UNIT-RATE-001",
     "UNIT-KEY-001",
@@ -1466,14 +1467,14 @@
     "UNIT-GUID-001",
     "UNIT-CFG-001",
     "UNIT-INIT-001",
-    "UNIT-CRYPTO-001"
+    "UNIT-CRYPTO-001",
+    "UNIT-JSON-002"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-workflow-dependency-planning": 1,
         "dotnet-buffer-serialization": 1,
         "http-rate-limit-recovery": 1,
         "dotnet-cache-key-identity": 1,
@@ -1496,22 +1497,22 @@
         "dotnet-guid-wire-interoperability": 1,
         "dotnet-configuration": 1,
         "dotnet-async-initialization": 1,
-        "dotnet-cryptographic-protocols": 1
+        "dotnet-cryptographic-protocols": 1,
+        "api-json-contracts": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L3": 7,
         "L1": 5,
         "L4": 3,
-        "L2": 7,
+        "L2": 8,
+        "L3": 6,
         "L5": 1,
         "L6": 1
       },
       "labFormat": {
-        "dependency-graph-production-incident": 1,
         "pooled-buffer-serialization-deterministic-failure": 1,
         "http-rate-limit-policy-refactoring-workshop": 1,
         "tenant-cache-identity-evidence-investigation": 1,
@@ -1534,7 +1535,8 @@
         "binary-uuid-cross-language-incident": 1,
         "configuration-source-forensics-investigation": 1,
         "async-initializer-transient-failure-deterministic-lab": 1,
-        "cryptographic-envelope-production-forensics": 1
+        "cryptographic-envelope-production-forensics": 1,
+        "partner-payload-contract-investigation": 1
       }
     }
   }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CRYPTO-001",
-    "runSlot": "2026-10-28-01",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-CRYPTO-001-warehouse-export-aesgcm-envelope-collision",
+    "unitId": "UNIT-JSON-002",
+    "runSlot": "2026-10-28-02",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-JSON-002-port-clearance-duplicate-field-ambiguity",
     "status": "READY",
-    "createdAt": "2026-10-28T01:04:16+07:00"
+    "createdAt": "2026-10-28T02:06:56.967+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 296,
-    "totalGenerated": 291,
+    "totalRunSlotsAttempted": 297,
+    "totalGenerated": 292,
     "totalFailed": 5
   },
   "learning": {
