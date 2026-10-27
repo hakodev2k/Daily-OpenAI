@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-PAGE-001",
+  "runSlot": "2026-10-28-04",
+  "title": "Bản ghi khảo sát biển biến mất giữa các trang API",
+  "domain": "api-pagination-consistency",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-28T04:06:35+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "keyset-pagination-total-order",
+    "cursor-boundary-invariants",
+    "csharp-linq",
+    "regression-testing"
+  ],
+  "primarySkill": "keyset-pagination-total-order",
+  "prerequisites": [
+    "C# LINQ OrderBy/ThenBy",
+    "DateTimeOffset",
+    "REST API pagination",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "marine-habitat-survey-observation-feed",
+    "scenarioType": "batch-observations-share-same-utc-timestamp-across-keyset-pages",
+    "primaryRootCause": "keyset-cursor-filters-on-nonunique-observedat-timestamp-without-id-tiebreaker",
+    "failureMode": "observations-at-page-boundary-silently-omitted-with-no-server-error",
+    "solutionPattern": "lexicographic-composite-cursor-on-timestamp-and-stable-observation-id",
+    "labFormat": "deterministic-keyset-cursor-integrity-lab"
+  }
+}
