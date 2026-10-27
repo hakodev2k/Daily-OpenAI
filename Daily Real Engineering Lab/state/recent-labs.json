@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-23-00",
-      "unitId": "UNIT-COSMOS-001",
-      "domain": "cosmos-db",
-      "primarySkill": "cosmos-db-partition-routing",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "multi-tenant-audit-api",
-      "primaryRootCause": "tenant-scoped-read-does-not-supply-the-known-partition-key-and-fans-out-across-partitions",
-      "failureMode": "request-charge-and-tail-latency-grow-as-partition-count-increases",
-      "solutionPattern": "bind-known-partition-key-to-the-query-execution-boundary",
-      "labFormat": "cosmos-query-diagnostics-investigation"
-    },
-    {
       "runSlot": "2026-09-23-01",
       "unitId": "UNIT-SB-001",
       "domain": "azure-service-bus",
@@ -1422,10 +1409,24 @@
       "failureMode": "orphaned-legal-receipts-and-duplicate-submission-identities-after-failover",
       "solutionPattern": "durable-authoritative-acceptance-boundary-with-idempotent-receipt-lookup-and-fail-closed-unknown-outcomes",
       "labFormat": "architecture-tabletop-failure-contract-decision"
+    },
+    {
+      "runSlot": "2026-10-27-17",
+      "unitId": "UNIT-GIT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-GIT-001-permit-pr-shallow-history-change-gate",
+      "domain": "git-ci-diff-semantics",
+      "primarySkill": "git-shallow-history-and-base-head-diff",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-building-permit-ci",
+      "scenarioType": "shallow-pr-checkout-change-gate-failure",
+      "primaryRootCause": "shallow-clone-lacks-comparison-base-commit-object",
+      "failureMode": "ci-change-detection-errors-and-targeted-tests-cannot-be-selected",
+      "solutionPattern": "explicit-base-sha-and-targeted-fetch-with-fail-closed-tree-diff",
+      "labFormat": "git-history-boundary-ci-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-REDIR-001",
     "UNIT-FS-001",
     "UNIT-PAR-001",
     "UNIT-PGIDX-001",
@@ -1448,14 +1449,14 @@
     "UNIT-OFFSYNC-001",
     "UNIT-CHAN-002",
     "UNIT-UTF8-001",
-    "UNIT-LEGAL-001"
+    "UNIT-LEGAL-001",
+    "UNIT-GIT-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "http-redirect-authentication": 1,
         "dotnet-filesystem-consistency": 1,
         "dotnet-io-parallelism": 1,
         "postgresql-index-inference": 1,
@@ -1478,22 +1479,22 @@
         "offline-sync-consistency": 1,
         "dotnet-channel-delivery-semantics": 1,
         "dotnet-streaming-text": 1,
-        "legal-platform-architecture": 1
+        "legal-platform-architecture": 1,
+        "git-ci-diff-semantics": 1
       },
       "difficulty": {
         "D4": 20,
         "D3": 4
       },
       "maturityLevel": {
-        "L3": 6,
-        "L2": 8,
+        "L2": 9,
+        "L3": 5,
         "L1": 4,
         "L4": 3,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "outbound-auth-redirect-production-incident": 1,
         "filesystem-snapshot-consistency-investigation": 1,
         "io-capacity-configuration-investigation": 1,
         "postgresql-upsert-index-contract-investigation": 1,
@@ -1516,7 +1517,8 @@
         "offline-sync-contract-design-decision-with-executable-fixture": 1,
         "audit-event-loss-production-investigation": 1,
         "network-stream-decoding-evidence-investigation": 1,
-        "architecture-tabletop-failure-contract-decision": 1
+        "architecture-tabletop-failure-contract-decision": 1,
+        "git-history-boundary-ci-investigation": 1
       }
     }
   }

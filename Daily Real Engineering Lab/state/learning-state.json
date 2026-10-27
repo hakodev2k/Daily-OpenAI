@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LEGAL-001",
-    "runSlot": "2026-10-27-16",
-    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-LEGAL-001-court-efiling-durable-deadline-receipts",
+    "unitId": "UNIT-GIT-001",
+    "runSlot": "2026-10-27-17",
+    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-GIT-001-permit-pr-shallow-history-change-gate",
     "status": "READY",
-    "createdAt": "2026-10-27T16:10:47+07:00"
+    "createdAt": "2026-10-27T17:09:33+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 287,
-    "totalGenerated": 282,
+    "totalRunSlotsAttempted": 288,
+    "totalGenerated": 283,
     "totalFailed": 5
   },
   "learning": {
