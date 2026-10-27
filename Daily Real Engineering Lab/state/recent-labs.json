@@ -1327,10 +1327,24 @@
       "failureMode": "valid-meter-readings-silently-omitted-while-batch-is-marked-accepted",
       "solutionPattern": "namespace-aware-schema-scoped-element-selection-and-root-contract-validation",
       "labFormat": "xml-schema-boundary-investigation"
+    },
+    {
+      "runSlot": "2026-10-27-08",
+      "unitId": "UNIT-CTX-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CTX-002-drone-survey-parallel-trace-context-aliasing",
+      "domain": "dotnet-ambient-context-concurrency",
+      "primarySkill": "asynclocal-value-vs-reference-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "drone-survey-imagery-quality-audit",
+      "scenarioType": "parallel-tile-validation-records-wrong-correlation-after-batch-gate",
+      "primaryRootCause": "mutable-reference-stored-in-asynclocal-is-shared-by-child-execution-contexts",
+      "failureMode": "parallel-tile-audit-rows-inherit-the-same-incorrect-tile-correlation",
+      "solutionPattern": "branch-local-immutable-context-assignment-before-audit-continuation",
+      "labFormat": "ambient-context-aliasing-deterministic-failure"
     }
   ],
   "rolling24": [
-    "UNIT-JSON-001",
     "UNIT-HOST-001",
     "UNIT-EF-015",
     "UNIT-RECORD-001",
@@ -1353,14 +1367,14 @@
     "UNIT-RATE-001",
     "UNIT-KEY-001",
     "UNIT-RANGE-001",
-    "UNIT-XML-001"
+    "UNIT-XML-001",
+    "UNIT-CTX-002"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-json-dom": 1,
         "dotnet-hosting-deployment": 1,
         "ef-core": 1,
         "csharp-record-value-semantics": 1,
@@ -1383,21 +1397,21 @@
         "http-rate-limit-recovery": 1,
         "dotnet-cache-key-identity": 1,
         "http-partial-content": 1,
-        "dotnet-xml-ingestion": 1
+        "dotnet-xml-ingestion": 1,
+        "dotnet-ambient-context-concurrency": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L2": 9,
         "L3": 6,
         "L4": 4,
-        "L1": 4,
+        "L1": 5,
+        "L2": 8,
         "L5": 1
       },
       "labFormat": {
-        "json-dom-lifetime-investigation": 1,
         "deployment-launch-context-production-incident": 1,
         "ef-core-bulk-update-refactoring-workshop": 1,
         "record-nested-array-equality-deterministic-failure": 1,
@@ -1420,7 +1434,8 @@
         "http-rate-limit-policy-refactoring-workshop": 1,
         "tenant-cache-identity-evidence-investigation": 1,
         "byte-range-resume-production-incident": 1,
-        "xml-schema-boundary-investigation": 1
+        "xml-schema-boundary-investigation": 1,
+        "ambient-context-aliasing-deterministic-failure": 1
       }
     }
   }

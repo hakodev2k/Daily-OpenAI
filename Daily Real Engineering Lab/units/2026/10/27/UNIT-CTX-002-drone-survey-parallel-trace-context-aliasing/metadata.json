@@ -1,0 +1,65 @@
+{
+  "unitId": "UNIT-CTX-002",
+  "runSlot": "2026-10-27-08",
+  "title": "Drone Survey: Audit nhầm tile khi xử lý song song",
+  "domain": "dotnet-ambient-context-concurrency",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-27T08:06:19+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "asynclocal-value-vs-reference-semantics",
+    "executioncontext-fanout",
+    "async-coordination",
+    "behavioral-regression-testing"
+  ],
+  "prerequisites": [
+    "csharp-async-await",
+    "task-whenall",
+    "dotnet-console"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of C# source, deterministic batch gate, expected failure and learner verification scripts. GitHub-only execution: dotnet restore/build/run were not performed.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "drone-survey-imagery-quality-audit",
+    "scenarioType": "parallel-tile-validation-records-wrong-correlation-after-batch-gate",
+    "primaryRootCause": "mutable-reference-stored-in-asynclocal-is-shared-by-child-execution-contexts",
+    "failureMode": "parallel-tile-audit-rows-inherit-the-same-incorrect-tile-correlation",
+    "solutionPattern": "branch-local-immutable-context-assignment-before-audit-continuation",
+    "labFormat": "ambient-context-aliasing-deterministic-failure"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "evidence/incident-notes.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/README.md",
+    "solution/TraceLab/Program.cs",
+    "solution/TraceLab/TileAuditPipeline.cs",
+    "solution/TraceLab/TraceLab.csproj",
+    "starter/TraceLab/Program.cs",
+    "starter/TraceLab/TileAuditPipeline.cs",
+    "starter/TraceLab/TraceLab.csproj",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
