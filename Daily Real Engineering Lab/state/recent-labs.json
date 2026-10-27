@@ -1357,10 +1357,24 @@
       "failureMode": "transiently-rejected-and-permanently-invalid-documents-silently-disappear-from-search",
       "solutionPattern": "inspect-per-item-bulk-status-retry-only-transient-items-and-quarantine-permanent-failures",
       "labFormat": "search-bulk-partial-failure-production-incident"
+    },
+    {
+      "runSlot": "2026-10-27-10",
+      "unitId": "UNIT-SEMA-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-SEMA-001-ev-charger-command-admission-timeout",
+      "domain": "dotnet-semaphore-admission-control",
+      "primarySkill": "semaphoreslim-timeout-acquisition-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-ev-charger-command-dispatch",
+      "scenarioType": "concurrent-device-commands-with-zero-wait-admission",
+      "primaryRootCause": "semaphoreslim-timed-wait-false-result-ignored",
+      "failureMode": "exclusive-device-command-overlap-followed-by-semaphorefull-exception",
+      "solutionPattern": "condition-work-and-release-on-successful-semaphore-acquisition",
+      "labFormat": "semaphore-admission-invariant-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-EF-015",
     "UNIT-RECORD-001",
     "UNIT-API-002",
     "UNIT-COOKIE-001",
@@ -1383,14 +1397,14 @@
     "UNIT-RANGE-001",
     "UNIT-XML-001",
     "UNIT-CTX-002",
-    "UNIT-ES-003"
+    "UNIT-ES-003",
+    "UNIT-SEMA-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "ef-core": 1,
         "csharp-record-value-semantics": 1,
         "api-concurrency-contracts": 1,
         "http-client-session-security": 1,
@@ -1413,21 +1427,21 @@
         "http-partial-content": 1,
         "dotnet-xml-ingestion": 1,
         "dotnet-ambient-context-concurrency": 1,
-        "elasticsearch-bulk-ingestion": 1
+        "elasticsearch-bulk-ingestion": 1,
+        "dotnet-semaphore-admission-control": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L4": 4,
         "L1": 5,
-        "L2": 8,
+        "L2": 9,
         "L3": 6,
+        "L4": 3,
         "L5": 1
       },
       "labFormat": {
-        "ef-core-bulk-update-refactoring-workshop": 1,
         "record-nested-array-equality-deterministic-failure": 1,
         "conditional-write-race-investigation": 1,
         "http-cookie-isolation-production-incident": 1,
@@ -1450,7 +1464,8 @@
         "byte-range-resume-production-incident": 1,
         "xml-schema-boundary-investigation": 1,
         "ambient-context-aliasing-deterministic-failure": 1,
-        "search-bulk-partial-failure-production-incident": 1
+        "search-bulk-partial-failure-production-incident": 1,
+        "semaphore-admission-invariant-investigation": 1
       }
     }
   }
