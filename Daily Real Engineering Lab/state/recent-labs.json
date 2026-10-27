@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-24-14",
-      "unitId": "UNIT-BLOB-001",
-      "domain": "azure-blob-storage",
-      "primarySkill": "stream-state-contracts",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "document-ingestion-api",
-      "primaryRootCause": "seekable-stream-position-is-left-at-end-after-pre-upload-inspection",
-      "failureMode": "upload-succeeds-but-stored-object-is-empty",
-      "solutionPattern": "make-stream-position-contract-explicit-at-stage-boundaries",
-      "labFormat": "storage-pipeline-deterministic-failure"
-    },
-    {
       "runSlot": "2026-09-24-16",
       "unitId": "UNIT-ES-002",
       "domain": "elasticsearch",
@@ -1436,10 +1423,24 @@
       "failureMode": "production-escalation-remains-at-development-threshold-despite-deployment-override",
       "solutionPattern": "explicit-json-then-environment-provider-order-with-override-and-fallback-regression-contracts",
       "labFormat": "configuration-source-forensics-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-00",
+      "unitId": "UNIT-INIT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-INIT-001-insurance-underwriting-ruleset-recovery",
+      "domain": "dotnet-async-initialization",
+      "primarySkill": "async-initialization-fault-recovery",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "insurance-underwriting-ruleset-evaluation",
+      "scenarioType": "transient-partner-outage-followed-by-permanent-in-process-read-failure",
+      "primaryRootCause": "faulted-task-retained-by-long-lived-lazy-async-initializer",
+      "failureMode": "all-subsequent-rule-evaluations-fail-after-partner-recovers-without-new-fetch",
+      "solutionPattern": "retry-faulted-initialization-while-preserving-single-flight-success-caching",
+      "labFormat": "async-initializer-transient-failure-deterministic-lab"
     }
   ],
   "rolling24": [
-    "UNIT-SCHED-001",
     "UNIT-CONTRACT-001",
     "UNIT-DAG-001",
     "UNIT-POOL-001",
@@ -1462,14 +1463,14 @@
     "UNIT-EF-016",
     "UNIT-HOST-002",
     "UNIT-GUID-001",
-    "UNIT-CFG-001"
+    "UNIT-CFG-001",
+    "UNIT-INIT-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-periodic-scheduling": 1,
         "api-contract-evolution": 1,
         "dotnet-workflow-dependency-planning": 1,
         "dotnet-buffer-serialization": 1,
@@ -1492,22 +1493,22 @@
         "ef-core-change-tracking": 1,
         "dotnet-host-lifecycle": 1,
         "dotnet-guid-wire-interoperability": 1,
-        "dotnet-configuration": 1
+        "dotnet-configuration": 1,
+        "dotnet-async-initialization": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L4": 4,
         "L5": 2,
         "L3": 6,
-        "L1": 4,
+        "L1": 5,
+        "L4": 3,
         "L2": 7,
         "L6": 1
       },
       "labFormat": {
-        "scheduled-window-reconciliation-refactoring-workshop": 1,
         "b2b-contract-evolution-design-decision": 1,
         "dependency-graph-production-incident": 1,
         "pooled-buffer-serialization-deterministic-failure": 1,
@@ -1530,7 +1531,8 @@
         "efcore-batch-import-lifecycle-refactoring-workshop": 1,
         "hosted-service-startup-evidence-investigation": 1,
         "binary-uuid-cross-language-incident": 1,
-        "configuration-source-forensics-investigation": 1
+        "configuration-source-forensics-investigation": 1,
+        "async-initializer-transient-failure-deterministic-lab": 1
       }
     }
   }
