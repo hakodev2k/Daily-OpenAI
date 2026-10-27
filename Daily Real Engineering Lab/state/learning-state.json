@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-GIT-001",
-    "runSlot": "2026-10-27-17",
-    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-GIT-001-permit-pr-shallow-history-change-gate",
+    "unitId": "UNIT-HPOOL-001",
+    "runSlot": "2026-10-27-18",
+    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-HPOOL-001-university-report-followup-health-probe-stall",
     "status": "READY",
-    "createdAt": "2026-10-27T17:09:33+07:00"
+    "createdAt": "2026-10-27T18:10:50+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 288,
-    "totalGenerated": 283,
+    "totalRunSlotsAttempted": 289,
+    "totalGenerated": 284,
     "totalFailed": 5
   },
   "learning": {

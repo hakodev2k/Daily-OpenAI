@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-23-01",
-      "unitId": "UNIT-SB-001",
-      "domain": "azure-service-bus",
-      "primarySkill": "message-lock-lifecycle",
-      "maturityLevel": "L3",
-      "difficulty": "D3",
-      "businessContext": "document-conversion-worker",
-      "primaryRootCause": "message-processing-duration-exceeds-lock-validity-without-renewal-or-safe-idempotent-redelivery-handling",
-      "failureMode": "same-document-is-processed-twice-after-lock-expiry-and-redelivery",
-      "solutionPattern": "bound-processing-to-lock-contract-with-renewal-and-idempotent-side-effect-boundary",
-      "labFormat": "messaging-production-incident"
-    },
-    {
       "runSlot": "2026-09-23-02",
       "unitId": "UNIT-EF-011",
       "domain": "ef-core",
@@ -1424,10 +1411,24 @@
       "failureMode": "ci-change-detection-errors-and-targeted-tests-cannot-be-selected",
       "solutionPattern": "explicit-base-sha-and-targeted-fetch-with-fail-closed-tree-diff",
       "labFormat": "git-history-boundary-ci-investigation"
+    },
+    {
+      "runSlot": "2026-10-27-18",
+      "unitId": "UNIT-HPOOL-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-HPOOL-001-university-report-followup-health-probe-stall",
+      "domain": "http-connection-pooling",
+      "primarySkill": "http-response-lease-lifecycle",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "university-accreditation-report-gateway",
+      "scenarioType": "streaming-partner-report-preview-followed-by-health-check",
+      "primaryRootCause": "responseheadersread-response-remains-undisposed-while-followup-needs-same-limited-connection-pool",
+      "failureMode": "healthy-partner-probe-queues-until-timeout-after-successful-report-headers",
+      "solutionPattern": "close-unconsumed-response-lease-before-subsequent-dependent-request",
+      "labFormat": "http-connection-lease-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-FS-001",
     "UNIT-PAR-001",
     "UNIT-PGIDX-001",
     "UNIT-LOG-001",
@@ -1450,14 +1451,14 @@
     "UNIT-CHAN-002",
     "UNIT-UTF8-001",
     "UNIT-LEGAL-001",
-    "UNIT-GIT-001"
+    "UNIT-GIT-001",
+    "UNIT-HPOOL-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-filesystem-consistency": 1,
         "dotnet-io-parallelism": 1,
         "postgresql-index-inference": 1,
         "dotnet-structured-logging": 1,
@@ -1480,22 +1481,22 @@
         "dotnet-channel-delivery-semantics": 1,
         "dotnet-streaming-text": 1,
         "legal-platform-architecture": 1,
-        "git-ci-diff-semantics": 1
+        "git-ci-diff-semantics": 1,
+        "http-connection-pooling": 1
       },
       "difficulty": {
         "D4": 20,
         "D3": 4
       },
       "maturityLevel": {
-        "L2": 9,
-        "L3": 5,
+        "L2": 8,
+        "L3": 6,
         "L1": 4,
         "L4": 3,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "filesystem-snapshot-consistency-investigation": 1,
         "io-capacity-configuration-investigation": 1,
         "postgresql-upsert-index-contract-investigation": 1,
         "structured-logging-evidence-production-incident": 1,
@@ -1518,7 +1519,8 @@
         "audit-event-loss-production-investigation": 1,
         "network-stream-decoding-evidence-investigation": 1,
         "architecture-tabletop-failure-contract-decision": 1,
-        "git-history-boundary-ci-investigation": 1
+        "git-history-boundary-ci-investigation": 1,
+        "http-connection-lease-production-incident": 1
       }
     }
   }
