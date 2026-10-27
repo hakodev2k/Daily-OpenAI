@@ -1402,10 +1402,24 @@
       "failureMode": "large-debit-credit-records-export-in-inverted-order",
       "solutionPattern": "compareto-based-total-order-with-ordinal-reference-tie-breaker",
       "labFormat": "deterministic-collection-order-contract"
+    },
+    {
+      "runSlot": "2026-10-27-13",
+      "unitId": "UNIT-OFFSYNC-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-OFFSYNC-001-field-technician-offline-work-order-conflict",
+      "domain": "offline-sync-consistency",
+      "primarySkill": "offline-field-level-conflict-resolution",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "water-utility-field-technician-offline-work-orders",
+      "scenarioType": "multi-device-offline-concurrent-field-edits",
+      "primaryRootCause": "global-client-timestamp-last-write-wins-collapses-independent-fields-and-accepts-stale-field-edits",
+      "failureMode": "independent-note-lost-stale-status-accepted-and-retry-not-idempotent",
+      "solutionPattern": "per-field-base-revision-with-immutable-change-id-deduplication-and-explicit-conflicts",
+      "labFormat": "offline-sync-contract-design-decision-with-executable-fixture"
     }
   ],
   "rolling24": [
-    "UNIT-COOKIE-001",
     "UNIT-LINQ-001",
     "UNIT-TCS-001",
     "UNIT-CSV-001",
@@ -1428,14 +1442,14 @@
     "UNIT-ES-003",
     "UNIT-SEMA-001",
     "UNIT-DP-001",
-    "UNIT-CMP-001"
+    "UNIT-CMP-001",
+    "UNIT-OFFSYNC-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "http-client-session-security": 1,
         "dotnet-linq-data-reconciliation": 1,
         "dotnet-async-coordination": 1,
         "dotnet-csv-data-ingestion": 1,
@@ -1458,21 +1472,21 @@
         "elasticsearch-bulk-ingestion": 1,
         "dotnet-semaphore-admission-control": 1,
         "aspnet-core-data-protection": 1,
-        "csharp-comparer-contract": 1
+        "csharp-comparer-contract": 1,
+        "offline-sync-consistency": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
         "L2": 8,
         "L4": 4,
         "L1": 5,
-        "L5": 1
+        "L3": 5,
+        "L5": 2
       },
       "labFormat": {
-        "http-cookie-isolation-production-incident": 1,
         "linq-feed-order-invariance-investigation": 1,
         "async-coordination-refactoring-workshop": 1,
         "partner-data-import-deterministic-failure": 1,
@@ -1495,7 +1509,8 @@
         "search-bulk-partial-failure-production-incident": 1,
         "semaphore-admission-invariant-investigation": 1,
         "multi-replica-security-lifecycle-refactoring-workshop": 1,
-        "deterministic-collection-order-contract": 1
+        "deterministic-collection-order-contract": 1,
+        "offline-sync-contract-design-decision-with-executable-fixture": 1
       }
     }
   }

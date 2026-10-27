@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CMP-001",
-    "runSlot": "2026-10-27-12",
-    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CMP-001-housing-subsidy-settlement-signed-comparer-overflow",
+    "unitId": "UNIT-OFFSYNC-001",
+    "runSlot": "2026-10-27-13",
+    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-OFFSYNC-001-field-technician-offline-work-order-conflict",
     "status": "READY",
-    "createdAt": "2026-10-27T12:07:57+07:00"
+    "createdAt": "2026-10-27T13:05:59+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 283,
-    "totalGenerated": 278,
+    "totalRunSlotsAttempted": 284,
+    "totalGenerated": 279,
     "totalFailed": 5
   },
   "learning": {
