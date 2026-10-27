@@ -1387,10 +1387,24 @@
       "failureMode": "valid-session-token-rejected-by-another-replica-and-after-process-restart",
       "solutionPattern": "shared-persisted-key-ring-with-stable-application-discriminator-and-purpose-isolation",
       "labFormat": "multi-replica-security-lifecycle-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-27-12",
+      "unitId": "UNIT-CMP-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CMP-001-housing-subsidy-settlement-signed-comparer-overflow",
+      "domain": "csharp-comparer-contract",
+      "primarySkill": "csharp-comparer-contract",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "municipal-housing-subsidy-settlement",
+      "scenarioType": "signed-settlement-adjustment-order-drift",
+      "primaryRootCause": "subtraction-based-int-comparer-overflows-at-opposite-signed-boundaries",
+      "failureMode": "large-debit-credit-records-export-in-inverted-order",
+      "solutionPattern": "compareto-based-total-order-with-ordinal-reference-tie-breaker",
+      "labFormat": "deterministic-collection-order-contract"
     }
   ],
   "rolling24": [
-    "UNIT-API-002",
     "UNIT-COOKIE-001",
     "UNIT-LINQ-001",
     "UNIT-TCS-001",
@@ -1413,14 +1427,14 @@
     "UNIT-CTX-002",
     "UNIT-ES-003",
     "UNIT-SEMA-001",
-    "UNIT-DP-001"
+    "UNIT-DP-001",
+    "UNIT-CMP-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "api-concurrency-contracts": 1,
         "http-client-session-security": 1,
         "dotnet-linq-data-reconciliation": 1,
         "dotnet-async-coordination": 1,
@@ -1443,21 +1457,21 @@
         "dotnet-ambient-context-concurrency": 1,
         "elasticsearch-bulk-ingestion": 1,
         "dotnet-semaphore-admission-control": 1,
-        "aspnet-core-data-protection": 1
+        "aspnet-core-data-protection": 1,
+        "csharp-comparer-contract": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L2": 9,
         "L3": 6,
+        "L2": 8,
         "L4": 4,
-        "L1": 4,
+        "L1": 5,
         "L5": 1
       },
       "labFormat": {
-        "conditional-write-race-investigation": 1,
         "http-cookie-isolation-production-incident": 1,
         "linq-feed-order-invariance-investigation": 1,
         "async-coordination-refactoring-workshop": 1,
@@ -1480,7 +1494,8 @@
         "ambient-context-aliasing-deterministic-failure": 1,
         "search-bulk-partial-failure-production-incident": 1,
         "semaphore-admission-invariant-investigation": 1,
-        "multi-replica-security-lifecycle-refactoring-workshop": 1
+        "multi-replica-security-lifecycle-refactoring-workshop": 1,
+        "deterministic-collection-order-contract": 1
       }
     }
   }
