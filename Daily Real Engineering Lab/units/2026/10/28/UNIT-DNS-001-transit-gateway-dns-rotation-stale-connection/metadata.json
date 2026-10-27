@@ -1,0 +1,44 @@
+{
+  "unitId": "UNIT-DNS-001",
+  "runSlot": "2026-10-28-06",
+  "title": "Gateway xe buýt vẫn gọi datacenter cũ sau khi đổi DNS",
+  "domain": "http-dns-connection-lifecycle",
+  "primarySkill": "httpclient-pooled-connection-dns-refresh",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-28T06:07:53.807+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "socketshttphandler",
+    "httpclient",
+    "dns",
+    "connection-pooling",
+    "tcp",
+    "production-diagnostics"
+  ],
+  "prerequisites": [
+    "http-keep-alive-basics",
+    "csharp-async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-bus-arrival-prediction-gateway",
+    "scenarioType": "upstream-endpoint-rotated-during-healthy-persistent-http-traffic",
+    "primaryRootCause": "long-lived-pooled-http-connection-remains-bound-to-old-endpoint-after-route-refresh",
+    "failureMode": "healthy-api-continues-serving-obsolete-datacenter-after-routing-cutover",
+    "solutionPattern": "bounded-http-pooled-connection-lifetime-with-explicit-refresh-and-failover-budget",
+    "labFormat": "dns-rotation-connection-lifecycle-investigation"
+  },
+  "validationNotes": "Static review of .NET 8 source, expected request flow and PowerShell scripts. No dotnet SDK is installed in this execution environment; compilation and runtime assertions were not executed.",
+  "diversityOverride": {
+    "enabled": false
+  }
+}
