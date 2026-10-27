@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-23-05",
-      "unitId": "UNIT-OBS-007",
-      "domain": "observability",
-      "primarySkill": "distributed-tracing-sampling",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "partner-order-import-api",
-      "primaryRootCause": "head-based-trace-sampling-discards-rare-slow-requests-before-their-latency-outcome-is-known",
-      "failureMode": "latency-metrics-show-tail-spikes-but-sampled-traces-contain-almost-no-slow-request-examples",
-      "solutionPattern": "align-sampling-strategy-with-incident-diagnostic-objectives-and-preserve-targeted-high-value-traces",
-      "labFormat": "observability-evidence-gap-investigation"
-    },
-    {
       "runSlot": "2026-09-23-16",
       "unitId": "UNIT-API-001",
       "domain": "api-engineering",
@@ -1432,10 +1419,24 @@
       "failureMode": "host-startasync-and-api-readiness-delay-until-warmup-gate-releases",
       "solutionPattern": "yield-asynchronous-execution-boundary-before-long-running-warmup-with-independent-readiness-policy",
       "labFormat": "hosted-service-startup-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-10-27-22",
+      "unitId": "UNIT-GUID-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-GUID-001-emergency-vehicle-uuid-wire-byte-order",
+      "domain": "dotnet-guid-wire-interoperability",
+      "primarySkill": "guid-network-byte-order-contract",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "emergency-vehicle-dispatch-cross-language-event-gateway",
+      "scenarioType": "dotnet-uuid-transport-to-java-device-registry",
+      "primaryRootCause": "guid-default-byte-array-uses-mixed-endian-layout-instead-of-network-order-uuid",
+      "failureMode": "local-guid-roundtrip-passes-but-cross-language-identifier-lookup-fails",
+      "solutionPattern": "explicit-network-order-guid-encoding-and-decoding-with-cross-language-golden-vectors",
+      "labFormat": "binary-uuid-cross-language-incident"
     }
   ],
   "rolling24": [
-    "UNIT-JOPT-001",
     "UNIT-ENDIAN-001",
     "UNIT-SCHED-001",
     "UNIT-CONTRACT-001",
@@ -1458,14 +1459,14 @@
     "UNIT-HPOOL-001",
     "UNIT-NUM-001",
     "UNIT-EF-016",
-    "UNIT-HOST-002"
+    "UNIT-HOST-002",
+    "UNIT-GUID-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-json-serialization-options": 1,
         "dotnet-binary-protocols": 1,
         "dotnet-periodic-scheduling": 1,
         "api-contract-evolution": 1,
@@ -1488,22 +1489,22 @@
         "http-connection-pooling": 1,
         "dotnet-json-numeric-identity": 1,
         "ef-core-change-tracking": 1,
-        "dotnet-host-lifecycle": 1
+        "dotnet-host-lifecycle": 1,
+        "dotnet-guid-wire-interoperability": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 20,
+        "D3": 4
       },
       "maturityLevel": {
-        "L1": 5,
         "L2": 7,
         "L4": 4,
         "L5": 2,
-        "L3": 5,
+        "L3": 6,
+        "L1": 4,
         "L6": 1
       },
       "labFormat": {
-        "json-serializer-options-lifecycle-deterministic-failure": 1,
         "binary-protocol-evidence-led-investigation": 1,
         "scheduled-window-reconciliation-refactoring-workshop": 1,
         "b2b-contract-evolution-design-decision": 1,
@@ -1526,7 +1527,8 @@
         "http-connection-lease-production-incident": 1,
         "numeric-identifier-integrity-deterministic-failure": 1,
         "efcore-batch-import-lifecycle-refactoring-workshop": 1,
-        "hosted-service-startup-evidence-investigation": 1
+        "hosted-service-startup-evidence-investigation": 1,
+        "binary-uuid-cross-language-incident": 1
       }
     }
   }
