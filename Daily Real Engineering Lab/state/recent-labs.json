@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-24-16",
-      "unitId": "UNIT-ES-002",
-      "domain": "elasticsearch",
-      "primarySkill": "elasticsearch-pagination",
-      "maturityLevel": "L3",
-      "difficulty": "D3",
-      "businessContext": "support-ticket-search",
-      "primaryRootCause": "offset-pagination-runs-independent-searches-over-a-changing-result-set-with-non-stable-boundaries",
-      "failureMode": "users-see-duplicate-and-missing-items-across-pages",
-      "solutionPattern": "stable-snapshot-pagination-with-deterministic-sort-cursor",
-      "labFormat": "search-consistency-production-incident"
-    },
-    {
       "runSlot": "2026-09-24-17",
       "unitId": "UNIT-TEST-011",
       "domain": "testing",
@@ -1438,10 +1425,24 @@
       "failureMode": "all-subsequent-rule-evaluations-fail-after-partner-recovers-without-new-fetch",
       "solutionPattern": "retry-faulted-initialization-while-preserving-single-flight-success-caching",
       "labFormat": "async-initializer-transient-failure-deterministic-lab"
+    },
+    {
+      "runSlot": "2026-10-28-01",
+      "unitId": "UNIT-CRYPTO-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-CRYPTO-001-warehouse-export-aesgcm-envelope-collision",
+      "domain": "dotnet-cryptographic-protocols",
+      "primarySkill": "aes-gcm-nonce-uniqueness",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "warehouse-cold-chain-compliance-export",
+      "scenarioType": "multi-record-encrypted-archive-leaks-plaintext-relationship-with-valid-authentication",
+      "primaryRootCause": "aes-gcm-key-and-nonce-pair-reused-for-multiple-records-in-same-batch",
+      "failureMode": "ciphertext-xor-exposes-plaintext-xor-despite-successful-authenticated-decryption",
+      "solutionPattern": "fresh-cryptographically-random-nonce-per-encryption-with-authenticated-batch-context",
+      "labFormat": "cryptographic-envelope-production-forensics"
     }
   ],
   "rolling24": [
-    "UNIT-CONTRACT-001",
     "UNIT-DAG-001",
     "UNIT-POOL-001",
     "UNIT-RATE-001",
@@ -1464,14 +1465,14 @@
     "UNIT-HOST-002",
     "UNIT-GUID-001",
     "UNIT-CFG-001",
-    "UNIT-INIT-001"
+    "UNIT-INIT-001",
+    "UNIT-CRYPTO-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "api-contract-evolution": 1,
         "dotnet-workflow-dependency-planning": 1,
         "dotnet-buffer-serialization": 1,
         "http-rate-limit-recovery": 1,
@@ -1494,22 +1495,22 @@
         "dotnet-host-lifecycle": 1,
         "dotnet-guid-wire-interoperability": 1,
         "dotnet-configuration": 1,
-        "dotnet-async-initialization": 1
+        "dotnet-async-initialization": 1,
+        "dotnet-cryptographic-protocols": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L5": 2,
-        "L3": 6,
+        "L3": 7,
         "L1": 5,
         "L4": 3,
         "L2": 7,
+        "L5": 1,
         "L6": 1
       },
       "labFormat": {
-        "b2b-contract-evolution-design-decision": 1,
         "dependency-graph-production-incident": 1,
         "pooled-buffer-serialization-deterministic-failure": 1,
         "http-rate-limit-policy-refactoring-workshop": 1,
@@ -1532,7 +1533,8 @@
         "hosted-service-startup-evidence-investigation": 1,
         "binary-uuid-cross-language-incident": 1,
         "configuration-source-forensics-investigation": 1,
-        "async-initializer-transient-failure-deterministic-lab": 1
+        "async-initializer-transient-failure-deterministic-lab": 1,
+        "cryptographic-envelope-production-forensics": 1
       }
     }
   }

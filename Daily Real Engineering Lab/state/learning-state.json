@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-INIT-001",
-    "runSlot": "2026-10-28-00",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-INIT-001-insurance-underwriting-ruleset-recovery",
+    "unitId": "UNIT-CRYPTO-001",
+    "runSlot": "2026-10-28-01",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-CRYPTO-001-warehouse-export-aesgcm-envelope-collision",
     "status": "READY",
-    "createdAt": "2026-10-28T00:13:58+07:00"
+    "createdAt": "2026-10-28T01:04:16+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 295,
-    "totalGenerated": 290,
+    "totalRunSlotsAttempted": 296,
+    "totalGenerated": 291,
     "totalFailed": 5
   },
   "learning": {

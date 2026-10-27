@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-CRYPTO-001",
+  "runSlot": "2026-10-28-01",
+  "title": "Bản xuất kho lạnh được mã hóa nhưng vẫn lộ quan hệ giữa hai hồ sơ",
+  "domain": "dotnet-cryptographic-protocols",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-28T01:04:16+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "aes-gcm-nonce-uniqueness",
+    "authenticated-encryption",
+    "crypto-envelope-contract",
+    "failure-path-verification"
+  ],
+  "primarySkill": "aes-gcm-nonce-uniqueness",
+  "prerequisites": [
+    "C# byte arrays",
+    "symmetric encryption fundamentals",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "warehouse-cold-chain-compliance-export",
+    "scenarioType": "multi-record-encrypted-archive-leaks-plaintext-relationship-with-valid-authentication",
+    "primaryRootCause": "aes-gcm-key-and-nonce-pair-reused-for-multiple-records-in-same-batch",
+    "failureMode": "ciphertext-xor-exposes-plaintext-xor-despite-successful-authenticated-decryption",
+    "solutionPattern": "fresh-cryptographically-random-nonce-per-encryption-with-authenticated-batch-context",
+    "labFormat": "cryptographic-envelope-production-forensics"
+  }
+}
