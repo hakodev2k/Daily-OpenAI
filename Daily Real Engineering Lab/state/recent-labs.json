@@ -1312,10 +1312,24 @@
       "failureMode": "reassembled-image-contains-overlapping-duplicate-boundary-bytes",
       "solutionPattern": "inclusive-end-offset-with-content-range-and-payload-length-contract-validation",
       "labFormat": "byte-range-resume-production-incident"
+    },
+    {
+      "runSlot": "2026-10-27-07",
+      "unitId": "UNIT-XML-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-XML-001-renewable-certificate-xml-namespace-boundary",
+      "domain": "dotnet-xml-ingestion",
+      "primarySkill": "linq-to-xml-expanded-names",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "renewable-energy-certificate-reconciliation",
+      "scenarioType": "partner-xml-batch-import-reports-zero-energy-without-parse-error",
+      "primaryRootCause": "xml-expanded-name-and-parent-path-mismatch-in-namespaced-feed",
+      "failureMode": "valid-meter-readings-silently-omitted-while-batch-is-marked-accepted",
+      "solutionPattern": "namespace-aware-schema-scoped-element-selection-and-root-contract-validation",
+      "labFormat": "xml-schema-boundary-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-SEARCH-001",
     "UNIT-JSON-001",
     "UNIT-HOST-001",
     "UNIT-EF-015",
@@ -1338,14 +1352,14 @@
     "UNIT-POOL-001",
     "UNIT-RATE-001",
     "UNIT-KEY-001",
-    "UNIT-RANGE-001"
+    "UNIT-RANGE-001",
+    "UNIT-XML-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "search-index-operations": 1,
         "dotnet-json-dom": 1,
         "dotnet-hosting-deployment": 1,
         "ef-core": 1,
@@ -1368,21 +1382,21 @@
         "dotnet-buffer-serialization": 1,
         "http-rate-limit-recovery": 1,
         "dotnet-cache-key-identity": 1,
-        "http-partial-content": 1
+        "http-partial-content": 1,
+        "dotnet-xml-ingestion": 1
       },
       "difficulty": {
         "D4": 20,
         "D3": 4
       },
       "maturityLevel": {
-        "L5": 2,
-        "L2": 8,
+        "L2": 9,
         "L3": 6,
         "L4": 4,
-        "L1": 4
+        "L1": 4,
+        "L5": 1
       },
       "labFormat": {
-        "search-index-migration-design-decision": 1,
         "json-dom-lifetime-investigation": 1,
         "deployment-launch-context-production-incident": 1,
         "ef-core-bulk-update-refactoring-workshop": 1,
@@ -1405,7 +1419,8 @@
         "pooled-buffer-serialization-deterministic-failure": 1,
         "http-rate-limit-policy-refactoring-workshop": 1,
         "tenant-cache-identity-evidence-investigation": 1,
-        "byte-range-resume-production-incident": 1
+        "byte-range-resume-production-incident": 1,
+        "xml-schema-boundary-investigation": 1
       }
     }
   }
