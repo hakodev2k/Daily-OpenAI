@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PAGE-001",
-    "runSlot": "2026-10-28-04",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PAGE-001-marine-survey-keyset-cursor-tie-boundary",
+    "unitId": "UNIT-TX-001",
+    "runSlot": "2026-10-28-05",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-TX-001-park-ranger-shift-coverage-concurrent-approval",
     "status": "READY",
-    "createdAt": "2026-10-28T04:06:35+07:00"
+    "createdAt": "2026-10-28T05:07:03+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 299,
-    "totalGenerated": 294,
+    "totalRunSlotsAttempted": 300,
+    "totalGenerated": 295,
     "totalFailed": 5
   },
   "learning": {

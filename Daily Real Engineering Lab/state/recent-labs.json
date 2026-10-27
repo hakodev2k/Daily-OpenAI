@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-24-21",
-      "unitId": "UNIT-ASP-004",
-      "domain": "aspnet-core",
-      "primarySkill": "aspnet-core-response-lifecycle",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "large-report-download-api",
-      "primaryRootCause": "streaming-endpoint-flushes-success-response-before-later-work-can-fail",
-      "failureMode": "client-receives-200-and-partial-body-while-server-logs-an-unhandled-exception-that-cannot-be-replaced-with-json-error",
-      "solutionPattern": "move-fallible-preparation-before-response-commit-and-define-streaming-failure-contract",
-      "labFormat": "aspnet-response-lifecycle-investigation"
-    },
-    {
       "runSlot": "2026-09-25-09",
       "unitId": "UNIT-PERF-002",
       "domain": "performance",
@@ -1446,10 +1433,24 @@
       "failureMode": "observations-at-page-boundary-silently-omitted-with-no-server-error",
       "solutionPattern": "lexicographic-composite-cursor-on-timestamp-and-stable-observation-id",
       "labFormat": "deterministic-keyset-cursor-integrity-lab"
+    },
+    {
+      "runSlot": "2026-10-28-05",
+      "unitId": "UNIT-TX-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-TX-001-park-ranger-shift-coverage-concurrent-approval",
+      "domain": "database-concurrency-invariants",
+      "primarySkill": "cross-row-transactional-invariant-preservation",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "national-park-ranger-radio-desk-roster",
+      "scenarioType": "two-independent-leave-approvals-cross-a-minimum-shift-coverage-boundary",
+      "primaryRootCause": "cross-row-coverage-invariant-is-checked-on-separate-snapshots-before-independent-commits",
+      "failureMode": "both-leave-requests-succeed-and-the-shift-has-no-on-duty-ranger",
+      "solutionPattern": "atomically-enforce-shift-wide-coverage-invariant-at-authoritative-write-boundary",
+      "labFormat": "concurrency-invariant-design-decision-with-deterministic-fixture"
     }
   ],
   "rolling24": [
-    "UNIT-KEY-001",
     "UNIT-RANGE-001",
     "UNIT-XML-001",
     "UNIT-CTX-002",
@@ -1472,14 +1473,14 @@
     "UNIT-CRYPTO-001",
     "UNIT-JSON-002",
     "UNIT-PROC-001",
-    "UNIT-PAGE-001"
+    "UNIT-PAGE-001",
+    "UNIT-TX-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-cache-key-identity": 1,
         "http-partial-content": 1,
         "dotnet-xml-ingestion": 1,
         "dotnet-ambient-context-concurrency": 1,
@@ -1502,22 +1503,22 @@
         "dotnet-cryptographic-protocols": 1,
         "api-json-contracts": 1,
         "dotnet-process-io": 1,
-        "api-pagination-consistency": 1
+        "api-pagination-consistency": 1,
+        "database-concurrency-invariants": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
         "L3": 6,
+        "L2": 7,
         "L1": 5,
         "L4": 3,
-        "L5": 1,
+        "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "tenant-cache-identity-evidence-investigation": 1,
         "byte-range-resume-production-incident": 1,
         "xml-schema-boundary-investigation": 1,
         "ambient-context-aliasing-deterministic-failure": 1,
@@ -1540,7 +1541,8 @@
         "cryptographic-envelope-production-forensics": 1,
         "partner-payload-contract-investigation": 1,
         "external-process-stream-lifecycle-refactoring-workshop": 1,
-        "deterministic-keyset-cursor-integrity-lab": 1
+        "deterministic-keyset-cursor-integrity-lab": 1,
+        "concurrency-invariant-design-decision-with-deterministic-fixture": 1
       }
     }
   }
