@@ -1,0 +1,47 @@
+{
+  "unitId": "UNIT-LEGAL-001",
+  "runSlot": "2026-10-27-16",
+  "title": "Biên nhận nộp hồ sơ tòa án tại thời điểm chốt hạn",
+  "domain": "legal-platform-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-10-27T16:10:47+07:00",
+  "estimatedMinutes": 90,
+  "exerciseType": "non-executable-architecture-tabletop",
+  "skills": [
+    "durable-acknowledgement",
+    "rpo-rto-tradeoffs",
+    "idempotency",
+    "consistency-boundaries",
+    "failure-mode-analysis",
+    "architecture-decision-records"
+  ],
+  "prerequisites": [
+    "transaction-commit-semantics",
+    "http-retry-ambiguity",
+    "synchronous-vs-asynchronous-replication"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Reviewed scenario-to-evidence consistency, deadline semantics, failure invariants, reference alternatives and all internal links; no runtime execution is applicable to this design exercise.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "judicial-court-efiling-deadline-receipts",
+    "scenarioType": "deadline-bound-filing-receipt-under-failover-and-ambiguous-retries",
+    "primaryRootCause": "http-acknowledgement-issued-before-durable-authoritative-receipt-commit",
+    "failureMode": "orphaned-legal-receipts-and-duplicate-submission-identities-after-failover",
+    "solutionPattern": "durable-authoritative-acceptance-boundary-with-idempotent-receipt-lookup-and-fail-closed-unknown-outcomes",
+    "labFormat": "architecture-tabletop-failure-contract-decision"
+  },
+  "deliverables": [
+    "workspace/my-architecture.md",
+    "expected-results/acceptance.md"
+  ],
+  "noExecutableStarterReason": "The core exercise is architecture reasoning against deterministic incident evidence, not a runnable bug."
+}
