@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CTX-002",
-    "runSlot": "2026-10-27-08",
-    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CTX-002-drone-survey-parallel-trace-context-aliasing",
+    "unitId": "UNIT-ES-003",
+    "runSlot": "2026-10-27-09",
+    "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-ES-003-railway-route-search-bulk-partial-failure",
     "status": "READY",
-    "createdAt": "2026-10-27T08:06:19+07:00"
+    "createdAt": "2026-10-27T09:04:45+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 279,
-    "totalGenerated": 274,
+    "totalRunSlotsAttempted": 280,
+    "totalGenerated": 275,
     "totalFailed": 5
   },
   "learning": {

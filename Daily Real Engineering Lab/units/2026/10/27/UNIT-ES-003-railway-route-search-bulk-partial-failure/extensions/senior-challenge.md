@@ -1,0 +1,2 @@
+# Senior Extension — Durable Bulk Recovery
+Sau khi pass verify, thiết kế (không cần triển khai) pipeline 100k document/phút, 1% 429 và 0.1% lỗi mapping. Định nghĩa retry budget, backoff/jitter, DLQ schema, metrics, idempotent IDs, checkpoint và cơ chế reconciliation sau crash giữa bulk success và checkpoint commit. So sánh inline retry với durable queue theo latency, cost, vận hành và khả năng audit.

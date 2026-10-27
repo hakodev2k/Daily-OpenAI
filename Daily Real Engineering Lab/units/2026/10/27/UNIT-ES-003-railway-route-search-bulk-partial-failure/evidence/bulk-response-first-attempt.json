@@ -1,0 +1,38 @@
+{
+  "took": 7,
+  "errors": true,
+  "items": [
+    {
+      "index": {
+        "_id": "route-101",
+        "status": 201
+      }
+    },
+    {
+      "index": {
+        "_id": "route-102",
+        "status": 429,
+        "error": {
+          "type": "es_rejected_execution_exception",
+          "reason": "Synthetic write queue temporarily full"
+        }
+      }
+    },
+    {
+      "index": {
+        "_id": "route-103",
+        "status": 400,
+        "error": {
+          "type": "mapper_parsing_exception",
+          "reason": "Synthetic invalid geo_point"
+        }
+      }
+    },
+    {
+      "index": {
+        "_id": "route-104",
+        "status": 201
+      }
+    }
+  ]
+}
