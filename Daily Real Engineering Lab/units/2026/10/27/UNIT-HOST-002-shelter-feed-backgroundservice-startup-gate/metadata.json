@@ -1,0 +1,62 @@
+{
+  "unitId": "UNIT-HOST-002",
+  "runSlot": "2026-10-27-21",
+  "title": "Shelter Feed — BackgroundService giữ host startup",
+  "domain": "dotnet-host-lifecycle",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-27T21:06:10+07:00",
+  "estimatedMinutes": 55,
+  "primarySkill": "backgroundservice-first-await-startup-contract",
+  "skills": [
+    "backgroundservice-first-await-startup-contract",
+    "dotnet-generic-host",
+    "backgroundservice",
+    "startup-readiness",
+    "cancellation"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "IHostedService và BackgroundService cơ bản"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "emergency-shelter-capacity-coordination",
+    "scenarioType": "host-startup-stalls-during-background-feed-warmup",
+    "primaryRootCause": "backgroundservice-executeasync-blocks-synchronously-before-first-incomplete-await",
+    "failureMode": "host-startasync-and-api-readiness-delay-until-warmup-gate-releases",
+    "solutionPattern": "yield-asynchronous-execution-boundary-before-long-running-warmup-with-independent-readiness-policy",
+    "labFormat": "hosted-service-startup-evidence-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "metadata.json",
+    "global.json",
+    "starter/StartupLab.csproj",
+    "starter/Program.cs",
+    "starter/WarmupProbe.cs",
+    "starter/ShelterFeedWarmupService.cs",
+    "reproduce.ps1",
+    "verify.ps1",
+    "docs/investigation-guide.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "expected-results/before.md",
+    "expected-results/after.md",
+    "workspace/my-investigation.md",
+    "solution/README.md",
+    "solution/ShelterFeedWarmupService.cs"
+  ]
+}

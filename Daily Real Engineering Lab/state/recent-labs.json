@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-23-04",
-      "unitId": "UNIT-HTTP-008",
-      "domain": "http-networking",
-      "primarySkill": "http-timeouts-cancellation",
-      "maturityLevel": "L3",
-      "difficulty": "D3",
-      "businessContext": "checkout-shipping-quote-api",
-      "primaryRootCause": "nested-retry-attempts-and-per-attempt-timeouts-exceed-the-upstream-request-deadline",
-      "failureMode": "caller-times-out-while-server-continues-downstream-work-and-consumes-capacity",
-      "solutionPattern": "derive-attempt-timeouts-and-retry-budget-from-one-end-to-end-deadline-with-cancellation-propagation",
-      "labFormat": "http-resilience-production-incident"
-    },
-    {
       "runSlot": "2026-09-23-05",
       "unitId": "UNIT-OBS-007",
       "domain": "observability",
@@ -1430,10 +1417,24 @@
       "failureMode": "subsequent-tracked-scalar-review-change-silently-not-saved",
       "solutionPattern": "restore-original-dbcontext-change-detection-setting-in-finally-across-success-and-failure",
       "labFormat": "efcore-batch-import-lifecycle-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-27-21",
+      "unitId": "UNIT-HOST-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-HOST-002-shelter-feed-backgroundservice-startup-gate",
+      "domain": "dotnet-host-lifecycle",
+      "primarySkill": "backgroundservice-first-await-startup-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "emergency-shelter-capacity-coordination",
+      "scenarioType": "host-startup-stalls-during-background-feed-warmup",
+      "primaryRootCause": "backgroundservice-executeasync-blocks-synchronously-before-first-incomplete-await",
+      "failureMode": "host-startasync-and-api-readiness-delay-until-warmup-gate-releases",
+      "solutionPattern": "yield-asynchronous-execution-boundary-before-long-running-warmup-with-independent-readiness-policy",
+      "labFormat": "hosted-service-startup-evidence-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-LOG-001",
     "UNIT-JOPT-001",
     "UNIT-ENDIAN-001",
     "UNIT-SCHED-001",
@@ -1456,14 +1457,14 @@
     "UNIT-GIT-001",
     "UNIT-HPOOL-001",
     "UNIT-NUM-001",
-    "UNIT-EF-016"
+    "UNIT-EF-016",
+    "UNIT-HOST-002"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-structured-logging": 1,
         "dotnet-json-serialization-options": 1,
         "dotnet-binary-protocols": 1,
         "dotnet-periodic-scheduling": 1,
@@ -1486,22 +1487,22 @@
         "git-ci-diff-semantics": 1,
         "http-connection-pooling": 1,
         "dotnet-json-numeric-identity": 1,
-        "ef-core-change-tracking": 1
+        "ef-core-change-tracking": 1,
+        "dotnet-host-lifecycle": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L3": 6,
         "L1": 5,
-        "L2": 6,
+        "L2": 7,
         "L4": 4,
         "L5": 2,
+        "L3": 5,
         "L6": 1
       },
       "labFormat": {
-        "structured-logging-evidence-production-incident": 1,
         "json-serializer-options-lifecycle-deterministic-failure": 1,
         "binary-protocol-evidence-led-investigation": 1,
         "scheduled-window-reconciliation-refactoring-workshop": 1,
@@ -1524,7 +1525,8 @@
         "git-history-boundary-ci-investigation": 1,
         "http-connection-lease-production-incident": 1,
         "numeric-identifier-integrity-deterministic-failure": 1,
-        "efcore-batch-import-lifecycle-refactoring-workshop": 1
+        "efcore-batch-import-lifecycle-refactoring-workshop": 1,
+        "hosted-service-startup-evidence-investigation": 1
       }
     }
   }
