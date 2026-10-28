@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-24-22",
-      "unitId": "UNIT-HTTP-011",
-      "domain": "http-networking",
-      "primarySkill": "httpclient-request-context-isolation",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "multi-tenant-logistics-partner-proxy",
-      "scenarioType": "overlapping-outbound-requests-with-tenant-specific-context",
-      "primaryRootCause": "shared-httpclient-default-request-headers-mutated-per-request",
-      "failureMode": "outbound-requests-carry-another-tenants-routing-header",
-      "solutionPattern": "isolate-tenant-context-on-each-http-request-message",
-      "labFormat": "http-request-context-isolation-investigation"
-    },
-    {
       "runSlot": "2026-10-24-23",
       "unitId": "UNIT-EVT-001",
       "domain": "dotnet-event-lifecycle",
@@ -1484,10 +1470,24 @@
       "failureMode": "valid-certificate-remains-on-disk-but-is-never-accepted-after-missed-notification",
       "solutionPattern": "periodic-directory-inventory-reconciliation-with-idempotent-acceptance",
       "labFormat": "deterministic-file-drop-reliability-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-02",
+      "unitId": "UNIT-CDICT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CDICT-001-drone-corridor-permit-double-issuance",
+      "domain": "dotnet-concurrent-collections",
+      "primarySkill": "concurrentdictionary-getoradd-factory-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "drone-flight-corridor-permit-provisioning",
+      "scenarioType": "simultaneous-requests-for-one-flight-corridor-permit",
+      "primaryRootCause": "concurrentdictionary-getoradd-valuefactory-can-run-multiple-times-for-one-key",
+      "failureMode": "external-authority-issues-two-permits-while-cache-retains-one",
+      "solutionPattern": "single-execution-lazy-value-with-side-effect-only-after-cache-winner-selection",
+      "labFormat": "concurrent-cache-factory-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-JSON-002",
     "UNIT-PROC-001",
     "UNIT-PAGE-001",
     "UNIT-TX-001",
@@ -1510,14 +1510,14 @@
     "UNIT-CSV-002",
     "UNIT-BODY-001",
     "UNIT-QENC-001",
-    "UNIT-FDROP-001"
+    "UNIT-FDROP-001",
+    "UNIT-CDICT-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "api-json-contracts": 1,
         "dotnet-process-io": 1,
         "api-pagination-consistency": 1,
         "database-concurrency-invariants": 1,
@@ -1540,21 +1540,21 @@
         "csv-spreadsheet-export-security": 1,
         "aspnet-core-request-body-streams": 1,
         "http-query-component-encoding": 1,
-        "filesystem-ingestion-reliability": 1
+        "filesystem-ingestion-reliability": 1,
+        "dotnet-concurrent-collections": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 10,
         "L4": 4,
         "L1": 4,
         "L5": 1,
+        "L2": 10,
         "L3": 5
       },
       "labFormat": {
-        "partner-payload-contract-investigation": 1,
         "external-process-stream-lifecycle-refactoring-workshop": 1,
         "deterministic-keyset-cursor-integrity-lab": 1,
         "concurrency-invariant-design-decision-with-deterministic-fixture": 1,
@@ -1577,7 +1577,8 @@
         "spreadsheet-export-security-evidence-incident": 1,
         "request-body-pipeline-refactoring-workshop": 1,
         "partner-token-contract-investigation": 1,
-        "deterministic-file-drop-reliability-investigation": 1
+        "deterministic-file-drop-reliability-investigation": 1,
+        "concurrent-cache-factory-investigation": 1
       }
     }
   }

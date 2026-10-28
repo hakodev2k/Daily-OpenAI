@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-FDROP-001",
-    "runSlot": "2026-10-29-01",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FDROP-001-cold-room-calibration-file-drop-gaps",
+    "unitId": "UNIT-CDICT-001",
+    "runSlot": "2026-10-29-02",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CDICT-001-drone-corridor-permit-double-issuance",
     "status": "READY",
-    "createdAt": "2026-10-29T01:07:27+07:00"
+    "createdAt": "2026-10-29T02:04:35+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 320,
-    "totalGenerated": 315,
+    "totalRunSlotsAttempted": 321,
+    "totalGenerated": 316,
     "totalFailed": 5
   },
   "learning": {
