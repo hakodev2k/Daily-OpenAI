@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-05-23",
-      "unitId": "UNIT-HTTP-010",
-      "domain": "http-networking",
-      "primarySkill": "http-content-encoding-resource-bounds",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "partner-data-export-worker",
-      "primaryRootCause": "response-size-policy-is-evaluated-on-header-metadata-while-automatic-decompression-expands-the-consumed-body",
-      "failureMode": "high-compression-ratio-response-bypasses-intended-memory-bound-and-is-fully-materialized",
-      "solutionPattern": "stream-and-enforce-a-running-limit-on-the-post-decompression-byte-boundary",
-      "labFormat": "http-resource-boundary-investigation"
-    },
-    {
       "runSlot": "2026-10-06-00",
       "unitId": "UNIT-TEST-013",
       "domain": "testing",
@@ -1468,10 +1455,24 @@
       "failureMode": "timed-out-send-commits-after-retry-producing-duplicate-alert",
       "solutionPattern": "linked-cancellation-and-drain-before-return-with-production-idempotency-boundary",
       "labFormat": "deterministic-timeout-lifecycle-failure-lab"
+    },
+    {
+      "runSlot": "2026-10-28-16",
+      "unitId": "UNIT-SLOT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-SLOT-001-waste-route-appservice-swap-settings",
+      "domain": "azure-appservice-deployment-slots",
+      "primarySkill": "azure-appservice-slot-setting-swap-contract",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "municipal-waste-route-optimization",
+      "scenarioType": "staging-to-production-appservice-slot-swap",
+      "primaryRootCause": "environment-specific-database-app-setting-not-designated-as-slot-specific",
+      "failureMode": "production-route-optimizer-reads-staging-database-after-slot-swap",
+      "solutionPattern": "explicit-slot-specific-environment-configuration-with-swap-and-rollback-regression-gates",
+      "labFormat": "slot-swap-deployment-configuration-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-LEGAL-001",
     "UNIT-GIT-001",
     "UNIT-HPOOL-001",
     "UNIT-NUM-001",
@@ -1494,14 +1495,14 @@
     "UNIT-EF-017",
     "UNIT-TSPAN-001",
     "UNIT-REVAL-001",
-    "UNIT-WANY-001"
+    "UNIT-WANY-001",
+    "UNIT-SLOT-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "legal-platform-architecture": 1,
         "git-ci-diff-semantics": 1,
         "http-connection-pooling": 1,
         "dotnet-json-numeric-identity": 1,
@@ -1524,22 +1525,21 @@
         "ef-core-context-pooling": 1,
         "dotnet-timespan-semantics": 1,
         "http-cache-revalidation": 1,
-        "dotnet-async-timeout-boundaries": 1
+        "dotnet-async-timeout-boundaries": 1,
+        "azure-appservice-deployment-slots": 1
       },
       "difficulty": {
         "D4": 18,
         "D3": 6
       },
       "maturityLevel": {
-        "L6": 1,
         "L2": 9,
         "L3": 5,
         "L1": 5,
-        "L4": 3,
+        "L4": 4,
         "L5": 1
       },
       "labFormat": {
-        "architecture-tabletop-failure-contract-decision": 1,
         "git-history-boundary-ci-investigation": 1,
         "http-connection-lease-production-incident": 1,
         "numeric-identifier-integrity-deterministic-failure": 1,
@@ -1562,7 +1562,8 @@
         "cross-tenant-data-isolation-production-investigation": 1,
         "latency-telemetry-sawtooth-investigation": 1,
         "http-conditional-cache-contract-investigation": 1,
-        "deterministic-timeout-lifecycle-failure-lab": 1
+        "deterministic-timeout-lifecycle-failure-lab": 1,
+        "slot-swap-deployment-configuration-workshop": 1
       }
     }
   }

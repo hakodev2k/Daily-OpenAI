@@ -1,0 +1,59 @@
+{
+  "unitId": "UNIT-SLOT-001",
+  "runSlot": "2026-10-28-16",
+  "title": "Production đọc nhầm dữ liệu thử nghiệm sau App Service slot swap",
+  "domain": "azure-appservice-deployment-slots",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-28T16:11:02+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "azure-app-service-deployment-slots",
+    "slot-specific-app-settings",
+    "deployment-regression-gates",
+    "rollback-verification"
+  ],
+  "primarySkill": "azure-appservice-slot-setting-swap-contract",
+  "prerequisites": [
+    "Azure App Service deployment slot concepts",
+    "JSON app settings",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Strict static review of C# source, JSON fixtures, and expected swap/rollback invariants. .NET code was not executed; GitHub integration was the only external tool.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-waste-route-optimization",
+    "scenarioType": "staging-to-production-appservice-slot-swap",
+    "primaryRootCause": "environment-specific-database-app-setting-not-designated-as-slot-specific",
+    "failureMode": "production-route-optimizer-reads-staging-database-after-slot-swap",
+    "solutionPattern": "explicit-slot-specific-environment-configuration-with-swap-and-rollback-regression-gates",
+    "labFormat": "slot-swap-deployment-configuration-workshop"
+  },
+  "manifest": [
+    "README.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "solution/README.md",
+    "solution/fixtures/slots.json",
+    "starter/Program.cs",
+    "starter/SlotSwapEngine.cs",
+    "starter/SlotSwapLab.csproj",
+    "starter/fixtures/baseline.json",
+    "starter/fixtures/slots.json",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
