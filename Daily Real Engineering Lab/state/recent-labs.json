@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-25-17",
-      "unitId": "UNIT-ENUM-001",
-      "domain": "csharp-enumeration",
-      "primarySkill": "linq-deferred-execution",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "invoice-batch-processing",
-      "primaryRootCause": "deferred-enumerable-is-reexecuted-after-source-mutation",
-      "failureMode": "audit-count-and-processed-items-describe-different-logical-batches",
-      "solutionPattern": "explicit-snapshot-at-business-boundary",
-      "labFormat": "linq-temporal-semantics-investigation"
-    },
-    {
       "runSlot": "2026-09-27-14",
       "unitId": "UNIT-SER-001",
       "domain": "serialization",
@@ -1452,10 +1439,24 @@
       "failureMode": "anonymous-read-of-restricted-audit-and-export-resources",
       "solutionPattern": "fail-closed-fallback-authorization-with-explicit-public-route-exceptions",
       "labFormat": "authorization-boundary-production-incident"
+    },
+    {
+      "runSlot": "2026-10-28-08",
+      "unitId": "UNIT-ID-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-ID-001-agri-permit-identifier-culture-drift",
+      "domain": "dotnet-string-identity",
+      "primarySkill": "culture-independent-technical-identifier-equality",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "agricultural-export-inspection-permit-import",
+      "scenarioType": "same-partner-permit-revisions-ingested-under-different-host-locales",
+      "primaryRootCause": "culture-sensitive-case-insensitive-comparer-used-for-technical-permit-identifiers",
+      "failureMode": "tr-TR-worker-keeps-two-revisions-and-returns-obsolete-permit-status",
+      "solutionPattern": "ordinal-case-insensitive-identity-comparison-with-cross-culture-regression-contract",
+      "labFormat": "cross-locale-identifier-reconciliation-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-CTX-002",
     "UNIT-ES-003",
     "UNIT-SEMA-001",
     "UNIT-DP-001",
@@ -1478,14 +1479,14 @@
     "UNIT-PAGE-001",
     "UNIT-TX-001",
     "UNIT-DNS-001",
-    "UNIT-AUTHZ-001"
+    "UNIT-AUTHZ-001",
+    "UNIT-ID-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-ambient-context-concurrency": 1,
         "elasticsearch-bulk-ingestion": 1,
         "dotnet-semaphore-admission-control": 1,
         "aspnet-core-data-protection": 1,
@@ -1508,22 +1509,22 @@
         "api-pagination-consistency": 1,
         "database-concurrency-invariants": 1,
         "http-dns-connection-lifecycle": 1,
-        "aspnet-core-authorization": 1
+        "aspnet-core-authorization": 1,
+        "dotnet-string-identity": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 20,
+        "D3": 4
       },
       "maturityLevel": {
-        "L1": 5,
         "L3": 6,
-        "L2": 7,
+        "L2": 8,
         "L4": 3,
+        "L1": 4,
         "L5": 2,
         "L6": 1
       },
       "labFormat": {
-        "ambient-context-aliasing-deterministic-failure": 1,
         "search-bulk-partial-failure-production-incident": 1,
         "semaphore-admission-invariant-investigation": 1,
         "multi-replica-security-lifecycle-refactoring-workshop": 1,
@@ -1546,7 +1547,8 @@
         "deterministic-keyset-cursor-integrity-lab": 1,
         "concurrency-invariant-design-decision-with-deterministic-fixture": 1,
         "dns-rotation-connection-lifecycle-investigation": 1,
-        "authorization-boundary-production-incident": 1
+        "authorization-boundary-production-incident": 1,
+        "cross-locale-identifier-reconciliation-investigation": 1
       }
     }
   }

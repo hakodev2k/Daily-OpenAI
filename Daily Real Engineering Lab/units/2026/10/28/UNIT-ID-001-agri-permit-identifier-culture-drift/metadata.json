@@ -1,0 +1,43 @@
+{
+  "unitId": "UNIT-ID-001",
+  "runSlot": "2026-10-28-08",
+  "title": "Export Permit Registry: kết quả đối soát khác nhau giữa các worker",
+  "domain": "dotnet-string-identity",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-28T08:07:16.405+07:00",
+  "estimatedMinutes": 55,
+  "primarySkill": "culture-independent-technical-identifier-equality",
+  "skills": [
+    "culture-independent-technical-identifier-equality",
+    "dotnet-globalization",
+    "dictionary-key-semantics",
+    "integration-data-reconciliation"
+  ],
+  "prerequisites": [
+    "C# Dictionary<TKey,TValue>",
+    "string equality",
+    "CultureInfo"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "GitHub-only generation; reviewed source, harness, expected outputs and scripts statically; no .NET build or runtime execution.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "agricultural-export-inspection-permit-import",
+    "scenarioType": "same-partner-permit-revisions-ingested-under-different-host-locales",
+    "primaryRootCause": "culture-sensitive-case-insensitive-comparer-used-for-technical-permit-identifiers",
+    "failureMode": "tr-TR-worker-keeps-two-revisions-and-returns-obsolete-permit-status",
+    "solutionPattern": "ordinal-case-insensitive-identity-comparison-with-cross-culture-regression-contract",
+    "labFormat": "cross-locale-identifier-reconciliation-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

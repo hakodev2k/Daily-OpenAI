@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-AUTHZ-001",
-    "runSlot": "2026-10-28-07",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-AUTHZ-001-water-audit-anonymous-endpoint-exposure",
+    "unitId": "UNIT-ID-001",
+    "runSlot": "2026-10-28-08",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-ID-001-agri-permit-identifier-culture-drift",
     "status": "READY",
-    "createdAt": "2026-10-28T07:12:03+07:00"
+    "createdAt": "2026-10-28T08:07:16.405+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 302,
-    "totalGenerated": 297,
+    "totalRunSlotsAttempted": 303,
+    "totalGenerated": 298,
     "totalFailed": 5
   },
   "learning": {
