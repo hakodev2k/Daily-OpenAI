@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-27-14",
-      "unitId": "UNIT-SER-001",
-      "domain": "serialization",
-      "primarySkill": "serialization-contract-versioning",
-      "maturityLevel": "L4",
-      "difficulty": "D3",
-      "businessContext": "order-workflow-state-persistence",
-      "primaryRootCause": "persisted-numeric-enum-values-are-coupled-to-refactored-enum-semantics",
-      "failureMode": "historical-json-is-deserialized-into-the-wrong-business-state-after-deployment",
-      "solutionPattern": "explicit-stable-wire-contract-with-migration-aware-parsing",
-      "labFormat": "serialization-contract-modernization"
-    },
-    {
       "runSlot": "2026-09-27-15",
       "unitId": "UNIT-REDIS-005",
       "domain": "redis-caching",
@@ -1454,10 +1441,24 @@
       "failureMode": "tr-TR-worker-keeps-two-revisions-and-returns-obsolete-permit-status",
       "solutionPattern": "ordinal-case-insensitive-identity-comparison-with-cross-culture-regression-contract",
       "labFormat": "cross-locale-identifier-reconciliation-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-09",
+      "unitId": "UNIT-HASH-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-HASH-001-seed-bank-accession-code-correction",
+      "domain": "dotnet-collection-hashing",
+      "primarySkill": "hashset-hash-invariants",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "community-seed-bank-accession-tracking",
+      "scenarioType": "catalog-code-correction-after-in-memory-registration",
+      "primaryRootCause": "mutable-equality-and-hash-code-fields-changed-after-hashset-insertion",
+      "failureMode": "corrected-accession-cannot-be-found-or-removed-and-duplicate-code-is-accepted",
+      "solutionPattern": "stable-dictionary-key-index-with-validated-rename",
+      "labFormat": "mutable-hash-key-deterministic-reproduction"
     }
   ],
   "rolling24": [
-    "UNIT-ES-003",
     "UNIT-SEMA-001",
     "UNIT-DP-001",
     "UNIT-CMP-001",
@@ -1480,14 +1481,14 @@
     "UNIT-TX-001",
     "UNIT-DNS-001",
     "UNIT-AUTHZ-001",
-    "UNIT-ID-001"
+    "UNIT-ID-001",
+    "UNIT-HASH-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "elasticsearch-bulk-ingestion": 1,
         "dotnet-semaphore-admission-control": 1,
         "aspnet-core-data-protection": 1,
         "csharp-comparer-contract": 1,
@@ -1510,22 +1511,22 @@
         "database-concurrency-invariants": 1,
         "http-dns-connection-lifecycle": 1,
         "aspnet-core-authorization": 1,
-        "dotnet-string-identity": 1
+        "dotnet-string-identity": 1,
+        "dotnet-collection-hashing": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
         "L2": 8,
         "L4": 3,
-        "L1": 4,
+        "L1": 5,
         "L5": 2,
+        "L3": 5,
         "L6": 1
       },
       "labFormat": {
-        "search-bulk-partial-failure-production-incident": 1,
         "semaphore-admission-invariant-investigation": 1,
         "multi-replica-security-lifecycle-refactoring-workshop": 1,
         "deterministic-collection-order-contract": 1,
@@ -1548,7 +1549,8 @@
         "concurrency-invariant-design-decision-with-deterministic-fixture": 1,
         "dns-rotation-connection-lifecycle-investigation": 1,
         "authorization-boundary-production-incident": 1,
-        "cross-locale-identifier-reconciliation-investigation": 1
+        "cross-locale-identifier-reconciliation-investigation": 1,
+        "mutable-hash-key-deterministic-reproduction": 1
       }
     }
   }

@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-HASH-001",
+  "runSlot": "2026-10-28-09",
+  "title": "Mã giống cây đã sửa nhưng registry không tìm thấy",
+  "domain": "dotnet-collection-hashing",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-28T09:13:18+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "hashset-hash-invariants",
+    "csharp-object-equality",
+    "dictionary-key-design",
+    "regression-testing"
+  ],
+  "primarySkill": "hashset-hash-invariants",
+  "prerequisites": [
+    "C# classes and Equals/GetHashCode",
+    "HashSet<T> basics",
+    ".NET SDK 8+"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-seed-bank-accession-tracking",
+    "scenarioType": "catalog-code-correction-after-in-memory-registration",
+    "primaryRootCause": "mutable-equality-and-hash-code-fields-changed-after-hashset-insertion",
+    "failureMode": "corrected-accession-cannot-be-found-or-removed-and-duplicate-code-is-accepted",
+    "solutionPattern": "stable-dictionary-key-index-with-validated-rename",
+    "labFormat": "mutable-hash-key-deterministic-reproduction"
+  }
+}
