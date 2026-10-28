@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-24-19",
-      "unitId": "UNIT-ENC-001",
-      "domain": "dotnet-text-encoding",
-      "primarySkill": "utf8-wire-size-contract",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "customer-sms-delivery-gateway",
-      "scenarioType": "partner-wire-payload-budget-mismatch",
-      "primaryRootCause": "utf16-code-unit-length-used-as-utf8-wire-byte-size",
-      "failureMode": "gateway-accepts-request-locally-but-partner-rejects-multibyte-text-with-413",
-      "solutionPattern": "enforce-wire-byte-budget-at-payload-policy-boundary",
-      "labFormat": "wire-encoding-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-24-20",
       "unitId": "UNIT-BILL-001",
       "domain": "financial-calculation",
@@ -1481,10 +1467,24 @@
       "failureMode": "formula-interpretation-despite-syntactically-valid-csv",
       "solutionPattern": "untrusted-text-cell-policy-before-csv-serialization-with-client-compatibility-review",
       "labFormat": "spreadsheet-export-security-evidence-incident"
+    },
+    {
+      "runSlot": "2026-10-28-23",
+      "unitId": "UNIT-BODY-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-BODY-001-animal-intake-webhook-body-consumed-by-audit",
+      "domain": "aspnet-core-request-body-streams",
+      "primarySkill": "aspnet-core-middleware",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-animal-shelter-intake-webhook",
+      "scenarioType": "audit-middleware-precedes-json-webhook-endpoint",
+      "primaryRootCause": "audit-middleware-consumes-nonseekable-request-body-without-replay",
+      "failureMode": "audit-captures-valid-json-but-endpoint-receives-empty-stream-and-returns-422",
+      "solutionPattern": "bounded-request-body-buffering-with-position-reset-and-stream-ownership",
+      "labFormat": "request-body-pipeline-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-CFG-001",
     "UNIT-INIT-001",
     "UNIT-CRYPTO-001",
     "UNIT-JSON-002",
@@ -1507,14 +1507,14 @@
     "UNIT-ETIME-001",
     "UNIT-PGUNIQ-001",
     "UNIT-RECORD-002",
-    "UNIT-CSV-002"
+    "UNIT-CSV-002",
+    "UNIT-BODY-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-configuration": 1,
         "dotnet-async-initialization": 1,
         "dotnet-cryptographic-protocols": 1,
         "api-json-contracts": 1,
@@ -1537,21 +1537,21 @@
         "event-time-stream-processing": 1,
         "postgresql-unique-constraints": 1,
         "csharp-record-snapshot-semantics": 1,
-        "csv-spreadsheet-export-security": 1
+        "csv-spreadsheet-export-security": 1,
+        "aspnet-core-request-body-streams": 1
       },
       "difficulty": {
-        "D4": 18,
-        "D3": 6
+        "D3": 6,
+        "D4": 18
       },
       "maturityLevel": {
-        "L2": 9,
         "L1": 5,
         "L3": 6,
-        "L4": 3,
+        "L2": 8,
+        "L4": 4,
         "L5": 1
       },
       "labFormat": {
-        "configuration-source-forensics-investigation": 1,
         "async-initializer-transient-failure-deterministic-lab": 1,
         "cryptographic-envelope-production-forensics": 1,
         "partner-payload-contract-investigation": 1,
@@ -1574,7 +1574,8 @@
         "event-time-telemetry-reconciliation-incident": 1,
         "postgresql-constraint-behavior-investigation": 1,
         "audit-snapshot-deterministic-failure": 1,
-        "spreadsheet-export-security-evidence-incident": 1
+        "spreadsheet-export-security-evidence-incident": 1,
+        "request-body-pipeline-refactoring-workshop": 1
       }
     }
   }

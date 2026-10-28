@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CSV-002",
-    "runSlot": "2026-10-28-22",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-CSV-002-grant-disbursement-spreadsheet-cell-injection",
+    "unitId": "UNIT-BODY-001",
+    "runSlot": "2026-10-28-23",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-BODY-001-animal-intake-webhook-body-consumed-by-audit",
     "status": "READY",
-    "createdAt": "2026-10-28T22:10:54+07:00"
+    "createdAt": "2026-10-28T23:12:01+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 317,
-    "totalGenerated": 312,
+    "totalRunSlotsAttempted": 318,
+    "totalGenerated": 313,
     "totalFailed": 5
   },
   "learning": {

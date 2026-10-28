@@ -1,0 +1,62 @@
+{
+  "unitId": "UNIT-BODY-001",
+  "runSlot": "2026-10-28-23",
+  "title": "Webhook intake bị mất payload sau lớp audit",
+  "domain": "aspnet-core-request-body-streams",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-28T23:12:01+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "aspnet-core-middleware",
+    "http-request-body-stream",
+    "stream-buffering",
+    "failure-path-testing"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "ASP.NET Core middleware",
+    "StreamReader"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-animal-shelter-intake-webhook",
+    "scenarioType": "audit-middleware-precedes-json-webhook-endpoint",
+    "primaryRootCause": "audit-middleware-consumes-nonseekable-request-body-without-replay",
+    "failureMode": "audit-captures-valid-json-but-endpoint-receives-empty-stream-and-returns-422",
+    "solutionPattern": "bounded-request-body-buffering-with-position-reset-and-stream-ownership",
+    "labFormat": "request-body-pipeline-refactoring-workshop"
+  },
+  "manifest": [
+    "README.md",
+    "docs/concepts-after-lab.md",
+    "docs/investigation-guide.md",
+    "docs/prerequisite.md",
+    "docs/scenario.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/README.md",
+    "solution/RequestAuditMiddleware.cs",
+    "starter/Program.cs",
+    "starter/RequestAuditMiddleware.cs",
+    "starter/RequestBodyReplayLab.csproj",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
