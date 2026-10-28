@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PGUNIQ-001",
-    "runSlot": "2026-10-28-20",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PGUNIQ-001-mobile-inspection-nullable-unique-slot",
+    "unitId": "UNIT-RECORD-002",
+    "runSlot": "2026-10-28-21",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-RECORD-002-air-cargo-manifest-snapshot-aliasing",
     "status": "READY",
-    "createdAt": "2026-10-28T20:08:25+07:00"
+    "createdAt": "2026-10-28T21:08:35+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 315,
-    "totalGenerated": 310,
+    "totalRunSlotsAttempted": 316,
+    "totalGenerated": 311,
     "totalFailed": 5
   },
   "learning": {

@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-24-17",
-      "unitId": "UNIT-CHAN-001",
-      "domain": "dotnet-concurrency",
-      "primarySkill": "channel-backpressure",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "warehouse-stock-reconciliation-stream",
-      "primaryRootCause": "unbounded-channel-accepts-work-faster-than-single-consumer-can-drain",
-      "failureMode": "queued-work-and-memory-grow-with-input-burst-while-producer-never-slows",
-      "solutionPattern": "bounded-channel-with-awaitable-backpressure-and-drain-on-shutdown",
-      "labFormat": "queue-capacity-investigation"
-    },
-    {
       "runSlot": "2026-10-24-18",
       "unitId": "UNIT-ASP-005",
       "domain": "aspnet-core",
@@ -1478,10 +1465,24 @@
       "failureMode": "duplicate-unassigned-mobile-bay-reservations-commit-despite-unique-constraint",
       "solutionPattern": "postgresql-unique-nulls-not-distinct-with-pre-migration-duplicate-remediation",
       "labFormat": "postgresql-constraint-behavior-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-21",
+      "unitId": "UNIT-RECORD-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-RECORD-002-air-cargo-manifest-snapshot-aliasing",
+      "domain": "csharp-record-snapshot-semantics",
+      "primarySkill": "csharp-record-shallow-copy-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "air-cargo-baggage-handoff-audit",
+      "scenarioType": "handoff-snapshot-drift-after-subsequent-bag-scan",
+      "primaryRootCause": "record-with-expression-shares-mutable-collection-reference-across-snapshots",
+      "failureMode": "previously-issued-audit-manifest-changes-and-reader-can-mutate-active-manifest",
+      "solutionPattern": "immutable-snapshot-boundary-with-copy-on-write-and-readonly-collection",
+      "labFormat": "audit-snapshot-deterministic-failure"
     }
   ],
   "rolling24": [
-    "UNIT-HOST-002",
     "UNIT-GUID-001",
     "UNIT-CFG-001",
     "UNIT-INIT-001",
@@ -1504,14 +1505,14 @@
     "UNIT-LOCK-001",
     "UNIT-STATUS-001",
     "UNIT-ETIME-001",
-    "UNIT-PGUNIQ-001"
+    "UNIT-PGUNIQ-001",
+    "UNIT-RECORD-002"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-host-lifecycle": 1,
         "dotnet-guid-wire-interoperability": 1,
         "dotnet-configuration": 1,
         "dotnet-async-initialization": 1,
@@ -1534,21 +1535,21 @@
         "dotnet-monitor-concurrency": 1,
         "aspnet-core-response-observability": 1,
         "event-time-stream-processing": 1,
-        "postgresql-unique-constraints": 1
+        "postgresql-unique-constraints": 1,
+        "csharp-record-snapshot-semantics": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D4": 18,
+        "D3": 6
       },
       "maturityLevel": {
-        "L2": 10,
         "L3": 6,
-        "L1": 4,
+        "L2": 9,
+        "L1": 5,
         "L4": 3,
         "L5": 1
       },
       "labFormat": {
-        "hosted-service-startup-evidence-investigation": 1,
         "binary-uuid-cross-language-incident": 1,
         "configuration-source-forensics-investigation": 1,
         "async-initializer-transient-failure-deterministic-lab": 1,
@@ -1571,7 +1572,8 @@
         "deterministic-two-resource-deadlock-incident": 1,
         "response-metrics-evidence-investigation": 1,
         "event-time-telemetry-reconciliation-incident": 1,
-        "postgresql-constraint-behavior-investigation": 1
+        "postgresql-constraint-behavior-investigation": 1,
+        "audit-snapshot-deterministic-failure": 1
       }
     }
   }

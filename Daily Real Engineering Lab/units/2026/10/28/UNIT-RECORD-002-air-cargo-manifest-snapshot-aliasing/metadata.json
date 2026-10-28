@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-RECORD-002",
+  "runSlot": "2026-10-28-21",
+  "title": "Bản chụp manifest hành lý thay đổi sau bàn giao",
+  "domain": "csharp-record-snapshot-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-28T21:08:35+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "csharp-record-with-expression",
+    "mutable-reference-aliasing",
+    "defensive-copying",
+    "audit-snapshot-integrity"
+  ],
+  "primarySkill": "csharp-record-shallow-copy-semantics",
+  "prerequisites": [
+    "csharp-records",
+    "collections-and-interfaces",
+    "dotnet-console"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "air-cargo-baggage-handoff-audit",
+    "scenarioType": "handoff-snapshot-drift-after-subsequent-bag-scan",
+    "primaryRootCause": "record-with-expression-shares-mutable-collection-reference-across-snapshots",
+    "failureMode": "previously-issued-audit-manifest-changes-and-reader-can-mutate-active-manifest",
+    "solutionPattern": "immutable-snapshot-boundary-with-copy-on-write-and-readonly-collection",
+    "labFormat": "audit-snapshot-deterministic-failure"
+  },
+  "validationNotes": "Strict static consistency review of C# source, script targets and expected assertions; no .NET runtime execution via the GitHub-only integration."
+}
