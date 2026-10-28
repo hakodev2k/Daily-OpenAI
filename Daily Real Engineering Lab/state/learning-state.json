@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ETIME-001",
-    "runSlot": "2026-10-28-19",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-ETIME-001-toll-plaza-delayed-sensor-window-drift",
+    "unitId": "UNIT-PGUNIQ-001",
+    "runSlot": "2026-10-28-20",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PGUNIQ-001-mobile-inspection-nullable-unique-slot",
     "status": "READY",
-    "createdAt": "2026-10-28T19:15:20.217+07:00"
+    "createdAt": "2026-10-28T20:08:25+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 314,
-    "totalGenerated": 309,
+    "totalRunSlotsAttempted": 315,
+    "totalGenerated": 310,
     "totalFailed": 5
   },
   "learning": {

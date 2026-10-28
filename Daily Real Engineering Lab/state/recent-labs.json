@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-24-16",
-      "unitId": "UNIT-TIME-001",
-      "domain": "dotnet-timekeeping",
-      "primarySkill": "monotonic-elapsed-time",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "fulfillment-batch-lease-watchdog",
-      "primaryRootCause": "wall-clock-time-difference-used-to-measure-elapsed-time",
-      "failureMode": "batch-deadline-fires-prematurely-or-is-delayed-after-clock-adjustment",
-      "solutionPattern": "use-monotonic-timestamps-for-in-process-elapsed-budget",
-      "labFormat": "timekeeping-production-incident"
-    },
-    {
       "runSlot": "2026-10-24-17",
       "unitId": "UNIT-CHAN-001",
       "domain": "dotnet-concurrency",
@@ -1476,10 +1463,24 @@
       "failureMode": "five-minute-net-flow-misallocated-while-total-count-remains-correct",
       "solutionPattern": "bucket-by-utc-event-occurrence-time-with-boundary-regression-tests",
       "labFormat": "event-time-telemetry-reconciliation-incident"
+    },
+    {
+      "runSlot": "2026-10-28-20",
+      "unitId": "UNIT-PGUNIQ-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PGUNIQ-001-mobile-inspection-nullable-unique-slot",
+      "domain": "postgresql-unique-constraints",
+      "primarySkill": "postgresql-unique-null-semantics",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "mobile-vehicle-inspection-depot-booking",
+      "scenarioType": "two-mobile-inspection-assignments-share-same-depot-and-start-time",
+      "primaryRootCause": "postgresql-unique-constraint-treats-null-key-components-as-distinct",
+      "failureMode": "duplicate-unassigned-mobile-bay-reservations-commit-despite-unique-constraint",
+      "solutionPattern": "postgresql-unique-nulls-not-distinct-with-pre-migration-duplicate-remediation",
+      "labFormat": "postgresql-constraint-behavior-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-EF-016",
     "UNIT-HOST-002",
     "UNIT-GUID-001",
     "UNIT-CFG-001",
@@ -1502,14 +1503,14 @@
     "UNIT-SLOT-001",
     "UNIT-LOCK-001",
     "UNIT-STATUS-001",
-    "UNIT-ETIME-001"
+    "UNIT-ETIME-001",
+    "UNIT-PGUNIQ-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "ef-core-change-tracking": 1,
         "dotnet-host-lifecycle": 1,
         "dotnet-guid-wire-interoperability": 1,
         "dotnet-configuration": 1,
@@ -1532,21 +1533,21 @@
         "azure-appservice-deployment-slots": 1,
         "dotnet-monitor-concurrency": 1,
         "aspnet-core-response-observability": 1,
-        "event-time-stream-processing": 1
+        "event-time-stream-processing": 1,
+        "postgresql-unique-constraints": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L4": 4,
-        "L2": 9,
+        "L2": 10,
         "L3": 6,
         "L1": 4,
+        "L4": 3,
         "L5": 1
       },
       "labFormat": {
-        "efcore-batch-import-lifecycle-refactoring-workshop": 1,
         "hosted-service-startup-evidence-investigation": 1,
         "binary-uuid-cross-language-incident": 1,
         "configuration-source-forensics-investigation": 1,
@@ -1569,7 +1570,8 @@
         "slot-swap-deployment-configuration-workshop": 1,
         "deterministic-two-resource-deadlock-incident": 1,
         "response-metrics-evidence-investigation": 1,
-        "event-time-telemetry-reconciliation-incident": 1
+        "event-time-telemetry-reconciliation-incident": 1,
+        "postgresql-constraint-behavior-investigation": 1
       }
     }
   }
