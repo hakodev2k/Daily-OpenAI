@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-27-16",
-      "unitId": "UNIT-ARCH-006",
-      "domain": "architecture",
-      "primarySkill": "large-file-upload-boundary-design",
-      "maturityLevel": "L5",
-      "difficulty": "D3",
-      "businessContext": "creator-video-portal",
-      "primaryRootCause": "application-server-is-unnecessarily-coupled-to-bulk-byte-transfer",
-      "failureMode": "api-capacity-and-retry-cost-scale-with-multi-gigabyte-upload-duration",
-      "solutionPattern": "separate-control-plane-from-storage-data-plane",
-      "labFormat": "architecture-design-decision"
-    },
-    {
       "runSlot": "2026-09-28-03",
       "unitId": "UNIT-TEST-012",
       "domain": "testing",
@@ -1458,6 +1445,21 @@
       "failureMode": "false-positive-brake-repair-dispatch-from-unrelated-failed-inspection",
       "solutionPattern": "single-array-element-conjunctive-filter-with-elemmatch",
       "labFormat": "mongodb-document-array-query-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-11",
+      "unitId": "UNIT-VTASK-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-VTASK-001-grid-dispatch-valuetask-double-consumption",
+      "domain": "dotnet-valuetask-consumption",
+      "primarySkill": "valuetask-single-consumption-contract",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-power-grid-demand-response-dispatch",
+      "scenarioType": "successful-signal-fetch-fails-during-audit-before-receipt",
+      "primaryRootCause": "single-use-ivaluetasksource-backed-valuetask-awaited-twice-for-audit-and-response",
+      "failureMode": "valid-grid-signal-fails-with-invalidoperationexception-and-no-audit-receipt",
+      "solutionPattern": "await-once-then-reuse-materialized-result-for-audit-and-response",
+      "labFormat": "valuetask-consumption-refactoring-workshop"
     }
   ],
   "rolling24": [

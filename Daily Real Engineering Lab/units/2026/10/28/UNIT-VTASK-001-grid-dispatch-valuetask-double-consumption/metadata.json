@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-VTASK-001",
+  "runSlot": "2026-10-28-11",
+  "title": "Tín hiệu điều độ hợp lệ nhưng thất bại tại bước ghi audit",
+  "domain": "dotnet-valuetask-consumption",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-28T11:12:38+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "valuetask-single-consumption-contract",
+    "IValueTaskSource<T>",
+    "async-await",
+    "regression-testing",
+    "audit-consistency"
+  ],
+  "primarySkill": "valuetask-single-consumption-contract",
+  "prerequisites": [
+    "C# async/await",
+    "ValueTask<T> và Task<T> ở mức cơ bản",
+    ".NET SDK 8+"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-power-grid-demand-response-dispatch",
+    "scenarioType": "successful-signal-fetch-fails-during-audit-before-receipt",
+    "primaryRootCause": "single-use-ivaluetasksource-backed-valuetask-awaited-twice-for-audit-and-response",
+    "failureMode": "valid-grid-signal-fails-with-invalidoperationexception-and-no-audit-receipt",
+    "solutionPattern": "await-once-then-reuse-materialized-result-for-audit-and-response",
+    "labFormat": "valuetask-consumption-refactoring-workshop"
+  }
+}

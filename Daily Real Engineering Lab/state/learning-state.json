@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MONGO-002",
-    "runSlot": "2026-10-28-10",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-MONGO-002-wind-turbine-inspection-array-predicate",
+    "unitId": "UNIT-VTASK-001",
+    "runSlot": "2026-10-28-11",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-VTASK-001-grid-dispatch-valuetask-double-consumption",
     "status": "READY",
-    "createdAt": "2026-10-28T10:09:29+07:00"
+    "createdAt": "2026-10-28T11:12:38+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 305,
-    "totalGenerated": 300,
+    "totalRunSlotsAttempted": 306,
+    "totalGenerated": 301,
     "totalFailed": 5
   },
   "learning": {
