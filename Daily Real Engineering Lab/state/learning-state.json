@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CDICT-001",
-    "runSlot": "2026-10-29-02",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CDICT-001-drone-corridor-permit-double-issuance",
+    "unitId": "UNIT-PGVIS-001",
+    "runSlot": "2026-10-29-03",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-PGVIS-001-volunteer-shift-index-only-heap-fetches",
     "status": "READY",
-    "createdAt": "2026-10-29T02:04:35+07:00"
+    "createdAt": "2026-10-29T03:06:41+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 321,
-    "totalGenerated": 316,
+    "totalRunSlotsAttempted": 322,
+    "totalGenerated": 317,
     "totalFailed": 5
   },
   "learning": {

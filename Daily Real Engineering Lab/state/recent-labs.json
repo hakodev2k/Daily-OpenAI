@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-24-23",
-      "unitId": "UNIT-EVT-001",
-      "domain": "dotnet-event-lifecycle",
-      "primarySkill": "event-subscription-lifecycle",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "real-time-operations-dashboard",
-      "scenarioType": "dashboard-session-disconnect-reconnect",
-      "primaryRootCause": "event-subscription-not-released-at-session-disconnect",
-      "failureMode": "duplicate-and-post-disconnect-notifications",
-      "solutionPattern": "symmetric-event-subscription-lifecycle",
-      "labFormat": "event-lifecycle-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-25-00",
       "unitId": "UNIT-CS-017",
       "domain": "csharp-value-semantics",
@@ -1485,10 +1471,24 @@
       "failureMode": "external-authority-issues-two-permits-while-cache-retains-one",
       "solutionPattern": "single-execution-lazy-value-with-side-effect-only-after-cache-winner-selection",
       "labFormat": "concurrent-cache-factory-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-03",
+      "unitId": "UNIT-PGVIS-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-PGVIS-001-volunteer-shift-index-only-heap-fetches",
+      "domain": "postgresql-query-plans",
+      "primarySkill": "postgresql-visibility-map-and-index-only-scan",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "nonprofit-volunteer-shift-reporting",
+      "scenarioType": "read-query-regression-after-nonindexed-column-updates",
+      "primaryRootCause": "visibility-map-all-visible-bits-cleared-by-updates-while-autovacuum-is-disabled",
+      "failureMode": "covering-index-query-still-fetches-many-heap-tuples",
+      "solutionPattern": "restore-visibility-maintenance-and-monitor-heap-fetch-regression",
+      "labFormat": "postgresql-query-plan-production-forensics"
     }
   ],
   "rolling24": [
-    "UNIT-PROC-001",
     "UNIT-PAGE-001",
     "UNIT-TX-001",
     "UNIT-DNS-001",
@@ -1511,14 +1511,14 @@
     "UNIT-BODY-001",
     "UNIT-QENC-001",
     "UNIT-FDROP-001",
-    "UNIT-CDICT-001"
+    "UNIT-CDICT-001",
+    "UNIT-PGVIS-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-process-io": 1,
         "api-pagination-consistency": 1,
         "database-concurrency-invariants": 1,
         "http-dns-connection-lifecycle": 1,
@@ -1541,21 +1541,21 @@
         "aspnet-core-request-body-streams": 1,
         "http-query-component-encoding": 1,
         "filesystem-ingestion-reliability": 1,
-        "dotnet-concurrent-collections": 1
+        "dotnet-concurrent-collections": 1,
+        "postgresql-query-plans": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D3": 5,
+        "D4": 19
       },
       "maturityLevel": {
-        "L4": 4,
         "L1": 4,
         "L5": 1,
         "L2": 10,
-        "L3": 5
+        "L3": 6,
+        "L4": 3
       },
       "labFormat": {
-        "external-process-stream-lifecycle-refactoring-workshop": 1,
         "deterministic-keyset-cursor-integrity-lab": 1,
         "concurrency-invariant-design-decision-with-deterministic-fixture": 1,
         "dns-rotation-connection-lifecycle-investigation": 1,
@@ -1578,7 +1578,8 @@
         "request-body-pipeline-refactoring-workshop": 1,
         "partner-token-contract-investigation": 1,
         "deterministic-file-drop-reliability-investigation": 1,
-        "concurrent-cache-factory-investigation": 1
+        "concurrent-cache-factory-investigation": 1,
+        "postgresql-query-plan-production-forensics": 1
       }
     }
   }
