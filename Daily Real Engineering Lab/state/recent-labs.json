@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-00",
-      "unitId": "UNIT-CS-017",
-      "domain": "csharp-value-semantics",
-      "primarySkill": "csharp-value-type-copy-semantics",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "field-service-daily-completion-rollup",
-      "scenarioType": "batch-event-aggregation-produces-zero-dashboard-totals",
-      "primaryRootCause": "dictionary-trygetvalue-returns-a-copy-of-a-mutable-value-type-and-local-updates-are-not-persisted",
-      "failureMode": "processed-events-are-logged-but-per-technician-counters-remain-zero",
-      "solutionPattern": "explicit-write-back-of-updated-value-type-to-dictionary",
-      "labFormat": "value-type-copy-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-25-01",
       "unitId": "UNIT-SER-002",
       "domain": "serialization",
@@ -1486,10 +1472,24 @@
       "failureMode": "covering-index-query-still-fetches-many-heap-tuples",
       "solutionPattern": "restore-visibility-maintenance-and-monitor-heap-fetch-regression",
       "labFormat": "postgresql-query-plan-production-forensics"
+    },
+    {
+      "runSlot": "2026-10-29-04",
+      "unitId": "UNIT-DI-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DI-001-exam-manifest-cross-batch-bleed",
+      "domain": "dotnet-dependency-injection",
+      "primarySkill": "dependency-injection-scope-ownership",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "university-exam-seating-manifest-export",
+      "scenarioType": "sequential-batch-export-in-one-long-lived-worker",
+      "primaryRootCause": "singleton-captures-scoped-composer-resolved-from-root-container",
+      "failureMode": "later-session-manifest-includes-prior-session-rows",
+      "solutionPattern": "scope-per-export-work-item-with-strict-di-validation",
+      "labFormat": "dependency-injection-lifetime-deterministic-failure"
     }
   ],
   "rolling24": [
-    "UNIT-PAGE-001",
     "UNIT-TX-001",
     "UNIT-DNS-001",
     "UNIT-AUTHZ-001",
@@ -1512,14 +1512,14 @@
     "UNIT-QENC-001",
     "UNIT-FDROP-001",
     "UNIT-CDICT-001",
-    "UNIT-PGVIS-001"
+    "UNIT-PGVIS-001",
+    "UNIT-DI-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "api-pagination-consistency": 1,
         "database-concurrency-invariants": 1,
         "http-dns-connection-lifecycle": 1,
         "aspnet-core-authorization": 1,
@@ -1542,21 +1542,21 @@
         "http-query-component-encoding": 1,
         "filesystem-ingestion-reliability": 1,
         "dotnet-concurrent-collections": 1,
-        "postgresql-query-plans": 1
+        "postgresql-query-plans": 1,
+        "dotnet-dependency-injection": 1
       },
       "difficulty": {
-        "D3": 5,
-        "D4": 19
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L1": 4,
         "L5": 1,
         "L2": 10,
         "L3": 6,
+        "L1": 4,
         "L4": 3
       },
       "labFormat": {
-        "deterministic-keyset-cursor-integrity-lab": 1,
         "concurrency-invariant-design-decision-with-deterministic-fixture": 1,
         "dns-rotation-connection-lifecycle-investigation": 1,
         "authorization-boundary-production-incident": 1,
@@ -1579,7 +1579,8 @@
         "partner-token-contract-investigation": 1,
         "deterministic-file-drop-reliability-investigation": 1,
         "concurrent-cache-factory-investigation": 1,
-        "postgresql-query-plan-production-forensics": 1
+        "postgresql-query-plan-production-forensics": 1,
+        "dependency-injection-lifetime-deterministic-failure": 1
       }
     }
   }
