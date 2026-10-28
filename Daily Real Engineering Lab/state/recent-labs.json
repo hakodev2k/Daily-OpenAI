@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-29-00",
-      "unitId": "UNIT-SQL-008",
-      "domain": "sql-server",
-      "primarySkill": "sql-aggregate-type-semantics",
-      "maturityLevel": "L1",
-      "difficulty": "D2",
-      "businessContext": "merchant-settlement-report",
-      "primaryRootCause": "sum-over-int-expression-uses-int-accumulator-and-overflows",
-      "failureMode": "arithmetic-overflow-only-after-valid-rows-cross-aggregate-type-range",
-      "solutionPattern": "widen-expression-type-before-aggregation",
-      "labFormat": "sql-type-semantics-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-05-23",
       "unitId": "UNIT-HTTP-010",
       "domain": "http-networking",
@@ -1466,10 +1453,24 @@
       "failureMode": "origin-304-causes-silent-empty-catalog-after-partial-cache-eviction",
       "solutionPattern": "couple-conditional-validator-to-resident-body-and-reject-unusable-304",
       "labFormat": "http-conditional-cache-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-15",
+      "unitId": "UNIT-WANY-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-WANY-001-harbor-beacon-timeout-late-dispatch",
+      "domain": "dotnet-async-timeout-boundaries",
+      "primarySkill": "task-whenany-timeout-cancellation-contract",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "harbor-weather-beacon-alert-dispatch",
+      "scenarioType": "deadline-expiry-followed-by-retry-of-same-alert",
+      "primaryRootCause": "task-whenany-timeout-returns-without-cancelling-and-joining-pending-send",
+      "failureMode": "timed-out-send-commits-after-retry-producing-duplicate-alert",
+      "solutionPattern": "linked-cancellation-and-drain-before-return-with-production-idempotency-boundary",
+      "labFormat": "deterministic-timeout-lifecycle-failure-lab"
     }
   ],
   "rolling24": [
-    "UNIT-UTF8-001",
     "UNIT-LEGAL-001",
     "UNIT-GIT-001",
     "UNIT-HPOOL-001",
@@ -1492,14 +1493,14 @@
     "UNIT-VTASK-001",
     "UNIT-EF-017",
     "UNIT-TSPAN-001",
-    "UNIT-REVAL-001"
+    "UNIT-REVAL-001",
+    "UNIT-WANY-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-streaming-text": 1,
         "legal-platform-architecture": 1,
         "git-ci-diff-semantics": 1,
         "http-connection-pooling": 1,
@@ -1522,22 +1523,22 @@
         "dotnet-valuetask-consumption": 1,
         "ef-core-context-pooling": 1,
         "dotnet-timespan-semantics": 1,
-        "http-cache-revalidation": 1
+        "http-cache-revalidation": 1,
+        "dotnet-async-timeout-boundaries": 1
       },
       "difficulty": {
-        "D4": 19,
-        "D3": 5
+        "D4": 18,
+        "D3": 6
       },
       "maturityLevel": {
-        "L2": 10,
         "L6": 1,
+        "L2": 9,
         "L3": 5,
-        "L1": 4,
+        "L1": 5,
         "L4": 3,
         "L5": 1
       },
       "labFormat": {
-        "network-stream-decoding-evidence-investigation": 1,
         "architecture-tabletop-failure-contract-decision": 1,
         "git-history-boundary-ci-investigation": 1,
         "http-connection-lease-production-incident": 1,
@@ -1560,7 +1561,8 @@
         "valuetask-consumption-refactoring-workshop": 1,
         "cross-tenant-data-isolation-production-investigation": 1,
         "latency-telemetry-sawtooth-investigation": 1,
-        "http-conditional-cache-contract-investigation": 1
+        "http-conditional-cache-contract-investigation": 1,
+        "deterministic-timeout-lifecycle-failure-lab": 1
       }
     }
   }
