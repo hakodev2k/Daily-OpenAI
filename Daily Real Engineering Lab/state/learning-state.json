@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-REVAL-001",
-    "runSlot": "2026-10-28-14",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-REVAL-001-rare-book-catalog-304-after-cache-eviction",
+    "unitId": "UNIT-WANY-001",
+    "runSlot": "2026-10-28-15",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-WANY-001-harbor-beacon-timeout-late-dispatch",
     "status": "READY",
-    "createdAt": "2026-10-28T14:10:51+07:00"
+    "createdAt": "2026-10-28T15:10:38+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 309,
-    "totalGenerated": 304,
+    "totalRunSlotsAttempted": 310,
+    "totalGenerated": 305,
     "totalFailed": 5
   },
   "learning": {
