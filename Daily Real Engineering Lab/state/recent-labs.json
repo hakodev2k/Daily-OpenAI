@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-15-02",
-      "unitId": "UNIT-MEM-001",
-      "domain": "csharp-memory-ownership",
-      "primarySkill": "memory-ownership",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "iot-telemetry-ingestion-gateway",
-      "primaryRootCause": "queued-readonlymemory-view-outlives-returned-pooled-array",
-      "failureMode": "previous-sensor-event-payload-silently-mutates-after-later-ingest",
-      "solutionPattern": "establish-queue-owned-immutable-payload-snapshot-before-releasing-transport-lease",
-      "labFormat": "memory-ownership-investigation"
-    },
-    {
       "runSlot": "2026-10-24-16",
       "unitId": "UNIT-TIME-001",
       "domain": "dotnet-timekeeping",
@@ -1474,10 +1461,24 @@
       "failureMode": "client-429-503-404-but-dashboard-records-200",
       "solutionPattern": "record-completed-response-status-after-next-with-defined-exception-boundary",
       "labFormat": "response-metrics-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-19",
+      "unitId": "UNIT-ETIME-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-ETIME-001-toll-plaza-delayed-sensor-window-drift",
+      "domain": "event-time-stream-processing",
+      "primarySkill": "event-time-vs-ingestion-time-windowing",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "toll-plaza-vehicle-flow-telemetry",
+      "scenarioType": "late-gate-events-distort-five-minute-traffic-reconciliation",
+      "primaryRootCause": "processing-time-used-to-bucket-delayed-sensor-events",
+      "failureMode": "five-minute-net-flow-misallocated-while-total-count-remains-correct",
+      "solutionPattern": "bucket-by-utc-event-occurrence-time-with-boundary-regression-tests",
+      "labFormat": "event-time-telemetry-reconciliation-incident"
     }
   ],
   "rolling24": [
-    "UNIT-NUM-001",
     "UNIT-EF-016",
     "UNIT-HOST-002",
     "UNIT-GUID-001",
@@ -1500,14 +1501,14 @@
     "UNIT-WANY-001",
     "UNIT-SLOT-001",
     "UNIT-LOCK-001",
-    "UNIT-STATUS-001"
+    "UNIT-STATUS-001",
+    "UNIT-ETIME-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-json-numeric-identity": 1,
         "ef-core-change-tracking": 1,
         "dotnet-host-lifecycle": 1,
         "dotnet-guid-wire-interoperability": 1,
@@ -1530,21 +1531,21 @@
         "dotnet-async-timeout-boundaries": 1,
         "azure-appservice-deployment-slots": 1,
         "dotnet-monitor-concurrency": 1,
-        "aspnet-core-response-observability": 1
+        "aspnet-core-response-observability": 1,
+        "event-time-stream-processing": 1
       },
       "difficulty": {
-        "D3": 6,
-        "D4": 18
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L1": 5,
         "L4": 4,
         "L2": 9,
-        "L3": 5,
+        "L3": 6,
+        "L1": 4,
         "L5": 1
       },
       "labFormat": {
-        "numeric-identifier-integrity-deterministic-failure": 1,
         "efcore-batch-import-lifecycle-refactoring-workshop": 1,
         "hosted-service-startup-evidence-investigation": 1,
         "binary-uuid-cross-language-incident": 1,
@@ -1567,7 +1568,8 @@
         "deterministic-timeout-lifecycle-failure-lab": 1,
         "slot-swap-deployment-configuration-workshop": 1,
         "deterministic-two-resource-deadlock-incident": 1,
-        "response-metrics-evidence-investigation": 1
+        "response-metrics-evidence-investigation": 1,
+        "event-time-telemetry-reconciliation-incident": 1
       }
     }
   }
