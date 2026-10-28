@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-01",
-      "unitId": "UNIT-SER-002",
-      "domain": "serialization",
-      "primarySkill": "system-text-json-polymorphism",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "compliance-document-approval-audit",
-      "scenarioType": "heterogeneous-approval-events-persisted-as-base-contract",
-      "primaryRootCause": "base-type-json-serialization-omits-derived-event-fields",
-      "failureMode": "persisted-audit-events-lose-subtype-fields-and-cannot-be-replayed",
-      "solutionPattern": "explicit-discriminator-polymorphic-wire-contract",
-      "labFormat": "serialization-replay-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-25-02",
       "unitId": "UNIT-PROXY-001",
       "domain": "reverse-proxy-networking",
@@ -1487,10 +1473,24 @@
       "failureMode": "later-session-manifest-includes-prior-session-rows",
       "solutionPattern": "scope-per-export-work-item-with-strict-di-validation",
       "labFormat": "dependency-injection-lifetime-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-29-05",
+      "unitId": "UNIT-MONEY-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-MONEY-001-marketplace-settlement-cent-drift",
+      "domain": "dotnet-financial-arithmetic",
+      "primarySkill": "financial-rounding-boundaries",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "independent-artisan-marketplace-seller-payouts",
+      "scenarioType": "seller-payout-fee-reconciliation-with-small-sales-and-refunds",
+      "primaryRootCause": "fee-rounded-after-seller-aggregate-instead-of-at-transaction-boundary",
+      "failureMode": "seller-statement-fee-differs-from-sum-of-posted-transaction-fees",
+      "solutionPattern": "per-transaction-decimal-rounding-then-seller-aggregation",
+      "labFormat": "financial-reconciliation-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-TX-001",
     "UNIT-DNS-001",
     "UNIT-AUTHZ-001",
     "UNIT-ID-001",
@@ -1513,14 +1513,14 @@
     "UNIT-FDROP-001",
     "UNIT-CDICT-001",
     "UNIT-PGVIS-001",
-    "UNIT-DI-001"
+    "UNIT-DI-001",
+    "UNIT-MONEY-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "database-concurrency-invariants": 1,
         "http-dns-connection-lifecycle": 1,
         "aspnet-core-authorization": 1,
         "dotnet-string-identity": 1,
@@ -1543,21 +1543,20 @@
         "filesystem-ingestion-reliability": 1,
         "dotnet-concurrent-collections": 1,
         "postgresql-query-plans": 1,
-        "dotnet-dependency-injection": 1
+        "dotnet-dependency-injection": 1,
+        "dotnet-financial-arithmetic": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L5": 1,
-        "L2": 10,
+        "L2": 11,
         "L3": 6,
         "L1": 4,
         "L4": 3
       },
       "labFormat": {
-        "concurrency-invariant-design-decision-with-deterministic-fixture": 1,
         "dns-rotation-connection-lifecycle-investigation": 1,
         "authorization-boundary-production-incident": 1,
         "cross-locale-identifier-reconciliation-investigation": 1,
@@ -1580,7 +1579,8 @@
         "deterministic-file-drop-reliability-investigation": 1,
         "concurrent-cache-factory-investigation": 1,
         "postgresql-query-plan-production-forensics": 1,
-        "dependency-injection-lifetime-deterministic-failure": 1
+        "dependency-injection-lifetime-deterministic-failure": 1,
+        "financial-reconciliation-contract-investigation": 1
       }
     }
   }
