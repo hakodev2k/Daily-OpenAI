@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-28-04",
-      "unitId": "UNIT-CS-016",
-      "domain": "csharp",
-      "primarySkill": "csharp-exception-semantics",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "background-job-operation-lifecycle",
-      "primaryRootCause": "exception-filter-is-evaluated-before-stack-unwind-runs-inner-finally-cleanup",
-      "failureMode": "filter-policy-observes-transient-pre-cleanup-state-and-makes-wrong-handler-decision",
-      "solutionPattern": "move-state-dependent-policy-after-unwind-or-make-filter-independent-of-cleanup-state",
-      "labFormat": "csharp-exception-semantics-investigation"
-    },
-    {
       "runSlot": "2026-09-28-10",
       "unitId": "UNIT-OBS-008",
       "domain": "observability",
@@ -1462,10 +1449,24 @@
       "failureMode": "cross-tenant-data-exposure-after-sequential-pooled-context-reuse",
       "solutionPattern": "assign-tenant-state-on-every-context-borrow-with-tenant-query-filter-regression",
       "labFormat": "cross-tenant-data-isolation-production-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-13",
+      "unitId": "UNIT-TSPAN-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-TSPAN-001-theater-ticket-hold-latency-sawtooth",
+      "domain": "dotnet-timespan-semantics",
+      "primarySkill": "timespan-component-vs-total-duration",
+      "maturityLevel": "L2",
+      "difficulty": "D3",
+      "businessContext": "regional-theater-ticket-hold-partner-gateway",
+      "scenarioType": "slow-partner-acknowledgements-are-inconsistently-classified",
+      "primaryRootCause": "timespan-milliseconds-component-used-instead-of-full-duration",
+      "failureMode": "latency-breach-classification-repeats-a-one-second-sawtooth",
+      "solutionPattern": "compare-complete-timespan-values-and-preserve-strict-sla-boundary",
+      "labFormat": "latency-telemetry-sawtooth-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-OFFSYNC-001",
     "UNIT-CHAN-002",
     "UNIT-UTF8-001",
     "UNIT-LEGAL-001",
@@ -1488,14 +1489,14 @@
     "UNIT-HASH-001",
     "UNIT-MONGO-002",
     "UNIT-VTASK-001",
-    "UNIT-EF-017"
+    "UNIT-EF-017",
+    "UNIT-TSPAN-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "offline-sync-consistency": 1,
         "dotnet-channel-delivery-semantics": 1,
         "dotnet-streaming-text": 1,
         "legal-platform-architecture": 1,
@@ -1518,22 +1519,22 @@
         "dotnet-collection-hashing": 1,
         "mongodb-array-query-semantics": 1,
         "dotnet-valuetask-consumption": 1,
-        "ef-core-context-pooling": 1
+        "ef-core-context-pooling": 1,
+        "dotnet-timespan-semantics": 1
       },
       "difficulty": {
-        "D4": 20,
-        "D3": 4
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L5": 2,
         "L3": 6,
-        "L2": 8,
+        "L2": 9,
         "L6": 1,
         "L1": 4,
-        "L4": 3
+        "L4": 3,
+        "L5": 1
       },
       "labFormat": {
-        "offline-sync-contract-design-decision-with-executable-fixture": 1,
         "audit-event-loss-production-investigation": 1,
         "network-stream-decoding-evidence-investigation": 1,
         "architecture-tabletop-failure-contract-decision": 1,
@@ -1556,7 +1557,8 @@
         "mutable-hash-key-deterministic-reproduction": 1,
         "mongodb-document-array-query-evidence-investigation": 1,
         "valuetask-consumption-refactoring-workshop": 1,
-        "cross-tenant-data-isolation-production-investigation": 1
+        "cross-tenant-data-isolation-production-investigation": 1,
+        "latency-telemetry-sawtooth-investigation": 1
       }
     }
   }
