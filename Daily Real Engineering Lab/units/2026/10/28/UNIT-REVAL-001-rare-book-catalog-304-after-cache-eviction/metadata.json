@@ -1,0 +1,55 @@
+{
+  "unitId": "UNIT-REVAL-001",
+  "runSlot": "2026-10-28-14",
+  "title": "Rare-book catalog: HTTP 304 after cache eviction",
+  "domain": "http-cache-revalidation",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-28T14:10:51+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "http-conditional-get",
+    "etag-cache-coherence",
+    "httpclient-message-handler-testing"
+  ],
+  "primarySkill": "http-conditional-get-representation-contract",
+  "prerequisites": [
+    "HTTP 200/304 semantics",
+    "C# async/await",
+    "HttpClient basics"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Strict static consistency review only; .NET runtime not executed because publishing scope is restricted to the GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "rare-book-library-catalog-revalidation",
+    "scenarioType": "cache-body-evicted-while-http-validator-remains",
+    "primaryRootCause": "http-conditional-validator-outlives-local-representation",
+    "failureMode": "origin-304-causes-silent-empty-catalog-after-partial-cache-eviction",
+    "solutionPattern": "couple-conditional-validator-to-resident-body-and-reject-unusable-304",
+    "labFormat": "http-conditional-cache-contract-investigation"
+  },
+  "manifest": [
+    "README.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "solution/CatalogClient.cs",
+    "solution/README.md",
+    "starter/CatalogClient.cs",
+    "starter/Program.cs",
+    "starter/RareBookLab.csproj",
+    "starter/global.json",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

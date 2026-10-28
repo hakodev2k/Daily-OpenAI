@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-28-10",
-      "unitId": "UNIT-OBS-008",
-      "domain": "observability",
-      "primarySkill": "metrics-cardinality",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "multi-tenant-order-observability",
-      "primaryRootCause": "raw-request-path-with-user-identifier-is-used-as-metric-dimension",
-      "failureMode": "metric-series-count-grows-with-user-cardinality",
-      "solutionPattern": "bounded-route-template-dimensions-with-high-cardinality-context-moved-to-logs-traces",
-      "labFormat": "metrics-cardinality-investigation"
-    },
-    {
       "runSlot": "2026-09-29-00",
       "unitId": "UNIT-SQL-008",
       "domain": "sql-server",
@@ -1464,10 +1451,24 @@
       "failureMode": "latency-breach-classification-repeats-a-one-second-sawtooth",
       "solutionPattern": "compare-complete-timespan-values-and-preserve-strict-sla-boundary",
       "labFormat": "latency-telemetry-sawtooth-investigation"
+    },
+    {
+      "runSlot": "2026-10-28-14",
+      "unitId": "UNIT-REVAL-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-REVAL-001-rare-book-catalog-304-after-cache-eviction",
+      "domain": "http-cache-revalidation",
+      "primarySkill": "http-conditional-get-representation-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "rare-book-library-catalog-revalidation",
+      "scenarioType": "cache-body-evicted-while-http-validator-remains",
+      "primaryRootCause": "http-conditional-validator-outlives-local-representation",
+      "failureMode": "origin-304-causes-silent-empty-catalog-after-partial-cache-eviction",
+      "solutionPattern": "couple-conditional-validator-to-resident-body-and-reject-unusable-304",
+      "labFormat": "http-conditional-cache-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-CHAN-002",
     "UNIT-UTF8-001",
     "UNIT-LEGAL-001",
     "UNIT-GIT-001",
@@ -1490,14 +1491,14 @@
     "UNIT-MONGO-002",
     "UNIT-VTASK-001",
     "UNIT-EF-017",
-    "UNIT-TSPAN-001"
+    "UNIT-TSPAN-001",
+    "UNIT-REVAL-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-channel-delivery-semantics": 1,
         "dotnet-streaming-text": 1,
         "legal-platform-architecture": 1,
         "git-ci-diff-semantics": 1,
@@ -1520,22 +1521,22 @@
         "mongodb-array-query-semantics": 1,
         "dotnet-valuetask-consumption": 1,
         "ef-core-context-pooling": 1,
-        "dotnet-timespan-semantics": 1
+        "dotnet-timespan-semantics": 1,
+        "http-cache-revalidation": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
-        "L2": 9,
+        "L2": 10,
         "L6": 1,
+        "L3": 5,
         "L1": 4,
         "L4": 3,
         "L5": 1
       },
       "labFormat": {
-        "audit-event-loss-production-investigation": 1,
         "network-stream-decoding-evidence-investigation": 1,
         "architecture-tabletop-failure-contract-decision": 1,
         "git-history-boundary-ci-investigation": 1,
@@ -1558,7 +1559,8 @@
         "mongodb-document-array-query-evidence-investigation": 1,
         "valuetask-consumption-refactoring-workshop": 1,
         "cross-tenant-data-isolation-production-investigation": 1,
-        "latency-telemetry-sawtooth-investigation": 1
+        "latency-telemetry-sawtooth-investigation": 1,
+        "http-conditional-cache-contract-investigation": 1
       }
     }
   }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TSPAN-001",
-    "runSlot": "2026-10-28-13",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-TSPAN-001-theater-ticket-hold-latency-sawtooth",
+    "unitId": "UNIT-REVAL-001",
+    "runSlot": "2026-10-28-14",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-REVAL-001-rare-book-catalog-304-after-cache-eviction",
     "status": "READY",
-    "createdAt": "2026-10-28T13:06:06+07:00"
+    "createdAt": "2026-10-28T14:10:51+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 308,
-    "totalGenerated": 303,
+    "totalRunSlotsAttempted": 309,
+    "totalGenerated": 304,
     "totalFailed": 5
   },
   "learning": {
