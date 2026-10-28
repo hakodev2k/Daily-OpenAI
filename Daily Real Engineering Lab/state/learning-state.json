@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SLOT-001",
-    "runSlot": "2026-10-28-16",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-SLOT-001-waste-route-appservice-swap-settings",
+    "unitId": "UNIT-LOCK-001",
+    "runSlot": "2026-10-28-17",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-LOCK-001-museum-exhibit-transfer-lock-order-deadlock",
     "status": "READY",
-    "createdAt": "2026-10-28T16:11:02+07:00"
+    "createdAt": "2026-10-28T17:10:35+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 311,
-    "totalGenerated": 306,
+    "totalRunSlotsAttempted": 312,
+    "totalGenerated": 307,
     "totalFailed": 5
   },
   "learning": {
