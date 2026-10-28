@@ -1,0 +1,59 @@
+{
+  "unitId": "UNIT-EF-017",
+  "runSlot": "2026-10-28-12",
+  "title": "Dashboard bảo trì đèn đường trả work order của tenant khác",
+  "domain": "ef-core-context-pooling",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-28T12:07:09+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "ef-core-pooled-dbcontext-tenant-state-isolation",
+    "ef-core-global-query-filter",
+    "multi-tenant-data-isolation",
+    "regression-testing"
+  ],
+  "primarySkill": "ef-core-pooled-dbcontext-tenant-state-isolation",
+  "prerequisites": [
+    "C# và EF Core DbContext",
+    "LINQ và global query filters",
+    ".NET SDK 8 và NuGet restore"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "streetlight-maintenance-saas-work-order-dashboard",
+    "scenarioType": "sequential-tenant-dashboard-requests-return-other-tenant-work-orders",
+    "primaryRootCause": "custom-tenantid-property-persists-across-pooled-dbcontext-reuse-and-is-only-initialized-once",
+    "failureMode": "cross-tenant-data-exposure-after-sequential-pooled-context-reuse",
+    "solutionPattern": "assign-tenant-state-on-every-context-borrow-with-tenant-query-filter-regression",
+    "labFormat": "cross-tenant-data-isolation-production-investigation"
+  },
+  "fileManifest": [
+    "README.md",
+    "evidence/incident.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "solution/README.md",
+    "solution/WorkOrderReader.cs",
+    "starter/Model.cs",
+    "starter/Program.cs",
+    "starter/Starter.csproj",
+    "starter/WorkOrderReader.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
