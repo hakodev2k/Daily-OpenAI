@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-02",
-      "unitId": "UNIT-PROXY-001",
-      "domain": "reverse-proxy-networking",
-      "primarySkill": "aspnet-core-forwarded-headers",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "partner-shipment-api-ingress",
-      "scenarioType": "tls-terminating-edge-redirect-loop",
-      "primaryRootCause": "https-redirection-runs-before-trusted-forwarded-proto-processing",
-      "failureMode": "edge-https-request-gets-redirected-back-to-itself-indefinitely",
-      "solutionPattern": "process-trusted-proxy-scheme-before-https-enforcement",
-      "labFormat": "reverse-proxy-production-incident"
-    },
-    {
       "runSlot": "2026-10-25-03",
       "unitId": "UNIT-CANCEL-001",
       "domain": "dotnet-cancellation-lifecycle",
@@ -1488,6 +1474,21 @@
       "failureMode": "seller-statement-fee-differs-from-sum-of-posted-transaction-fees",
       "solutionPattern": "per-transaction-decimal-rounding-then-seller-aggregation",
       "labFormat": "financial-reconciliation-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-06",
+      "unitId": "UNIT-FLAG-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FLAG-001-sticky-rollout-replica-drift",
+      "domain": "feature-flag-rollout-consistency",
+      "primarySkill": "deterministic-cohort-assignment",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "municipal-water-usage-portal-beta",
+      "scenarioType": "multi-replica-progressive-rollout-cohort-drift",
+      "primaryRootCause": "instance-specific-seed-contaminates-sticky-cohort-hash",
+      "failureMode": "same-authenticated-user-switches-beta-assignment-across-replicas",
+      "solutionPattern": "versioned-canonical-identity-stable-hash-bucket-independent-of-replica",
+      "labFormat": "feature-flag-cohort-refactoring-workshop"
     }
   ],
   "rolling24": [
@@ -1517,71 +1518,68 @@
     "UNIT-MONEY-001"
   ],
   "rollingProfile": {
-    "window": 24,
-    "actual": 24,
-    "counts": {
-      "domain": {
-        "http-dns-connection-lifecycle": 1,
-        "aspnet-core-authorization": 1,
-        "dotnet-string-identity": 1,
-        "dotnet-collection-hashing": 1,
-        "mongodb-array-query-semantics": 1,
-        "dotnet-valuetask-consumption": 1,
-        "ef-core-context-pooling": 1,
-        "dotnet-timespan-semantics": 1,
-        "http-cache-revalidation": 1,
-        "dotnet-async-timeout-boundaries": 1,
-        "azure-appservice-deployment-slots": 1,
-        "dotnet-monitor-concurrency": 1,
-        "aspnet-core-response-observability": 1,
-        "event-time-stream-processing": 1,
-        "postgresql-unique-constraints": 1,
-        "csharp-record-snapshot-semantics": 1,
-        "csv-spreadsheet-export-security": 1,
-        "aspnet-core-request-body-streams": 1,
-        "http-query-component-encoding": 1,
-        "filesystem-ingestion-reliability": 1,
-        "dotnet-concurrent-collections": 1,
-        "postgresql-query-plans": 1,
-        "dotnet-dependency-injection": 1,
-        "dotnet-financial-arithmetic": 1
-      },
-      "difficulty": {
-        "D4": 19,
-        "D3": 5
-      },
-      "maturityLevel": {
-        "L2": 11,
-        "L3": 6,
-        "L1": 4,
-        "L4": 3
-      },
-      "labFormat": {
-        "dns-rotation-connection-lifecycle-investigation": 1,
-        "authorization-boundary-production-incident": 1,
-        "cross-locale-identifier-reconciliation-investigation": 1,
-        "mutable-hash-key-deterministic-reproduction": 1,
-        "mongodb-document-array-query-evidence-investigation": 1,
-        "valuetask-consumption-refactoring-workshop": 1,
-        "cross-tenant-data-isolation-production-investigation": 1,
-        "latency-telemetry-sawtooth-investigation": 1,
-        "http-conditional-cache-contract-investigation": 1,
-        "deterministic-timeout-lifecycle-failure-lab": 1,
-        "slot-swap-deployment-configuration-workshop": 1,
-        "deterministic-two-resource-deadlock-incident": 1,
-        "response-metrics-evidence-investigation": 1,
-        "event-time-telemetry-reconciliation-incident": 1,
-        "postgresql-constraint-behavior-investigation": 1,
-        "audit-snapshot-deterministic-failure": 1,
-        "spreadsheet-export-security-evidence-incident": 1,
-        "request-body-pipeline-refactoring-workshop": 1,
-        "partner-token-contract-investigation": 1,
-        "deterministic-file-drop-reliability-investigation": 1,
-        "concurrent-cache-factory-investigation": 1,
-        "postgresql-query-plan-production-forensics": 1,
-        "dependency-injection-lifetime-deterministic-failure": 1,
-        "financial-reconciliation-contract-investigation": 1
-      }
+    "windowSize": 24,
+    "byDomain": {
+      "aspnet-core-authorization": 1,
+      "dotnet-string-identity": 1,
+      "dotnet-collection-hashing": 1,
+      "mongodb-array-query-semantics": 1,
+      "dotnet-valuetask-consumption": 1,
+      "ef-core-context-pooling": 1,
+      "dotnet-timespan-semantics": 1,
+      "http-cache-revalidation": 1,
+      "dotnet-async-timeout-boundaries": 1,
+      "azure-appservice-deployment-slots": 1,
+      "dotnet-monitor-concurrency": 1,
+      "aspnet-core-response-observability": 1,
+      "event-time-stream-processing": 1,
+      "postgresql-unique-constraints": 1,
+      "csharp-record-snapshot-semantics": 1,
+      "csv-spreadsheet-export-security": 1,
+      "aspnet-core-request-body-streams": 1,
+      "http-query-component-encoding": 1,
+      "filesystem-ingestion-reliability": 1,
+      "dotnet-concurrent-collections": 1,
+      "postgresql-query-plans": 1,
+      "dotnet-dependency-injection": 1,
+      "dotnet-financial-arithmetic": 1,
+      "feature-flag-rollout-consistency": 1
+    },
+    "byDifficulty": {
+      "D4": 19,
+      "D3": 5
+    },
+    "byMaturity": {
+      "L3": 6,
+      "L2": 10,
+      "L1": 4,
+      "L4": 4
+    },
+    "byFormat": {
+      "authorization-boundary-production-incident": 1,
+      "cross-locale-identifier-reconciliation-investigation": 1,
+      "mutable-hash-key-deterministic-reproduction": 1,
+      "mongodb-document-array-query-evidence-investigation": 1,
+      "valuetask-consumption-refactoring-workshop": 1,
+      "cross-tenant-data-isolation-production-investigation": 1,
+      "latency-telemetry-sawtooth-investigation": 1,
+      "http-conditional-cache-contract-investigation": 1,
+      "deterministic-timeout-lifecycle-failure-lab": 1,
+      "slot-swap-deployment-configuration-workshop": 1,
+      "deterministic-two-resource-deadlock-incident": 1,
+      "response-metrics-evidence-investigation": 1,
+      "event-time-telemetry-reconciliation-incident": 1,
+      "postgresql-constraint-behavior-investigation": 1,
+      "audit-snapshot-deterministic-failure": 1,
+      "spreadsheet-export-security-evidence-incident": 1,
+      "request-body-pipeline-refactoring-workshop": 1,
+      "partner-token-contract-investigation": 1,
+      "deterministic-file-drop-reliability-investigation": 1,
+      "concurrent-cache-factory-investigation": 1,
+      "postgresql-query-plan-production-forensics": 1,
+      "dependency-injection-lifetime-deterministic-failure": 1,
+      "financial-reconciliation-contract-investigation": 1,
+      "feature-flag-cohort-refactoring-workshop": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MONEY-001",
-    "runSlot": "2026-10-29-05",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-MONEY-001-marketplace-settlement-cent-drift",
+    "unitId": "UNIT-FLAG-001",
+    "runSlot": "2026-10-29-06",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FLAG-001-sticky-rollout-replica-drift",
     "status": "READY",
-    "createdAt": "2026-10-29T05:07:57.575+07:00"
+    "createdAt": "2026-10-29T06:17:08.723+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 324,
-    "totalGenerated": 319,
+    "totalRunSlotsAttempted": 325,
+    "totalGenerated": 320,
     "totalFailed": 5
   },
   "learning": {
