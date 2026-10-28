@@ -1,0 +1,62 @@
+{
+  "unitId": "UNIT-CSV-002",
+  "runSlot": "2026-10-28-22",
+  "title": "Báo cáo giải ngân CSV hiển thị công thức ngoài ý muốn",
+  "domain": "csv-spreadsheet-export-security",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-28T22:10:54+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "csv-spreadsheet-formula-injection",
+    "csv-field-encoding",
+    "untrusted-export-boundaries",
+    "regression-testing"
+  ],
+  "primarySkill": "spreadsheet-cell-interpretation-trust-boundary",
+  "prerequisites": [
+    "csharp-strings",
+    "dotnet-console",
+    "csv-format"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of C# source, parser fixtures, PowerShell scripts and file paths. No .NET runtime or spreadsheet client executed (GitHub-only integration).",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "nonprofit-grant-disbursement-reporting",
+    "scenarioType": "untrusted-partner-displayname-interpreted-as-spreadsheet-formula",
+    "primaryRootCause": "csv-quoting-mistaken-for-spreadsheet-text-cell-neutralization",
+    "failureMode": "formula-interpretation-despite-syntactically-valid-csv",
+    "solutionPattern": "untrusted-text-cell-policy-before-csv-serialization-with-client-compatibility-review",
+    "labFormat": "spreadsheet-export-security-evidence-incident"
+  },
+  "fileManifest": [
+    "README.md",
+    "docs/scenario.md",
+    "evidence/triage.txt",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/GrantCsvExporter.cs",
+    "solution/README.md",
+    "starter/GrantCsvExporter.cs",
+    "starter/GrantExport.csproj",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

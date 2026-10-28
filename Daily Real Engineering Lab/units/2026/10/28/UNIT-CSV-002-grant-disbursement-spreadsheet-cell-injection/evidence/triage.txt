@@ -1,0 +1,10 @@
+SYNTHETIC INCIDENT EVIDENCE — 2026-10-28
+api_status=200
+rows=9
+csv_parser_records=10 (including header)
+amount_sum=241.50
+ordinary_text_roundtrip=PASS
+untrusted_displayname_formula_like_cells=6
+reported_clients=spreadsheet-A,spreadsheet-B
+noise=CPU normal; storage latency 12ms
+No spreadsheet application was executed in this lab.

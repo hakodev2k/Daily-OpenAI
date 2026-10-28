@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RECORD-002",
-    "runSlot": "2026-10-28-21",
-    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-RECORD-002-air-cargo-manifest-snapshot-aliasing",
+    "unitId": "UNIT-CSV-002",
+    "runSlot": "2026-10-28-22",
+    "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-CSV-002-grant-disbursement-spreadsheet-cell-injection",
     "status": "READY",
-    "createdAt": "2026-10-28T21:08:35+07:00"
+    "createdAt": "2026-10-28T22:10:54+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 316,
-    "totalGenerated": 311,
+    "totalRunSlotsAttempted": 317,
+    "totalGenerated": 312,
     "totalFailed": 5
   },
   "learning": {
