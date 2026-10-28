@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-09-27-15",
-      "unitId": "UNIT-REDIS-005",
-      "domain": "redis-caching",
-      "primarySkill": "redis-failure-degradation",
-      "maturityLevel": "L2",
-      "difficulty": "D3",
-      "businessContext": "cms-content-delivery-api",
-      "primaryRootCause": "cache-availability-is-coupled-to-request-success-even-when-authoritative-origin-is-healthy",
-      "failureMode": "transient-cache-timeouts-propagate-as-request-failures-despite-healthy-origin",
-      "solutionPattern": "bounded-cache-failure-degradation-to-authoritative-origin",
-      "labFormat": "cache-dependency-degradation-investigation"
-    },
-    {
       "runSlot": "2026-09-27-16",
       "unitId": "UNIT-ARCH-006",
       "domain": "architecture",
@@ -1456,10 +1443,24 @@
       "failureMode": "corrected-accession-cannot-be-found-or-removed-and-duplicate-code-is-accepted",
       "solutionPattern": "stable-dictionary-key-index-with-validated-rename",
       "labFormat": "mutable-hash-key-deterministic-reproduction"
+    },
+    {
+      "runSlot": "2026-10-28-10",
+      "unitId": "UNIT-MONGO-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-MONGO-002-wind-turbine-inspection-array-predicate",
+      "domain": "mongodb-array-query-semantics",
+      "primarySkill": "mongodb-elemmatch-same-element-predicate",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "wind-farm-turbine-inspection-dispatch",
+      "scenarioType": "inspection-array-predicate-produces-unjustified-brake-repair-tickets",
+      "primaryRootCause": "independent-dotted-array-predicates-match-different-embedded-documents",
+      "failureMode": "false-positive-brake-repair-dispatch-from-unrelated-failed-inspection",
+      "solutionPattern": "single-array-element-conjunctive-filter-with-elemmatch",
+      "labFormat": "mongodb-document-array-query-evidence-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-SEMA-001",
     "UNIT-DP-001",
     "UNIT-CMP-001",
     "UNIT-OFFSYNC-001",
@@ -1482,14 +1483,14 @@
     "UNIT-DNS-001",
     "UNIT-AUTHZ-001",
     "UNIT-ID-001",
-    "UNIT-HASH-001"
+    "UNIT-HASH-001",
+    "UNIT-MONGO-002"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-semaphore-admission-control": 1,
         "aspnet-core-data-protection": 1,
         "csharp-comparer-contract": 1,
         "offline-sync-consistency": 1,
@@ -1512,22 +1513,22 @@
         "http-dns-connection-lifecycle": 1,
         "aspnet-core-authorization": 1,
         "dotnet-string-identity": 1,
-        "dotnet-collection-hashing": 1
+        "dotnet-collection-hashing": 1,
+        "mongodb-array-query-semantics": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L2": 8,
         "L4": 3,
         "L1": 5,
         "L5": 2,
         "L3": 5,
+        "L2": 8,
         "L6": 1
       },
       "labFormat": {
-        "semaphore-admission-invariant-investigation": 1,
         "multi-replica-security-lifecycle-refactoring-workshop": 1,
         "deterministic-collection-order-contract": 1,
         "offline-sync-contract-design-decision-with-executable-fixture": 1,
@@ -1550,7 +1551,8 @@
         "dns-rotation-connection-lifecycle-investigation": 1,
         "authorization-boundary-production-incident": 1,
         "cross-locale-identifier-reconciliation-investigation": 1,
-        "mutable-hash-key-deterministic-reproduction": 1
+        "mutable-hash-key-deterministic-reproduction": 1,
+        "mongodb-document-array-query-evidence-investigation": 1
       }
     }
   }
