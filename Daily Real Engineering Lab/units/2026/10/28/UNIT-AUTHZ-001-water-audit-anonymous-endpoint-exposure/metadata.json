@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-AUTHZ-001",
+  "runSlot": "2026-10-28-07",
+  "title": "Water Audit Portal: anonymous access after API expansion",
+  "domain": "aspnet-core-authorization",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-28T07:12:03+07:00",
+  "estimatedMinutes": 70,
+  "primarySkill": "aspnet-core-default-vs-fallback-authorization-policy",
+  "skills": [
+    "aspnet-core-authorization",
+    "endpoint-routing",
+    "security-regression-testing"
+  ],
+  "prerequisites": [
+    "ASP.NET Core Minimal APIs",
+    "HTTP 401",
+    "authentication vs authorization"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Static consistency review only; .NET code was not executed in this GitHub-only run.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-water-quality-audit-portal",
+    "scenarioType": "new-sensitive-api-routes-respond-to-unauthenticated-callers",
+    "primaryRootCause": "default-authorization-policy-is-not-applied-to-unannotated-endpoints-without-fallback-policy",
+    "failureMode": "anonymous-read-of-restricted-audit-and-export-resources",
+    "solutionPattern": "fail-closed-fallback-authorization-with-explicit-public-route-exceptions",
+    "labFormat": "authorization-boundary-production-incident"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}
