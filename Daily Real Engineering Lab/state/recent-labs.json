@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-24-20",
-      "unitId": "UNIT-BILL-001",
-      "domain": "financial-calculation",
-      "primarySkill": "decimal-rounding-boundaries",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "usage-based-saas-billing",
-      "scenarioType": "fractional-charge-settlement-drift",
-      "primaryRootCause": "per-event-rounding-before-invoice-sum",
-      "failureMode": "local-invoice-totals-diverge-from-partner-settlement",
-      "solutionPattern": "round-once-after-raw-decimal-aggregation",
-      "labFormat": "billing-reconciliation-production-incident"
-    },
-    {
       "runSlot": "2026-10-24-21",
       "unitId": "UNIT-CACHE-001",
       "domain": "dotnet-caching-concurrency",
@@ -1482,10 +1468,24 @@
       "failureMode": "audit-captures-valid-json-but-endpoint-receives-empty-stream-and-returns-422",
       "solutionPattern": "bounded-request-body-buffering-with-position-reset-and-stream-ownership",
       "labFormat": "request-body-pipeline-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-29-00",
+      "unitId": "UNIT-QENC-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-QENC-001-ski-lift-pass-query-token-corruption",
+      "domain": "http-query-component-encoding",
+      "primarySkill": "uri-query-component-encoding",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "alpine-ski-resort-lift-pass-gate-validation",
+      "scenarioType": "selected-valid-pass-tokens-rejected-at-partner-validation-boundary",
+      "primaryRootCause": "unescaped-reserved-characters-in-opaque-token-interpreted-as-uri-query-syntax",
+      "failureMode": "partner-decoded-pass-identity-differs-from-issued-pass-and-validation-returns-rejection",
+      "solutionPattern": "encode-opaque-token-as-one-uri-query-value-with-roundtrip-regression",
+      "labFormat": "partner-token-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-INIT-001",
     "UNIT-CRYPTO-001",
     "UNIT-JSON-002",
     "UNIT-PROC-001",
@@ -1508,14 +1508,14 @@
     "UNIT-PGUNIQ-001",
     "UNIT-RECORD-002",
     "UNIT-CSV-002",
-    "UNIT-BODY-001"
+    "UNIT-BODY-001",
+    "UNIT-QENC-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-async-initialization": 1,
         "dotnet-cryptographic-protocols": 1,
         "api-json-contracts": 1,
         "dotnet-process-io": 1,
@@ -1538,21 +1538,21 @@
         "postgresql-unique-constraints": 1,
         "csharp-record-snapshot-semantics": 1,
         "csv-spreadsheet-export-security": 1,
-        "aspnet-core-request-body-streams": 1
+        "aspnet-core-request-body-streams": 1,
+        "http-query-component-encoding": 1
       },
       "difficulty": {
-        "D3": 6,
-        "D4": 18
+        "D4": 19,
+        "D3": 5
       },
       "maturityLevel": {
-        "L1": 5,
         "L3": 6,
-        "L2": 8,
+        "L2": 9,
         "L4": 4,
+        "L1": 4,
         "L5": 1
       },
       "labFormat": {
-        "async-initializer-transient-failure-deterministic-lab": 1,
         "cryptographic-envelope-production-forensics": 1,
         "partner-payload-contract-investigation": 1,
         "external-process-stream-lifecycle-refactoring-workshop": 1,
@@ -1575,7 +1575,8 @@
         "postgresql-constraint-behavior-investigation": 1,
         "audit-snapshot-deterministic-failure": 1,
         "spreadsheet-export-security-evidence-incident": 1,
-        "request-body-pipeline-refactoring-workshop": 1
+        "request-body-pipeline-refactoring-workshop": 1,
+        "partner-token-contract-investigation": 1
       }
     }
   }
