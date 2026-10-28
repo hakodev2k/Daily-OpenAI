@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-24-21",
-      "unitId": "UNIT-CACHE-001",
-      "domain": "dotnet-caching-concurrency",
-      "primarySkill": "concurrent-dictionary-factory-semantics",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "multi-tenant-form-schema-validation",
-      "scenarioType": "simultaneous-cold-cache-schema-compilation",
-      "primaryRootCause": "concurrent-dictionary-getoradd-value-factory-can-execute-more-than-once",
-      "failureMode": "duplicate-expensive-compilation-despite-correct-single-cached-value",
-      "solutionPattern": "cache-lazy-single-flight-initializer-per-key",
-      "labFormat": "cache-initialization-contention-investigation"
-    },
-    {
       "runSlot": "2026-10-24-22",
       "unitId": "UNIT-HTTP-011",
       "domain": "http-networking",
@@ -1483,10 +1469,24 @@
       "failureMode": "partner-decoded-pass-identity-differs-from-issued-pass-and-validation-returns-rejection",
       "solutionPattern": "encode-opaque-token-as-one-uri-query-value-with-roundtrip-regression",
       "labFormat": "partner-token-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-01",
+      "unitId": "UNIT-FDROP-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FDROP-001-cold-room-calibration-file-drop-gaps",
+      "domain": "filesystem-ingestion-reliability",
+      "primarySkill": "filesystemwatcher-event-delivery-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "cold-room-calibration-certificate-import",
+      "scenarioType": "completed-calibration-files-not-all-visible-in-shift-close-register",
+      "primaryRootCause": "filesystem-event-notifications-treated-as-complete-durable-ingestion-source",
+      "failureMode": "valid-certificate-remains-on-disk-but-is-never-accepted-after-missed-notification",
+      "solutionPattern": "periodic-directory-inventory-reconciliation-with-idempotent-acceptance",
+      "labFormat": "deterministic-file-drop-reliability-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-CRYPTO-001",
     "UNIT-JSON-002",
     "UNIT-PROC-001",
     "UNIT-PAGE-001",
@@ -1509,14 +1509,14 @@
     "UNIT-RECORD-002",
     "UNIT-CSV-002",
     "UNIT-BODY-001",
-    "UNIT-QENC-001"
+    "UNIT-QENC-001",
+    "UNIT-FDROP-001"
   ],
   "rollingProfile": {
     "window": 24,
     "actual": 24,
     "counts": {
       "domain": {
-        "dotnet-cryptographic-protocols": 1,
         "api-json-contracts": 1,
         "dotnet-process-io": 1,
         "api-pagination-consistency": 1,
@@ -1539,21 +1539,21 @@
         "csharp-record-snapshot-semantics": 1,
         "csv-spreadsheet-export-security": 1,
         "aspnet-core-request-body-streams": 1,
-        "http-query-component-encoding": 1
+        "http-query-component-encoding": 1,
+        "filesystem-ingestion-reliability": 1
       },
       "difficulty": {
         "D4": 19,
         "D3": 5
       },
       "maturityLevel": {
-        "L3": 6,
-        "L2": 9,
+        "L2": 10,
         "L4": 4,
         "L1": 4,
-        "L5": 1
+        "L5": 1,
+        "L3": 5
       },
       "labFormat": {
-        "cryptographic-envelope-production-forensics": 1,
         "partner-payload-contract-investigation": 1,
         "external-process-stream-lifecycle-refactoring-workshop": 1,
         "deterministic-keyset-cursor-integrity-lab": 1,
@@ -1576,7 +1576,8 @@
         "audit-snapshot-deterministic-failure": 1,
         "spreadsheet-export-security-evidence-incident": 1,
         "request-body-pipeline-refactoring-workshop": 1,
-        "partner-token-contract-investigation": 1
+        "partner-token-contract-investigation": 1,
+        "deterministic-file-drop-reliability-investigation": 1
       }
     }
   }
