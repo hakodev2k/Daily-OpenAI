@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JDRIFT-001",
-    "runSlot": "2026-10-29-12",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-JDRIFT-001-rail-depot-reservation-json-contract-drift",
+    "unitId": "UNIT-AUDIT-001",
+    "runSlot": "2026-10-29-13",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-AUDIT-001-sterile-batch-audit-evidence-trust-boundary",
     "status": "READY",
-    "createdAt": "2026-10-29T12:13:30+07:00"
+    "createdAt": "2026-10-29T13:09:07+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 331,
-    "totalGenerated": 326,
+    "totalRunSlotsAttempted": 332,
+    "totalGenerated": 327,
     "totalFailed": 5
   },
   "learning": {

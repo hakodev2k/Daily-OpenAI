@@ -1,0 +1,10 @@
+{
+  "receiptId": "REC-20261029-0905-B4721",
+  "source": "separately-administered-compliance-recorder",
+  "batchId": "B-4721",
+  "capturedAtUtc": "2026-10-29T09:05:00Z",
+  "eventCount": 4,
+  "lastSequence": 204,
+  "receiptAuthentication": "assumed for tabletop, not cryptographically demonstrated",
+  "note": "Training fixture. This receipt does not contain a real signature or hash; do not treat it as a verifiable cryptographic anchor."
+}

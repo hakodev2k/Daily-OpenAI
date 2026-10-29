@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-09",
-      "unitId": "UNIT-RL-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-RL-001-tenant-quota-partition",
-      "domain": "aspnet-core-rate-limiting",
-      "primarySkill": "aspnet-core-rate-limit-partitioning",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "multi-tenant-document-rendering-platform",
-      "scenarioType": "authenticated-tenant-request-budget-enforcement",
-      "primaryRootCause": "rate-limit-partition-key-uses-route-path-instead-of-authenticated-tenant-identity",
-      "failureMode": "unrelated-tenants-share-429-budget-while-one-tenant-can-evade-quota-across-endpoints",
-      "solutionPattern": "stable-trusted-tenant-scoped-partition-with-explicit-anonymous-fallback",
-      "labFormat": "tenant-quota-partition-investigation"
-    },
-    {
       "runSlot": "2026-10-25-10",
       "unitId": "UNIT-ASYNC-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-ASYNC-001-batch-fault-aggregation",
@@ -1496,6 +1481,21 @@
       "failureMode": "valid-reservations-are-imported-as-zero-units-after-unannounced-schema-change",
       "solutionPattern": "versioned-strict-json-contract-with-required-fields-and-explicit-invariant-validation",
       "labFormat": "json-contract-drift-production-incident"
+    },
+    {
+      "runSlot": "2026-10-29-13",
+      "unitId": "UNIT-AUDIT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-AUDIT-001-sterile-batch-audit-evidence-trust-boundary",
+      "domain": "audit-trail-integrity-architecture",
+      "primarySkill": "audit-trail-tamper-evidence",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "sterile-pharmaceutical-batch-release-audit",
+      "scenarioType": "historical-audit-export-disagreement-under-privileged-maintenance",
+      "primaryRootCause": "audit-records-and-export-history-share-a-mutable-administrator-trust-boundary",
+      "failureMode": "historical-release-approval-can-disappear-without-independent-integrity-alarm",
+      "solutionPattern": "independently-anchored-per-batch-digest-chain-with-segregated-signing-and-replay-verification",
+      "labFormat": "audit-evidence-trust-boundary-architecture-case-study"
     }
   ],
   "rolling24": [
@@ -1527,7 +1527,6 @@
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-timespan-semantics": 1,
       "http-cache-revalidation": 1,
       "dotnet-async-timeout-boundaries": 1,
       "azure-appservice-deployment-slots": 1,
@@ -1550,21 +1549,22 @@
       "dotnet-sortedset-ordering": 1,
       "dotnet-streamreader-checkpoint-semantics": 1,
       "dotnet-flags-authorization-semantics": 1,
-      "json-ingress-contract-validation": 1
+      "json-ingress-contract-validation": 1,
+      "audit-trail-integrity-architecture": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L2": 10,
+      "L2": 9,
       "L1": 4,
       "L4": 3,
       "L3": 6,
-      "L5": 1
+      "L5": 1,
+      "L6": 1
     },
     "byFormat": {
-      "latency-telemetry-sawtooth-investigation": 1,
       "http-conditional-cache-contract-investigation": 1,
       "deterministic-timeout-lifecycle-failure-lab": 1,
       "slot-swap-deployment-configuration-workshop": 1,
@@ -1587,7 +1587,8 @@
       "ordered-set-contract-evidence-investigation": 1,
       "stream-checkpoint-production-forensics": 1,
       "deterministic-permission-policy-contract-lab": 1,
-      "json-contract-drift-production-incident": 1
+      "json-contract-drift-production-incident": 1,
+      "audit-evidence-trust-boundary-architecture-case-study": 1
     }
   }
 }
