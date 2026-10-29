@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-05",
-      "unitId": "UNIT-EF-014",
-      "domain": "ef-core",
-      "primarySkill": "ef-core-navigation-fixup",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "enterprise-training-cohort-reporting",
-      "scenarioType": "read-only-report-after-context-warmup",
-      "primaryRootCause": "ef-core-tracking-navigation-fixup-adds-previously-tracked-entities-to-filtered-include-collection",
-      "failureMode": "inactive-enrollments-leak-into-active-roster-only-after-an-earlier-query-in-same-dbcontext",
-      "solutionPattern": "separate-read-model-materialization-from-existing-tracked-graph",
-      "labFormat": "ef-core-context-history-investigation"
-    },
-    {
       "runSlot": "2026-10-25-06",
       "unitId": "UNIT-OUTBOX-001",
       "domain": "messaging-outbox",
@@ -1491,10 +1477,24 @@
       "failureMode": "disaster-recovery-plan-advertises-unproven-rpo-rto-and-single-writer-safety",
       "solutionPattern": "constraint-gated-in-jurisdiction-standby-with-write-admission-and-drill-evidence",
       "labFormat": "disaster-recovery-architecture-decision-tabletop"
+    },
+    {
+      "runSlot": "2026-10-29-09",
+      "unitId": "UNIT-SET-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-SET-001-ferry-dispatch-priority-queue-missing-jobs",
+      "domain": "dotnet-sortedset-ordering",
+      "primarySkill": "sortedset-comparer-defines-element-uniqueness",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "coastal-ferry-terminal-vehicle-dispatch",
+      "scenarioType": "same-priority-arrivals-disappear-from-dispatch-view",
+      "primaryRootCause": "sortedset-comparer-returns-zero-for-distinct-jobs-with-equal-priority",
+      "failureMode": "distinct-dispatch-requests-silently-rejected-as-duplicates",
+      "solutionPattern": "total-order-comparer-with-stable-arrival-and-id-tiebreakers",
+      "labFormat": "ordered-set-contract-evidence-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-HASH-001",
     "UNIT-MONGO-002",
     "UNIT-VTASK-001",
     "UNIT-EF-017",
@@ -1517,12 +1517,12 @@
     "UNIT-MONEY-001",
     "UNIT-FLAG-001",
     "UNIT-LINQ-002",
-    "UNIT-DR-001"
+    "UNIT-DR-001",
+    "UNIT-SET-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-collection-hashing": 1,
       "mongodb-array-query-semantics": 1,
       "dotnet-valuetask-consumption": 1,
       "ef-core-context-pooling": 1,
@@ -1545,21 +1545,21 @@
       "dotnet-financial-arithmetic": 1,
       "feature-flag-rollout-consistency": 1,
       "linq-deferred-execution-live-sources": 1,
-      "disaster-recovery-data-residency": 1
+      "disaster-recovery-data-residency": 1,
+      "dotnet-sortedset-ordering": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 4,
-      "L2": 10,
+      "L2": 11,
       "L4": 4,
       "L3": 5,
+      "L1": 3,
       "L5": 1
     },
     "byFormat": {
-      "mutable-hash-key-deterministic-reproduction": 1,
       "mongodb-document-array-query-evidence-investigation": 1,
       "valuetask-consumption-refactoring-workshop": 1,
       "cross-tenant-data-isolation-production-investigation": 1,
@@ -1582,7 +1582,8 @@
       "financial-reconciliation-contract-investigation": 1,
       "feature-flag-cohort-refactoring-workshop": 1,
       "live-feed-consistency-evidence-investigation": 1,
-      "disaster-recovery-architecture-decision-tabletop": 1
+      "disaster-recovery-architecture-decision-tabletop": 1,
+      "ordered-set-contract-evidence-investigation": 1
     }
   }
 }

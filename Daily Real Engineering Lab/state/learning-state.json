@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DR-001",
-    "runSlot": "2026-10-29-08",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DR-001-in-country-failover-rpo-rto-design",
+    "unitId": "UNIT-SET-001",
+    "runSlot": "2026-10-29-09",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-SET-001-ferry-dispatch-priority-queue-missing-jobs",
     "status": "READY",
-    "createdAt": "2026-10-29T08:04:29+07:00"
+    "createdAt": "2026-10-29T09:11:18.106+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 327,
-    "totalGenerated": 322,
+    "totalRunSlotsAttempted": 328,
+    "totalGenerated": 323,
     "totalFailed": 5
   },
   "learning": {
