@@ -1,0 +1,8 @@
+option,location,drill,replica_lag_sec_at_failure,failover_minutes,write_p99_ms,monthly_usd,notes
+A,zone-only-X1,region-outage,NA,57,112,16000,no-independent-region-copy
+B,region-Y-outside-X,region-outage,35,17,125,19000,PII-replicated-outside-X
+C,site-X2-inside-X,region-outage,85,22,155,23500,normal-lag
+C,site-X2-inside-X,region-outage,260,26,160,23500,backlog-moderate
+C,site-X2-inside-X,region-outage,425,27,165,23500,backlog-severe
+D,site-X2-synchronous,region-outage,0,28,315,28000,synchronous-acknowledgement
+E,backup-only-X,region-outage,900,51,112,9000,quarter-hour-snapshots

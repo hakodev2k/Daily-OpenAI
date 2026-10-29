@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LINQ-002",
-    "runSlot": "2026-10-29-07",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-LINQ-002-grain-weighbridge-live-feed-snapshot-drift",
+    "unitId": "UNIT-DR-001",
+    "runSlot": "2026-10-29-08",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DR-001-in-country-failover-rpo-rto-design",
     "status": "READY",
-    "createdAt": "2026-10-29T07:09:42+07:00"
+    "createdAt": "2026-10-29T08:04:29+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 326,
-    "totalGenerated": 321,
+    "totalRunSlotsAttempted": 327,
+    "totalGenerated": 322,
     "totalFailed": 5
   },
   "learning": {

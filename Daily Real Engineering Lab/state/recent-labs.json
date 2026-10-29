@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-04",
-      "unitId": "UNIT-DBM-001",
-      "domain": "database-schema-evolution",
-      "primarySkill": "database-schema-evolution",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "b2b-partner-contact-directory",
-      "scenarioType": "mixed-version-schema-contract-rollout",
-      "primaryRootCause": "destructive-column-rename-before-legacy-application-instances-drain",
-      "failureMode": "legacy-pods-throw-sql-207-and-rollback-cannot-restore-database-contract",
-      "solutionPattern": "staged-expand-compatibility-backfill-cutover-contract-with-rollback-floor",
-      "labFormat": "database-migration-design-decision"
-    },
-    {
       "runSlot": "2026-10-25-05",
       "unitId": "UNIT-EF-014",
       "domain": "ef-core",
@@ -1490,10 +1476,24 @@
       "failureMode": "receipt-count-from-earlier-snapshot-combined-with-weight-total-from-later-snapshot",
       "solutionPattern": "single-pass-aggregation-over-one-source-enumeration",
       "labFormat": "live-feed-consistency-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-08",
+      "unitId": "UNIT-DR-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DR-001-in-country-failover-rpo-rto-design",
+      "domain": "disaster-recovery-data-residency",
+      "primarySkill": "rpo-rto-data-residency-feasibility-and-write-admission",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "regional-cultural-heritage-access-pass-platform",
+      "scenarioType": "region-wide-outage-recovery-plan-under-jurisdiction-and-slo-constraints",
+      "primaryRootCause": "no-proven-recovery-option-satisfies-residency-rpo-rto-and-write-latency-together",
+      "failureMode": "disaster-recovery-plan-advertises-unproven-rpo-rto-and-single-writer-safety",
+      "solutionPattern": "constraint-gated-in-jurisdiction-standby-with-write-admission-and-drill-evidence",
+      "labFormat": "disaster-recovery-architecture-decision-tabletop"
     }
   ],
   "rolling24": [
-    "UNIT-ID-001",
     "UNIT-HASH-001",
     "UNIT-MONGO-002",
     "UNIT-VTASK-001",
@@ -1516,12 +1516,12 @@
     "UNIT-DI-001",
     "UNIT-MONEY-001",
     "UNIT-FLAG-001",
-    "UNIT-LINQ-002"
+    "UNIT-LINQ-002",
+    "UNIT-DR-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-string-identity": 1,
       "dotnet-collection-hashing": 1,
       "mongodb-array-query-semantics": 1,
       "dotnet-valuetask-consumption": 1,
@@ -1544,20 +1544,21 @@
       "dotnet-dependency-injection": 1,
       "dotnet-financial-arithmetic": 1,
       "feature-flag-rollout-consistency": 1,
-      "linq-deferred-execution-live-sources": 1
+      "linq-deferred-execution-live-sources": 1,
+      "disaster-recovery-data-residency": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L2": 11,
       "L1": 4,
+      "L2": 10,
       "L4": 4,
-      "L3": 5
+      "L3": 5,
+      "L5": 1
     },
     "byFormat": {
-      "cross-locale-identifier-reconciliation-investigation": 1,
       "mutable-hash-key-deterministic-reproduction": 1,
       "mongodb-document-array-query-evidence-investigation": 1,
       "valuetask-consumption-refactoring-workshop": 1,
@@ -1580,7 +1581,8 @@
       "dependency-injection-lifetime-deterministic-failure": 1,
       "financial-reconciliation-contract-investigation": 1,
       "feature-flag-cohort-refactoring-workshop": 1,
-      "live-feed-consistency-evidence-investigation": 1
+      "live-feed-consistency-evidence-investigation": 1,
+      "disaster-recovery-architecture-decision-tabletop": 1
     }
   }
 }
