@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-21",
-      "unitId": "UNIT-ARCH-007",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-ARCH-007-cross-store-erasure-visibility",
-      "domain": "privacy-data-architecture",
-      "primarySkill": "cross-store-erasure-consistency",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "municipal-public-archive-search",
-      "scenarioType": "personal-record-erasure-with-asynchronous-projections-and-backup-restore",
-      "primaryRootCause": "deletion-intent-not-enforced-consistently-at-public-read-and-projection-boundaries",
-      "failureMode": "removed-public-record-resurfaces-in-search-and-remains-accessible-through-existing-links",
-      "solutionPattern": "durable-suppression-invariant-with-idempotent-erasure-workflow-and-restore-reconciliation",
-      "labFormat": "cross-store-erasure-architecture-case-study"
-    },
-    {
       "runSlot": "2026-10-25-22",
       "unitId": "UNIT-CLAIMS-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CLAIMS-001-reviewer-role-claim-contract",
@@ -1498,10 +1483,24 @@
       "failureMode": "exported-gzip-object-missing-required-crc32-and-isize-trailer",
       "solutionPattern": "complete-compression-stream-lifetime-before-reading-output-buffer",
       "labFormat": "gzip-integrity-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-30-01",
+      "unitId": "UNIT-ONSTART-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-ONSTART-001-factory-vibration-stream-correlation-header",
+      "domain": "aspnetcore-response-lifecycle",
+      "primarySkill": "aspnetcore-onstarting-header-timing",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "factory-vibration-live-sse-dashboard",
+      "scenarioType": "streaming-route-misses-correlation-header-after-body-flush",
+      "primaryRootCause": "response-header-assigned-after-downstream-started-response",
+      "failureMode": "live-sse-200-response-lacks-trace-header-while-no-content-health-has-it",
+      "solutionPattern": "register-response-onstarting-before-downstream-middleware-execution",
+      "labFormat": "streaming-response-header-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-FDROP-001",
     "UNIT-CDICT-001",
     "UNIT-PGVIS-001",
     "UNIT-DI-001",
@@ -1524,12 +1523,12 @@
     "UNIT-CAL-001",
     "UNIT-REGEX-001",
     "UNIT-DRAIN-001",
-    "UNIT-GZIP-001"
+    "UNIT-GZIP-001",
+    "UNIT-ONSTART-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "filesystem-ingestion-reliability": 1,
       "dotnet-concurrent-collections": 1,
       "postgresql-query-plans": 1,
       "dotnet-dependency-injection": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-calendar-recurrence": 1,
       "dotnet-regex-engine": 1,
       "dotnet-background-worker-delivery-semantics": 1,
-      "dotnet-gzip-stream-lifecycle": 1
+      "dotnet-gzip-stream-lifecycle": 1,
+      "aspnetcore-response-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 10,
-      "L3": 5,
+      "L2": 9,
+      "L3": 6,
       "L1": 4,
       "L4": 3,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-file-drop-reliability-investigation": 1,
       "concurrent-cache-factory-investigation": 1,
       "postgresql-query-plan-production-forensics": 1,
       "dependency-injection-lifetime-deterministic-failure": 1,
@@ -1590,7 +1589,8 @@
       "calendar-recurrence-investigation": 1,
       "deterministic-regex-performance-failure-lab": 1,
       "worker-shutdown-ack-boundary-refactoring-workshop": 1,
-      "gzip-integrity-contract-investigation": 1
+      "gzip-integrity-contract-investigation": 1,
+      "streaming-response-header-production-incident": 1
     }
   }
 }

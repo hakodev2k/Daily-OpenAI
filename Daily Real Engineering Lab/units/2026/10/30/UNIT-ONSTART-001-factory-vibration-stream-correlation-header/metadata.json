@@ -1,0 +1,66 @@
+{
+  "unitId": "UNIT-ONSTART-001",
+  "runSlot": "2026-10-30-01",
+  "title": "Mất correlation header trên luồng dữ liệu realtime",
+  "domain": "aspnetcore-response-lifecycle",
+  "labFormat": "streaming-response-header-production-incident",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-30T01:07:39+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "aspnetcore-response-lifecycle",
+    "sse-streaming",
+    "http-response-headers",
+    "incident-evidence"
+  ],
+  "primarySkill": "aspnetcore-onstarting-header-timing",
+  "prerequisites": [
+    "aspnetcore-middleware-basics",
+    "http-headers",
+    "async-await"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Static consistency review only. GitHub-only automation did not execute dotnet build, Kestrel or runtime tests.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "factory-vibration-live-sse-dashboard",
+    "scenarioType": "streaming-route-misses-correlation-header-after-body-flush",
+    "primaryRootCause": "response-header-assigned-after-downstream-started-response",
+    "failureMode": "live-sse-200-response-lacks-trace-header-while-no-content-health-has-it",
+    "solutionPattern": "register-response-onstarting-before-downstream-middleware-execution",
+    "labFormat": "streaming-response-header-production-incident"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "evidence/incident-summary.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/LabHarness.csproj",
+    "harness/Program.cs",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/FactoryDashboard.cs",
+    "solution/README.md",
+    "starter/FactoryDashboard.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
