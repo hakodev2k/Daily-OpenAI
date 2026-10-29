@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LEASE-001",
-    "runSlot": "2026-10-29-14",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-LEASE-001-road-defect-preview-buffer-ownership",
+    "unitId": "UNIT-CORS-001",
+    "runSlot": "2026-10-29-15",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CORS-001-claims-partner-portal-preflight-contract",
     "status": "READY",
-    "createdAt": "2026-10-29T14:15:45.236+07:00"
+    "createdAt": "2026-10-29T15:10:58.375+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 333,
-    "totalGenerated": 328,
+    "totalRunSlotsAttempted": 334,
+    "totalGenerated": 329,
     "totalFailed": 5
   },
   "learning": {

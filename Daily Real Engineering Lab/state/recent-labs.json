@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-11",
-      "unitId": "UNIT-OPT-001",
-      "domain": "aspnet-core-options",
-      "primarySkill": "dotnet-options-reload-lifecycle",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "clinical-laboratory-results-partner-gateway",
-      "scenarioType": "partner-credential-version-rotated-during-long-running-host",
-      "primaryRootCause": "singleton-gateway-captures-startup-IOptions-value-despite-configuration-reload",
-      "failureMode": "partner-returns-unauthorized-after-rotation-while-configuration-provider-reports-new-version",
-      "solutionPattern": "resolve-current-options-at-outbound-operation-boundary-with-controlled-validation",
-      "labFormat": "credential-rotation-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-25-12",
       "unitId": "UNIT-URI-001",
       "domain": "http-uri-resolution",
@@ -1496,10 +1482,24 @@
       "failureMode": "previously-issued-preview-mutates-after-next-request",
       "solutionPattern": "copy-valid-bytes-to-owned-memory-before-releasing-pool-lease",
       "labFormat": "buffer-ownership-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-29-15",
+      "unitId": "UNIT-CORS-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CORS-001-claims-partner-portal-preflight-contract",
+      "domain": "aspnetcore-cors",
+      "primarySkill": "aspnetcore-cors-preflight-policy-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "insurance-claims-partner-spa",
+      "scenarioType": "cross-origin-claim-preview-browser-preflight-fails-while-direct-post-succeeds",
+      "primaryRootCause": "cors-policy-request-header-allowlist-excludes-spa-custom-header",
+      "failureMode": "browser-blocks-cross-origin-post-after-preflight-without-allow-origin",
+      "solutionPattern": "explicit-cors-header-contract-with-negative-origin-method-regression",
+      "labFormat": "cors-preflight-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-WANY-001",
     "UNIT-SLOT-001",
     "UNIT-LOCK-001",
     "UNIT-STATUS-001",
@@ -1522,12 +1522,12 @@
     "UNIT-FMASK-001",
     "UNIT-JDRIFT-001",
     "UNIT-AUDIT-001",
-    "UNIT-LEASE-001"
+    "UNIT-LEASE-001",
+    "UNIT-CORS-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-async-timeout-boundaries": 1,
       "azure-appservice-deployment-slots": 1,
       "dotnet-monitor-concurrency": 1,
       "aspnet-core-response-observability": 1,
@@ -1550,22 +1550,22 @@
       "dotnet-flags-authorization-semantics": 1,
       "json-ingress-contract-validation": 1,
       "audit-trail-integrity-architecture": 1,
-      "dotnet-buffer-ownership": 1
+      "dotnet-buffer-ownership": 1,
+      "aspnetcore-cors": 1
     },
     "byDifficulty": {
-      "D3": 4,
-      "D4": 20
+      "D4": 21,
+      "D3": 3
     },
     "byMaturity": {
-      "L1": 4,
       "L4": 4,
       "L3": 6,
-      "L2": 8,
+      "L2": 9,
+      "L1": 3,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-timeout-lifecycle-failure-lab": 1,
       "slot-swap-deployment-configuration-workshop": 1,
       "deterministic-two-resource-deadlock-incident": 1,
       "response-metrics-evidence-investigation": 1,
@@ -1588,7 +1588,8 @@
       "deterministic-permission-policy-contract-lab": 1,
       "json-contract-drift-production-incident": 1,
       "audit-evidence-trust-boundary-architecture-case-study": 1,
-      "buffer-ownership-refactoring-workshop": 1
+      "buffer-ownership-refactoring-workshop": 1,
+      "cors-preflight-contract-investigation": 1
     }
   }
 }
