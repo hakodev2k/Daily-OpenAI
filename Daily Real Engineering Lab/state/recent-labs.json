@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-14",
-      "unitId": "UNIT-PATH-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-PATH-001-tenant-document-path-boundary",
-      "domain": "dotnet-filesystem-security",
-      "primarySkill": "filesystem-path-containment",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "multi-tenant-compliance-document-download",
-      "scenarioType": "tenant-document-access-incident-with-sibling-directory",
-      "primaryRootCause": "string-prefix-check-treats-sibling-directory-as-child-of-authorized-root",
-      "failureMode": "authenticated-tenant-can-read-file-from-sibling-tenant-backup-directory",
-      "solutionPattern": "canonical-relative-path-boundary-validation-before-file-access",
-      "labFormat": "filesystem-authorization-incident"
-    },
-    {
       "runSlot": "2026-10-25-15",
       "unitId": "UNIT-HMAC-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-HMAC-001-payroll-webhook-signature-payload",
@@ -1498,10 +1483,24 @@
       "failureMode": "dispatch-span-stops-before-gateway-span-even-though-operation-remains-in-flight",
       "solutionPattern": "await-downstream-operation-inside-parent-activity-lifetime",
       "labFormat": "trace-lifetime-deterministic-failure"
+    },
+    {
+      "runSlot": "2026-10-29-18",
+      "unitId": "UNIT-ZIPSEC-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-ZIPSEC-001-hatchery-evidence-archive-boundary",
+      "domain": "dotnet-zip-extraction-security",
+      "primarySkill": "ziparchive-entry-path-trust-boundary",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "aquaculture-hatchery-compliance-zip-intake",
+      "scenarioType": "partner-upload-extraction-creates-files-outside-isolated-review-directory",
+      "primaryRootCause": "untrusted-zip-entry-name-is-joined-to-destination-without-canonical-containment-check",
+      "failureMode": "archive-entry-can-plant-a-file-in-adjacent-review-workspace",
+      "solutionPattern": "preflight-all-archive-entry-paths-against-canonical-root-then-extract-fail-closed",
+      "labFormat": "archive-upload-security-production-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-STATUS-001",
     "UNIT-ETIME-001",
     "UNIT-PGUNIQ-001",
     "UNIT-RECORD-002",
@@ -1524,12 +1523,12 @@
     "UNIT-LEASE-001",
     "UNIT-CORS-001",
     "UNIT-SBUS-001",
-    "UNIT-TRACE-001"
+    "UNIT-TRACE-001",
+    "UNIT-ZIPSEC-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnet-core-response-observability": 1,
       "event-time-stream-processing": 1,
       "postgresql-unique-constraints": 1,
       "csharp-record-snapshot-semantics": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-buffer-ownership": 1,
       "aspnetcore-cors": 1,
       "message-session-partitioning": 1,
-      "dotnet-activity-tracing": 1
+      "dotnet-activity-tracing": 1,
+      "dotnet-zip-extraction-security": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 9,
-      "L3": 6,
+      "L3": 7,
+      "L2": 8,
       "L1": 4,
       "L4": 3,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "response-metrics-evidence-investigation": 1,
       "event-time-telemetry-reconciliation-incident": 1,
       "postgresql-constraint-behavior-investigation": 1,
       "audit-snapshot-deterministic-failure": 1,
@@ -1590,7 +1589,8 @@
       "buffer-ownership-refactoring-workshop": 1,
       "cors-preflight-contract-investigation": 1,
       "session-partition-head-of-line-deterministic-incident": 1,
-      "trace-lifetime-deterministic-failure": 1
+      "trace-lifetime-deterministic-failure": 1,
+      "archive-upload-security-production-investigation": 1
     }
   }
 }

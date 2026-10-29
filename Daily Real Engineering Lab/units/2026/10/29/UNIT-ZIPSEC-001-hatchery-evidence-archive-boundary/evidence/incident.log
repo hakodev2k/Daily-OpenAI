@@ -1,0 +1,7 @@
+# Synthetic evidence only
+2026-10-29T08:41:12Z INFO  archive-intake job=HAT-581 destination={temp}/intake entries=2
+2026-10-29T08:41:12Z INFO  archive-intake job=HAT-581 result=success files_written=2
+2026-10-29T08:41:13Z WARN  review-audit job=HAT-581 unexpected_file={temp}/outside-review.csv
+2026-10-29T08:41:13Z INFO  host-health cpu_percent=12 disk_free_gb=42
+2026-10-29T08:41:13Z INFO  retry-metrics job=HAT-581 retries=0
+# {temp} is printed by reproduce.ps1.
