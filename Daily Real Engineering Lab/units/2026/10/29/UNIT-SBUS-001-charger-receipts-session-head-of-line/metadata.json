@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-SBUS-001",
+  "runSlot": "2026-10-29-16",
+  "title": "Bản ghi sạc của trạm khỏe vẫn bị xử lý trễ",
+  "domain": "message-session-partitioning",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-29T16:15:12.580+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "session-key-granularity-and-head-of-line-blocking",
+    "message-session-ordering",
+    "poison-message-dlq-diagnostics",
+    "deterministic-integration-probes"
+  ],
+  "primarySkill": "session-key-granularity-and-head-of-line-blocking",
+  "prerequisites": [
+    ".NET SDK 8",
+    "queue processing fundamentals",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Kiểm tra tĩnh tính nhất quán giữa simulator, expected results, scripts và reference; không thực thi dotnet runtime.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "ev-charging-network-receipt-settlement",
+    "scenarioType": "one-malformed-charger-receipt-delays-independent-chargers-within-same-operator",
+    "primaryRootCause": "tenant-wide-message-session-key-serializes-independent-charger-streams",
+    "failureMode": "healthy-charger-receipts-wait-behind-poison-message-in-unrelated-charger-stream",
+    "solutionPattern": "business-invariant-aligned-tenant-and-charger-session-partition-with-migration-and-dlq-policy",
+    "labFormat": "session-partition-head-of-line-deterministic-incident"
+  }
+}

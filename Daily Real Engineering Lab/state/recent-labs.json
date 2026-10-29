@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-12",
-      "unitId": "UNIT-URI-001",
-      "domain": "http-uri-resolution",
-      "primarySkill": "httpclient-baseaddress-uri-resolution",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "warehouse-shipping-label-partner-adapter",
-      "scenarioType": "base-uri-path-prefix-with-relative-outbound-endpoints",
-      "primaryRootCause": "leading-slash-relative-uri-replaces-configured-httpclient-baseaddress-path",
-      "failureMode": "partner-label-submit-returns-404-while-status-endpoint-remains-healthy",
-      "solutionPattern": "preserve-base-path-with-relative-uri-resolution-and-contract-regression-tests",
-      "labFormat": "http-uri-routing-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-25-13",
       "unitId": "UNIT-CTX-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CTX-001-audit-correlation-execution-context",
@@ -1497,10 +1483,24 @@
       "failureMode": "browser-blocks-cross-origin-post-after-preflight-without-allow-origin",
       "solutionPattern": "explicit-cors-header-contract-with-negative-origin-method-regression",
       "labFormat": "cors-preflight-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-16",
+      "unitId": "UNIT-SBUS-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-SBUS-001-charger-receipts-session-head-of-line",
+      "domain": "message-session-partitioning",
+      "primarySkill": "session-key-granularity-and-head-of-line-blocking",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "ev-charging-network-receipt-settlement",
+      "scenarioType": "one-malformed-charger-receipt-delays-independent-chargers-within-same-operator",
+      "primaryRootCause": "tenant-wide-message-session-key-serializes-independent-charger-streams",
+      "failureMode": "healthy-charger-receipts-wait-behind-poison-message-in-unrelated-charger-stream",
+      "solutionPattern": "business-invariant-aligned-tenant-and-charger-session-partition-with-migration-and-dlq-policy",
+      "labFormat": "session-partition-head-of-line-deterministic-incident"
     }
   ],
   "rolling24": [
-    "UNIT-SLOT-001",
     "UNIT-LOCK-001",
     "UNIT-STATUS-001",
     "UNIT-ETIME-001",
@@ -1523,12 +1523,12 @@
     "UNIT-JDRIFT-001",
     "UNIT-AUDIT-001",
     "UNIT-LEASE-001",
-    "UNIT-CORS-001"
+    "UNIT-CORS-001",
+    "UNIT-SBUS-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "azure-appservice-deployment-slots": 1,
       "dotnet-monitor-concurrency": 1,
       "aspnet-core-response-observability": 1,
       "event-time-stream-processing": 1,
@@ -1551,22 +1551,22 @@
       "json-ingress-contract-validation": 1,
       "audit-trail-integrity-architecture": 1,
       "dotnet-buffer-ownership": 1,
-      "aspnetcore-cors": 1
+      "aspnetcore-cors": 1,
+      "message-session-partitioning": 1
     },
     "byDifficulty": {
       "D4": 21,
       "D3": 3
     },
     "byMaturity": {
-      "L4": 4,
-      "L3": 6,
+      "L3": 7,
       "L2": 9,
       "L1": 3,
+      "L4": 3,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "slot-swap-deployment-configuration-workshop": 1,
       "deterministic-two-resource-deadlock-incident": 1,
       "response-metrics-evidence-investigation": 1,
       "event-time-telemetry-reconciliation-incident": 1,
@@ -1589,7 +1589,8 @@
       "json-contract-drift-production-incident": 1,
       "audit-evidence-trust-boundary-architecture-case-study": 1,
       "buffer-ownership-refactoring-workshop": 1,
-      "cors-preflight-contract-investigation": 1
+      "cors-preflight-contract-investigation": 1,
+      "session-partition-head-of-line-deterministic-incident": 1
     }
   }
 }
