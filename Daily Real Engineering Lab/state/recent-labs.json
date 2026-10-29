@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-03",
-      "unitId": "UNIT-CANCEL-001",
-      "domain": "dotnet-cancellation-lifecycle",
-      "primarySkill": "linked-cancellation-token-lifetime",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "insurance-claim-document-scanning",
-      "scenarioType": "request-aborted-while-external-scanner-is-in-flight",
-      "primaryRootCause": "linked-cancellation-token-source-disposed-before-returned-task-completes",
-      "failureMode": "upstream-request-or-host-cancellation-does-not-stop-pending-scanner-call",
-      "solutionPattern": "retain-linked-cancellation-source-lifetime-through-awaited-operation",
-      "labFormat": "async-cancellation-lifecycle-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-25-04",
       "unitId": "UNIT-DBM-001",
       "domain": "database-schema-evolution",
@@ -1489,11 +1475,24 @@
       "failureMode": "same-authenticated-user-switches-beta-assignment-across-replicas",
       "solutionPattern": "versioned-canonical-identity-stable-hash-bucket-independent-of-replica",
       "labFormat": "feature-flag-cohort-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-29-07",
+      "unitId": "UNIT-LINQ-002",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-LINQ-002-grain-weighbridge-live-feed-snapshot-drift",
+      "domain": "linq-deferred-execution-live-sources",
+      "primarySkill": "linq-multiple-enumeration-live-feed-snapshot-consistency",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "grain-cooperative-weighbridge-receipt-settlement",
+      "scenarioType": "report-count-and-total-disagree-during-live-ingestion",
+      "primaryRootCause": "independent-linq-terminal-operators-reenumerate-changing-live-feed-snapshots",
+      "failureMode": "receipt-count-from-earlier-snapshot-combined-with-weight-total-from-later-snapshot",
+      "solutionPattern": "single-pass-aggregation-over-one-source-enumeration",
+      "labFormat": "live-feed-consistency-evidence-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-DNS-001",
-    "UNIT-AUTHZ-001",
     "UNIT-ID-001",
     "UNIT-HASH-001",
     "UNIT-MONGO-002",
@@ -1515,12 +1514,13 @@
     "UNIT-CDICT-001",
     "UNIT-PGVIS-001",
     "UNIT-DI-001",
-    "UNIT-MONEY-001"
+    "UNIT-MONEY-001",
+    "UNIT-FLAG-001",
+    "UNIT-LINQ-002"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnet-core-authorization": 1,
       "dotnet-string-identity": 1,
       "dotnet-collection-hashing": 1,
       "mongodb-array-query-semantics": 1,
@@ -1543,20 +1543,20 @@
       "postgresql-query-plans": 1,
       "dotnet-dependency-injection": 1,
       "dotnet-financial-arithmetic": 1,
-      "feature-flag-rollout-consistency": 1
+      "feature-flag-rollout-consistency": 1,
+      "linq-deferred-execution-live-sources": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
-      "L2": 10,
+      "L2": 11,
       "L1": 4,
-      "L4": 4
+      "L4": 4,
+      "L3": 5
     },
     "byFormat": {
-      "authorization-boundary-production-incident": 1,
       "cross-locale-identifier-reconciliation-investigation": 1,
       "mutable-hash-key-deterministic-reproduction": 1,
       "mongodb-document-array-query-evidence-investigation": 1,
@@ -1579,7 +1579,8 @@
       "postgresql-query-plan-production-forensics": 1,
       "dependency-injection-lifetime-deterministic-failure": 1,
       "financial-reconciliation-contract-investigation": 1,
-      "feature-flag-cohort-refactoring-workshop": 1
+      "feature-flag-cohort-refactoring-workshop": 1,
+      "live-feed-consistency-evidence-investigation": 1
     }
   }
 }
