@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CAL-001",
-    "runSlot": "2026-10-29-21",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CAL-001-solar-inverter-monthly-inspection-drift",
+    "unitId": "UNIT-REGEX-001",
+    "runSlot": "2026-10-29-22",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-REGEX-001-heating-meter-import-validation-timeout",
     "status": "READY",
-    "createdAt": "2026-10-29T21:05:49+07:00"
+    "createdAt": "2026-10-29T22:08:03.312+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 340,
-    "totalGenerated": 335,
+    "totalRunSlotsAttempted": 341,
+    "totalGenerated": 336,
     "totalFailed": 5
   },
   "learning": {

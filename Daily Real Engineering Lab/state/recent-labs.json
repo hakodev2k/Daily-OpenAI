@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-18",
-      "unitId": "UNIT-TEST-014",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-TEST-014-permit-approval-test-double",
-      "domain": "testing-persistence-contracts",
-      "primarySkill": "test-double-behavioral-fidelity",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "municipal-building-permit-approval",
-      "scenarioType": "green-unit-tests-but-status-reverts-after-production-reload",
-      "primaryRootCause": "in-memory-test-double-exposes-shared-entity-reference-while-production-repository-returns-detached-snapshot",
-      "failureMode": "approval-command-reports-success-but-persisted-permit-remains-pending",
-      "solutionPattern": "enforce-explicit-save-boundary-and-test-against-detached-persistence-semantics",
-      "labFormat": "persistence-test-double-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-25-19",
       "unitId": "UNIT-SLO-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SLO-001-alert-burn-rate-policy",
@@ -1498,10 +1483,24 @@
       "failureMode": "march-and-subsequent-inspections-move-earlier-than-contractual-calendar-day",
       "solutionPattern": "recalculate-each-month-from-immutable-anchor-day-and-target-year-month",
       "labFormat": "calendar-recurrence-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-22",
+      "unitId": "UNIT-REGEX-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-REGEX-001-heating-meter-import-validation-timeout",
+      "domain": "dotnet-regex-engine",
+      "primarySkill": "regex-catastrophic-backtracking-and-timeout",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "district-heating-smart-meter-import",
+      "scenarioType": "malformed-meter-identifier-stalls-batch-validation",
+      "primaryRootCause": "ambiguous-nested-regex-quantifiers-cause-exponential-backtracking",
+      "failureMode": "one-invalid-meter-id-exhausts-regex-match-deadline-and-interrupts-batch",
+      "solutionPattern": "linear-time-meter-id-grammar-with-explicit-regex-timeout",
+      "labFormat": "deterministic-regex-performance-failure-lab"
     }
   ],
   "rolling24": [
-    "UNIT-CSV-002",
     "UNIT-BODY-001",
     "UNIT-QENC-001",
     "UNIT-FDROP-001",
@@ -1524,12 +1523,12 @@
     "UNIT-ZIPSEC-001",
     "UNIT-WIRE-001",
     "UNIT-BASEURI-001",
-    "UNIT-CAL-001"
+    "UNIT-CAL-001",
+    "UNIT-REGEX-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "csv-spreadsheet-export-security": 1,
       "aspnet-core-request-body-streams": 1,
       "http-query-component-encoding": 1,
       "filesystem-ingestion-reliability": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-zip-extraction-security": 1,
       "dotnet-binary-wire-protocol": 1,
       "http-uri-composition": 1,
-      "dotnet-calendar-recurrence": 1
+      "dotnet-calendar-recurrence": 1,
+      "dotnet-regex-engine": 1
     },
     "byDifficulty": {
-      "D4": 21,
-      "D3": 3
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L3": 6,
       "L4": 3,
       "L2": 10,
-      "L1": 3,
+      "L3": 5,
+      "L1": 4,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "spreadsheet-export-security-evidence-incident": 1,
       "request-body-pipeline-refactoring-workshop": 1,
       "partner-token-contract-investigation": 1,
       "deterministic-file-drop-reliability-investigation": 1,
@@ -1590,7 +1589,8 @@
       "archive-upload-security-production-investigation": 1,
       "binary-wire-format-contract-investigation": 1,
       "http-base-uri-route-contract-investigation": 1,
-      "calendar-recurrence-investigation": 1
+      "calendar-recurrence-investigation": 1,
+      "deterministic-regex-performance-failure-lab": 1
     }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-REGEX-001",
+  "runSlot": "2026-10-29-22",
+  "title": "Một meter ID khiến batch import ngừng xử lý",
+  "domain": "dotnet-regex-engine",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-29T22:08:03.312+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "regex-catastrophic-backtracking-and-timeout",
+    "dotnet-regex-nonbacktracking",
+    "adversarial-input-regression",
+    "production-validation-availability"
+  ],
+  "primarySkill": "regex-catastrophic-backtracking-and-timeout",
+  "prerequisites": [
+    ".NET SDK 8.x",
+    "PowerShell",
+    "C# string và Regex cơ bản"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review: .NET 8 Regex options and timeout, learner-editable starter verification, separate expected-failure reproduction, anchored ASCII grammar, long near-match adversarial case, no external dependencies. .NET code was not executed because only GitHub integration is authorized.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "district-heating-smart-meter-import",
+    "scenarioType": "malformed-meter-identifier-stalls-batch-validation",
+    "primaryRootCause": "ambiguous-nested-regex-quantifiers-cause-exponential-backtracking",
+    "failureMode": "one-invalid-meter-id-exhausts-regex-match-deadline-and-interrupts-batch",
+    "solutionPattern": "linear-time-meter-id-grammar-with-explicit-regex-timeout",
+    "labFormat": "deterministic-regex-performance-failure-lab"
+  }
+}
