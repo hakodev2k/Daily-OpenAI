@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DRAIN-001",
-    "runSlot": "2026-10-29-23",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DRAIN-001-conference-badge-render-worker-shutdown",
+    "unitId": "UNIT-GZIP-001",
+    "runSlot": "2026-10-30-00",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-GZIP-001-wildlife-acoustic-export-integrity",
     "status": "READY",
-    "createdAt": "2026-10-29T23:12:33+07:00"
+    "createdAt": "2026-10-30T00:06:56+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 342,
-    "totalGenerated": 337,
+    "totalRunSlotsAttempted": 343,
+    "totalGenerated": 338,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 52,
+    "elapsedDays": 53,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",

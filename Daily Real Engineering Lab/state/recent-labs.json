@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-20",
-      "unitId": "UNIT-PQ-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-PQ-001-baggage-alert-tie-order",
-      "domain": "dotnet-priority-queue-semantics",
-      "primarySkill": "priorityqueue-ordering-contract",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "airport-baggage-reconciliation-alert-dispatch",
-      "scenarioType": "equal-severity-alerts-dispatched-in-unexpected-order",
-      "primaryRootCause": "priority-queue-does-not-guarantee-fifo-for-equal-priority-elements",
-      "failureMode": "same-severity-baggage-alerts-break-first-received-first-served-contract",
-      "solutionPattern": "lexicographic-severity-and-monotonic-sequence-priority",
-      "labFormat": "priority-scheduler-order-contract-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-25-21",
       "unitId": "UNIT-ARCH-007",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-ARCH-007-cross-store-erasure-visibility",
@@ -1498,10 +1483,24 @@
       "failureMode": "cancelled-badge-job-vanishes-and-ambiguous-publish-failure-is-not-retried",
       "solutionPattern": "ack-only-after-success-release-on-failure-with-idempotent-artifact-publication",
       "labFormat": "worker-shutdown-ack-boundary-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-30-00",
+      "unitId": "UNIT-GZIP-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-GZIP-001-wildlife-acoustic-export-integrity",
+      "domain": "dotnet-gzip-stream-lifecycle",
+      "primarySkill": "gzip-stream-finalization-and-trailer-integrity",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "wildlife-acoustic-survey-nightly-archive",
+      "scenarioType": "compressed-export-passes-payload-smoke-test-but-fails-integrity-contract",
+      "primaryRootCause": "gzip-compressor-finalized-after-output-buffer-snapshot",
+      "failureMode": "exported-gzip-object-missing-required-crc32-and-isize-trailer",
+      "solutionPattern": "complete-compression-stream-lifetime-before-reading-output-buffer",
+      "labFormat": "gzip-integrity-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-QENC-001",
     "UNIT-FDROP-001",
     "UNIT-CDICT-001",
     "UNIT-PGVIS-001",
@@ -1524,12 +1523,12 @@
     "UNIT-BASEURI-001",
     "UNIT-CAL-001",
     "UNIT-REGEX-001",
-    "UNIT-DRAIN-001"
+    "UNIT-DRAIN-001",
+    "UNIT-GZIP-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-query-component-encoding": 1,
       "filesystem-ingestion-reliability": 1,
       "dotnet-concurrent-collections": 1,
       "postgresql-query-plans": 1,
@@ -1552,7 +1551,8 @@
       "http-uri-composition": 1,
       "dotnet-calendar-recurrence": 1,
       "dotnet-regex-engine": 1,
-      "dotnet-background-worker-delivery-semantics": 1
+      "dotnet-background-worker-delivery-semantics": 1,
+      "dotnet-gzip-stream-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 20,
@@ -1567,7 +1567,6 @@
       "L6": 1
     },
     "byFormat": {
-      "partner-token-contract-investigation": 1,
       "deterministic-file-drop-reliability-investigation": 1,
       "concurrent-cache-factory-investigation": 1,
       "postgresql-query-plan-production-forensics": 1,
@@ -1590,7 +1589,8 @@
       "http-base-uri-route-contract-investigation": 1,
       "calendar-recurrence-investigation": 1,
       "deterministic-regex-performance-failure-lab": 1,
-      "worker-shutdown-ack-boundary-refactoring-workshop": 1
+      "worker-shutdown-ack-boundary-refactoring-workshop": 1,
+      "gzip-integrity-contract-investigation": 1
     }
   }
 }
