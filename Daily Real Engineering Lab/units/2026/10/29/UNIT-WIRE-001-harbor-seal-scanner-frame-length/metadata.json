@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-WIRE-001",
+  "runSlot": "2026-10-29-19",
+  "title": "Gateway RFID cảng từ chối khung dữ liệu niêm phong hợp lệ",
+  "domain": "dotnet-binary-wire-protocol",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T19:11:57+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "binary-wire-format-endianness",
+    "span-binary-parsing",
+    "protocol-boundary-validation",
+    "behavioral-regression-testing"
+  ],
+  "primarySkill": "binary-wire-format-endianness",
+  "prerequisites": [
+    ".NET SDK 8.x",
+    "PowerShell 7 hoặc Windows PowerShell",
+    "C# Span/byte[] cơ bản"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Đã kiểm tra tĩnh logic decode, các vector wire, mã lỗi, đường chạy PowerShell và sự tách biệt reproduce/verify. Chưa chạy dotnet SDK trong môi trường xuất bản.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-container-seal-rfid-gateway",
+    "scenarioType": "valid-network-order-binary-frames-rejected-by-ingestion-gateway",
+    "primaryRootCause": "frame-length-read-in-little-endian-while-device-contract-uses-network-byte-order",
+    "failureMode": "valid-short-seal-events-rejected-as-oversized-and-reversed-length-header-can-be-accepted",
+    "solutionPattern": "decode-length-using-explicit-network-byte-order-with-positive-and-negative-wire-contract-tests",
+    "labFormat": "binary-wire-format-contract-investigation"
+  }
+}

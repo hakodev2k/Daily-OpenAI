@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-15",
-      "unitId": "UNIT-HMAC-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-HMAC-001-payroll-webhook-signature-payload",
-      "domain": "api-integration-security",
-      "primarySkill": "webhook-hmac-integrity",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "payroll-provider-webhook-ingress",
-      "scenarioType": "valid-signed-json-webhooks-intermittently-rejected-by-format",
-      "primaryRootCause": "receiver-computes-hmac-over-reserialized-json-instead-of-signed-raw-bytes",
-      "failureMode": "legitimate-pretty-printed-webhooks-fail-signature-verification",
-      "solutionPattern": "authenticate-original-body-byte-sequence-before-deserialization",
-      "labFormat": "webhook-integrity-contract-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-25-16",
       "unitId": "UNIT-IO-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-IO-001-fragmented-meter-frame-read",
@@ -1498,10 +1483,24 @@
       "failureMode": "archive-entry-can-plant-a-file-in-adjacent-review-workspace",
       "solutionPattern": "preflight-all-archive-entry-paths-against-canonical-root-then-extract-fail-closed",
       "labFormat": "archive-upload-security-production-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-19",
+      "unitId": "UNIT-WIRE-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-WIRE-001-harbor-seal-scanner-frame-length",
+      "domain": "dotnet-binary-wire-protocol",
+      "primarySkill": "binary-wire-format-endianness",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "harbor-container-seal-rfid-gateway",
+      "scenarioType": "valid-network-order-binary-frames-rejected-by-ingestion-gateway",
+      "primaryRootCause": "frame-length-read-in-little-endian-while-device-contract-uses-network-byte-order",
+      "failureMode": "valid-short-seal-events-rejected-as-oversized-and-reversed-length-header-can-be-accepted",
+      "solutionPattern": "decode-length-using-explicit-network-byte-order-with-positive-and-negative-wire-contract-tests",
+      "labFormat": "binary-wire-format-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-ETIME-001",
     "UNIT-PGUNIQ-001",
     "UNIT-RECORD-002",
     "UNIT-CSV-002",
@@ -1524,12 +1523,12 @@
     "UNIT-CORS-001",
     "UNIT-SBUS-001",
     "UNIT-TRACE-001",
-    "UNIT-ZIPSEC-001"
+    "UNIT-ZIPSEC-001",
+    "UNIT-WIRE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "event-time-stream-processing": 1,
       "postgresql-unique-constraints": 1,
       "csharp-record-snapshot-semantics": 1,
       "csv-spreadsheet-export-security": 1,
@@ -1552,22 +1551,22 @@
       "aspnetcore-cors": 1,
       "message-session-partitioning": 1,
       "dotnet-activity-tracing": 1,
-      "dotnet-zip-extraction-security": 1
+      "dotnet-zip-extraction-security": 1,
+      "dotnet-binary-wire-protocol": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L3": 7,
-      "L2": 8,
+      "L2": 9,
       "L1": 4,
+      "L3": 6,
       "L4": 3,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "event-time-telemetry-reconciliation-incident": 1,
       "postgresql-constraint-behavior-investigation": 1,
       "audit-snapshot-deterministic-failure": 1,
       "spreadsheet-export-security-evidence-incident": 1,
@@ -1590,7 +1589,8 @@
       "cors-preflight-contract-investigation": 1,
       "session-partition-head-of-line-deterministic-incident": 1,
       "trace-lifetime-deterministic-failure": 1,
-      "archive-upload-security-production-investigation": 1
+      "archive-upload-security-production-investigation": 1,
+      "binary-wire-format-contract-investigation": 1
     }
   }
 }
