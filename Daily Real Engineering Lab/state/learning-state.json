@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-FMASK-001",
-    "runSlot": "2026-10-29-11",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FMASK-001-crane-inspection-access-control-incident",
+    "unitId": "UNIT-JDRIFT-001",
+    "runSlot": "2026-10-29-12",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-JDRIFT-001-rail-depot-reservation-json-contract-drift",
     "status": "READY",
-    "createdAt": "2026-10-29T11:04:21+07:00"
+    "createdAt": "2026-10-29T12:13:30+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 330,
-    "totalGenerated": 325,
+    "totalRunSlotsAttempted": 331,
+    "totalGenerated": 326,
     "totalFailed": 5
   },
   "learning": {

@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-08",
-      "unitId": "UNIT-REGEX-001",
-      "domain": "dotnet-regex-performance",
-      "primarySkill": "regex-engine-backtracking",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "supplier-catalog-sku-import",
-      "scenarioType": "untrusted-bulk-catalog-identifier-validation",
-      "primaryRootCause": "nested-quantifiers-cause-exponential-regex-backtracking-on-near-match",
-      "failureMode": "single-invalid-sku-consumes-regex-timeout-and-fails-entire-import-batch",
-      "solutionPattern": "linear-time-anchored-grammar-with-bounded-input-and-nonbacktracking-engine",
-      "labFormat": "regex-input-validation-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-25-09",
       "unitId": "UNIT-RL-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-RL-001-tenant-quota-partition",
@@ -1495,10 +1481,24 @@
       "failureMode": "user-with-view-only-permission-can-trigger-unconfigured-certificate-export",
       "solutionPattern": "fail-closed-action-policy-resolution-and-nonzero-defined-bitmask-validation",
       "labFormat": "deterministic-permission-policy-contract-lab"
+    },
+    {
+      "runSlot": "2026-10-29-12",
+      "unitId": "UNIT-JDRIFT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-JDRIFT-001-rail-depot-reservation-json-contract-drift",
+      "domain": "json-ingress-contract-validation",
+      "primarySkill": "system-text-json-required-and-unmapped-member-contract",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "rail-maintenance-spare-parts-reservation-feed",
+      "scenarioType": "partner-json-field-rename-silently-releases-reserved-inventory",
+      "primaryRootCause": "system-text-json-ignores-unmapped-property-and-defaults-absent-int-to-zero",
+      "failureMode": "valid-reservations-are-imported-as-zero-units-after-unannounced-schema-change",
+      "solutionPattern": "versioned-strict-json-contract-with-required-fields-and-explicit-invariant-validation",
+      "labFormat": "json-contract-drift-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-EF-017",
     "UNIT-TSPAN-001",
     "UNIT-REVAL-001",
     "UNIT-WANY-001",
@@ -1521,12 +1521,12 @@
     "UNIT-DR-001",
     "UNIT-SET-001",
     "UNIT-STREAMPOS-001",
-    "UNIT-FMASK-001"
+    "UNIT-FMASK-001",
+    "UNIT-JDRIFT-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "ef-core-context-pooling": 1,
       "dotnet-timespan-semantics": 1,
       "http-cache-revalidation": 1,
       "dotnet-async-timeout-boundaries": 1,
@@ -1549,21 +1549,21 @@
       "disaster-recovery-data-residency": 1,
       "dotnet-sortedset-ordering": 1,
       "dotnet-streamreader-checkpoint-semantics": 1,
-      "dotnet-flags-authorization-semantics": 1
+      "dotnet-flags-authorization-semantics": 1,
+      "json-ingress-contract-validation": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L3": 6,
       "L2": 10,
       "L1": 4,
       "L4": 3,
+      "L3": 6,
       "L5": 1
     },
     "byFormat": {
-      "cross-tenant-data-isolation-production-investigation": 1,
       "latency-telemetry-sawtooth-investigation": 1,
       "http-conditional-cache-contract-investigation": 1,
       "deterministic-timeout-lifecycle-failure-lab": 1,
@@ -1586,7 +1586,8 @@
       "disaster-recovery-architecture-decision-tabletop": 1,
       "ordered-set-contract-evidence-investigation": 1,
       "stream-checkpoint-production-forensics": 1,
-      "deterministic-permission-policy-contract-lab": 1
+      "deterministic-permission-policy-contract-lab": 1,
+      "json-contract-drift-production-incident": 1
     }
   }
 }
