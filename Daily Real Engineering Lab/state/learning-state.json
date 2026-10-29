@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CQCLAIM-001",
-    "runSlot": "2026-10-30-04",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-CQCLAIM-001-library-pickup-queue-duplicate-receipts",
+    "unitId": "UNIT-OCACHE-001",
+    "runSlot": "2026-10-30-05",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-OCACHE-001-pool-closure-bilingual-notice-cache-variance",
     "status": "READY",
-    "createdAt": "2026-10-30T04:10:13+07:00"
+    "createdAt": "2026-10-30T05:07:09+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 347,
-    "totalGenerated": 342,
+    "totalRunSlotsAttempted": 348,
+    "totalGenerated": 343,
     "totalFailed": 5
   },
   "learning": {
