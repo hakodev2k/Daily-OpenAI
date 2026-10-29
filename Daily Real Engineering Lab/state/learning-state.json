@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SBUS-001",
-    "runSlot": "2026-10-29-16",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-SBUS-001-charger-receipts-session-head-of-line",
+    "unitId": "UNIT-TRACE-001",
+    "runSlot": "2026-10-29-17",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-TRACE-001-specimen-courier-trace-window",
     "status": "READY",
-    "createdAt": "2026-10-29T16:15:12.580+07:00"
+    "createdAt": "2026-10-29T17:05:47+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 335,
-    "totalGenerated": 330,
+    "totalRunSlotsAttempted": 336,
+    "totalGenerated": 331,
     "totalFailed": 5
   },
   "learning": {
