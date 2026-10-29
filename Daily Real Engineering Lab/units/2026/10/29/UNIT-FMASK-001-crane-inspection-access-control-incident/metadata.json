@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-FMASK-001",
+  "runSlot": "2026-10-29-11",
+  "title": "Cổng kiểm định cần cẩu cho phép xuất biên bản ngoài dự kiến",
+  "domain": "dotnet-flags-authorization-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-29T11:04:21+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "csharp-flags-enum",
+    "bitmask-authorization",
+    "fail-closed-policy-resolution",
+    "regression-test-design"
+  ],
+  "primarySkill": "csharp-flags-enum-zero-mask-authorization",
+  "prerequisites": [
+    "C# enum và bitwise operations",
+    "dotnet CLI",
+    "nguyên tắc deny by default"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "construction-crane-inspection-certificate-portal",
+    "scenarioType": "new-export-action-appears-allowed-after-incomplete-policy-rollout",
+    "primaryRootCause": "zero-valued-flags-mask-is-treated-as-satisfied-and-unmapped-action-defaults-to-zero",
+    "failureMode": "user-with-view-only-permission-can-trigger-unconfigured-certificate-export",
+    "solutionPattern": "fail-closed-action-policy-resolution-and-nonzero-defined-bitmask-validation",
+    "labFormat": "deterministic-permission-policy-contract-lab"
+  }
+}

@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-07",
-      "unitId": "UNIT-FENCE-001",
-      "domain": "distributed-systems",
-      "primarySkill": "distributed-fencing-tokens",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "fleet-route-plan-materialization",
-      "scenarioType": "lease-expiry-while-previous-worker-computes",
-      "primaryRootCause": "expired-lease-holder-writes-after-newer-lease-owner-without-storage-fencing",
-      "failureMode": "stale-route-plan-overwrites-newer-committed-route-plan",
-      "solutionPattern": "atomic-monotonic-fencing-epoch-check-at-resource-write",
-      "labFormat": "distributed-lease-investigation"
-    },
-    {
       "runSlot": "2026-10-25-08",
       "unitId": "UNIT-REGEX-001",
       "domain": "dotnet-regex-performance",
@@ -1494,10 +1480,24 @@
       "failureMode": "persisted-byte-cursor-skips-unprocessed-records-after-restart",
       "solutionPattern": "logical-line-count-checkpoint-with-append-only-replay-and-truncation-detection",
       "labFormat": "stream-checkpoint-production-forensics"
+    },
+    {
+      "runSlot": "2026-10-29-11",
+      "unitId": "UNIT-FMASK-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FMASK-001-crane-inspection-access-control-incident",
+      "domain": "dotnet-flags-authorization-semantics",
+      "primarySkill": "csharp-flags-enum-zero-mask-authorization",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "construction-crane-inspection-certificate-portal",
+      "scenarioType": "new-export-action-appears-allowed-after-incomplete-policy-rollout",
+      "primaryRootCause": "zero-valued-flags-mask-is-treated-as-satisfied-and-unmapped-action-defaults-to-zero",
+      "failureMode": "user-with-view-only-permission-can-trigger-unconfigured-certificate-export",
+      "solutionPattern": "fail-closed-action-policy-resolution-and-nonzero-defined-bitmask-validation",
+      "labFormat": "deterministic-permission-policy-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-VTASK-001",
     "UNIT-EF-017",
     "UNIT-TSPAN-001",
     "UNIT-REVAL-001",
@@ -1520,12 +1520,12 @@
     "UNIT-LINQ-002",
     "UNIT-DR-001",
     "UNIT-SET-001",
-    "UNIT-STREAMPOS-001"
+    "UNIT-STREAMPOS-001",
+    "UNIT-FMASK-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-valuetask-consumption": 1,
       "ef-core-context-pooling": 1,
       "dotnet-timespan-semantics": 1,
       "http-cache-revalidation": 1,
@@ -1548,21 +1548,21 @@
       "linq-deferred-execution-live-sources": 1,
       "disaster-recovery-data-residency": 1,
       "dotnet-sortedset-ordering": 1,
-      "dotnet-streamreader-checkpoint-semantics": 1
+      "dotnet-streamreader-checkpoint-semantics": 1,
+      "dotnet-flags-authorization-semantics": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L4": 4,
       "L3": 6,
       "L2": 10,
-      "L1": 3,
+      "L1": 4,
+      "L4": 3,
       "L5": 1
     },
     "byFormat": {
-      "valuetask-consumption-refactoring-workshop": 1,
       "cross-tenant-data-isolation-production-investigation": 1,
       "latency-telemetry-sawtooth-investigation": 1,
       "http-conditional-cache-contract-investigation": 1,
@@ -1585,7 +1585,8 @@
       "live-feed-consistency-evidence-investigation": 1,
       "disaster-recovery-architecture-decision-tabletop": 1,
       "ordered-set-contract-evidence-investigation": 1,
-      "stream-checkpoint-production-forensics": 1
+      "stream-checkpoint-production-forensics": 1,
+      "deterministic-permission-policy-contract-lab": 1
     }
   }
 }

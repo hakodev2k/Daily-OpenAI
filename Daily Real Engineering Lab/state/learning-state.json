@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-STREAMPOS-001",
-    "runSlot": "2026-10-29-10",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-STREAMPOS-001-ground-station-telemetry-resume-gaps",
+    "unitId": "UNIT-FMASK-001",
+    "runSlot": "2026-10-29-11",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FMASK-001-crane-inspection-access-control-incident",
     "status": "READY",
-    "createdAt": "2026-10-29T10:09:02.482+07:00"
+    "createdAt": "2026-10-29T11:04:21+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 329,
-    "totalGenerated": 324,
+    "totalRunSlotsAttempted": 330,
+    "totalGenerated": 325,
     "totalFailed": 5
   },
   "learning": {
