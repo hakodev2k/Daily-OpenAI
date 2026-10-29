@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-16",
-      "unitId": "UNIT-IO-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-IO-001-fragmented-meter-frame-read",
-      "domain": "dotnet-stream-io",
-      "primarySkill": "dotnet-stream-read-contract",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "smart-meter-telemetry-binary-ingestion",
-      "scenarioType": "valid-length-prefixed-frames-arrive-in-small-network-chunks",
-      "primaryRootCause": "single-readasync-call-assumed-to-fill-requested-buffer",
-      "failureMode": "valid-meter-frames-rejected-when-transport-fragments-header-or-payload",
-      "solutionPattern": "read-exactly-until-requested-byte-count-with-eof-handling",
-      "labFormat": "stream-fragmentation-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-25-17",
       "unitId": "UNIT-K8S-002",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-K8S-002-optional-risk-engine-probe-storm",
@@ -1498,10 +1483,24 @@
       "failureMode": "valid-short-seal-events-rejected-as-oversized-and-reversed-length-header-can-be-accepted",
       "solutionPattern": "decode-length-using-explicit-network-byte-order-with-positive-and-negative-wire-contract-tests",
       "labFormat": "binary-wire-format-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-20",
+      "unitId": "UNIT-BASEURI-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-BASEURI-001-wildfire-partner-notice-route",
+      "domain": "http-uri-composition",
+      "primarySkill": "httpclient-baseaddress-relative-uri-resolution",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "forest-fire-early-warning-partner-notification",
+      "scenarioType": "partner-v3-notice-endpoint-returns-404-while-direct-smoke-test-succeeds",
+      "primaryRootCause": "leading-slash-relative-request-reference-discards-httpclient-baseaddress-path-prefix",
+      "failureMode": "partner-notices-misdirected-to-origin-root-after-versioned-api-cutover",
+      "solutionPattern": "relative-request-target-preserves-configured-base-path-with-route-contract-regression",
+      "labFormat": "http-base-uri-route-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-PGUNIQ-001",
     "UNIT-RECORD-002",
     "UNIT-CSV-002",
     "UNIT-BODY-001",
@@ -1524,12 +1523,12 @@
     "UNIT-SBUS-001",
     "UNIT-TRACE-001",
     "UNIT-ZIPSEC-001",
-    "UNIT-WIRE-001"
+    "UNIT-WIRE-001",
+    "UNIT-BASEURI-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "postgresql-unique-constraints": 1,
       "csharp-record-snapshot-semantics": 1,
       "csv-spreadsheet-export-security": 1,
       "aspnet-core-request-body-streams": 1,
@@ -1552,22 +1551,22 @@
       "message-session-partitioning": 1,
       "dotnet-activity-tracing": 1,
       "dotnet-zip-extraction-security": 1,
-      "dotnet-binary-wire-protocol": 1
+      "dotnet-binary-wire-protocol": 1,
+      "http-uri-composition": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D3": 4,
+      "D4": 20
     },
     "byMaturity": {
-      "L2": 9,
       "L1": 4,
       "L3": 6,
       "L4": 3,
+      "L2": 9,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "postgresql-constraint-behavior-investigation": 1,
       "audit-snapshot-deterministic-failure": 1,
       "spreadsheet-export-security-evidence-incident": 1,
       "request-body-pipeline-refactoring-workshop": 1,
@@ -1590,7 +1589,8 @@
       "session-partition-head-of-line-deterministic-incident": 1,
       "trace-lifetime-deterministic-failure": 1,
       "archive-upload-security-production-investigation": 1,
-      "binary-wire-format-contract-investigation": 1
+      "binary-wire-format-contract-investigation": 1,
+      "http-base-uri-route-contract-investigation": 1
     }
   }
 }
