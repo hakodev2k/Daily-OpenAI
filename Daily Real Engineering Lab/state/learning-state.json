@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-BASEURI-001",
-    "runSlot": "2026-10-29-20",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-BASEURI-001-wildfire-partner-notice-route",
+    "unitId": "UNIT-CAL-001",
+    "runSlot": "2026-10-29-21",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CAL-001-solar-inverter-monthly-inspection-drift",
     "status": "READY",
-    "createdAt": "2026-10-29T20:08:55+07:00"
+    "createdAt": "2026-10-29T21:05:49+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 339,
-    "totalGenerated": 334,
+    "totalRunSlotsAttempted": 340,
+    "totalGenerated": 335,
     "totalFailed": 5
   },
   "learning": {

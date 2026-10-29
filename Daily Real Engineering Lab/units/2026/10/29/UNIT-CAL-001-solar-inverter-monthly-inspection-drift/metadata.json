@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-CAL-001",
+  "runSlot": "2026-10-29-21",
+  "title": "Lịch kiểm tra inverter lệch sau tháng ngắn",
+  "domain": "dotnet-calendar-recurrence",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T21:05:49+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "dateonly-monthly-anchor-recurrence",
+    "calendar-month-clamping",
+    "boundary-regression-testing",
+    "production-incident-reasoning"
+  ],
+  "primarySkill": "dateonly-monthly-anchor-recurrence",
+  "prerequisites": [
+    ".NET SDK 8.x",
+    "PowerShell",
+    "DateOnly cơ bản"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of DateOnly.AddMonths clamping, leap-year/year-boundary fixtures, zero/negative count behavior, and learner-path PowerShell verification. No .NET execution: this run is restricted to GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "solar-farm-inverter-maintenance-calendar",
+    "scenarioType": "monthly-inspection-schedule-drifts-after-short-month",
+    "primaryRootCause": "iterative-dateonly-addmonths-loses-original-day-anchor-after-clamping",
+    "failureMode": "march-and-subsequent-inspections-move-earlier-than-contractual-calendar-day",
+    "solutionPattern": "recalculate-each-month-from-immutable-anchor-day-and-target-year-month",
+    "labFormat": "calendar-recurrence-investigation"
+  }
+}
