@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-02",
-      "unitId": "UNIT-ITER-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ITER-001-rail-seat-stream-consumer-cancellation",
-      "domain": "dotnet-async-streams",
-      "primarySkill": "async-iterator-cancellation-contract",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "intercity-rail-seat-availability-stream",
-      "scenarioType": "subscriber-disconnect-mid-stream",
-      "primaryRootCause": "async-iterator-token-parameter-not-bound-to-enumerator-cancellation",
-      "failureMode": "canceled-subscriber-continues-receiving-seat-updates",
-      "solutionPattern": "bind-consumer-cancellation-to-async-iterator-token-contract",
-      "labFormat": "async-stream-consumer-cancellation-investigation"
-    },
-    {
       "runSlot": "2026-10-26-03",
       "unitId": "UNIT-HTTP-012",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-HTTP-012-library-transfer-retry-request-lifecycle",
@@ -1498,10 +1483,24 @@
       "failureMode": "english-visitor-receives-vietnamese-closure-notice-after-vietnamese-cache-warmup",
       "solutionPattern": "declare-accept-language-as-output-cache-variation-dimension-with-cardinality-review",
       "labFormat": "localized-response-cache-production-forensics"
+    },
+    {
+      "runSlot": "2026-10-30-06",
+      "unitId": "UNIT-TZAMB-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-TZAMB-001-night-shift-maintenance-dst-window",
+      "domain": "dotnet-timezone-contracts",
+      "primarySkill": "timezone-local-time-disambiguation-and-offset-validation",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "cross-border-rail-maintenance-night-shift-scheduling",
+      "scenarioType": "partner-local-wall-clock-night-shift-utc-mismatch-at-dst-transition",
+      "primaryRootCause": "timezone-conversion-discards-explicit-offset-and-silently-resolves-ambiguous-local-time",
+      "failureMode": "first-dst-fold-shift-scheduled-one-hour-late-and-invalid-offset-accepted",
+      "solutionPattern": "validate-zone-offset-consistency-and-require-disambiguation-before-utc-conversion",
+      "labFormat": "timezone-contract-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-FLAG-001",
     "UNIT-LINQ-002",
     "UNIT-DR-001",
     "UNIT-SET-001",
@@ -1524,12 +1523,12 @@
     "UNIT-HMACROT-001",
     "UNIT-EXAGG-001",
     "UNIT-CQCLAIM-001",
-    "UNIT-OCACHE-001"
+    "UNIT-OCACHE-001",
+    "UNIT-TZAMB-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "feature-flag-rollout-consistency": 1,
       "linq-deferred-execution-live-sources": 1,
       "disaster-recovery-data-residency": 1,
       "dotnet-sortedset-ordering": 1,
@@ -1552,22 +1551,22 @@
       "webhook-signing-key-rotation": 1,
       "dotnet-task-fault-aggregation": 1,
       "dotnet-concurrentqueue-claim-semantics": 1,
-      "aspnetcore-output-caching": 1
+      "aspnetcore-output-caching": 1,
+      "dotnet-timezone-contracts": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L4": 3,
       "L2": 8,
       "L5": 2,
       "L3": 6,
       "L1": 4,
-      "L6": 1
+      "L6": 1,
+      "L4": 3
     },
     "byFormat": {
-      "feature-flag-cohort-refactoring-workshop": 1,
       "live-feed-consistency-evidence-investigation": 1,
       "disaster-recovery-architecture-decision-tabletop": 1,
       "ordered-set-contract-evidence-investigation": 1,
@@ -1590,7 +1589,8 @@
       "webhook-trust-cutover-architecture-decision-tabletop": 1,
       "parallel-fault-diagnostics-deterministic-lab": 1,
       "two-worker-queue-claim-evidence-investigation": 1,
-      "localized-response-cache-production-forensics": 1
+      "localized-response-cache-production-forensics": 1,
+      "timezone-contract-refactoring-workshop": 1
     }
   }
 }

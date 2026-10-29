@@ -1,0 +1,69 @@
+{
+  "unitId": "UNIT-TZAMB-001",
+  "runSlot": "2026-10-30-06",
+  "title": "Ca bảo trì đêm bị lệch giờ khi đồng bộ lịch quốc tế",
+  "domain": "dotnet-timezone-contracts",
+  "labFormat": "timezone-contract-refactoring-workshop",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-30T06:09:42+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "dotnet-datetime",
+    "timezoneinfo",
+    "datetimeoffset",
+    "contract-refactoring",
+    "regression-testing"
+  ],
+  "primarySkill": "timezone-local-time-disambiguation-and-offset-validation",
+  "prerequisites": [
+    "csharp-datetime-basics",
+    "utc-offset-basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of C# net8.0 project, deterministic seven-case contract, PowerShell scripts, expected failure set and solution; code not executed (GitHub integration only).",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "cross-border-rail-maintenance-night-shift-scheduling",
+    "scenarioType": "partner-local-wall-clock-night-shift-utc-mismatch-at-dst-transition",
+    "primaryRootCause": "timezone-conversion-discards-explicit-offset-and-silently-resolves-ambiguous-local-time",
+    "failureMode": "first-dst-fold-shift-scheduled-one-hour-late-and-invalid-offset-accepted",
+    "solutionPattern": "validate-zone-offset-consistency-and-require-disambiguation-before-utc-conversion",
+    "labFormat": "timezone-contract-refactoring-workshop"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "Lab.csproj",
+    "README.md",
+    "docs/references.md",
+    "docs/scenario.md",
+    "evidence/incident-log.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/README.md",
+    "solution/WindowScheduler.cs",
+    "starter/WindowScheduler.cs",
+    "tests/ContractHarness.cs",
+    "tests/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

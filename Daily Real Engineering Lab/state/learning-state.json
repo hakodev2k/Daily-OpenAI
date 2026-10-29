@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OCACHE-001",
-    "runSlot": "2026-10-30-05",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-OCACHE-001-pool-closure-bilingual-notice-cache-variance",
+    "unitId": "UNIT-TZAMB-001",
+    "runSlot": "2026-10-30-06",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-TZAMB-001-night-shift-maintenance-dst-window",
     "status": "READY",
-    "createdAt": "2026-10-30T05:07:09+07:00"
+    "createdAt": "2026-10-30T06:09:42+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 348,
-    "totalGenerated": 343,
+    "totalRunSlotsAttempted": 349,
+    "totalGenerated": 344,
     "totalFailed": 5
   },
   "learning": {
