@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-22",
-      "unitId": "UNIT-CLAIMS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-CLAIMS-001-reviewer-role-claim-contract",
-      "domain": "aspnet-core-authorization",
-      "primarySkill": "claimsidentity-role-claim-type",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "industrial-equipment-certification-review",
-      "scenarioType": "federated-reviewer-identity-authorization-mismatch",
-      "primaryRootCause": "default-claimsidentity-roleclaimtype-does-not-match-validated-roles-claim",
-      "failureMode": "authenticated-reviewers-denied-while-other-roles-are-denied-correctly",
-      "solutionPattern": "align-trusted-role-claim-mapping-with-authorization-policy",
-      "labFormat": "federated-role-claim-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-25-23",
       "unitId": "UNIT-SEM-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SEM-001-canceled-wait-expands-worker-capacity",
@@ -1498,10 +1483,24 @@
       "failureMode": "live-sse-200-response-lacks-trace-header-while-no-content-health-has-it",
       "solutionPattern": "register-response-onstarting-before-downstream-middleware-execution",
       "labFormat": "streaming-response-header-production-incident"
+    },
+    {
+      "runSlot": "2026-10-30-02",
+      "unitId": "UNIT-HMACROT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-HMACROT-001-parcel-clearance-webhook-key-retirement",
+      "domain": "webhook-signing-key-rotation",
+      "primarySkill": "webhook-key-retirement-vs-delayed-first-delivery",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "cross-border-parcel-customs-clearance",
+      "scenarioType": "partner-webhook-rotation-with-original-signature-preserved-on-delayed-retry",
+      "primaryRootCause": "immutable-old-key-signatures-outlive-mandatory-old-key-verification-cutoff",
+      "failureMode": "late-first-delivery-either-rejected-or-requires-prohibited-old-key-trust",
+      "solutionPattern": "hard-key-retirement-with-independent-authoritative-event-feed-reconciliation-and-idempotent-inbox",
+      "labFormat": "webhook-trust-cutover-architecture-decision-tabletop"
     }
   ],
   "rolling24": [
-    "UNIT-CDICT-001",
     "UNIT-PGVIS-001",
     "UNIT-DI-001",
     "UNIT-MONEY-001",
@@ -1524,12 +1523,12 @@
     "UNIT-REGEX-001",
     "UNIT-DRAIN-001",
     "UNIT-GZIP-001",
-    "UNIT-ONSTART-001"
+    "UNIT-ONSTART-001",
+    "UNIT-HMACROT-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-concurrent-collections": 1,
       "postgresql-query-plans": 1,
       "dotnet-dependency-injection": 1,
       "dotnet-financial-arithmetic": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-regex-engine": 1,
       "dotnet-background-worker-delivery-semantics": 1,
       "dotnet-gzip-stream-lifecycle": 1,
-      "aspnetcore-response-lifecycle": 1
+      "aspnetcore-response-lifecycle": 1,
+      "webhook-signing-key-rotation": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 9,
       "L3": 6,
       "L1": 4,
+      "L2": 8,
       "L4": 3,
-      "L5": 1,
+      "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "concurrent-cache-factory-investigation": 1,
       "postgresql-query-plan-production-forensics": 1,
       "dependency-injection-lifetime-deterministic-failure": 1,
       "financial-reconciliation-contract-investigation": 1,
@@ -1590,7 +1589,8 @@
       "deterministic-regex-performance-failure-lab": 1,
       "worker-shutdown-ack-boundary-refactoring-workshop": 1,
       "gzip-integrity-contract-investigation": 1,
-      "streaming-response-header-production-incident": 1
+      "streaming-response-header-production-incident": 1,
+      "webhook-trust-cutover-architecture-decision-tabletop": 1
     }
   }
 }
