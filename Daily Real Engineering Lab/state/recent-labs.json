@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-19",
-      "unitId": "UNIT-SLO-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SLO-001-alert-burn-rate-policy",
-      "domain": "observability-slo-engineering",
-      "primarySkill": "slo-error-budget",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "healthcare-appointment-notification-slo",
-      "scenarioType": "sustained-low-volume-failure-and-high-volume-normal-error-baseline",
-      "primaryRootCause": "absolute-error-count-alert-threshold-ignores-request-volume-and-slo-error-budget",
-      "failureMode": "false-page-at-high-volume-and-missed-severe-low-volume-outage",
-      "solutionPattern": "ratio-based-multiwindow-error-budget-burn-policy-with-complete-window-evidence",
-      "labFormat": "slo-alert-policy-design-decision"
-    },
-    {
       "runSlot": "2026-10-25-20",
       "unitId": "UNIT-PQ-001",
       "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-PQ-001-baggage-alert-tie-order",
@@ -1498,10 +1483,24 @@
       "failureMode": "one-invalid-meter-id-exhausts-regex-match-deadline-and-interrupts-batch",
       "solutionPattern": "linear-time-meter-id-grammar-with-explicit-regex-timeout",
       "labFormat": "deterministic-regex-performance-failure-lab"
+    },
+    {
+      "runSlot": "2026-10-29-23",
+      "unitId": "UNIT-DRAIN-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DRAIN-001-conference-badge-render-worker-shutdown",
+      "domain": "dotnet-background-worker-delivery-semantics",
+      "primarySkill": "worker-delivery-acknowledgement-boundaries",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "conference-attendee-badge-rendering",
+      "scenarioType": "rolling-deployment-cancels-inflight-badge-render-and-upload-receipt",
+      "primaryRootCause": "worker-finally-acknowledges-delivery-even-when-render-cancelled-or-fails-after-publish",
+      "failureMode": "cancelled-badge-job-vanishes-and-ambiguous-publish-failure-is-not-retried",
+      "solutionPattern": "ack-only-after-success-release-on-failure-with-idempotent-artifact-publication",
+      "labFormat": "worker-shutdown-ack-boundary-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-BODY-001",
     "UNIT-QENC-001",
     "UNIT-FDROP-001",
     "UNIT-CDICT-001",
@@ -1524,12 +1523,12 @@
     "UNIT-WIRE-001",
     "UNIT-BASEURI-001",
     "UNIT-CAL-001",
-    "UNIT-REGEX-001"
+    "UNIT-REGEX-001",
+    "UNIT-DRAIN-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnet-core-request-body-streams": 1,
       "http-query-component-encoding": 1,
       "filesystem-ingestion-reliability": 1,
       "dotnet-concurrent-collections": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-binary-wire-protocol": 1,
       "http-uri-composition": 1,
       "dotnet-calendar-recurrence": 1,
-      "dotnet-regex-engine": 1
+      "dotnet-regex-engine": 1,
+      "dotnet-background-worker-delivery-semantics": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L4": 3,
       "L2": 10,
       "L3": 5,
       "L1": 4,
+      "L4": 3,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "request-body-pipeline-refactoring-workshop": 1,
       "partner-token-contract-investigation": 1,
       "deterministic-file-drop-reliability-investigation": 1,
       "concurrent-cache-factory-investigation": 1,
@@ -1590,7 +1589,8 @@
       "binary-wire-format-contract-investigation": 1,
       "http-base-uri-route-contract-investigation": 1,
       "calendar-recurrence-investigation": 1,
-      "deterministic-regex-performance-failure-lab": 1
+      "deterministic-regex-performance-failure-lab": 1,
+      "worker-shutdown-ack-boundary-refactoring-workshop": 1
     }
   }
 }
