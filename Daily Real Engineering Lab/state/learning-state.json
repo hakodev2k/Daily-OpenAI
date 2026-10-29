@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-AUDIT-001",
-    "runSlot": "2026-10-29-13",
-    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-AUDIT-001-sterile-batch-audit-evidence-trust-boundary",
+    "unitId": "UNIT-LEASE-001",
+    "runSlot": "2026-10-29-14",
+    "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-LEASE-001-road-defect-preview-buffer-ownership",
     "status": "READY",
-    "createdAt": "2026-10-29T13:09:07+07:00"
+    "createdAt": "2026-10-29T14:15:45.236+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 332,
-    "totalGenerated": 327,
+    "totalRunSlotsAttempted": 333,
+    "totalGenerated": 328,
     "totalFailed": 5
   },
   "learning": {

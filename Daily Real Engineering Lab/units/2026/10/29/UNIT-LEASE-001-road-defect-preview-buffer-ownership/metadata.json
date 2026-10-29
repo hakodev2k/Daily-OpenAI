@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-LEASE-001",
+  "runSlot": "2026-10-29-14",
+  "title": "Preview ảnh đường bộ thay đổi sau khi tạo",
+  "domain": "dotnet-buffer-ownership",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-29T14:15:45.236+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "arraypool-lease-ownership",
+    "readonlymemory-lifetime",
+    "regression-testing"
+  ],
+  "primarySkill": "arraypool-lease-ownership",
+  "prerequisites": [
+    "C# spans and arrays",
+    ".NET SDK 8",
+    "basic memory ownership"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-road-defect-image-review",
+    "scenarioType": "asynchronous-preview-consumer-sees-previous-job-bytes-change",
+    "primaryRootCause": "pooled-buffer-returned-before-consumer-finishes-reading",
+    "failureMode": "previously-issued-preview-mutates-after-next-request",
+    "solutionPattern": "copy-valid-bytes-to-owned-memory-before-releasing-pool-lease",
+    "labFormat": "buffer-ownership-refactoring-workshop"
+  }
+}
