@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-23",
-      "unitId": "UNIT-SEM-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/25/UNIT-SEM-001-canceled-wait-expands-worker-capacity",
-      "domain": "dotnet-concurrency-capacity",
-      "primarySkill": "semaphore-permit-ownership",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "regional-gis-map-tile-export",
-      "scenarioType": "cancelled-queued-work-during-single-worker-tile-render",
-      "primaryRootCause": "semaphore-release-executes-after-cancelled-wait-that-never-acquired-a-permit",
-      "failureMode": "more-than-configured-concurrent-renderers-after-client-aborts-queued-request",
-      "solutionPattern": "release-semaphore-only-after-successful-acquisition",
-      "labFormat": "cancellation-capacity-contract-incident"
-    },
-    {
       "runSlot": "2026-10-26-00",
       "unitId": "UNIT-TZ-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-TZ-001-interview-reminder-calendar-offset",
@@ -1498,6 +1483,21 @@
       "failureMode": "late-first-delivery-either-rejected-or-requires-prohibited-old-key-trust",
       "solutionPattern": "hard-key-retirement-with-independent-authoritative-event-feed-reconciliation-and-idempotent-inbox",
       "labFormat": "webhook-trust-cutover-architecture-decision-tabletop"
+    },
+    {
+      "runSlot": "2026-10-30-03",
+      "unitId": "UNIT-EXAGG-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-EXAGG-001-school-meal-supplier-failure-diagnostics",
+      "domain": "dotnet-task-fault-aggregation",
+      "primarySkill": "task-whenall-multi-fault-observability",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "school-meal-allergen-supplier-compliance-reports",
+      "scenarioType": "nightly-parallel-supplier-fetch-has-multiple-independent-failures",
+      "primaryRootCause": "await-whenall-exposes-one-thrown-exception-while-aggregate-faults-are-not-inspected",
+      "failureMode": "operator-dashboard-records-only-one-of-two-failed-supplier-feeds-and-classifies-cancellation-as-failure",
+      "solutionPattern": "inspect-faulted-whenall-task-aggregate-and-propagate-pure-cancellation",
+      "labFormat": "parallel-fault-diagnostics-deterministic-lab"
     }
   ],
   "rolling24": [
@@ -1529,7 +1529,6 @@
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "postgresql-query-plans": 1,
       "dotnet-dependency-injection": 1,
       "dotnet-financial-arithmetic": 1,
       "feature-flag-rollout-consistency": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-background-worker-delivery-semantics": 1,
       "dotnet-gzip-stream-lifecycle": 1,
       "aspnetcore-response-lifecycle": 1,
-      "webhook-signing-key-rotation": 1
+      "webhook-signing-key-rotation": 1,
+      "dotnet-task-fault-aggregation": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L3": 6,
-      "L1": 4,
+      "L1": 5,
       "L2": 8,
       "L4": 3,
       "L5": 2,
+      "L3": 5,
       "L6": 1
     },
     "byFormat": {
-      "postgresql-query-plan-production-forensics": 1,
       "dependency-injection-lifetime-deterministic-failure": 1,
       "financial-reconciliation-contract-investigation": 1,
       "feature-flag-cohort-refactoring-workshop": 1,
@@ -1590,7 +1589,8 @@
       "worker-shutdown-ack-boundary-refactoring-workshop": 1,
       "gzip-integrity-contract-investigation": 1,
       "streaming-response-header-production-incident": 1,
-      "webhook-trust-cutover-architecture-decision-tabletop": 1
+      "webhook-trust-cutover-architecture-decision-tabletop": 1,
+      "parallel-fault-diagnostics-deterministic-lab": 1
     }
   }
 }

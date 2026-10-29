@@ -1,0 +1,66 @@
+{
+  "unitId": "UNIT-EXAGG-001",
+  "runSlot": "2026-10-30-03",
+  "title": "Báo cáo nhà cung cấp bữa ăn học đường bỏ sót lỗi song song",
+  "domain": "dotnet-task-fault-aggregation",
+  "labFormat": "parallel-fault-diagnostics-deterministic-lab",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-30T03:06:14+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "task-whenall",
+    "aggregateexception",
+    "fault-diagnostics",
+    "cancellation-semantics"
+  ],
+  "primarySkill": "task-whenall-multi-fault-observability",
+  "prerequisites": [
+    "csharp-task-basics",
+    "async-await",
+    "exception-handling"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "GitHub-only static consistency review. .NET restore/build/run were not executed.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "school-meal-allergen-supplier-compliance-reports",
+    "scenarioType": "nightly-parallel-supplier-fetch-has-multiple-independent-failures",
+    "primaryRootCause": "await-whenall-exposes-one-thrown-exception-while-aggregate-faults-are-not-inspected",
+    "failureMode": "operator-dashboard-records-only-one-of-two-failed-supplier-feeds-and-classifies-cancellation-as-failure",
+    "solutionPattern": "inspect-faulted-whenall-task-aggregate-and-propagate-pure-cancellation",
+    "labFormat": "parallel-fault-diagnostics-deterministic-lab"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "docs/references.md",
+    "evidence/incident-summary.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/LabHarness.csproj",
+    "harness/Program.cs",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/README.md",
+    "solution/SupplierReport.cs",
+    "starter/SupplierReport.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
