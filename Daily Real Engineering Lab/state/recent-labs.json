@@ -3,19 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-25-06",
-      "unitId": "UNIT-OUTBOX-001",
-      "domain": "messaging-outbox",
-      "primarySkill": "outbox-checkpoint-ordering",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "loyalty-reward-redemption-events",
-      "primaryRootCause": "high-watermark-advances-past-unacknowledged-gap",
-      "failureMode": "earlier-outbox-event-permanently-skipped-after-transient-publish-error",
-      "solutionPattern": "advance-only-contiguous-acknowledged-prefix-and-retry-gap",
-      "labFormat": "messaging-partial-failure-production-incident"
-    },
-    {
       "runSlot": "2026-10-25-07",
       "unitId": "UNIT-FENCE-001",
       "domain": "distributed-systems",
@@ -1492,10 +1479,24 @@
       "failureMode": "distinct-dispatch-requests-silently-rejected-as-duplicates",
       "solutionPattern": "total-order-comparer-with-stable-arrival-and-id-tiebreakers",
       "labFormat": "ordered-set-contract-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-10-29-10",
+      "unitId": "UNIT-STREAMPOS-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-STREAMPOS-001-ground-station-telemetry-resume-gaps",
+      "domain": "dotnet-streamreader-checkpoint-semantics",
+      "primarySkill": "streamreader-buffered-read-ahead-checkpoint",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "satellite-ground-station-pass-telemetry-import",
+      "scenarioType": "small-batch-ingestion-resumes-after-worker-restart",
+      "primaryRootCause": "underlying-filestream-position-advances-beyond-consumed-lines-due-to-streamreader-buffered-read-ahead",
+      "failureMode": "persisted-byte-cursor-skips-unprocessed-records-after-restart",
+      "solutionPattern": "logical-line-count-checkpoint-with-append-only-replay-and-truncation-detection",
+      "labFormat": "stream-checkpoint-production-forensics"
     }
   ],
   "rolling24": [
-    "UNIT-MONGO-002",
     "UNIT-VTASK-001",
     "UNIT-EF-017",
     "UNIT-TSPAN-001",
@@ -1518,12 +1519,12 @@
     "UNIT-FLAG-001",
     "UNIT-LINQ-002",
     "UNIT-DR-001",
-    "UNIT-SET-001"
+    "UNIT-SET-001",
+    "UNIT-STREAMPOS-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "mongodb-array-query-semantics": 1,
       "dotnet-valuetask-consumption": 1,
       "ef-core-context-pooling": 1,
       "dotnet-timespan-semantics": 1,
@@ -1546,21 +1547,21 @@
       "feature-flag-rollout-consistency": 1,
       "linq-deferred-execution-live-sources": 1,
       "disaster-recovery-data-residency": 1,
-      "dotnet-sortedset-ordering": 1
+      "dotnet-sortedset-ordering": 1,
+      "dotnet-streamreader-checkpoint-semantics": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 11,
       "L4": 4,
-      "L3": 5,
+      "L3": 6,
+      "L2": 10,
       "L1": 3,
       "L5": 1
     },
     "byFormat": {
-      "mongodb-document-array-query-evidence-investigation": 1,
       "valuetask-consumption-refactoring-workshop": 1,
       "cross-tenant-data-isolation-production-investigation": 1,
       "latency-telemetry-sawtooth-investigation": 1,
@@ -1583,7 +1584,8 @@
       "feature-flag-cohort-refactoring-workshop": 1,
       "live-feed-consistency-evidence-investigation": 1,
       "disaster-recovery-architecture-decision-tabletop": 1,
-      "ordered-set-contract-evidence-investigation": 1
+      "ordered-set-contract-evidence-investigation": 1,
+      "stream-checkpoint-production-forensics": 1
     }
   }
 }
