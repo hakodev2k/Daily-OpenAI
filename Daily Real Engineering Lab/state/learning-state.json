@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-EXAGG-001",
-    "runSlot": "2026-10-30-03",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-EXAGG-001-school-meal-supplier-failure-diagnostics",
+    "unitId": "UNIT-CQCLAIM-001",
+    "runSlot": "2026-10-30-04",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-CQCLAIM-001-library-pickup-queue-duplicate-receipts",
     "status": "READY",
-    "createdAt": "2026-10-30T03:06:14+07:00"
+    "createdAt": "2026-10-30T04:10:13+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 346,
-    "totalGenerated": 341,
+    "totalRunSlotsAttempted": 347,
+    "totalGenerated": 342,
     "totalFailed": 5
   },
   "learning": {

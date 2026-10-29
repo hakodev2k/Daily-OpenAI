@@ -1,0 +1,64 @@
+{
+  "unitId": "UNIT-CQCLAIM-001",
+  "runSlot": "2026-10-30-04",
+  "title": "Phiếu nhận sách liên chi nhánh bị trùng và thất lạc",
+  "domain": "dotnet-concurrentqueue-claim-semantics",
+  "labFormat": "two-worker-queue-claim-evidence-investigation",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-30T04:10:13+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "csharp-concurrency",
+    "concurrentqueue",
+    "atomic-claim",
+    "deterministic-concurrency-testing"
+  ],
+  "primarySkill": "concurrentqueue-atomic-claim-contract",
+  "prerequisites": [
+    "csharp-collections",
+    "task-basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Reviewed code, fixture scheduling, script targets and state consistency statically; dotnet SDK unavailable in runtime; no build or execution claimed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-library-interbranch-book-pickup-reservations",
+    "scenarioType": "two-workers-dispatch-a-two-item-pickup-batch-under-controlled-overlap",
+    "primaryRootCause": "concurrentqueue-peek-and-dequeue-used-as-nonatomic-claim-while-processing-peeked-item",
+    "failureMode": "duplicate-pickup-receipt-for-one-request-and-missing-receipt-for-another",
+    "solutionPattern": "atomic-dequeue-claim-and-process-exactly-the-claimed-item",
+    "labFormat": "two-worker-queue-claim-evidence-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "evidence/incident-summary.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/LabHarness.csproj",
+    "harness/Program.cs",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/PickupDispatcher.cs",
+    "solution/README.md",
+    "starter/PickupDispatcher.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
