@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-EF-018",
-    "runSlot": "2026-10-30-20",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-EF-018-theatre-prop-reservation-tracker-drift",
+    "unitId": "UNIT-TCS-001",
+    "runSlot": "2026-10-30-21",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-TCS-001-billboard-campaign-publish-gate-stall",
     "status": "READY",
-    "createdAt": "2026-10-30T20:11:42+07:00"
+    "createdAt": "2026-10-30T21:12:16+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 363,
-    "totalGenerated": 358,
+    "totalRunSlotsAttempted": 364,
+    "totalGenerated": 359,
     "totalFailed": 5
   },
   "learning": {
