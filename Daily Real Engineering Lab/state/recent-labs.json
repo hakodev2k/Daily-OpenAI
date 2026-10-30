@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-06",
-      "unitId": "UNIT-UNICODE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-UNICODE-001-visitor-pass-canonical-equivalence",
-      "domain": "dotnet-unicode-identity",
-      "primarySkill": "unicode-normalization-string-identity",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "regional-museum-visitor-pass-gate-import",
-      "scenarioType": "cross-device-equivalent-identifier-duplicate-admission",
-      "primaryRootCause": "canonically-equivalent-unicode-pass-identifiers-are-compared-without-normalization",
-      "failureMode": "one-visitor-pass-is-admitted-twice-when-inputs-use-different-unicode-compositions",
-      "solutionPattern": "normalize-to-a-canonical-unicode-form-before-ordinal-identity-comparison",
-      "labFormat": "unicode-identity-contract-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-26-07",
       "unitId": "UNIT-SEARCH-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SEARCH-001-rental-search-zero-downtime-index-cutover",
@@ -1498,10 +1483,24 @@
       "failureMode": "scholarship-evidence-worker-exceeds-request-deadline-while-reading-response-body",
       "solutionPattern": "single-linked-end-to-end-cancellation-budget-propagated-through-headers-and-body-read",
       "labFormat": "http-stream-body-deadline-production-investigation"
+    },
+    {
+      "runSlot": "2026-10-30-10",
+      "unitId": "UNIT-CLOCK-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-CLOCK-001-bikeshare-pass-virtual-clock-contract",
+      "domain": "dotnet-timeprovider-testability",
+      "primarySkill": "timeprovider-injected-clock-consistency",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "city-bikeshare-temporary-unlock-pass",
+      "scenarioType": "qa-virtual-time-replay-disagrees-with-pass-validity-decisions",
+      "primaryRootCause": "pass-validation-reads-static-system-clock-instead-of-injected-timeprovider",
+      "failureMode": "valid-future-dated-test-pass-rejected-and-expiry-boundary-cannot-be-reproduced-with-virtual-clock",
+      "solutionPattern": "use-injected-timeprovider-getutcnow-at-evaluation-boundary-with-temporal-contract-regression",
+      "labFormat": "virtual-clock-testability-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-STREAMPOS-001",
     "UNIT-FMASK-001",
     "UNIT-JDRIFT-001",
     "UNIT-AUDIT-001",
@@ -1524,12 +1523,12 @@
     "UNIT-TZAMB-001",
     "UNIT-PTIMER-001",
     "UNIT-IPTRUST-001",
-    "UNIT-HBODY-001"
+    "UNIT-HBODY-001",
+    "UNIT-CLOCK-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-streamreader-checkpoint-semantics": 1,
       "dotnet-flags-authorization-semantics": 1,
       "json-ingress-contract-validation": 1,
       "audit-trail-integrity-architecture": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-timezone-contracts": 1,
       "dotnet-periodictimer-consumer-contract": 1,
       "aspnetcore-proxy-client-ip-trust": 1,
-      "dotnet-http-streaming-deadlines": 1
+      "dotnet-http-streaming-deadlines": 1,
+      "dotnet-timeprovider-testability": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L3": 7,
       "L1": 5,
+      "L3": 6,
       "L6": 1,
-      "L4": 3,
+      "L4": 4,
       "L2": 7,
       "L5": 1
     },
     "byFormat": {
-      "stream-checkpoint-production-forensics": 1,
       "deterministic-permission-policy-contract-lab": 1,
       "json-contract-drift-production-incident": 1,
       "audit-evidence-trust-boundary-architecture-case-study": 1,
@@ -1590,7 +1589,8 @@
       "timezone-contract-refactoring-workshop": 1,
       "deterministic-heartbeat-broadcast-contract-lab": 1,
       "trusted-proxy-source-identity-investigation": 1,
-      "http-stream-body-deadline-production-investigation": 1
+      "http-stream-body-deadline-production-investigation": 1,
+      "virtual-clock-testability-refactoring-workshop": 1
     }
   }
 }
