@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TCS-001",
-    "runSlot": "2026-10-30-21",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-TCS-001-billboard-campaign-publish-gate-stall",
+    "unitId": "UNIT-OPTS-001",
+    "runSlot": "2026-10-30-22",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-OPTS-001-emergency-shelter-quota-hot-reload",
     "status": "READY",
-    "createdAt": "2026-10-30T21:12:16+07:00"
+    "createdAt": "2026-10-30T22:11:40+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 364,
-    "totalGenerated": 359,
+    "totalRunSlotsAttempted": 365,
+    "totalGenerated": 360,
     "totalFailed": 5
   },
   "learning": {
