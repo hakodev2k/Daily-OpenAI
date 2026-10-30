@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-23",
-      "unitId": "UNIT-ENDIAN-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ENDIAN-001-stadium-turnstile-frame-byte-order",
-      "domain": "dotnet-binary-protocols",
-      "primarySkill": "binary-protocol-field-decoding",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "stadium-turnstile-offline-entry-telemetry",
-      "scenarioType": "binary-device-frames-reported-as-impossible-gate-and-entry-count-values",
-      "primaryRootCause": "binary-frame-multi-byte-fields-decoded-with-opposite-byte-order",
-      "failureMode": "valid-gate-frame-maps-to-unknown-gate-and-inflated-entry-count",
-      "solutionPattern": "protocol-explicit-byte-order-decoding-with-binary-primitives-and-contract-fixtures",
-      "labFormat": "binary-protocol-evidence-led-investigation"
-    },
-    {
       "runSlot": "2026-10-27-00",
       "unitId": "UNIT-SCHED-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-SCHED-001-ad-impression-hourly-window-reconciliation",
@@ -1499,10 +1484,24 @@
       "failureMode": "stream-continues-emitting-receipts-after-consumer-cancels",
       "solutionPattern": "bind-getasyncenumerator-token-to-producer-cancellation-parameter",
       "labFormat": "async-stream-cancellation-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-31-03",
+      "unitId": "UNIT-GRAPH-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-GRAPH-001-flood-alert-unicode-segment-contract",
+      "domain": "dotnet-unicode-text-segmentation",
+      "primarySkill": "unicode-grapheme-boundaries-and-utf8-byte-budgets",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-flood-alert-sms-dispatch",
+      "scenarioType": "multilingual-alert-split-under-provider-utf8-byte-limit",
+      "primaryRootCause": "utf16-string-length-used-as-utf8-byte-and-grapheme-boundary",
+      "failureMode": "segments-exceed-provider-byte-limit-or-contain-split-graphemes-and-invalid-surrogates",
+      "solutionPattern": "grapheme-aware-utf8-byte-budget-segmentation-with-oversize-cluster-rejection",
+      "labFormat": "multilingual-message-segmentation-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-EXAGG-001",
     "UNIT-CQCLAIM-001",
     "UNIT-OCACHE-001",
     "UNIT-TZAMB-001",
@@ -1525,12 +1524,12 @@
     "UNIT-MSET-001",
     "UNIT-DISP-001",
     "UNIT-COOKIE-001",
-    "UNIT-AENUM-001"
+    "UNIT-AENUM-001",
+    "UNIT-GRAPH-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-task-fault-aggregation": 1,
       "dotnet-concurrentqueue-claim-semantics": 1,
       "aspnetcore-output-caching": 1,
       "dotnet-timezone-contracts": 1,
@@ -1553,22 +1552,22 @@
       "csharp-linq-multiset-reconciliation": 1,
       "dotnet-async-resource-exception-provenance": 1,
       "http-client-cookie-session-isolation": 1,
-      "dotnet-async-stream-cancellation": 1
+      "dotnet-async-stream-cancellation": 1,
+      "dotnet-unicode-text-segmentation": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 5,
       "L2": 8,
       "L3": 6,
-      "L4": 3,
+      "L4": 4,
+      "L1": 4,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "parallel-fault-diagnostics-deterministic-lab": 1,
       "two-worker-queue-claim-evidence-investigation": 1,
       "localized-response-cache-production-forensics": 1,
       "timezone-contract-refactoring-workshop": 1,
@@ -1591,7 +1590,8 @@
       "deterministic-stock-reconciliation-contract-lab": 1,
       "dual-fault-resource-lifecycle-investigation": 1,
       "cross-tenant-partner-session-production-incident": 1,
-      "async-stream-cancellation-contract-investigation": 1
+      "async-stream-cancellation-contract-investigation": 1,
+      "multilingual-message-segmentation-refactoring-workshop": 1
     }
   }
 }
