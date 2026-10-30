@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-08",
-      "unitId": "UNIT-JSON-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-JSON-001-flood-alert-dispatch-lifetime",
-      "domain": "dotnet-json-dom",
-      "primarySkill": "jsondocument-jsonelement-ownership",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "coastal-flood-warning-bulletin-routing",
-      "scenarioType": "parsed-json-alert-queued-for-deferred-delivery",
-      "primaryRootCause": "jsonelement-escapes-disposed-jsondocument",
-      "failureMode": "queued-alert-processing-throws-objectdisposedexception-despite-valid-input",
-      "solutionPattern": "detach-json-value-at-document-ownership-boundary-with-clone",
-      "labFormat": "json-dom-lifetime-investigation"
-    },
-    {
       "runSlot": "2026-10-26-09",
       "unitId": "UNIT-HOST-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-HOST-001-air-quality-report-host-working-directory",
@@ -1498,10 +1483,24 @@
       "failureMode": "active-series-cardinality-exceeds-tenant-metrics-budget",
       "solutionPattern": "bounded-operational-metric-dimensions-with-event-level-forensics-separated",
       "labFormat": "metric-cardinality-incident-investigation-with-local-policy-simulator"
+    },
+    {
+      "runSlot": "2026-10-30-12",
+      "unitId": "UNIT-LPROBE-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-LPROBE-001-museum-ticket-kiosk-probe-boundary",
+      "domain": "aspnetcore-health-probe-boundaries",
+      "primarySkill": "aspnetcore-healthchecks",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "national-museum-visitor-ticket-validation",
+      "scenarioType": "external-fraud-scoring-outage-causes-pod-restarts",
+      "primaryRootCause": "liveness-health-endpoint-includes-external-dependency-check",
+      "failureMode": "healthy-process-reported-dead-when-partner-is-unavailable",
+      "solutionPattern": "separate-process-liveness-from-dependency-readiness-using-health-check-tags",
+      "labFormat": "kubernetes-probe-production-incident-contract"
     }
   ],
   "rolling24": [
-    "UNIT-JDRIFT-001",
     "UNIT-AUDIT-001",
     "UNIT-LEASE-001",
     "UNIT-CORS-001",
@@ -1524,12 +1523,12 @@
     "UNIT-IPTRUST-001",
     "UNIT-HBODY-001",
     "UNIT-CLOCK-001",
-    "UNIT-MCARD-001"
+    "UNIT-MCARD-001",
+    "UNIT-LPROBE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "json-ingress-contract-validation": 1,
       "audit-trail-integrity-architecture": 1,
       "dotnet-buffer-ownership": 1,
       "aspnetcore-cors": 1,
@@ -1552,22 +1551,22 @@
       "aspnetcore-proxy-client-ip-trust": 1,
       "dotnet-http-streaming-deadlines": 1,
       "dotnet-timeprovider-testability": 1,
-      "observability-metric-cardinality": 1
+      "observability-metric-cardinality": 1,
+      "aspnetcore-health-probe-boundaries": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L3": 6,
       "L6": 1,
       "L4": 4,
       "L2": 8,
+      "L3": 6,
       "L1": 4,
       "L5": 1
     },
     "byFormat": {
-      "json-contract-drift-production-incident": 1,
       "audit-evidence-trust-boundary-architecture-case-study": 1,
       "buffer-ownership-refactoring-workshop": 1,
       "cors-preflight-contract-investigation": 1,
@@ -1590,7 +1589,8 @@
       "trusted-proxy-source-identity-investigation": 1,
       "http-stream-body-deadline-production-investigation": 1,
       "virtual-clock-testability-refactoring-workshop": 1,
-      "metric-cardinality-incident-investigation-with-local-policy-simulator": 1
+      "metric-cardinality-incident-investigation-with-local-policy-simulator": 1,
+      "kubernetes-probe-production-incident-contract": 1
     }
   }
 }

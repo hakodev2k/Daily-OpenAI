@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MCARD-001",
-    "runSlot": "2026-10-30-11",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MCARD-001-cold-chain-telemetry-metric-series-budget",
+    "unitId": "UNIT-LPROBE-001",
+    "runSlot": "2026-10-30-12",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-LPROBE-001-museum-ticket-kiosk-probe-boundary",
     "status": "READY",
-    "createdAt": "2026-10-30T11:13:18.070+07:00"
+    "createdAt": "2026-10-30T12:10:00+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 354,
-    "totalGenerated": 349,
+    "totalRunSlotsAttempted": 355,
+    "totalGenerated": 350,
     "totalFailed": 5
   },
   "learning": {

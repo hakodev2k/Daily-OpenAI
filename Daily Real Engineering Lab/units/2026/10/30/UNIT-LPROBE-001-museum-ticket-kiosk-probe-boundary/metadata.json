@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-LPROBE-001",
+  "runSlot": "2026-10-30-12",
+  "title": "Museum ticket kiosk: điều tra vòng lặp restart khi đối tác gián đoạn",
+  "domain": "aspnetcore-health-probe-boundaries",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-30T12:10:00+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "aspnetcore-healthchecks",
+    "kubernetes-liveness-readiness",
+    "failure-domain-isolation",
+    "production-diagnostics"
+  ],
+  "prerequisites": [
+    ".NET SDK 8 trở lên",
+    "PowerShell",
+    "HTTP 200/503"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "national-museum-visitor-ticket-validation",
+    "scenarioType": "external-fraud-scoring-outage-causes-pod-restarts",
+    "primaryRootCause": "liveness-health-endpoint-includes-external-dependency-check",
+    "failureMode": "healthy-process-reported-dead-when-partner-is-unavailable",
+    "solutionPattern": "separate-process-liveness-from-dependency-readiness-using-health-check-tags",
+    "labFormat": "kubernetes-probe-production-incident-contract"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}
