@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-COOKIE-001",
-    "runSlot": "2026-10-31-01",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-COOKIE-001-aquarium-member-profile-session-isolation",
+    "unitId": "UNIT-AENUM-001",
+    "runSlot": "2026-10-31-02",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-AENUM-001-elevator-inspection-stream-cancellation",
     "status": "READY",
-    "createdAt": "2026-10-31T01:09:16.983+07:00"
+    "createdAt": "2026-10-30T19:09:18.086Z"
   },
   "generation": {
-    "totalRunSlotsAttempted": 368,
-    "totalGenerated": 363,
+    "totalRunSlotsAttempted": 369,
+    "totalGenerated": 364,
     "totalFailed": 5
   },
   "learning": {
