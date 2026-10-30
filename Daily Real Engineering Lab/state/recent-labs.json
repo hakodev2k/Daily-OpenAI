@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-07",
-      "unitId": "UNIT-SEARCH-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SEARCH-001-rental-search-zero-downtime-index-cutover",
-      "domain": "search-index-operations",
-      "primarySkill": "search-index-zero-downtime-migration",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "short-term-rental-discovery-marketplace",
-      "scenarioType": "search-schema-v2-rollout-with-live-source-updates",
-      "primaryRootCause": "in-place-index-rebuild-has-no-consistent-snapshot-and-catchup-cutover-boundary",
-      "failureMode": "live-search-availability-and-freshness-regress-during-index-schema-replacement",
-      "solutionPattern": "versioned-index-snapshot-plus-cdc-catchup-validated-alias-cutover-with-rollback",
-      "labFormat": "search-index-migration-design-decision"
-    },
-    {
       "runSlot": "2026-10-26-08",
       "unitId": "UNIT-JSON-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-JSON-001-flood-alert-dispatch-lifetime",
@@ -1498,10 +1483,24 @@
       "failureMode": "valid-future-dated-test-pass-rejected-and-expiry-boundary-cannot-be-reproduced-with-virtual-clock",
       "solutionPattern": "use-injected-timeprovider-getutcnow-at-evaluation-boundary-with-temporal-contract-regression",
       "labFormat": "virtual-clock-testability-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-30-11",
+      "unitId": "UNIT-MCARD-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MCARD-001-cold-chain-telemetry-metric-series-budget",
+      "domain": "observability-metric-cardinality",
+      "primarySkill": "metric-cardinality",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-food-cold-chain-depot-sensor-monitoring",
+      "scenarioType": "observability-series-growth-outpaces-metric-budget",
+      "primaryRootCause": "per-sensor-and-per-request-identifiers-in-metric-label-set",
+      "failureMode": "active-series-cardinality-exceeds-tenant-metrics-budget",
+      "solutionPattern": "bounded-operational-metric-dimensions-with-event-level-forensics-separated",
+      "labFormat": "metric-cardinality-incident-investigation-with-local-policy-simulator"
     }
   ],
   "rolling24": [
-    "UNIT-FMASK-001",
     "UNIT-JDRIFT-001",
     "UNIT-AUDIT-001",
     "UNIT-LEASE-001",
@@ -1524,12 +1523,12 @@
     "UNIT-PTIMER-001",
     "UNIT-IPTRUST-001",
     "UNIT-HBODY-001",
-    "UNIT-CLOCK-001"
+    "UNIT-CLOCK-001",
+    "UNIT-MCARD-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-flags-authorization-semantics": 1,
       "json-ingress-contract-validation": 1,
       "audit-trail-integrity-architecture": 1,
       "dotnet-buffer-ownership": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-periodictimer-consumer-contract": 1,
       "aspnetcore-proxy-client-ip-trust": 1,
       "dotnet-http-streaming-deadlines": 1,
-      "dotnet-timeprovider-testability": 1
+      "dotnet-timeprovider-testability": 1,
+      "observability-metric-cardinality": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 5,
       "L3": 6,
       "L6": 1,
       "L4": 4,
-      "L2": 7,
+      "L2": 8,
+      "L1": 4,
       "L5": 1
     },
     "byFormat": {
-      "deterministic-permission-policy-contract-lab": 1,
       "json-contract-drift-production-incident": 1,
       "audit-evidence-trust-boundary-architecture-case-study": 1,
       "buffer-ownership-refactoring-workshop": 1,
@@ -1590,7 +1589,8 @@
       "deterministic-heartbeat-broadcast-contract-lab": 1,
       "trusted-proxy-source-identity-investigation": 1,
       "http-stream-body-deadline-production-investigation": 1,
-      "virtual-clock-testability-refactoring-workshop": 1
+      "virtual-clock-testability-refactoring-workshop": 1,
+      "metric-cardinality-incident-investigation-with-local-policy-simulator": 1
     }
   }
 }

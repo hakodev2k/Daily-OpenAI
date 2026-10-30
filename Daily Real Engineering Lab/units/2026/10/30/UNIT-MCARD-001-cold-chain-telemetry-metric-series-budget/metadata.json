@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-MCARD-001",
+  "runSlot": "2026-10-30-11",
+  "title": "Cold-chain telemetry: điều tra metric series vượt ngân sách",
+  "domain": "observability-metric-cardinality",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-30T11:13:18.070+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "metric-cardinality",
+    "observability-design",
+    "powershell-diagnostics",
+    "label-budgeting"
+  ],
+  "prerequisites": [
+    "PowerShell 7",
+    "khái niệm metric label và time series"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-food-cold-chain-depot-sensor-monitoring",
+    "scenarioType": "observability-series-growth-outpaces-metric-budget",
+    "primaryRootCause": "per-sensor-and-per-request-identifiers-in-metric-label-set",
+    "failureMode": "active-series-cardinality-exceeds-tenant-metrics-budget",
+    "solutionPattern": "bounded-operational-metric-dimensions-with-event-level-forensics-separated",
+    "labFormat": "metric-cardinality-incident-investigation-with-local-policy-simulator"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}
