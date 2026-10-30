@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-OPTS-001",
+  "runSlot": "2026-10-30-22",
+  "title": "Emergency shelter quota changes ignored during live operation",
+  "domain": "dotnet-options-configuration-reload",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-30T22:11:40+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "ioptionsmonitor-runtime-configuration",
+    "configuration-change-tokens",
+    "singleton-dependency-lifecycle"
+  ],
+  "prerequisites": [
+    ".NET 8 SDK",
+    "C# dependency injection",
+    "IConfiguration fundamentals"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-emergency-shelter-bed-allocation",
+    "scenarioType": "live-capacity-policy-change-not-applied-to-running-reservation-service",
+    "primaryRootCause": "singleton-service-caches-initial-ioptionsmonitor-currentvalue-across-config-reload",
+    "failureMode": "runtime-quota-reduction-not-enforced-until-service-restart",
+    "solutionPattern": "read-current-validated-options-at-reservation-decision-boundary",
+    "labFormat": "live-configuration-contract-investigation"
+  }
+}
