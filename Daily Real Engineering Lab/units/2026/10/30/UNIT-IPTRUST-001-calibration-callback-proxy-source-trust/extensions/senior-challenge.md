@@ -1,0 +1,2 @@
+# Senior challenge (optional)
+Thay đổi topology: có thêm một ingress proxy và một WAF do đơn vị khác vận hành. Yêu cầu mới: hỗ trợ IPv6, origin chỉ được truy cập qua ingress, và partner có thể thay đổi IP. Hãy đề xuất: danh sách trusted hops, quy tắc xử lý/ghi đè forwarded headers, `ForwardLimit`, network isolation, xác thực callback ở tầng ứng dụng, log audit và negative tests. Không sửa fixture gốc trước khi có thiết kế chính sách mới.

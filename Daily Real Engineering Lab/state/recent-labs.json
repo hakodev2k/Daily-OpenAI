@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-04",
-      "unitId": "UNIT-ZIP-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ZIP-001-conservation-evidence-zip-export-finalization",
-      "domain": "dotnet-zip-archive",
-      "primarySkill": "ziparchive-finalization-lifecycle",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "cultural-heritage-inspection-evidence-export",
-      "scenarioType": "downloaded-evidence-package-rejected-by-standard-zip-reader",
-      "primaryRootCause": "ziparchive-central-directory-written-after-response-byte-snapshot",
-      "failureMode": "exported-zip-omits-final-directory-and-is-not-readable",
-      "solutionPattern": "finalize-ziparchive-before-materializing-response-payload",
-      "labFormat": "archive-finalization-lifecycle-investigation"
-    },
-    {
       "runSlot": "2026-10-26-05",
       "unitId": "UNIT-SQL-009",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SQL-009-partner-confirmation-null-antijoin",
@@ -1498,10 +1483,24 @@
       "failureMode": "second-observer-faults-instead-of-receiving-each-logical-heartbeat",
       "solutionPattern": "single-periodictimer-consumer-fans-out-sequence-to-independent-subscriber-channels",
       "labFormat": "deterministic-heartbeat-broadcast-contract-lab"
+    },
+    {
+      "runSlot": "2026-10-30-08",
+      "unitId": "UNIT-IPTRUST-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-IPTRUST-001-calibration-callback-proxy-source-trust",
+      "domain": "aspnetcore-proxy-client-ip-trust",
+      "primarySkill": "reverse-proxy-source-ip-trust-boundary",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "industrial-calibration-partner-callback-gateway",
+      "scenarioType": "direct-origin-request-forges-forwarded-source-identity",
+      "primaryRootCause": "untrusted-http-forwarded-for-used-before-verifying-connection-peer-is-managed-proxy",
+      "failureMode": "spoofed-direct-callback-passes-partner-ip-allowlist",
+      "solutionPattern": "trusted-single-hop-proxy-peer-gate-then-validated-forwarded-ip-policy",
+      "labFormat": "trusted-proxy-source-identity-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-DR-001",
     "UNIT-SET-001",
     "UNIT-STREAMPOS-001",
     "UNIT-FMASK-001",
@@ -1524,12 +1523,12 @@
     "UNIT-CQCLAIM-001",
     "UNIT-OCACHE-001",
     "UNIT-TZAMB-001",
-    "UNIT-PTIMER-001"
+    "UNIT-PTIMER-001",
+    "UNIT-IPTRUST-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "disaster-recovery-data-residency": 1,
       "dotnet-sortedset-ordering": 1,
       "dotnet-streamreader-checkpoint-semantics": 1,
       "dotnet-flags-authorization-semantics": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-concurrentqueue-claim-semantics": 1,
       "aspnetcore-output-caching": 1,
       "dotnet-timezone-contracts": 1,
-      "dotnet-periodictimer-consumer-contract": 1
+      "dotnet-periodictimer-consumer-contract": 1,
+      "aspnetcore-proxy-client-ip-trust": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L5": 2,
-      "L2": 7,
+      "L2": 8,
       "L3": 6,
       "L1": 5,
       "L6": 1,
-      "L4": 3
+      "L4": 3,
+      "L5": 1
     },
     "byFormat": {
-      "disaster-recovery-architecture-decision-tabletop": 1,
       "ordered-set-contract-evidence-investigation": 1,
       "stream-checkpoint-production-forensics": 1,
       "deterministic-permission-policy-contract-lab": 1,
@@ -1590,7 +1589,8 @@
       "two-worker-queue-claim-evidence-investigation": 1,
       "localized-response-cache-production-forensics": 1,
       "timezone-contract-refactoring-workshop": 1,
-      "deterministic-heartbeat-broadcast-contract-lab": 1
+      "deterministic-heartbeat-broadcast-contract-lab": 1,
+      "trusted-proxy-source-identity-investigation": 1
     }
   }
 }
