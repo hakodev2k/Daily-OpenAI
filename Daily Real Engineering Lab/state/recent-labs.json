@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-00",
-      "unitId": "UNIT-SCHED-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-SCHED-001-ad-impression-hourly-window-reconciliation",
-      "domain": "dotnet-periodic-scheduling",
-      "primarySkill": "periodictimer-tick-coalescing-and-window-checkpoints",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "digital-advertising-hourly-impression-settlement",
-      "scenarioType": "slow-hourly-settlement-leaves-unprocessed-accounting-windows",
-      "primaryRootCause": "periodic-timer-wakeup-treated-as-one-logical-window-despite-coalesced-ticks",
-      "failureMode": "hourly-ad-impression-windows-remain-unsettled-after-worker-lag",
-      "solutionPattern": "watermark-driven-due-window-reconciliation-with-checkpoint-after-success",
-      "labFormat": "scheduled-window-reconciliation-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-27-01",
       "unitId": "UNIT-CONTRACT-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CONTRACT-001-freight-manifest-v1-v2-compatibility-boundary",
@@ -1499,10 +1484,24 @@
       "failureMode": "segments-exceed-provider-byte-limit-or-contain-split-graphemes-and-invalid-surrogates",
       "solutionPattern": "grapheme-aware-utf8-byte-budget-segmentation-with-oversize-cluster-rejection",
       "labFormat": "multilingual-message-segmentation-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-31-04",
+      "unitId": "UNIT-ROUTE-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-ROUTE-001-parking-permit-spa-api-404-contract",
+      "domain": "aspnetcore-route-fallback",
+      "primarySkill": "aspnetcore-endpoint-routing-fallback-precedence",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "municipal-parking-permit-renewal-portal",
+      "scenarioType": "unknown-api-url-returns-spa-html-success-instead-of-api-not-found",
+      "primaryRootCause": "spa-nonfile-fallback-catches-unmatched-api-paths-with-html-200",
+      "failureMode": "api-clients-receive-200-html-for-missing-json-endpoints-and-misclassify-failures",
+      "solutionPattern": "explicit-api-namespace-json-404-route-before-spa-fallback",
+      "labFormat": "aspnetcore-spa-fallback-contract-deterministic-lab"
     }
   ],
   "rolling24": [
-    "UNIT-CQCLAIM-001",
     "UNIT-OCACHE-001",
     "UNIT-TZAMB-001",
     "UNIT-PTIMER-001",
@@ -1525,12 +1524,12 @@
     "UNIT-DISP-001",
     "UNIT-COOKIE-001",
     "UNIT-AENUM-001",
-    "UNIT-GRAPH-001"
+    "UNIT-GRAPH-001",
+    "UNIT-ROUTE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-concurrentqueue-claim-semantics": 1,
       "aspnetcore-output-caching": 1,
       "dotnet-timezone-contracts": 1,
       "dotnet-periodictimer-consumer-contract": 1,
@@ -1553,22 +1552,22 @@
       "dotnet-async-resource-exception-provenance": 1,
       "http-client-cookie-session-isolation": 1,
       "dotnet-async-stream-cancellation": 1,
-      "dotnet-unicode-text-segmentation": 1
+      "dotnet-unicode-text-segmentation": 1,
+      "aspnetcore-route-fallback": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
       "L3": 6,
       "L4": 4,
-      "L1": 4,
+      "L1": 5,
+      "L2": 7,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "two-worker-queue-claim-evidence-investigation": 1,
       "localized-response-cache-production-forensics": 1,
       "timezone-contract-refactoring-workshop": 1,
       "deterministic-heartbeat-broadcast-contract-lab": 1,
@@ -1591,7 +1590,8 @@
       "dual-fault-resource-lifecycle-investigation": 1,
       "cross-tenant-partner-session-production-incident": 1,
       "async-stream-cancellation-contract-investigation": 1,
-      "multilingual-message-segmentation-refactoring-workshop": 1
+      "multilingual-message-segmentation-refactoring-workshop": 1,
+      "aspnetcore-spa-fallback-contract-deterministic-lab": 1
     }
   }
 }
