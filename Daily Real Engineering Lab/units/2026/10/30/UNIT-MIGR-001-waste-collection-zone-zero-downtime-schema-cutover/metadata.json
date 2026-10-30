@@ -1,0 +1,53 @@
+{
+  "unitId": "UNIT-MIGR-001",
+  "runSlot": "2026-10-30-17",
+  "title": "Chuyển đổi vùng thu gom rác không gián đoạn khi hai phiên bản API cùng ghi",
+  "domain": "postgresql-online-schema-evolution",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-10-30T17:10:43+07:00",
+  "estimatedMinutes": 85,
+  "skills": [
+    "postgresql-expand-contract-migration",
+    "rolling-deployment-compatibility",
+    "data-backfill-concurrency",
+    "migration-cutover-and-rollback"
+  ],
+  "primarySkill": "zero-downtime-schema-evolution-and-cutover-gates",
+  "prerequisites": [
+    "SQL transactions",
+    "ASP.NET Core rolling deployments"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-waste-pickup-zone-assignment",
+    "scenarioType": "rolling-deployment-overlaps-long-running-schema-backfill",
+    "primaryRootCause": "breaking-relational-schema-contract-before-old-and-new-writers-and-unresolved-data-are-compatible",
+    "failureMode": "mixed-version-writes-and-ambiguous-legacy-zones-create-null-or-wrong-dispatch-assignment",
+    "solutionPattern": "expand-backfill-catchup-compatibility-validation-gated-contract-and-reversible-cutover",
+    "labFormat": "zero-downtime-data-migration-architecture-tabletop"
+  },
+  "manifest": [
+    "README.md",
+    "scenario/requirements.md",
+    "evidence/timeline.md",
+    "evidence/legacy-sample.csv",
+    "evidence/zone-map.csv",
+    "workspace/my-investigation.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "verification/acceptance-cases.md",
+    "extensions/change-request.md",
+    "solution/README.md",
+    "metadata.json"
+  ]
+}

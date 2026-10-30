@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-13",
-      "unitId": "UNIT-COOKIE-001",
-      "domain": "http-client-session-security",
-      "primarySkill": "httpclient-cookiecontainer-isolation",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "multi-tenant-procurement-partner-quote-gateway",
-      "scenarioType": "sequential-tenant-sessions-through-one-outbound-http-handler",
-      "primaryRootCause": "httpclienthandler-shares-cookiecontainer-across-tenant-security-contexts",
-      "failureMode": "tenant-a-session-cookie-forwarded-on-tenant-b-request-causing-cross-tenant-session-confusion",
-      "solutionPattern": "tenant-scoped-cookiecontainer-and-httpclient-lifecycle-isolation",
-      "labFormat": "http-cookie-isolation-production-incident"
-    },
-    {
       "runSlot": "2026-10-26-14",
       "unitId": "UNIT-LINQ-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LINQ-001-ferry-crew-roster-revision-reconciliation",
@@ -1498,6 +1484,21 @@
       "failureMode": "rejected-equipment-return-batch-leaves-partial-inventory-changes",
       "solutionPattern": "stage-and-validate-entire-stream-then-commit-batch-atomically",
       "labFormat": "streamed-batch-ingestion-production-incident"
+    },
+    {
+      "runSlot": "2026-10-30-17",
+      "unitId": "UNIT-MIGR-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MIGR-001-waste-collection-zone-zero-downtime-schema-cutover",
+      "domain": "postgresql-online-schema-evolution",
+      "primarySkill": "zero-downtime-schema-evolution-and-cutover-gates",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "municipal-waste-pickup-zone-assignment",
+      "scenarioType": "rolling-deployment-overlaps-long-running-schema-backfill",
+      "primaryRootCause": "breaking-relational-schema-contract-before-old-and-new-writers-and-unresolved-data-are-compatible",
+      "failureMode": "mixed-version-writes-and-ambiguous-legacy-zones-create-null-or-wrong-dispatch-assignment",
+      "solutionPattern": "expand-backfill-catchup-compatibility-validation-gated-contract-and-reversible-cutover",
+      "labFormat": "zero-downtime-data-migration-architecture-tabletop"
     }
   ],
   "rolling24": [
@@ -1529,7 +1530,6 @@
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-activity-tracing": 1,
       "dotnet-zip-extraction-security": 1,
       "dotnet-binary-wire-protocol": 1,
       "http-uri-composition": 1,
@@ -1552,21 +1552,22 @@
       "csharp-value-type-interface-boxing": 1,
       "mongodb-ttl-access-policy-design": 1,
       "http-client-problem-details-contract": 1,
-      "dotnet-json-streaming-ingestion": 1
+      "dotnet-json-streaming-ingestion": 1,
+      "postgresql-online-schema-evolution": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 5,
       "L3": 6,
       "L2": 8,
+      "L1": 4,
       "L4": 3,
-      "L5": 2
+      "L5": 2,
+      "L6": 1
     },
     "byFormat": {
-      "trace-lifetime-deterministic-failure": 1,
       "archive-upload-security-production-investigation": 1,
       "binary-wire-format-contract-investigation": 1,
       "http-base-uri-route-contract-investigation": 1,
@@ -1589,7 +1590,8 @@
       "mutable-counter-deterministic-reconciliation-lab": 1,
       "security-access-lifecycle-design-decision-with-local-contract-simulator": 1,
       "partner-http-error-contract-investigation": 1,
-      "streamed-batch-ingestion-production-incident": 1
+      "streamed-batch-ingestion-production-incident": 1,
+      "zero-downtime-data-migration-architecture-tabletop": 1
     }
   }
 }

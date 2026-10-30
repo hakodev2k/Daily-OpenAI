@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JBATCH-001",
-    "runSlot": "2026-10-30-16",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JBATCH-001-sports-gear-return-manifest-rejection",
+    "unitId": "UNIT-MIGR-001",
+    "runSlot": "2026-10-30-17",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MIGR-001-waste-collection-zone-zero-downtime-schema-cutover",
     "status": "READY",
-    "createdAt": "2026-10-30T16:05:43+07:00"
+    "createdAt": "2026-10-30T17:10:43+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 359,
-    "totalGenerated": 354,
+    "totalRunSlotsAttempted": 360,
+    "totalGenerated": 355,
     "totalFailed": 5
   },
   "learning": {
