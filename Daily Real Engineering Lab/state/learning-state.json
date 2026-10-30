@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MTTL-001",
-    "runSlot": "2026-10-30-14",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MTTL-001-guest-wifi-pass-expiry-policy",
+    "unitId": "UNIT-PDETAIL-001",
+    "runSlot": "2026-10-30-15",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-PDETAIL-001-tree-survey-partner-error-contract",
     "status": "READY",
-    "createdAt": "2026-10-30T14:09:54+07:00"
+    "createdAt": "2026-10-30T15:10:50+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 357,
-    "totalGenerated": 352,
+    "totalRunSlotsAttempted": 358,
+    "totalGenerated": 353,
     "totalFailed": 5
   },
   "learning": {

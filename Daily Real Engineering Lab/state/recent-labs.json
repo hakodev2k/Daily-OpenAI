@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-11",
-      "unitId": "UNIT-RECORD-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-RECORD-001-greenhouse-calibration-array-equality",
-      "domain": "csharp-record-value-semantics",
-      "primarySkill": "csharp-record-equality",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "smart-greenhouse-irrigation-calibration",
-      "scenarioType": "unchanged-config-polls-cause-repeated-controller-writes",
-      "primaryRootCause": "record-generated-equality-compares-array-property-by-reference-not-elements",
-      "failureMode": "unchanged-calibration-snapshots-trigger-redundant-device-config-pushes-and-mutated-input-can-mask-real-change",
-      "solutionPattern": "structural-array-comparison-plus-defensive-cached-snapshot",
-      "labFormat": "record-nested-array-equality-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-26-12",
       "unitId": "UNIT-API-002",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-API-002-park-checklist-conditional-update-race",
@@ -1498,11 +1483,24 @@
       "failureMode": "expired-or-revoked-pass-remains-accepted-until-storage-document-disappears",
       "solutionPattern": "enforce-expiry-and-revocation-at-each-authorization-decision-while-ttl-remains-storage-housekeeping",
       "labFormat": "security-access-lifecycle-design-decision-with-local-contract-simulator"
+    },
+    {
+      "runSlot": "2026-10-30-15",
+      "unitId": "UNIT-PDETAIL-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-PDETAIL-001-tree-survey-partner-error-contract",
+      "domain": "http-client-problem-details-contract",
+      "primarySkill": "http-problem-details-error-classification",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-urban-tree-survey-partner-sync",
+      "scenarioType": "partner-422-503-and-legacy-500-errors-lose-actionable-contract-fields",
+      "primaryRootCause": "ensuresuccessstatuscode-throws-before-reading-structured-partner-error-response",
+      "failureMode": "permanent-data-rejection-and-transient-outage-both-surface-as-generic-http-exceptions-without-problem-code-or-trace-id",
+      "solutionPattern": "parse-bounded-problem-details-and-emit-typed-status-aware-error-with-safe-fallback",
+      "labFormat": "partner-http-error-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-LEASE-001",
-    "UNIT-CORS-001",
     "UNIT-SBUS-001",
     "UNIT-TRACE-001",
     "UNIT-ZIPSEC-001",
@@ -1524,12 +1522,13 @@
     "UNIT-CLOCK-001",
     "UNIT-MCARD-001",
     "UNIT-LPROBE-001",
-    "UNIT-BOX-001"
+    "UNIT-BOX-001",
+    "UNIT-MTTL-001",
+    "UNIT-PDETAIL-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-cors": 1,
       "message-session-partitioning": 1,
       "dotnet-activity-tracing": 1,
       "dotnet-zip-extraction-security": 1,
@@ -1552,21 +1551,21 @@
       "observability-metric-cardinality": 1,
       "aspnetcore-health-probe-boundaries": 1,
       "csharp-value-type-interface-boxing": 1,
-      "mongodb-ttl-access-policy-design": 1
+      "mongodb-ttl-access-policy-design": 1,
+      "http-client-problem-details-contract": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
       "L3": 6,
       "L1": 5,
+      "L2": 8,
       "L4": 3,
       "L5": 2
     },
     "byFormat": {
-      "cors-preflight-contract-investigation": 1,
       "session-partition-head-of-line-deterministic-incident": 1,
       "trace-lifetime-deterministic-failure": 1,
       "archive-upload-security-production-investigation": 1,
@@ -1589,7 +1588,8 @@
       "metric-cardinality-incident-investigation-with-local-policy-simulator": 1,
       "kubernetes-probe-production-incident-contract": 1,
       "mutable-counter-deterministic-reconciliation-lab": 1,
-      "security-access-lifecycle-design-decision-with-local-contract-simulator": 1
+      "security-access-lifecycle-design-decision-with-local-contract-simulator": 1,
+      "partner-http-error-contract-investigation": 1
     }
   }
 }
