@@ -1,0 +1,58 @@
+{
+  "unitId": "UNIT-JLIFE-001",
+  "runSlot": "2026-10-30-18",
+  "title": "Trạm quan trắc gửi JSON hợp lệ nhưng bản tin không được xuất bản",
+  "domain": "dotnet-json-dom-lifetime",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-30T18:08:31+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "system-text-json",
+    "jsondocument-ownership",
+    "resource-lifetime",
+    "failure-path-testing"
+  ],
+  "primarySkill": "jsondocument-jsonelement-lifetime-ownership",
+  "prerequisites": [
+    "C# using/IDisposable",
+    "System.Text.Json basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "city-air-quality-station-measurement-publication",
+    "scenarioType": "valid-partner-json-fails-during-deferred-measurement-projection",
+    "primaryRootCause": "jsonelement-escapes-disposed-jsondocument-ownership-scope",
+    "failureMode": "valid-air-quality-readings-fail-with-objectdisposedexception-before-publication",
+    "solutionPattern": "detach-required-json-subtree-from-document-lifetime-before-returning",
+    "labFormat": "json-dom-ownership-deterministic-reproduction"
+  },
+  "manifest": [
+    "README.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/MeasurementReader.cs",
+    "solution/README.md",
+    "starter/AirQualityLab.csproj",
+    "starter/MeasurementPublisher.cs",
+    "starter/MeasurementReader.cs",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-14",
-      "unitId": "UNIT-LINQ-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LINQ-001-ferry-crew-roster-revision-reconciliation",
-      "domain": "dotnet-linq-data-reconciliation",
-      "primarySkill": "linq-distinctby-order-and-revision-semantics",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "regional-ferry-crew-duty-roster",
-      "scenarioType": "out-of-order-replayed-crew-assignment-feed",
-      "primaryRootCause": "linq-distinctby-selects-first-seen-record-instead-of-highest-revision",
-      "failureMode": "stale-crew-duty-revision-wins-when-feed-arrival-order-changes",
-      "solutionPattern": "revision-aware-group-reconciliation-with-deterministic-replay-tiebreak-and-conflict-rejection",
-      "labFormat": "linq-feed-order-invariance-investigation"
-    },
-    {
       "runSlot": "2026-10-26-15",
       "unitId": "UNIT-TCS-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-TCS-001-cold-chain-receipt-continuation-critical-section",
@@ -1499,11 +1484,24 @@
       "failureMode": "mixed-version-writes-and-ambiguous-legacy-zones-create-null-or-wrong-dispatch-assignment",
       "solutionPattern": "expand-backfill-catchup-compatibility-validation-gated-contract-and-reversible-cutover",
       "labFormat": "zero-downtime-data-migration-architecture-tabletop"
+    },
+    {
+      "runSlot": "2026-10-30-18",
+      "unitId": "UNIT-JLIFE-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JLIFE-001-air-quality-json-measurement-lifetime",
+      "domain": "dotnet-json-dom-lifetime",
+      "primarySkill": "jsondocument-jsonelement-lifetime-ownership",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "city-air-quality-station-measurement-publication",
+      "scenarioType": "valid-partner-json-fails-during-deferred-measurement-projection",
+      "primaryRootCause": "jsonelement-escapes-disposed-jsondocument-ownership-scope",
+      "failureMode": "valid-air-quality-readings-fail-with-objectdisposedexception-before-publication",
+      "solutionPattern": "detach-required-json-subtree-from-document-lifetime-before-returning",
+      "labFormat": "json-dom-ownership-deterministic-reproduction"
     }
   ],
   "rolling24": [
-    "UNIT-TRACE-001",
-    "UNIT-ZIPSEC-001",
     "UNIT-WIRE-001",
     "UNIT-BASEURI-001",
     "UNIT-CAL-001",
@@ -1525,12 +1523,13 @@
     "UNIT-BOX-001",
     "UNIT-MTTL-001",
     "UNIT-PDETAIL-001",
-    "UNIT-JBATCH-001"
+    "UNIT-JBATCH-001",
+    "UNIT-MIGR-001",
+    "UNIT-JLIFE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-zip-extraction-security": 1,
       "dotnet-binary-wire-protocol": 1,
       "http-uri-composition": 1,
       "dotnet-calendar-recurrence": 1,
@@ -1553,22 +1552,22 @@
       "mongodb-ttl-access-policy-design": 1,
       "http-client-problem-details-contract": 1,
       "dotnet-json-streaming-ingestion": 1,
-      "postgresql-online-schema-evolution": 1
+      "postgresql-online-schema-evolution": 1,
+      "dotnet-json-dom-lifetime": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
       "L2": 8,
-      "L1": 4,
+      "L1": 5,
       "L4": 3,
+      "L3": 5,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "archive-upload-security-production-investigation": 1,
       "binary-wire-format-contract-investigation": 1,
       "http-base-uri-route-contract-investigation": 1,
       "calendar-recurrence-investigation": 1,
@@ -1591,7 +1590,8 @@
       "security-access-lifecycle-design-decision-with-local-contract-simulator": 1,
       "partner-http-error-contract-investigation": 1,
       "streamed-batch-ingestion-production-incident": 1,
-      "zero-downtime-data-migration-architecture-tabletop": 1
+      "zero-downtime-data-migration-architecture-tabletop": 1,
+      "json-dom-ownership-deterministic-reproduction": 1
     }
   }
 }

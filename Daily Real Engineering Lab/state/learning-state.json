@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MIGR-001",
-    "runSlot": "2026-10-30-17",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MIGR-001-waste-collection-zone-zero-downtime-schema-cutover",
+    "unitId": "UNIT-JLIFE-001",
+    "runSlot": "2026-10-30-18",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JLIFE-001-air-quality-json-measurement-lifetime",
     "status": "READY",
-    "createdAt": "2026-10-30T17:10:43+07:00"
+    "createdAt": "2026-10-30T18:08:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 360,
-    "totalGenerated": 355,
+    "totalRunSlotsAttempted": 361,
+    "totalGenerated": 356,
     "totalFailed": 5
   },
   "learning": {
