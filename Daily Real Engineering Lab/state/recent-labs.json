@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-18",
-      "unitId": "UNIT-FS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-FS-001-dam-gate-schedule-snapshot-publication",
-      "domain": "dotnet-filesystem-consistency",
-      "primarySkill": "filesystem-publication-consistency",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "hydroelectric-dam-gate-operation-schedule",
-      "scenarioType": "daily-control-snapshot-refresh-with-concurrent-read",
-      "primaryRootCause": "in-place-file-truncation-exposes-incomplete-snapshot-before-publish-completes",
-      "failureMode": "control-console-reads-malformed-intermediate-schedule-during-refresh",
-      "solutionPattern": "write-complete-same-directory-staging-file-then-atomic-name-replacement-with-cleanup",
-      "labFormat": "filesystem-snapshot-consistency-investigation"
-    },
-    {
       "runSlot": "2026-10-26-19",
       "unitId": "UNIT-PAR-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PAR-001-permit-ocr-io-concurrency-capacity",
@@ -1499,10 +1484,24 @@
       "failureMode": "publisher-and-subscriber-deadlock-with-zero-deliveries",
       "solutionPattern": "schedule-continuations-asynchronously-across-critical-section",
       "labFormat": "continuation-scheduling-production-deadlock-investigation"
+    },
+    {
+      "runSlot": "2026-10-30-22",
+      "unitId": "UNIT-OPTS-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-OPTS-001-emergency-shelter-quota-hot-reload",
+      "domain": "dotnet-options-configuration-reload",
+      "primarySkill": "ioptionsmonitor-runtime-configuration",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "community-emergency-shelter-bed-allocation",
+      "scenarioType": "live-capacity-policy-change-not-applied-to-running-reservation-service",
+      "primaryRootCause": "singleton-service-caches-initial-ioptionsmonitor-currentvalue-across-config-reload",
+      "failureMode": "runtime-quota-reduction-not-enforced-until-service-restart",
+      "solutionPattern": "read-current-validated-options-at-reservation-decision-boundary",
+      "labFormat": "live-configuration-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-REGEX-001",
     "UNIT-DRAIN-001",
     "UNIT-GZIP-001",
     "UNIT-ONSTART-001",
@@ -1525,12 +1524,12 @@
     "UNIT-JLIFE-001",
     "UNIT-STARTNEW-001",
     "UNIT-EF-018",
-    "UNIT-TCS-001"
+    "UNIT-TCS-001",
+    "UNIT-OPTS-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-regex-engine": 1,
       "dotnet-background-worker-delivery-semantics": 1,
       "dotnet-gzip-stream-lifecycle": 1,
       "aspnetcore-response-lifecycle": 1,
@@ -1553,22 +1552,22 @@
       "dotnet-json-dom-lifetime": 1,
       "dotnet-async-task-lifecycle": 1,
       "ef-core-change-tracking": 1,
-      "dotnet-task-continuation-scheduling": 1
+      "dotnet-task-continuation-scheduling": 1,
+      "dotnet-options-configuration-reload": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 5,
       "L4": 4,
-      "L2": 6,
+      "L2": 7,
       "L3": 6,
       "L5": 2,
+      "L1": 4,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-regex-performance-failure-lab": 1,
       "worker-shutdown-ack-boundary-refactoring-workshop": 1,
       "gzip-integrity-contract-investigation": 1,
       "streaming-response-header-production-incident": 1,
@@ -1591,7 +1590,8 @@
       "json-dom-ownership-deterministic-reproduction": 1,
       "nested-task-production-investigation-with-controlled-gateway": 1,
       "tracked-state-vs-set-based-write-refactoring-workshop": 1,
-      "continuation-scheduling-production-deadlock-investigation": 1
+      "continuation-scheduling-production-deadlock-investigation": 1,
+      "live-configuration-contract-investigation": 1
     }
   }
 }
