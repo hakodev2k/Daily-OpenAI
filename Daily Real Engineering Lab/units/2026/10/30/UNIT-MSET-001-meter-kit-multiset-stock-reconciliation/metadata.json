@@ -1,0 +1,43 @@
+{
+  "unitId": "UNIT-MSET-001",
+  "runSlot": "2026-10-30-23",
+  "title": "Đối soát số lượng bộ kit đồng hồ nước",
+  "domain": "csharp-linq-multiset-reconciliation",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-30T23:06:01+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "linq-set-operators",
+    "multiset-frequency-reconciliation",
+    "collection-contract-testing"
+  ],
+  "primarySkill": "linq-set-vs-multiset-semantics",
+  "prerequisites": [
+    "IEnumerable",
+    "LINQ",
+    "Dictionary<TKey,TValue>"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "district-water-meter-replacement-kit-warehouse",
+    "scenarioType": "manifest-vs-scanner-quantity-reconciliation",
+    "primaryRootCause": "set-difference-collapses-repeated-sku-occurrences-in-counted-stock",
+    "failureMode": "missing-and-surplus-physical-kits-not-reported-when-sku-exists-on-both-sides",
+    "solutionPattern": "frequency-aware-multiset-difference-preserving-occurrence-counts",
+    "labFormat": "deterministic-stock-reconciliation-contract-lab"
+  },
+  "reproducibility": {
+    "reproduce": "./reproduce.ps1",
+    "verify": "./verify.ps1",
+    "learnerEditablePath": "starter/Program.cs"
+  }
+}

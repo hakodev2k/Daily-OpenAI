@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-19",
-      "unitId": "UNIT-PAR-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PAR-001-permit-ocr-io-concurrency-capacity",
-      "domain": "dotnet-io-parallelism",
-      "primarySkill": "io-bound-parallelism-capacity-planning",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "municipal-permit-document-ocr-import",
-      "scenarioType": "independent-io-bound-document-batch-misses-sla-despite-partner-headroom",
-      "primaryRootCause": "cpu-derived-low-parallelism-policy-ignores-operator-io-concurrency-setting",
-      "failureMode": "batch-throughput-limited-to-two-inflight-ocr-calls-while-downstream-allows-eight",
-      "solutionPattern": "configurable-bounded-io-parallelism-clamped-to-downstream-capacity",
-      "labFormat": "io-capacity-configuration-investigation"
-    },
-    {
       "runSlot": "2026-10-26-20",
       "unitId": "UNIT-PGIDX-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PGIDX-001-library-patron-upsert-partial-unique-index",
@@ -1499,6 +1484,21 @@
       "failureMode": "runtime-quota-reduction-not-enforced-until-service-restart",
       "solutionPattern": "read-current-validated-options-at-reservation-decision-boundary",
       "labFormat": "live-configuration-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-30-23",
+      "unitId": "UNIT-MSET-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MSET-001-meter-kit-multiset-stock-reconciliation",
+      "domain": "csharp-linq-multiset-reconciliation",
+      "primarySkill": "linq-set-vs-multiset-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "district-water-meter-replacement-kit-warehouse",
+      "scenarioType": "manifest-vs-scanner-quantity-reconciliation",
+      "primaryRootCause": "set-difference-collapses-repeated-sku-occurrences-in-counted-stock",
+      "failureMode": "missing-and-surplus-physical-kits-not-reported-when-sku-exists-on-both-sides",
+      "solutionPattern": "frequency-aware-multiset-difference-preserving-occurrence-counts",
+      "labFormat": "deterministic-stock-reconciliation-contract-lab"
     }
   ],
   "rolling24": [
@@ -1530,7 +1530,6 @@
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-background-worker-delivery-semantics": 1,
       "dotnet-gzip-stream-lifecycle": 1,
       "aspnetcore-response-lifecycle": 1,
       "webhook-signing-key-rotation": 1,
@@ -1553,22 +1552,22 @@
       "dotnet-async-task-lifecycle": 1,
       "ef-core-change-tracking": 1,
       "dotnet-task-continuation-scheduling": 1,
-      "dotnet-options-configuration-reload": 1
+      "dotnet-options-configuration-reload": 1,
+      "csharp-linq-multiset-reconciliation": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L4": 4,
       "L2": 7,
       "L3": 6,
       "L5": 2,
-      "L1": 4,
+      "L1": 5,
+      "L4": 3,
       "L6": 1
     },
     "byFormat": {
-      "worker-shutdown-ack-boundary-refactoring-workshop": 1,
       "gzip-integrity-contract-investigation": 1,
       "streaming-response-header-production-incident": 1,
       "webhook-trust-cutover-architecture-decision-tabletop": 1,
@@ -1591,7 +1590,8 @@
       "nested-task-production-investigation-with-controlled-gateway": 1,
       "tracked-state-vs-set-based-write-refactoring-workshop": 1,
       "continuation-scheduling-production-deadlock-investigation": 1,
-      "live-configuration-contract-investigation": 1
+      "live-configuration-contract-investigation": 1,
+      "deterministic-stock-reconciliation-contract-lab": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OPTS-001",
-    "runSlot": "2026-10-30-22",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-OPTS-001-emergency-shelter-quota-hot-reload",
+    "unitId": "UNIT-MSET-001",
+    "runSlot": "2026-10-30-23",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MSET-001-meter-kit-multiset-stock-reconciliation",
     "status": "READY",
-    "createdAt": "2026-10-30T22:11:40+07:00"
+    "createdAt": "2026-10-30T23:06:01+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 365,
-    "totalGenerated": 360,
+    "totalRunSlotsAttempted": 366,
+    "totalGenerated": 361,
     "totalFailed": 5
   },
   "learning": {
