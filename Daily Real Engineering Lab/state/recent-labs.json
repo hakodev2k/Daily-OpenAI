@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-20",
-      "unitId": "UNIT-PGIDX-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-PGIDX-001-library-patron-upsert-partial-unique-index",
-      "domain": "postgresql-index-inference",
-      "primarySkill": "postgresql-on-conflict-partial-index-inference",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "regional-library-patron-card-import",
-      "scenarioType": "idempotent-patron-import-fails-after-soft-delete-index-policy-rollout",
-      "primaryRootCause": "on-conflict-target-does-not-match-partial-unique-index-predicate",
-      "failureMode": "valid-import-raises-no-matching-unique-constraint-error-despite-active-uniqueness-index",
-      "solutionPattern": "infer-partial-unique-index-using-matching-conflict-target-predicate-and-regression-fixtures",
-      "labFormat": "postgresql-upsert-index-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-26-21",
       "unitId": "UNIT-LOG-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LOG-001-aircraft-warranty-claim-structured-logging",
@@ -1499,11 +1484,24 @@
       "failureMode": "missing-and-surplus-physical-kits-not-reported-when-sku-exists-on-both-sides",
       "solutionPattern": "frequency-aware-multiset-difference-preserving-occurrence-counts",
       "labFormat": "deterministic-stock-reconciliation-contract-lab"
+    },
+    {
+      "runSlot": "2026-10-31-00",
+      "unitId": "UNIT-DISP-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-DISP-001-coastal-vessel-archive-dual-failure",
+      "domain": "dotnet-async-resource-exception-provenance",
+      "primarySkill": "async-disposal-primary-error-preservation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "coastal-vessel-inspection-archive-export",
+      "scenarioType": "archive-upload-and-resource-finalization-fail-in-same-attempt",
+      "primaryRootCause": "await-using-disposeasync-fault-masks-prior-body-exception",
+      "failureMode": "operator-sees-finalization-error-but-original-upload-rejection-is-lost",
+      "solutionPattern": "preserve-primary-and-cleanup-faults-as-ordered-aggregate-with-stack-provenance",
+      "labFormat": "dual-fault-resource-lifecycle-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-DRAIN-001",
-    "UNIT-GZIP-001",
     "UNIT-ONSTART-001",
     "UNIT-HMACROT-001",
     "UNIT-EXAGG-001",
@@ -1525,12 +1523,13 @@
     "UNIT-STARTNEW-001",
     "UNIT-EF-018",
     "UNIT-TCS-001",
-    "UNIT-OPTS-001"
+    "UNIT-OPTS-001",
+    "UNIT-MSET-001",
+    "UNIT-DISP-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-gzip-stream-lifecycle": 1,
       "aspnetcore-response-lifecycle": 1,
       "webhook-signing-key-rotation": 1,
       "dotnet-task-fault-aggregation": 1,
@@ -1553,22 +1552,22 @@
       "ef-core-change-tracking": 1,
       "dotnet-task-continuation-scheduling": 1,
       "dotnet-options-configuration-reload": 1,
-      "csharp-linq-multiset-reconciliation": 1
+      "csharp-linq-multiset-reconciliation": 1,
+      "dotnet-async-resource-exception-provenance": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 7,
       "L3": 6,
       "L5": 2,
       "L1": 5,
+      "L2": 7,
       "L4": 3,
       "L6": 1
     },
     "byFormat": {
-      "gzip-integrity-contract-investigation": 1,
       "streaming-response-header-production-incident": 1,
       "webhook-trust-cutover-architecture-decision-tabletop": 1,
       "parallel-fault-diagnostics-deterministic-lab": 1,
@@ -1591,7 +1590,8 @@
       "tracked-state-vs-set-based-write-refactoring-workshop": 1,
       "continuation-scheduling-production-deadlock-investigation": 1,
       "live-configuration-contract-investigation": 1,
-      "deterministic-stock-reconciliation-contract-lab": 1
+      "deterministic-stock-reconciliation-contract-lab": 1,
+      "dual-fault-resource-lifecycle-investigation": 1
     }
   }
 }

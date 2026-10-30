@@ -1,0 +1,48 @@
+{
+  "unitId": "UNIT-DISP-001",
+  "runSlot": "2026-10-31-00",
+  "title": "Sự cố lưu hồ sơ kiểm định tàu ven biển",
+  "domain": "dotnet-async-resource-exception-provenance",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-31T00:09:51.412+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "IAsyncDisposable",
+    "async-exception-propagation",
+    "exception-provenance",
+    "failure-path-testing"
+  ],
+  "primarySkill": "async-disposal-primary-error-preservation",
+  "prerequisites": [
+    "C# try/finally",
+    "async/await",
+    "IAsyncDisposable",
+    "exception handling"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coastal-vessel-inspection-archive-export",
+    "scenarioType": "archive-upload-and-resource-finalization-fail-in-same-attempt",
+    "primaryRootCause": "await-using-disposeasync-fault-masks-prior-body-exception",
+    "failureMode": "operator-sees-finalization-error-but-original-upload-rejection-is-lost",
+    "solutionPattern": "preserve-primary-and-cleanup-faults-as-ordered-aggregate-with-stack-provenance",
+    "labFormat": "dual-fault-resource-lifecycle-investigation"
+  },
+  "reproducibility": {
+    "reproduce": "./reproduce.ps1",
+    "verify": "./verify.ps1",
+    "learnerEditablePath": "starter/Program.cs"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}
