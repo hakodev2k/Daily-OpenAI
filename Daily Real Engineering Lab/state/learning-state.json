@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-BOX-001",
-    "runSlot": "2026-10-30-13",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-BOX-001-hotel-laundry-scan-counter-reconciliation",
+    "unitId": "UNIT-MTTL-001",
+    "runSlot": "2026-10-30-14",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MTTL-001-guest-wifi-pass-expiry-policy",
     "status": "READY",
-    "createdAt": "2026-10-30T13:07:20+07:00"
+    "createdAt": "2026-10-30T14:09:54+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 356,
-    "totalGenerated": 351,
+    "totalRunSlotsAttempted": 357,
+    "totalGenerated": 352,
     "totalFailed": 5
   },
   "learning": {

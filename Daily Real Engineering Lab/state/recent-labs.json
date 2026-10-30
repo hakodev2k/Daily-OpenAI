@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-10",
-      "unitId": "UNIT-EF-015",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-EF-015-exam-grades-bulk-publish-tracker-divergence",
-      "domain": "ef-core",
-      "primarySkill": "ef-core-bulk-update-tracker-coherence",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "vocational-certification-exam-grade-publication",
-      "scenarioType": "bulk-grade-release-followed-by-review-note-amendment",
-      "primaryRootCause": "executeupdate-bypasses-change-tracker-then-full-entity-update-overwrites-database-state",
-      "failureMode": "published-exam-grade-silently-reverts-to-draft-after-review-note-save",
-      "solutionPattern": "reload-tracked-entity-after-set-based-update-and-persist-only-intended-property",
-      "labFormat": "ef-core-bulk-update-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-26-11",
       "unitId": "UNIT-RECORD-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-RECORD-001-greenhouse-calibration-array-equality",
@@ -1498,6 +1483,21 @@
       "failureMode": "worker-counts-accepted-bags-but-shift-report-reads-zero",
       "solutionPattern": "reference-semantics-for-shared-mutable-counter-contract",
       "labFormat": "mutable-counter-deterministic-reconciliation-lab"
+    },
+    {
+      "runSlot": "2026-10-30-14",
+      "unitId": "UNIT-MTTL-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MTTL-001-guest-wifi-pass-expiry-policy",
+      "domain": "mongodb-ttl-access-policy-design",
+      "primarySkill": "mongodb-ttl-vs-authorization-expiry",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "coworking-guest-wifi-access-pass",
+      "scenarioType": "expired-or-revoked-guest-pass-accepted-during-asynchronous-storage-cleanup",
+      "primaryRootCause": "authorization-equates-document-existence-with-current-validity-despite-eventual-ttl-cleanup",
+      "failureMode": "expired-or-revoked-pass-remains-accepted-until-storage-document-disappears",
+      "solutionPattern": "enforce-expiry-and-revocation-at-each-authorization-decision-while-ttl-remains-storage-housekeeping",
+      "labFormat": "security-access-lifecycle-design-decision-with-local-contract-simulator"
     }
   ],
   "rolling24": [
@@ -1529,7 +1529,6 @@
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-buffer-ownership": 1,
       "aspnetcore-cors": 1,
       "message-session-partitioning": 1,
       "dotnet-activity-tracing": 1,
@@ -1552,21 +1551,21 @@
       "dotnet-timeprovider-testability": 1,
       "observability-metric-cardinality": 1,
       "aspnetcore-health-probe-boundaries": 1,
-      "csharp-value-type-interface-boxing": 1
+      "csharp-value-type-interface-boxing": 1,
+      "mongodb-ttl-access-policy-design": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L4": 4,
       "L2": 8,
       "L3": 6,
       "L1": 5,
-      "L5": 1
+      "L4": 3,
+      "L5": 2
     },
     "byFormat": {
-      "buffer-ownership-refactoring-workshop": 1,
       "cors-preflight-contract-investigation": 1,
       "session-partition-head-of-line-deterministic-incident": 1,
       "trace-lifetime-deterministic-failure": 1,
@@ -1589,7 +1588,8 @@
       "virtual-clock-testability-refactoring-workshop": 1,
       "metric-cardinality-incident-investigation-with-local-policy-simulator": 1,
       "kubernetes-probe-production-incident-contract": 1,
-      "mutable-counter-deterministic-reconciliation-lab": 1
+      "mutable-counter-deterministic-reconciliation-lab": 1,
+      "security-access-lifecycle-design-decision-with-local-contract-simulator": 1
     }
   }
 }
