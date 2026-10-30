@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-16",
-      "unitId": "UNIT-CSV-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-CSV-001-clinical-trial-import-column-drift",
-      "domain": "dotnet-csv-data-ingestion",
-      "primarySkill": "csv-record-grammar",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "clinical-trial-site-report-import",
-      "scenarioType": "partner-csv-export-with-quoted-multiline-clinical-notes",
-      "primaryRootCause": "line-and-delimiter-splitting-ignores-csv-quoted-record-grammar",
-      "failureMode": "valid-clinical-notes-shift-columns-and-split-one-record-into-multiple-patients",
-      "solutionPattern": "stateful-csv-record-parser-respecting-quoted-delimiters-escaped-quotes-and-record-boundaries",
-      "labFormat": "partner-data-import-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-26-17",
       "unitId": "UNIT-REDIR-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-REDIR-001-transit-pass-redirect-auth-boundary",
@@ -1499,10 +1484,24 @@
       "failureMode": "premature-job-success-and-missing-partner-rejection-from-job-result",
       "solutionPattern": "own-and-await-the-complete-async-operation-without-detached-inner-task",
       "labFormat": "nested-task-production-investigation-with-controlled-gateway"
+    },
+    {
+      "runSlot": "2026-10-30-20",
+      "unitId": "UNIT-EF-018",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-EF-018-theatre-prop-reservation-tracker-drift",
+      "domain": "ef-core-change-tracking",
+      "primarySkill": "efcore-executeupdate-tracked-entity-coherence",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-theatre-prop-rental-counter",
+      "scenarioType": "bulk-stage-allocation-followed-by-counter-rental-in-same-dbcontext",
+      "primaryRootCause": "set-based-executeupdate-bypasses-tracked-entity-snapshot-before-followup-savechanges",
+      "failureMode": "counter-rental-overwrites-earlier-bulk-allocation-and-accepts-unavailable-props",
+      "solutionPattern": "refresh-tracked-state-before-dependent-mutation-and-test-inventory-availability-guard",
+      "labFormat": "tracked-state-vs-set-based-write-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-BASEURI-001",
     "UNIT-CAL-001",
     "UNIT-REGEX-001",
     "UNIT-DRAIN-001",
@@ -1525,12 +1524,12 @@
     "UNIT-JBATCH-001",
     "UNIT-MIGR-001",
     "UNIT-JLIFE-001",
-    "UNIT-STARTNEW-001"
+    "UNIT-STARTNEW-001",
+    "UNIT-EF-018"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-uri-composition": 1,
       "dotnet-calendar-recurrence": 1,
       "dotnet-regex-engine": 1,
       "dotnet-background-worker-delivery-semantics": 1,
@@ -1553,22 +1552,22 @@
       "dotnet-json-streaming-ingestion": 1,
       "postgresql-online-schema-evolution": 1,
       "dotnet-json-dom-lifetime": 1,
-      "dotnet-async-task-lifecycle": 1
+      "dotnet-async-task-lifecycle": 1,
+      "ef-core-change-tracking": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
+      "L2": 7,
       "L1": 5,
-      "L4": 3,
+      "L4": 4,
       "L3": 5,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "http-base-uri-route-contract-investigation": 1,
       "calendar-recurrence-investigation": 1,
       "deterministic-regex-performance-failure-lab": 1,
       "worker-shutdown-ack-boundary-refactoring-workshop": 1,
@@ -1591,7 +1590,8 @@
       "streamed-batch-ingestion-production-incident": 1,
       "zero-downtime-data-migration-architecture-tabletop": 1,
       "json-dom-ownership-deterministic-reproduction": 1,
-      "nested-task-production-investigation-with-controlled-gateway": 1
+      "nested-task-production-investigation-with-controlled-gateway": 1,
+      "tracked-state-vs-set-based-write-refactoring-workshop": 1
     }
   }
 }

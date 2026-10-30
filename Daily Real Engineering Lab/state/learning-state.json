@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-STARTNEW-001",
-    "runSlot": "2026-10-30-19",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-STARTNEW-001-water-treatment-report-dispatch-outer-task",
+    "unitId": "UNIT-EF-018",
+    "runSlot": "2026-10-30-20",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-EF-018-theatre-prop-reservation-tracker-drift",
     "status": "READY",
-    "createdAt": "2026-10-30T19:17:39.352+07:00"
+    "createdAt": "2026-10-30T20:11:42+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 362,
-    "totalGenerated": 357,
+    "totalRunSlotsAttempted": 363,
+    "totalGenerated": 358,
     "totalFailed": 5
   },
   "learning": {
