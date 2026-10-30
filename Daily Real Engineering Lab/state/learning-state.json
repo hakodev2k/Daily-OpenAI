@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PDETAIL-001",
-    "runSlot": "2026-10-30-15",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-PDETAIL-001-tree-survey-partner-error-contract",
+    "unitId": "UNIT-JBATCH-001",
+    "runSlot": "2026-10-30-16",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JBATCH-001-sports-gear-return-manifest-rejection",
     "status": "READY",
-    "createdAt": "2026-10-30T15:10:50+07:00"
+    "createdAt": "2026-10-30T16:05:43+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 358,
-    "totalGenerated": 353,
+    "totalRunSlotsAttempted": 359,
+    "totalGenerated": 354,
     "totalFailed": 5
   },
   "learning": {

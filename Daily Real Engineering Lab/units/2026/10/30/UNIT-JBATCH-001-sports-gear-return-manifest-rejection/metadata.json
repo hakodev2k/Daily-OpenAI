@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-JBATCH-001",
+  "runSlot": "2026-10-30-16",
+  "title": "Bảng kê hoàn trả thiết bị thể thao: lô bị từ chối nhưng số liệu đã thay đổi",
+  "domain": "dotnet-json-streaming-ingestion",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-30T16:05:43+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "streaming-json-batch-atomicity",
+    "system-text-json-async-enumeration",
+    "business-validation-boundaries",
+    "transactional-publication"
+  ],
+  "prerequisites": [
+    "C#/.NET 8",
+    "async/await",
+    "JSON array format",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-sports-equipment-return-processing",
+    "scenarioType": "malformed-final-manifest-row-rejects-import-after-earlier-rows-observed",
+    "primaryRootCause": "streaming-json-array-applies-side-effects-before-full-document-validation",
+    "failureMode": "rejected-equipment-return-batch-leaves-partial-inventory-changes",
+    "solutionPattern": "stage-and-validate-entire-stream-then-commit-batch-atomically",
+    "labFormat": "streamed-batch-ingestion-production-incident"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-12",
-      "unitId": "UNIT-API-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-API-002-park-checklist-conditional-update-race",
-      "domain": "api-concurrency-contracts",
-      "primarySkill": "http-conditional-update-optimistic-concurrency",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "municipal-park-maintenance-checklist",
-      "scenarioType": "two-editors-submit-conditional-updates-from-same-revision",
-      "primaryRootCause": "etag-precondition-checked-before-non-atomic-write",
-      "failureMode": "two-conflicting-writes-return-success-while-one-edit-is-lost",
-      "solutionPattern": "atomic-revision-compare-and-swap-with-precondition-failure",
-      "labFormat": "conditional-write-race-investigation"
-    },
-    {
       "runSlot": "2026-10-26-13",
       "unitId": "UNIT-COOKIE-001",
       "domain": "http-client-session-security",
@@ -1498,10 +1483,24 @@
       "failureMode": "permanent-data-rejection-and-transient-outage-both-surface-as-generic-http-exceptions-without-problem-code-or-trace-id",
       "solutionPattern": "parse-bounded-problem-details-and-emit-typed-status-aware-error-with-safe-fallback",
       "labFormat": "partner-http-error-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-30-16",
+      "unitId": "UNIT-JBATCH-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JBATCH-001-sports-gear-return-manifest-rejection",
+      "domain": "dotnet-json-streaming-ingestion",
+      "primarySkill": "streaming-json-batch-atomicity",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "community-sports-equipment-return-processing",
+      "scenarioType": "malformed-final-manifest-row-rejects-import-after-earlier-rows-observed",
+      "primaryRootCause": "streaming-json-array-applies-side-effects-before-full-document-validation",
+      "failureMode": "rejected-equipment-return-batch-leaves-partial-inventory-changes",
+      "solutionPattern": "stage-and-validate-entire-stream-then-commit-batch-atomically",
+      "labFormat": "streamed-batch-ingestion-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-SBUS-001",
     "UNIT-TRACE-001",
     "UNIT-ZIPSEC-001",
     "UNIT-WIRE-001",
@@ -1524,12 +1523,12 @@
     "UNIT-LPROBE-001",
     "UNIT-BOX-001",
     "UNIT-MTTL-001",
-    "UNIT-PDETAIL-001"
+    "UNIT-PDETAIL-001",
+    "UNIT-JBATCH-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "message-session-partitioning": 1,
       "dotnet-activity-tracing": 1,
       "dotnet-zip-extraction-security": 1,
       "dotnet-binary-wire-protocol": 1,
@@ -1552,21 +1551,21 @@
       "aspnetcore-health-probe-boundaries": 1,
       "csharp-value-type-interface-boxing": 1,
       "mongodb-ttl-access-policy-design": 1,
-      "http-client-problem-details-contract": 1
+      "http-client-problem-details-contract": 1,
+      "dotnet-json-streaming-ingestion": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L3": 6,
       "L1": 5,
+      "L3": 6,
       "L2": 8,
       "L4": 3,
       "L5": 2
     },
     "byFormat": {
-      "session-partition-head-of-line-deterministic-incident": 1,
       "trace-lifetime-deterministic-failure": 1,
       "archive-upload-security-production-investigation": 1,
       "binary-wire-format-contract-investigation": 1,
@@ -1589,7 +1588,8 @@
       "kubernetes-probe-production-incident-contract": 1,
       "mutable-counter-deterministic-reconciliation-lab": 1,
       "security-access-lifecycle-design-decision-with-local-contract-simulator": 1,
-      "partner-http-error-contract-investigation": 1
+      "partner-http-error-contract-investigation": 1,
+      "streamed-batch-ingestion-production-incident": 1
     }
   }
 }
