@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-05",
-      "unitId": "UNIT-SQL-009",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-SQL-009-partner-confirmation-null-antijoin",
-      "domain": "postgresql-sql-semantics",
-      "primarySkill": "sql-three-valued-logic",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "insurance-partner-coverage-confirmation",
-      "scenarioType": "nightly-batch-reconciliation-empty-result",
-      "primaryRootCause": "nullable-subquery-membership-yields-unknown-for-not-in",
-      "failureMode": "missing-active-coverages-omitted-from-reconciliation-when-partner-import-has-null-id",
-      "solutionPattern": "correlated-not-exists-anti-semi-join-with-explicit-scope",
-      "labFormat": "sql-three-valued-logic-investigation"
-    },
-    {
       "runSlot": "2026-10-26-06",
       "unitId": "UNIT-UNICODE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-UNICODE-001-visitor-pass-canonical-equivalence",
@@ -1498,10 +1483,24 @@
       "failureMode": "spoofed-direct-callback-passes-partner-ip-allowlist",
       "solutionPattern": "trusted-single-hop-proxy-peer-gate-then-validated-forwarded-ip-policy",
       "labFormat": "trusted-proxy-source-identity-investigation"
+    },
+    {
+      "runSlot": "2026-10-30-09",
+      "unitId": "UNIT-HBODY-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-HBODY-001-scholarship-evidence-stream-deadline",
+      "domain": "dotnet-http-streaming-deadlines",
+      "primarySkill": "http-response-body-end-to-end-deadline",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "university-scholarship-evidence-document-ingestion",
+      "scenarioType": "partner-download-returns-headers-fast-but-stream-body-stalls",
+      "primaryRootCause": "httpclient-timeout-ends-at-headers-with-responseheadersread-and-body-read-has-no-deadline-token",
+      "failureMode": "scholarship-evidence-worker-exceeds-request-deadline-while-reading-response-body",
+      "solutionPattern": "single-linked-end-to-end-cancellation-budget-propagated-through-headers-and-body-read",
+      "labFormat": "http-stream-body-deadline-production-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-SET-001",
     "UNIT-STREAMPOS-001",
     "UNIT-FMASK-001",
     "UNIT-JDRIFT-001",
@@ -1524,12 +1523,12 @@
     "UNIT-OCACHE-001",
     "UNIT-TZAMB-001",
     "UNIT-PTIMER-001",
-    "UNIT-IPTRUST-001"
+    "UNIT-IPTRUST-001",
+    "UNIT-HBODY-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-sortedset-ordering": 1,
       "dotnet-streamreader-checkpoint-semantics": 1,
       "dotnet-flags-authorization-semantics": 1,
       "json-ingress-contract-validation": 1,
@@ -1552,22 +1551,22 @@
       "aspnetcore-output-caching": 1,
       "dotnet-timezone-contracts": 1,
       "dotnet-periodictimer-consumer-contract": 1,
-      "aspnetcore-proxy-client-ip-trust": 1
+      "aspnetcore-proxy-client-ip-trust": 1,
+      "dotnet-http-streaming-deadlines": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
-      "L3": 6,
+      "L3": 7,
       "L1": 5,
       "L6": 1,
       "L4": 3,
+      "L2": 7,
       "L5": 1
     },
     "byFormat": {
-      "ordered-set-contract-evidence-investigation": 1,
       "stream-checkpoint-production-forensics": 1,
       "deterministic-permission-policy-contract-lab": 1,
       "json-contract-drift-production-incident": 1,
@@ -1590,7 +1589,8 @@
       "localized-response-cache-production-forensics": 1,
       "timezone-contract-refactoring-workshop": 1,
       "deterministic-heartbeat-broadcast-contract-lab": 1,
-      "trusted-proxy-source-identity-investigation": 1
+      "trusted-proxy-source-identity-investigation": 1,
+      "http-stream-body-deadline-production-investigation": 1
     }
   }
 }
