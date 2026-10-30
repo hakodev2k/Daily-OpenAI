@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-COOKIE-001",
+  "runSlot": "2026-10-31-01",
+  "title": "Hồ sơ hội viên thủy cung bị lẫn giữa hai phiên partner",
+  "domain": "http-client-cookie-session-isolation",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-31T01:09:16.983+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "httpclient-handler-lifetime",
+    "cookiecontainer-session-isolation",
+    "cross-tenant-security-regression"
+  ],
+  "prerequisites": [
+    "HTTP cookie cơ bản",
+    "HttpClient request/response",
+    "C# async/await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "aquarium-annual-membership-renewal",
+    "scenarioType": "sequential-partner-profile-requests-across-tenant-sessions",
+    "primaryRootCause": "one-httpclienthandler-cookiecontainer-shared-across-unrelated-tenant-sessions",
+    "failureMode": "unauthenticated-second-tenant-sees-first-tenant-profile-and-first-tenant-loses-own-session-after-second-login",
+    "solutionPattern": "per-tenant-cookie-jar-ownership-and-explicit-client-lifecycle-with-cross-tenant-contract-tests",
+    "labFormat": "cross-tenant-partner-session-production-incident"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

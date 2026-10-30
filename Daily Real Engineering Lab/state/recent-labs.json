@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-21",
-      "unitId": "UNIT-LOG-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-LOG-001-aircraft-warranty-claim-structured-logging",
-      "domain": "dotnet-structured-logging",
-      "primarySkill": "ilogger-message-template-structured-state",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "aviation-spare-parts-warranty-claims",
-      "scenarioType": "incident-triage-cannot-filter-claim-logs-by-part-number",
-      "primaryRootCause": "interpolated-logging-message-is-rendered-before-structured-state-capture",
-      "failureMode": "human-readable-warning-present-but-structured-claim-and-part-fields-absent",
-      "solutionPattern": "parameterized-message-template-preserves-named-structured-properties",
-      "labFormat": "structured-logging-evidence-production-incident"
-    },
-    {
       "runSlot": "2026-10-26-22",
       "unitId": "UNIT-JOPT-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-JOPT-001-museum-condition-json-format-switch",
@@ -1499,10 +1484,24 @@
       "failureMode": "operator-sees-finalization-error-but-original-upload-rejection-is-lost",
       "solutionPattern": "preserve-primary-and-cleanup-faults-as-ordered-aggregate-with-stack-provenance",
       "labFormat": "dual-fault-resource-lifecycle-investigation"
+    },
+    {
+      "runSlot": "2026-10-31-01",
+      "unitId": "UNIT-COOKIE-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-COOKIE-001-aquarium-member-profile-session-isolation",
+      "domain": "http-client-cookie-session-isolation",
+      "primarySkill": "httpclient-handler-lifetime",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "aquarium-annual-membership-renewal",
+      "scenarioType": "sequential-partner-profile-requests-across-tenant-sessions",
+      "primaryRootCause": "one-httpclienthandler-cookiecontainer-shared-across-unrelated-tenant-sessions",
+      "failureMode": "unauthenticated-second-tenant-sees-first-tenant-profile-and-first-tenant-loses-own-session-after-second-login",
+      "solutionPattern": "per-tenant-cookie-jar-ownership-and-explicit-client-lifecycle-with-cross-tenant-contract-tests",
+      "labFormat": "cross-tenant-partner-session-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-ONSTART-001",
     "UNIT-HMACROT-001",
     "UNIT-EXAGG-001",
     "UNIT-CQCLAIM-001",
@@ -1525,12 +1524,12 @@
     "UNIT-TCS-001",
     "UNIT-OPTS-001",
     "UNIT-MSET-001",
-    "UNIT-DISP-001"
+    "UNIT-DISP-001",
+    "UNIT-COOKIE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-response-lifecycle": 1,
       "webhook-signing-key-rotation": 1,
       "dotnet-task-fault-aggregation": 1,
       "dotnet-concurrentqueue-claim-semantics": 1,
@@ -1553,22 +1552,22 @@
       "dotnet-task-continuation-scheduling": 1,
       "dotnet-options-configuration-reload": 1,
       "csharp-linq-multiset-reconciliation": 1,
-      "dotnet-async-resource-exception-provenance": 1
+      "dotnet-async-resource-exception-provenance": 1,
+      "http-client-cookie-session-isolation": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
       "L5": 2,
       "L1": 5,
       "L2": 7,
+      "L3": 6,
       "L4": 3,
       "L6": 1
     },
     "byFormat": {
-      "streaming-response-header-production-incident": 1,
       "webhook-trust-cutover-architecture-decision-tabletop": 1,
       "parallel-fault-diagnostics-deterministic-lab": 1,
       "two-worker-queue-claim-evidence-investigation": 1,
@@ -1591,7 +1590,8 @@
       "continuation-scheduling-production-deadlock-investigation": 1,
       "live-configuration-contract-investigation": 1,
       "deterministic-stock-reconciliation-contract-lab": 1,
-      "dual-fault-resource-lifecycle-investigation": 1
+      "dual-fault-resource-lifecycle-investigation": 1,
+      "cross-tenant-partner-session-production-incident": 1
     }
   }
 }

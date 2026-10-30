@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DISP-001",
-    "runSlot": "2026-10-31-00",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-DISP-001-coastal-vessel-archive-dual-failure",
+    "unitId": "UNIT-COOKIE-001",
+    "runSlot": "2026-10-31-01",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-COOKIE-001-aquarium-member-profile-session-isolation",
     "status": "READY",
-    "createdAt": "2026-10-31T00:09:51.412+07:00"
+    "createdAt": "2026-10-31T01:09:16.983+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 367,
-    "totalGenerated": 362,
+    "totalRunSlotsAttempted": 368,
+    "totalGenerated": 363,
     "totalFailed": 5
   },
   "learning": {
