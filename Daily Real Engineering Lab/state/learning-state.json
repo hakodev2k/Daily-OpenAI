@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CTXQ-001",
-    "runSlot": "2026-10-31-05",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CTXQ-001-site-safety-audit-request-context",
+    "unitId": "UNIT-CFLIGHT-001",
+    "runSlot": "2026-10-31-06",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CFLIGHT-001-solar-subsidy-tariff-cache-burst",
     "status": "READY",
-    "createdAt": "2026-10-31T05:06:21+07:00"
+    "createdAt": "2026-10-31T06:13:58+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 372,
-    "totalGenerated": 367,
+    "totalRunSlotsAttempted": 373,
+    "totalGenerated": 368,
     "totalFailed": 5
   },
   "learning": {

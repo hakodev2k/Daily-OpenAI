@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-02",
-      "unitId": "UNIT-DAG-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-DAG-001-fiber-cabinet-rollout-dependency-plan",
-      "domain": "dotnet-workflow-dependency-planning",
-      "primarySkill": "dependency-graph-validation",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "regional-telecom-fiber-cabinet-firmware-rollout",
-      "scenarioType": "nightly-firmware-rollout-reports-success-with-unprocessed-dependent-steps",
-      "primaryRootCause": "dependency-planner-treats-no-ready-work-as-normal-completion-without-validating-the-dependency-graph",
-      "failureMode": "cyclic-or-unknown-prerequisites-yield-successful-partial-rollout-plan",
-      "solutionPattern": "validate-dependency-identities-and-use-complete-topological-plan-with-explicit-cycle-rejection",
-      "labFormat": "dependency-graph-production-incident"
-    },
-    {
       "runSlot": "2026-10-27-03",
       "unitId": "UNIT-POOL-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-POOL-001-harbor-sensor-payload-buffer-boundary",
@@ -1499,10 +1484,24 @@
       "failureMode": "audit-job-fails-after-http-acceptance-and-tenant-attribution-cannot-be-recovered",
       "solutionPattern": "capture-validated-immutable-request-identity-into-queue-payload-at-admission",
       "labFormat": "request-to-background-boundary-production-investigation"
+    },
+    {
+      "runSlot": "2026-10-31-06",
+      "unitId": "UNIT-CFLIGHT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CFLIGHT-001-solar-subsidy-tariff-cache-burst",
+      "domain": "cache-stampede-concurrency-control",
+      "primarySkill": "per-key-single-flight-cache-miss-coalescing",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "rural-solar-installation-subsidy-tariff-quotation",
+      "scenarioType": "simultaneous-same-key-quote-requests-after-cache-age-out",
+      "primaryRootCause": "expired-shared-tariff-entry-allows-every-concurrent-miss-to-fetch-provider-independently",
+      "failureMode": "twelve-identical-client-requests-amplify-one-tariff-refresh-into-twelve-rate-limited-provider-calls",
+      "solutionPattern": "per-key-lazy-single-flight-with-fault-eviction-and-independent-keys",
+      "labFormat": "cache-expiry-burst-decision-and-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-TZAMB-001",
     "UNIT-PTIMER-001",
     "UNIT-IPTRUST-001",
     "UNIT-HBODY-001",
@@ -1525,12 +1524,12 @@
     "UNIT-AENUM-001",
     "UNIT-GRAPH-001",
     "UNIT-ROUTE-001",
-    "UNIT-CTXQ-001"
+    "UNIT-CTXQ-001",
+    "UNIT-CFLIGHT-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-timezone-contracts": 1,
       "dotnet-periodictimer-consumer-contract": 1,
       "aspnetcore-proxy-client-ip-trust": 1,
       "dotnet-http-streaming-deadlines": 1,
@@ -1553,22 +1552,22 @@
       "dotnet-async-stream-cancellation": 1,
       "dotnet-unicode-text-segmentation": 1,
       "aspnetcore-route-fallback": 1,
-      "aspnetcore-request-context-background-boundary": 1
+      "aspnetcore-request-context-background-boundary": 1,
+      "cache-stampede-concurrency-control": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L4": 4,
       "L1": 5,
       "L2": 7,
       "L3": 6,
-      "L5": 1,
+      "L4": 3,
+      "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "timezone-contract-refactoring-workshop": 1,
       "deterministic-heartbeat-broadcast-contract-lab": 1,
       "trusted-proxy-source-identity-investigation": 1,
       "http-stream-body-deadline-production-investigation": 1,
@@ -1591,7 +1590,8 @@
       "async-stream-cancellation-contract-investigation": 1,
       "multilingual-message-segmentation-refactoring-workshop": 1,
       "aspnetcore-spa-fallback-contract-deterministic-lab": 1,
-      "request-to-background-boundary-production-investigation": 1
+      "request-to-background-boundary-production-investigation": 1,
+      "cache-expiry-burst-decision-and-contract-lab": 1
     }
   }
 }

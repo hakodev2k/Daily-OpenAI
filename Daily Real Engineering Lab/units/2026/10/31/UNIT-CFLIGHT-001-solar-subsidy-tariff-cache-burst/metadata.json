@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-CFLIGHT-001",
+  "runSlot": "2026-10-31-06",
+  "title": "Solar Subsidy Tariff Cache: Expiry Burst Decision",
+  "domain": "cache-stampede-concurrency-control",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-31T06:13:58+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "per-key-single-flight-cache-miss-coalescing",
+    "cache-ttl",
+    "concurrentdictionary",
+    "task-sharing",
+    "production-tradeoffs"
+  ],
+  "prerequisites": [
+    "task-await",
+    "cache-ttl",
+    "concurrent-collections"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "rural-solar-installation-subsidy-tariff-quotation",
+    "scenarioType": "simultaneous-same-key-quote-requests-after-cache-age-out",
+    "primaryRootCause": "expired-shared-tariff-entry-allows-every-concurrent-miss-to-fetch-provider-independently",
+    "failureMode": "twelve-identical-client-requests-amplify-one-tariff-refresh-into-twelve-rate-limited-provider-calls",
+    "solutionPattern": "per-key-lazy-single-flight-with-fault-eviction-and-independent-keys",
+    "labFormat": "cache-expiry-burst-decision-and-contract-lab"
+  }
+}
