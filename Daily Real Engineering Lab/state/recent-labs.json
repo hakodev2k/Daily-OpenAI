@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-03",
-      "unitId": "UNIT-HTTP-012",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-HTTP-012-library-transfer-retry-request-lifecycle",
-      "domain": "http-client-lifecycle",
-      "primarySkill": "httpclient-request-lifecycle",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "regional-library-interbranch-book-transfer",
-      "scenarioType": "transient-partner-503-on-first-transfer-dispatch",
-      "primaryRootCause": "http-request-message-reused-across-sendasync-retry-attempts",
-      "failureMode": "second-attempt-throws-before-partner-receives-retry",
-      "solutionPattern": "new-request-and-content-per-attempt-with-stable-idempotency-key",
-      "labFormat": "http-retry-request-lifecycle-production-incident"
-    },
-    {
       "runSlot": "2026-10-26-04",
       "unitId": "UNIT-ZIP-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-ZIP-001-conservation-evidence-zip-export-finalization",
@@ -1498,10 +1483,24 @@
       "failureMode": "first-dst-fold-shift-scheduled-one-hour-late-and-invalid-offset-accepted",
       "solutionPattern": "validate-zone-offset-consistency-and-require-disambiguation-before-utc-conversion",
       "labFormat": "timezone-contract-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-30-07",
+      "unitId": "UNIT-PTIMER-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-PTIMER-001-airport-deicing-heartbeat-dual-observers",
+      "domain": "dotnet-periodictimer-consumer-contract",
+      "primarySkill": "periodictimer-single-waiter-and-broadcast-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "airport-deicing-vehicle-readiness-heartbeat",
+      "scenarioType": "two-independent-status-observers-attach-to-one-heartbeat-clock",
+      "primaryRootCause": "two-concurrent-waitfornexttickasync-calls-on-one-periodictimer-instance",
+      "failureMode": "second-observer-faults-instead-of-receiving-each-logical-heartbeat",
+      "solutionPattern": "single-periodictimer-consumer-fans-out-sequence-to-independent-subscriber-channels",
+      "labFormat": "deterministic-heartbeat-broadcast-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-LINQ-002",
     "UNIT-DR-001",
     "UNIT-SET-001",
     "UNIT-STREAMPOS-001",
@@ -1524,12 +1523,12 @@
     "UNIT-EXAGG-001",
     "UNIT-CQCLAIM-001",
     "UNIT-OCACHE-001",
-    "UNIT-TZAMB-001"
+    "UNIT-TZAMB-001",
+    "UNIT-PTIMER-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "linq-deferred-execution-live-sources": 1,
       "disaster-recovery-data-residency": 1,
       "dotnet-sortedset-ordering": 1,
       "dotnet-streamreader-checkpoint-semantics": 1,
@@ -1552,22 +1551,22 @@
       "dotnet-task-fault-aggregation": 1,
       "dotnet-concurrentqueue-claim-semantics": 1,
       "aspnetcore-output-caching": 1,
-      "dotnet-timezone-contracts": 1
+      "dotnet-timezone-contracts": 1,
+      "dotnet-periodictimer-consumer-contract": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
       "L5": 2,
+      "L2": 7,
       "L3": 6,
-      "L1": 4,
+      "L1": 5,
       "L6": 1,
       "L4": 3
     },
     "byFormat": {
-      "live-feed-consistency-evidence-investigation": 1,
       "disaster-recovery-architecture-decision-tabletop": 1,
       "ordered-set-contract-evidence-investigation": 1,
       "stream-checkpoint-production-forensics": 1,
@@ -1590,7 +1589,8 @@
       "parallel-fault-diagnostics-deterministic-lab": 1,
       "two-worker-queue-claim-evidence-investigation": 1,
       "localized-response-cache-production-forensics": 1,
-      "timezone-contract-refactoring-workshop": 1
+      "timezone-contract-refactoring-workshop": 1,
+      "deterministic-heartbeat-broadcast-contract-lab": 1
     }
   }
 }
