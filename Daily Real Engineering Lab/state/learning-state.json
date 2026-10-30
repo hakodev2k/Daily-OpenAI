@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ROUTE-001",
-    "runSlot": "2026-10-31-04",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-ROUTE-001-parking-permit-spa-api-404-contract",
+    "unitId": "UNIT-CTXQ-001",
+    "runSlot": "2026-10-31-05",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CTXQ-001-site-safety-audit-request-context",
     "status": "READY",
-    "createdAt": "2026-10-31T04:09:11.542+07:00"
+    "createdAt": "2026-10-31T05:06:21+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 371,
-    "totalGenerated": 366,
+    "totalRunSlotsAttempted": 372,
+    "totalGenerated": 367,
     "totalFailed": 5
   },
   "learning": {

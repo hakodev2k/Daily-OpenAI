@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-01",
-      "unitId": "UNIT-CONTRACT-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CONTRACT-001-freight-manifest-v1-v2-compatibility-boundary",
-      "domain": "api-contract-evolution",
-      "primarySkill": "versioned-api-ingress-compatibility",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "intermodal-freight-manifest-partner-integration",
-      "scenarioType": "parallel-v1-v2-b2b-payload-rollout-with-legacy-partners",
-      "primaryRootCause": "single-v2-ingress-schema-replaces-v1-wire-contract-before-partner-migration",
-      "failureMode": "valid-v1-manifests-rejected-and-invalid-v2-variants-silently-accepted",
-      "solutionPattern": "explicit-versioned-ingress-adapters-to-stable-canonical-model-with-phased-retirement",
-      "labFormat": "b2b-contract-evolution-design-decision"
-    },
-    {
       "runSlot": "2026-10-27-02",
       "unitId": "UNIT-DAG-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-DAG-001-fiber-cabinet-rollout-dependency-plan",
@@ -1499,10 +1484,24 @@
       "failureMode": "api-clients-receive-200-html-for-missing-json-endpoints-and-misclassify-failures",
       "solutionPattern": "explicit-api-namespace-json-404-route-before-spa-fallback",
       "labFormat": "aspnetcore-spa-fallback-contract-deterministic-lab"
+    },
+    {
+      "runSlot": "2026-10-31-05",
+      "unitId": "UNIT-CTXQ-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CTXQ-001-site-safety-audit-request-context",
+      "domain": "aspnetcore-request-context-background-boundary",
+      "primarySkill": "ihttpcontextaccessor-request-lifetime",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "construction-site-equipment-safety-clearance-audit",
+      "scenarioType": "accepted-request-enqueues-audit-but-deferred-worker-loses-tenant-attribution",
+      "primaryRootCause": "background-queue-closure-reads-ihttpcontextaccessor-after-request-context-is-cleared",
+      "failureMode": "audit-job-fails-after-http-acceptance-and-tenant-attribution-cannot-be-recovered",
+      "solutionPattern": "capture-validated-immutable-request-identity-into-queue-payload-at-admission",
+      "labFormat": "request-to-background-boundary-production-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-OCACHE-001",
     "UNIT-TZAMB-001",
     "UNIT-PTIMER-001",
     "UNIT-IPTRUST-001",
@@ -1525,12 +1524,12 @@
     "UNIT-COOKIE-001",
     "UNIT-AENUM-001",
     "UNIT-GRAPH-001",
-    "UNIT-ROUTE-001"
+    "UNIT-ROUTE-001",
+    "UNIT-CTXQ-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-output-caching": 1,
       "dotnet-timezone-contracts": 1,
       "dotnet-periodictimer-consumer-contract": 1,
       "aspnetcore-proxy-client-ip-trust": 1,
@@ -1553,22 +1552,22 @@
       "http-client-cookie-session-isolation": 1,
       "dotnet-async-stream-cancellation": 1,
       "dotnet-unicode-text-segmentation": 1,
-      "aspnetcore-route-fallback": 1
+      "aspnetcore-route-fallback": 1,
+      "aspnetcore-request-context-background-boundary": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
       "L4": 4,
       "L1": 5,
       "L2": 7,
+      "L3": 6,
       "L5": 1,
       "L6": 1
     },
     "byFormat": {
-      "localized-response-cache-production-forensics": 1,
       "timezone-contract-refactoring-workshop": 1,
       "deterministic-heartbeat-broadcast-contract-lab": 1,
       "trusted-proxy-source-identity-investigation": 1,
@@ -1591,7 +1590,8 @@
       "cross-tenant-partner-session-production-incident": 1,
       "async-stream-cancellation-contract-investigation": 1,
       "multilingual-message-segmentation-refactoring-workshop": 1,
-      "aspnetcore-spa-fallback-contract-deterministic-lab": 1
+      "aspnetcore-spa-fallback-contract-deterministic-lab": 1,
+      "request-to-background-boundary-production-investigation": 1
     }
   }
 }

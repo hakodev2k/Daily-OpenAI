@@ -1,0 +1,61 @@
+{
+  "unitId": "UNIT-CTXQ-001",
+  "runSlot": "2026-10-31-05",
+  "title": "Audit an toàn thiết bị: request thành công, worker mất thông tin tenant",
+  "domain": "aspnetcore-request-context-background-boundary",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-31T05:06:21+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "ihttpcontextaccessor-request-lifetime",
+    "background-queue-payload-design",
+    "tenant-context-snapshot",
+    "negative-path-contract-testing"
+  ],
+  "prerequisites": [
+    "aspnetcore-httpcontext-basics",
+    "csharp-delegates",
+    "dotnet-cli"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "construction-site-equipment-safety-clearance-audit",
+    "scenarioType": "accepted-request-enqueues-audit-but-deferred-worker-loses-tenant-attribution",
+    "primaryRootCause": "background-queue-closure-reads-ihttpcontextaccessor-after-request-context-is-cleared",
+    "failureMode": "audit-job-fails-after-http-acceptance-and-tenant-attribution-cannot-be-recovered",
+    "solutionPattern": "capture-validated-immutable-request-identity-into-queue-payload-at-admission",
+    "labFormat": "request-to-background-boundary-production-investigation"
+  },
+  "manifest": [
+    "README.md",
+    "contract/Contract.csproj",
+    "contract/Program.cs",
+    "evidence/incident-log.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/AuditDispatchService.cs",
+    "solution/README.md",
+    "solution/Solution.csproj",
+    "starter/AuditDispatchService.cs",
+    "starter/Starter.csproj",
+    "workspace/my-investigation.md"
+  ]
+}
