@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-BOX-001",
+  "runSlot": "2026-10-30-13",
+  "title": "Khách sạn: số túi đồ giặt đã quét nhưng báo cáo cuối ca bằng 0",
+  "domain": "csharp-value-type-interface-boxing",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-30T13:07:20+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "csharp-value-type-boxing",
+    "interface-dispatch",
+    "mutable-state-ownership",
+    "contract-regression-testing"
+  ],
+  "prerequisites": [
+    ".NET SDK 8",
+    "C# struct/class/interface",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "hotel-laundry-bag-shift-reconciliation",
+    "scenarioType": "worker-and-shift-report-count-divergence",
+    "primaryRootCause": "mutable-value-type-boxed-into-interface-is-not-original-counter-instance",
+    "failureMode": "worker-counts-accepted-bags-but-shift-report-reads-zero",
+    "solutionPattern": "reference-semantics-for-shared-mutable-counter-contract",
+    "labFormat": "mutable-counter-deterministic-reconciliation-lab"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

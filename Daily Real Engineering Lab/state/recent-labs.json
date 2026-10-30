@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-09",
-      "unitId": "UNIT-HOST-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-HOST-001-air-quality-report-host-working-directory",
-      "domain": "dotnet-hosting-deployment",
-      "primarySkill": "application-content-paths",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "air-quality-compliance-nightly-reports",
-      "scenarioType": "same-dotnet-artifact-fails-under-scheduler-launch-context",
-      "primaryRootCause": "relative-template-path-resolves-against-launcher-working-directory",
-      "failureMode": "report-job-file-not-found-only-in-scheduled-host",
-      "solutionPattern": "anchor-packaged-template-to-application-base-directory",
-      "labFormat": "deployment-launch-context-production-incident"
-    },
-    {
       "runSlot": "2026-10-26-10",
       "unitId": "UNIT-EF-015",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-EF-015-exam-grades-bulk-publish-tracker-divergence",
@@ -1498,10 +1483,24 @@
       "failureMode": "healthy-process-reported-dead-when-partner-is-unavailable",
       "solutionPattern": "separate-process-liveness-from-dependency-readiness-using-health-check-tags",
       "labFormat": "kubernetes-probe-production-incident-contract"
+    },
+    {
+      "runSlot": "2026-10-30-13",
+      "unitId": "UNIT-BOX-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-BOX-001-hotel-laundry-scan-counter-reconciliation",
+      "domain": "csharp-value-type-interface-boxing",
+      "primarySkill": "csharp-value-type-boxing",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "hotel-laundry-bag-shift-reconciliation",
+      "scenarioType": "worker-and-shift-report-count-divergence",
+      "primaryRootCause": "mutable-value-type-boxed-into-interface-is-not-original-counter-instance",
+      "failureMode": "worker-counts-accepted-bags-but-shift-report-reads-zero",
+      "solutionPattern": "reference-semantics-for-shared-mutable-counter-contract",
+      "labFormat": "mutable-counter-deterministic-reconciliation-lab"
     }
   ],
   "rolling24": [
-    "UNIT-AUDIT-001",
     "UNIT-LEASE-001",
     "UNIT-CORS-001",
     "UNIT-SBUS-001",
@@ -1524,12 +1523,12 @@
     "UNIT-HBODY-001",
     "UNIT-CLOCK-001",
     "UNIT-MCARD-001",
-    "UNIT-LPROBE-001"
+    "UNIT-LPROBE-001",
+    "UNIT-BOX-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "audit-trail-integrity-architecture": 1,
       "dotnet-buffer-ownership": 1,
       "aspnetcore-cors": 1,
       "message-session-partitioning": 1,
@@ -1552,22 +1551,21 @@
       "dotnet-http-streaming-deadlines": 1,
       "dotnet-timeprovider-testability": 1,
       "observability-metric-cardinality": 1,
-      "aspnetcore-health-probe-boundaries": 1
+      "aspnetcore-health-probe-boundaries": 1,
+      "csharp-value-type-interface-boxing": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L6": 1,
       "L4": 4,
       "L2": 8,
       "L3": 6,
-      "L1": 4,
+      "L1": 5,
       "L5": 1
     },
     "byFormat": {
-      "audit-evidence-trust-boundary-architecture-case-study": 1,
       "buffer-ownership-refactoring-workshop": 1,
       "cors-preflight-contract-investigation": 1,
       "session-partition-head-of-line-deterministic-incident": 1,
@@ -1590,7 +1588,8 @@
       "http-stream-body-deadline-production-investigation": 1,
       "virtual-clock-testability-refactoring-workshop": 1,
       "metric-cardinality-incident-investigation-with-local-policy-simulator": 1,
-      "kubernetes-probe-production-incident-contract": 1
+      "kubernetes-probe-production-incident-contract": 1,
+      "mutable-counter-deterministic-reconciliation-lab": 1
     }
   }
 }
