@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JLIFE-001",
-    "runSlot": "2026-10-30-18",
-    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JLIFE-001-air-quality-json-measurement-lifetime",
+    "unitId": "UNIT-STARTNEW-001",
+    "runSlot": "2026-10-30-19",
+    "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-STARTNEW-001-water-treatment-report-dispatch-outer-task",
     "status": "READY",
-    "createdAt": "2026-10-30T18:08:31+07:00"
+    "createdAt": "2026-10-30T19:17:39.352+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 361,
-    "totalGenerated": 356,
+    "totalRunSlotsAttempted": 362,
+    "totalGenerated": 357,
     "totalFailed": 5
   },
   "learning": {

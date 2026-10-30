@@ -1,0 +1,59 @@
+{
+  "unitId": "UNIT-STARTNEW-001",
+  "runSlot": "2026-10-30-19",
+  "title": "Báo cáo chất lượng nước được đánh dấu gửi thành công trước khi đối tác xác nhận",
+  "domain": "dotnet-async-task-lifecycle",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-30T19:17:39.352+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "task-factory",
+    "async-await",
+    "task-ownership",
+    "exception-propagation",
+    "failure-path-testing"
+  ],
+  "primarySkill": "nested-task-ownership-and-exception-propagation",
+  "prerequisites": [
+    "C# async/await cơ bản",
+    "Task và Task<T>",
+    "PowerShell và .NET 8 SDK"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-water-treatment-compliance-report-delivery",
+    "scenarioType": "batch-dispatch-reports-success-before-remote-send-finishes-and-loses-late-fault",
+    "primaryRootCause": "task-factory-startnew-async-delegate-produces-nested-task-and-only-outer-task-is-awaited",
+    "failureMode": "premature-job-success-and-missing-partner-rejection-from-job-result",
+    "solutionPattern": "own-and-await-the-complete-async-operation-without-detached-inner-task",
+    "labFormat": "nested-task-production-investigation-with-controlled-gateway"
+  },
+  "manifest": [
+    "README.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/LabChecks.csproj",
+    "harness/Program.cs",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/README.md",
+    "solution/ReportDispatcher.cs",
+    "starter/ReportDispatcher.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

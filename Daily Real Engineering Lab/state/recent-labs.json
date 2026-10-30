@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-26-15",
-      "unitId": "UNIT-TCS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-TCS-001-cold-chain-receipt-continuation-critical-section",
-      "domain": "dotnet-async-coordination",
-      "primarySkill": "taskcompletionsource-continuation-scheduling",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "cold-chain-warehouse-pallet-receipt-ingestion",
-      "scenarioType": "acknowledgement-completion-under-critical-section-triggers-slow-audit",
-      "primaryRootCause": "taskcompletionsource-synchronous-continuation-executes-inside-producer-monitor-lock",
-      "failureMode": "receipt-ingestion-lock-held-during-unrelated-audit-work-causing-head-of-line-blocking",
-      "solutionPattern": "asynchronous-task-continuation-scheduling-at-completion-boundary",
-      "labFormat": "async-coordination-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-26-16",
       "unitId": "UNIT-CSV-001",
       "path": "Daily Real Engineering Lab/units/2026/10/26/UNIT-CSV-001-clinical-trial-import-column-drift",
@@ -1499,10 +1484,24 @@
       "failureMode": "valid-air-quality-readings-fail-with-objectdisposedexception-before-publication",
       "solutionPattern": "detach-required-json-subtree-from-document-lifetime-before-returning",
       "labFormat": "json-dom-ownership-deterministic-reproduction"
+    },
+    {
+      "runSlot": "2026-10-30-19",
+      "unitId": "UNIT-STARTNEW-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-STARTNEW-001-water-treatment-report-dispatch-outer-task",
+      "domain": "dotnet-async-task-lifecycle",
+      "primarySkill": "nested-task-ownership-and-exception-propagation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-water-treatment-compliance-report-delivery",
+      "scenarioType": "batch-dispatch-reports-success-before-remote-send-finishes-and-loses-late-fault",
+      "primaryRootCause": "task-factory-startnew-async-delegate-produces-nested-task-and-only-outer-task-is-awaited",
+      "failureMode": "premature-job-success-and-missing-partner-rejection-from-job-result",
+      "solutionPattern": "own-and-await-the-complete-async-operation-without-detached-inner-task",
+      "labFormat": "nested-task-production-investigation-with-controlled-gateway"
     }
   ],
   "rolling24": [
-    "UNIT-WIRE-001",
     "UNIT-BASEURI-001",
     "UNIT-CAL-001",
     "UNIT-REGEX-001",
@@ -1525,12 +1524,12 @@
     "UNIT-PDETAIL-001",
     "UNIT-JBATCH-001",
     "UNIT-MIGR-001",
-    "UNIT-JLIFE-001"
+    "UNIT-JLIFE-001",
+    "UNIT-STARTNEW-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-binary-wire-protocol": 1,
       "http-uri-composition": 1,
       "dotnet-calendar-recurrence": 1,
       "dotnet-regex-engine": 1,
@@ -1553,7 +1552,8 @@
       "http-client-problem-details-contract": 1,
       "dotnet-json-streaming-ingestion": 1,
       "postgresql-online-schema-evolution": 1,
-      "dotnet-json-dom-lifetime": 1
+      "dotnet-json-dom-lifetime": 1,
+      "dotnet-async-task-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 19,
@@ -1568,7 +1568,6 @@
       "L6": 1
     },
     "byFormat": {
-      "binary-wire-format-contract-investigation": 1,
       "http-base-uri-route-contract-investigation": 1,
       "calendar-recurrence-investigation": 1,
       "deterministic-regex-performance-failure-lab": 1,
@@ -1591,7 +1590,8 @@
       "partner-http-error-contract-investigation": 1,
       "streamed-batch-ingestion-production-incident": 1,
       "zero-downtime-data-migration-architecture-tabletop": 1,
-      "json-dom-ownership-deterministic-reproduction": 1
+      "json-dom-ownership-deterministic-reproduction": 1,
+      "nested-task-production-investigation-with-controlled-gateway": 1
     }
   }
 }
