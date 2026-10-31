@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-NPARSE-001",
-    "runSlot": "2026-10-31-07",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-NPARSE-001-paper-mill-gauge-invariant-decimal-contract",
+    "unitId": "UNIT-PQ-001",
+    "runSlot": "2026-10-31-08",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-PQ-001-blood-courier-urgent-dispatch-priority",
     "status": "READY",
-    "createdAt": "2026-10-31T07:10:44+07:00"
+    "createdAt": "2026-10-31T08:09:44+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 374,
-    "totalGenerated": 369,
+    "totalRunSlotsAttempted": 375,
+    "totalGenerated": 370,
     "totalFailed": 5
   },
   "learning": {

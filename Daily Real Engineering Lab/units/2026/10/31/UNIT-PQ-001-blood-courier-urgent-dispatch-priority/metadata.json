@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-PQ-001",
+  "runSlot": "2026-10-31-08",
+  "title": "Xe vận chuyển máu khẩn vẫn bị điều phối sau",
+  "domain": "dotnet-priorityqueue-scheduling",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-31T08:09:44+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "priorityqueue-priority-snapshot-and-reprioritization",
+    "csharp-collections",
+    "scheduling-invariants",
+    "regression-testing"
+  ],
+  "primarySkill": "priorityqueue-priority-snapshot-and-reprioritization",
+  "prerequisites": [
+    "C# Dictionary và PriorityQueue cơ bản",
+    "dotnet run và PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-blood-bank-temperature-controlled-courier-dispatch",
+    "scenarioType": "urgent-courier-request-escalated-after-queue-admission",
+    "primaryRootCause": "priorityqueue-enqueue-priority-is-a-snapshot-while-request-urgency-is-mutated-later",
+    "failureMode": "critical-blood-delivery-remains-behind-lower-priority-route-despite-updated-request-record",
+    "solutionPattern": "versioned-queue-tickets-with-stale-ticket-skip-and-stable-fifo-tiebreaker",
+    "labFormat": "priority-escalation-deterministic-scheduling-contract"
+  },
+  "notes": "Không thực thi .NET SDK trong runtime; đã review tĩnh bộ kiểm tra, mã starter/reference, PowerShell và đường dẫn. Không thay đổi User Mastery."
+}

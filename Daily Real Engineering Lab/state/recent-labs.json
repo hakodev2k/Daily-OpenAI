@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-04",
-      "unitId": "UNIT-RATE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-RATE-001-research-grant-api-retry-after-date-contract",
-      "domain": "http-rate-limit-recovery",
-      "primarySkill": "http-retry-after-header-semantics",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "research-grant-submission-portal",
-      "scenarioType": "partner-rate-limiter-emits-two-legal-retry-after-representations",
-      "primaryRootCause": "retry-after-http-date-is-ignored-by-delta-only-policy",
-      "failureMode": "grant-submission-client-retries-too-early-and-extends-partner-throttling",
-      "solutionPattern": "normalize-retry-after-delta-or-date-against-injected-clock-and-clamp-budget",
-      "labFormat": "http-rate-limit-policy-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-27-05",
       "unitId": "UNIT-KEY-001",
       "domain": "dotnet-cache-key-identity",
@@ -1499,10 +1484,24 @@
       "failureMode": "cross-site-quality-control-reports-disagree-by-orders-of-magnitude-or-fail-to-import",
       "solutionPattern": "strict-invariant-wire-decimal-parser-with-no-grouping-and-cross-culture-regression-contract",
       "labFormat": "cross-locale-numeric-wire-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-31-08",
+      "unitId": "UNIT-PQ-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-PQ-001-blood-courier-urgent-dispatch-priority",
+      "domain": "dotnet-priorityqueue-scheduling",
+      "primarySkill": "priorityqueue-priority-snapshot-and-reprioritization",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "regional-blood-bank-temperature-controlled-courier-dispatch",
+      "scenarioType": "urgent-courier-request-escalated-after-queue-admission",
+      "primaryRootCause": "priorityqueue-enqueue-priority-is-a-snapshot-while-request-urgency-is-mutated-later",
+      "failureMode": "critical-blood-delivery-remains-behind-lower-priority-route-despite-updated-request-record",
+      "solutionPattern": "versioned-queue-tickets-with-stale-ticket-skip-and-stable-fifo-tiebreaker",
+      "labFormat": "priority-escalation-deterministic-scheduling-contract"
     }
   ],
   "rolling24": [
-    "UNIT-IPTRUST-001",
     "UNIT-HBODY-001",
     "UNIT-CLOCK-001",
     "UNIT-MCARD-001",
@@ -1525,12 +1524,12 @@
     "UNIT-ROUTE-001",
     "UNIT-CTXQ-001",
     "UNIT-CFLIGHT-001",
-    "UNIT-NPARSE-001"
+    "UNIT-NPARSE-001",
+    "UNIT-PQ-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-proxy-client-ip-trust": 1,
       "dotnet-http-streaming-deadlines": 1,
       "dotnet-timeprovider-testability": 1,
       "observability-metric-cardinality": 1,
@@ -1553,22 +1552,22 @@
       "aspnetcore-route-fallback": 1,
       "aspnetcore-request-context-background-boundary": 1,
       "cache-stampede-concurrency-control": 1,
-      "dotnet-globalization-numeric-wire-format": 1
+      "dotnet-globalization-numeric-wire-format": 1,
+      "dotnet-priorityqueue-scheduling": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
       "L3": 6,
       "L4": 3,
-      "L1": 4,
+      "L2": 7,
+      "L1": 5,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "trusted-proxy-source-identity-investigation": 1,
       "http-stream-body-deadline-production-investigation": 1,
       "virtual-clock-testability-refactoring-workshop": 1,
       "metric-cardinality-incident-investigation-with-local-policy-simulator": 1,
@@ -1591,7 +1590,8 @@
       "aspnetcore-spa-fallback-contract-deterministic-lab": 1,
       "request-to-background-boundary-production-investigation": 1,
       "cache-expiry-burst-decision-and-contract-lab": 1,
-      "cross-locale-numeric-wire-contract-investigation": 1
+      "cross-locale-numeric-wire-contract-investigation": 1,
+      "priority-escalation-deterministic-scheduling-contract": 1
     }
   }
 }
