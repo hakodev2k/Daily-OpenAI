@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-10",
-      "unitId": "UNIT-SEMA-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-SEMA-001-ev-charger-command-admission-timeout",
-      "domain": "dotnet-semaphore-admission-control",
-      "primarySkill": "semaphoreslim-timeout-acquisition-contract",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "municipal-ev-charger-command-dispatch",
-      "scenarioType": "concurrent-device-commands-with-zero-wait-admission",
-      "primaryRootCause": "semaphoreslim-timed-wait-false-result-ignored",
-      "failureMode": "exclusive-device-command-overlap-followed-by-semaphorefull-exception",
-      "solutionPattern": "condition-work-and-release-on-successful-semaphore-acquisition",
-      "labFormat": "semaphore-admission-invariant-investigation"
-    },
-    {
       "runSlot": "2026-10-27-11",
       "unitId": "UNIT-DP-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-DP-001-festival-pass-multi-replica-key-ring",
@@ -1500,10 +1485,24 @@
       "failureMode": "ci-build-selector-triggers-unrelated-main-only-projects-and-incorrect-release-scope",
       "solutionPattern": "merge-base-to-feature-head-change-set-with-multiple-divergence-regression-fixtures",
       "labFormat": "git-branch-divergence-change-detection-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-31-14",
+      "unitId": "UNIT-XASSERT-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-XASSERT-001-rail-yard-expired-badge-false-green-test",
+      "domain": "dotnet-async-testing",
+      "primarySkill": "xunit-async-assertion-observability",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-rail-maintenance-yard-contractor-access",
+      "scenarioType": "ci-green-despite-expired-badge-admission",
+      "primaryRootCause": "unawaited-xunit-throwsasync-masks-expired-pass-policy-defect",
+      "failureMode": "false-green-ci-and-expired-badge-accepted",
+      "solutionPattern": "await-async-assertion-plus-policy-fix-and-mutation-sensitivity-gate",
+      "labFormat": "async-test-oracle-mismatch-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-MTTL-001",
     "UNIT-PDETAIL-001",
     "UNIT-JBATCH-001",
     "UNIT-MIGR-001",
@@ -1526,12 +1525,12 @@
     "UNIT-REQRETRY-001",
     "UNIT-IOPAR-001",
     "UNIT-SQL-010",
-    "UNIT-GIT-002"
+    "UNIT-GIT-002",
+    "UNIT-XASSERT-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "mongodb-ttl-access-policy-design": 1,
       "http-client-problem-details-contract": 1,
       "dotnet-json-streaming-ingestion": 1,
       "postgresql-online-schema-evolution": 1,
@@ -1554,22 +1553,22 @@
       "http-request-retry-semantics": 1,
       "dotnet-io-bound-batch-concurrency": 1,
       "sql-window-analytics": 1,
-      "git-ci-change-detection": 1
+      "git-ci-change-detection": 1,
+      "dotnet-async-testing": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L5": 2,
-      "L2": 7,
+      "L2": 8,
       "L3": 5,
       "L6": 1,
       "L1": 5,
-      "L4": 4
+      "L4": 4,
+      "L5": 1
     },
     "byFormat": {
-      "security-access-lifecycle-design-decision-with-local-contract-simulator": 1,
       "partner-http-error-contract-investigation": 1,
       "streamed-batch-ingestion-production-incident": 1,
       "zero-downtime-data-migration-architecture-tabletop": 1,
@@ -1592,7 +1591,8 @@
       "http-partner-retry-contract-investigation": 1,
       "capacity-evidence-production-investigation-with-local-partner-simulator": 1,
       "deterministic-sql-running-total-contract-lab": 1,
-      "git-branch-divergence-change-detection-refactoring-workshop": 1
+      "git-branch-divergence-change-detection-refactoring-workshop": 1,
+      "async-test-oracle-mismatch-investigation": 1
     }
   }
 }

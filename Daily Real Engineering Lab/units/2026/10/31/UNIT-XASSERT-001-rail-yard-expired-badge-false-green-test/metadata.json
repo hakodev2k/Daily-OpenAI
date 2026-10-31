@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-XASSERT-001",
+  "runSlot": "2026-10-31-14",
+  "title": "CI xanh nhưng thẻ hết hạn vẫn mở cổng bảo trì đường sắt",
+  "domain": "dotnet-async-testing",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-31T14:07:51+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "xunit-async-assertion-observability",
+    "dotnet-task-observation",
+    "negative-path-testing",
+    "mutation-testing"
+  ],
+  "prerequisites": [
+    "C# Task",
+    "xUnit basics",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review; .NET restore/build/tests were not executed because only GitHub integration is authorized.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-rail-maintenance-yard-contractor-access",
+    "scenarioType": "ci-green-despite-expired-badge-admission",
+    "primaryRootCause": "unawaited-xunit-throwsasync-masks-expired-pass-policy-defect",
+    "failureMode": "false-green-ci-and-expired-badge-accepted",
+    "solutionPattern": "await-async-assertion-plus-policy-fix-and-mutation-sensitivity-gate",
+    "labFormat": "async-test-oracle-mismatch-investigation"
+  }
+}
