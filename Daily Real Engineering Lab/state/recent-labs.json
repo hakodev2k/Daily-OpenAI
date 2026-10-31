@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-23",
-      "unitId": "UNIT-CFG-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CFG-001-airport-baggage-sla-override-drift",
-      "domain": "dotnet-configuration",
-      "primarySkill": "configuration-provider-precedence",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "airport-baggage-transfer-sla-monitoring",
-      "scenarioType": "deployment-env-override-not-reflected-in-runtime-policy",
-      "primaryRootCause": "configuration-providers-registered-in-wrong-precedence-order",
-      "failureMode": "production-escalation-remains-at-development-threshold-despite-deployment-override",
-      "solutionPattern": "explicit-json-then-environment-provider-order-with-override-and-fallback-regression-contracts",
-      "labFormat": "configuration-source-forensics-investigation"
-    },
-    {
       "runSlot": "2026-10-28-00",
       "unitId": "UNIT-INIT-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-INIT-001-insurance-underwriting-ruleset-recovery",
@@ -1501,10 +1486,24 @@
       "failureMode": "per-instance-memory-budget-breach-upload-slo-miss-and-premature-file-visibility",
       "solutionPattern": "capacity-gated-upload-topology-with-resumable-staging-integrity-scan-and-idempotent-publish",
       "labFormat": "capacity-security-upload-architecture-decision-with-local-policy-simulator"
+    },
+    {
+      "runSlot": "2026-11-01-03",
+      "unitId": "UNIT-ASVOID-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-ASVOID-001-food-bank-alert-batch-premature-completion",
+      "domain": "csharp-async-delegate-contract",
+      "primarySkill": "async-void-delegate-completion-contract",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "regional-food-bank-cold-chain-alert-batch",
+      "scenarioType": "scheduled-batch-reports-complete-before-partner-acknowledgements",
+      "primaryRootCause": "async-lambda-converted-to-async-void-action-in-list-foreach",
+      "failureMode": "premature-batch-completion-and-unobserved-gateway-failure",
+      "solutionPattern": "awaitable-task-aggregation-and-exception-propagation",
+      "labFormat": "deterministic-gated-dispatch-completion-contract"
     }
   ],
   "rolling24": [
-    "UNIT-GRAPH-001",
     "UNIT-ROUTE-001",
     "UNIT-CTXQ-001",
     "UNIT-CFLIGHT-001",
@@ -1527,12 +1526,12 @@
     "UNIT-MCLK-001",
     "UNIT-URLAUTH-001",
     "UNIT-IMGREF-001",
-    "UNIT-UPLARCH-001"
+    "UNIT-UPLARCH-001",
+    "UNIT-ASVOID-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-unicode-text-segmentation": 1,
       "aspnetcore-route-fallback": 1,
       "aspnetcore-request-context-background-boundary": 1,
       "cache-stampede-concurrency-control": 1,
@@ -1555,21 +1554,21 @@
       "dotnet-clock-domain-semantics": 1,
       "http-uri-authority-security": 1,
       "kubernetes-image-release-provenance": 1,
-      "aspnetcore-large-upload-architecture": 1
+      "aspnetcore-large-upload-architecture": 1,
+      "csharp-async-delegate-contract": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L4": 5,
-      "L1": 5,
+      "L1": 6,
       "L3": 5,
       "L5": 3,
-      "L2": 6
+      "L2": 6,
+      "L4": 4
     },
     "byFormat": {
-      "multilingual-message-segmentation-refactoring-workshop": 1,
       "aspnetcore-spa-fallback-contract-deterministic-lab": 1,
       "request-to-background-boundary-production-investigation": 1,
       "cache-expiry-burst-decision-and-contract-lab": 1,
@@ -1592,7 +1591,8 @@
       "clock-domain-refactoring-with-deterministic-step-simulator": 1,
       "uri-authority-security-contract-investigation": 1,
       "multi-node-rollout-provenance-production-incident": 1,
-      "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1
+      "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1,
+      "deterministic-gated-dispatch-completion-contract": 1
     }
   }
 }
