@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-00",
-      "unitId": "UNIT-INIT-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-INIT-001-insurance-underwriting-ruleset-recovery",
-      "domain": "dotnet-async-initialization",
-      "primarySkill": "async-initialization-fault-recovery",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "insurance-underwriting-ruleset-evaluation",
-      "scenarioType": "transient-partner-outage-followed-by-permanent-in-process-read-failure",
-      "primaryRootCause": "faulted-task-retained-by-long-lived-lazy-async-initializer",
-      "failureMode": "all-subsequent-rule-evaluations-fail-after-partner-recovers-without-new-fetch",
-      "solutionPattern": "retry-faulted-initialization-while-preserving-single-flight-success-caching",
-      "labFormat": "async-initializer-transient-failure-deterministic-lab"
-    },
-    {
       "runSlot": "2026-10-28-01",
       "unitId": "UNIT-CRYPTO-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-CRYPTO-001-warehouse-export-aesgcm-envelope-collision",
@@ -1501,10 +1486,24 @@
       "failureMode": "premature-batch-completion-and-unobserved-gateway-failure",
       "solutionPattern": "awaitable-task-aggregation-and-exception-propagation",
       "labFormat": "deterministic-gated-dispatch-completion-contract"
+    },
+    {
+      "runSlot": "2026-11-01-04",
+      "unitId": "UNIT-RANGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RANGE-001-seismic-waveform-partial-download-byte-loss",
+      "domain": "http-range-response-semantics",
+      "primarySkill": "http-byte-range-inclusive-boundary-and-206-payload-integrity",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "geological-survey-seismic-waveform-field-download",
+      "scenarioType": "ranged-waveform-download-reports-success-but-delivers-short-segments",
+      "primaryRootCause": "http-byte-range-end-is-inclusive-but-slice-length-calculated-exclusive",
+      "failureMode": "partial-waveform-chunks-drop-final-byte-and-single-byte-ranges-return-empty",
+      "solutionPattern": "normalize-inclusive-range-boundaries-and-assert-content-range-body-consistency",
+      "labFormat": "http-partial-content-wire-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-ROUTE-001",
     "UNIT-CTXQ-001",
     "UNIT-CFLIGHT-001",
     "UNIT-NPARSE-001",
@@ -1527,12 +1526,12 @@
     "UNIT-URLAUTH-001",
     "UNIT-IMGREF-001",
     "UNIT-UPLARCH-001",
-    "UNIT-ASVOID-001"
+    "UNIT-ASVOID-001",
+    "UNIT-RANGE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-route-fallback": 1,
       "aspnetcore-request-context-background-boundary": 1,
       "cache-stampede-concurrency-control": 1,
       "dotnet-globalization-numeric-wire-format": 1,
@@ -1555,21 +1554,21 @@
       "http-uri-authority-security": 1,
       "kubernetes-image-release-provenance": 1,
       "aspnetcore-large-upload-architecture": 1,
-      "csharp-async-delegate-contract": 1
+      "csharp-async-delegate-contract": 1,
+      "http-range-response-semantics": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 6,
       "L3": 5,
       "L5": 3,
-      "L2": 6,
+      "L2": 7,
+      "L1": 5,
       "L4": 4
     },
     "byFormat": {
-      "aspnetcore-spa-fallback-contract-deterministic-lab": 1,
       "request-to-background-boundary-production-investigation": 1,
       "cache-expiry-burst-decision-and-contract-lab": 1,
       "cross-locale-numeric-wire-contract-investigation": 1,
@@ -1592,7 +1591,8 @@
       "uri-authority-security-contract-investigation": 1,
       "multi-node-rollout-provenance-production-incident": 1,
       "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1,
-      "deterministic-gated-dispatch-completion-contract": 1
+      "deterministic-gated-dispatch-completion-contract": 1,
+      "http-partial-content-wire-contract-investigation": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ASVOID-001",
-    "runSlot": "2026-11-01-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-ASVOID-001-food-bank-alert-batch-premature-completion",
+    "unitId": "UNIT-RANGE-001",
+    "runSlot": "2026-11-01-04",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RANGE-001-seismic-waveform-partial-download-byte-loss",
     "status": "READY",
-    "createdAt": "2026-11-01T03:10:06+07:00"
+    "createdAt": "2026-11-01T04:12:28+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 394,
-    "totalGenerated": 389,
+    "totalRunSlotsAttempted": 395,
+    "totalGenerated": 390,
     "totalFailed": 5
   },
   "learning": {
