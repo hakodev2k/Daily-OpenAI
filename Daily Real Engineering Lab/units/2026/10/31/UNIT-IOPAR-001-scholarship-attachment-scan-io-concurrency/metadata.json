@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-IOPAR-001",
+  "runSlot": "2026-10-31-11",
+  "title": "Scholarship Attachment Scan — I/O Concurrency Budget",
+  "domain": "dotnet-io-bound-batch-concurrency",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-31T11:12:36+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "parallel-foreachasync-downstream-concurrency-budget",
+    "async-await",
+    "capacity-planning",
+    "production-diagnostics"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "PowerShell",
+    "NET 8 SDK"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-scholarship-attachment-malware-screening",
+    "scenarioType": "overnight-attachment-batch-underutilizes-partner-without-errors",
+    "primaryRootCause": "cpu-oriented-low-parallelism-limit-applied-to-latency-bound-scanner-io",
+    "failureMode": "batch-underutilizes-downstream-quota-while-unbounded-fanout-would-cause-throttling",
+    "solutionPattern": "bounded-io-concurrency-from-partner-capacity-with-headroom",
+    "labFormat": "capacity-evidence-production-investigation-with-local-partner-simulator"
+  }
+}

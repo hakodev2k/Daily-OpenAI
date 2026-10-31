@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-07",
-      "unitId": "UNIT-XML-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-XML-001-renewable-certificate-xml-namespace-boundary",
-      "domain": "dotnet-xml-ingestion",
-      "primarySkill": "linq-to-xml-expanded-names",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "renewable-energy-certificate-reconciliation",
-      "scenarioType": "partner-xml-batch-import-reports-zero-energy-without-parse-error",
-      "primaryRootCause": "xml-expanded-name-and-parent-path-mismatch-in-namespaced-feed",
-      "failureMode": "valid-meter-readings-silently-omitted-while-batch-is-marked-accepted",
-      "solutionPattern": "namespace-aware-schema-scoped-element-selection-and-root-contract-validation",
-      "labFormat": "xml-schema-boundary-investigation"
-    },
-    {
       "runSlot": "2026-10-27-08",
       "unitId": "UNIT-CTX-002",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CTX-002-drone-survey-parallel-trace-context-aliasing",
@@ -1500,10 +1485,24 @@
       "failureMode": "first-partner-503-is-followed-by-invalidoperationexception-before-second-request-reaches-partner",
       "solutionPattern": "fresh-request-and-content-per-attempt-with-stable-idempotency-key-and-bounded-status-aware-retry",
       "labFormat": "http-partner-retry-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-31-11",
+      "unitId": "UNIT-IOPAR-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-IOPAR-001-scholarship-attachment-scan-io-concurrency",
+      "domain": "dotnet-io-bound-batch-concurrency",
+      "primarySkill": "parallel-foreachasync-downstream-concurrency-budget",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "university-scholarship-attachment-malware-screening",
+      "scenarioType": "overnight-attachment-batch-underutilizes-partner-without-errors",
+      "primaryRootCause": "cpu-oriented-low-parallelism-limit-applied-to-latency-bound-scanner-io",
+      "failureMode": "batch-underutilizes-downstream-quota-while-unbounded-fanout-would-cause-throttling",
+      "solutionPattern": "bounded-io-concurrency-from-partner-capacity-with-headroom",
+      "labFormat": "capacity-evidence-production-investigation-with-local-partner-simulator"
     }
   ],
   "rolling24": [
-    "UNIT-MCARD-001",
     "UNIT-LPROBE-001",
     "UNIT-BOX-001",
     "UNIT-MTTL-001",
@@ -1526,12 +1525,12 @@
     "UNIT-NPARSE-001",
     "UNIT-PQ-001",
     "UNIT-MBUF-001",
-    "UNIT-REQRETRY-001"
+    "UNIT-REQRETRY-001",
+    "UNIT-IOPAR-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "observability-metric-cardinality": 1,
       "aspnetcore-health-probe-boundaries": 1,
       "csharp-value-type-interface-boxing": 1,
       "mongodb-ttl-access-policy-design": 1,
@@ -1554,22 +1553,22 @@
       "dotnet-globalization-numeric-wire-format": 1,
       "dotnet-priorityqueue-scheduling": 1,
       "dotnet-binary-stream-transport": 1,
-      "http-request-retry-semantics": 1
+      "http-request-retry-semantics": 1,
+      "dotnet-io-bound-batch-concurrency": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
-      "L3": 5,
+      "L3": 6,
       "L1": 5,
       "L5": 2,
+      "L2": 7,
       "L6": 1,
       "L4": 3
     },
     "byFormat": {
-      "metric-cardinality-incident-investigation-with-local-policy-simulator": 1,
       "kubernetes-probe-production-incident-contract": 1,
       "mutable-counter-deterministic-reconciliation-lab": 1,
       "security-access-lifecycle-design-decision-with-local-contract-simulator": 1,
@@ -1592,7 +1591,8 @@
       "cross-locale-numeric-wire-contract-investigation": 1,
       "priority-escalation-deterministic-scheduling-contract": 1,
       "binary-frame-transport-boundary-refactoring-workshop": 1,
-      "http-partner-retry-contract-investigation": 1
+      "http-partner-retry-contract-investigation": 1,
+      "capacity-evidence-production-investigation-with-local-partner-simulator": 1
     }
   }
 }
