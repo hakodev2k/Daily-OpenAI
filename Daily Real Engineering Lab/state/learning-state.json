@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MCLK-001",
-    "runSlot": "2026-10-31-23",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-MCLK-001-tunnel-fan-negative-maintenance-duration",
+    "unitId": "UNIT-URLAUTH-001",
+    "runSlot": "2026-11-01-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-URLAUTH-001-dam-telemetry-callback-authority-confusion",
     "status": "READY",
-    "createdAt": "2026-10-31T23:12:57+07:00"
+    "createdAt": "2026-11-01T00:08:19+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 390,
-    "totalGenerated": 385,
+    "totalRunSlotsAttempted": 391,
+    "totalGenerated": 386,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 54,
+    "elapsedDays": 55,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",

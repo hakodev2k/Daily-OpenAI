@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-20",
-      "unitId": "UNIT-EF-016",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-EF-016-food-inspection-batch-tracking-lifecycle",
-      "domain": "ef-core-change-tracking",
-      "primarySkill": "ef-core-autodetectchanges-lifecycle",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "food-safety-inspection-review-workflow",
-      "scenarioType": "bulk-import-succeeds-but-follow-up-review-update-not-persisted",
-      "primaryRootCause": "ef-core-autodetectchanges-disabled-by-batch-import-and-not-restored",
-      "failureMode": "subsequent-tracked-scalar-review-change-silently-not-saved",
-      "solutionPattern": "restore-original-dbcontext-change-detection-setting-in-finally-across-success-and-failure",
-      "labFormat": "efcore-batch-import-lifecycle-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-27-21",
       "unitId": "UNIT-HOST-002",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-HOST-002-shelter-feed-backgroundservice-startup-gate",
@@ -1501,10 +1486,24 @@
       "failureMode": "negative-or-inflated-maintenance-duration-and-false-sla-breach",
       "solutionPattern": "monotonic-timeprovider-timestamp-for-duration-with-utc-audit-instants-preserved",
       "labFormat": "clock-domain-refactoring-with-deterministic-step-simulator"
+    },
+    {
+      "runSlot": "2026-11-01-00",
+      "unitId": "UNIT-URLAUTH-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-URLAUTH-001-dam-telemetry-callback-authority-confusion",
+      "domain": "http-uri-authority-security",
+      "primarySkill": "uri-authority-vs-string-prefix-allowlist",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "hydroelectric-dam-sensor-telemetry-callback-routing",
+      "scenarioType": "untrusted-callback-url-passes-partner-host-policy-under-adversarial-input",
+      "primaryRootCause": "raw-string-url-prefix-mistaken-for-parsed-uri-authority-and-exact-route-policy",
+      "failureMode": "untrusted-authority-or-route-accepted-for-partner-callback-configuration",
+      "solutionPattern": "parse-absolute-uri-and-enforce-scheme-host-port-credentials-fragment-and-exact-path-contract",
+      "labFormat": "uri-authority-security-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-DISP-001",
     "UNIT-COOKIE-001",
     "UNIT-AENUM-001",
     "UNIT-GRAPH-001",
@@ -1527,12 +1526,12 @@
     "UNIT-PIPEX-001",
     "UNIT-CHAN-001",
     "UNIT-SEMG-001",
-    "UNIT-MCLK-001"
+    "UNIT-MCLK-001",
+    "UNIT-URLAUTH-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-async-resource-exception-provenance": 1,
       "http-client-cookie-session-isolation": 1,
       "dotnet-async-stream-cancellation": 1,
       "dotnet-unicode-text-segmentation": 1,
@@ -1555,21 +1554,21 @@
       "dotnet-system-io-pipelines": 1,
       "dotnet-channel-backpressure": 1,
       "dotnet-semaphore-permit-ownership": 1,
-      "dotnet-clock-domain-semantics": 1
+      "dotnet-clock-domain-semantics": 1,
+      "http-uri-authority-security": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 7,
       "L3": 5,
+      "L2": 7,
       "L4": 5,
       "L1": 5,
       "L5": 2
     },
     "byFormat": {
-      "dual-fault-resource-lifecycle-investigation": 1,
       "cross-tenant-partner-session-production-incident": 1,
       "async-stream-cancellation-contract-investigation": 1,
       "multilingual-message-segmentation-refactoring-workshop": 1,
@@ -1592,7 +1591,8 @@
       "pipereader-framing-deterministic-contract-lab": 1,
       "audit-burst-multi-signal-production-incident": 1,
       "deterministic-cancelled-waiter-permit-ownership-investigation": 1,
-      "clock-domain-refactoring-with-deterministic-step-simulator": 1
+      "clock-domain-refactoring-with-deterministic-step-simulator": 1,
+      "uri-authority-security-contract-investigation": 1
     }
   }
 }
