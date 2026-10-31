@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HMACRAW-001",
-    "runSlot": "2026-11-01-05",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HMACRAW-001-bike-share-webhook-signature-raw-body",
+    "unitId": "UNIT-CLOSURE-001",
+    "runSlot": "2026-11-01-06",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-CLOSURE-001-ranger-patrol-deferred-notice-misdirection",
     "status": "READY",
-    "createdAt": "2026-11-01T05:13:11+07:00"
+    "createdAt": "2026-11-01T06:09:30+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 396,
-    "totalGenerated": 391,
+    "totalRunSlotsAttempted": 397,
+    "totalGenerated": 392,
     "totalFailed": 5
   },
   "learning": {

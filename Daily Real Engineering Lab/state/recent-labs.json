@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-02",
-      "unitId": "UNIT-JSON-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-JSON-002-port-clearance-duplicate-field-ambiguity",
-      "domain": "api-json-contracts",
-      "primarySkill": "json-duplicate-logical-property-detection",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "port-customs-clearance-declaration",
-      "scenarioType": "partner-json-payload-changes-inspection-decision-without-schema-error",
-      "primaryRootCause": "case-insensitive-json-deserializer-accepts-conflicting-logical-property-names-with-last-value-winning",
-      "failureMode": "ambiguous-declaration-silently-downgrades-mandatory-cargo-inspection",
-      "solutionPattern": "reject-duplicate-top-level-logical-property-names-before-typed-deserialization",
-      "labFormat": "partner-payload-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-28-03",
       "unitId": "UNIT-PROC-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PROC-001-caption-batch-child-process-pipe-stall",
@@ -1501,10 +1486,24 @@
       "failureMode": "valid-pretty-printed-signed-webhook-rejected-while-compact-payload-passes",
       "solutionPattern": "authenticate-exact-raw-body-bytes-with-fixed-time-digest-comparison-before-parsing",
       "labFormat": "signed-webhook-wire-evidence-production-incident"
+    },
+    {
+      "runSlot": "2026-11-01-06",
+      "unitId": "UNIT-CLOSURE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-CLOSURE-001-ranger-patrol-deferred-notice-misdirection",
+      "domain": "csharp-deferred-work-closure-semantics",
+      "primarySkill": "csharp-closure-capture",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "national-park-ranger-shift-handoff",
+      "scenarioType": "batch-notification-deferred-execution-cross-recipient-misdirection",
+      "primaryRootCause": "reused-mutable-local-captured-by-deferred-delegates",
+      "failureMode": "all-batch-notices-delivered-to-last-ranger-instead-of-distinct-recipients",
+      "solutionPattern": "capture-immutable-per-item-command-before-enqueue",
+      "labFormat": "deferred-batch-ownership-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-CFLIGHT-001",
     "UNIT-NPARSE-001",
     "UNIT-PQ-001",
     "UNIT-MBUF-001",
@@ -1527,12 +1526,12 @@
     "UNIT-UPLARCH-001",
     "UNIT-ASVOID-001",
     "UNIT-RANGE-001",
-    "UNIT-HMACRAW-001"
+    "UNIT-HMACRAW-001",
+    "UNIT-CLOSURE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "cache-stampede-concurrency-control": 1,
       "dotnet-globalization-numeric-wire-format": 1,
       "dotnet-priorityqueue-scheduling": 1,
       "dotnet-binary-stream-transport": 1,
@@ -1555,21 +1554,21 @@
       "aspnetcore-large-upload-architecture": 1,
       "csharp-async-delegate-contract": 1,
       "http-range-response-semantics": 1,
-      "dotnet-webhook-message-authentication": 1
+      "dotnet-webhook-message-authentication": 1,
+      "csharp-deferred-work-closure-semantics": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L5": 3,
       "L2": 7,
       "L1": 5,
-      "L4": 4,
-      "L3": 5
+      "L4": 5,
+      "L3": 5,
+      "L5": 2
     },
     "byFormat": {
-      "cache-expiry-burst-decision-and-contract-lab": 1,
       "cross-locale-numeric-wire-contract-investigation": 1,
       "priority-escalation-deterministic-scheduling-contract": 1,
       "binary-frame-transport-boundary-refactoring-workshop": 1,
@@ -1592,7 +1591,8 @@
       "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1,
       "deterministic-gated-dispatch-completion-contract": 1,
       "http-partial-content-wire-contract-investigation": 1,
-      "signed-webhook-wire-evidence-production-incident": 1
+      "signed-webhook-wire-evidence-production-incident": 1,
+      "deferred-batch-ownership-refactoring-workshop": 1
     }
   }
 }
