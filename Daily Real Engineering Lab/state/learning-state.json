@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ETAGW-001",
-    "runSlot": "2026-10-31-18",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-ETAGW-001-wetland-permit-stale-editor-overwrite",
+    "unitId": "UNIT-CTSR-001",
+    "runSlot": "2026-10-31-19",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CTSR-001-fisheries-photo-timeout-contamination",
     "status": "READY",
-    "createdAt": "2026-10-31T18:17:00+07:00"
+    "createdAt": "2026-10-31T19:07:39+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 385,
-    "totalGenerated": 380,
+    "totalRunSlotsAttempted": 386,
+    "totalGenerated": 381,
     "totalFailed": 5
   },
   "learning": {

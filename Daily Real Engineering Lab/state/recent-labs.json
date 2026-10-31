@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-15",
-      "unitId": "UNIT-UTF8-001",
-      "domain": "dotnet-streaming-text",
-      "primarySkill": "utf8-incremental-decoder-state",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "coastal-rescue-dispatch-jsonl-telemetry",
-      "scenarioType": "multibyte-utf8-sequences-split-across-network-read-boundaries",
-      "primaryRootCause": "per-chunk-utf8-decoding-resets-state-between-read-calls",
-      "failureMode": "valid-json-lines-have-corrupted-vietnamese-text-and-emoji-without-json-error",
-      "solutionPattern": "per-stream-stateful-utf8-decoder-with-strict-eof-validation",
-      "labFormat": "network-stream-decoding-evidence-investigation"
-    },
-    {
       "runSlot": "2026-10-27-16",
       "unitId": "UNIT-LEGAL-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-LEGAL-001-court-efiling-durable-deadline-receipts",
@@ -1500,10 +1486,24 @@
       "failureMode": "stale-editor-replaces-newer-review-notes-with-http-success",
       "solutionPattern": "atomic-strong-etag-precondition-check-and-conditional-write",
       "labFormat": "two-editor-conditional-write-contract-investigation"
+    },
+    {
+      "runSlot": "2026-10-31-19",
+      "unitId": "UNIT-CTSR-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CTSR-001-fisheries-photo-timeout-contamination",
+      "domain": "dotnet-cancellation-source-lifecycle",
+      "primarySkill": "cancellationtokensource-per-operation-lifetime",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "coastal-fisheries-landing-photo-compliance",
+      "scenarioType": "slow-first-photo-followed-by-two-immediate-partner-responses",
+      "primaryRootCause": "cancelled-cancellationtokensource-reused-across-independent-photo-inspections",
+      "failureMode": "later-fast-photos-falsely-reported-as-timeouts",
+      "solutionPattern": "per-inspection-linked-cancellation-source-and-deadline",
+      "labFormat": "batch-timeout-lifecycle-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-STARTNEW-001",
     "UNIT-EF-018",
     "UNIT-TCS-001",
     "UNIT-OPTS-001",
@@ -1526,12 +1526,12 @@
     "UNIT-COSMOS-001",
     "UNIT-EF-019",
     "UNIT-REDIS-006",
-    "UNIT-ETAGW-001"
+    "UNIT-ETAGW-001",
+    "UNIT-CTSR-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-async-task-lifecycle": 1,
       "ef-core-change-tracking": 1,
       "dotnet-task-continuation-scheduling": 1,
       "dotnet-options-configuration-reload": 1,
@@ -1554,21 +1554,21 @@
       "azure-cosmos-db-partition-design": 1,
       "ef-core-relational-query-semantics": 1,
       "redis-atomic-expiry-contract": 1,
-      "http-optimistic-concurrency-contract": 1
+      "http-optimistic-concurrency-contract": 1,
+      "dotnet-cancellation-source-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 8,
-      "L4": 4,
+      "L4": 5,
       "L3": 5,
+      "L2": 7,
       "L1": 5,
       "L5": 2
     },
     "byFormat": {
-      "nested-task-production-investigation-with-controlled-gateway": 1,
       "tracked-state-vs-set-based-write-refactoring-workshop": 1,
       "continuation-scheduling-production-deadlock-investigation": 1,
       "live-configuration-contract-investigation": 1,
@@ -1591,7 +1591,8 @@
       "partition-capacity-design-decision-with-deterministic-policy-simulator": 1,
       "filtered-required-navigation-production-forensics": 1,
       "deterministic-client-crash-boundary-contract-lab": 1,
-      "two-editor-conditional-write-contract-investigation": 1
+      "two-editor-conditional-write-contract-investigation": 1,
+      "batch-timeout-lifecycle-refactoring-workshop": 1
     }
   }
 }
