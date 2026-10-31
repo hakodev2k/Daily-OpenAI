@@ -1,0 +1,64 @@
+{
+  "unitId": "UNIT-HMACRAW-001",
+  "runSlot": "2026-11-01-05",
+  "title": "Webhook trả xe đạp bị từ chối sau khi đối tác đổi định dạng JSON",
+  "domain": "dotnet-webhook-message-authentication",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-01T05:13:11+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "hmac-sha256",
+    "raw-http-request-body",
+    "system-text-json",
+    "cryptographic-signature-verification"
+  ],
+  "primarySkill": "hmac-authentication-over-exact-received-bytes",
+  "prerequisites": [
+    "C#/.NET 8",
+    "HTTP webhook",
+    "UTF-8 và HMAC"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "urban-bike-share-dock-return-partner-reconciliation",
+    "scenarioType": "partner-serializer-format-change-breaks-valid-signed-return-receipts",
+    "primaryRootCause": "receiver-reconstructs-json-before-hmac-instead-of-authenticating-original-request-bytes",
+    "failureMode": "valid-pretty-printed-signed-webhook-rejected-while-compact-payload-passes",
+    "solutionPattern": "authenticate-exact-raw-body-bytes-with-fixed-time-digest-comparison-before-parsing",
+    "labFormat": "signed-webhook-wire-evidence-production-incident"
+  },
+  "manifest": [
+    "README.md",
+    "contract/Program.cs",
+    "docs/concepts-after-lab.md",
+    "evidence/incident-timeline.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/check-solution.ps1",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/BikeWebhookSolution.csproj",
+    "solution/README.md",
+    "solution/WebhookVerifier.cs",
+    "starter/BikeWebhookLab.csproj",
+    "starter/WebhookVerifier.cs",
+    "workspace/my-investigation.md"
+  ],
+  "validationNotes": "Strict static consistency review; .NET and PowerShell were not executed."
+}
