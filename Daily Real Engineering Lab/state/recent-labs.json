@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-22",
-      "unitId": "UNIT-GUID-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-GUID-001-emergency-vehicle-uuid-wire-byte-order",
-      "domain": "dotnet-guid-wire-interoperability",
-      "primarySkill": "guid-network-byte-order-contract",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "emergency-vehicle-dispatch-cross-language-event-gateway",
-      "scenarioType": "dotnet-uuid-transport-to-java-device-registry",
-      "primaryRootCause": "guid-default-byte-array-uses-mixed-endian-layout-instead-of-network-order-uuid",
-      "failureMode": "local-guid-roundtrip-passes-but-cross-language-identifier-lookup-fails",
-      "solutionPattern": "explicit-network-order-guid-encoding-and-decoding-with-cross-language-golden-vectors",
-      "labFormat": "binary-uuid-cross-language-incident"
-    },
-    {
       "runSlot": "2026-10-27-23",
       "unitId": "UNIT-CFG-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CFG-001-airport-baggage-sla-override-drift",
@@ -1501,10 +1486,24 @@
       "failureMode": "ready-pods-report-same-image-reference-but-run-different-routing-engine-revisions",
       "solutionPattern": "immutable-image-digest-references-and-explicit-digest-based-rollbacks",
       "labFormat": "multi-node-rollout-provenance-production-incident"
+    },
+    {
+      "runSlot": "2026-11-01-02",
+      "unitId": "UNIT-UPLARCH-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-UPLARCH-001-heritage-film-archive-large-evidence-upload",
+      "domain": "aspnetcore-large-upload-architecture",
+      "primarySkill": "large-file-upload-topology-and-staged-publication",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "national-heritage-film-archive-ingest",
+      "scenarioType": "concurrent-two-gib-evidence-uploads-with-slo-security-and-retention-constraints",
+      "primaryRootCause": "in-process-large-payload-buffering-and-missing-staged-publication-lifecycle",
+      "failureMode": "per-instance-memory-budget-breach-upload-slo-miss-and-premature-file-visibility",
+      "solutionPattern": "capacity-gated-upload-topology-with-resumable-staging-integrity-scan-and-idempotent-publish",
+      "labFormat": "capacity-security-upload-architecture-decision-with-local-policy-simulator"
     }
   ],
   "rolling24": [
-    "UNIT-AENUM-001",
     "UNIT-GRAPH-001",
     "UNIT-ROUTE-001",
     "UNIT-CTXQ-001",
@@ -1527,12 +1526,12 @@
     "UNIT-SEMG-001",
     "UNIT-MCLK-001",
     "UNIT-URLAUTH-001",
-    "UNIT-IMGREF-001"
+    "UNIT-IMGREF-001",
+    "UNIT-UPLARCH-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-async-stream-cancellation": 1,
       "dotnet-unicode-text-segmentation": 1,
       "aspnetcore-route-fallback": 1,
       "aspnetcore-request-context-background-boundary": 1,
@@ -1555,21 +1554,21 @@
       "dotnet-semaphore-permit-ownership": 1,
       "dotnet-clock-domain-semantics": 1,
       "http-uri-authority-security": 1,
-      "kubernetes-image-release-provenance": 1
+      "kubernetes-image-release-provenance": 1,
+      "aspnetcore-large-upload-architecture": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 7,
       "L4": 5,
       "L1": 5,
       "L3": 5,
-      "L5": 2
+      "L5": 3,
+      "L2": 6
     },
     "byFormat": {
-      "async-stream-cancellation-contract-investigation": 1,
       "multilingual-message-segmentation-refactoring-workshop": 1,
       "aspnetcore-spa-fallback-contract-deterministic-lab": 1,
       "request-to-background-boundary-production-investigation": 1,
@@ -1592,7 +1591,8 @@
       "deterministic-cancelled-waiter-permit-ownership-investigation": 1,
       "clock-domain-refactoring-with-deterministic-step-simulator": 1,
       "uri-authority-security-contract-investigation": 1,
-      "multi-node-rollout-provenance-production-incident": 1
+      "multi-node-rollout-provenance-production-incident": 1,
+      "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1
     }
   }
 }

@@ -1,0 +1,9 @@
+timestamp,metric,value,unit,source
+2026-10-29T09:00:00+07:00,peak_simultaneous_uploads,16,sessions,synthetic-incident
+2026-10-29T09:00:00+07:00,max_upload_size,2048,MiB,business-contract
+2026-10-29T09:00:00+07:00,completion_slo,300,seconds,business-contract
+2026-10-29T09:00:00+07:00,app_memory_budget_per_instance,1536,MiB,capacity-plan
+2026-10-29T09:00:00+07:00,proxy_outbound_per_instance,80,MiB-per-second,capacity-plan
+2026-10-29T09:00:00+07:00,direct_storage_aggregate,240,MiB-per-second,capacity-plan
+2026-10-29T09:00:00+07:00,monthly_compute_budget,450,cost-units,finance
+2026-10-29T09:00:00+07:00,unverified_preview_visibility,1,observed-case,incident-ticket
