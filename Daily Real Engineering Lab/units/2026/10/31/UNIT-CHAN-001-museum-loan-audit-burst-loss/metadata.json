@@ -1,0 +1,62 @@
+{
+  "unitId": "UNIT-CHAN-001",
+  "runSlot": "2026-10-31-21",
+  "title": "Nhật ký bàn giao hiện vật mất sự kiện trong đợt quét dồn",
+  "domain": "dotnet-channel-backpressure",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-31T21:11:57+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "channel-bounded-backpressure",
+    "lossless-event-ingestion",
+    "async-producer-consumer-failure-propagation"
+  ],
+  "primarySkill": "channel-bounded-backpressure",
+  "prerequisites": [
+    "task-async-await",
+    "channel-basics",
+    "structured-audit-logging"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "national-museum-artifact-loan-chain-of-custody",
+    "scenarioType": "overnight-scan-burst-exceeds-audit-buffer-before-persistence",
+    "primaryRootCause": "bounded-channel-dropoldest-silently-evicts-queued-audit-events-while-trywrite-reports-success",
+    "failureMode": "accepted-audit-count-exceeds-durable-chain-of-custody-event-count",
+    "solutionPattern": "lossless-bounded-channel-wait-mode-with-async-producer-consumer-backpressure-and-error-propagation",
+    "labFormat": "audit-burst-multi-signal-production-incident"
+  },
+  "manifest": [
+    "README.md",
+    "contract/Contract.csproj",
+    "contract/Program.cs",
+    "docs/scenario.md",
+    "evidence/incident-log.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/AuditPipeline.cs",
+    "solution/README.md",
+    "starter/AuditPipeline.cs",
+    "starter/MuseumLoanAudit.csproj",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

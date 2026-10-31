@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-17",
-      "unitId": "UNIT-GIT-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-GIT-001-permit-pr-shallow-history-change-gate",
-      "domain": "git-ci-diff-semantics",
-      "primarySkill": "git-shallow-history-and-base-head-diff",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "municipal-building-permit-ci",
-      "scenarioType": "shallow-pr-checkout-change-gate-failure",
-      "primaryRootCause": "shallow-clone-lacks-comparison-base-commit-object",
-      "failureMode": "ci-change-detection-errors-and-targeted-tests-cannot-be-selected",
-      "solutionPattern": "explicit-base-sha-and-targeted-fetch-with-fail-closed-tree-diff",
-      "labFormat": "git-history-boundary-ci-investigation"
-    },
-    {
       "runSlot": "2026-10-27-18",
       "unitId": "UNIT-HPOOL-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-HPOOL-001-university-report-followup-health-probe-stall",
@@ -1501,10 +1486,24 @@
       "failureMode": "busy-read-loop-on-unchanged-partial-frame",
       "solutionPattern": "preserve-unconsumed-prefix-and-examine-through-buffer-end",
       "labFormat": "pipereader-framing-deterministic-contract-lab"
+    },
+    {
+      "runSlot": "2026-10-31-21",
+      "unitId": "UNIT-CHAN-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CHAN-001-museum-loan-audit-burst-loss",
+      "domain": "dotnet-channel-backpressure",
+      "primarySkill": "channel-bounded-backpressure",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "national-museum-artifact-loan-chain-of-custody",
+      "scenarioType": "overnight-scan-burst-exceeds-audit-buffer-before-persistence",
+      "primaryRootCause": "bounded-channel-dropoldest-silently-evicts-queued-audit-events-while-trywrite-reports-success",
+      "failureMode": "accepted-audit-count-exceeds-durable-chain-of-custody-event-count",
+      "solutionPattern": "lossless-bounded-channel-wait-mode-with-async-producer-consumer-backpressure-and-error-propagation",
+      "labFormat": "audit-burst-multi-signal-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-TCS-001",
     "UNIT-OPTS-001",
     "UNIT-MSET-001",
     "UNIT-DISP-001",
@@ -1527,12 +1526,12 @@
     "UNIT-REDIS-006",
     "UNIT-ETAGW-001",
     "UNIT-CTSR-001",
-    "UNIT-PIPEX-001"
+    "UNIT-PIPEX-001",
+    "UNIT-CHAN-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-task-continuation-scheduling": 1,
       "dotnet-options-configuration-reload": 1,
       "csharp-linq-multiset-reconciliation": 1,
       "dotnet-async-resource-exception-provenance": 1,
@@ -1555,21 +1554,21 @@
       "redis-atomic-expiry-contract": 1,
       "http-optimistic-concurrency-contract": 1,
       "dotnet-cancellation-source-lifecycle": 1,
-      "dotnet-system-io-pipelines": 1
+      "dotnet-system-io-pipelines": 1,
+      "dotnet-channel-backpressure": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 5,
       "L2": 7,
       "L1": 6,
+      "L3": 5,
       "L4": 4,
       "L5": 2
     },
     "byFormat": {
-      "continuation-scheduling-production-deadlock-investigation": 1,
       "live-configuration-contract-investigation": 1,
       "deterministic-stock-reconciliation-contract-lab": 1,
       "dual-fault-resource-lifecycle-investigation": 1,
@@ -1592,7 +1591,8 @@
       "deterministic-client-crash-boundary-contract-lab": 1,
       "two-editor-conditional-write-contract-investigation": 1,
       "batch-timeout-lifecycle-refactoring-workshop": 1,
-      "pipereader-framing-deterministic-contract-lab": 1
+      "pipereader-framing-deterministic-contract-lab": 1,
+      "audit-burst-multi-signal-production-incident": 1
     }
   }
 }

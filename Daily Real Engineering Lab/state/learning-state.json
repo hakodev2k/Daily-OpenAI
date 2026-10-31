@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PIPEX-001",
-    "runSlot": "2026-10-31-20",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-PIPEX-001-conveyor-telemetry-pipe-reader-spin",
+    "unitId": "UNIT-CHAN-001",
+    "runSlot": "2026-10-31-21",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CHAN-001-museum-loan-audit-burst-loss",
     "status": "READY",
-    "createdAt": "2026-10-31T20:13:00.135+07:00"
+    "createdAt": "2026-10-31T21:11:57+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 387,
-    "totalGenerated": 382,
+    "totalRunSlotsAttempted": 388,
+    "totalGenerated": 383,
     "totalFailed": 5
   },
   "learning": {
