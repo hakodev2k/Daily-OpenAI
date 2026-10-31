@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SQL-010",
-    "runSlot": "2026-10-31-12",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-SQL-010-smart-meter-running-total-window-frame",
+    "unitId": "UNIT-GIT-002",
+    "runSlot": "2026-10-31-13",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-GIT-002-grant-enrollment-ci-branch-divergence",
     "status": "READY",
-    "createdAt": "2026-10-31T12:06:00+07:00"
+    "createdAt": "2026-10-31T13:10:37+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 379,
-    "totalGenerated": 374,
+    "totalRunSlotsAttempted": 380,
+    "totalGenerated": 375,
     "totalFailed": 5
   },
   "learning": {
