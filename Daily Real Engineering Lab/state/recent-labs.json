@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-11",
-      "unitId": "UNIT-DP-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-DP-001-festival-pass-multi-replica-key-ring",
-      "domain": "aspnet-core-data-protection",
-      "primarySkill": "aspnet-core-data-protection-key-ring-lifecycle",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "regional-festival-mobile-ticket-session",
-      "scenarioType": "cross-replica-authentication-ticket-rejection-after-scaling",
-      "primaryRootCause": "ephemeral-data-protection-key-rings-created-independently-per-replica",
-      "failureMode": "valid-session-token-rejected-by-another-replica-and-after-process-restart",
-      "solutionPattern": "shared-persisted-key-ring-with-stable-application-discriminator-and-purpose-isolation",
-      "labFormat": "multi-replica-security-lifecycle-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-27-12",
       "unitId": "UNIT-CMP-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CMP-001-housing-subsidy-settlement-signed-comparer-overflow",
@@ -1500,10 +1485,24 @@
       "failureMode": "false-green-ci-and-expired-badge-accepted",
       "solutionPattern": "await-async-assertion-plus-policy-fix-and-mutation-sensitivity-gate",
       "labFormat": "async-test-oracle-mismatch-investigation"
+    },
+    {
+      "runSlot": "2026-10-31-15",
+      "unitId": "UNIT-COSMOS-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-COSMOS-001-seed-subsidy-voucher-partition-skew",
+      "domain": "azure-cosmos-db-partition-design",
+      "primarySkill": "cosmos-db-logical-partitioning",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "agricultural-seed-subsidy-voucher-redemption",
+      "scenarioType": "single-cooperative-skewed-redemption-burst",
+      "primaryRootCause": "cooperative-id-partition-key-concentrates-dominant-issuer-workload",
+      "failureMode": "logical-partition-hotspot-and-disproportionate-throttling",
+      "solutionPattern": "deterministic-voucher-derived-shard-with-idempotent-create-and-query-read-model",
+      "labFormat": "partition-capacity-design-decision-with-deterministic-policy-simulator"
     }
   ],
   "rolling24": [
-    "UNIT-PDETAIL-001",
     "UNIT-JBATCH-001",
     "UNIT-MIGR-001",
     "UNIT-JLIFE-001",
@@ -1526,12 +1525,12 @@
     "UNIT-IOPAR-001",
     "UNIT-SQL-010",
     "UNIT-GIT-002",
-    "UNIT-XASSERT-001"
+    "UNIT-XASSERT-001",
+    "UNIT-COSMOS-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-client-problem-details-contract": 1,
       "dotnet-json-streaming-ingestion": 1,
       "postgresql-online-schema-evolution": 1,
       "dotnet-json-dom-lifetime": 1,
@@ -1554,22 +1553,22 @@
       "dotnet-io-bound-batch-concurrency": 1,
       "sql-window-analytics": 1,
       "git-ci-change-detection": 1,
-      "dotnet-async-testing": 1
+      "dotnet-async-testing": 1,
+      "azure-cosmos-db-partition-design": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 8,
       "L3": 5,
       "L6": 1,
       "L1": 5,
+      "L2": 7,
       "L4": 4,
-      "L5": 1
+      "L5": 2
     },
     "byFormat": {
-      "partner-http-error-contract-investigation": 1,
       "streamed-batch-ingestion-production-incident": 1,
       "zero-downtime-data-migration-architecture-tabletop": 1,
       "json-dom-ownership-deterministic-reproduction": 1,
@@ -1592,7 +1591,8 @@
       "capacity-evidence-production-investigation-with-local-partner-simulator": 1,
       "deterministic-sql-running-total-contract-lab": 1,
       "git-branch-divergence-change-detection-refactoring-workshop": 1,
-      "async-test-oracle-mismatch-investigation": 1
+      "async-test-oracle-mismatch-investigation": 1,
+      "partition-capacity-design-decision-with-deterministic-policy-simulator": 1
     }
   }
 }

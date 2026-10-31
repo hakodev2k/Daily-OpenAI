@@ -1,0 +1,4 @@
+{
+  "partitionStrategy": "cooperative",
+  "description": "Existing production-like routing policy. Edit partitionStrategy only after recording evidence."
+}

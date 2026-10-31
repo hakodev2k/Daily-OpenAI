@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-XASSERT-001",
-    "runSlot": "2026-10-31-14",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-XASSERT-001-rail-yard-expired-badge-false-green-test",
+    "unitId": "UNIT-COSMOS-001",
+    "runSlot": "2026-10-31-15",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-COSMOS-001-seed-subsidy-voucher-partition-skew",
     "status": "READY",
-    "createdAt": "2026-10-31T14:07:51+07:00"
+    "createdAt": "2026-10-31T15:11:46+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 381,
-    "totalGenerated": 376,
+    "totalRunSlotsAttempted": 382,
+    "totalGenerated": 377,
     "totalFailed": 5
   },
   "learning": {
