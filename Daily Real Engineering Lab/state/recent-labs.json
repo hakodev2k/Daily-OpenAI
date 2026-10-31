@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-18",
-      "unitId": "UNIT-HPOOL-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-HPOOL-001-university-report-followup-health-probe-stall",
-      "domain": "http-connection-pooling",
-      "primarySkill": "http-response-lease-lifecycle",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "university-accreditation-report-gateway",
-      "scenarioType": "streaming-partner-report-preview-followed-by-health-check",
-      "primaryRootCause": "responseheadersread-response-remains-undisposed-while-followup-needs-same-limited-connection-pool",
-      "failureMode": "healthy-partner-probe-queues-until-timeout-after-successful-report-headers",
-      "solutionPattern": "close-unconsumed-response-lease-before-subsequent-dependent-request",
-      "labFormat": "http-connection-lease-production-incident"
-    },
-    {
       "runSlot": "2026-10-27-19",
       "unitId": "UNIT-NUM-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-NUM-001-roaming-usage-snowflake-id-precision",
@@ -1501,10 +1486,24 @@
       "failureMode": "accepted-audit-count-exceeds-durable-chain-of-custody-event-count",
       "solutionPattern": "lossless-bounded-channel-wait-mode-with-async-producer-consumer-backpressure-and-error-propagation",
       "labFormat": "audit-burst-multi-signal-production-incident"
+    },
+    {
+      "runSlot": "2026-10-31-22",
+      "unitId": "UNIT-SEMG-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-SEMG-001-satellite-tile-cancelled-waiter-permit-leak",
+      "domain": "dotnet-semaphore-permit-ownership",
+      "primarySkill": "semaphoreslim-permit-ownership",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "satellite-imagery-tile-gpu-render-service",
+      "scenarioType": "queued-map-tile-request-cancelled-while-first-render-holds-only-gpu-slot",
+      "primaryRootCause": "semaphoreslim-release-in-finally-even-when-cancelled-waitasync-never-acquired-permit",
+      "failureMode": "phantom-permit-allows-concurrent-render-and-later-semaphorefull-exception",
+      "solutionPattern": "track-successful-permit-acquisition-and-release-only-owned-permits",
+      "labFormat": "deterministic-cancelled-waiter-permit-ownership-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-OPTS-001",
     "UNIT-MSET-001",
     "UNIT-DISP-001",
     "UNIT-COOKIE-001",
@@ -1527,12 +1526,12 @@
     "UNIT-ETAGW-001",
     "UNIT-CTSR-001",
     "UNIT-PIPEX-001",
-    "UNIT-CHAN-001"
+    "UNIT-CHAN-001",
+    "UNIT-SEMG-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-options-configuration-reload": 1,
       "csharp-linq-multiset-reconciliation": 1,
       "dotnet-async-resource-exception-provenance": 1,
       "http-client-cookie-session-isolation": 1,
@@ -1555,21 +1554,21 @@
       "http-optimistic-concurrency-contract": 1,
       "dotnet-cancellation-source-lifecycle": 1,
       "dotnet-system-io-pipelines": 1,
-      "dotnet-channel-backpressure": 1
+      "dotnet-channel-backpressure": 1,
+      "dotnet-semaphore-permit-ownership": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L2": 7,
       "L1": 6,
+      "L2": 7,
       "L3": 5,
       "L4": 4,
       "L5": 2
     },
     "byFormat": {
-      "live-configuration-contract-investigation": 1,
       "deterministic-stock-reconciliation-contract-lab": 1,
       "dual-fault-resource-lifecycle-investigation": 1,
       "cross-tenant-partner-session-production-incident": 1,
@@ -1592,7 +1591,8 @@
       "two-editor-conditional-write-contract-investigation": 1,
       "batch-timeout-lifecycle-refactoring-workshop": 1,
       "pipereader-framing-deterministic-contract-lab": 1,
-      "audit-burst-multi-signal-production-incident": 1
+      "audit-burst-multi-signal-production-incident": 1,
+      "deterministic-cancelled-waiter-permit-ownership-investigation": 1
     }
   }
 }

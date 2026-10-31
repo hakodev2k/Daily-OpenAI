@@ -1,0 +1,60 @@
+{
+  "unitId": "UNIT-SEMG-001",
+  "runSlot": "2026-10-31-22",
+  "title": "Hàng đợi render bản đồ vệ tinh vượt giới hạn GPU sau yêu cầu bị hủy",
+  "domain": "dotnet-semaphore-permit-ownership",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-31T22:16:16+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "semaphoreslim-permit-ownership",
+    "waitasync-cancellation",
+    "deterministic-concurrency-regression"
+  ],
+  "primarySkill": "semaphoreslim-permit-ownership",
+  "prerequisites": [
+    "csharp-async-await",
+    "cancellationtoken",
+    "semaphore-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "satellite-imagery-tile-gpu-render-service",
+    "scenarioType": "queued-map-tile-request-cancelled-while-first-render-holds-only-gpu-slot",
+    "primaryRootCause": "semaphoreslim-release-in-finally-even-when-cancelled-waitasync-never-acquired-permit",
+    "failureMode": "phantom-permit-allows-concurrent-render-and-later-semaphorefull-exception",
+    "solutionPattern": "track-successful-permit-acquisition-and-release-only-owned-permits",
+    "labFormat": "deterministic-cancelled-waiter-permit-ownership-investigation"
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "evidence/expected-trace.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/README.md",
+    "solution/TileGate.cs",
+    "starter/OrbitTileLab.csproj",
+    "starter/Program.cs",
+    "starter/TileGate.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
