@@ -3,20 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-05",
-      "unitId": "UNIT-KEY-001",
-      "domain": "dotnet-cache-key-identity",
-      "primarySkill": "tenant-scoped-cache-identity",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "regional-bridge-safety-inspection-briefings",
-      "scenarioType": "different-tenant-report-pairs-share-an-in-memory-cache-entry",
-      "primaryRootCause": "ambiguous-delimiter-concatenation-maps-distinct-tenant-report-tuples-to-one-cache-key",
-      "failureMode": "cached-briefing-crosses-tenant-boundary-and-missing-origin-record-appears-present",
-      "solutionPattern": "versioned-unambiguous-tuple-encoding-for-tenant-scoped-cache-keys",
-      "labFormat": "tenant-cache-identity-evidence-investigation"
-    },
-    {
       "runSlot": "2026-10-27-06",
       "unitId": "UNIT-RANGE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-RANGE-001-wildlife-camera-resume-http-range-boundaries",
@@ -1499,10 +1485,24 @@
       "failureMode": "critical-blood-delivery-remains-behind-lower-priority-route-despite-updated-request-record",
       "solutionPattern": "versioned-queue-tickets-with-stale-ticket-skip-and-stable-fifo-tiebreaker",
       "labFormat": "priority-escalation-deterministic-scheduling-contract"
+    },
+    {
+      "runSlot": "2026-10-31-09",
+      "unitId": "UNIT-MBUF-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-MBUF-001-orchard-sensor-frame-transport-length",
+      "domain": "dotnet-binary-stream-transport",
+      "primarySkill": "memorystream-logical-length-vs-capacity",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-orchard-frost-sensor-binary-uplink",
+      "scenarioType": "sensor-batch-frame-accepted-locally-but-rejected-by-remote-framing-contract",
+      "primaryRootCause": "memorystream-exposes-allocated-backing-array-instead-of-logical-written-byte-range",
+      "failureMode": "binary-upload-transmits-unwritten-trailing-bytes-and-fails-exact-length-validation",
+      "solutionPattern": "send-only-written-stream-bytes-with-explicit-ownership-and-length-contract",
+      "labFormat": "binary-frame-transport-boundary-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-HBODY-001",
     "UNIT-CLOCK-001",
     "UNIT-MCARD-001",
     "UNIT-LPROBE-001",
@@ -1525,12 +1525,12 @@
     "UNIT-CTXQ-001",
     "UNIT-CFLIGHT-001",
     "UNIT-NPARSE-001",
-    "UNIT-PQ-001"
+    "UNIT-PQ-001",
+    "UNIT-MBUF-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-http-streaming-deadlines": 1,
       "dotnet-timeprovider-testability": 1,
       "observability-metric-cardinality": 1,
       "aspnetcore-health-probe-boundaries": 1,
@@ -1553,22 +1553,22 @@
       "aspnetcore-request-context-background-boundary": 1,
       "cache-stampede-concurrency-control": 1,
       "dotnet-globalization-numeric-wire-format": 1,
-      "dotnet-priorityqueue-scheduling": 1
+      "dotnet-priorityqueue-scheduling": 1,
+      "dotnet-binary-stream-transport": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
-      "L4": 3,
+      "L4": 4,
       "L2": 7,
+      "L3": 5,
       "L1": 5,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "http-stream-body-deadline-production-investigation": 1,
       "virtual-clock-testability-refactoring-workshop": 1,
       "metric-cardinality-incident-investigation-with-local-policy-simulator": 1,
       "kubernetes-probe-production-incident-contract": 1,
@@ -1591,7 +1591,8 @@
       "request-to-background-boundary-production-investigation": 1,
       "cache-expiry-burst-decision-and-contract-lab": 1,
       "cross-locale-numeric-wire-contract-investigation": 1,
-      "priority-escalation-deterministic-scheduling-contract": 1
+      "priority-escalation-deterministic-scheduling-contract": 1,
+      "binary-frame-transport-boundary-refactoring-workshop": 1
     }
   }
 }

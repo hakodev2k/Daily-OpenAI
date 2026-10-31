@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PQ-001",
-    "runSlot": "2026-10-31-08",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-PQ-001-blood-courier-urgent-dispatch-priority",
+    "unitId": "UNIT-MBUF-001",
+    "runSlot": "2026-10-31-09",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-MBUF-001-orchard-sensor-frame-transport-length",
     "status": "READY",
-    "createdAt": "2026-10-31T08:09:44+07:00"
+    "createdAt": "2026-10-31T09:07:11+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 375,
-    "totalGenerated": 370,
+    "totalRunSlotsAttempted": 376,
+    "totalGenerated": 371,
     "totalFailed": 5
   },
   "learning": {

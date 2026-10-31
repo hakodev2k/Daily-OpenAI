@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-MBUF-001",
+  "runSlot": "2026-10-31-09",
+  "title": "Orchard sensor frame transport: bản tin bị từ chối",
+  "domain": "dotnet-binary-stream-transport",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-31T09:07:11+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "memorystream-logical-length-vs-capacity",
+    "binary-protocol-contract",
+    "stream-ownership",
+    "regression-testing"
+  ],
+  "primarySkill": "memorystream-logical-length-vs-capacity",
+  "prerequisites": [
+    "C# streams",
+    "BinaryWriter",
+    "byte arrays",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-orchard-frost-sensor-binary-uplink",
+    "scenarioType": "sensor-batch-frame-accepted-locally-but-rejected-by-remote-framing-contract",
+    "primaryRootCause": "memorystream-exposes-allocated-backing-array-instead-of-logical-written-byte-range",
+    "failureMode": "binary-upload-transmits-unwritten-trailing-bytes-and-fails-exact-length-validation",
+    "solutionPattern": "send-only-written-stream-bytes-with-explicit-ownership-and-length-contract",
+    "labFormat": "binary-frame-transport-boundary-refactoring-workshop"
+  },
+  "validationNotes": "Strict static review of manifest, starter, scripts, and learner verification path. .NET code was not executed in this run."
+}
