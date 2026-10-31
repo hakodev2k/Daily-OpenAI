@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-REDIS-006",
-    "runSlot": "2026-10-31-17",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-REDIS-006-makerspace-machine-hold-crash-expiry",
+    "unitId": "UNIT-ETAGW-001",
+    "runSlot": "2026-10-31-18",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-ETAGW-001-wetland-permit-stale-editor-overwrite",
     "status": "READY",
-    "createdAt": "2026-10-31T17:09:33+07:00"
+    "createdAt": "2026-10-31T18:17:00+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 384,
-    "totalGenerated": 379,
+    "totalRunSlotsAttempted": 385,
+    "totalGenerated": 380,
     "totalFailed": 5
   },
   "learning": {

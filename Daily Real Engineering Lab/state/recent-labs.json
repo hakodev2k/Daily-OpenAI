@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-14",
-      "unitId": "UNIT-CHAN-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CHAN-002-pharma-batch-audit-channel-loss",
-      "domain": "dotnet-channel-delivery-semantics",
-      "primarySkill": "bounded-channel-full-mode-delivery-contract",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "pharmaceutical-batch-release-audit-trail",
-      "scenarioType": "bounded-in-memory-audit-pipeline-burst-before-drain",
-      "primaryRootCause": "bounded-channel-dropoldest-mode-silently-discards-unread-audit-events",
-      "failureMode": "successful-publisher-completion-with-missing-regulated-audit-records",
-      "solutionPattern": "lossless-bounded-channel-wait-mode-with-observable-backpressure-and-cancellation",
-      "labFormat": "audit-event-loss-production-investigation"
-    },
-    {
       "runSlot": "2026-10-27-15",
       "unitId": "UNIT-UTF8-001",
       "domain": "dotnet-streaming-text",
@@ -1500,10 +1485,24 @@
       "failureMode": "persistent-orphaned-hold-blocks-machine-booking-beyond-lease-window",
       "solutionPattern": "single-atomic-conditional-key-write-with-expiration",
       "labFormat": "deterministic-client-crash-boundary-contract-lab"
+    },
+    {
+      "runSlot": "2026-10-31-18",
+      "unitId": "UNIT-ETAGW-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-ETAGW-001-wetland-permit-stale-editor-overwrite",
+      "domain": "http-optimistic-concurrency-contract",
+      "primarySkill": "http-conditional-write-optimistic-concurrency",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "wetland-restoration-permit-review-draft",
+      "scenarioType": "two-editors-load-same-revision-then-submit-conflicting-updates",
+      "primaryRootCause": "put-handler-overwrites-current-resource-without-enforcing-client-if-match-precondition",
+      "failureMode": "stale-editor-replaces-newer-review-notes-with-http-success",
+      "solutionPattern": "atomic-strong-etag-precondition-check-and-conditional-write",
+      "labFormat": "two-editor-conditional-write-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-JLIFE-001",
     "UNIT-STARTNEW-001",
     "UNIT-EF-018",
     "UNIT-TCS-001",
@@ -1526,12 +1525,12 @@
     "UNIT-XASSERT-001",
     "UNIT-COSMOS-001",
     "UNIT-EF-019",
-    "UNIT-REDIS-006"
+    "UNIT-REDIS-006",
+    "UNIT-ETAGW-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-json-dom-lifetime": 1,
       "dotnet-async-task-lifecycle": 1,
       "ef-core-change-tracking": 1,
       "dotnet-task-continuation-scheduling": 1,
@@ -1554,21 +1553,21 @@
       "dotnet-async-testing": 1,
       "azure-cosmos-db-partition-design": 1,
       "ef-core-relational-query-semantics": 1,
-      "redis-atomic-expiry-contract": 1
+      "redis-atomic-expiry-contract": 1,
+      "http-optimistic-concurrency-contract": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 6,
-      "L2": 7,
+      "L2": 8,
       "L4": 4,
       "L3": 5,
+      "L1": 5,
       "L5": 2
     },
     "byFormat": {
-      "json-dom-ownership-deterministic-reproduction": 1,
       "nested-task-production-investigation-with-controlled-gateway": 1,
       "tracked-state-vs-set-based-write-refactoring-workshop": 1,
       "continuation-scheduling-production-deadlock-investigation": 1,
@@ -1591,7 +1590,8 @@
       "async-test-oracle-mismatch-investigation": 1,
       "partition-capacity-design-decision-with-deterministic-policy-simulator": 1,
       "filtered-required-navigation-production-forensics": 1,
-      "deterministic-client-crash-boundary-contract-lab": 1
+      "deterministic-client-crash-boundary-contract-lab": 1,
+      "two-editor-conditional-write-contract-investigation": 1
     }
   }
 }
