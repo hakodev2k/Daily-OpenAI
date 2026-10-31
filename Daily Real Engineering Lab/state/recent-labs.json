@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-06",
-      "unitId": "UNIT-RANGE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-RANGE-001-wildlife-camera-resume-http-range-boundaries",
-      "domain": "http-partial-content",
-      "primarySkill": "http-range-content-range-boundary-semantics",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "wildlife-camera-image-archive",
-      "scenarioType": "parallelized-range-download-reassembled-into-corrupted-camera-image",
-      "primaryRootCause": "http-byte-range-last-position-is-inclusive-but-chunk-builder-uses-exclusive-boundary",
-      "failureMode": "reassembled-image-contains-overlapping-duplicate-boundary-bytes",
-      "solutionPattern": "inclusive-end-offset-with-content-range-and-payload-length-contract-validation",
-      "labFormat": "byte-range-resume-production-incident"
-    },
-    {
       "runSlot": "2026-10-27-07",
       "unitId": "UNIT-XML-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-XML-001-renewable-certificate-xml-namespace-boundary",
@@ -1500,10 +1485,24 @@
       "failureMode": "binary-upload-transmits-unwritten-trailing-bytes-and-fails-exact-length-validation",
       "solutionPattern": "send-only-written-stream-bytes-with-explicit-ownership-and-length-contract",
       "labFormat": "binary-frame-transport-boundary-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-31-10",
+      "unitId": "UNIT-REQRETRY-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-REQRETRY-001-library-hold-partner-request-retry",
+      "domain": "http-request-retry-semantics",
+      "primarySkill": "httpclient-sendasync-request-lifecycle",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "city-library-interbranch-book-hold-partner",
+      "scenarioType": "transient-503-followed-by-retry-of-partner-hold-request",
+      "primaryRootCause": "same-http-request-message-instance-is-reused-across-sendasync-attempts",
+      "failureMode": "first-partner-503-is-followed-by-invalidoperationexception-before-second-request-reaches-partner",
+      "solutionPattern": "fresh-request-and-content-per-attempt-with-stable-idempotency-key-and-bounded-status-aware-retry",
+      "labFormat": "http-partner-retry-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-CLOCK-001",
     "UNIT-MCARD-001",
     "UNIT-LPROBE-001",
     "UNIT-BOX-001",
@@ -1526,12 +1525,12 @@
     "UNIT-CFLIGHT-001",
     "UNIT-NPARSE-001",
     "UNIT-PQ-001",
-    "UNIT-MBUF-001"
+    "UNIT-MBUF-001",
+    "UNIT-REQRETRY-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-timeprovider-testability": 1,
       "observability-metric-cardinality": 1,
       "aspnetcore-health-probe-boundaries": 1,
       "csharp-value-type-interface-boxing": 1,
@@ -1554,22 +1553,22 @@
       "cache-stampede-concurrency-control": 1,
       "dotnet-globalization-numeric-wire-format": 1,
       "dotnet-priorityqueue-scheduling": 1,
-      "dotnet-binary-stream-transport": 1
+      "dotnet-binary-stream-transport": 1,
+      "http-request-retry-semantics": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L4": 4,
-      "L2": 7,
+      "L2": 8,
       "L3": 5,
       "L1": 5,
       "L5": 2,
-      "L6": 1
+      "L6": 1,
+      "L4": 3
     },
     "byFormat": {
-      "virtual-clock-testability-refactoring-workshop": 1,
       "metric-cardinality-incident-investigation-with-local-policy-simulator": 1,
       "kubernetes-probe-production-incident-contract": 1,
       "mutable-counter-deterministic-reconciliation-lab": 1,
@@ -1592,7 +1591,8 @@
       "cache-expiry-burst-decision-and-contract-lab": 1,
       "cross-locale-numeric-wire-contract-investigation": 1,
       "priority-escalation-deterministic-scheduling-contract": 1,
-      "binary-frame-transport-boundary-refactoring-workshop": 1
+      "binary-frame-transport-boundary-refactoring-workshop": 1,
+      "http-partner-retry-contract-investigation": 1
     }
   }
 }

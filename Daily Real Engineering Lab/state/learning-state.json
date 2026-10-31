@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MBUF-001",
-    "runSlot": "2026-10-31-09",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-MBUF-001-orchard-sensor-frame-transport-length",
+    "unitId": "UNIT-REQRETRY-001",
+    "runSlot": "2026-10-31-10",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-REQRETRY-001-library-hold-partner-request-retry",
     "status": "READY",
-    "createdAt": "2026-10-31T09:07:11+07:00"
+    "createdAt": "2026-10-31T10:13:53+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 376,
-    "totalGenerated": 371,
+    "totalRunSlotsAttempted": 377,
+    "totalGenerated": 372,
     "totalFailed": 5
   },
   "learning": {
