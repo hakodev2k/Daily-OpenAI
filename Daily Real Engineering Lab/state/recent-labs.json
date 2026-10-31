@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-13",
-      "unitId": "UNIT-OFFSYNC-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-OFFSYNC-001-field-technician-offline-work-order-conflict",
-      "domain": "offline-sync-consistency",
-      "primarySkill": "offline-field-level-conflict-resolution",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "water-utility-field-technician-offline-work-orders",
-      "scenarioType": "multi-device-offline-concurrent-field-edits",
-      "primaryRootCause": "global-client-timestamp-last-write-wins-collapses-independent-fields-and-accepts-stale-field-edits",
-      "failureMode": "independent-note-lost-stale-status-accepted-and-retry-not-idempotent",
-      "solutionPattern": "per-field-base-revision-with-immutable-change-id-deduplication-and-explicit-conflicts",
-      "labFormat": "offline-sync-contract-design-decision-with-executable-fixture"
-    },
-    {
       "runSlot": "2026-10-27-14",
       "unitId": "UNIT-CHAN-002",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CHAN-002-pharma-batch-audit-channel-loss",
@@ -1500,10 +1485,24 @@
       "failureMode": "compliance-export-silently-omits-valid-historical-referral-events",
       "solutionPattern": "project-audit-only-columns-without-loading-filtered-principal-navigation",
       "labFormat": "filtered-required-navigation-production-forensics"
+    },
+    {
+      "runSlot": "2026-10-31-17",
+      "unitId": "UNIT-REDIS-006",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-REDIS-006-makerspace-machine-hold-crash-expiry",
+      "domain": "redis-atomic-expiry-contract",
+      "primarySkill": "redis-atomic-set-nx-expiry",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "makerspace-laser-cutter-machine-slot-holds",
+      "scenarioType": "booking-client-process-crashes-between-lease-claim-and-expiration-configuration",
+      "primaryRootCause": "two-command-conditional-key-claim-and-expiry-not-atomic-across-process-crash",
+      "failureMode": "persistent-orphaned-hold-blocks-machine-booking-beyond-lease-window",
+      "solutionPattern": "single-atomic-conditional-key-write-with-expiration",
+      "labFormat": "deterministic-client-crash-boundary-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-MIGR-001",
     "UNIT-JLIFE-001",
     "UNIT-STARTNEW-001",
     "UNIT-EF-018",
@@ -1526,12 +1525,12 @@
     "UNIT-GIT-002",
     "UNIT-XASSERT-001",
     "UNIT-COSMOS-001",
-    "UNIT-EF-019"
+    "UNIT-EF-019",
+    "UNIT-REDIS-006"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "postgresql-online-schema-evolution": 1,
       "dotnet-json-dom-lifetime": 1,
       "dotnet-async-task-lifecycle": 1,
       "ef-core-change-tracking": 1,
@@ -1554,22 +1553,21 @@
       "git-ci-change-detection": 1,
       "dotnet-async-testing": 1,
       "azure-cosmos-db-partition-design": 1,
-      "ef-core-relational-query-semantics": 1
+      "ef-core-relational-query-semantics": 1,
+      "redis-atomic-expiry-contract": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L6": 1,
-      "L1": 5,
+      "L1": 6,
       "L2": 7,
       "L4": 4,
       "L3": 5,
       "L5": 2
     },
     "byFormat": {
-      "zero-downtime-data-migration-architecture-tabletop": 1,
       "json-dom-ownership-deterministic-reproduction": 1,
       "nested-task-production-investigation-with-controlled-gateway": 1,
       "tracked-state-vs-set-based-write-refactoring-workshop": 1,
@@ -1592,7 +1590,8 @@
       "git-branch-divergence-change-detection-refactoring-workshop": 1,
       "async-test-oracle-mismatch-investigation": 1,
       "partition-capacity-design-decision-with-deterministic-policy-simulator": 1,
-      "filtered-required-navigation-production-forensics": 1
+      "filtered-required-navigation-production-forensics": 1,
+      "deterministic-client-crash-boundary-contract-lab": 1
     }
   }
 }

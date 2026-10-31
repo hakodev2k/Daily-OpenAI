@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-EF-019",
-    "runSlot": "2026-10-31-16",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-EF-019-clinic-referral-archived-patient-audit-gap",
+    "unitId": "UNIT-REDIS-006",
+    "runSlot": "2026-10-31-17",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-REDIS-006-makerspace-machine-hold-crash-expiry",
     "status": "READY",
-    "createdAt": "2026-10-31T16:07:34+07:00"
+    "createdAt": "2026-10-31T17:09:33+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 383,
-    "totalGenerated": 378,
+    "totalRunSlotsAttempted": 384,
+    "totalGenerated": 379,
     "totalFailed": 5
   },
   "learning": {
