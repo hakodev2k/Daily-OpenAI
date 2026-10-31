@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-21",
-      "unitId": "UNIT-HOST-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-HOST-002-shelter-feed-backgroundservice-startup-gate",
-      "domain": "dotnet-host-lifecycle",
-      "primarySkill": "backgroundservice-first-await-startup-contract",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "emergency-shelter-capacity-coordination",
-      "scenarioType": "host-startup-stalls-during-background-feed-warmup",
-      "primaryRootCause": "backgroundservice-executeasync-blocks-synchronously-before-first-incomplete-await",
-      "failureMode": "host-startasync-and-api-readiness-delay-until-warmup-gate-releases",
-      "solutionPattern": "yield-asynchronous-execution-boundary-before-long-running-warmup-with-independent-readiness-policy",
-      "labFormat": "hosted-service-startup-evidence-investigation"
-    },
-    {
       "runSlot": "2026-10-27-22",
       "unitId": "UNIT-GUID-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-GUID-001-emergency-vehicle-uuid-wire-byte-order",
@@ -1501,10 +1486,24 @@
       "failureMode": "untrusted-authority-or-route-accepted-for-partner-callback-configuration",
       "solutionPattern": "parse-absolute-uri-and-enforce-scheme-host-port-credentials-fragment-and-exact-path-contract",
       "labFormat": "uri-authority-security-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-01-01",
+      "unitId": "UNIT-IMGREF-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-IMGREF-001-recycling-route-image-release-drift",
+      "domain": "kubernetes-image-release-provenance",
+      "primarySkill": "kubernetes-image-digest-pinning-and-node-cache",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "municipal-recycling-pickup-route-optimization",
+      "scenarioType": "rolling-release-same-image-spec-yields-different-binaries-across-nodes",
+      "primaryRootCause": "mutable-image-tag-with-ifnotpresent-resolves-to-node-dependent-cached-digests",
+      "failureMode": "ready-pods-report-same-image-reference-but-run-different-routing-engine-revisions",
+      "solutionPattern": "immutable-image-digest-references-and-explicit-digest-based-rollbacks",
+      "labFormat": "multi-node-rollout-provenance-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-COOKIE-001",
     "UNIT-AENUM-001",
     "UNIT-GRAPH-001",
     "UNIT-ROUTE-001",
@@ -1527,12 +1526,12 @@
     "UNIT-CHAN-001",
     "UNIT-SEMG-001",
     "UNIT-MCLK-001",
-    "UNIT-URLAUTH-001"
+    "UNIT-URLAUTH-001",
+    "UNIT-IMGREF-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-client-cookie-session-isolation": 1,
       "dotnet-async-stream-cancellation": 1,
       "dotnet-unicode-text-segmentation": 1,
       "aspnetcore-route-fallback": 1,
@@ -1555,21 +1554,21 @@
       "dotnet-channel-backpressure": 1,
       "dotnet-semaphore-permit-ownership": 1,
       "dotnet-clock-domain-semantics": 1,
-      "http-uri-authority-security": 1
+      "http-uri-authority-security": 1,
+      "kubernetes-image-release-provenance": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L3": 5,
       "L2": 7,
       "L4": 5,
       "L1": 5,
+      "L3": 5,
       "L5": 2
     },
     "byFormat": {
-      "cross-tenant-partner-session-production-incident": 1,
       "async-stream-cancellation-contract-investigation": 1,
       "multilingual-message-segmentation-refactoring-workshop": 1,
       "aspnetcore-spa-fallback-contract-deterministic-lab": 1,
@@ -1592,7 +1591,8 @@
       "audit-burst-multi-signal-production-incident": 1,
       "deterministic-cancelled-waiter-permit-ownership-investigation": 1,
       "clock-domain-refactoring-with-deterministic-step-simulator": 1,
-      "uri-authority-security-contract-investigation": 1
+      "uri-authority-security-contract-investigation": 1,
+      "multi-node-rollout-provenance-production-incident": 1
     }
   }
 }

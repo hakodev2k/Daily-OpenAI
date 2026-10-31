@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-URLAUTH-001",
-    "runSlot": "2026-11-01-00",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-URLAUTH-001-dam-telemetry-callback-authority-confusion",
+    "unitId": "UNIT-IMGREF-001",
+    "runSlot": "2026-11-01-01",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-IMGREF-001-recycling-route-image-release-drift",
     "status": "READY",
-    "createdAt": "2026-11-01T00:08:19+07:00"
+    "createdAt": "2026-11-01T01:10:16.836+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 391,
-    "totalGenerated": 386,
+    "totalRunSlotsAttempted": 392,
+    "totalGenerated": 387,
     "totalFailed": 5
   },
   "learning": {

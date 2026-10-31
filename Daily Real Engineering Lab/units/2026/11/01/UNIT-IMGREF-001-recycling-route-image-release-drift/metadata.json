@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-IMGREF-001",
+  "runSlot": "2026-11-01-01",
+  "title": "Hai pod Ready nhưng dùng hai bản route engine khác nhau sau rollout",
+  "domain": "kubernetes-image-release-provenance",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-01T01:10:16.836+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "kubernetes-container-image-references",
+    "container-node-image-cache",
+    "immutable-deployment-rollbacks",
+    "release-provenance-diagnostics"
+  ],
+  "primarySkill": "kubernetes-image-digest-pinning-and-node-cache",
+  "prerequisites": [
+    "dotnet-console-basics",
+    "container-image-tag-and-digest-concepts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-recycling-pickup-route-optimization",
+    "scenarioType": "rolling-release-same-image-spec-yields-different-binaries-across-nodes",
+    "primaryRootCause": "mutable-image-tag-with-ifnotpresent-resolves-to-node-dependent-cached-digests",
+    "failureMode": "ready-pods-report-same-image-reference-but-run-different-routing-engine-revisions",
+    "solutionPattern": "immutable-image-digest-references-and-explicit-digest-based-rollbacks",
+    "labFormat": "multi-node-rollout-provenance-production-incident"
+  }
+}
