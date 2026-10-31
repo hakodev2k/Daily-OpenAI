@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-16",
-      "unitId": "UNIT-LEGAL-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-LEGAL-001-court-efiling-durable-deadline-receipts",
-      "domain": "legal-platform-architecture",
-      "primarySkill": "legal-receipt-durable-commit-boundary",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "judicial-court-efiling-deadline-receipts",
-      "scenarioType": "deadline-bound-filing-receipt-under-failover-and-ambiguous-retries",
-      "primaryRootCause": "http-acknowledgement-issued-before-durable-authoritative-receipt-commit",
-      "failureMode": "orphaned-legal-receipts-and-duplicate-submission-identities-after-failover",
-      "solutionPattern": "durable-authoritative-acceptance-boundary-with-idempotent-receipt-lookup-and-fail-closed-unknown-outcomes",
-      "labFormat": "architecture-tabletop-failure-contract-decision"
-    },
-    {
       "runSlot": "2026-10-27-17",
       "unitId": "UNIT-GIT-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-GIT-001-permit-pr-shallow-history-change-gate",
@@ -1501,10 +1486,24 @@
       "failureMode": "later-fast-photos-falsely-reported-as-timeouts",
       "solutionPattern": "per-inspection-linked-cancellation-source-and-deadline",
       "labFormat": "batch-timeout-lifecycle-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-10-31-20",
+      "unitId": "UNIT-PIPEX-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-PIPEX-001-conveyor-telemetry-pipe-reader-spin",
+      "domain": "dotnet-system-io-pipelines",
+      "primarySkill": "pipereader-consumed-examined-cursors",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "factory-conveyor-belt-telemetry-ingestion",
+      "scenarioType": "split-newline-delimited-telemetry-frame-with-delayed-tail",
+      "primaryRootCause": "pipereader-incomplete-buffer-is-marked-unexamined-and-returned-again-immediately",
+      "failureMode": "busy-read-loop-on-unchanged-partial-frame",
+      "solutionPattern": "preserve-unconsumed-prefix-and-examine-through-buffer-end",
+      "labFormat": "pipereader-framing-deterministic-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-EF-018",
     "UNIT-TCS-001",
     "UNIT-OPTS-001",
     "UNIT-MSET-001",
@@ -1527,12 +1526,12 @@
     "UNIT-EF-019",
     "UNIT-REDIS-006",
     "UNIT-ETAGW-001",
-    "UNIT-CTSR-001"
+    "UNIT-CTSR-001",
+    "UNIT-PIPEX-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "ef-core-change-tracking": 1,
       "dotnet-task-continuation-scheduling": 1,
       "dotnet-options-configuration-reload": 1,
       "csharp-linq-multiset-reconciliation": 1,
@@ -1555,21 +1554,21 @@
       "ef-core-relational-query-semantics": 1,
       "redis-atomic-expiry-contract": 1,
       "http-optimistic-concurrency-contract": 1,
-      "dotnet-cancellation-source-lifecycle": 1
+      "dotnet-cancellation-source-lifecycle": 1,
+      "dotnet-system-io-pipelines": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L4": 5,
       "L3": 5,
       "L2": 7,
-      "L1": 5,
+      "L1": 6,
+      "L4": 4,
       "L5": 2
     },
     "byFormat": {
-      "tracked-state-vs-set-based-write-refactoring-workshop": 1,
       "continuation-scheduling-production-deadlock-investigation": 1,
       "live-configuration-contract-investigation": 1,
       "deterministic-stock-reconciliation-contract-lab": 1,
@@ -1592,7 +1591,8 @@
       "filtered-required-navigation-production-forensics": 1,
       "deterministic-client-crash-boundary-contract-lab": 1,
       "two-editor-conditional-write-contract-investigation": 1,
-      "batch-timeout-lifecycle-refactoring-workshop": 1
+      "batch-timeout-lifecycle-refactoring-workshop": 1,
+      "pipereader-framing-deterministic-contract-lab": 1
     }
   }
 }
