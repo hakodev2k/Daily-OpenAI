@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-12",
-      "unitId": "UNIT-CMP-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CMP-001-housing-subsidy-settlement-signed-comparer-overflow",
-      "domain": "csharp-comparer-contract",
-      "primarySkill": "csharp-comparer-contract",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "municipal-housing-subsidy-settlement",
-      "scenarioType": "signed-settlement-adjustment-order-drift",
-      "primaryRootCause": "subtraction-based-int-comparer-overflows-at-opposite-signed-boundaries",
-      "failureMode": "large-debit-credit-records-export-in-inverted-order",
-      "solutionPattern": "compareto-based-total-order-with-ordinal-reference-tie-breaker",
-      "labFormat": "deterministic-collection-order-contract"
-    },
-    {
       "runSlot": "2026-10-27-13",
       "unitId": "UNIT-OFFSYNC-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-OFFSYNC-001-field-technician-offline-work-order-conflict",
@@ -1500,10 +1485,24 @@
       "failureMode": "logical-partition-hotspot-and-disproportionate-throttling",
       "solutionPattern": "deterministic-voucher-derived-shard-with-idempotent-create-and-query-read-model",
       "labFormat": "partition-capacity-design-decision-with-deterministic-policy-simulator"
+    },
+    {
+      "runSlot": "2026-10-31-16",
+      "unitId": "UNIT-EF-019",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-EF-019-clinic-referral-archived-patient-audit-gap",
+      "domain": "ef-core-relational-query-semantics",
+      "primarySkill": "ef-core-global-query-filters",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "community-clinic-referral-audit-export",
+      "scenarioType": "historical-referral-events-disappear-after-patient-archival",
+      "primaryRootCause": "required-efcore-navigation-inner-join-combines-with-principal-global-query-filter",
+      "failureMode": "compliance-export-silently-omits-valid-historical-referral-events",
+      "solutionPattern": "project-audit-only-columns-without-loading-filtered-principal-navigation",
+      "labFormat": "filtered-required-navigation-production-forensics"
     }
   ],
   "rolling24": [
-    "UNIT-JBATCH-001",
     "UNIT-MIGR-001",
     "UNIT-JLIFE-001",
     "UNIT-STARTNEW-001",
@@ -1526,12 +1525,12 @@
     "UNIT-SQL-010",
     "UNIT-GIT-002",
     "UNIT-XASSERT-001",
-    "UNIT-COSMOS-001"
+    "UNIT-COSMOS-001",
+    "UNIT-EF-019"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-json-streaming-ingestion": 1,
       "postgresql-online-schema-evolution": 1,
       "dotnet-json-dom-lifetime": 1,
       "dotnet-async-task-lifecycle": 1,
@@ -1554,22 +1553,22 @@
       "sql-window-analytics": 1,
       "git-ci-change-detection": 1,
       "dotnet-async-testing": 1,
-      "azure-cosmos-db-partition-design": 1
+      "azure-cosmos-db-partition-design": 1,
+      "ef-core-relational-query-semantics": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 5,
       "L6": 1,
       "L1": 5,
       "L2": 7,
       "L4": 4,
+      "L3": 5,
       "L5": 2
     },
     "byFormat": {
-      "streamed-batch-ingestion-production-incident": 1,
       "zero-downtime-data-migration-architecture-tabletop": 1,
       "json-dom-ownership-deterministic-reproduction": 1,
       "nested-task-production-investigation-with-controlled-gateway": 1,
@@ -1592,7 +1591,8 @@
       "deterministic-sql-running-total-contract-lab": 1,
       "git-branch-divergence-change-detection-refactoring-workshop": 1,
       "async-test-oracle-mismatch-investigation": 1,
-      "partition-capacity-design-decision-with-deterministic-policy-simulator": 1
+      "partition-capacity-design-decision-with-deterministic-policy-simulator": 1,
+      "filtered-required-navigation-production-forensics": 1
     }
   }
 }
