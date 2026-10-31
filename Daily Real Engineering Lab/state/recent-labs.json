@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-19",
-      "unitId": "UNIT-NUM-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-NUM-001-roaming-usage-snowflake-id-precision",
-      "domain": "dotnet-json-numeric-identity",
-      "primarySkill": "json-64-bit-integer-exactness",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "telecom-roaming-usage-clearing",
-      "scenarioType": "partner-json-ingestion-of-adjacent-64-bit-snowflake-event-identifiers",
-      "primaryRootCause": "json-64-bit-integer-identifiers-converted-through-double-before-long-deduplication",
-      "failureMode": "distinct-roaming-events-collapse-into-one-dedup-key-and-underbill-usage",
-      "solutionPattern": "parse-json-integer-directly-to-int64-and-preserve-exact-identity-through-deduplication",
-      "labFormat": "numeric-identifier-integrity-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-27-20",
       "unitId": "UNIT-EF-016",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-EF-016-food-inspection-batch-tracking-lifecycle",
@@ -1501,10 +1486,24 @@
       "failureMode": "phantom-permit-allows-concurrent-render-and-later-semaphorefull-exception",
       "solutionPattern": "track-successful-permit-acquisition-and-release-only-owned-permits",
       "labFormat": "deterministic-cancelled-waiter-permit-ownership-investigation"
+    },
+    {
+      "runSlot": "2026-10-31-23",
+      "unitId": "UNIT-MCLK-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-MCLK-001-tunnel-fan-negative-maintenance-duration",
+      "domain": "dotnet-clock-domain-semantics",
+      "primarySkill": "monotonic-duration-vs-wall-clock-utc",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "highway-tunnel-ventilation-maintenance",
+      "scenarioType": "maintenance-sla-duration-drift-after-system-clock-adjustment",
+      "primaryRootCause": "utc-wall-clock-subtraction-used-for-elapsed-duration-across-clock-step",
+      "failureMode": "negative-or-inflated-maintenance-duration-and-false-sla-breach",
+      "solutionPattern": "monotonic-timeprovider-timestamp-for-duration-with-utc-audit-instants-preserved",
+      "labFormat": "clock-domain-refactoring-with-deterministic-step-simulator"
     }
   ],
   "rolling24": [
-    "UNIT-MSET-001",
     "UNIT-DISP-001",
     "UNIT-COOKIE-001",
     "UNIT-AENUM-001",
@@ -1527,12 +1526,12 @@
     "UNIT-CTSR-001",
     "UNIT-PIPEX-001",
     "UNIT-CHAN-001",
-    "UNIT-SEMG-001"
+    "UNIT-SEMG-001",
+    "UNIT-MCLK-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "csharp-linq-multiset-reconciliation": 1,
       "dotnet-async-resource-exception-provenance": 1,
       "http-client-cookie-session-isolation": 1,
       "dotnet-async-stream-cancellation": 1,
@@ -1555,21 +1554,21 @@
       "dotnet-cancellation-source-lifecycle": 1,
       "dotnet-system-io-pipelines": 1,
       "dotnet-channel-backpressure": 1,
-      "dotnet-semaphore-permit-ownership": 1
+      "dotnet-semaphore-permit-ownership": 1,
+      "dotnet-clock-domain-semantics": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 6,
       "L2": 7,
       "L3": 5,
-      "L4": 4,
+      "L4": 5,
+      "L1": 5,
       "L5": 2
     },
     "byFormat": {
-      "deterministic-stock-reconciliation-contract-lab": 1,
       "dual-fault-resource-lifecycle-investigation": 1,
       "cross-tenant-partner-session-production-incident": 1,
       "async-stream-cancellation-contract-investigation": 1,
@@ -1592,7 +1591,8 @@
       "batch-timeout-lifecycle-refactoring-workshop": 1,
       "pipereader-framing-deterministic-contract-lab": 1,
       "audit-burst-multi-signal-production-incident": 1,
-      "deterministic-cancelled-waiter-permit-ownership-investigation": 1
+      "deterministic-cancelled-waiter-permit-ownership-investigation": 1,
+      "clock-domain-refactoring-with-deterministic-step-simulator": 1
     }
   }
 }
