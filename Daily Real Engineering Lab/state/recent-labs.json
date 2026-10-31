@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-03",
-      "unitId": "UNIT-POOL-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-POOL-001-harbor-sensor-payload-buffer-boundary",
-      "domain": "dotnet-buffer-serialization",
-      "primarySkill": "arraypool-valid-length-boundary",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "harbor-navigation-sensor-telemetry-relay",
-      "scenarioType": "short-telemetry-payload-encoded-into-oversized-transport-frame",
-      "primaryRootCause": "pooled-array-capacity-used-instead-of-valid-payload-length-during-base64-serialization",
-      "failureMode": "outbound-telemetry-frame-includes-extra-stale-bytes-and-violates-partner-length-contract",
-      "solutionPattern": "serialize-only-populated-buffer-segment-and-return-rental-in-finally",
-      "labFormat": "pooled-buffer-serialization-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-27-04",
       "unitId": "UNIT-RATE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-RATE-001-research-grant-api-retry-after-date-contract",
@@ -1499,10 +1484,24 @@
       "failureMode": "twelve-identical-client-requests-amplify-one-tariff-refresh-into-twelve-rate-limited-provider-calls",
       "solutionPattern": "per-key-lazy-single-flight-with-fault-eviction-and-independent-keys",
       "labFormat": "cache-expiry-burst-decision-and-contract-lab"
+    },
+    {
+      "runSlot": "2026-10-31-07",
+      "unitId": "UNIT-NPARSE-001",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-NPARSE-001-paper-mill-gauge-invariant-decimal-contract",
+      "domain": "dotnet-globalization-numeric-wire-format",
+      "primarySkill": "invariant-numeric-wire-parsing",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-paper-mill-roll-thickness-quality-control",
+      "scenarioType": "same-invariant-gauge-file-imported-on-workstations-with-different-cultures",
+      "primaryRootCause": "currentculture-numberstyles-number-parses-invariant-dot-decimals-as-localized-grouping-or-rejects-them",
+      "failureMode": "cross-site-quality-control-reports-disagree-by-orders-of-magnitude-or-fail-to-import",
+      "solutionPattern": "strict-invariant-wire-decimal-parser-with-no-grouping-and-cross-culture-regression-contract",
+      "labFormat": "cross-locale-numeric-wire-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-PTIMER-001",
     "UNIT-IPTRUST-001",
     "UNIT-HBODY-001",
     "UNIT-CLOCK-001",
@@ -1525,12 +1524,12 @@
     "UNIT-GRAPH-001",
     "UNIT-ROUTE-001",
     "UNIT-CTXQ-001",
-    "UNIT-CFLIGHT-001"
+    "UNIT-CFLIGHT-001",
+    "UNIT-NPARSE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-periodictimer-consumer-contract": 1,
       "aspnetcore-proxy-client-ip-trust": 1,
       "dotnet-http-streaming-deadlines": 1,
       "dotnet-timeprovider-testability": 1,
@@ -1553,22 +1552,22 @@
       "dotnet-unicode-text-segmentation": 1,
       "aspnetcore-route-fallback": 1,
       "aspnetcore-request-context-background-boundary": 1,
-      "cache-stampede-concurrency-control": 1
+      "cache-stampede-concurrency-control": 1,
+      "dotnet-globalization-numeric-wire-format": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 5,
-      "L2": 7,
+      "L2": 8,
       "L3": 6,
       "L4": 3,
+      "L1": 4,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-heartbeat-broadcast-contract-lab": 1,
       "trusted-proxy-source-identity-investigation": 1,
       "http-stream-body-deadline-production-investigation": 1,
       "virtual-clock-testability-refactoring-workshop": 1,
@@ -1591,7 +1590,8 @@
       "multilingual-message-segmentation-refactoring-workshop": 1,
       "aspnetcore-spa-fallback-contract-deterministic-lab": 1,
       "request-to-background-boundary-production-investigation": 1,
-      "cache-expiry-burst-decision-and-contract-lab": 1
+      "cache-expiry-burst-decision-and-contract-lab": 1,
+      "cross-locale-numeric-wire-contract-investigation": 1
     }
   }
 }
