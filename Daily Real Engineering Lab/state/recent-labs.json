@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-27-08",
-      "unitId": "UNIT-CTX-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-CTX-002-drone-survey-parallel-trace-context-aliasing",
-      "domain": "dotnet-ambient-context-concurrency",
-      "primarySkill": "asynclocal-value-vs-reference-semantics",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "drone-survey-imagery-quality-audit",
-      "scenarioType": "parallel-tile-validation-records-wrong-correlation-after-batch-gate",
-      "primaryRootCause": "mutable-reference-stored-in-asynclocal-is-shared-by-child-execution-contexts",
-      "failureMode": "parallel-tile-audit-rows-inherit-the-same-incorrect-tile-correlation",
-      "solutionPattern": "branch-local-immutable-context-assignment-before-audit-continuation",
-      "labFormat": "ambient-context-aliasing-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-27-09",
       "unitId": "UNIT-ES-003",
       "path": "Daily Real Engineering Lab/units/2026/10/27/UNIT-ES-003-railway-route-search-bulk-partial-failure",
@@ -1500,10 +1485,24 @@
       "failureMode": "batch-underutilizes-downstream-quota-while-unbounded-fanout-would-cause-throttling",
       "solutionPattern": "bounded-io-concurrency-from-partner-capacity-with-headroom",
       "labFormat": "capacity-evidence-production-investigation-with-local-partner-simulator"
+    },
+    {
+      "runSlot": "2026-10-31-12",
+      "unitId": "UNIT-SQL-010",
+      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-SQL-010-smart-meter-running-total-window-frame",
+      "domain": "sql-window-analytics",
+      "primarySkill": "sql-window-frame-peer-group-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "district-electricity-smart-meter-billing",
+      "scenarioType": "same-timestamp-meter-readings-show-premature-running-total-jump",
+      "primaryRootCause": "default-range-window-frame-includes-all-peer-rows-sharing-order-key",
+      "failureMode": "per-reading-running-energy-total-jumps-ahead-before-next-reading-is-processed",
+      "solutionPattern": "explicit-rows-frame-with-stable-reading-id-tiebreaker",
+      "labFormat": "deterministic-sql-running-total-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-LPROBE-001",
     "UNIT-BOX-001",
     "UNIT-MTTL-001",
     "UNIT-PDETAIL-001",
@@ -1526,12 +1525,12 @@
     "UNIT-PQ-001",
     "UNIT-MBUF-001",
     "UNIT-REQRETRY-001",
-    "UNIT-IOPAR-001"
+    "UNIT-IOPAR-001",
+    "UNIT-SQL-010"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-health-probe-boundaries": 1,
       "csharp-value-type-interface-boxing": 1,
       "mongodb-ttl-access-policy-design": 1,
       "http-client-problem-details-contract": 1,
@@ -1554,22 +1553,22 @@
       "dotnet-priorityqueue-scheduling": 1,
       "dotnet-binary-stream-transport": 1,
       "http-request-retry-semantics": 1,
-      "dotnet-io-bound-batch-concurrency": 1
+      "dotnet-io-bound-batch-concurrency": 1,
+      "sql-window-analytics": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 6,
+      "D4": 18
     },
     "byMaturity": {
-      "L3": 6,
-      "L1": 5,
+      "L1": 6,
       "L5": 2,
       "L2": 7,
+      "L3": 5,
       "L6": 1,
       "L4": 3
     },
     "byFormat": {
-      "kubernetes-probe-production-incident-contract": 1,
       "mutable-counter-deterministic-reconciliation-lab": 1,
       "security-access-lifecycle-design-decision-with-local-contract-simulator": 1,
       "partner-http-error-contract-investigation": 1,
@@ -1592,7 +1591,8 @@
       "priority-escalation-deterministic-scheduling-contract": 1,
       "binary-frame-transport-boundary-refactoring-workshop": 1,
       "http-partner-retry-contract-investigation": 1,
-      "capacity-evidence-production-investigation-with-local-partner-simulator": 1
+      "capacity-evidence-production-investigation-with-local-partner-simulator": 1,
+      "deterministic-sql-running-total-contract-lab": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-IOPAR-001",
-    "runSlot": "2026-10-31-11",
-    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-IOPAR-001-scholarship-attachment-scan-io-concurrency",
+    "unitId": "UNIT-SQL-010",
+    "runSlot": "2026-10-31-12",
+    "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-SQL-010-smart-meter-running-total-window-frame",
     "status": "READY",
-    "createdAt": "2026-10-31T11:12:36+07:00"
+    "createdAt": "2026-10-31T12:06:00+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 378,
-    "totalGenerated": 373,
+    "totalRunSlotsAttempted": 379,
+    "totalGenerated": 374,
     "totalFailed": 5
   },
   "learning": {
