@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-01",
-      "unitId": "UNIT-FDROP-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FDROP-001-cold-room-calibration-file-drop-gaps",
-      "domain": "filesystem-ingestion-reliability",
-      "primarySkill": "filesystemwatcher-event-delivery-contract",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "cold-room-calibration-certificate-import",
-      "scenarioType": "completed-calibration-files-not-all-visible-in-shift-close-register",
-      "primaryRootCause": "filesystem-event-notifications-treated-as-complete-durable-ingestion-source",
-      "failureMode": "valid-certificate-remains-on-disk-but-is-never-accepted-after-missed-notification",
-      "solutionPattern": "periodic-directory-inventory-reconciliation-with-idempotent-acceptance",
-      "labFormat": "deterministic-file-drop-reliability-investigation"
-    },
-    {
       "runSlot": "2026-10-29-02",
       "unitId": "UNIT-CDICT-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CDICT-001-drone-corridor-permit-double-issuance",
@@ -1501,10 +1486,24 @@
       "failureMode": "unicode-replacement-corruption-and-silent-acceptance-of-invalid-utf8",
       "solutionPattern": "stateful-strict-utf8-decoder-with-end-of-message-flush-and-negative-contracts",
       "labFormat": "chunked-text-stream-investigation-with-contract-harness"
+    },
+    {
+      "runSlot": "2026-11-02-05",
+      "unitId": "UNIT-CSVFORM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-CSVFORM-001-youth-league-roster-spreadsheet-formula-risk",
+      "domain": "csv-spreadsheet-export-security",
+      "primarySkill": "csv-spreadsheet-formula-injection-boundary",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "community-youth-football-league-registration-export",
+      "scenarioType": "valid-csv-roster-contains-untrusted-formula-like-spreadsheet-cells",
+      "primaryRootCause": "csv-quoting-is-not-spreadsheet-formula-neutralization",
+      "failureMode": "untrusted-registration-field-may-be-interpreted-as-spreadsheet-formula",
+      "solutionPattern": "spreadsheet-specific-cell-neutralization-before-csv-quoting-with-roundtrip-contract",
+      "labFormat": "csv-output-trust-boundary-multi-signal-security-incident"
     }
   ],
   "rolling24": [
-    "UNIT-HMACRAW-001",
     "UNIT-CLOSURE-001",
     "UNIT-HASHKEY-001",
     "UNIT-PIPEIO-001",
@@ -1527,12 +1526,12 @@
     "UNIT-SQLITE-001",
     "UNIT-DNSPOOL-001",
     "UNIT-CMPID-001",
-    "UNIT-UTF8CHUNK-001"
+    "UNIT-UTF8CHUNK-001",
+    "UNIT-CSVFORM-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-webhook-message-authentication": 1,
       "csharp-deferred-work-closure-semantics": 1,
       "csharp-hash-key-identity-semantics": 1,
       "dotnet-process-pipe-backpressure": 1,
@@ -1555,22 +1554,22 @@
       "sqlite-relational-write-semantics": 1,
       "dotnet-http-connection-lifecycle": 1,
       "csharp-string-identity-comparison": 1,
-      "dotnet-streaming-text-decoding": 1
+      "dotnet-streaming-text-decoding": 1,
+      "csv-spreadsheet-export-security": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 5,
       "L4": 4,
       "L1": 5,
       "L2": 6,
       "L5": 3,
+      "L3": 5,
       "L6": 1
     },
     "byFormat": {
-      "signed-webhook-wire-evidence-production-incident": 1,
       "deferred-batch-ownership-refactoring-workshop": 1,
       "deterministic-mutable-hash-key-contract-lab": 1,
       "subprocess-redirected-pipe-backpressure-investigation": 1,
@@ -1593,7 +1592,8 @@
       "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1,
       "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1,
       "cross-locale-identifier-registry-deterministic-reproduction": 1,
-      "chunked-text-stream-investigation-with-contract-harness": 1
+      "chunked-text-stream-investigation-with-contract-harness": 1,
+      "csv-output-trust-boundary-multi-signal-security-incident": 1
     }
   }
 }

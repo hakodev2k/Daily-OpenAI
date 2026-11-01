@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-UTF8CHUNK-001",
-    "runSlot": "2026-11-02-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-UTF8CHUNK-001-bike-share-repair-notes-stream-corruption",
+    "unitId": "UNIT-CSVFORM-001",
+    "runSlot": "2026-11-02-05",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-CSVFORM-001-youth-league-roster-spreadsheet-formula-risk",
     "status": "READY",
-    "createdAt": "2026-11-02T04:09:11.122+07:00"
+    "createdAt": "2026-11-02T05:10:16.457+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 419,
-    "totalGenerated": 414,
+    "totalRunSlotsAttempted": 420,
+    "totalGenerated": 415,
     "totalFailed": 5
   },
   "learning": {
