@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-23",
-      "unitId": "UNIT-BODY-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-BODY-001-animal-intake-webhook-body-consumed-by-audit",
-      "domain": "aspnet-core-request-body-streams",
-      "primarySkill": "aspnet-core-middleware",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "regional-animal-shelter-intake-webhook",
-      "scenarioType": "audit-middleware-precedes-json-webhook-endpoint",
-      "primaryRootCause": "audit-middleware-consumes-nonseekable-request-body-without-replay",
-      "failureMode": "audit-captures-valid-json-but-endpoint-receives-empty-stream-and-returns-422",
-      "solutionPattern": "bounded-request-body-buffering-with-position-reset-and-stream-ownership",
-      "labFormat": "request-body-pipeline-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-29-00",
       "unitId": "UNIT-QENC-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-QENC-001-ski-lift-pass-query-token-corruption",
@@ -1501,10 +1486,24 @@
       "failureMode": "requests-continue-to-retired-region-despite-new-dns-record",
       "solutionPattern": "bounded-pooled-connection-lifetime-with-resolver-cache-and-capacity-budget",
       "labFormat": "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness"
+    },
+    {
+      "runSlot": "2026-11-02-03",
+      "unitId": "UNIT-CMPID-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-CMPID-001-theater-pass-culture-dependent-lookup",
+      "domain": "csharp-string-identity-comparison",
+      "primarySkill": "culture-independent-opaque-identifier-comparison",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "regional-theater-qr-admission-kiosks",
+      "scenarioType": "same-printed-ascii-pass-code-produces-different-lookup-and-duplicate-behavior-across-kiosk-locales",
+      "primaryRootCause": "culture-sensitive-case-insensitive-dictionary-comparer-applied-to-opaque-ascii-pass-identifiers",
+      "failureMode": "legitimate-ascii-case-variant-rejected-and-non-ascii-lookalike-accepted-in-turkish-locale",
+      "solutionPattern": "explicit-ordinal-ignore-case-identifier-contract-independent-of-current-culture",
+      "labFormat": "cross-locale-identifier-registry-deterministic-reproduction"
     }
   ],
   "rolling24": [
-    "UNIT-ASVOID-001",
     "UNIT-RANGE-001",
     "UNIT-HMACRAW-001",
     "UNIT-CLOSURE-001",
@@ -1527,12 +1526,12 @@
     "UNIT-CANCELREG-001",
     "UNIT-RLPART-001",
     "UNIT-SQLITE-001",
-    "UNIT-DNSPOOL-001"
+    "UNIT-DNSPOOL-001",
+    "UNIT-CMPID-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "csharp-async-delegate-contract": 1,
       "http-range-response-semantics": 1,
       "dotnet-webhook-message-authentication": 1,
       "csharp-deferred-work-closure-semantics": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-cancellation-callback-lifecycle": 1,
       "aspnetcore-partitioned-rate-limiting": 1,
       "sqlite-relational-write-semantics": 1,
-      "dotnet-http-connection-lifecycle": 1
+      "dotnet-http-connection-lifecycle": 1,
+      "csharp-string-identity-comparison": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L1": 5,
       "L2": 6,
       "L3": 5,
       "L4": 4,
+      "L1": 5,
       "L5": 3,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-gated-dispatch-completion-contract": 1,
       "http-partial-content-wire-contract-investigation": 1,
       "signed-webhook-wire-evidence-production-incident": 1,
       "deferred-batch-ownership-refactoring-workshop": 1,
@@ -1593,7 +1592,8 @@
       "deterministic-shutdown-callback-lifecycle-investigation": 1,
       "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1,
       "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1,
-      "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1
+      "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1,
+      "cross-locale-identifier-registry-deterministic-reproduction": 1
     }
   }
 }
