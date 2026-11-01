@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-KEYSETPAGE-001",
-    "runSlot": "2026-11-01-20",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-KEYSETPAGE-001-parking-appeal-feed-live-pagination-drift",
+    "unitId": "UNIT-FILEPUB-001",
+    "runSlot": "2026-11-01-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-FILEPUB-001-coastal-flood-alert-snapshot-torn-read",
     "status": "READY",
-    "createdAt": "2026-11-01T20:09:23+07:00"
+    "createdAt": "2026-11-01T21:06:50+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 411,
-    "totalGenerated": 406,
+    "totalRunSlotsAttempted": 412,
+    "totalGenerated": 407,
     "totalFailed": 5
   },
   "learning": {
