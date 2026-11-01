@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RETRYDATE-001",
-    "runSlot": "2026-11-01-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RETRYDATE-001-observatory-calibration-retry-after-schedule",
+    "unitId": "UNIT-PSGATE-001",
+    "runSlot": "2026-11-01-15",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PSGATE-001-cold-storage-release-validation-false-green",
     "status": "READY",
-    "createdAt": "2026-11-01T14:12:40.830+07:00"
+    "createdAt": "2026-11-01T15:11:51.884+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 405,
-    "totalGenerated": 400,
+    "totalRunSlotsAttempted": 406,
+    "totalGenerated": 401,
     "totalFailed": 5
   },
   "learning": {

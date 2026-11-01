@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-11",
-      "unitId": "UNIT-VTASK-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-VTASK-001-grid-dispatch-valuetask-double-consumption",
-      "domain": "dotnet-valuetask-consumption",
-      "primarySkill": "valuetask-single-consumption-contract",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "regional-power-grid-demand-response-dispatch",
-      "scenarioType": "successful-signal-fetch-fails-during-audit-before-receipt",
-      "primaryRootCause": "single-use-ivaluetasksource-backed-valuetask-awaited-twice-for-audit-and-response",
-      "failureMode": "valid-grid-signal-fails-with-invalidoperationexception-and-no-audit-receipt",
-      "solutionPattern": "await-once-then-reuse-materialized-result-for-audit-and-response",
-      "labFormat": "valuetask-consumption-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-28-12",
       "unitId": "UNIT-EF-017",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-EF-017-streetlight-maintenance-pooled-tenant-context",
@@ -1501,10 +1486,24 @@
       "failureMode": "retry-too-early-or-retry-after-budget-should-have-expired",
       "solutionPattern": "parse-delta-seconds-and-http-date-against-injected-receipt-clock-with-budget-guard",
       "labFormat": "retry-scheduler-policy-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-11-01-15",
+      "unitId": "UNIT-PSGATE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PSGATE-001-cold-storage-release-validation-false-green",
+      "domain": "powershell-native-process-exit-contract",
+      "primarySkill": "powershell-native-command-exit-code-propagation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-cold-storage-temperature-compliance-release",
+      "scenarioType": "native-validation-reports-failure-but-ci-wrapper-exits-successfully",
+      "primaryRootCause": "powershell-wrapper-ignores-native-process-exit-status-and-ends-with-successful-output-command",
+      "failureMode": "failed-temperature-report-validation-promoted-as-green-release-gate",
+      "solutionPattern": "explicit-native-exit-code-check-and-process-exit-propagation",
+      "labFormat": "ci-release-gate-forensics-with-deterministic-fake-validator"
     }
   ],
   "rolling24": [
-    "UNIT-COSMOS-001",
     "UNIT-EF-019",
     "UNIT-REDIS-006",
     "UNIT-ETAGW-001",
@@ -1527,12 +1526,12 @@
     "UNIT-REDRIVE-001",
     "UNIT-EXSTACK-001",
     "UNIT-MWHEAD-001",
-    "UNIT-RETRYDATE-001"
+    "UNIT-RETRYDATE-001",
+    "UNIT-PSGATE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "azure-cosmos-db-partition-design": 1,
       "ef-core-relational-query-semantics": 1,
       "redis-atomic-expiry-contract": 1,
       "http-optimistic-concurrency-contract": 1,
@@ -1555,22 +1554,22 @@
       "distributed-event-projection-versioning": 1,
       "csharp-exception-provenance": 1,
       "aspnetcore-middleware-response-lifecycle": 1,
-      "http-retry-after-header-semantics": 1
+      "http-retry-after-header-semantics": 1,
+      "powershell-native-process-exit-contract": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L5": 3,
       "L3": 5,
       "L1": 5,
-      "L2": 6,
+      "L2": 7,
       "L4": 4,
+      "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "partition-capacity-design-decision-with-deterministic-policy-simulator": 1,
       "filtered-required-navigation-production-forensics": 1,
       "deterministic-client-crash-boundary-contract-lab": 1,
       "two-editor-conditional-write-contract-investigation": 1,
@@ -1593,7 +1592,8 @@
       "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1,
       "deterministic-exception-provenance-investigation": 1,
       "middleware-response-lifecycle-contract-reproduction": 1,
-      "retry-scheduler-policy-refactoring-workshop": 1
+      "retry-scheduler-policy-refactoring-workshop": 1,
+      "ci-release-gate-forensics-with-deterministic-fake-validator": 1
     }
   }
 }
