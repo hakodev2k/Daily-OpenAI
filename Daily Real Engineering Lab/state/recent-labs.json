@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-10",
-      "unitId": "UNIT-MONGO-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-MONGO-002-wind-turbine-inspection-array-predicate",
-      "domain": "mongodb-array-query-semantics",
-      "primarySkill": "mongodb-elemmatch-same-element-predicate",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "wind-farm-turbine-inspection-dispatch",
-      "scenarioType": "inspection-array-predicate-produces-unjustified-brake-repair-tickets",
-      "primaryRootCause": "independent-dotted-array-predicates-match-different-embedded-documents",
-      "failureMode": "false-positive-brake-repair-dispatch-from-unrelated-failed-inspection",
-      "solutionPattern": "single-array-element-conjunctive-filter-with-elemmatch",
-      "labFormat": "mongodb-document-array-query-evidence-investigation"
-    },
-    {
       "runSlot": "2026-10-28-11",
       "unitId": "UNIT-VTASK-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-VTASK-001-grid-dispatch-valuetask-double-consumption",
@@ -1501,10 +1486,24 @@
       "failureMode": "missing-correlation-header-and-post-response-middleware-exception",
       "solutionPattern": "register-response-onstarting-callback-before-invoking-downstream-pipeline",
       "labFormat": "middleware-response-lifecycle-contract-reproduction"
+    },
+    {
+      "runSlot": "2026-11-01-14",
+      "unitId": "UNIT-RETRYDATE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RETRYDATE-001-observatory-calibration-retry-after-schedule",
+      "domain": "http-retry-after-header-semantics",
+      "primarySkill": "http-retry-after-date-and-delta-seconds-contract",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "astronomy-observatory-instrument-calibration-export",
+      "scenarioType": "partner-throttle-response-causes-incorrect-retry-schedule-and-budget-decision",
+      "primaryRootCause": "retry-after-http-date-ignored-because-parser-only-accepts-integer-seconds",
+      "failureMode": "retry-too-early-or-retry-after-budget-should-have-expired",
+      "solutionPattern": "parse-delta-seconds-and-http-date-against-injected-receipt-clock-with-budget-guard",
+      "labFormat": "retry-scheduler-policy-refactoring-workshop"
     }
   ],
   "rolling24": [
-    "UNIT-XASSERT-001",
     "UNIT-COSMOS-001",
     "UNIT-EF-019",
     "UNIT-REDIS-006",
@@ -1527,12 +1526,12 @@
     "UNIT-BAGPII-001",
     "UNIT-REDRIVE-001",
     "UNIT-EXSTACK-001",
-    "UNIT-MWHEAD-001"
+    "UNIT-MWHEAD-001",
+    "UNIT-RETRYDATE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-async-testing": 1,
       "azure-cosmos-db-partition-design": 1,
       "ef-core-relational-query-semantics": 1,
       "redis-atomic-expiry-contract": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-distributed-tracing-privacy": 1,
       "distributed-event-projection-versioning": 1,
       "csharp-exception-provenance": 1,
-      "aspnetcore-middleware-response-lifecycle": 1
+      "aspnetcore-middleware-response-lifecycle": 1,
+      "http-retry-after-header-semantics": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 7,
       "L5": 3,
       "L3": 5,
       "L1": 5,
-      "L4": 3,
+      "L2": 6,
+      "L4": 4,
       "L6": 1
     },
     "byFormat": {
-      "async-test-oracle-mismatch-investigation": 1,
       "partition-capacity-design-decision-with-deterministic-policy-simulator": 1,
       "filtered-required-navigation-production-forensics": 1,
       "deterministic-client-crash-boundary-contract-lab": 1,
@@ -1593,7 +1592,8 @@
       "privacy-leak-distributed-trace-production-incident": 1,
       "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1,
       "deterministic-exception-provenance-investigation": 1,
-      "middleware-response-lifecycle-contract-reproduction": 1
+      "middleware-response-lifecycle-contract-reproduction": 1,
+      "retry-scheduler-policy-refactoring-workshop": 1
     }
   }
 }
