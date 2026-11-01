@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-DNSPOOL-001",
+  "runSlot": "2026-11-02-02",
+  "title": "Crop warning API: DNS đã đổi nhưng client vẫn gửi đến vùng cũ",
+  "domain": "dotnet-http-connection-lifecycle",
+  "primarySkill": "httpclient-connection-pool-dns-refresh-policy",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-02T02:09:12+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "httpclient-connection-pooling",
+    "dns-resolution-lifecycle",
+    "failure-recovery-policy",
+    "architecture-tradeoff"
+  ],
+  "prerequisites": [
+    "C# console applications",
+    ".NET 8 SDK",
+    "HTTP keep-alive basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Static consistency review only; .NET and PowerShell execution not available under the GitHub-only tool scope.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth",
+    "elapsedDays": 56
+  },
+  "novelty": {
+    "businessContext": "agricultural-pest-forecast-alert-api",
+    "scenarioType": "regional-backend-cutover-with-dns-answer-change-and-persistent-http-connection",
+    "primaryRootCause": "persistent-connection-reuse-outlives-dns-answer-change-without-connection-age-policy",
+    "failureMode": "requests-continue-to-retired-region-despite-new-dns-record",
+    "solutionPattern": "bounded-pooled-connection-lifetime-with-resolver-cache-and-capacity-budget",
+    "labFormat": "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness"
+  }
+}

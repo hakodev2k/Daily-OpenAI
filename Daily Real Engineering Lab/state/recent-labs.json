@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-22",
-      "unitId": "UNIT-CSV-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-CSV-002-grant-disbursement-spreadsheet-cell-injection",
-      "domain": "csv-spreadsheet-export-security",
-      "primarySkill": "spreadsheet-cell-interpretation-trust-boundary",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "nonprofit-grant-disbursement-reporting",
-      "scenarioType": "untrusted-partner-displayname-interpreted-as-spreadsheet-formula",
-      "primaryRootCause": "csv-quoting-mistaken-for-spreadsheet-text-cell-neutralization",
-      "failureMode": "formula-interpretation-despite-syntactically-valid-csv",
-      "solutionPattern": "untrusted-text-cell-policy-before-csv-serialization-with-client-compatibility-review",
-      "labFormat": "spreadsheet-export-security-evidence-incident"
-    },
-    {
       "runSlot": "2026-10-28-23",
       "unitId": "UNIT-BODY-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-BODY-001-animal-intake-webhook-body-consumed-by-audit",
@@ -1501,10 +1486,24 @@
       "failureMode": "inspection-records-disappear-after-successful-metadata-sync-with-zero-foreign-key-violations",
       "solutionPattern": "targeted-sqlite-on-conflict-do-update-preserving-parent-row-and-child-references",
       "labFormat": "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract"
+    },
+    {
+      "runSlot": "2026-11-02-02",
+      "unitId": "UNIT-DNSPOOL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DNSPOOL-001-crop-warning-api-dns-failover-stale-connection",
+      "domain": "dotnet-http-connection-lifecycle",
+      "primarySkill": "httpclient-connection-pool-dns-refresh-policy",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "agricultural-pest-forecast-alert-api",
+      "scenarioType": "regional-backend-cutover-with-dns-answer-change-and-persistent-http-connection",
+      "primaryRootCause": "persistent-connection-reuse-outlives-dns-answer-change-without-connection-age-policy",
+      "failureMode": "requests-continue-to-retired-region-despite-new-dns-record",
+      "solutionPattern": "bounded-pooled-connection-lifetime-with-resolver-cache-and-capacity-budget",
+      "labFormat": "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness"
     }
   ],
   "rolling24": [
-    "UNIT-UPLARCH-001",
     "UNIT-ASVOID-001",
     "UNIT-RANGE-001",
     "UNIT-HMACRAW-001",
@@ -1527,12 +1526,12 @@
     "UNIT-INTOVF-001",
     "UNIT-CANCELREG-001",
     "UNIT-RLPART-001",
-    "UNIT-SQLITE-001"
+    "UNIT-SQLITE-001",
+    "UNIT-DNSPOOL-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-large-upload-architecture": 1,
       "csharp-async-delegate-contract": 1,
       "http-range-response-semantics": 1,
       "dotnet-webhook-message-authentication": 1,
@@ -1555,22 +1554,22 @@
       "csharp-integer-arithmetic-overflow": 1,
       "dotnet-cancellation-callback-lifecycle": 1,
       "aspnetcore-partitioned-rate-limiting": 1,
-      "sqlite-relational-write-semantics": 1
+      "sqlite-relational-write-semantics": 1,
+      "dotnet-http-connection-lifecycle": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L5": 3,
       "L1": 5,
       "L2": 6,
       "L3": 5,
       "L4": 4,
+      "L5": 3,
       "L6": 1
     },
     "byFormat": {
-      "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1,
       "deterministic-gated-dispatch-completion-contract": 1,
       "http-partial-content-wire-contract-investigation": 1,
       "signed-webhook-wire-evidence-production-incident": 1,
@@ -1593,7 +1592,8 @@
       "deterministic-energy-aggregation-numeric-boundary-contract": 1,
       "deterministic-shutdown-callback-lifecycle-investigation": 1,
       "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1,
-      "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1
+      "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1,
+      "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1
     }
   }
 }
