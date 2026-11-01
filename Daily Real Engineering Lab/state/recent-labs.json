@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-04",
-      "unitId": "UNIT-PAGE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PAGE-001-marine-survey-keyset-cursor-tie-boundary",
-      "domain": "api-pagination-consistency",
-      "primarySkill": "keyset-pagination-total-order",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "marine-habitat-survey-observation-feed",
-      "scenarioType": "batch-observations-share-same-utc-timestamp-across-keyset-pages",
-      "primaryRootCause": "keyset-cursor-filters-on-nonunique-observedat-timestamp-without-id-tiebreaker",
-      "failureMode": "observations-at-page-boundary-silently-omitted-with-no-server-error",
-      "solutionPattern": "lexicographic-composite-cursor-on-timestamp-and-stable-observation-id",
-      "labFormat": "deterministic-keyset-cursor-integrity-lab"
-    },
-    {
       "runSlot": "2026-10-28-05",
       "unitId": "UNIT-TX-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-TX-001-park-ranger-shift-coverage-concurrent-approval",
@@ -1501,10 +1486,24 @@
       "failureMode": "lost-scan-lookup-and-phantom-duplicate-key-after-route-change",
       "solutionPattern": "stable-parcel-identity-comparer-independent-of-mutable-routing-state",
       "labFormat": "deterministic-mutable-hash-key-contract-lab"
+    },
+    {
+      "runSlot": "2026-11-01-08",
+      "unitId": "UNIT-PIPEIO-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PIPEIO-001-university-render-worker-stderr-backpressure",
+      "domain": "dotnet-process-pipe-backpressure",
+      "primarySkill": "process-redirected-stream-concurrent-draining",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "university-transcript-pdf-rendering",
+      "scenarioType": "render-worker-times-out-only-on-verbose-stderr-output",
+      "primaryRootCause": "sequential-stdout-read-before-stderr-drain-blocks-child-on-full-stderr-pipe",
+      "failureMode": "false-render-timeout-while-child-is-blocked-on-redirected-stderr",
+      "solutionPattern": "concurrent-stdout-stderr-drain-with-timeout-cleanup-and-child-exit-propagation",
+      "labFormat": "subprocess-redirected-pipe-backpressure-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-PQ-001",
     "UNIT-MBUF-001",
     "UNIT-REQRETRY-001",
     "UNIT-IOPAR-001",
@@ -1527,12 +1526,12 @@
     "UNIT-RANGE-001",
     "UNIT-HMACRAW-001",
     "UNIT-CLOSURE-001",
-    "UNIT-HASHKEY-001"
+    "UNIT-HASHKEY-001",
+    "UNIT-PIPEIO-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-priorityqueue-scheduling": 1,
       "dotnet-binary-stream-transport": 1,
       "http-request-retry-semantics": 1,
       "dotnet-io-bound-batch-concurrency": 1,
@@ -1555,21 +1554,21 @@
       "http-range-response-semantics": 1,
       "dotnet-webhook-message-authentication": 1,
       "csharp-deferred-work-closure-semantics": 1,
-      "csharp-hash-key-identity-semantics": 1
+      "csharp-hash-key-identity-semantics": 1,
+      "dotnet-process-pipe-backpressure": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 6,
       "L4": 5,
-      "L2": 6,
+      "L2": 7,
       "L3": 5,
+      "L1": 5,
       "L5": 2
     },
     "byFormat": {
-      "priority-escalation-deterministic-scheduling-contract": 1,
       "binary-frame-transport-boundary-refactoring-workshop": 1,
       "http-partner-retry-contract-investigation": 1,
       "capacity-evidence-production-investigation-with-local-partner-simulator": 1,
@@ -1592,7 +1591,8 @@
       "http-partial-content-wire-contract-investigation": 1,
       "signed-webhook-wire-evidence-production-incident": 1,
       "deferred-batch-ownership-refactoring-workshop": 1,
-      "deterministic-mutable-hash-key-contract-lab": 1
+      "deterministic-mutable-hash-key-contract-lab": 1,
+      "subprocess-redirected-pipe-backpressure-investigation": 1
     }
   }
 }

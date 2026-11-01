@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HASHKEY-001",
-    "runSlot": "2026-11-01-07",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HASHKEY-001-parcel-manifest-route-change-lost-scans",
+    "unitId": "UNIT-PIPEIO-001",
+    "runSlot": "2026-11-01-08",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PIPEIO-001-university-render-worker-stderr-backpressure",
     "status": "READY",
-    "createdAt": "2026-11-01T07:04:30+07:00"
+    "createdAt": "2026-11-01T08:11:29+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 398,
-    "totalGenerated": 393,
+    "totalRunSlotsAttempted": 399,
+    "totalGenerated": 394,
     "totalFailed": 5
   },
   "learning": {
