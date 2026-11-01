@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-12",
-      "unitId": "UNIT-EF-017",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-EF-017-streetlight-maintenance-pooled-tenant-context",
-      "domain": "ef-core-context-pooling",
-      "primarySkill": "ef-core-pooled-dbcontext-tenant-state-isolation",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "streetlight-maintenance-saas-work-order-dashboard",
-      "scenarioType": "sequential-tenant-dashboard-requests-return-other-tenant-work-orders",
-      "primaryRootCause": "custom-tenantid-property-persists-across-pooled-dbcontext-reuse-and-is-only-initialized-once",
-      "failureMode": "cross-tenant-data-exposure-after-sequential-pooled-context-reuse",
-      "solutionPattern": "assign-tenant-state-on-every-context-borrow-with-tenant-query-filter-regression",
-      "labFormat": "cross-tenant-data-isolation-production-investigation"
-    },
-    {
       "runSlot": "2026-10-28-13",
       "unitId": "UNIT-TSPAN-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-TSPAN-001-theater-ticket-hold-latency-sawtooth",
@@ -1501,10 +1486,24 @@
       "failureMode": "failed-temperature-report-validation-promoted-as-green-release-gate",
       "solutionPattern": "explicit-native-exit-code-check-and-process-exit-propagation",
       "labFormat": "ci-release-gate-forensics-with-deterministic-fake-validator"
+    },
+    {
+      "runSlot": "2026-11-01-16",
+      "unitId": "UNIT-REDIR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-REDIR-001-elevator-inspection-evidence-redirect-false-success",
+      "domain": "http-redirect-method-semantics",
+      "primarySkill": "http-redirect-post-method-and-receipt-contract",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "high-rise-elevator-safety-inspection-photo-handoff",
+      "scenarioType": "legacy-partner-post-redirects-to-successful-html-landing-page",
+      "primaryRootCause": "http-302-auto-redirect-converts-post-to-get-while-2xx-html-is-treated-as-ingestion-receipt",
+      "failureMode": "false-positive-evidence-submission-with-zero-durable-receipts",
+      "solutionPattern": "explicit-allowlisted-redirect-repost-and-typed-receipt-contract",
+      "labFormat": "http-redirect-wire-trace-multi-signal-incident"
     }
   ],
   "rolling24": [
-    "UNIT-EF-019",
     "UNIT-REDIS-006",
     "UNIT-ETAGW-001",
     "UNIT-CTSR-001",
@@ -1527,12 +1526,12 @@
     "UNIT-EXSTACK-001",
     "UNIT-MWHEAD-001",
     "UNIT-RETRYDATE-001",
-    "UNIT-PSGATE-001"
+    "UNIT-PSGATE-001",
+    "UNIT-REDIR-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "ef-core-relational-query-semantics": 1,
       "redis-atomic-expiry-contract": 1,
       "http-optimistic-concurrency-contract": 1,
       "dotnet-cancellation-source-lifecycle": 1,
@@ -1555,22 +1554,22 @@
       "csharp-exception-provenance": 1,
       "aspnetcore-middleware-response-lifecycle": 1,
       "http-retry-after-header-semantics": 1,
-      "powershell-native-process-exit-contract": 1
+      "powershell-native-process-exit-contract": 1,
+      "http-redirect-method-semantics": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L3": 5,
       "L1": 5,
       "L2": 7,
       "L4": 4,
+      "L3": 5,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "filtered-required-navigation-production-forensics": 1,
       "deterministic-client-crash-boundary-contract-lab": 1,
       "two-editor-conditional-write-contract-investigation": 1,
       "batch-timeout-lifecycle-refactoring-workshop": 1,
@@ -1593,7 +1592,8 @@
       "deterministic-exception-provenance-investigation": 1,
       "middleware-response-lifecycle-contract-reproduction": 1,
       "retry-scheduler-policy-refactoring-workshop": 1,
-      "ci-release-gate-forensics-with-deterministic-fake-validator": 1
+      "ci-release-gate-forensics-with-deterministic-fake-validator": 1,
+      "http-redirect-wire-trace-multi-signal-incident": 1
     }
   }
 }
