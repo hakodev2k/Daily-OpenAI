@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-BAGPII-001",
-    "runSlot": "2026-11-01-10",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-BAGPII-001-ferry-checkin-trace-baggage-privacy",
+    "unitId": "UNIT-REDRIVE-001",
+    "runSlot": "2026-11-01-11",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-REDRIVE-001-water-quality-dead-letter-status-regression",
     "status": "READY",
-    "createdAt": "2026-11-01T10:13:55+07:00"
+    "createdAt": "2026-11-01T11:06:13.499+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 401,
-    "totalGenerated": 396,
+    "totalRunSlotsAttempted": 402,
+    "totalGenerated": 397,
     "totalFailed": 5
   },
   "learning": {

@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-07",
-      "unitId": "UNIT-AUTHZ-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-AUTHZ-001-water-audit-anonymous-endpoint-exposure",
-      "domain": "aspnet-core-authorization",
-      "primarySkill": "aspnet-core-default-vs-fallback-authorization-policy",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "municipal-water-quality-audit-portal",
-      "scenarioType": "new-sensitive-api-routes-respond-to-unauthenticated-callers",
-      "primaryRootCause": "default-authorization-policy-is-not-applied-to-unannotated-endpoints-without-fallback-policy",
-      "failureMode": "anonymous-read-of-restricted-audit-and-export-resources",
-      "solutionPattern": "fail-closed-fallback-authorization-with-explicit-public-route-exceptions",
-      "labFormat": "authorization-boundary-production-incident"
-    },
-    {
       "runSlot": "2026-10-28-08",
       "unitId": "UNIT-ID-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-ID-001-agri-permit-identifier-culture-drift",
@@ -1501,10 +1486,24 @@
       "failureMode": "sensitive-passenger-values-propagated-to-third-party-trace-collector",
       "solutionPattern": "opaque-correlation-only-baggage-and-data-minimization-at-trace-boundary",
       "labFormat": "privacy-leak-distributed-trace-production-incident"
+    },
+    {
+      "runSlot": "2026-11-01-11",
+      "unitId": "UNIT-REDRIVE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-REDRIVE-001-water-quality-dead-letter-status-regression",
+      "domain": "distributed-event-projection-versioning",
+      "primarySkill": "monotonic-snapshot-projection-and-redrive-safety",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "regional-drinking-water-test-site-publication",
+      "scenarioType": "out-of-order-dead-letter-redrive-after-newer-full-snapshot",
+      "primaryRootCause": "arrival-order-last-write-wins-on-versioned-full-snapshot-events",
+      "failureMode": "late-redrive-regresses-public-water-safety-status-and-duplicates-projection-effects",
+      "solutionPattern": "per-aggregate-monotonic-version-guard-plus-durable-inbox-and-atomic-projection-commit",
+      "labFormat": "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness"
     }
   ],
   "rolling24": [
-    "UNIT-IOPAR-001",
     "UNIT-SQL-010",
     "UNIT-GIT-002",
     "UNIT-XASSERT-001",
@@ -1527,12 +1526,12 @@
     "UNIT-HASHKEY-001",
     "UNIT-PIPEIO-001",
     "UNIT-HPA-001",
-    "UNIT-BAGPII-001"
+    "UNIT-BAGPII-001",
+    "UNIT-REDRIVE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-io-bound-batch-concurrency": 1,
       "sql-window-analytics": 1,
       "git-ci-change-detection": 1,
       "dotnet-async-testing": 1,
@@ -1555,21 +1554,22 @@
       "csharp-hash-key-identity-semantics": 1,
       "dotnet-process-pipe-backpressure": 1,
       "kubernetes-hpa-cpu-utilization": 1,
-      "dotnet-distributed-tracing-privacy": 1
+      "dotnet-distributed-tracing-privacy": 1,
+      "distributed-event-projection-versioning": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D3": 4,
+      "D4": 20
     },
     "byMaturity": {
-      "L3": 6,
       "L1": 5,
       "L4": 4,
       "L2": 6,
-      "L5": 3
+      "L5": 3,
+      "L3": 5,
+      "L6": 1
     },
     "byFormat": {
-      "capacity-evidence-production-investigation-with-local-partner-simulator": 1,
       "deterministic-sql-running-total-contract-lab": 1,
       "git-branch-divergence-change-detection-refactoring-workshop": 1,
       "async-test-oracle-mismatch-investigation": 1,
@@ -1592,7 +1592,8 @@
       "deterministic-mutable-hash-key-contract-lab": 1,
       "subprocess-redirected-pipe-backpressure-investigation": 1,
       "autoscaling-control-signal-design-decision-with-local-policy-model": 1,
-      "privacy-leak-distributed-trace-production-incident": 1
+      "privacy-leak-distributed-trace-production-incident": 1,
+      "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1
     }
   }
 }
