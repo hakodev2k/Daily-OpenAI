@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-19",
-      "unitId": "UNIT-ETIME-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-ETIME-001-toll-plaza-delayed-sensor-window-drift",
-      "domain": "event-time-stream-processing",
-      "primarySkill": "event-time-vs-ingestion-time-windowing",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "toll-plaza-vehicle-flow-telemetry",
-      "scenarioType": "late-gate-events-distort-five-minute-traffic-reconciliation",
-      "primaryRootCause": "processing-time-used-to-bucket-delayed-sensor-events",
-      "failureMode": "five-minute-net-flow-misallocated-while-total-count-remains-correct",
-      "solutionPattern": "bucket-by-utc-event-occurrence-time-with-boundary-regression-tests",
-      "labFormat": "event-time-telemetry-reconciliation-incident"
-    },
-    {
       "runSlot": "2026-10-28-20",
       "unitId": "UNIT-PGUNIQ-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PGUNIQ-001-mobile-inspection-nullable-unique-slot",
@@ -1501,10 +1486,24 @@
       "failureMode": "large-positive-meter-generation-total-becomes-negative-while-small-batches-pass",
       "solutionPattern": "wide-accumulator-from-first-addition-with-checked-arithmetic-and-boundary-contracts",
       "labFormat": "deterministic-energy-aggregation-numeric-boundary-contract"
+    },
+    {
+      "runSlot": "2026-11-01-23",
+      "unitId": "UNIT-CANCELREG-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-CANCELREG-001-runway-lighting-shutdown-acknowledgement-stall",
+      "domain": "dotnet-cancellation-callback-lifecycle",
+      "primarySkill": "cancellationtoken-register-cancel-synchronous-callback-execution",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "airport-runway-lighting-maintenance-telemetry",
+      "scenarioType": "shutdown-signal-acknowledgement-stalls-until-downstream-flush-gate-releases",
+      "primaryRootCause": "cancellationtoken-register-callback-performs-synchronous-wait-on-pending-cleanup",
+      "failureMode": "cancellation-request-does-not-return-while-independent-cleanup-is-pending",
+      "solutionPattern": "constant-time-cancellation-callback-signals-owned-async-cleanup-task-with-explicit-join",
+      "labFormat": "deterministic-shutdown-callback-lifecycle-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-MCLK-001",
     "UNIT-URLAUTH-001",
     "UNIT-IMGREF-001",
     "UNIT-UPLARCH-001",
@@ -1527,12 +1526,12 @@
     "UNIT-JDUP-001",
     "UNIT-KEYSETPAGE-001",
     "UNIT-FILEPUB-001",
-    "UNIT-INTOVF-001"
+    "UNIT-INTOVF-001",
+    "UNIT-CANCELREG-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-clock-domain-semantics": 1,
       "http-uri-authority-security": 1,
       "kubernetes-image-release-provenance": 1,
       "aspnetcore-large-upload-architecture": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-json-payload-contract-security": 1,
       "api-pagination-live-feed": 1,
       "dotnet-file-publication-consistency": 1,
-      "csharp-integer-arithmetic-overflow": 1
+      "csharp-integer-arithmetic-overflow": 1,
+      "dotnet-cancellation-callback-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L4": 4,
-      "L2": 6,
+      "L2": 7,
       "L3": 5,
       "L5": 3,
       "L1": 5,
+      "L4": 3,
       "L6": 1
     },
     "byFormat": {
-      "clock-domain-refactoring-with-deterministic-step-simulator": 1,
       "uri-authority-security-contract-investigation": 1,
       "multi-node-rollout-provenance-production-incident": 1,
       "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1,
@@ -1593,7 +1592,8 @@
       "json-parser-differential-contract-investigation": 1,
       "live-feed-pagination-multi-signal-production-incident": 1,
       "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1,
-      "deterministic-energy-aggregation-numeric-boundary-contract": 1
+      "deterministic-energy-aggregation-numeric-boundary-contract": 1,
+      "deterministic-shutdown-callback-lifecycle-investigation": 1
     }
   }
 }

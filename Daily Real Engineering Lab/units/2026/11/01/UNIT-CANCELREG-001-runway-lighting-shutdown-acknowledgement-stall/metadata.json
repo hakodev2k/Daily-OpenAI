@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-CANCELREG-001",
+  "runSlot": "2026-11-01-23",
+  "title": "Dừng worker đèn đường băng nhưng tín hiệu shutdown không được xác nhận",
+  "domain": "dotnet-cancellation-callback-lifecycle",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-01T23:09:53+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "cancellationtoken-register-cancel-synchronous-callback-execution",
+    "task-completion-ownership",
+    "graceful-shutdown-contract",
+    "deterministic-concurrency-testing"
+  ],
+  "prerequisites": [
+    "csharp-task-and-await",
+    "cancellationtoken-basics",
+    "taskcompletionsource"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of .NET 8 source, gate fixture, PowerShell commands and expected contracts; runtime was not executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "airport-runway-lighting-maintenance-telemetry",
+    "scenarioType": "shutdown-signal-acknowledgement-stalls-until-downstream-flush-gate-releases",
+    "primaryRootCause": "cancellationtoken-register-callback-performs-synchronous-wait-on-pending-cleanup",
+    "failureMode": "cancellation-request-does-not-return-while-independent-cleanup-is-pending",
+    "solutionPattern": "constant-time-cancellation-callback-signals-owned-async-cleanup-task-with-explicit-join",
+    "labFormat": "deterministic-shutdown-callback-lifecycle-investigation"
+  }
+}
