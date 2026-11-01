@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RWLOCK-001",
-    "runSlot": "2026-11-01-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RWLOCK-001-museum-climate-threshold-read-to-write-upgrade",
+    "unitId": "UNIT-JDUP-001",
+    "runSlot": "2026-11-01-19",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-JDUP-001-library-grant-duplicate-json-field",
     "status": "READY",
-    "createdAt": "2026-11-01T18:09:21+07:00"
+    "createdAt": "2026-11-01T19:15:31.650+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 409,
-    "totalGenerated": 404,
+    "totalRunSlotsAttempted": 410,
+    "totalGenerated": 405,
     "totalFailed": 5
   },
   "learning": {
