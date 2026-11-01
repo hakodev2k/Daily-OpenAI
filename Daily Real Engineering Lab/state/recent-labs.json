@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-18",
-      "unitId": "UNIT-STATUS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-STATUS-001-flood-bulletin-http-status-metrics",
-      "domain": "aspnet-core-response-observability",
-      "primarySkill": "aspnet-core-response-status-observability",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "regional-flood-warning-bulletin-api",
-      "scenarioType": "client-error-and-upstream-outage-omitted-from-http-status-metrics",
-      "primaryRootCause": "middleware-records-response-status-before-downstream-handler",
-      "failureMode": "client-429-503-404-but-dashboard-records-200",
-      "solutionPattern": "record-completed-response-status-after-next-with-defined-exception-boundary",
-      "labFormat": "response-metrics-evidence-investigation"
-    },
-    {
       "runSlot": "2026-10-28-19",
       "unitId": "UNIT-ETIME-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-ETIME-001-toll-plaza-delayed-sensor-window-drift",
@@ -1501,10 +1486,24 @@
       "failureMode": "dashboard-reads-empty-alert-and-failed-export-erases-last-good-snapshot",
       "solutionPattern": "same-directory-staged-write-flush-and-atomic-file-replacement-with-failure-cleanup",
       "labFormat": "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts"
+    },
+    {
+      "runSlot": "2026-11-01-22",
+      "unitId": "UNIT-INTOVF-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-INTOVF-001-solar-cooperative-energy-credit-rollover",
+      "domain": "csharp-integer-arithmetic-overflow",
+      "primarySkill": "csharp-intermediate-integer-overflow-and-widening",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "community-solar-energy-credit-reconciliation",
+      "scenarioType": "daily-meter-aggregation-crosses-large-volume-threshold",
+      "primaryRootCause": "int32-accumulator-overflows-before-implicit-widening-to-int64",
+      "failureMode": "large-positive-meter-generation-total-becomes-negative-while-small-batches-pass",
+      "solutionPattern": "wide-accumulator-from-first-addition-with-checked-arithmetic-and-boundary-contracts",
+      "labFormat": "deterministic-energy-aggregation-numeric-boundary-contract"
     }
   ],
   "rolling24": [
-    "UNIT-SEMG-001",
     "UNIT-MCLK-001",
     "UNIT-URLAUTH-001",
     "UNIT-IMGREF-001",
@@ -1527,12 +1526,12 @@
     "UNIT-RWLOCK-001",
     "UNIT-JDUP-001",
     "UNIT-KEYSETPAGE-001",
-    "UNIT-FILEPUB-001"
+    "UNIT-FILEPUB-001",
+    "UNIT-INTOVF-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-semaphore-permit-ownership": 1,
       "dotnet-clock-domain-semantics": 1,
       "http-uri-authority-security": 1,
       "kubernetes-image-release-provenance": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-readerwriterlockslim": 1,
       "dotnet-json-payload-contract-security": 1,
       "api-pagination-live-feed": 1,
-      "dotnet-file-publication-consistency": 1
+      "dotnet-file-publication-consistency": 1,
+      "csharp-integer-arithmetic-overflow": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 7,
       "L4": 4,
+      "L2": 6,
       "L3": 5,
       "L5": 3,
-      "L1": 4,
+      "L1": 5,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-cancelled-waiter-permit-ownership-investigation": 1,
       "clock-domain-refactoring-with-deterministic-step-simulator": 1,
       "uri-authority-security-contract-investigation": 1,
       "multi-node-rollout-provenance-production-incident": 1,
@@ -1593,7 +1592,8 @@
       "read-to-write-lock-upgrade-deterministic-contract-lab": 1,
       "json-parser-differential-contract-investigation": 1,
       "live-feed-pagination-multi-signal-production-incident": 1,
-      "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1
+      "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1,
+      "deterministic-energy-aggregation-numeric-boundary-contract": 1
     }
   }
 }

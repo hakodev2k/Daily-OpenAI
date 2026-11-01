@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-FILEPUB-001",
-    "runSlot": "2026-11-01-21",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-FILEPUB-001-coastal-flood-alert-snapshot-torn-read",
+    "unitId": "UNIT-INTOVF-001",
+    "runSlot": "2026-11-01-22",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-INTOVF-001-solar-cooperative-energy-credit-rollover",
     "status": "READY",
-    "createdAt": "2026-11-01T21:06:50+07:00"
+    "createdAt": "2026-11-01T22:09:35+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 412,
-    "totalGenerated": 407,
+    "totalRunSlotsAttempted": 413,
+    "totalGenerated": 408,
     "totalFailed": 5
   },
   "learning": {

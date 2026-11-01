@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-INTOVF-001",
+  "runSlot": "2026-11-01-22",
+  "title": "Báo cáo điện mặt trời bị âm khi tăng số lượng điểm đo",
+  "domain": "csharp-integer-arithmetic-overflow",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-01T22:09:35+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "csharp-intermediate-integer-overflow-and-widening",
+    "csharp-numeric-conversions",
+    "boundary-testing",
+    "data-aggregation-invariants"
+  ],
+  "prerequisites": [
+    "csharp-integral-types",
+    "foreach-and-ienumerable"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of C# source, scripts, arithmetic fixtures and contracts. .NET/PowerShell were not executed.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-solar-energy-credit-reconciliation",
+    "scenarioType": "daily-meter-aggregation-crosses-large-volume-threshold",
+    "primaryRootCause": "int32-accumulator-overflows-before-implicit-widening-to-int64",
+    "failureMode": "large-positive-meter-generation-total-becomes-negative-while-small-batches-pass",
+    "solutionPattern": "wide-accumulator-from-first-addition-with-checked-arithmetic-and-boundary-contracts",
+    "labFormat": "deterministic-energy-aggregation-numeric-boundary-contract"
+  }
+}
