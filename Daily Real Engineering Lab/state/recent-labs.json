@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-09",
-      "unitId": "UNIT-HASH-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-HASH-001-seed-bank-accession-code-correction",
-      "domain": "dotnet-collection-hashing",
-      "primarySkill": "hashset-hash-invariants",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "community-seed-bank-accession-tracking",
-      "scenarioType": "catalog-code-correction-after-in-memory-registration",
-      "primaryRootCause": "mutable-equality-and-hash-code-fields-changed-after-hashset-insertion",
-      "failureMode": "corrected-accession-cannot-be-found-or-removed-and-duplicate-code-is-accepted",
-      "solutionPattern": "stable-dictionary-key-index-with-validated-rename",
-      "labFormat": "mutable-hash-key-deterministic-reproduction"
-    },
-    {
       "runSlot": "2026-10-28-10",
       "unitId": "UNIT-MONGO-002",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-MONGO-002-wind-turbine-inspection-array-predicate",
@@ -1501,10 +1486,24 @@
       "failureMode": "incident-diagnostics-omit-original-manifest-parser-frame",
       "solutionPattern": "preserve-current-exception-stack-when-rethrowing-within-catch",
       "labFormat": "deterministic-exception-provenance-investigation"
+    },
+    {
+      "runSlot": "2026-11-01-13",
+      "unitId": "UNIT-MWHEAD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-MWHEAD-001-city-bus-arrivals-middleware-response-header",
+      "domain": "aspnetcore-middleware-response-lifecycle",
+      "primarySkill": "aspnetcore-response-start-lifecycle",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "city-bus-real-time-stop-arrivals",
+      "scenarioType": "successful-body-response-omits-request-correlation-header-on-two-endpoints",
+      "primaryRootCause": "middleware-mutates-response-headers-after-downstream-has-started-the-response",
+      "failureMode": "missing-correlation-header-and-post-response-middleware-exception",
+      "solutionPattern": "register-response-onstarting-callback-before-invoking-downstream-pipeline",
+      "labFormat": "middleware-response-lifecycle-contract-reproduction"
     }
   ],
   "rolling24": [
-    "UNIT-GIT-002",
     "UNIT-XASSERT-001",
     "UNIT-COSMOS-001",
     "UNIT-EF-019",
@@ -1527,12 +1526,12 @@
     "UNIT-HPA-001",
     "UNIT-BAGPII-001",
     "UNIT-REDRIVE-001",
-    "UNIT-EXSTACK-001"
+    "UNIT-EXSTACK-001",
+    "UNIT-MWHEAD-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "git-ci-change-detection": 1,
       "dotnet-async-testing": 1,
       "azure-cosmos-db-partition-design": 1,
       "ef-core-relational-query-semantics": 1,
@@ -1555,22 +1554,22 @@
       "kubernetes-hpa-cpu-utilization": 1,
       "dotnet-distributed-tracing-privacy": 1,
       "distributed-event-projection-versioning": 1,
-      "csharp-exception-provenance": 1
+      "csharp-exception-provenance": 1,
+      "aspnetcore-middleware-response-lifecycle": 1
     },
     "byDifficulty": {
-      "D4": 21,
-      "D3": 3
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L4": 4,
       "L2": 7,
       "L5": 3,
       "L3": 5,
-      "L1": 4,
+      "L1": 5,
+      "L4": 3,
       "L6": 1
     },
     "byFormat": {
-      "git-branch-divergence-change-detection-refactoring-workshop": 1,
       "async-test-oracle-mismatch-investigation": 1,
       "partition-capacity-design-decision-with-deterministic-policy-simulator": 1,
       "filtered-required-navigation-production-forensics": 1,
@@ -1593,7 +1592,8 @@
       "autoscaling-control-signal-design-decision-with-local-policy-model": 1,
       "privacy-leak-distributed-trace-production-incident": 1,
       "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1,
-      "deterministic-exception-provenance-investigation": 1
+      "deterministic-exception-provenance-investigation": 1,
+      "middleware-response-lifecycle-contract-reproduction": 1
     }
   }
 }
