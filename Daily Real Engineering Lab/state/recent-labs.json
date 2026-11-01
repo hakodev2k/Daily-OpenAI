@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-21",
-      "unitId": "UNIT-RECORD-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-RECORD-002-air-cargo-manifest-snapshot-aliasing",
-      "domain": "csharp-record-snapshot-semantics",
-      "primarySkill": "csharp-record-shallow-copy-semantics",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "air-cargo-baggage-handoff-audit",
-      "scenarioType": "handoff-snapshot-drift-after-subsequent-bag-scan",
-      "primaryRootCause": "record-with-expression-shares-mutable-collection-reference-across-snapshots",
-      "failureMode": "previously-issued-audit-manifest-changes-and-reader-can-mutate-active-manifest",
-      "solutionPattern": "immutable-snapshot-boundary-with-copy-on-write-and-readonly-collection",
-      "labFormat": "audit-snapshot-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-28-22",
       "unitId": "UNIT-CSV-002",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-CSV-002-grant-disbursement-spreadsheet-cell-injection",
@@ -1501,10 +1486,24 @@
       "failureMode": "cross-clinic-429-coupling-and-same-clinic-quota-bypass-on-another-endpoint",
       "solutionPattern": "authenticated-tenant-claim-as-stable-partition-key-with-cross-route-and-cross-tenant-contracts",
       "labFormat": "multi-tenant-admission-fairness-incident-with-local-policy-harness"
+    },
+    {
+      "runSlot": "2026-11-02-01",
+      "unitId": "UNIT-SQLITE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SQLITE-001-water-pump-offline-sync-inspection-loss",
+      "domain": "sqlite-relational-write-semantics",
+      "primarySkill": "sqlite-replace-vs-upsert-cascade-semantics",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "rural-water-pump-maintenance-offline-equipment-sync",
+      "scenarioType": "offline-equipment-label-resync-succeeds-but-linked-inspection-history-disappears",
+      "primaryRootCause": "sqlite-insert-or-replace-deletes-conflicting-parent-row-and-cascades-child-deletion",
+      "failureMode": "inspection-records-disappear-after-successful-metadata-sync-with-zero-foreign-key-violations",
+      "solutionPattern": "targeted-sqlite-on-conflict-do-update-preserving-parent-row-and-child-references",
+      "labFormat": "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract"
     }
   ],
   "rolling24": [
-    "UNIT-IMGREF-001",
     "UNIT-UPLARCH-001",
     "UNIT-ASVOID-001",
     "UNIT-RANGE-001",
@@ -1527,12 +1526,12 @@
     "UNIT-FILEPUB-001",
     "UNIT-INTOVF-001",
     "UNIT-CANCELREG-001",
-    "UNIT-RLPART-001"
+    "UNIT-RLPART-001",
+    "UNIT-SQLITE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "kubernetes-image-release-provenance": 1,
       "aspnetcore-large-upload-architecture": 1,
       "csharp-async-delegate-contract": 1,
       "http-range-response-semantics": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-file-publication-consistency": 1,
       "csharp-integer-arithmetic-overflow": 1,
       "dotnet-cancellation-callback-lifecycle": 1,
-      "aspnetcore-partitioned-rate-limiting": 1
+      "aspnetcore-partitioned-rate-limiting": 1,
+      "sqlite-relational-write-semantics": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
       "L5": 3,
       "L1": 5,
       "L2": 6,
-      "L4": 3,
+      "L3": 5,
+      "L4": 4,
       "L6": 1
     },
     "byFormat": {
-      "multi-node-rollout-provenance-production-incident": 1,
       "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1,
       "deterministic-gated-dispatch-completion-contract": 1,
       "http-partial-content-wire-contract-investigation": 1,
@@ -1593,7 +1592,8 @@
       "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1,
       "deterministic-energy-aggregation-numeric-boundary-contract": 1,
       "deterministic-shutdown-callback-lifecycle-investigation": 1,
-      "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1
+      "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1,
+      "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1
     }
   }
 }
