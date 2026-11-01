@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-20",
-      "unitId": "UNIT-PGUNIQ-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PGUNIQ-001-mobile-inspection-nullable-unique-slot",
-      "domain": "postgresql-unique-constraints",
-      "primarySkill": "postgresql-unique-null-semantics",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "mobile-vehicle-inspection-depot-booking",
-      "scenarioType": "two-mobile-inspection-assignments-share-same-depot-and-start-time",
-      "primaryRootCause": "postgresql-unique-constraint-treats-null-key-components-as-distinct",
-      "failureMode": "duplicate-unassigned-mobile-bay-reservations-commit-despite-unique-constraint",
-      "solutionPattern": "postgresql-unique-nulls-not-distinct-with-pre-migration-duplicate-remediation",
-      "labFormat": "postgresql-constraint-behavior-investigation"
-    },
-    {
       "runSlot": "2026-10-28-21",
       "unitId": "UNIT-RECORD-002",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-RECORD-002-air-cargo-manifest-snapshot-aliasing",
@@ -1501,10 +1486,24 @@
       "failureMode": "cancellation-request-does-not-return-while-independent-cleanup-is-pending",
       "solutionPattern": "constant-time-cancellation-callback-signals-owned-async-cleanup-task-with-explicit-join",
       "labFormat": "deterministic-shutdown-callback-lifecycle-investigation"
+    },
+    {
+      "runSlot": "2026-11-02-00",
+      "unitId": "UNIT-RLPART-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-RLPART-001-veterinary-clinic-tenant-admission-leak",
+      "domain": "aspnetcore-partitioned-rate-limiting",
+      "primarySkill": "partitioned-rate-limiter-tenant-isolation",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "regional-veterinary-vaccination-clinic-partner-api",
+      "scenarioType": "one-clinic-traffic-burst-blocks-another-and-cross-endpoint-requests-escape-quota",
+      "primaryRootCause": "fixed-window-limiter-partitions-by-request-path-instead-of-authenticated-clinic-identity",
+      "failureMode": "cross-clinic-429-coupling-and-same-clinic-quota-bypass-on-another-endpoint",
+      "solutionPattern": "authenticated-tenant-claim-as-stable-partition-key-with-cross-route-and-cross-tenant-contracts",
+      "labFormat": "multi-tenant-admission-fairness-incident-with-local-policy-harness"
     }
   ],
   "rolling24": [
-    "UNIT-URLAUTH-001",
     "UNIT-IMGREF-001",
     "UNIT-UPLARCH-001",
     "UNIT-ASVOID-001",
@@ -1527,12 +1526,12 @@
     "UNIT-KEYSETPAGE-001",
     "UNIT-FILEPUB-001",
     "UNIT-INTOVF-001",
-    "UNIT-CANCELREG-001"
+    "UNIT-CANCELREG-001",
+    "UNIT-RLPART-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-uri-authority-security": 1,
       "kubernetes-image-release-provenance": 1,
       "aspnetcore-large-upload-architecture": 1,
       "csharp-async-delegate-contract": 1,
@@ -1555,22 +1554,22 @@
       "api-pagination-live-feed": 1,
       "dotnet-file-publication-consistency": 1,
       "csharp-integer-arithmetic-overflow": 1,
-      "dotnet-cancellation-callback-lifecycle": 1
+      "dotnet-cancellation-callback-lifecycle": 1,
+      "aspnetcore-partitioned-rate-limiting": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 7,
-      "L3": 5,
+      "L3": 6,
       "L5": 3,
       "L1": 5,
+      "L2": 6,
       "L4": 3,
       "L6": 1
     },
     "byFormat": {
-      "uri-authority-security-contract-investigation": 1,
       "multi-node-rollout-provenance-production-incident": 1,
       "capacity-security-upload-architecture-decision-with-local-policy-simulator": 1,
       "deterministic-gated-dispatch-completion-contract": 1,
@@ -1593,7 +1592,8 @@
       "live-feed-pagination-multi-signal-production-incident": 1,
       "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1,
       "deterministic-energy-aggregation-numeric-boundary-contract": 1,
-      "deterministic-shutdown-callback-lifecycle-investigation": 1
+      "deterministic-shutdown-callback-lifecycle-investigation": 1,
+      "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1
     }
   }
 }
