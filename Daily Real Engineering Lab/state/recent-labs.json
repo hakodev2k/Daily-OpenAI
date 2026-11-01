@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-08",
-      "unitId": "UNIT-ID-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-ID-001-agri-permit-identifier-culture-drift",
-      "domain": "dotnet-string-identity",
-      "primarySkill": "culture-independent-technical-identifier-equality",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "agricultural-export-inspection-permit-import",
-      "scenarioType": "same-partner-permit-revisions-ingested-under-different-host-locales",
-      "primaryRootCause": "culture-sensitive-case-insensitive-comparer-used-for-technical-permit-identifiers",
-      "failureMode": "tr-TR-worker-keeps-two-revisions-and-returns-obsolete-permit-status",
-      "solutionPattern": "ordinal-case-insensitive-identity-comparison-with-cross-culture-regression-contract",
-      "labFormat": "cross-locale-identifier-reconciliation-investigation"
-    },
-    {
       "runSlot": "2026-10-28-09",
       "unitId": "UNIT-HASH-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-HASH-001-seed-bank-accession-code-correction",
@@ -1501,10 +1486,24 @@
       "failureMode": "late-redrive-regresses-public-water-safety-status-and-duplicates-projection-effects",
       "solutionPattern": "per-aggregate-monotonic-version-guard-plus-durable-inbox-and-atomic-projection-commit",
       "labFormat": "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness"
+    },
+    {
+      "runSlot": "2026-11-01-12",
+      "unitId": "UNIT-EXSTACK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-EXSTACK-001-freight-manifest-error-origin-lost",
+      "domain": "csharp-exception-provenance",
+      "primarySkill": "csharp-exception-rethrow-semantics",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "ocean-freight-customs-manifest-import",
+      "scenarioType": "invalid-package-count-error-provenance-lost-across-import-layer",
+      "primaryRootCause": "caught-exception-rethrown-as-variable-resets-original-stack-trace",
+      "failureMode": "incident-diagnostics-omit-original-manifest-parser-frame",
+      "solutionPattern": "preserve-current-exception-stack-when-rethrowing-within-catch",
+      "labFormat": "deterministic-exception-provenance-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-SQL-010",
     "UNIT-GIT-002",
     "UNIT-XASSERT-001",
     "UNIT-COSMOS-001",
@@ -1527,12 +1526,12 @@
     "UNIT-PIPEIO-001",
     "UNIT-HPA-001",
     "UNIT-BAGPII-001",
-    "UNIT-REDRIVE-001"
+    "UNIT-REDRIVE-001",
+    "UNIT-EXSTACK-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "sql-window-analytics": 1,
       "git-ci-change-detection": 1,
       "dotnet-async-testing": 1,
       "azure-cosmos-db-partition-design": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-process-pipe-backpressure": 1,
       "kubernetes-hpa-cpu-utilization": 1,
       "dotnet-distributed-tracing-privacy": 1,
-      "distributed-event-projection-versioning": 1
+      "distributed-event-projection-versioning": 1,
+      "csharp-exception-provenance": 1
     },
     "byDifficulty": {
-      "D3": 4,
-      "D4": 20
+      "D4": 21,
+      "D3": 3
     },
     "byMaturity": {
-      "L1": 5,
       "L4": 4,
-      "L2": 6,
+      "L2": 7,
       "L5": 3,
       "L3": 5,
+      "L1": 4,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-sql-running-total-contract-lab": 1,
       "git-branch-divergence-change-detection-refactoring-workshop": 1,
       "async-test-oracle-mismatch-investigation": 1,
       "partition-capacity-design-decision-with-deterministic-policy-simulator": 1,
@@ -1593,7 +1592,8 @@
       "subprocess-redirected-pipe-backpressure-investigation": 1,
       "autoscaling-control-signal-design-decision-with-local-policy-model": 1,
       "privacy-leak-distributed-trace-production-incident": 1,
-      "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1
+      "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1,
+      "deterministic-exception-provenance-investigation": 1
     }
   }
 }

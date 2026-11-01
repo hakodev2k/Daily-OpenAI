@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-REDRIVE-001",
-    "runSlot": "2026-11-01-11",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-REDRIVE-001-water-quality-dead-letter-status-regression",
+    "unitId": "UNIT-EXSTACK-001",
+    "runSlot": "2026-11-01-12",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-EXSTACK-001-freight-manifest-error-origin-lost",
     "status": "READY",
-    "createdAt": "2026-11-01T11:06:13.499+07:00"
+    "createdAt": "2026-11-01T12:10:52+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 402,
-    "totalGenerated": 397,
+    "totalRunSlotsAttempted": 403,
+    "totalGenerated": 398,
     "totalFailed": 5
   },
   "learning": {
