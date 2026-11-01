@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-05",
-      "unitId": "UNIT-TX-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-TX-001-park-ranger-shift-coverage-concurrent-approval",
-      "domain": "database-concurrency-invariants",
-      "primarySkill": "cross-row-transactional-invariant-preservation",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "national-park-ranger-radio-desk-roster",
-      "scenarioType": "two-independent-leave-approvals-cross-a-minimum-shift-coverage-boundary",
-      "primaryRootCause": "cross-row-coverage-invariant-is-checked-on-separate-snapshots-before-independent-commits",
-      "failureMode": "both-leave-requests-succeed-and-the-shift-has-no-on-duty-ranger",
-      "solutionPattern": "atomically-enforce-shift-wide-coverage-invariant-at-authoritative-write-boundary",
-      "labFormat": "concurrency-invariant-design-decision-with-deterministic-fixture"
-    },
-    {
       "runSlot": "2026-10-28-06",
       "unitId": "UNIT-DNS-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-DNS-001-transit-gateway-dns-rotation-stale-connection",
@@ -1501,6 +1486,21 @@
       "failureMode": "false-render-timeout-while-child-is-blocked-on-redirected-stderr",
       "solutionPattern": "concurrent-stdout-stderr-drain-with-timeout-cleanup-and-child-exit-propagation",
       "labFormat": "subprocess-redirected-pipe-backpressure-investigation"
+    },
+    {
+      "runSlot": "2026-11-01-09",
+      "unitId": "UNIT-HPA-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HPA-001-street-tree-permit-hpa-cpu-metric",
+      "domain": "kubernetes-hpa-cpu-utilization",
+      "primarySkill": "kubernetes-hpa-resource-utilization",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "municipal-street-tree-pruning-permit-api",
+      "scenarioType": "hpa-stalls-under-load-despite-container-cpu-usage-metrics",
+      "primaryRootCause": "sidecar-container-lacks-cpu-request-making-pod-cpu-utilization-undefined",
+      "failureMode": "hpa-cpu-target-unknown-and-no-replica-increase-despite-rising-api-latency",
+      "solutionPattern": "resource-request-completeness-and-evidence-based-request-sizing-for-hpa",
+      "labFormat": "autoscaling-control-signal-design-decision-with-local-policy-model"
     }
   ],
   "rolling24": [
@@ -1532,7 +1532,6 @@
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-binary-stream-transport": 1,
       "http-request-retry-semantics": 1,
       "dotnet-io-bound-batch-concurrency": 1,
       "sql-window-analytics": 1,
@@ -1555,21 +1554,21 @@
       "dotnet-webhook-message-authentication": 1,
       "csharp-deferred-work-closure-semantics": 1,
       "csharp-hash-key-identity-semantics": 1,
-      "dotnet-process-pipe-backpressure": 1
+      "dotnet-process-pipe-backpressure": 1,
+      "kubernetes-hpa-cpu-utilization": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L4": 5,
       "L2": 7,
       "L3": 5,
       "L1": 5,
-      "L5": 2
+      "L4": 4,
+      "L5": 3
     },
     "byFormat": {
-      "binary-frame-transport-boundary-refactoring-workshop": 1,
       "http-partner-retry-contract-investigation": 1,
       "capacity-evidence-production-investigation-with-local-partner-simulator": 1,
       "deterministic-sql-running-total-contract-lab": 1,
@@ -1592,7 +1591,8 @@
       "signed-webhook-wire-evidence-production-incident": 1,
       "deferred-batch-ownership-refactoring-workshop": 1,
       "deterministic-mutable-hash-key-contract-lab": 1,
-      "subprocess-redirected-pipe-backpressure-investigation": 1
+      "subprocess-redirected-pipe-backpressure-investigation": 1,
+      "autoscaling-control-signal-design-decision-with-local-policy-model": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PIPEIO-001",
-    "runSlot": "2026-11-01-08",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PIPEIO-001-university-render-worker-stderr-backpressure",
+    "unitId": "UNIT-HPA-001",
+    "runSlot": "2026-11-01-09",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HPA-001-street-tree-permit-hpa-cpu-metric",
     "status": "READY",
-    "createdAt": "2026-11-01T08:11:29+07:00"
+    "createdAt": "2026-11-01T09:04:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 399,
-    "totalGenerated": 394,
+    "totalRunSlotsAttempted": 400,
+    "totalGenerated": 395,
     "totalFailed": 5
   },
   "learning": {
