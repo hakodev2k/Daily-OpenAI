@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-00",
-      "unitId": "UNIT-QENC-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-QENC-001-ski-lift-pass-query-token-corruption",
-      "domain": "http-query-component-encoding",
-      "primarySkill": "uri-query-component-encoding",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "alpine-ski-resort-lift-pass-gate-validation",
-      "scenarioType": "selected-valid-pass-tokens-rejected-at-partner-validation-boundary",
-      "primaryRootCause": "unescaped-reserved-characters-in-opaque-token-interpreted-as-uri-query-syntax",
-      "failureMode": "partner-decoded-pass-identity-differs-from-issued-pass-and-validation-returns-rejection",
-      "solutionPattern": "encode-opaque-token-as-one-uri-query-value-with-roundtrip-regression",
-      "labFormat": "partner-token-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-29-01",
       "unitId": "UNIT-FDROP-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FDROP-001-cold-room-calibration-file-drop-gaps",
@@ -1501,10 +1486,24 @@
       "failureMode": "legitimate-ascii-case-variant-rejected-and-non-ascii-lookalike-accepted-in-turkish-locale",
       "solutionPattern": "explicit-ordinal-ignore-case-identifier-contract-independent-of-current-culture",
       "labFormat": "cross-locale-identifier-registry-deterministic-reproduction"
+    },
+    {
+      "runSlot": "2026-11-02-04",
+      "unitId": "UNIT-UTF8CHUNK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-UTF8CHUNK-001-bike-share-repair-notes-stream-corruption",
+      "domain": "dotnet-streaming-text-decoding",
+      "primarySkill": "utf8-stateful-decoding-across-transport-chunks",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "bike-share-kiosk-maintenance-notes",
+      "scenarioType": "same-utf8-message-corrupted-only-when-gateway-changes-byte-fragment-boundaries",
+      "primaryRootCause": "stateless-per-fragment-utf8-decoding-discards-incomplete-multibyte-sequence",
+      "failureMode": "unicode-replacement-corruption-and-silent-acceptance-of-invalid-utf8",
+      "solutionPattern": "stateful-strict-utf8-decoder-with-end-of-message-flush-and-negative-contracts",
+      "labFormat": "chunked-text-stream-investigation-with-contract-harness"
     }
   ],
   "rolling24": [
-    "UNIT-RANGE-001",
     "UNIT-HMACRAW-001",
     "UNIT-CLOSURE-001",
     "UNIT-HASHKEY-001",
@@ -1527,12 +1526,12 @@
     "UNIT-RLPART-001",
     "UNIT-SQLITE-001",
     "UNIT-DNSPOOL-001",
-    "UNIT-CMPID-001"
+    "UNIT-CMPID-001",
+    "UNIT-UTF8CHUNK-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-range-response-semantics": 1,
       "dotnet-webhook-message-authentication": 1,
       "csharp-deferred-work-closure-semantics": 1,
       "csharp-hash-key-identity-semantics": 1,
@@ -1555,22 +1554,22 @@
       "aspnetcore-partitioned-rate-limiting": 1,
       "sqlite-relational-write-semantics": 1,
       "dotnet-http-connection-lifecycle": 1,
-      "csharp-string-identity-comparison": 1
+      "csharp-string-identity-comparison": 1,
+      "dotnet-streaming-text-decoding": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 6,
       "L3": 5,
       "L4": 4,
       "L1": 5,
+      "L2": 6,
       "L5": 3,
       "L6": 1
     },
     "byFormat": {
-      "http-partial-content-wire-contract-investigation": 1,
       "signed-webhook-wire-evidence-production-incident": 1,
       "deferred-batch-ownership-refactoring-workshop": 1,
       "deterministic-mutable-hash-key-contract-lab": 1,
@@ -1593,7 +1592,8 @@
       "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1,
       "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1,
       "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1,
-      "cross-locale-identifier-registry-deterministic-reproduction": 1
+      "cross-locale-identifier-registry-deterministic-reproduction": 1,
+      "chunked-text-stream-investigation-with-contract-harness": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CMPID-001",
-    "runSlot": "2026-11-02-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-CMPID-001-theater-pass-culture-dependent-lookup",
+    "unitId": "UNIT-UTF8CHUNK-001",
+    "runSlot": "2026-11-02-04",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-UTF8CHUNK-001-bike-share-repair-notes-stream-corruption",
     "status": "READY",
-    "createdAt": "2026-11-02T03:11:32+07:00"
+    "createdAt": "2026-11-02T04:09:11.122+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 418,
-    "totalGenerated": 413,
+    "totalRunSlotsAttempted": 419,
+    "totalGenerated": 414,
     "totalFailed": 5
   },
   "learning": {
