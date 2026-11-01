@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JDUP-001",
-    "runSlot": "2026-11-01-19",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-JDUP-001-library-grant-duplicate-json-field",
+    "unitId": "UNIT-KEYSETPAGE-001",
+    "runSlot": "2026-11-01-20",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-KEYSETPAGE-001-parking-appeal-feed-live-pagination-drift",
     "status": "READY",
-    "createdAt": "2026-11-01T19:15:31.650+07:00"
+    "createdAt": "2026-11-01T20:09:23+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 410,
-    "totalGenerated": 405,
+    "totalRunSlotsAttempted": 411,
+    "totalGenerated": 406,
     "totalFailed": 5
   },
   "learning": {
