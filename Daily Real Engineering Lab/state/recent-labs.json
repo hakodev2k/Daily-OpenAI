@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-14",
-      "unitId": "UNIT-REVAL-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-REVAL-001-rare-book-catalog-304-after-cache-eviction",
-      "domain": "http-cache-revalidation",
-      "primarySkill": "http-conditional-get-representation-contract",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "rare-book-library-catalog-revalidation",
-      "scenarioType": "cache-body-evicted-while-http-validator-remains",
-      "primaryRootCause": "http-conditional-validator-outlives-local-representation",
-      "failureMode": "origin-304-causes-silent-empty-catalog-after-partial-cache-eviction",
-      "solutionPattern": "couple-conditional-validator-to-resident-body-and-reject-unusable-304",
-      "labFormat": "http-conditional-cache-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-28-15",
       "unitId": "UNIT-WANY-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-WANY-001-harbor-beacon-timeout-late-dispatch",
@@ -1501,10 +1486,24 @@
       "failureMode": "maintenance-dashboard-promises-one-eviction-but-kubernetes-disruption-budget-allows-zero",
       "solutionPattern": "ceil-based-desired-healthy-model-plus-replica-aware-disruption-policy-and-rollout-verification",
       "labFormat": "pdb-maintenance-policy-decision-with-local-rounding-harness"
+    },
+    {
+      "runSlot": "2026-11-01-18",
+      "unitId": "UNIT-RWLOCK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RWLOCK-001-museum-climate-threshold-read-to-write-upgrade",
+      "domain": "dotnet-readerwriterlockslim",
+      "primarySkill": "readerwriterlockslim-read-to-write-upgrade",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "regional-museum-climate-sensor-threshold-registry",
+      "scenarioType": "cache-miss-after-climate-sensor-threshold-catalog-expands",
+      "primaryRootCause": "readerwriterlockslim-read-lock-holder-attempts-enterwritelock-without-upgradeable-mode",
+      "failureMode": "missing-threshold-lookup-throws-lockrecursionexception-while-existing-lookup-succeeds",
+      "solutionPattern": "fast-read-then-upgradeable-read-double-check-and-short-write-critical-section",
+      "labFormat": "read-to-write-lock-upgrade-deterministic-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-ETAGW-001",
     "UNIT-CTSR-001",
     "UNIT-PIPEX-001",
     "UNIT-CHAN-001",
@@ -1527,12 +1526,12 @@
     "UNIT-RETRYDATE-001",
     "UNIT-PSGATE-001",
     "UNIT-REDIR-001",
-    "UNIT-PDB-001"
+    "UNIT-PDB-001",
+    "UNIT-RWLOCK-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-optimistic-concurrency-contract": 1,
       "dotnet-cancellation-source-lifecycle": 1,
       "dotnet-system-io-pipelines": 1,
       "dotnet-channel-backpressure": 1,
@@ -1555,22 +1554,22 @@
       "http-retry-after-header-semantics": 1,
       "powershell-native-process-exit-contract": 1,
       "http-redirect-method-semantics": 1,
-      "kubernetes-pod-disruption-budget": 1
+      "kubernetes-pod-disruption-budget": 1,
+      "dotnet-readerwriterlockslim": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 7,
       "L4": 4,
-      "L1": 4,
+      "L1": 5,
       "L3": 5,
+      "L2": 6,
       "L5": 3,
       "L6": 1
     },
     "byFormat": {
-      "two-editor-conditional-write-contract-investigation": 1,
       "batch-timeout-lifecycle-refactoring-workshop": 1,
       "pipereader-framing-deterministic-contract-lab": 1,
       "audit-burst-multi-signal-production-incident": 1,
@@ -1593,7 +1592,8 @@
       "retry-scheduler-policy-refactoring-workshop": 1,
       "ci-release-gate-forensics-with-deterministic-fake-validator": 1,
       "http-redirect-wire-trace-multi-signal-incident": 1,
-      "pdb-maintenance-policy-decision-with-local-rounding-harness": 1
+      "pdb-maintenance-policy-decision-with-local-rounding-harness": 1,
+      "read-to-write-lock-upgrade-deterministic-contract-lab": 1
     }
   }
 }
