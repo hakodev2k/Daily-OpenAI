@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HPA-001",
-    "runSlot": "2026-11-01-09",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HPA-001-street-tree-permit-hpa-cpu-metric",
+    "unitId": "UNIT-BAGPII-001",
+    "runSlot": "2026-11-01-10",
+    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-BAGPII-001-ferry-checkin-trace-baggage-privacy",
     "status": "READY",
-    "createdAt": "2026-11-01T09:04:31+07:00"
+    "createdAt": "2026-11-01T10:13:55+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 400,
-    "totalGenerated": 395,
+    "totalRunSlotsAttempted": 401,
+    "totalGenerated": 396,
     "totalFailed": 5
   },
   "learning": {

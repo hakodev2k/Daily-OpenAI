@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-06",
-      "unitId": "UNIT-DNS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-DNS-001-transit-gateway-dns-rotation-stale-connection",
-      "domain": "http-dns-connection-lifecycle",
-      "primarySkill": "httpclient-pooled-connection-dns-refresh",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "regional-bus-arrival-prediction-gateway",
-      "scenarioType": "upstream-endpoint-rotated-during-healthy-persistent-http-traffic",
-      "primaryRootCause": "long-lived-pooled-http-connection-remains-bound-to-old-endpoint-after-route-refresh",
-      "failureMode": "healthy-api-continues-serving-obsolete-datacenter-after-routing-cutover",
-      "solutionPattern": "bounded-http-pooled-connection-lifetime-with-explicit-refresh-and-failover-budget",
-      "labFormat": "dns-rotation-connection-lifecycle-investigation"
-    },
-    {
       "runSlot": "2026-10-28-07",
       "unitId": "UNIT-AUTHZ-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-AUTHZ-001-water-audit-anonymous-endpoint-exposure",
@@ -1501,11 +1486,24 @@
       "failureMode": "hpa-cpu-target-unknown-and-no-replica-increase-despite-rising-api-latency",
       "solutionPattern": "resource-request-completeness-and-evidence-based-request-sizing-for-hpa",
       "labFormat": "autoscaling-control-signal-design-decision-with-local-policy-model"
+    },
+    {
+      "runSlot": "2026-11-01-10",
+      "unitId": "UNIT-BAGPII-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-BAGPII-001-ferry-checkin-trace-baggage-privacy",
+      "domain": "dotnet-distributed-tracing-privacy",
+      "primarySkill": "w3c-baggage-privacy-and-correlation-boundary",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "regional-ferry-passenger-checkin",
+      "scenarioType": "trace-correlation-works-but-downstream-telemetry-contains-sensitive-passenger-attributes",
+      "primaryRootCause": "personal-data-attributes-placed-in-cross-service-activity-baggage-instead-of-restricted-local-context",
+      "failureMode": "sensitive-passenger-values-propagated-to-third-party-trace-collector",
+      "solutionPattern": "opaque-correlation-only-baggage-and-data-minimization-at-trace-boundary",
+      "labFormat": "privacy-leak-distributed-trace-production-incident"
     }
   ],
   "rolling24": [
-    "UNIT-MBUF-001",
-    "UNIT-REQRETRY-001",
     "UNIT-IOPAR-001",
     "UNIT-SQL-010",
     "UNIT-GIT-002",
@@ -1527,12 +1525,13 @@
     "UNIT-HMACRAW-001",
     "UNIT-CLOSURE-001",
     "UNIT-HASHKEY-001",
-    "UNIT-PIPEIO-001"
+    "UNIT-PIPEIO-001",
+    "UNIT-HPA-001",
+    "UNIT-BAGPII-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-request-retry-semantics": 1,
       "dotnet-io-bound-batch-concurrency": 1,
       "sql-window-analytics": 1,
       "git-ci-change-detection": 1,
@@ -1555,21 +1554,21 @@
       "csharp-deferred-work-closure-semantics": 1,
       "csharp-hash-key-identity-semantics": 1,
       "dotnet-process-pipe-backpressure": 1,
-      "kubernetes-hpa-cpu-utilization": 1
+      "kubernetes-hpa-cpu-utilization": 1,
+      "dotnet-distributed-tracing-privacy": 1
     },
     "byDifficulty": {
       "D4": 20,
       "D3": 4
     },
     "byMaturity": {
-      "L2": 7,
-      "L3": 5,
+      "L3": 6,
       "L1": 5,
       "L4": 4,
+      "L2": 6,
       "L5": 3
     },
     "byFormat": {
-      "http-partner-retry-contract-investigation": 1,
       "capacity-evidence-production-investigation-with-local-partner-simulator": 1,
       "deterministic-sql-running-total-contract-lab": 1,
       "git-branch-divergence-change-detection-refactoring-workshop": 1,
@@ -1592,7 +1591,8 @@
       "deferred-batch-ownership-refactoring-workshop": 1,
       "deterministic-mutable-hash-key-contract-lab": 1,
       "subprocess-redirected-pipe-backpressure-investigation": 1,
-      "autoscaling-control-signal-design-decision-with-local-policy-model": 1
+      "autoscaling-control-signal-design-decision-with-local-policy-model": 1,
+      "privacy-leak-distributed-trace-production-incident": 1
     }
   }
 }
