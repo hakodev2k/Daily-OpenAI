@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-28-03",
-      "unitId": "UNIT-PROC-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PROC-001-caption-batch-child-process-pipe-stall",
-      "domain": "dotnet-process-io",
-      "primarySkill": "process-redirected-streams",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "media-accessibility-caption-batch",
-      "scenarioType": "external-caption-converter-hangs-with-low-cpu-and-large-diagnostic-output",
-      "primaryRootCause": "parent-waits-for-child-exit-before-draining-redirected-standard-error-pipe",
-      "failureMode": "child-blocks-on-full-stderr-pipe-while-parent-times-out-waiting-for-exit",
-      "solutionPattern": "concurrently-drain-both-redirected-streams-while-awaiting-process-exit-with-deadline",
-      "labFormat": "external-process-stream-lifecycle-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-28-04",
       "unitId": "UNIT-PAGE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/28/UNIT-PAGE-001-marine-survey-keyset-cursor-tie-boundary",
@@ -1501,10 +1486,24 @@
       "failureMode": "all-batch-notices-delivered-to-last-ranger-instead-of-distinct-recipients",
       "solutionPattern": "capture-immutable-per-item-command-before-enqueue",
       "labFormat": "deferred-batch-ownership-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-11-01-07",
+      "unitId": "UNIT-HASHKEY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HASHKEY-001-parcel-manifest-route-change-lost-scans",
+      "domain": "csharp-hash-key-identity-semantics",
+      "primarySkill": "dictionary-hash-key-invariants",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "regional-parcel-sortation-night-shift",
+      "scenarioType": "parcel-route-reassignment-manifest-lookup-discontinuity",
+      "primaryRootCause": "mutable-route-zone-participates-in-dictionary-key-hash-and-equality",
+      "failureMode": "lost-scan-lookup-and-phantom-duplicate-key-after-route-change",
+      "solutionPattern": "stable-parcel-identity-comparer-independent-of-mutable-routing-state",
+      "labFormat": "deterministic-mutable-hash-key-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-NPARSE-001",
     "UNIT-PQ-001",
     "UNIT-MBUF-001",
     "UNIT-REQRETRY-001",
@@ -1527,12 +1526,12 @@
     "UNIT-ASVOID-001",
     "UNIT-RANGE-001",
     "UNIT-HMACRAW-001",
-    "UNIT-CLOSURE-001"
+    "UNIT-CLOSURE-001",
+    "UNIT-HASHKEY-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-globalization-numeric-wire-format": 1,
       "dotnet-priorityqueue-scheduling": 1,
       "dotnet-binary-stream-transport": 1,
       "http-request-retry-semantics": 1,
@@ -1555,21 +1554,21 @@
       "csharp-async-delegate-contract": 1,
       "http-range-response-semantics": 1,
       "dotnet-webhook-message-authentication": 1,
-      "csharp-deferred-work-closure-semantics": 1
+      "csharp-deferred-work-closure-semantics": 1,
+      "csharp-hash-key-identity-semantics": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L2": 7,
-      "L1": 5,
+      "L1": 6,
       "L4": 5,
+      "L2": 6,
       "L3": 5,
       "L5": 2
     },
     "byFormat": {
-      "cross-locale-numeric-wire-contract-investigation": 1,
       "priority-escalation-deterministic-scheduling-contract": 1,
       "binary-frame-transport-boundary-refactoring-workshop": 1,
       "http-partner-retry-contract-investigation": 1,
@@ -1592,7 +1591,8 @@
       "deterministic-gated-dispatch-completion-contract": 1,
       "http-partial-content-wire-contract-investigation": 1,
       "signed-webhook-wire-evidence-production-incident": 1,
-      "deferred-batch-ownership-refactoring-workshop": 1
+      "deferred-batch-ownership-refactoring-workshop": 1,
+      "deterministic-mutable-hash-key-contract-lab": 1
     }
   }
 }
