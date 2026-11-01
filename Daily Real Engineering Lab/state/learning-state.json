@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CANCELREG-001",
-    "runSlot": "2026-11-01-23",
-    "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-CANCELREG-001-runway-lighting-shutdown-acknowledgement-stall",
+    "unitId": "UNIT-RLPART-001",
+    "runSlot": "2026-11-02-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-RLPART-001-veterinary-clinic-tenant-admission-leak",
     "status": "READY",
-    "createdAt": "2026-11-01T23:09:53+07:00"
+    "createdAt": "2026-11-02T00:07:30+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 414,
-    "totalGenerated": 409,
+    "totalRunSlotsAttempted": 415,
+    "totalGenerated": 410,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 55,
+    "elapsedDays": 56,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
