@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-17",
-      "unitId": "UNIT-TRACE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-TRACE-001-specimen-courier-trace-window",
-      "domain": "dotnet-activity-tracing",
-      "primarySkill": "dotnet-activity-lifetime-await-boundary",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "medical-laboratory-specimen-courier-dispatch",
-      "scenarioType": "async-courier-dispatch-trace-window-does-not-cover-downstream-operation",
-      "primaryRootCause": "activity-lifetime-ends-when-unawaited-task-is-returned",
-      "failureMode": "dispatch-span-stops-before-gateway-span-even-though-operation-remains-in-flight",
-      "solutionPattern": "await-downstream-operation-inside-parent-activity-lifetime",
-      "labFormat": "trace-lifetime-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-29-18",
       "unitId": "UNIT-ZIPSEC-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-ZIPSEC-001-hatchery-evidence-archive-boundary",
@@ -1501,10 +1486,24 @@
       "failureMode": "objectdisposedexception-on-first-csv-stream-read-after-http-200",
       "solutionPattern": "response-owned-stream-disposal-transfer-with-failure-path-cleanup",
       "labFormat": "http-stream-resource-ownership-investigation-with-deterministic-handler"
+    },
+    {
+      "runSlot": "2026-11-02-22",
+      "unitId": "UNIT-READY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-READY-001-cooling-center-occupancy-startup-readiness",
+      "domain": "dotnet-startup-readiness-contract",
+      "primarySkill": "dotnet-async-initialization-readiness",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "community-cooling-center-occupancy-board",
+      "scenarioType": "startup-snapshot-slow-or-faulted-partner-with-time-based-grace-expiry",
+      "primaryRootCause": "fixed-grace-period-used-as-readiness-proxy-before-async-initialization-completes",
+      "failureMode": "first-dashboard-read-returns-unknown-as-empty-and-suppresses-initialization-failure",
+      "solutionPattern": "await-actual-initialization-completion-and-propagate-fault-before-snapshot-read",
+      "labFormat": "deterministic-startup-readiness-refactoring-with-fault-propagation-contract"
     }
   ],
   "rolling24": [
-    "UNIT-FILEPUB-001",
     "UNIT-INTOVF-001",
     "UNIT-CANCELREG-001",
     "UNIT-RLPART-001",
@@ -1527,12 +1526,12 @@
     "UNIT-UPSIG-001",
     "UNIT-OTA-001",
     "UNIT-DELIM-001",
-    "UNIT-RESPSTR-001"
+    "UNIT-RESPSTR-001",
+    "UNIT-READY-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-file-publication-consistency": 1,
       "csharp-integer-arithmetic-overflow": 1,
       "dotnet-cancellation-callback-lifecycle": 1,
       "aspnetcore-partitioned-rate-limiting": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-file-upload-content-validation": 1,
       "fleet-ota-distributed-systems-architecture": 1,
       "dotnet-positional-record-ingestion": 1,
-      "dotnet-http-response-stream-ownership": 1
+      "dotnet-http-response-stream-ownership": 1,
+      "dotnet-startup-readiness-contract": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L4": 5,
       "L1": 5,
       "L2": 6,
       "L3": 5,
+      "L4": 5,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1,
       "deterministic-energy-aggregation-numeric-boundary-contract": 1,
       "deterministic-shutdown-callback-lifecycle-investigation": 1,
       "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1,
@@ -1593,7 +1592,8 @@
       "document-ingestion-evidence-led-security-incident": 1,
       "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1,
       "positional-feed-contract-deterministic-lab": 1,
-      "http-stream-resource-ownership-investigation-with-deterministic-handler": 1
+      "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
+      "deterministic-startup-readiness-refactoring-with-fault-propagation-contract": 1
     }
   }
 }
