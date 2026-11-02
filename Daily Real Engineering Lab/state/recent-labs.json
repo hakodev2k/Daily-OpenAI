@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-03",
-      "unitId": "UNIT-PGVIS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-PGVIS-001-volunteer-shift-index-only-heap-fetches",
-      "domain": "postgresql-query-plans",
-      "primarySkill": "postgresql-visibility-map-and-index-only-scan",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "nonprofit-volunteer-shift-reporting",
-      "scenarioType": "read-query-regression-after-nonindexed-column-updates",
-      "primaryRootCause": "visibility-map-all-visible-bits-cleared-by-updates-while-autovacuum-is-disabled",
-      "failureMode": "covering-index-query-still-fetches-many-heap-tuples",
-      "solutionPattern": "restore-visibility-maintenance-and-monitor-heap-fetch-regression",
-      "labFormat": "postgresql-query-plan-production-forensics"
-    },
-    {
       "runSlot": "2026-10-29-04",
       "unitId": "UNIT-DI-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DI-001-exam-manifest-cross-batch-bleed",
@@ -1501,10 +1486,24 @@
       "failureMode": "wrong-caption-language-or-false-fallback-on-valid-client-preferences",
       "solutionPattern": "quality-weighted-supported-language-selection-with-explicit-exclusions-and-contract-tests",
       "labFormat": "api-localization-compatibility-refactoring-workshop"
+    },
+    {
+      "runSlot": "2026-11-02-07",
+      "unitId": "UNIT-DPKEY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DPKEY-001-housing-repair-portal-split-key-rings",
+      "domain": "aspnetcore-data-protection-key-management",
+      "primarySkill": "aspnetcore-data-protection-shared-key-ring-and-app-isolation",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "municipal-housing-repair-request-portal",
+      "scenarioType": "rolling-deployment-routes-protected-session-ticket-between-two-api-replicas",
+      "primaryRootCause": "replicas-use-independent-aspnetcore-data-protection-key-rings",
+      "failureMode": "intermittent-session-unprotect-failure-on-cross-replica-routing",
+      "solutionPattern": "durable-shared-key-ring-with-stable-application-discriminator-and-isolation-contracts",
+      "labFormat": "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness"
     }
   ],
   "rolling24": [
-    "UNIT-HASHKEY-001",
     "UNIT-PIPEIO-001",
     "UNIT-HPA-001",
     "UNIT-BAGPII-001",
@@ -1527,12 +1526,12 @@
     "UNIT-CMPID-001",
     "UNIT-UTF8CHUNK-001",
     "UNIT-CSVFORM-001",
-    "UNIT-LANGQ-001"
+    "UNIT-LANGQ-001",
+    "UNIT-DPKEY-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "csharp-hash-key-identity-semantics": 1,
       "dotnet-process-pipe-backpressure": 1,
       "kubernetes-hpa-cpu-utilization": 1,
       "dotnet-distributed-tracing-privacy": 1,
@@ -1555,22 +1554,22 @@
       "csharp-string-identity-comparison": 1,
       "dotnet-streaming-text-decoding": 1,
       "csv-spreadsheet-export-security": 1,
-      "http-accept-language-content-negotiation": 1
+      "http-accept-language-content-negotiation": 1,
+      "aspnetcore-data-protection-key-management": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 5,
       "L2": 6,
-      "L5": 3,
+      "L5": 4,
       "L3": 5,
       "L6": 1,
+      "L1": 4,
       "L4": 4
     },
     "byFormat": {
-      "deterministic-mutable-hash-key-contract-lab": 1,
       "subprocess-redirected-pipe-backpressure-investigation": 1,
       "autoscaling-control-signal-design-decision-with-local-policy-model": 1,
       "privacy-leak-distributed-trace-production-incident": 1,
@@ -1593,7 +1592,8 @@
       "cross-locale-identifier-registry-deterministic-reproduction": 1,
       "chunked-text-stream-investigation-with-contract-harness": 1,
       "csv-output-trust-boundary-multi-signal-security-incident": 1,
-      "api-localization-compatibility-refactoring-workshop": 1
+      "api-localization-compatibility-refactoring-workshop": 1,
+      "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness": 1
     }
   }
 }
