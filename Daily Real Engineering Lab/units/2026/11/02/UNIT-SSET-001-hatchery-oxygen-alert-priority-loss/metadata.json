@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-SSET-001",
+  "runSlot": "2026-11-02-16",
+  "title": "Cảnh báo oxy trại giống biến mất khỏi hàng đợi ưu tiên",
+  "domain": "csharp-sortedset-comparer-identity",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-02T16:27:12+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "csharp-collections",
+    "sortedset-comparer",
+    "ordering-and-identity-contracts",
+    "regression-testing"
+  ],
+  "primarySkill": "sortedset-ordering-vs-element-equivalence",
+  "prerequisites": [
+    "C# records",
+    "IComparer<T>",
+    "SortedSet<T>",
+    "PowerShell and .NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Strict static consistency review; .NET/PowerShell not executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth",
+    "elapsedDays": 56
+  },
+  "novelty": {
+    "businessContext": "aquaculture-hatchery-dissolved-oxygen-emergency-triage",
+    "scenarioType": "multiple-independent-tank-alerts-share-severity-and-observation-time",
+    "primaryRootCause": "sortedset-comparer-treats-equal-priority-alerts-as-identical-elements",
+    "failureMode": "distinct-critical-oxygen-alerts-disappear-from-dispatch-queue",
+    "solutionPattern": "total-order-comparer-with-priority-timestamp-and-stable-event-id-tiebreakers",
+    "labFormat": "sorted-collection-comparison-contract-investigation"
+  }
+}

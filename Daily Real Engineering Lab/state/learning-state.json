@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SNAPISO-001",
-    "runSlot": "2026-11-02-15",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SNAPISO-001-mangrove-restoration-survey-revision-drift",
+    "unitId": "UNIT-SSET-001",
+    "runSlot": "2026-11-02-16",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SSET-001-hatchery-oxygen-alert-priority-loss",
     "status": "READY",
-    "createdAt": "2026-11-02T15:12:09+07:00"
+    "createdAt": "2026-11-02T16:27:12+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 430,
-    "totalGenerated": 425,
+    "totalRunSlotsAttempted": 431,
+    "totalGenerated": 426,
     "totalFailed": 5
   },
   "learning": {

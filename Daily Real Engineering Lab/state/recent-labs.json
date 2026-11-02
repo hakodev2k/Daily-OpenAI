@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-12",
-      "unitId": "UNIT-JDRIFT-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-JDRIFT-001-rail-depot-reservation-json-contract-drift",
-      "domain": "json-ingress-contract-validation",
-      "primarySkill": "system-text-json-required-and-unmapped-member-contract",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "rail-maintenance-spare-parts-reservation-feed",
-      "scenarioType": "partner-json-field-rename-silently-releases-reserved-inventory",
-      "primaryRootCause": "system-text-json-ignores-unmapped-property-and-defaults-absent-int-to-zero",
-      "failureMode": "valid-reservations-are-imported-as-zero-units-after-unannounced-schema-change",
-      "solutionPattern": "versioned-strict-json-contract-with-required-fields-and-explicit-invariant-validation",
-      "labFormat": "json-contract-drift-production-incident"
-    },
-    {
       "runSlot": "2026-10-29-13",
       "unitId": "UNIT-AUDIT-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-AUDIT-001-sterile-batch-audit-evidence-trust-boundary",
@@ -1501,10 +1486,24 @@
       "failureMode": "previously-published-survey-revisions-silently-change-without-a-new-publication",
       "solutionPattern": "defensive-deep-copy-on-history-ingress-and-egress-with-independent-revision-contracts",
       "labFormat": "snapshot-history-refactoring-with-bidirectional-aliasing-contract"
+    },
+    {
+      "runSlot": "2026-11-02-16",
+      "unitId": "UNIT-SSET-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SSET-001-hatchery-oxygen-alert-priority-loss",
+      "domain": "csharp-sortedset-comparer-identity",
+      "primarySkill": "sortedset-ordering-vs-element-equivalence",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "aquaculture-hatchery-dissolved-oxygen-emergency-triage",
+      "scenarioType": "multiple-independent-tank-alerts-share-severity-and-observation-time",
+      "primaryRootCause": "sortedset-comparer-treats-equal-priority-alerts-as-identical-elements",
+      "failureMode": "distinct-critical-oxygen-alerts-disappear-from-dispatch-queue",
+      "solutionPattern": "total-order-comparer-with-priority-timestamp-and-stable-event-id-tiebreakers",
+      "labFormat": "sorted-collection-comparison-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-REDIR-001",
     "UNIT-PDB-001",
     "UNIT-RWLOCK-001",
     "UNIT-JDUP-001",
@@ -1527,12 +1526,12 @@
     "UNIT-ROUND-001",
     "UNIT-HOSTEX-001",
     "UNIT-FSWATCH-001",
-    "UNIT-SNAPISO-001"
+    "UNIT-SNAPISO-001",
+    "UNIT-SSET-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-redirect-method-semantics": 1,
       "kubernetes-pod-disruption-budget": 1,
       "dotnet-readerwriterlockslim": 1,
       "dotnet-json-payload-contract-security": 1,
@@ -1555,21 +1554,21 @@
       "csharp-decimal-rounding-contract": 1,
       "dotnet-backgroundservice-host-lifecycle": 1,
       "dotnet-filesystem-index-consistency": 1,
-      "csharp-object-graph-snapshot-isolation": 1
+      "csharp-object-graph-snapshot-isolation": 1,
+      "csharp-sortedset-comparer-identity": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
       "L5": 3,
       "L1": 5,
-      "L2": 5,
+      "L2": 6,
+      "L3": 5,
       "L4": 5
     },
     "byFormat": {
-      "http-redirect-wire-trace-multi-signal-incident": 1,
       "pdb-maintenance-policy-decision-with-local-rounding-harness": 1,
       "read-to-write-lock-upgrade-deterministic-contract-lab": 1,
       "json-parser-differential-contract-investigation": 1,
@@ -1592,7 +1591,8 @@
       "deterministic-financial-rounding-contract-lab": 1,
       "hosted-worker-lifecycle-evidence-investigation": 1,
       "filesystem-notification-gap-production-incident-with-local-reconciliation-contract": 1,
-      "snapshot-history-refactoring-with-bidirectional-aliasing-contract": 1
+      "snapshot-history-refactoring-with-bidirectional-aliasing-contract": 1,
+      "sorted-collection-comparison-contract-investigation": 1
     }
   }
 }
