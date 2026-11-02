@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-UPSIG-001",
+  "runSlot": "2026-11-02-17",
+  "title": "Hồ sơ cấp phép xây dựng được nhận nhưng không đọc được bản vẽ",
+  "domain": "dotnet-file-upload-content-validation",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-02T17:07:47+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "aspnet-core-file-upload",
+    "untrusted-input-validation",
+    "binary-signatures",
+    "production-incident-triage",
+    "negative-regression-tests"
+  ],
+  "primarySkill": "untrusted-upload-metadata-vs-file-content-boundary",
+  "prerequisites": [
+    "C#/.NET 8",
+    "PowerShell 7",
+    "byte arrays and HTTP Content-Type"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Strict static consistency review of both C# project graphs and PowerShell commands; no .NET or PowerShell execution was performed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth",
+    "elapsedDays": 56
+  },
+  "novelty": {
+    "businessContext": "municipal-building-permit-blueprint-intake",
+    "scenarioType": "metadata-accepted-document-reaches-downstream-pdf-parser-and-fails",
+    "primaryRootCause": "upload-admission-trusts-client-provided-extension-and-content-type-without-checking-file-bytes",
+    "failureMode": "non-pdf-payload-accepted-into-permit-document-queue-and-rejected-later-by-parser",
+    "solutionPattern": "bounded-file-byte-signature-gate-before-persistence-with-negative-contract-tests",
+    "labFormat": "document-ingestion-evidence-led-security-incident"
+  }
+}

@@ -1,0 +1,5 @@
+2026-11-02T08:43:01Z intake id=BP-4107 filename=plan.pdf contentType=application/pdf size=14 verdict=ACCEPTED
+2026-11-02T08:43:02Z document-worker id=BP-4107 parser=pdf error=DOCUMENT_PARSE_FAILED elapsedMs=4
+2026-11-02T08:44:11Z intake id=BP-4108 filename=plan.pdf contentType=application/pdf size=34 verdict=ACCEPTED
+2026-11-02T08:44:12Z document-worker id=BP-4108 parser=pdf result=OK elapsedMs=7
+2026-11-02T08:45:22Z platform deployment=unchanged networkRetries=0 serviceCpuPct=11

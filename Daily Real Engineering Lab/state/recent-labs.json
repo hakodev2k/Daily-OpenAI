@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-13",
-      "unitId": "UNIT-AUDIT-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-AUDIT-001-sterile-batch-audit-evidence-trust-boundary",
-      "domain": "audit-trail-integrity-architecture",
-      "primarySkill": "audit-trail-tamper-evidence",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "sterile-pharmaceutical-batch-release-audit",
-      "scenarioType": "historical-audit-export-disagreement-under-privileged-maintenance",
-      "primaryRootCause": "audit-records-and-export-history-share-a-mutable-administrator-trust-boundary",
-      "failureMode": "historical-release-approval-can-disappear-without-independent-integrity-alarm",
-      "solutionPattern": "independently-anchored-per-batch-digest-chain-with-segregated-signing-and-replay-verification",
-      "labFormat": "audit-evidence-trust-boundary-architecture-case-study"
-    },
-    {
       "runSlot": "2026-10-29-14",
       "unitId": "UNIT-LEASE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-LEASE-001-road-defect-preview-buffer-ownership",
@@ -1501,10 +1486,24 @@
       "failureMode": "distinct-critical-oxygen-alerts-disappear-from-dispatch-queue",
       "solutionPattern": "total-order-comparer-with-priority-timestamp-and-stable-event-id-tiebreakers",
       "labFormat": "sorted-collection-comparison-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-02-17",
+      "unitId": "UNIT-UPSIG-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-UPSIG-001-building-permit-pdf-ingestion-spoof",
+      "domain": "dotnet-file-upload-content-validation",
+      "primarySkill": "untrusted-upload-metadata-vs-file-content-boundary",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "municipal-building-permit-blueprint-intake",
+      "scenarioType": "metadata-accepted-document-reaches-downstream-pdf-parser-and-fails",
+      "primaryRootCause": "upload-admission-trusts-client-provided-extension-and-content-type-without-checking-file-bytes",
+      "failureMode": "non-pdf-payload-accepted-into-permit-document-queue-and-rejected-later-by-parser",
+      "solutionPattern": "bounded-file-byte-signature-gate-before-persistence-with-negative-contract-tests",
+      "labFormat": "document-ingestion-evidence-led-security-incident"
     }
   ],
   "rolling24": [
-    "UNIT-PDB-001",
     "UNIT-RWLOCK-001",
     "UNIT-JDUP-001",
     "UNIT-KEYSETPAGE-001",
@@ -1527,12 +1526,12 @@
     "UNIT-HOSTEX-001",
     "UNIT-FSWATCH-001",
     "UNIT-SNAPISO-001",
-    "UNIT-SSET-001"
+    "UNIT-SSET-001",
+    "UNIT-UPSIG-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "kubernetes-pod-disruption-budget": 1,
       "dotnet-readerwriterlockslim": 1,
       "dotnet-json-payload-contract-security": 1,
       "api-pagination-live-feed": 1,
@@ -1555,21 +1554,21 @@
       "dotnet-backgroundservice-host-lifecycle": 1,
       "dotnet-filesystem-index-consistency": 1,
       "csharp-object-graph-snapshot-isolation": 1,
-      "csharp-sortedset-comparer-identity": 1
+      "csharp-sortedset-comparer-identity": 1,
+      "dotnet-file-upload-content-validation": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L5": 3,
       "L1": 5,
       "L2": 6,
-      "L3": 5,
-      "L4": 5
+      "L3": 6,
+      "L4": 5,
+      "L5": 2
     },
     "byFormat": {
-      "pdb-maintenance-policy-decision-with-local-rounding-harness": 1,
       "read-to-write-lock-upgrade-deterministic-contract-lab": 1,
       "json-parser-differential-contract-investigation": 1,
       "live-feed-pagination-multi-signal-production-incident": 1,
@@ -1592,7 +1591,8 @@
       "hosted-worker-lifecycle-evidence-investigation": 1,
       "filesystem-notification-gap-production-incident-with-local-reconciliation-contract": 1,
       "snapshot-history-refactoring-with-bidirectional-aliasing-contract": 1,
-      "sorted-collection-comparison-contract-investigation": 1
+      "sorted-collection-comparison-contract-investigation": 1,
+      "document-ingestion-evidence-led-security-incident": 1
     }
   }
 }
