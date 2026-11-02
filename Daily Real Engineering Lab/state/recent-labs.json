@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-22",
-      "unitId": "UNIT-REGEX-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-REGEX-001-heating-meter-import-validation-timeout",
-      "domain": "dotnet-regex-engine",
-      "primarySkill": "regex-catastrophic-backtracking-and-timeout",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "district-heating-smart-meter-import",
-      "scenarioType": "malformed-meter-identifier-stalls-batch-validation",
-      "primaryRootCause": "ambiguous-nested-regex-quantifiers-cause-exponential-backtracking",
-      "failureMode": "one-invalid-meter-id-exhausts-regex-match-deadline-and-interrupts-batch",
-      "solutionPattern": "linear-time-meter-id-grammar-with-explicit-regex-timeout",
-      "labFormat": "deterministic-regex-performance-failure-lab"
-    },
-    {
       "runSlot": "2026-10-29-23",
       "unitId": "UNIT-DRAIN-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DRAIN-001-conference-badge-render-worker-shutdown",
@@ -1501,10 +1486,24 @@
       "failureMode": "p95-inflated-by-1000-and-false-slo-breach",
       "solutionPattern": "record-consistent-seconds-with-meterlistener-contract-regression",
       "labFormat": "observability-metric-contract-refactoring-with-deterministic-meterlistener"
+    },
+    {
+      "runSlot": "2026-11-03-03",
+      "unitId": "UNIT-RETENTION-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-RETENTION-001-warranty-evidence-retention-legal-hold",
+      "domain": "data-retention-governance-and-cross-store-consistency",
+      "primarySkill": "retention-legal-hold-delete-eligibility-and-cross-store-consistency",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "home-appliance-warranty-dispute-evidence",
+      "scenarioType": "retention-expiry-conflicts-with-legal-hold-and-cross-store-deletion",
+      "primaryRootCause": "independent-relational-and-object-retention-decisions-without-authoritative-hold-and-deletion-coordination",
+      "failureMode": "held-evidence-lost-while-expired-unheld-objects-survive",
+      "solutionPattern": "hold-aware-eligibility-fenced-deletion-state-machine-and-cross-store-reconciliation",
+      "labFormat": "evidence-retention-design-decision-and-incident-replay"
     }
   ],
   "rolling24": [
-    "UNIT-DNSPOOL-001",
     "UNIT-CMPID-001",
     "UNIT-UTF8CHUNK-001",
     "UNIT-CSVFORM-001",
@@ -1527,12 +1526,12 @@
     "UNIT-REQBODY-001",
     "UNIT-SBUILDER-001",
     "UNIT-ZIPPATH-001",
-    "UNIT-METUNIT-001"
+    "UNIT-METUNIT-001",
+    "UNIT-RETENTION-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-http-connection-lifecycle": 1,
       "csharp-string-identity-comparison": 1,
       "dotnet-streaming-text-decoding": 1,
       "csv-spreadsheet-export-security": 1,
@@ -1555,22 +1554,22 @@
       "aspnetcore-request-body-lifecycle": 1,
       "csharp-async-shared-mutable-state": 1,
       "dotnet-zip-archive-extraction-security": 1,
-      "dotnet-observability-metrics-contract": 1
+      "dotnet-observability-metrics-contract": 1,
+      "data-retention-governance-and-cross-store-consistency": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 5,
+      "D4": 19
     },
     "byMaturity": {
-      "L5": 2,
       "L1": 5,
       "L2": 6,
       "L3": 5,
       "L4": 5,
+      "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1,
       "cross-locale-identifier-registry-deterministic-reproduction": 1,
       "chunked-text-stream-investigation-with-contract-harness": 1,
       "csv-output-trust-boundary-multi-signal-security-incident": 1,
@@ -1593,7 +1592,8 @@
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
       "deterministic-async-reentrancy-evidence-investigation": 1,
       "zip-archive-extraction-security-production-incident-with-local-harness": 1,
-      "observability-metric-contract-refactoring-with-deterministic-meterlistener": 1
+      "observability-metric-contract-refactoring-with-deterministic-meterlistener": 1,
+      "evidence-retention-design-decision-and-incident-replay": 1
     }
   }
 }
