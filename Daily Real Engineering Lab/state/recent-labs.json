@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-09",
-      "unitId": "UNIT-SET-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-SET-001-ferry-dispatch-priority-queue-missing-jobs",
-      "domain": "dotnet-sortedset-ordering",
-      "primarySkill": "sortedset-comparer-defines-element-uniqueness",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "coastal-ferry-terminal-vehicle-dispatch",
-      "scenarioType": "same-priority-arrivals-disappear-from-dispatch-view",
-      "primaryRootCause": "sortedset-comparer-returns-zero-for-distinct-jobs-with-equal-priority",
-      "failureMode": "distinct-dispatch-requests-silently-rejected-as-duplicates",
-      "solutionPattern": "total-order-comparer-with-stable-arrival-and-id-tiebreakers",
-      "labFormat": "ordered-set-contract-evidence-investigation"
-    },
-    {
       "runSlot": "2026-10-29-10",
       "unitId": "UNIT-STREAMPOS-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-STREAMPOS-001-ground-station-telemetry-resume-gaps",
@@ -1501,10 +1486,24 @@
       "failureMode": "half-cent-aggregate-refunds-and-reversals-disagree-with-partner-settlement",
       "solutionPattern": "explicit-decimal-midpoint-policy-applied-once-to-aggregated-signed-amount",
       "labFormat": "deterministic-financial-rounding-contract-lab"
+    },
+    {
+      "runSlot": "2026-11-02-13",
+      "unitId": "UNIT-HOSTEX-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-HOSTEX-001-air-quality-worker-host-stop",
+      "domain": "dotnet-backgroundservice-host-lifecycle",
+      "primarySkill": "backgroundservice-unhandled-exception-host-stop-policy",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "urban-air-quality-sensor-alert-relay",
+      "scenarioType": "one-partner-delivery-failure-stops-entire-hosted-alert-processing-service",
+      "primaryRootCause": "unhandled-per-item-gateway-exception-escapes-backgroundservice-executeasync-and-default-stophost-shuts-down-host",
+      "failureMode": "subsequent-independent-alert-never-attempted-and-worker-host-stops-prematurely",
+      "solutionPattern": "catch-classified-recoverable-item-failure-record-failed-delivery-and-continue-while-preserving-fatal-fail-fast",
+      "labFormat": "hosted-worker-lifecycle-evidence-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-MWHEAD-001",
     "UNIT-RETRYDATE-001",
     "UNIT-PSGATE-001",
     "UNIT-REDIR-001",
@@ -1527,12 +1526,12 @@
     "UNIT-EFCTX-001",
     "UNIT-GITPKG-001",
     "UNIT-SQL-011",
-    "UNIT-ROUND-001"
+    "UNIT-ROUND-001",
+    "UNIT-HOSTEX-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-middleware-response-lifecycle": 1,
       "http-retry-after-header-semantics": 1,
       "powershell-native-process-exit-contract": 1,
       "http-redirect-method-semantics": 1,
@@ -1555,21 +1554,21 @@
       "efcore-dbcontext-concurrency": 1,
       "git-ci-artifact-integrity": 1,
       "sql-outer-join-null-rejection": 1,
-      "csharp-decimal-rounding-contract": 1
+      "csharp-decimal-rounding-contract": 1,
+      "dotnet-backgroundservice-host-lifecycle": 1
     },
     "byDifficulty": {
-      "D3": 6,
-      "D4": 18
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L1": 6,
       "L4": 5,
-      "L2": 5,
+      "L2": 6,
       "L3": 5,
-      "L5": 3
+      "L5": 3,
+      "L1": 5
     },
     "byFormat": {
-      "middleware-response-lifecycle-contract-reproduction": 1,
       "retry-scheduler-policy-refactoring-workshop": 1,
       "ci-release-gate-forensics-with-deterministic-fake-validator": 1,
       "http-redirect-wire-trace-multi-signal-incident": 1,
@@ -1592,7 +1591,8 @@
       "efcore-parallel-query-evidence-investigation": 1,
       "ci-artifact-contamination-production-forensics": 1,
       "sql-outer-join-report-contract-refactoring": 1,
-      "deterministic-financial-rounding-contract-lab": 1
+      "deterministic-financial-rounding-contract-lab": 1,
+      "hosted-worker-lifecycle-evidence-investigation": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ROUND-001",
-    "runSlot": "2026-11-02-12",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-ROUND-001-reusable-crate-deposit-refund-midpoint",
+    "unitId": "UNIT-HOSTEX-001",
+    "runSlot": "2026-11-02-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-HOSTEX-001-air-quality-worker-host-stop",
     "status": "READY",
-    "createdAt": "2026-11-02T12:12:30+07:00"
+    "createdAt": "2026-11-02T13:06:29+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 427,
-    "totalGenerated": 422,
+    "totalRunSlotsAttempted": 428,
+    "totalGenerated": 423,
     "totalFailed": 5
   },
   "learning": {
