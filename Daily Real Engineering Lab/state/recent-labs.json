@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-08",
-      "unitId": "UNIT-DR-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DR-001-in-country-failover-rpo-rto-design",
-      "domain": "disaster-recovery-data-residency",
-      "primarySkill": "rpo-rto-data-residency-feasibility-and-write-admission",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "regional-cultural-heritage-access-pass-platform",
-      "scenarioType": "region-wide-outage-recovery-plan-under-jurisdiction-and-slo-constraints",
-      "primaryRootCause": "no-proven-recovery-option-satisfies-residency-rpo-rto-and-write-latency-together",
-      "failureMode": "disaster-recovery-plan-advertises-unproven-rpo-rto-and-single-writer-safety",
-      "solutionPattern": "constraint-gated-in-jurisdiction-standby-with-write-admission-and-drill-evidence",
-      "labFormat": "disaster-recovery-architecture-decision-tabletop"
-    },
-    {
       "runSlot": "2026-10-29-09",
       "unitId": "UNIT-SET-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-SET-001-ferry-dispatch-priority-queue-missing-jobs",
@@ -1501,11 +1486,24 @@
       "failureMode": "branches-with-no-matching-open-critical-incident-omitted-despite-correct-city-total",
       "solutionPattern": "filter-right-side-rows-in-left-join-on-and-count-nonnull-incident-id",
       "labFormat": "sql-outer-join-report-contract-refactoring"
+    },
+    {
+      "runSlot": "2026-11-02-12",
+      "unitId": "UNIT-ROUND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-ROUND-001-reusable-crate-deposit-refund-midpoint",
+      "domain": "csharp-decimal-rounding-contract",
+      "primarySkill": "decimal-midpoint-rounding-business-policy",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "reusable-logistics-crate-deposit-clearing",
+      "scenarioType": "partner-reconciliation-cent-level-discrepancy-on-signed-refunds",
+      "primaryRootCause": "implicit-midpoint-to-even-rounding-conflicts-with-contractual-away-from-zero-policy",
+      "failureMode": "half-cent-aggregate-refunds-and-reversals-disagree-with-partner-settlement",
+      "solutionPattern": "explicit-decimal-midpoint-policy-applied-once-to-aggregated-signed-amount",
+      "labFormat": "deterministic-financial-rounding-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-REDRIVE-001",
-    "UNIT-EXSTACK-001",
     "UNIT-MWHEAD-001",
     "UNIT-RETRYDATE-001",
     "UNIT-PSGATE-001",
@@ -1527,12 +1525,13 @@
     "UNIT-DPKEY-001",
     "UNIT-LISTMUT-001",
     "UNIT-EFCTX-001",
-    "UNIT-GITPKG-001"
+    "UNIT-GITPKG-001",
+    "UNIT-SQL-011",
+    "UNIT-ROUND-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "csharp-exception-provenance": 1,
       "aspnetcore-middleware-response-lifecycle": 1,
       "http-retry-after-header-semantics": 1,
       "powershell-native-process-exit-contract": 1,
@@ -1555,21 +1554,21 @@
       "csharp-list-mutation-semantics": 1,
       "efcore-dbcontext-concurrency": 1,
       "git-ci-artifact-integrity": 1,
-      "sql-outer-join-null-rejection": 1
+      "sql-outer-join-null-rejection": 1,
+      "csharp-decimal-rounding-contract": 1
     },
     "byDifficulty": {
-      "D4": 19,
-      "D3": 5
+      "D3": 6,
+      "D4": 18
     },
     "byMaturity": {
-      "L2": 6,
-      "L1": 5,
+      "L1": 6,
       "L4": 5,
+      "L2": 5,
       "L3": 5,
       "L5": 3
     },
     "byFormat": {
-      "deterministic-exception-provenance-investigation": 1,
       "middleware-response-lifecycle-contract-reproduction": 1,
       "retry-scheduler-policy-refactoring-workshop": 1,
       "ci-release-gate-forensics-with-deterministic-fake-validator": 1,
@@ -1592,7 +1591,8 @@
       "deterministic-collection-mutation-contract-lab": 1,
       "efcore-parallel-query-evidence-investigation": 1,
       "ci-artifact-contamination-production-forensics": 1,
-      "sql-outer-join-report-contract-refactoring": 1
+      "sql-outer-join-report-contract-refactoring": 1,
+      "deterministic-financial-rounding-contract-lab": 1
     }
   }
 }

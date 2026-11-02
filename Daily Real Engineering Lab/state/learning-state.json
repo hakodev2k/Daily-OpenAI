@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SQL-011",
-    "runSlot": "2026-11-02-11",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SQL-011-library-branch-incident-report-outer-join",
+    "unitId": "UNIT-ROUND-001",
+    "runSlot": "2026-11-02-12",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-ROUND-001-reusable-crate-deposit-refund-midpoint",
     "status": "READY",
-    "createdAt": "2026-11-02T11:10:27+07:00"
+    "createdAt": "2026-11-02T12:12:30+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 426,
-    "totalGenerated": 421,
+    "totalRunSlotsAttempted": 427,
+    "totalGenerated": 422,
     "totalFailed": 5
   },
   "learning": {

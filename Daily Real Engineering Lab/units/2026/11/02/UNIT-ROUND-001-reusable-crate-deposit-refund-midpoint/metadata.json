@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-ROUND-001",
+  "runSlot": "2026-11-02-12",
+  "title": "Tiền hoàn cọc thùng tái sử dụng lệch một xu",
+  "domain": "csharp-decimal-rounding-contract",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-02T12:12:30+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "decimal-midpoint-rounding-business-policy",
+    "financial-calculation-boundary",
+    "regression-testing"
+  ],
+  "primarySkill": "decimal-midpoint-rounding-business-policy",
+  "prerequisites": [
+    "csharp-decimal-basics",
+    "csharp-static-methods",
+    "dotnet-cli"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of .NET 8 code, project references, expected outputs and PowerShell scripts. GitHub connector does not execute the harness; no runtime execution claimed.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "reusable-logistics-crate-deposit-clearing",
+    "scenarioType": "partner-reconciliation-cent-level-discrepancy-on-signed-refunds",
+    "primaryRootCause": "implicit-midpoint-to-even-rounding-conflicts-with-contractual-away-from-zero-policy",
+    "failureMode": "half-cent-aggregate-refunds-and-reversals-disagree-with-partner-settlement",
+    "solutionPattern": "explicit-decimal-midpoint-policy-applied-once-to-aggregated-signed-amount",
+    "labFormat": "deterministic-financial-rounding-contract-lab"
+  }
+}
