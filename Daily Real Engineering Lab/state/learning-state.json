@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LANGQ-001",
-    "runSlot": "2026-11-02-06",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-LANGQ-001-heritage-caption-language-negotiation",
+    "unitId": "UNIT-DPKEY-001",
+    "runSlot": "2026-11-02-07",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DPKEY-001-housing-repair-portal-split-key-rings",
     "status": "READY",
-    "createdAt": "2026-11-02T06:11:17+07:00"
+    "createdAt": "2026-11-02T07:09:54.865+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 421,
-    "totalGenerated": 416,
+    "totalRunSlotsAttempted": 422,
+    "totalGenerated": 417,
     "totalFailed": 5
   },
   "learning": {
