@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RETENTION-001",
-    "runSlot": "2026-11-03-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-RETENTION-001-warranty-evidence-retention-legal-hold",
+    "unitId": "UNIT-SEGMENT-001",
+    "runSlot": "2026-11-03-04",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SEGMENT-001-offshore-buoy-telemetry-buffer-window",
     "status": "READY",
-    "createdAt": "2026-11-03T03:13:50+07:00"
+    "createdAt": "2026-11-03T04:16:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 441,
-    "totalGenerated": 436,
+    "totalRunSlotsAttempted": 442,
+    "totalGenerated": 437,
     "totalFailed": 5
   },
   "learning": {
