@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-19",
-      "unitId": "UNIT-WIRE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-WIRE-001-harbor-seal-scanner-frame-length",
-      "domain": "dotnet-binary-wire-protocol",
-      "primarySkill": "binary-wire-format-endianness",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "harbor-container-seal-rfid-gateway",
-      "scenarioType": "valid-network-order-binary-frames-rejected-by-ingestion-gateway",
-      "primaryRootCause": "frame-length-read-in-little-endian-while-device-contract-uses-network-byte-order",
-      "failureMode": "valid-short-seal-events-rejected-as-oversized-and-reversed-length-header-can-be-accepted",
-      "solutionPattern": "decode-length-using-explicit-network-byte-order-with-positive-and-negative-wire-contract-tests",
-      "labFormat": "binary-wire-format-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-29-20",
       "unitId": "UNIT-BASEURI-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-BASEURI-001-wildfire-partner-notice-route",
@@ -1501,10 +1486,24 @@
       "failureMode": "valid-dispatch-json-receives-400-while-audit-records-nonempty-payload",
       "solutionPattern": "buffer-request-body-before-observation-and-restore-position-for-downstream-consumers",
       "labFormat": "deterministic-aspnetcore-request-body-pipeline-contract-lab"
+    },
+    {
+      "runSlot": "2026-11-03-00",
+      "unitId": "UNIT-SBUILDER-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SBUILDER-001-seed-bank-label-cross-request-mixing",
+      "domain": "csharp-async-shared-mutable-state",
+      "primarySkill": "async-method-reentrancy-and-per-operation-state",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-seed-bank-specimen-shipping-labels",
+      "scenarioType": "overlapping-async-label-generation-with-reversed-gateway-completion",
+      "primaryRootCause": "shared-stringbuilder-mutated-across-overlapping-async-operations",
+      "failureMode": "cross-shipment-label-data-contamination",
+      "solutionPattern": "per-invocation-output-buffer-ownership",
+      "labFormat": "deterministic-async-reentrancy-evidence-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-CANCELREG-001",
     "UNIT-RLPART-001",
     "UNIT-SQLITE-001",
     "UNIT-DNSPOOL-001",
@@ -1527,12 +1526,12 @@
     "UNIT-DELIM-001",
     "UNIT-RESPSTR-001",
     "UNIT-READY-001",
-    "UNIT-REQBODY-001"
+    "UNIT-REQBODY-001",
+    "UNIT-SBUILDER-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-cancellation-callback-lifecycle": 1,
       "aspnetcore-partitioned-rate-limiting": 1,
       "sqlite-relational-write-semantics": 1,
       "dotnet-http-connection-lifecycle": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-positional-record-ingestion": 1,
       "dotnet-http-response-stream-ownership": 1,
       "dotnet-startup-readiness-contract": 1,
-      "aspnetcore-request-body-lifecycle": 1
+      "aspnetcore-request-body-lifecycle": 1,
+      "csharp-async-shared-mutable-state": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L2": 6,
       "L3": 5,
       "L4": 5,
       "L5": 2,
       "L1": 5,
+      "L2": 6,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-shutdown-callback-lifecycle-investigation": 1,
       "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1,
       "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1,
       "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1,
@@ -1593,7 +1592,8 @@
       "positional-feed-contract-deterministic-lab": 1,
       "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
       "deterministic-startup-readiness-refactoring-with-fault-propagation-contract": 1,
-      "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1
+      "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
+      "deterministic-async-reentrancy-evidence-investigation": 1
     }
   }
 }

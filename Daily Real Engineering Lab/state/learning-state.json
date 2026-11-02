@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-REQBODY-001",
-    "runSlot": "2026-11-02-23",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-REQBODY-001-volunteer-dispatch-audit-body-consumption",
+    "unitId": "UNIT-SBUILDER-001",
+    "runSlot": "2026-11-03-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SBUILDER-001-seed-bank-label-cross-request-mixing",
     "status": "READY",
-    "createdAt": "2026-11-02T23:07:56.943+07:00"
+    "createdAt": "2026-11-03T00:13:41+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 437,
-    "totalGenerated": 432,
+    "totalRunSlotsAttempted": 438,
+    "totalGenerated": 433,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 56,
+    "elapsedDays": 57,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
