@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LISTMUT-001",
-    "runSlot": "2026-11-02-08",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-LISTMUT-001-food-bank-pickup-batch-eligibility-skip",
+    "unitId": "UNIT-EFCTX-001",
+    "runSlot": "2026-11-02-09",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-EFCTX-001-wastewater-inspection-report-parallel-failure",
     "status": "READY",
-    "createdAt": "2026-11-02T08:12:01+07:00"
+    "createdAt": "2026-11-02T09:08:11+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 423,
-    "totalGenerated": 418,
+    "totalRunSlotsAttempted": 424,
+    "totalGenerated": 419,
     "totalFailed": 5
   },
   "learning": {

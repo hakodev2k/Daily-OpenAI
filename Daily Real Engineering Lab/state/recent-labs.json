@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-05",
-      "unitId": "UNIT-MONEY-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-MONEY-001-marketplace-settlement-cent-drift",
-      "domain": "dotnet-financial-arithmetic",
-      "primarySkill": "financial-rounding-boundaries",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "independent-artisan-marketplace-seller-payouts",
-      "scenarioType": "seller-payout-fee-reconciliation-with-small-sales-and-refunds",
-      "primaryRootCause": "fee-rounded-after-seller-aggregate-instead-of-at-transaction-boundary",
-      "failureMode": "seller-statement-fee-differs-from-sum-of-posted-transaction-fees",
-      "solutionPattern": "per-transaction-decimal-rounding-then-seller-aggregation",
-      "labFormat": "financial-reconciliation-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-29-06",
       "unitId": "UNIT-FLAG-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FLAG-001-sticky-rollout-replica-drift",
@@ -1501,10 +1486,24 @@
       "failureMode": "expired-or-quarantined-lots-survive-single-pass-dispatch-screening",
       "solutionPattern": "stable-predicate-based-in-place-list-compaction",
       "labFormat": "deterministic-collection-mutation-contract-lab"
+    },
+    {
+      "runSlot": "2026-11-02-09",
+      "unitId": "UNIT-EFCTX-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-EFCTX-001-wastewater-inspection-report-parallel-failure",
+      "domain": "efcore-dbcontext-concurrency",
+      "primarySkill": "efcore-dbcontext-parallel-query-lifetime",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "district-wastewater-inspection-compliance-dashboard",
+      "scenarioType": "parallel-status-report-queries-fail-under-deterministic-overlap",
+      "primaryRootCause": "two-overlapping-efcore-queries-share-one-dbcontext-instance",
+      "failureMode": "report-generation-throws-concurrent-operation-exception-instead-of-producing-complete-status-groups",
+      "solutionPattern": "one-dbcontext-lifetime-per-overlapping-query-with-factory-and-joined-result-contract",
+      "labFormat": "efcore-parallel-query-evidence-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-HPA-001",
     "UNIT-BAGPII-001",
     "UNIT-REDRIVE-001",
     "UNIT-EXSTACK-001",
@@ -1527,12 +1526,12 @@
     "UNIT-CSVFORM-001",
     "UNIT-LANGQ-001",
     "UNIT-DPKEY-001",
-    "UNIT-LISTMUT-001"
+    "UNIT-LISTMUT-001",
+    "UNIT-EFCTX-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "kubernetes-hpa-cpu-utilization": 1,
       "dotnet-distributed-tracing-privacy": 1,
       "distributed-event-projection-versioning": 1,
       "csharp-exception-provenance": 1,
@@ -1555,22 +1554,22 @@
       "csv-spreadsheet-export-security": 1,
       "http-accept-language-content-negotiation": 1,
       "aspnetcore-data-protection-key-management": 1,
-      "csharp-list-mutation-semantics": 1
+      "csharp-list-mutation-semantics": 1,
+      "efcore-dbcontext-concurrency": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L5": 4,
       "L3": 5,
       "L6": 1,
-      "L2": 5,
+      "L2": 6,
       "L1": 5,
-      "L4": 4
+      "L4": 4,
+      "L5": 3
     },
     "byFormat": {
-      "autoscaling-control-signal-design-decision-with-local-policy-model": 1,
       "privacy-leak-distributed-trace-production-incident": 1,
       "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1,
       "deterministic-exception-provenance-investigation": 1,
@@ -1593,7 +1592,8 @@
       "csv-output-trust-boundary-multi-signal-security-incident": 1,
       "api-localization-compatibility-refactoring-workshop": 1,
       "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness": 1,
-      "deterministic-collection-mutation-contract-lab": 1
+      "deterministic-collection-mutation-contract-lab": 1,
+      "efcore-parallel-query-evidence-investigation": 1
     }
   }
 }

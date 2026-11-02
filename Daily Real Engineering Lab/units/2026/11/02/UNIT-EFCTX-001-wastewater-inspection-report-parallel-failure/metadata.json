@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-EFCTX-001",
+  "runSlot": "2026-11-02-09",
+  "title": "Báo cáo kiểm định nước thải lỗi khi tổng hợp song song",
+  "domain": "efcore-dbcontext-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-02T09:08:11+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "efcore-dbcontext-parallel-query-lifetime",
+    "efcore-query-execution",
+    "async-concurrency",
+    "failure-path-testing"
+  ],
+  "primarySkill": "efcore-dbcontext-parallel-query-lifetime",
+  "prerequisites": [
+    "async-await",
+    "efcore-dbcontext-basics",
+    "task-whenall"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review; GitHub connector cannot execute dotnet or PowerShell. Runtime reproduction remains for the learner.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "district-wastewater-inspection-compliance-dashboard",
+    "scenarioType": "parallel-status-report-queries-fail-under-deterministic-overlap",
+    "primaryRootCause": "two-overlapping-efcore-queries-share-one-dbcontext-instance",
+    "failureMode": "report-generation-throws-concurrent-operation-exception-instead-of-producing-complete-status-groups",
+    "solutionPattern": "one-dbcontext-lifetime-per-overlapping-query-with-factory-and-joined-result-contract",
+    "labFormat": "efcore-parallel-query-evidence-investigation"
+  }
+}
