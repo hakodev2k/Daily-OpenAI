@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-READY-001",
-    "runSlot": "2026-11-02-22",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-READY-001-cooling-center-occupancy-startup-readiness",
+    "unitId": "UNIT-REQBODY-001",
+    "runSlot": "2026-11-02-23",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-REQBODY-001-volunteer-dispatch-audit-body-consumption",
     "status": "READY",
-    "createdAt": "2026-11-02T22:11:00+07:00"
+    "createdAt": "2026-11-02T23:07:56.943+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 436,
-    "totalGenerated": 431,
+    "totalRunSlotsAttempted": 437,
+    "totalGenerated": 432,
     "totalFailed": 5
   },
   "learning": {

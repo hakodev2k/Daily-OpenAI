@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-18",
-      "unitId": "UNIT-ZIPSEC-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-ZIPSEC-001-hatchery-evidence-archive-boundary",
-      "domain": "dotnet-zip-extraction-security",
-      "primarySkill": "ziparchive-entry-path-trust-boundary",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "aquaculture-hatchery-compliance-zip-intake",
-      "scenarioType": "partner-upload-extraction-creates-files-outside-isolated-review-directory",
-      "primaryRootCause": "untrusted-zip-entry-name-is-joined-to-destination-without-canonical-containment-check",
-      "failureMode": "archive-entry-can-plant-a-file-in-adjacent-review-workspace",
-      "solutionPattern": "preflight-all-archive-entry-paths-against-canonical-root-then-extract-fail-closed",
-      "labFormat": "archive-upload-security-production-investigation"
-    },
-    {
       "runSlot": "2026-10-29-19",
       "unitId": "UNIT-WIRE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-WIRE-001-harbor-seal-scanner-frame-length",
@@ -1501,10 +1486,24 @@
       "failureMode": "first-dashboard-read-returns-unknown-as-empty-and-suppresses-initialization-failure",
       "solutionPattern": "await-actual-initialization-completion-and-propagate-fault-before-snapshot-read",
       "labFormat": "deterministic-startup-readiness-refactoring-with-fault-propagation-contract"
+    },
+    {
+      "runSlot": "2026-11-02-23",
+      "unitId": "UNIT-REQBODY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-REQBODY-001-volunteer-dispatch-audit-body-consumption",
+      "domain": "aspnetcore-request-body-lifecycle",
+      "primarySkill": "aspnetcore-request-body-stream-replay-boundary",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "regional-volunteer-emergency-supply-dispatch",
+      "scenarioType": "json-dispatch-webhook-rejected-after-audit-middleware-is-enabled",
+      "primaryRootCause": "request-audit-middleware-consumes-forward-only-http-request-body-before-endpoint-deserialization",
+      "failureMode": "valid-dispatch-json-receives-400-while-audit-records-nonempty-payload",
+      "solutionPattern": "buffer-request-body-before-observation-and-restore-position-for-downstream-consumers",
+      "labFormat": "deterministic-aspnetcore-request-body-pipeline-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-INTOVF-001",
     "UNIT-CANCELREG-001",
     "UNIT-RLPART-001",
     "UNIT-SQLITE-001",
@@ -1527,12 +1526,12 @@
     "UNIT-OTA-001",
     "UNIT-DELIM-001",
     "UNIT-RESPSTR-001",
-    "UNIT-READY-001"
+    "UNIT-READY-001",
+    "UNIT-REQBODY-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "csharp-integer-arithmetic-overflow": 1,
       "dotnet-cancellation-callback-lifecycle": 1,
       "aspnetcore-partitioned-rate-limiting": 1,
       "sqlite-relational-write-semantics": 1,
@@ -1555,22 +1554,22 @@
       "fleet-ota-distributed-systems-architecture": 1,
       "dotnet-positional-record-ingestion": 1,
       "dotnet-http-response-stream-ownership": 1,
-      "dotnet-startup-readiness-contract": 1
+      "dotnet-startup-readiness-contract": 1,
+      "aspnetcore-request-body-lifecycle": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L1": 5,
       "L2": 6,
       "L3": 5,
       "L4": 5,
       "L5": 2,
+      "L1": 5,
       "L6": 1
     },
     "byFormat": {
-      "deterministic-energy-aggregation-numeric-boundary-contract": 1,
       "deterministic-shutdown-callback-lifecycle-investigation": 1,
       "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1,
       "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1,
@@ -1593,7 +1592,8 @@
       "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1,
       "positional-feed-contract-deterministic-lab": 1,
       "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
-      "deterministic-startup-readiness-refactoring-with-fault-propagation-contract": 1
+      "deterministic-startup-readiness-refactoring-with-fault-propagation-contract": 1,
+      "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1
     }
   }
 }
