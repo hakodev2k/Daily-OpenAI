@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-01",
-      "unitId": "UNIT-ONSTART-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-ONSTART-001-factory-vibration-stream-correlation-header",
-      "domain": "aspnetcore-response-lifecycle",
-      "primarySkill": "aspnetcore-onstarting-header-timing",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "factory-vibration-live-sse-dashboard",
-      "scenarioType": "streaming-route-misses-correlation-header-after-body-flush",
-      "primaryRootCause": "response-header-assigned-after-downstream-started-response",
-      "failureMode": "live-sse-200-response-lacks-trace-header-while-no-content-health-has-it",
-      "solutionPattern": "register-response-onstarting-before-downstream-middleware-execution",
-      "labFormat": "streaming-response-header-production-incident"
-    },
-    {
       "runSlot": "2026-10-30-02",
       "unitId": "UNIT-HMACROT-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-HMACROT-001-parcel-clearance-webhook-key-retirement",
@@ -1501,10 +1486,24 @@
       "failureMode": "non-replayable-input-consumed-before-actual-persistence-loop",
       "solutionPattern": "single-pass-accounting-during-processing-with-source-enumeration-contract",
       "labFormat": "one-shot-feed-evidence-driven-investigation"
+    },
+    {
+      "runSlot": "2026-11-03-06",
+      "unitId": "UNIT-XXE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-XXE-001-rental-return-xml-private-note-exposure",
+      "domain": "dotnet-xml-external-entity-trust-boundary",
+      "primarySkill": "xmlreader-dtd-external-entity-trust-boundary",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "construction-equipment-rental-return-receipt-ingestion",
+      "scenarioType": "partner-xml-return-receipt-contains-unexpected-private-local-note",
+      "primaryRootCause": "legacy-xml-reader-explicitly-allows-dtd-parsing-and-external-file-entity-resolution",
+      "failureMode": "untrusted-return-xml-injects-local-canary-into-imported-receipt-note",
+      "solutionPattern": "reject-dtd-and-disable-external-xml-resource-resolution-at-parser-boundary",
+      "labFormat": "local-xml-import-security-incident-with-controlled-canary"
     }
   ],
   "rolling24": [
-    "UNIT-CSVFORM-001",
     "UNIT-LANGQ-001",
     "UNIT-DPKEY-001",
     "UNIT-LISTMUT-001",
@@ -1527,7 +1526,8 @@
     "UNIT-METUNIT-001",
     "UNIT-RETENTION-001",
     "UNIT-SEGMENT-001",
-    "UNIT-ENUM-001"
+    "UNIT-ENUM-001",
+    "UNIT-XXE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
@@ -1540,7 +1540,6 @@
       "csharp-list-mutation-semantics": 1,
       "csharp-object-graph-snapshot-isolation": 1,
       "csharp-sortedset-comparer-identity": 1,
-      "csv-spreadsheet-export-security": 1,
       "data-retention-governance-and-cross-store-consistency": 1,
       "dotnet-arraysegment-buffer-view-semantics": 1,
       "dotnet-backgroundservice-host-lifecycle": 1,
@@ -1550,6 +1549,7 @@
       "dotnet-observability-metrics-contract": 1,
       "dotnet-positional-record-ingestion": 1,
       "dotnet-startup-readiness-contract": 1,
+      "dotnet-xml-external-entity-trust-boundary": 1,
       "dotnet-zip-archive-extraction-security": 1,
       "efcore-dbcontext-concurrency": 1,
       "fleet-ota-distributed-systems-architecture": 1,
@@ -1572,7 +1572,6 @@
     "byFormat": {
       "api-localization-compatibility-refactoring-workshop": 1,
       "ci-artifact-contamination-production-forensics": 1,
-      "csv-output-trust-boundary-multi-signal-security-incident": 1,
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
       "deterministic-async-reentrancy-evidence-investigation": 1,
       "deterministic-buffer-view-contract-lab": 1,
@@ -1586,6 +1585,7 @@
       "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1,
       "hosted-worker-lifecycle-evidence-investigation": 1,
       "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
+      "local-xml-import-security-incident-with-controlled-canary": 1,
       "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness": 1,
       "observability-metric-contract-refactoring-with-deterministic-meterlistener": 1,
       "one-shot-feed-evidence-driven-investigation": 1,

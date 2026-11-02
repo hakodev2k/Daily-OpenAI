@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ENUM-001",
-    "runSlot": "2026-11-03-05",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-ENUM-001-harbor-seal-inspection-batch-missing-receipts",
+    "unitId": "UNIT-XXE-001",
+    "runSlot": "2026-11-03-06",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-XXE-001-rental-return-xml-private-note-exposure",
     "status": "READY",
-    "createdAt": "2026-11-03T05:11:47+07:00"
+    "createdAt": "2026-11-03T06:11:53.651+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 443,
-    "totalGenerated": 438,
+    "totalRunSlotsAttempted": 444,
+    "totalGenerated": 439,
     "totalFailed": 5
   },
   "learning": {
