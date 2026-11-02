@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-00",
-      "unitId": "UNIT-GZIP-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-GZIP-001-wildlife-acoustic-export-integrity",
-      "domain": "dotnet-gzip-stream-lifecycle",
-      "primarySkill": "gzip-stream-finalization-and-trailer-integrity",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "wildlife-acoustic-survey-nightly-archive",
-      "scenarioType": "compressed-export-passes-payload-smoke-test-but-fails-integrity-contract",
-      "primaryRootCause": "gzip-compressor-finalized-after-output-buffer-snapshot",
-      "failureMode": "exported-gzip-object-missing-required-crc32-and-isize-trailer",
-      "solutionPattern": "complete-compression-stream-lifetime-before-reading-output-buffer",
-      "labFormat": "gzip-integrity-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-30-01",
       "unitId": "UNIT-ONSTART-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-ONSTART-001-factory-vibration-stream-correlation-header",
@@ -1501,10 +1486,24 @@
       "failureMode": "wire-frame-contains-unrelated-prefix-bytes-and-omits-tail-of-measurement",
       "solutionPattern": "honor-arraysegment-offset-and-count-in-framing-boundary",
       "labFormat": "deterministic-buffer-view-contract-lab"
+    },
+    {
+      "runSlot": "2026-11-03-05",
+      "unitId": "UNIT-ENUM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-ENUM-001-harbor-seal-inspection-batch-missing-receipts",
+      "domain": "csharp-ienumerable-single-pass-consumption",
+      "primarySkill": "ienumerable-replayability-vs-single-pass-ingestion-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "harbor-cargo-seal-inspection-gate-batch",
+      "scenarioType": "one-shot-gate-feed-reports-received-count-but-persists-no-inspections",
+      "primaryRootCause": "preflight-linq-count-enumerates-and-drains-destructive-one-shot-ienumerable",
+      "failureMode": "non-replayable-input-consumed-before-actual-persistence-loop",
+      "solutionPattern": "single-pass-accounting-during-processing-with-source-enumeration-contract",
+      "labFormat": "one-shot-feed-evidence-driven-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-UTF8CHUNK-001",
     "UNIT-CSVFORM-001",
     "UNIT-LANGQ-001",
     "UNIT-DPKEY-001",
@@ -1527,7 +1526,8 @@
     "UNIT-ZIPPATH-001",
     "UNIT-METUNIT-001",
     "UNIT-RETENTION-001",
-    "UNIT-SEGMENT-001"
+    "UNIT-SEGMENT-001",
+    "UNIT-ENUM-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
@@ -1536,6 +1536,7 @@
       "aspnetcore-request-body-lifecycle": 1,
       "csharp-async-shared-mutable-state": 1,
       "csharp-decimal-rounding-contract": 1,
+      "csharp-ienumerable-single-pass-consumption": 1,
       "csharp-list-mutation-semantics": 1,
       "csharp-object-graph-snapshot-isolation": 1,
       "csharp-sortedset-comparer-identity": 1,
@@ -1549,7 +1550,6 @@
       "dotnet-observability-metrics-contract": 1,
       "dotnet-positional-record-ingestion": 1,
       "dotnet-startup-readiness-contract": 1,
-      "dotnet-streaming-text-decoding": 1,
       "dotnet-zip-archive-extraction-security": 1,
       "efcore-dbcontext-concurrency": 1,
       "fleet-ota-distributed-systems-architecture": 1,
@@ -1571,7 +1571,6 @@
     },
     "byFormat": {
       "api-localization-compatibility-refactoring-workshop": 1,
-      "chunked-text-stream-investigation-with-contract-harness": 1,
       "ci-artifact-contamination-production-forensics": 1,
       "csv-output-trust-boundary-multi-signal-security-incident": 1,
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
@@ -1589,6 +1588,7 @@
       "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
       "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness": 1,
       "observability-metric-contract-refactoring-with-deterministic-meterlistener": 1,
+      "one-shot-feed-evidence-driven-investigation": 1,
       "positional-feed-contract-deterministic-lab": 1,
       "snapshot-history-refactoring-with-bidirectional-aliasing-contract": 1,
       "sorted-collection-comparison-contract-investigation": 1,
