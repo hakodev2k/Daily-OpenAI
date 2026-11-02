@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-16",
-      "unitId": "UNIT-SBUS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-SBUS-001-charger-receipts-session-head-of-line",
-      "domain": "message-session-partitioning",
-      "primarySkill": "session-key-granularity-and-head-of-line-blocking",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "ev-charging-network-receipt-settlement",
-      "scenarioType": "one-malformed-charger-receipt-delays-independent-chargers-within-same-operator",
-      "primaryRootCause": "tenant-wide-message-session-key-serializes-independent-charger-streams",
-      "failureMode": "healthy-charger-receipts-wait-behind-poison-message-in-unrelated-charger-stream",
-      "solutionPattern": "business-invariant-aligned-tenant-and-charger-session-partition-with-migration-and-dlq-policy",
-      "labFormat": "session-partition-head-of-line-deterministic-incident"
-    },
-    {
       "runSlot": "2026-10-29-17",
       "unitId": "UNIT-TRACE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-TRACE-001-specimen-courier-trace-window",
@@ -1501,10 +1486,24 @@
       "failureMode": "destination-and-status-shift-into-wrong-display-fields-without-import-error",
       "solutionPattern": "preserve-empty-positional-tokens-validate-exact-arity-and-required-fields",
       "labFormat": "positional-feed-contract-deterministic-lab"
+    },
+    {
+      "runSlot": "2026-11-02-20",
+      "unitId": "UNIT-RESPSTR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-RESPSTR-001-canal-gate-csv-export-200-read-failure",
+      "domain": "dotnet-http-response-stream-ownership",
+      "primarySkill": "httpclient-response-stream-lifetime",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "canal-gate-water-level-csv-export",
+      "scenarioType": "successful-http-headers-followed-by-payload-read-failure",
+      "primaryRootCause": "httpresponsemessage-disposed-before-returned-content-stream-consumption",
+      "failureMode": "objectdisposedexception-on-first-csv-stream-read-after-http-200",
+      "solutionPattern": "response-owned-stream-disposal-transfer-with-failure-path-cleanup",
+      "labFormat": "http-stream-resource-ownership-investigation-with-deterministic-handler"
     }
   ],
   "rolling24": [
-    "UNIT-KEYSETPAGE-001",
     "UNIT-FILEPUB-001",
     "UNIT-INTOVF-001",
     "UNIT-CANCELREG-001",
@@ -1527,12 +1526,12 @@
     "UNIT-SSET-001",
     "UNIT-UPSIG-001",
     "UNIT-OTA-001",
-    "UNIT-DELIM-001"
+    "UNIT-DELIM-001",
+    "UNIT-RESPSTR-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "api-pagination-live-feed": 1,
       "dotnet-file-publication-consistency": 1,
       "csharp-integer-arithmetic-overflow": 1,
       "dotnet-cancellation-callback-lifecycle": 1,
@@ -1555,22 +1554,22 @@
       "csharp-sortedset-comparer-identity": 1,
       "dotnet-file-upload-content-validation": 1,
       "fleet-ota-distributed-systems-architecture": 1,
-      "dotnet-positional-record-ingestion": 1
+      "dotnet-positional-record-ingestion": 1,
+      "dotnet-http-response-stream-ownership": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 6,
       "L4": 5,
       "L1": 5,
-      "L2": 5,
+      "L2": 6,
+      "L3": 5,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "live-feed-pagination-multi-signal-production-incident": 1,
       "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1,
       "deterministic-energy-aggregation-numeric-boundary-contract": 1,
       "deterministic-shutdown-callback-lifecycle-investigation": 1,
@@ -1593,7 +1592,8 @@
       "sorted-collection-comparison-contract-investigation": 1,
       "document-ingestion-evidence-led-security-incident": 1,
       "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1,
-      "positional-feed-contract-deterministic-lab": 1
+      "positional-feed-contract-deterministic-lab": 1,
+      "http-stream-resource-ownership-investigation-with-deterministic-handler": 1
     }
   }
 }
