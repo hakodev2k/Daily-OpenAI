@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ZIPPATH-001",
-    "runSlot": "2026-11-03-01",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-ZIPPATH-001-heritage-photo-bundle-extraction-escape",
+    "unitId": "UNIT-METUNIT-001",
+    "runSlot": "2026-11-03-02",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-METUNIT-001-wildlife-intake-latency-metric-false-breach",
     "status": "READY",
-    "createdAt": "2026-11-03T01:11:46+07:00"
+    "createdAt": "2026-11-03T02:05:20+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 439,
-    "totalGenerated": 434,
+    "totalRunSlotsAttempted": 440,
+    "totalGenerated": 435,
     "totalFailed": 5
   },
   "learning": {

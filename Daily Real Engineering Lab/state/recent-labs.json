@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-21",
-      "unitId": "UNIT-CAL-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CAL-001-solar-inverter-monthly-inspection-drift",
-      "domain": "dotnet-calendar-recurrence",
-      "primarySkill": "dateonly-monthly-anchor-recurrence",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "solar-farm-inverter-maintenance-calendar",
-      "scenarioType": "monthly-inspection-schedule-drifts-after-short-month",
-      "primaryRootCause": "iterative-dateonly-addmonths-loses-original-day-anchor-after-clamping",
-      "failureMode": "march-and-subsequent-inspections-move-earlier-than-contractual-calendar-day",
-      "solutionPattern": "recalculate-each-month-from-immutable-anchor-day-and-target-year-month",
-      "labFormat": "calendar-recurrence-investigation"
-    },
-    {
       "runSlot": "2026-10-29-22",
       "unitId": "UNIT-REGEX-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-REGEX-001-heating-meter-import-validation-timeout",
@@ -1501,10 +1486,24 @@
       "failureMode": "archive-entry-escapes-designated-extraction-root-and-writes-unexpected-file",
       "solutionPattern": "two-phase-canonical-entry-path-validation-with-root-boundary-and-no-overwrite",
       "labFormat": "zip-archive-extraction-security-production-incident-with-local-harness"
+    },
+    {
+      "runSlot": "2026-11-03-02",
+      "unitId": "UNIT-METUNIT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-METUNIT-001-wildlife-intake-latency-metric-false-breach",
+      "domain": "dotnet-observability-metrics-contract",
+      "primarySkill": "dotnet-histogram-unit-contract-and-slo-evidence",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-wildlife-rehabilitation-intake-appointment-api",
+      "scenarioType": "latency-dashboard-reports-slo-breach-while-traces-remain-fast",
+      "primaryRootCause": "histogram-records-milliseconds-despite-declared-seconds-unit",
+      "failureMode": "p95-inflated-by-1000-and-false-slo-breach",
+      "solutionPattern": "record-consistent-seconds-with-meterlistener-contract-regression",
+      "labFormat": "observability-metric-contract-refactoring-with-deterministic-meterlistener"
     }
   ],
   "rolling24": [
-    "UNIT-SQLITE-001",
     "UNIT-DNSPOOL-001",
     "UNIT-CMPID-001",
     "UNIT-UTF8CHUNK-001",
@@ -1527,12 +1526,12 @@
     "UNIT-READY-001",
     "UNIT-REQBODY-001",
     "UNIT-SBUILDER-001",
-    "UNIT-ZIPPATH-001"
+    "UNIT-ZIPPATH-001",
+    "UNIT-METUNIT-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "sqlite-relational-write-semantics": 1,
       "dotnet-http-connection-lifecycle": 1,
       "csharp-string-identity-comparison": 1,
       "dotnet-streaming-text-decoding": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-startup-readiness-contract": 1,
       "aspnetcore-request-body-lifecycle": 1,
       "csharp-async-shared-mutable-state": 1,
-      "dotnet-zip-archive-extraction-security": 1
+      "dotnet-zip-archive-extraction-security": 1,
+      "dotnet-observability-metrics-contract": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L4": 5,
       "L5": 2,
       "L1": 5,
       "L2": 6,
       "L3": 5,
+      "L4": 5,
       "L6": 1
     },
     "byFormat": {
-      "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1,
       "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1,
       "cross-locale-identifier-registry-deterministic-reproduction": 1,
       "chunked-text-stream-investigation-with-contract-harness": 1,
@@ -1593,7 +1592,8 @@
       "deterministic-startup-readiness-refactoring-with-fault-propagation-contract": 1,
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
       "deterministic-async-reentrancy-evidence-investigation": 1,
-      "zip-archive-extraction-security-production-incident-with-local-harness": 1
+      "zip-archive-extraction-security-production-incident-with-local-harness": 1,
+      "observability-metric-contract-refactoring-with-deterministic-meterlistener": 1
     }
   }
 }
