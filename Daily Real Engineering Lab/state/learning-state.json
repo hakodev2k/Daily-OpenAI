@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-GITPKG-001",
-    "runSlot": "2026-11-02-10",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-GITPKG-001-pool-safety-release-stale-policy",
+    "unitId": "UNIT-SQL-011",
+    "runSlot": "2026-11-02-11",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SQL-011-library-branch-incident-report-outer-join",
     "status": "READY",
-    "createdAt": "2026-11-02T10:06:11+07:00"
+    "createdAt": "2026-11-02T11:10:27+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 425,
-    "totalGenerated": 420,
+    "totalRunSlotsAttempted": 426,
+    "totalGenerated": 421,
     "totalFailed": 5
   },
   "learning": {

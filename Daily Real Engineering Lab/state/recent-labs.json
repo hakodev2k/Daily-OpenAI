@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-07",
-      "unitId": "UNIT-LINQ-002",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-LINQ-002-grain-weighbridge-live-feed-snapshot-drift",
-      "domain": "linq-deferred-execution-live-sources",
-      "primarySkill": "linq-multiple-enumeration-live-feed-snapshot-consistency",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "grain-cooperative-weighbridge-receipt-settlement",
-      "scenarioType": "report-count-and-total-disagree-during-live-ingestion",
-      "primaryRootCause": "independent-linq-terminal-operators-reenumerate-changing-live-feed-snapshots",
-      "failureMode": "receipt-count-from-earlier-snapshot-combined-with-weight-total-from-later-snapshot",
-      "solutionPattern": "single-pass-aggregation-over-one-source-enumeration",
-      "labFormat": "live-feed-consistency-evidence-investigation"
-    },
-    {
       "runSlot": "2026-10-29-08",
       "unitId": "UNIT-DR-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DR-001-in-country-failover-rpo-rto-design",
@@ -1501,6 +1486,21 @@
       "failureMode": "obsolete-safety-policy-reappears-in-release-bundle-despite-absence-from-git-tree",
       "solutionPattern": "source-controlled-package-allowlist-with-untracked-file-negative-regression",
       "labFormat": "ci-artifact-contamination-production-forensics"
+    },
+    {
+      "runSlot": "2026-11-02-11",
+      "unitId": "UNIT-SQL-011",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SQL-011-library-branch-incident-report-outer-join",
+      "domain": "sql-outer-join-null-rejection",
+      "primarySkill": "sql-left-join-predicate-placement-and-null-rejection",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "municipal-public-library-device-incident-readiness",
+      "scenarioType": "zero-incident-branches-disappear-from-filtered-dashboard",
+      "primaryRootCause": "right-side-incident-predicates-in-where-null-reject-outer-join-rows",
+      "failureMode": "branches-with-no-matching-open-critical-incident-omitted-despite-correct-city-total",
+      "solutionPattern": "filter-right-side-rows-in-left-join-on-and-count-nonnull-incident-id",
+      "labFormat": "sql-outer-join-report-contract-refactoring"
     }
   ],
   "rolling24": [
@@ -1532,7 +1532,6 @@
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "distributed-event-projection-versioning": 1,
       "csharp-exception-provenance": 1,
       "aspnetcore-middleware-response-lifecycle": 1,
       "http-retry-after-header-semantics": 1,
@@ -1555,22 +1554,21 @@
       "aspnetcore-data-protection-key-management": 1,
       "csharp-list-mutation-semantics": 1,
       "efcore-dbcontext-concurrency": 1,
-      "git-ci-artifact-integrity": 1
+      "git-ci-artifact-integrity": 1,
+      "sql-outer-join-null-rejection": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L6": 1,
       "L2": 6,
       "L1": 5,
-      "L4": 4,
+      "L4": 5,
       "L3": 5,
       "L5": 3
     },
     "byFormat": {
-      "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1,
       "deterministic-exception-provenance-investigation": 1,
       "middleware-response-lifecycle-contract-reproduction": 1,
       "retry-scheduler-policy-refactoring-workshop": 1,
@@ -1593,7 +1591,8 @@
       "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness": 1,
       "deterministic-collection-mutation-contract-lab": 1,
       "efcore-parallel-query-evidence-investigation": 1,
-      "ci-artifact-contamination-production-forensics": 1
+      "ci-artifact-contamination-production-forensics": 1,
+      "sql-outer-join-report-contract-refactoring": 1
     }
   }
 }
