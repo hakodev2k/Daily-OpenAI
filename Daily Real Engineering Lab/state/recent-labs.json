@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-14",
-      "unitId": "UNIT-LEASE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-LEASE-001-road-defect-preview-buffer-ownership",
-      "domain": "dotnet-buffer-ownership",
-      "primarySkill": "arraypool-lease-ownership",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "municipal-road-defect-image-review",
-      "scenarioType": "asynchronous-preview-consumer-sees-previous-job-bytes-change",
-      "primaryRootCause": "pooled-buffer-returned-before-consumer-finishes-reading",
-      "failureMode": "previously-issued-preview-mutates-after-next-request",
-      "solutionPattern": "copy-valid-bytes-to-owned-memory-before-releasing-pool-lease",
-      "labFormat": "buffer-ownership-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-29-15",
       "unitId": "UNIT-CORS-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CORS-001-claims-partner-portal-preflight-contract",
@@ -1501,10 +1486,24 @@
       "failureMode": "non-pdf-payload-accepted-into-permit-document-queue-and-rejected-later-by-parser",
       "solutionPattern": "bounded-file-byte-signature-gate-before-persistence-with-negative-contract-tests",
       "labFormat": "document-ingestion-evidence-led-security-incident"
+    },
+    {
+      "runSlot": "2026-11-02-18",
+      "unitId": "UNIT-OTA-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-OTA-001-solar-inverter-fleet-safe-firmware-rollout",
+      "domain": "fleet-ota-distributed-systems-architecture",
+      "primarySkill": "fleet-ota-campaign-safety-and-recovery-architecture",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "rural-solar-inverter-fleet-firmware-operations",
+      "scenarioType": "intermittently-connected-fleet-staged-ota-with-delayed-ack-and-unsafe-canary",
+      "primaryRootCause": "rollout-control-plane-lacks-explicit-campaign-gates-and-device-attempt-fencing",
+      "failureMode": "faulty-release-expands-despite-canary-failures-and-stale-device-acknowledgements",
+      "solutionPattern": "regional-pull-rollout-with-durable-attempt-state-guardrails-and-safe-rollback-policy",
+      "labFormat": "fleet-ota-architecture-tabletop-with-evidence-and-decision-record"
     }
   ],
   "rolling24": [
-    "UNIT-RWLOCK-001",
     "UNIT-JDUP-001",
     "UNIT-KEYSETPAGE-001",
     "UNIT-FILEPUB-001",
@@ -1527,12 +1526,12 @@
     "UNIT-FSWATCH-001",
     "UNIT-SNAPISO-001",
     "UNIT-SSET-001",
-    "UNIT-UPSIG-001"
+    "UNIT-UPSIG-001",
+    "UNIT-OTA-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-readerwriterlockslim": 1,
       "dotnet-json-payload-contract-security": 1,
       "api-pagination-live-feed": 1,
       "dotnet-file-publication-consistency": 1,
@@ -1555,21 +1554,22 @@
       "dotnet-filesystem-index-consistency": 1,
       "csharp-object-graph-snapshot-isolation": 1,
       "csharp-sortedset-comparer-identity": 1,
-      "dotnet-file-upload-content-validation": 1
+      "dotnet-file-upload-content-validation": 1,
+      "fleet-ota-distributed-systems-architecture": 1
     },
     "byDifficulty": {
-      "D3": 5,
-      "D4": 19
+      "D4": 20,
+      "D3": 4
     },
     "byMaturity": {
-      "L1": 5,
       "L2": 6,
       "L3": 6,
       "L4": 5,
-      "L5": 2
+      "L1": 4,
+      "L5": 2,
+      "L6": 1
     },
     "byFormat": {
-      "read-to-write-lock-upgrade-deterministic-contract-lab": 1,
       "json-parser-differential-contract-investigation": 1,
       "live-feed-pagination-multi-signal-production-incident": 1,
       "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1,
@@ -1592,7 +1592,8 @@
       "filesystem-notification-gap-production-incident-with-local-reconciliation-contract": 1,
       "snapshot-history-refactoring-with-bidirectional-aliasing-contract": 1,
       "sorted-collection-comparison-contract-investigation": 1,
-      "document-ingestion-evidence-led-security-incident": 1
+      "document-ingestion-evidence-led-security-incident": 1,
+      "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1
     }
   }
 }

@@ -1,0 +1,4 @@
+region,targeted,succeeded,failed,offline_pending,in_progress
+North,80,74,2,3,1
+Central,80,75,3,2,0
+South,80,75,3,2,0
