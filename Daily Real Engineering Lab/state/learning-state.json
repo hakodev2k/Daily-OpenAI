@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DPKEY-001",
-    "runSlot": "2026-11-02-07",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DPKEY-001-housing-repair-portal-split-key-rings",
+    "unitId": "UNIT-LISTMUT-001",
+    "runSlot": "2026-11-02-08",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-LISTMUT-001-food-bank-pickup-batch-eligibility-skip",
     "status": "READY",
-    "createdAt": "2026-11-02T07:09:54.865+07:00"
+    "createdAt": "2026-11-02T08:12:01+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 422,
-    "totalGenerated": 417,
+    "totalRunSlotsAttempted": 423,
+    "totalGenerated": 418,
     "totalFailed": 5
   },
   "learning": {

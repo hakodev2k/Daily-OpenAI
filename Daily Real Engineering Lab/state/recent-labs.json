@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-04",
-      "unitId": "UNIT-DI-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-DI-001-exam-manifest-cross-batch-bleed",
-      "domain": "dotnet-dependency-injection",
-      "primarySkill": "dependency-injection-scope-ownership",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "university-exam-seating-manifest-export",
-      "scenarioType": "sequential-batch-export-in-one-long-lived-worker",
-      "primaryRootCause": "singleton-captures-scoped-composer-resolved-from-root-container",
-      "failureMode": "later-session-manifest-includes-prior-session-rows",
-      "solutionPattern": "scope-per-export-work-item-with-strict-di-validation",
-      "labFormat": "dependency-injection-lifetime-deterministic-failure"
-    },
-    {
       "runSlot": "2026-10-29-05",
       "unitId": "UNIT-MONEY-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-MONEY-001-marketplace-settlement-cent-drift",
@@ -1501,10 +1486,24 @@
       "failureMode": "intermittent-session-unprotect-failure-on-cross-replica-routing",
       "solutionPattern": "durable-shared-key-ring-with-stable-application-discriminator-and-isolation-contracts",
       "labFormat": "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness"
+    },
+    {
+      "runSlot": "2026-11-02-08",
+      "unitId": "UNIT-LISTMUT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-LISTMUT-001-food-bank-pickup-batch-eligibility-skip",
+      "domain": "csharp-list-mutation-semantics",
+      "primarySkill": "csharp-list-mutation-loop-invariants",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "community-food-bank-donation-pickup",
+      "scenarioType": "in-place-donation-lot-eligibility-filter",
+      "primaryRootCause": "forward-index-list-removal-skips-shifted-adjacent-elements",
+      "failureMode": "expired-or-quarantined-lots-survive-single-pass-dispatch-screening",
+      "solutionPattern": "stable-predicate-based-in-place-list-compaction",
+      "labFormat": "deterministic-collection-mutation-contract-lab"
     }
   ],
   "rolling24": [
-    "UNIT-PIPEIO-001",
     "UNIT-HPA-001",
     "UNIT-BAGPII-001",
     "UNIT-REDRIVE-001",
@@ -1527,12 +1526,12 @@
     "UNIT-UTF8CHUNK-001",
     "UNIT-CSVFORM-001",
     "UNIT-LANGQ-001",
-    "UNIT-DPKEY-001"
+    "UNIT-DPKEY-001",
+    "UNIT-LISTMUT-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-process-pipe-backpressure": 1,
       "kubernetes-hpa-cpu-utilization": 1,
       "dotnet-distributed-tracing-privacy": 1,
       "distributed-event-projection-versioning": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-streaming-text-decoding": 1,
       "csv-spreadsheet-export-security": 1,
       "http-accept-language-content-negotiation": 1,
-      "aspnetcore-data-protection-key-management": 1
+      "aspnetcore-data-protection-key-management": 1,
+      "csharp-list-mutation-semantics": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 6,
       "L5": 4,
       "L3": 5,
       "L6": 1,
-      "L1": 4,
+      "L2": 5,
+      "L1": 5,
       "L4": 4
     },
     "byFormat": {
-      "subprocess-redirected-pipe-backpressure-investigation": 1,
       "autoscaling-control-signal-design-decision-with-local-policy-model": 1,
       "privacy-leak-distributed-trace-production-incident": 1,
       "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness": 1,
@@ -1593,7 +1592,8 @@
       "chunked-text-stream-investigation-with-contract-harness": 1,
       "csv-output-trust-boundary-multi-signal-security-incident": 1,
       "api-localization-compatibility-refactoring-workshop": 1,
-      "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness": 1
+      "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness": 1,
+      "deterministic-collection-mutation-contract-lab": 1
     }
   }
 }
