@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HOSTEX-001",
-    "runSlot": "2026-11-02-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-HOSTEX-001-air-quality-worker-host-stop",
+    "unitId": "UNIT-FSWATCH-001",
+    "runSlot": "2026-11-02-14",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-FSWATCH-001-calibration-certificate-index-drift",
     "status": "READY",
-    "createdAt": "2026-11-02T13:06:29+07:00"
+    "createdAt": "2026-11-02T14:21:34+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 428,
-    "totalGenerated": 423,
+    "totalRunSlotsAttempted": 429,
+    "totalGenerated": 424,
     "totalFailed": 5
   },
   "learning": {

@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-10",
-      "unitId": "UNIT-STREAMPOS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-STREAMPOS-001-ground-station-telemetry-resume-gaps",
-      "domain": "dotnet-streamreader-checkpoint-semantics",
-      "primarySkill": "streamreader-buffered-read-ahead-checkpoint",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "satellite-ground-station-pass-telemetry-import",
-      "scenarioType": "small-batch-ingestion-resumes-after-worker-restart",
-      "primaryRootCause": "underlying-filestream-position-advances-beyond-consumed-lines-due-to-streamreader-buffered-read-ahead",
-      "failureMode": "persisted-byte-cursor-skips-unprocessed-records-after-restart",
-      "solutionPattern": "logical-line-count-checkpoint-with-append-only-replay-and-truncation-detection",
-      "labFormat": "stream-checkpoint-production-forensics"
-    },
-    {
       "runSlot": "2026-10-29-11",
       "unitId": "UNIT-FMASK-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-FMASK-001-crane-inspection-access-control-incident",
@@ -1501,10 +1486,24 @@
       "failureMode": "subsequent-independent-alert-never-attempted-and-worker-host-stops-prematurely",
       "solutionPattern": "catch-classified-recoverable-item-failure-record-failed-delivery-and-continue-while-preserving-fatal-fail-fast",
       "labFormat": "hosted-worker-lifecycle-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-11-02-14",
+      "unitId": "UNIT-FSWATCH-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-FSWATCH-001-calibration-certificate-index-drift",
+      "domain": "dotnet-filesystem-index-consistency",
+      "primarySkill": "filesystem-event-notification-vs-authoritative-state-reconciliation",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "industrial-laboratory-calibration-certificate-search",
+      "scenarioType": "certificate-directory-updates-are-not-reflected-in-search-after-notification-gaps",
+      "primaryRootCause": "event-only-indexing-assumes-filesystem-notifications-are-complete-and-durable",
+      "failureMode": "modified-deleted-and-new-certificates-remain-out-of-sync-with-authoritative-files",
+      "solutionPattern": "periodic-directory-reconciliation-with-idempotent-upsert-and-deletion-cleanup",
+      "labFormat": "filesystem-notification-gap-production-incident-with-local-reconciliation-contract"
     }
   ],
   "rolling24": [
-    "UNIT-RETRYDATE-001",
     "UNIT-PSGATE-001",
     "UNIT-REDIR-001",
     "UNIT-PDB-001",
@@ -1527,12 +1526,12 @@
     "UNIT-GITPKG-001",
     "UNIT-SQL-011",
     "UNIT-ROUND-001",
-    "UNIT-HOSTEX-001"
+    "UNIT-HOSTEX-001",
+    "UNIT-FSWATCH-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "http-retry-after-header-semantics": 1,
       "powershell-native-process-exit-contract": 1,
       "http-redirect-method-semantics": 1,
       "kubernetes-pod-disruption-budget": 1,
@@ -1555,21 +1554,21 @@
       "git-ci-artifact-integrity": 1,
       "sql-outer-join-null-rejection": 1,
       "csharp-decimal-rounding-contract": 1,
-      "dotnet-backgroundservice-host-lifecycle": 1
+      "dotnet-backgroundservice-host-lifecycle": 1,
+      "dotnet-filesystem-index-consistency": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L4": 5,
       "L2": 6,
-      "L3": 5,
+      "L3": 6,
       "L5": 3,
-      "L1": 5
+      "L1": 5,
+      "L4": 4
     },
     "byFormat": {
-      "retry-scheduler-policy-refactoring-workshop": 1,
       "ci-release-gate-forensics-with-deterministic-fake-validator": 1,
       "http-redirect-wire-trace-multi-signal-incident": 1,
       "pdb-maintenance-policy-decision-with-local-rounding-harness": 1,
@@ -1592,7 +1591,8 @@
       "ci-artifact-contamination-production-forensics": 1,
       "sql-outer-join-report-contract-refactoring": 1,
       "deterministic-financial-rounding-contract-lab": 1,
-      "hosted-worker-lifecycle-evidence-investigation": 1
+      "hosted-worker-lifecycle-evidence-investigation": 1,
+      "filesystem-notification-gap-production-incident-with-local-reconciliation-contract": 1
     }
   }
 }
