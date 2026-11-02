@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SBUILDER-001",
-    "runSlot": "2026-11-03-00",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SBUILDER-001-seed-bank-label-cross-request-mixing",
+    "unitId": "UNIT-ZIPPATH-001",
+    "runSlot": "2026-11-03-01",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-ZIPPATH-001-heritage-photo-bundle-extraction-escape",
     "status": "READY",
-    "createdAt": "2026-11-03T00:13:41+07:00"
+    "createdAt": "2026-11-03T01:11:46+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 438,
-    "totalGenerated": 433,
+    "totalRunSlotsAttempted": 439,
+    "totalGenerated": 434,
     "totalFailed": 5
   },
   "learning": {

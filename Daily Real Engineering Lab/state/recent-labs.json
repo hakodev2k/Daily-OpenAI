@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-20",
-      "unitId": "UNIT-BASEURI-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-BASEURI-001-wildfire-partner-notice-route",
-      "domain": "http-uri-composition",
-      "primarySkill": "httpclient-baseaddress-relative-uri-resolution",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "forest-fire-early-warning-partner-notification",
-      "scenarioType": "partner-v3-notice-endpoint-returns-404-while-direct-smoke-test-succeeds",
-      "primaryRootCause": "leading-slash-relative-request-reference-discards-httpclient-baseaddress-path-prefix",
-      "failureMode": "partner-notices-misdirected-to-origin-root-after-versioned-api-cutover",
-      "solutionPattern": "relative-request-target-preserves-configured-base-path-with-route-contract-regression",
-      "labFormat": "http-base-uri-route-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-29-21",
       "unitId": "UNIT-CAL-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CAL-001-solar-inverter-monthly-inspection-drift",
@@ -1501,10 +1486,24 @@
       "failureMode": "cross-shipment-label-data-contamination",
       "solutionPattern": "per-invocation-output-buffer-ownership",
       "labFormat": "deterministic-async-reentrancy-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-11-03-01",
+      "unitId": "UNIT-ZIPPATH-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-ZIPPATH-001-heritage-photo-bundle-extraction-escape",
+      "domain": "dotnet-zip-archive-extraction-security",
+      "primarySkill": "zip-entry-path-containment-and-preflight-validation",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "regional-heritage-photo-digitization-intake",
+      "scenarioType": "partner-zip-bundle-import-creates-unexpected-sibling-file",
+      "primaryRootCause": "untrusted-zip-entry-path-resolved-without-canonical-destination-containment",
+      "failureMode": "archive-entry-escapes-designated-extraction-root-and-writes-unexpected-file",
+      "solutionPattern": "two-phase-canonical-entry-path-validation-with-root-boundary-and-no-overwrite",
+      "labFormat": "zip-archive-extraction-security-production-incident-with-local-harness"
     }
   ],
   "rolling24": [
-    "UNIT-RLPART-001",
     "UNIT-SQLITE-001",
     "UNIT-DNSPOOL-001",
     "UNIT-CMPID-001",
@@ -1527,12 +1526,12 @@
     "UNIT-RESPSTR-001",
     "UNIT-READY-001",
     "UNIT-REQBODY-001",
-    "UNIT-SBUILDER-001"
+    "UNIT-SBUILDER-001",
+    "UNIT-ZIPPATH-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-partitioned-rate-limiting": 1,
       "sqlite-relational-write-semantics": 1,
       "dotnet-http-connection-lifecycle": 1,
       "csharp-string-identity-comparison": 1,
@@ -1555,22 +1554,22 @@
       "dotnet-http-response-stream-ownership": 1,
       "dotnet-startup-readiness-contract": 1,
       "aspnetcore-request-body-lifecycle": 1,
-      "csharp-async-shared-mutable-state": 1
+      "csharp-async-shared-mutable-state": 1,
+      "dotnet-zip-archive-extraction-security": 1
     },
     "byDifficulty": {
       "D4": 19,
       "D3": 5
     },
     "byMaturity": {
-      "L3": 5,
       "L4": 5,
       "L5": 2,
       "L1": 5,
       "L2": 6,
+      "L3": 5,
       "L6": 1
     },
     "byFormat": {
-      "multi-tenant-admission-fairness-incident-with-local-policy-harness": 1,
       "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract": 1,
       "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness": 1,
       "cross-locale-identifier-registry-deterministic-reproduction": 1,
@@ -1593,7 +1592,8 @@
       "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
       "deterministic-startup-readiness-refactoring-with-fault-propagation-contract": 1,
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
-      "deterministic-async-reentrancy-evidence-investigation": 1
+      "deterministic-async-reentrancy-evidence-investigation": 1,
+      "zip-archive-extraction-security-production-incident-with-local-harness": 1
     }
   }
 }
