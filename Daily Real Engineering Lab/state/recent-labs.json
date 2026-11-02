@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-29-15",
-      "unitId": "UNIT-CORS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-CORS-001-claims-partner-portal-preflight-contract",
-      "domain": "aspnetcore-cors",
-      "primarySkill": "aspnetcore-cors-preflight-policy-contract",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "insurance-claims-partner-spa",
-      "scenarioType": "cross-origin-claim-preview-browser-preflight-fails-while-direct-post-succeeds",
-      "primaryRootCause": "cors-policy-request-header-allowlist-excludes-spa-custom-header",
-      "failureMode": "browser-blocks-cross-origin-post-after-preflight-without-allow-origin",
-      "solutionPattern": "explicit-cors-header-contract-with-negative-origin-method-regression",
-      "labFormat": "cors-preflight-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-29-16",
       "unitId": "UNIT-SBUS-001",
       "path": "Daily Real Engineering Lab/units/2026/10/29/UNIT-SBUS-001-charger-receipts-session-head-of-line",
@@ -1501,10 +1486,24 @@
       "failureMode": "faulty-release-expands-despite-canary-failures-and-stale-device-acknowledgements",
       "solutionPattern": "regional-pull-rollout-with-durable-attempt-state-guardrails-and-safe-rollback-policy",
       "labFormat": "fleet-ota-architecture-tabletop-with-evidence-and-decision-record"
+    },
+    {
+      "runSlot": "2026-11-02-19",
+      "unitId": "UNIT-DELIM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DELIM-001-campus-shuttle-departure-empty-field-shift",
+      "domain": "dotnet-positional-record-ingestion",
+      "primarySkill": "positional-delimited-record-empty-field-preservation",
+      "maturityLevel": "L1",
+      "difficulty": "D3",
+      "businessContext": "university-campus-shuttle-departure-signage",
+      "scenarioType": "vendor-departure-feed-with-empty-optional-boarding-note",
+      "primaryRootCause": "removeemptyentries-drops-empty-positional-field-in-fixed-width-pipe-record",
+      "failureMode": "destination-and-status-shift-into-wrong-display-fields-without-import-error",
+      "solutionPattern": "preserve-empty-positional-tokens-validate-exact-arity-and-required-fields",
+      "labFormat": "positional-feed-contract-deterministic-lab"
     }
   ],
   "rolling24": [
-    "UNIT-JDUP-001",
     "UNIT-KEYSETPAGE-001",
     "UNIT-FILEPUB-001",
     "UNIT-INTOVF-001",
@@ -1527,12 +1526,12 @@
     "UNIT-SNAPISO-001",
     "UNIT-SSET-001",
     "UNIT-UPSIG-001",
-    "UNIT-OTA-001"
+    "UNIT-OTA-001",
+    "UNIT-DELIM-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "dotnet-json-payload-contract-security": 1,
       "api-pagination-live-feed": 1,
       "dotnet-file-publication-consistency": 1,
       "csharp-integer-arithmetic-overflow": 1,
@@ -1555,22 +1554,22 @@
       "csharp-object-graph-snapshot-isolation": 1,
       "csharp-sortedset-comparer-identity": 1,
       "dotnet-file-upload-content-validation": 1,
-      "fleet-ota-distributed-systems-architecture": 1
+      "fleet-ota-distributed-systems-architecture": 1,
+      "dotnet-positional-record-ingestion": 1
     },
     "byDifficulty": {
-      "D4": 20,
-      "D3": 4
+      "D4": 19,
+      "D3": 5
     },
     "byMaturity": {
-      "L2": 6,
       "L3": 6,
       "L4": 5,
-      "L1": 4,
+      "L1": 5,
+      "L2": 5,
       "L5": 2,
       "L6": 1
     },
     "byFormat": {
-      "json-parser-differential-contract-investigation": 1,
       "live-feed-pagination-multi-signal-production-incident": 1,
       "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts": 1,
       "deterministic-energy-aggregation-numeric-boundary-contract": 1,
@@ -1593,7 +1592,8 @@
       "snapshot-history-refactoring-with-bidirectional-aliasing-contract": 1,
       "sorted-collection-comparison-contract-investigation": 1,
       "document-ingestion-evidence-led-security-incident": 1,
-      "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1
+      "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1,
+      "positional-feed-contract-deterministic-lab": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OTA-001",
-    "runSlot": "2026-11-02-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-OTA-001-solar-inverter-fleet-safe-firmware-rollout",
+    "unitId": "UNIT-DELIM-001",
+    "runSlot": "2026-11-02-19",
+    "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DELIM-001-campus-shuttle-departure-empty-field-shift",
     "status": "READY",
-    "createdAt": "2026-11-02T18:05:28+07:00"
+    "createdAt": "2026-11-02T19:04:41+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 433,
-    "totalGenerated": 428,
+    "totalRunSlotsAttempted": 434,
+    "totalGenerated": 429,
     "totalFailed": 5
   },
   "learning": {
