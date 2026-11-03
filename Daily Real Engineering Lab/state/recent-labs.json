@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-17",
-      "unitId": "UNIT-MIGR-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MIGR-001-waste-collection-zone-zero-downtime-schema-cutover",
-      "domain": "postgresql-online-schema-evolution",
-      "primarySkill": "zero-downtime-schema-evolution-and-cutover-gates",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "municipal-waste-pickup-zone-assignment",
-      "scenarioType": "rolling-deployment-overlaps-long-running-schema-backfill",
-      "primaryRootCause": "breaking-relational-schema-contract-before-old-and-new-writers-and-unresolved-data-are-compatible",
-      "failureMode": "mixed-version-writes-and-ambiguous-legacy-zones-create-null-or-wrong-dispatch-assignment",
-      "solutionPattern": "expand-backfill-catchup-compatibility-validation-gated-contract-and-reversible-cutover",
-      "labFormat": "zero-downtime-data-migration-architecture-tabletop"
-    },
-    {
       "runSlot": "2026-10-30-18",
       "unitId": "UNIT-JLIFE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JLIFE-001-air-quality-json-measurement-lifetime",
@@ -1501,6 +1486,21 @@
       "failureMode": "daily-energy-total-becomes-negative-despite-positive-readings",
       "solutionPattern": "widen-accumulator-before-arithmetic-and-test-boundaries",
       "labFormat": "deterministic-numeric-boundary-regression"
+    },
+    {
+      "runSlot": "2026-11-04-01",
+      "unitId": "UNIT-GETORADD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-GETORADD-001-parcel-locker-duplicate-allocation-under-concurrency",
+      "domain": "dotnet-concurrentdictionary-value-factory",
+      "primarySkill": "concurrentdictionary-getoradd-semantics",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-parcel-locker-slot-reservation",
+      "scenarioType": "parallel-first-access-slot-reservation",
+      "primaryRootCause": "concurrentdictionary-getoradd-valuefactory-invoked-multiple-times-under-contention",
+      "failureMode": "external-allocation-executed-twice-although-cache-has-one-entry",
+      "solutionPattern": "cache-lazy-single-execution-holder-and-evict-faulted-reservations",
+      "labFormat": "deterministic-concurrent-value-factory-contract-investigation"
     }
   ],
   "rolling24": [
@@ -1600,36 +1600,6 @@
   },
   "recentLabs": [
     {
-      "runSlot": "2026-10-30-16",
-      "unitId": "UNIT-JBATCH-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JBATCH-001-sports-gear-return-manifest-rejection",
-      "domain": "dotnet-json-streaming-ingestion",
-      "primarySkill": "streaming-json-batch-atomicity",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "community-sports-equipment-return-processing",
-      "scenarioType": "malformed-final-manifest-row-rejects-import-after-earlier-rows-observed",
-      "primaryRootCause": "streaming-json-array-applies-side-effects-before-full-document-validation",
-      "failureMode": "rejected-equipment-return-batch-leaves-partial-inventory-changes",
-      "solutionPattern": "stage-and-validate-entire-stream-then-commit-batch-atomically",
-      "labFormat": "streamed-batch-ingestion-production-incident"
-    },
-    {
-      "runSlot": "2026-10-30-17",
-      "unitId": "UNIT-MIGR-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MIGR-001-waste-collection-zone-zero-downtime-schema-cutover",
-      "domain": "postgresql-online-schema-evolution",
-      "primarySkill": "zero-downtime-schema-evolution-and-cutover-gates",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "municipal-waste-pickup-zone-assignment",
-      "scenarioType": "rolling-deployment-overlaps-long-running-schema-backfill",
-      "primaryRootCause": "breaking-relational-schema-contract-before-old-and-new-writers-and-unresolved-data-are-compatible",
-      "failureMode": "mixed-version-writes-and-ambiguous-legacy-zones-create-null-or-wrong-dispatch-assignment",
-      "solutionPattern": "expand-backfill-catchup-compatibility-validation-gated-contract-and-reversible-cutover",
-      "labFormat": "zero-downtime-data-migration-architecture-tabletop"
-    },
-    {
       "runSlot": "2026-10-30-18",
       "unitId": "UNIT-JLIFE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JLIFE-001-air-quality-json-measurement-lifetime",
@@ -3113,6 +3083,21 @@
       "failureMode": "daily-energy-total-becomes-negative-despite-positive-readings",
       "solutionPattern": "widen-accumulator-before-arithmetic-and-test-boundaries",
       "labFormat": "deterministic-numeric-boundary-regression"
+    },
+    {
+      "runSlot": "2026-11-04-01",
+      "unitId": "UNIT-GETORADD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-GETORADD-001-parcel-locker-duplicate-allocation-under-concurrency",
+      "domain": "dotnet-concurrentdictionary-value-factory",
+      "primarySkill": "concurrentdictionary-getoradd-semantics",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-parcel-locker-slot-reservation",
+      "scenarioType": "parallel-first-access-slot-reservation",
+      "primaryRootCause": "concurrentdictionary-getoradd-valuefactory-invoked-multiple-times-under-contention",
+      "failureMode": "external-allocation-executed-twice-although-cache-has-one-entry",
+      "solutionPattern": "cache-lazy-single-execution-holder-and-evict-faulted-reservations",
+      "labFormat": "deterministic-concurrent-value-factory-contract-investigation"
     }
   ]
 }
