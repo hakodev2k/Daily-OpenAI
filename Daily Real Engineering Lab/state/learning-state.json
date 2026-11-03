@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-READINESS-001",
-    "runSlot": "2026-11-03-21",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-READINESS-001-mobile-clinic-kubernetes-probe-restart-storm",
+    "unitId": "UNIT-SCHEMAMIG-001",
+    "runSlot": "2026-11-03-22",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SCHEMAMIG-001-regional-transit-fare-ledger-zero-downtime-schema-migration",
     "status": "READY",
-    "createdAt": "2026-11-03T21:13:32+07:00"
+    "createdAt": "2026-11-03T22:04:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 457,
-    "totalGenerated": 452,
+    "totalRunSlotsAttempted": 458,
+    "totalGenerated": 453,
     "totalFailed": 5
   },
   "learning": {
