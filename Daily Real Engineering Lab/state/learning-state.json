@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CHANNEL-001",
-    "runSlot": "2026-11-03-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-CHANNEL-001-food-bank-audit-channel-loss",
+    "unitId": "UNIT-WREPLAY-001",
+    "runSlot": "2026-11-03-16",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-WREPLAY-001-library-digitization-webhook-replay-window",
     "status": "READY",
-    "createdAt": "2026-11-03T13:05:56+07:00"
+    "createdAt": "2026-11-03T16:09:21+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 451,
-    "totalGenerated": 446,
+    "totalRunSlotsAttempted": 452,
+    "totalGenerated": 447,
     "totalFailed": 5
   },
   "learning": {

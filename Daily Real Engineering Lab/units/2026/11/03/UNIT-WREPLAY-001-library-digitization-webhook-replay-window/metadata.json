@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-WREPLAY-001",
+  "runSlot": "2026-11-03-16",
+  "title": "Webhook hợp lệ nhưng xử lý lại sự kiện số hóa",
+  "domain": "webhook-security",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-03T16:09:21+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "webhook-signature",
+    "replay-protection",
+    "idempotency"
+  ],
+  "prerequisites": [
+    "HMAC-SHA256",
+    "DateTimeOffset"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "library-digitization-partner-callback",
+    "scenarioType": "authenticated-retry-and-delayed-delivery",
+    "primaryRootCause": "signature-authenticity-mistaken-for-freshness-and-unique-processing",
+    "failureMode": "replayed-authentic-webhook-causes-duplicate-and-stale-side-effects",
+    "solutionPattern": "bounded-timestamp-freshness-plus-atomic-delivery-id-deduplication",
+    "labFormat": "webhook-security-policy-design-with-local-replay-harness"
+  }
+}

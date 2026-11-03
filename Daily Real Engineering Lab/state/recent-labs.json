@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-09",
-      "unitId": "UNIT-HBODY-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-HBODY-001-scholarship-evidence-stream-deadline",
-      "domain": "dotnet-http-streaming-deadlines",
-      "primarySkill": "http-response-body-end-to-end-deadline",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "university-scholarship-evidence-document-ingestion",
-      "scenarioType": "partner-download-returns-headers-fast-but-stream-body-stalls",
-      "primaryRootCause": "httpclient-timeout-ends-at-headers-with-responseheadersread-and-body-read-has-no-deadline-token",
-      "failureMode": "scholarship-evidence-worker-exceeds-request-deadline-while-reading-response-body",
-      "solutionPattern": "single-linked-end-to-end-cancellation-budget-propagated-through-headers-and-body-read",
-      "labFormat": "http-stream-body-deadline-production-investigation"
-    },
-    {
       "runSlot": "2026-10-30-10",
       "unitId": "UNIT-CLOCK-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-CLOCK-001-bikeshare-pass-virtual-clock-contract",
@@ -1501,6 +1486,21 @@
       "failureMode": "all-producer-writes-report-success-but-compliance-audit-has-sequence-gaps",
       "solutionPattern": "lossless-backpressure-with-explicit-producer-completion-and-drain",
       "labFormat": "deterministic-bounded-channel-data-loss-investigation"
+    },
+    {
+      "runSlot": "2026-11-03-16",
+      "unitId": "UNIT-WREPLAY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-WREPLAY-001-library-digitization-webhook-replay-window",
+      "domain": "webhook-security",
+      "primarySkill": "webhook-replay-freshness-and-delivery-deduplication",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "library-digitization-partner-callback",
+      "scenarioType": "authenticated-retry-and-delayed-delivery",
+      "primaryRootCause": "signature-authenticity-mistaken-for-freshness-and-unique-processing",
+      "failureMode": "replayed-authentic-webhook-causes-duplicate-and-stale-side-effects",
+      "solutionPattern": "bounded-timestamp-freshness-plus-atomic-delivery-id-deduplication",
+      "labFormat": "webhook-security-policy-design-with-local-replay-harness"
     }
   ],
   "rolling24": [
