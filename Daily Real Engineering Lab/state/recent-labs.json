@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-02",
-      "unitId": "UNIT-HMACROT-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-HMACROT-001-parcel-clearance-webhook-key-retirement",
-      "domain": "webhook-signing-key-rotation",
-      "primarySkill": "webhook-key-retirement-vs-delayed-first-delivery",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "cross-border-parcel-customs-clearance",
-      "scenarioType": "partner-webhook-rotation-with-original-signature-preserved-on-delayed-retry",
-      "primaryRootCause": "immutable-old-key-signatures-outlive-mandatory-old-key-verification-cutoff",
-      "failureMode": "late-first-delivery-either-rejected-or-requires-prohibited-old-key-trust",
-      "solutionPattern": "hard-key-retirement-with-independent-authoritative-event-feed-reconciliation-and-idempotent-inbox",
-      "labFormat": "webhook-trust-cutover-architecture-decision-tabletop"
-    },
-    {
       "runSlot": "2026-10-30-03",
       "unitId": "UNIT-EXAGG-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-EXAGG-001-school-meal-supplier-failure-diagnostics",
@@ -1501,10 +1486,24 @@
       "failureMode": "untrusted-return-xml-injects-local-canary-into-imported-receipt-note",
       "solutionPattern": "reject-dtd-and-disable-external-xml-resource-resolution-at-parser-boundary",
       "labFormat": "local-xml-import-security-incident-with-controlled-canary"
+    },
+    {
+      "runSlot": "2026-11-03-07",
+      "unitId": "UNIT-FRAMERD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-FRAMERD-001-rail-switch-sensor-fragmented-frame-read",
+      "domain": "dotnet-stream-read-framing",
+      "primarySkill": "dotnet-stream-short-read-and-exact-frame-boundary",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-rail-switch-position-sensor-uplink",
+      "scenarioType": "binary-telemetry-frames-arrive-in-small-transport-fragments",
+      "primaryRootCause": "stream-read-assumed-to-fill-requested-header-and-payload-buffer-in-one-call",
+      "failureMode": "valid-length-prefixed-sensor-frames-rejected-as-truncated-when-read-is-short",
+      "solutionPattern": "exact-length-stream-read-contract-with-eof-bounds-and-cancellation-regression",
+      "labFormat": "fragmented-binary-frame-decoder-refactoring-with-local-contract-harness"
     }
   ],
   "rolling24": [
-    "UNIT-LANGQ-001",
     "UNIT-DPKEY-001",
     "UNIT-LISTMUT-001",
     "UNIT-EFCTX-001",
@@ -1527,7 +1526,8 @@
     "UNIT-RETENTION-001",
     "UNIT-SEGMENT-001",
     "UNIT-ENUM-001",
-    "UNIT-XXE-001"
+    "UNIT-XXE-001",
+    "UNIT-FRAMERD-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
@@ -1549,12 +1549,12 @@
       "dotnet-observability-metrics-contract": 1,
       "dotnet-positional-record-ingestion": 1,
       "dotnet-startup-readiness-contract": 1,
+      "dotnet-stream-read-framing": 1,
       "dotnet-xml-external-entity-trust-boundary": 1,
       "dotnet-zip-archive-extraction-security": 1,
       "efcore-dbcontext-concurrency": 1,
       "fleet-ota-distributed-systems-architecture": 1,
       "git-ci-artifact-integrity": 1,
-      "http-accept-language-content-negotiation": 1,
       "sql-outer-join-null-rejection": 1
     },
     "byDifficulty": {
@@ -1570,7 +1570,6 @@
       "L6": 1
     },
     "byFormat": {
-      "api-localization-compatibility-refactoring-workshop": 1,
       "ci-artifact-contamination-production-forensics": 1,
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
       "deterministic-async-reentrancy-evidence-investigation": 1,
@@ -1583,6 +1582,7 @@
       "evidence-retention-design-decision-and-incident-replay": 1,
       "filesystem-notification-gap-production-incident-with-local-reconciliation-contract": 1,
       "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1,
+      "fragmented-binary-frame-decoder-refactoring-with-local-contract-harness": 1,
       "hosted-worker-lifecycle-evidence-investigation": 1,
       "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
       "local-xml-import-security-incident-with-controlled-canary": 1,

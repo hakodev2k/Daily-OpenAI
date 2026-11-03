@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-XXE-001",
-    "runSlot": "2026-11-03-06",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-XXE-001-rental-return-xml-private-note-exposure",
+    "unitId": "UNIT-FRAMERD-001",
+    "runSlot": "2026-11-03-07",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-FRAMERD-001-rail-switch-sensor-fragmented-frame-read",
     "status": "READY",
-    "createdAt": "2026-11-03T06:11:53.651+07:00"
+    "createdAt": "2026-11-03T07:10:55+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 444,
-    "totalGenerated": 439,
+    "totalRunSlotsAttempted": 445,
+    "totalGenerated": 440,
     "totalFailed": 5
   },
   "learning": {
