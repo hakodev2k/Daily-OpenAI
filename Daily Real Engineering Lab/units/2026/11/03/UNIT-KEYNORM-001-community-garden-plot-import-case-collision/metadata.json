@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-KEYNORM-001",
+  "runSlot": "2026-11-03-17",
+  "title": "Bản ghi lô vườn cộng đồng biến mất khi import",
+  "domain": "csharp-dictionary-identity-contract",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-03T17:13:37+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "dictionary-identity",
+    "string-comparer",
+    "batch-validation"
+  ],
+  "prerequisites": [
+    "C# Dictionary",
+    "LINQ"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-garden-plot-registration",
+    "scenarioType": "two-source-plot-import-identity-collision",
+    "primaryRootCause": "case-insensitive-dictionary-indexer-overwrites-distinct-source-rows-without-conflict-detection",
+    "failureMode": "input-row-count-exceeds-persisted-plot-count-and-owner-is-lost",
+    "solutionPattern": "explicit-business-key-comparer-with-duplicate-rejection-before-commit",
+    "labFormat": "deterministic-batch-identity-contract-lab"
+  }
+}
