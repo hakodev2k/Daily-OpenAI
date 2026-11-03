@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HASHKEY-001",
-    "runSlot": "2026-11-03-10",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-HASHKEY-001-museum-loan-registry-mutable-key-lookup",
+    "unitId": "UNIT-SEMGATE-001",
+    "runSlot": "2026-11-03-11",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SEMGATE-001-clinic-lab-result-cancelled-gate-release",
     "status": "READY",
-    "createdAt": "2026-11-03T10:13:36+07:00"
+    "createdAt": "2026-11-03T11:08:10+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 448,
-    "totalGenerated": 443,
+    "totalRunSlotsAttempted": 449,
+    "totalGenerated": 444,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-SEMGATE-001",
+  "runSlot": "2026-11-03-11",
+  "title": "Hủy yêu cầu làm sai capacity của result dispatch gate",
+  "domain": "dotnet-semaphoreslim-cancellation-ownership",
+  "primarySkill": "semaphore-acquisition-cancellation-ownership",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-03T11:08:10+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "semaphoreslim",
+    "cancellation",
+    "concurrency-contract"
+  ],
+  "prerequisites": [
+    "Task async/await",
+    "CancellationToken"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-clinic-laboratory-result-dispatch",
+    "scenarioType": "cancelled-request-during-capacity-gate-wait",
+    "primaryRootCause": "semaphore-release-in-finally-even-when-waitasync-never-acquired",
+    "failureMode": "cancelled-wait-inflates-permit-count-and-allows-extra-concurrent-dispatch",
+    "solutionPattern": "release-only-after-successful-permit-acquisition",
+    "labFormat": "cancellation-race-investigation-with-deterministic-permit-probe"
+  }
+}

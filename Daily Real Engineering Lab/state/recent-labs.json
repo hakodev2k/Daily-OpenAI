@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-06",
-      "unitId": "UNIT-TZAMB-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-TZAMB-001-night-shift-maintenance-dst-window",
-      "domain": "dotnet-timezone-contracts",
-      "primarySkill": "timezone-local-time-disambiguation-and-offset-validation",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "cross-border-rail-maintenance-night-shift-scheduling",
-      "scenarioType": "partner-local-wall-clock-night-shift-utc-mismatch-at-dst-transition",
-      "primaryRootCause": "timezone-conversion-discards-explicit-offset-and-silently-resolves-ambiguous-local-time",
-      "failureMode": "first-dst-fold-shift-scheduled-one-hour-late-and-invalid-offset-accepted",
-      "solutionPattern": "validate-zone-offset-consistency-and-require-disambiguation-before-utc-conversion",
-      "labFormat": "timezone-contract-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-30-07",
       "unitId": "UNIT-PTIMER-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-PTIMER-001-airport-deicing-heartbeat-dual-observers",
@@ -1501,10 +1486,24 @@
       "failureMode": "existing-entry-unreachable-despite-positive-count",
       "solutionPattern": "immutable-key-with-controlled-remove-reinsert",
       "labFormat": "deterministic-hash-key-invariant-regression"
+    },
+    {
+      "runSlot": "2026-11-03-11",
+      "unitId": "UNIT-SEMGATE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SEMGATE-001-clinic-lab-result-cancelled-gate-release",
+      "domain": "dotnet-semaphoreslim-cancellation-ownership",
+      "primarySkill": "semaphore-acquisition-cancellation-ownership",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "community-clinic-laboratory-result-dispatch",
+      "scenarioType": "cancelled-request-during-capacity-gate-wait",
+      "primaryRootCause": "semaphore-release-in-finally-even-when-waitasync-never-acquired",
+      "failureMode": "cancelled-wait-inflates-permit-count-and-allows-extra-concurrent-dispatch",
+      "solutionPattern": "release-only-after-successful-permit-acquisition",
+      "labFormat": "cancellation-race-investigation-with-deterministic-permit-probe"
     }
   ],
   "rolling24": [
-    "UNIT-GITPKG-001",
     "UNIT-SQL-011",
     "UNIT-ROUND-001",
     "UNIT-HOSTEX-001",
@@ -1527,7 +1526,8 @@
     "UNIT-FRAMERD-001",
     "UNIT-MSGRETRY-001",
     "UNIT-PUBLISH-001",
-    "UNIT-HASHKEY-001"
+    "UNIT-HASHKEY-001",
+    "UNIT-SEMGATE-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
@@ -1548,12 +1548,12 @@
       "dotnet-http-response-stream-ownership": 1,
       "dotnet-observability-metrics-contract": 1,
       "dotnet-positional-record-ingestion": 1,
+      "dotnet-semaphoreslim-cancellation-ownership": 1,
       "dotnet-startup-readiness-contract": 1,
       "dotnet-stream-read-framing": 1,
       "dotnet-xml-external-entity-trust-boundary": 1,
       "dotnet-zip-archive-extraction-security": 1,
       "fleet-ota-distributed-systems-architecture": 1,
-      "git-ci-artifact-integrity": 1,
       "messaging-failure-policy-and-fairness": 1,
       "sql-outer-join-null-rejection": 1
     },
@@ -1563,14 +1563,14 @@
     },
     "byMaturity": {
       "L1": 5,
-      "L2": 5,
-      "L3": 5,
+      "L2": 6,
+      "L3": 4,
       "L4": 5,
       "L5": 2,
       "L6": 2
     },
     "byFormat": {
-      "ci-artifact-contamination-production-forensics": 1,
+      "cancellation-race-investigation-with-deterministic-permit-probe": 1,
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
       "deterministic-async-reentrancy-evidence-investigation": 1,
       "deterministic-buffer-view-contract-lab": 1,
