@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ETAG-001",
-    "runSlot": "2026-11-03-12",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-ETAG-001-archive-manifest-stale-editor-overwrite",
+    "unitId": "UNIT-CHANNEL-001",
+    "runSlot": "2026-11-03-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-CHANNEL-001-food-bank-audit-channel-loss",
     "status": "READY",
-    "createdAt": "2026-11-03T12:04:03+07:00"
+    "createdAt": "2026-11-03T13:05:56+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 450,
-    "totalGenerated": 445,
+    "totalRunSlotsAttempted": 451,
+    "totalGenerated": 446,
     "totalFailed": 5
   },
   "learning": {

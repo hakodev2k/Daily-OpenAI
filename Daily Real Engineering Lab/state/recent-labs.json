@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-08",
-      "unitId": "UNIT-IPTRUST-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-IPTRUST-001-calibration-callback-proxy-source-trust",
-      "domain": "aspnetcore-proxy-client-ip-trust",
-      "primarySkill": "reverse-proxy-source-ip-trust-boundary",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "industrial-calibration-partner-callback-gateway",
-      "scenarioType": "direct-origin-request-forges-forwarded-source-identity",
-      "primaryRootCause": "untrusted-http-forwarded-for-used-before-verifying-connection-peer-is-managed-proxy",
-      "failureMode": "spoofed-direct-callback-passes-partner-ip-allowlist",
-      "solutionPattern": "trusted-single-hop-proxy-peer-gate-then-validated-forwarded-ip-policy",
-      "labFormat": "trusted-proxy-source-identity-investigation"
-    },
-    {
       "runSlot": "2026-10-30-09",
       "unitId": "UNIT-HBODY-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-HBODY-001-scholarship-evidence-stream-deadline",
@@ -1501,10 +1486,24 @@
       "failureMode": "silent-lost-update-despite-two-successful-writes",
       "solutionPattern": "atomic-revision-compare-and-swap-with-explicit-conflict-and-client-reload",
       "labFormat": "production-incident-replay-with-conditional-update-contract"
+    },
+    {
+      "runSlot": "2026-11-03-13",
+      "unitId": "UNIT-CHANNEL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-CHANNEL-001-food-bank-audit-channel-loss",
+      "domain": "dotnet-channel-backpressure-and-delivery-semantics",
+      "primarySkill": "bounded-channel-full-mode-delivery-contract",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-food-bank-cold-chain-temperature-audit",
+      "scenarioType": "burst-of-telemetry-events-while-audit-reader-is-paused",
+      "primaryRootCause": "bounded-channel-dropoldest-overflow-policy-silently-evicts-unread-audit-events",
+      "failureMode": "all-producer-writes-report-success-but-compliance-audit-has-sequence-gaps",
+      "solutionPattern": "lossless-backpressure-with-explicit-producer-completion-and-drain",
+      "labFormat": "deterministic-bounded-channel-data-loss-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-ROUND-001",
     "UNIT-HOSTEX-001",
     "UNIT-FSWATCH-001",
     "UNIT-SNAPISO-001",
@@ -1527,7 +1526,8 @@
     "UNIT-PUBLISH-001",
     "UNIT-HASHKEY-001",
     "UNIT-SEMGATE-001",
-    "UNIT-ETAG-001"
+    "UNIT-ETAG-001",
+    "UNIT-CHANNEL-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
@@ -1535,7 +1535,6 @@
       "api-optimistic-concurrency-contract": 1,
       "aspnetcore-request-body-lifecycle": 1,
       "csharp-async-shared-mutable-state": 1,
-      "csharp-decimal-rounding-contract": 1,
       "csharp-hash-collection-key-invariants": 1,
       "csharp-ienumerable-single-pass-consumption": 1,
       "csharp-object-graph-snapshot-isolation": 1,
@@ -1544,6 +1543,7 @@
       "distributed-object-publication-consistency": 1,
       "dotnet-arraysegment-buffer-view-semantics": 1,
       "dotnet-backgroundservice-host-lifecycle": 1,
+      "dotnet-channel-backpressure-and-delivery-semantics": 1,
       "dotnet-file-upload-content-validation": 1,
       "dotnet-filesystem-index-consistency": 1,
       "dotnet-http-response-stream-ownership": 1,
@@ -1558,14 +1558,14 @@
       "messaging-failure-policy-and-fairness": 1
     },
     "byDifficulty": {
-      "D3": 3,
-      "D4": 21
+      "D3": 2,
+      "D4": 22
     },
     "byMaturity": {
-      "L1": 5,
+      "L1": 4,
       "L2": 6,
       "L3": 5,
-      "L4": 4,
+      "L4": 5,
       "L5": 2,
       "L6": 2
     },
@@ -1573,8 +1573,8 @@
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
       "deterministic-async-reentrancy-evidence-investigation": 1,
+      "deterministic-bounded-channel-data-loss-investigation": 1,
       "deterministic-buffer-view-contract-lab": 1,
-      "deterministic-financial-rounding-contract-lab": 1,
       "deterministic-hash-key-invariant-regression": 1,
       "deterministic-startup-readiness-refactoring-with-fault-propagation-contract": 1,
       "document-ingestion-evidence-led-security-incident": 1,
