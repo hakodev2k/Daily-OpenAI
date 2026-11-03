@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DRRESTORE-001",
+  "runSlot": "2026-11-04-05",
+  "title": "Phục hồi đơn thuốc sau sự cố vùng lưu trữ",
+  "domain": "disaster-recovery-and-cross-store-reconciliation",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-04T05:13:27+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "disaster-recovery-rpo-rto",
+    "cross-store-reconciliation",
+    "failover-fencing"
+  ],
+  "prerequisites": [
+    "transaction-boundaries",
+    "backup-and-restore-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "rural-pharmacy-prescription-dispensing",
+    "scenarioType": "regional-outage-backup-restore-with-db-object-queue-divergence",
+    "primaryRootCause": "independent-recovery-points-across-transactional-db-object-store-and-message-log",
+    "failureMode": "recovered-system-exposes-missing-documents-and-inconsistent-dispense-records",
+    "solutionPattern": "restore-point-audit-fenced-recovery-and-idempotent-cross-store-reconciliation",
+    "labFormat": "disaster-recovery-tabletop-evidence-and-runbook"
+  }
+}

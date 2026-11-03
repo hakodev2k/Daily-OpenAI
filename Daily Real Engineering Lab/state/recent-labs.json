@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-21",
-      "unitId": "UNIT-TCS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-TCS-001-billboard-campaign-publish-gate-stall",
-      "domain": "dotnet-task-continuation-scheduling",
-      "primarySkill": "taskcompletionsource-continuation-scheduling",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "outdoor-digital-billboard-campaign-publishing",
-      "scenarioType": "publish-signal-causes-stalled-consumer-and-producer",
-      "primaryRootCause": "taskcompletionsource-inline-continuation-blocks-on-publisher-held-semaphore",
-      "failureMode": "publisher-and-subscriber-deadlock-with-zero-deliveries",
-      "solutionPattern": "schedule-continuations-asynchronously-across-critical-section",
-      "labFormat": "continuation-scheduling-production-deadlock-investigation"
-    },
-    {
       "runSlot": "2026-10-30-22",
       "unitId": "UNIT-OPTS-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-OPTS-001-emergency-shelter-quota-hot-reload",
@@ -1501,38 +1486,25 @@
       "failureMode": "paid-student-receives-not-found-or-outdated-transcript-while-primary-has-current-version",
       "solutionPattern": "consistency-aware-primary-read-for-critical-session-with-explicit-replica-lag-policy",
       "labFormat": "read-replica-consistency-design-decision-with-timeline-replay"
+    },
+    {
+      "runSlot": "2026-11-04-05",
+      "unitId": "UNIT-DRRESTORE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-DRRESTORE-001-rural-pharmacy-backup-restore-rpo-rto",
+      "domain": "disaster-recovery-and-cross-store-reconciliation",
+      "primarySkill": "disaster-recovery-rpo-rto",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "rural-pharmacy-prescription-dispensing",
+      "scenarioType": "regional-outage-backup-restore-with-db-object-queue-divergence",
+      "primaryRootCause": "independent-recovery-points-across-transactional-db-object-store-and-message-log",
+      "failureMode": "recovered-system-exposes-missing-documents-and-inconsistent-dispense-records",
+      "solutionPattern": "restore-point-audit-fenced-recovery-and-idempotent-cross-store-reconciliation",
+      "labFormat": "disaster-recovery-tabletop-evidence-and-runbook"
     }
   ],
-  "rolling24": [
-    "UNIT-METUNIT-001",
-    "UNIT-RETENTION-001",
-    "UNIT-SEGMENT-001",
-    "UNIT-ENUM-001",
-    "UNIT-XXE-001",
-    "UNIT-FRAMERD-001",
-    "UNIT-MSGRETRY-001",
-    "UNIT-PUBLISH-001",
-    "UNIT-HASHKEY-001",
-    "UNIT-SEMGATE-001",
-    "UNIT-ETAG-001",
-    "UNIT-CHANNEL-001",
-    "UNIT-WREPLAY-001",
-    "UNIT-KEYNORM-001",
-    "UNIT-DECROUND-001",
-    "UNIT-AUTHHDR-001",
-    "UNIT-ENUMJSON-001",
-    "UNIT-READINESS-001",
-    "UNIT-SCHEMAMIG-001",
-    "UNIT-OVERFLOW-001",
-    "UNIT-GETORADD-001",
-    "UNIT-BUFFEROWN-001",
-    "UNIT-DICAPTURE-001",
-    "UNIT-REPLALAG-001"
-  ],
-  "rollingProfile": {
-    "windowSize": 24,
-    "byDomain": {
-      "dotnet-observability-metrics-contract": 1,
+  "rolling24": {
+    "domains": {
       "data-retention-governance-and-cross-store-consistency": 1,
       "dotnet-arraysegment-buffer-view-semantics": 1,
       "csharp-ienumerable-single-pass-consumption": 1,
@@ -1555,21 +1527,21 @@
       "dotnet-concurrentdictionary-value-factory": 1,
       "dotnet-memory-ownership-async": 1,
       "dotnet-dependency-injection-lifetimes": 1,
-      "database-read-replica-consistency": 1
+      "database-read-replica-consistency": 1,
+      "disaster-recovery-and-cross-store-reconciliation": 1
     },
-    "byDifficulty": {
+    "difficulty": {
       "D4": 24
     },
-    "byMaturity": {
-      "L4": 5,
+    "maturity": {
       "L5": 5,
       "L1": 4,
       "L2": 4,
       "L3": 4,
-      "L6": 2
+      "L4": 4,
+      "L6": 3
     },
-    "byFormat": {
-      "observability-metric-contract-refactoring-with-deterministic-meterlistener": 1,
+    "formats": {
       "evidence-retention-design-decision-and-incident-replay": 1,
       "deterministic-buffer-view-contract-lab": 1,
       "one-shot-feed-evidence-driven-investigation": 1,
@@ -1592,25 +1564,76 @@
       "deterministic-concurrent-value-factory-contract-investigation": 1,
       "deterministic-buffer-lifetime-production-incident": 1,
       "dependency-injection-lifetime-refactoring-workshop": 1,
-      "read-replica-consistency-design-decision-with-timeline-replay": 1
+      "read-replica-consistency-design-decision-with-timeline-replay": 1,
+      "disaster-recovery-tabletop-evidence-and-runbook": 1
+    }
+  },
+  "rollingProfile": {
+    "domains": {
+      "data-retention-governance-and-cross-store-consistency": 1,
+      "dotnet-arraysegment-buffer-view-semantics": 1,
+      "csharp-ienumerable-single-pass-consumption": 1,
+      "dotnet-xml-external-entity-trust-boundary": 1,
+      "dotnet-stream-read-framing": 1,
+      "messaging-failure-policy-and-fairness": 1,
+      "distributed-object-publication-consistency": 1,
+      "csharp-hash-collection-key-invariants": 1,
+      "dotnet-semaphoreslim-cancellation-ownership": 1,
+      "api-optimistic-concurrency-contract": 1,
+      "dotnet-channel-backpressure-and-delivery-semantics": 1,
+      "webhook-security": 1,
+      "csharp-dictionary-identity-contract": 1,
+      "csharp-decimal-financial-contract": 1,
+      "dotnet-httpclient-request-isolation": 1,
+      "dotnet-json-contract-validation": 1,
+      "kubernetes-health-probe-policy": 1,
+      "postgresql-online-schema-evolution": 1,
+      "csharp-numeric-aggregation": 1,
+      "dotnet-concurrentdictionary-value-factory": 1,
+      "dotnet-memory-ownership-async": 1,
+      "dotnet-dependency-injection-lifetimes": 1,
+      "database-read-replica-consistency": 1,
+      "disaster-recovery-and-cross-store-reconciliation": 1
+    },
+    "difficulty": {
+      "D4": 24
+    },
+    "maturity": {
+      "L5": 5,
+      "L1": 4,
+      "L2": 4,
+      "L3": 4,
+      "L4": 4,
+      "L6": 3
+    },
+    "formats": {
+      "evidence-retention-design-decision-and-incident-replay": 1,
+      "deterministic-buffer-view-contract-lab": 1,
+      "one-shot-feed-evidence-driven-investigation": 1,
+      "local-xml-import-security-incident-with-controlled-canary": 1,
+      "fragmented-binary-frame-decoder-refactoring-with-local-contract-harness": 1,
+      "messaging-retry-policy-design-decision-with-deterministic-local-simulator": 1,
+      "multi-object-publication-architecture-simulator": 1,
+      "deterministic-hash-key-invariant-regression": 1,
+      "cancellation-race-investigation-with-deterministic-permit-probe": 1,
+      "production-incident-replay-with-conditional-update-contract": 1,
+      "deterministic-bounded-channel-data-loss-investigation": 1,
+      "webhook-security-policy-design-with-local-replay-harness": 1,
+      "deterministic-batch-identity-contract-lab": 1,
+      "financial-settlement-investigation": 1,
+      "deterministic-http-header-isolation-investigation": 1,
+      "contract-drift-refactoring-with-local-regression-harness": 1,
+      "probe-policy-decision-simulator": 1,
+      "schema-migration-architecture-decision-with-release-drill": 1,
+      "deterministic-numeric-boundary-regression": 1,
+      "deterministic-concurrent-value-factory-contract-investigation": 1,
+      "deterministic-buffer-lifetime-production-incident": 1,
+      "dependency-injection-lifetime-refactoring-workshop": 1,
+      "read-replica-consistency-design-decision-with-timeline-replay": 1,
+      "disaster-recovery-tabletop-evidence-and-runbook": 1
     }
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-03-02",
-      "unitId": "UNIT-METUNIT-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-METUNIT-001-wildlife-intake-latency-metric-false-breach",
-      "domain": "dotnet-observability-metrics-contract",
-      "primarySkill": "dotnet-histogram-unit-contract-and-slo-evidence",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "regional-wildlife-rehabilitation-intake-appointment-api",
-      "scenarioType": "latency-dashboard-reports-slo-breach-while-traces-remain-fast",
-      "primaryRootCause": "histogram-records-milliseconds-despite-declared-seconds-unit",
-      "failureMode": "p95-inflated-by-1000-and-false-slo-breach",
-      "solutionPattern": "record-consistent-seconds-with-meterlistener-contract-regression",
-      "labFormat": "observability-metric-contract-refactoring-with-deterministic-meterlistener"
-    },
     {
       "runSlot": "2026-11-03-03",
       "unitId": "UNIT-RETENTION-001",
@@ -1955,6 +1978,21 @@
       "failureMode": "paid-student-receives-not-found-or-outdated-transcript-while-primary-has-current-version",
       "solutionPattern": "consistency-aware-primary-read-for-critical-session-with-explicit-replica-lag-policy",
       "labFormat": "read-replica-consistency-design-decision-with-timeline-replay"
+    },
+    {
+      "runSlot": "2026-11-04-05",
+      "unitId": "UNIT-DRRESTORE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-DRRESTORE-001-rural-pharmacy-backup-restore-rpo-rto",
+      "domain": "disaster-recovery-and-cross-store-reconciliation",
+      "primarySkill": "disaster-recovery-rpo-rto",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "rural-pharmacy-prescription-dispensing",
+      "scenarioType": "regional-outage-backup-restore-with-db-object-queue-divergence",
+      "primaryRootCause": "independent-recovery-points-across-transactional-db-object-store-and-message-log",
+      "failureMode": "recovered-system-exposes-missing-documents-and-inconsistent-dispense-records",
+      "solutionPattern": "restore-point-audit-fenced-recovery-and-idempotent-cross-store-reconciliation",
+      "labFormat": "disaster-recovery-tabletop-evidence-and-runbook"
     }
   ]
 }
