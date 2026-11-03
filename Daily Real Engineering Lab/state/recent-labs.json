@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-10",
-      "unitId": "UNIT-CLOCK-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-CLOCK-001-bikeshare-pass-virtual-clock-contract",
-      "domain": "dotnet-timeprovider-testability",
-      "primarySkill": "timeprovider-injected-clock-consistency",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "city-bikeshare-temporary-unlock-pass",
-      "scenarioType": "qa-virtual-time-replay-disagrees-with-pass-validity-decisions",
-      "primaryRootCause": "pass-validation-reads-static-system-clock-instead-of-injected-timeprovider",
-      "failureMode": "valid-future-dated-test-pass-rejected-and-expiry-boundary-cannot-be-reproduced-with-virtual-clock",
-      "solutionPattern": "use-injected-timeprovider-getutcnow-at-evaluation-boundary-with-temporal-contract-regression",
-      "labFormat": "virtual-clock-testability-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-30-11",
       "unitId": "UNIT-MCARD-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MCARD-001-cold-chain-telemetry-metric-series-budget",
@@ -1501,6 +1486,21 @@
       "failureMode": "replayed-authentic-webhook-causes-duplicate-and-stale-side-effects",
       "solutionPattern": "bounded-timestamp-freshness-plus-atomic-delivery-id-deduplication",
       "labFormat": "webhook-security-policy-design-with-local-replay-harness"
+    },
+    {
+      "runSlot": "2026-11-03-17",
+      "unitId": "UNIT-KEYNORM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-KEYNORM-001-community-garden-plot-import-case-collision",
+      "domain": "csharp-dictionary-identity-contract",
+      "primarySkill": "dictionary-duplicate-identity-and-overwrite",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "community-garden-plot-registration",
+      "scenarioType": "two-source-plot-import-identity-collision",
+      "primaryRootCause": "case-insensitive-dictionary-indexer-overwrites-distinct-source-rows-without-conflict-detection",
+      "failureMode": "input-row-count-exceeds-persisted-plot-count-and-owner-is-lost",
+      "solutionPattern": "explicit-business-key-comparer-with-duplicate-rejection-before-commit",
+      "labFormat": "deterministic-batch-identity-contract-lab"
     }
   ],
   "rolling24": [
