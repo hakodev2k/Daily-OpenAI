@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-WREPLAY-001",
-    "runSlot": "2026-11-03-16",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-WREPLAY-001-library-digitization-webhook-replay-window",
+    "unitId": "UNIT-KEYNORM-001",
+    "runSlot": "2026-11-03-17",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-KEYNORM-001-community-garden-plot-import-case-collision",
     "status": "READY",
-    "createdAt": "2026-11-03T16:09:21+07:00"
+    "createdAt": "2026-11-03T17:13:37+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 452,
-    "totalGenerated": 447,
+    "totalRunSlotsAttempted": 453,
+    "totalGenerated": 448,
     "totalFailed": 5
   },
   "learning": {
