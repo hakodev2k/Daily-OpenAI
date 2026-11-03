@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OVERFLOW-001",
-    "runSlot": "2026-11-04-00",
-    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-OVERFLOW-001-solar-farm-energy-counter-overflow",
+    "unitId": "UNIT-GETORADD-001",
+    "runSlot": "2026-11-04-01",
+    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-GETORADD-001-parcel-locker-duplicate-allocation-under-concurrency",
     "status": "READY",
-    "createdAt": "2026-11-04T00:05:52+07:00"
+    "createdAt": "2026-11-04T01:04:10+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 459,
-    "totalGenerated": 454,
+    "totalRunSlotsAttempted": 460,
+    "totalGenerated": 455,
     "totalFailed": 5
   },
   "learning": {
