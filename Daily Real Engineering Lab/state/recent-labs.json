@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-14",
-      "unitId": "UNIT-MTTL-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MTTL-001-guest-wifi-pass-expiry-policy",
-      "domain": "mongodb-ttl-access-policy-design",
-      "primarySkill": "mongodb-ttl-vs-authorization-expiry",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "coworking-guest-wifi-access-pass",
-      "scenarioType": "expired-or-revoked-guest-pass-accepted-during-asynchronous-storage-cleanup",
-      "primaryRootCause": "authorization-equates-document-existence-with-current-validity-despite-eventual-ttl-cleanup",
-      "failureMode": "expired-or-revoked-pass-remains-accepted-until-storage-document-disappears",
-      "solutionPattern": "enforce-expiry-and-revocation-at-each-authorization-decision-while-ttl-remains-storage-housekeeping",
-      "labFormat": "security-access-lifecycle-design-decision-with-local-contract-simulator"
-    },
-    {
       "runSlot": "2026-10-30-15",
       "unitId": "UNIT-PDETAIL-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-PDETAIL-001-tree-survey-partner-error-contract",
@@ -1501,6 +1486,21 @@
       "failureMode": "unknown-shelter-status-silently-skips-review",
       "solutionPattern": "validate-defined-enum-at-ingestion-boundary",
       "labFormat": "contract-drift-refactoring-with-local-regression-harness"
+    },
+    {
+      "runSlot": "2026-11-03-21",
+      "unitId": "UNIT-READINESS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-READINESS-001-mobile-clinic-kubernetes-probe-restart-storm",
+      "domain": "kubernetes-health-probe-policy",
+      "primarySkill": "kubernetes-liveness-readiness-policy",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "mobile-clinic-appointment-gateway",
+      "scenarioType": "dependency-outage-under-rolling-restart",
+      "primaryRootCause": "liveness-coupled-to-transient-downstream-readiness",
+      "failureMode": "healthy-processes-restart-during-dependency-outage-and-lose-inflight-work",
+      "solutionPattern": "separate-process-liveness-from-traffic-readiness-with-bounded-dependency-policy",
+      "labFormat": "probe-policy-decision-simulator"
     }
   ],
   "rolling24": [
