@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-KEYNORM-001",
-    "runSlot": "2026-11-03-17",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-KEYNORM-001-community-garden-plot-import-case-collision",
+    "unitId": "UNIT-DECROUND-001",
+    "runSlot": "2026-11-03-18",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-DECROUND-001-bike-share-midpoint-settlement",
     "status": "READY",
-    "createdAt": "2026-11-03T17:13:37+07:00"
+    "createdAt": "2026-11-03T18:04:23+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 453,
-    "totalGenerated": 448,
+    "totalRunSlotsAttempted": 454,
+    "totalGenerated": 449,
     "totalFailed": 5
   },
   "learning": {

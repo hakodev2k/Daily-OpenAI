@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-11",
-      "unitId": "UNIT-MCARD-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MCARD-001-cold-chain-telemetry-metric-series-budget",
-      "domain": "observability-metric-cardinality",
-      "primarySkill": "metric-cardinality",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "regional-food-cold-chain-depot-sensor-monitoring",
-      "scenarioType": "observability-series-growth-outpaces-metric-budget",
-      "primaryRootCause": "per-sensor-and-per-request-identifiers-in-metric-label-set",
-      "failureMode": "active-series-cardinality-exceeds-tenant-metrics-budget",
-      "solutionPattern": "bounded-operational-metric-dimensions-with-event-level-forensics-separated",
-      "labFormat": "metric-cardinality-incident-investigation-with-local-policy-simulator"
-    },
-    {
       "runSlot": "2026-10-30-12",
       "unitId": "UNIT-LPROBE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-LPROBE-001-museum-ticket-kiosk-probe-boundary",
@@ -1501,6 +1486,21 @@
       "failureMode": "input-row-count-exceeds-persisted-plot-count-and-owner-is-lost",
       "solutionPattern": "explicit-business-key-comparer-with-duplicate-rejection-before-commit",
       "labFormat": "deterministic-batch-identity-contract-lab"
+    },
+    {
+      "runSlot": "2026-11-03-18",
+      "unitId": "UNIT-DECROUND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-DECROUND-001-bike-share-midpoint-settlement",
+      "domain": "csharp-decimal-financial-contract",
+      "primarySkill": "decimal-rounding",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "municipal-bike-share-fee-settlement",
+      "scenarioType": "per-trip-partner-reconciliation-disagreement",
+      "primaryRootCause": "implicit-midpoint-to-even-conflicts-with-half-away-from-zero-contract",
+      "failureMode": "midpoint-trip-charges-understated",
+      "solutionPattern": "explicit-per-trip-decimal-rounding-policy",
+      "labFormat": "financial-settlement-investigation"
     }
   ],
   "rolling24": [
