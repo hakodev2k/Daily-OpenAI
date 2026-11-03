@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+record Tick(int Minute, bool DatabaseAvailable, bool ProcessAlive = true);
+record Result(int Restarts, int Rejected, int Accepted, int LostInFlight);
+static class Program
+{
+    static Result Simulate(IEnumerable<Tick> ticks)
+    {
+        int restarts=0, rejected=0, accepted=0, lost=0;
+        int inflight=3;
+        foreach (var tick in ticks)
+        {
+            // Current operational policy: all probes use the same health verdict.
+            bool healthy=tick.ProcessAlive && tick.DatabaseAvailable;
+            bool liveness=healthy;
+            bool readiness=healthy;
+            if (!liveness) { restarts++; lost+=inflight; inflight=0; }
+            if (!readiness) rejected++; else { accepted++; inflight=3; }
+            Console.WriteLine($"minute={tick.Minute} db={tick.DatabaseAvailable} live={liveness} ready={readiness} restarts={restarts} lost={lost}");
+        }
+        return new(restarts,rejected,accepted,lost);
+    }
+    static int Main()
+    {
+        var ticks=new [] {new Tick(0,true),new Tick(1,false),new Tick(2,false),new Tick(3,true)};
+        var result=Simulate(ticks);
+        Console.WriteLine($"SUMMARY restarts={result.Restarts} rejected={result.Rejected} accepted={result.Accepted} lost={result.LostInFlight}");
+        return result.Restarts==0 && result.Rejected==2 && result.Accepted==2 && result.LostInFlight==0 ? 0 : 1;
+    }
+}
