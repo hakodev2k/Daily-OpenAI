@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-03",
-      "unitId": "UNIT-EXAGG-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-EXAGG-001-school-meal-supplier-failure-diagnostics",
-      "domain": "dotnet-task-fault-aggregation",
-      "primarySkill": "task-whenall-multi-fault-observability",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "school-meal-allergen-supplier-compliance-reports",
-      "scenarioType": "nightly-parallel-supplier-fetch-has-multiple-independent-failures",
-      "primaryRootCause": "await-whenall-exposes-one-thrown-exception-while-aggregate-faults-are-not-inspected",
-      "failureMode": "operator-dashboard-records-only-one-of-two-failed-supplier-feeds-and-classifies-cancellation-as-failure",
-      "solutionPattern": "inspect-faulted-whenall-task-aggregate-and-propagate-pure-cancellation",
-      "labFormat": "parallel-fault-diagnostics-deterministic-lab"
-    },
-    {
       "runSlot": "2026-10-30-04",
       "unitId": "UNIT-CQCLAIM-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-CQCLAIM-001-library-pickup-queue-duplicate-receipts",
@@ -1501,10 +1486,24 @@
       "failureMode": "valid-length-prefixed-sensor-frames-rejected-as-truncated-when-read-is-short",
       "solutionPattern": "exact-length-stream-read-contract-with-eof-bounds-and-cancellation-regression",
       "labFormat": "fragmented-binary-frame-decoder-refactoring-with-local-contract-harness"
+    },
+    {
+      "runSlot": "2026-11-03-08",
+      "unitId": "UNIT-MSGRETRY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-MSGRETRY-001-water-meter-alert-poison-message-fairness",
+      "domain": "messaging-failure-policy-and-fairness",
+      "primarySkill": "messaging-retry-policy",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "regional-water-meter-leak-alert-dispatch",
+      "scenarioType": "poison-gateway-recipient-blocks-independent-site-notifications",
+      "primaryRootCause": "unbounded-head-of-line-retry-without-error-classification-or-site-fairness",
+      "failureMode": "one-permanent-rejection-starves-all-independent-site-alert-deliveries",
+      "solutionPattern": "bounded-classified-delayed-retry-with-per-site-ordering-fair-scheduling-and-dead-letter",
+      "labFormat": "messaging-retry-policy-design-decision-with-deterministic-local-simulator"
     }
   ],
   "rolling24": [
-    "UNIT-DPKEY-001",
     "UNIT-LISTMUT-001",
     "UNIT-EFCTX-001",
     "UNIT-GITPKG-001",
@@ -1527,12 +1526,12 @@
     "UNIT-SEGMENT-001",
     "UNIT-ENUM-001",
     "UNIT-XXE-001",
-    "UNIT-FRAMERD-001"
+    "UNIT-FRAMERD-001",
+    "UNIT-MSGRETRY-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-data-protection-key-management": 1,
       "aspnetcore-request-body-lifecycle": 1,
       "csharp-async-shared-mutable-state": 1,
       "csharp-decimal-rounding-contract": 1,
@@ -1555,6 +1554,7 @@
       "efcore-dbcontext-concurrency": 1,
       "fleet-ota-distributed-systems-architecture": 1,
       "git-ci-artifact-integrity": 1,
+      "messaging-failure-policy-and-fairness": 1,
       "sql-outer-join-null-rejection": 1
     },
     "byDifficulty": {
@@ -1586,7 +1586,7 @@
       "hosted-worker-lifecycle-evidence-investigation": 1,
       "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
       "local-xml-import-security-incident-with-controlled-canary": 1,
-      "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness": 1,
+      "messaging-retry-policy-design-decision-with-deterministic-local-simulator": 1,
       "observability-metric-contract-refactoring-with-deterministic-meterlistener": 1,
       "one-shot-feed-evidence-driven-investigation": 1,
       "positional-feed-contract-deterministic-lab": 1,
