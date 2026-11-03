@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-05",
-      "unitId": "UNIT-OCACHE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-OCACHE-001-pool-closure-bilingual-notice-cache-variance",
-      "domain": "aspnetcore-output-caching",
-      "primarySkill": "aspnetcore-output-cache-variation-contract",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "municipal-swimming-pool-closure-notification-portal",
-      "scenarioType": "bilingual-closure-notice-switches-language-but-serves-prior-response",
-      "primaryRootCause": "output-cache-policy-does-not-vary-by-accept-language-header",
-      "failureMode": "english-visitor-receives-vietnamese-closure-notice-after-vietnamese-cache-warmup",
-      "solutionPattern": "declare-accept-language-as-output-cache-variation-dimension-with-cardinality-review",
-      "labFormat": "localized-response-cache-production-forensics"
-    },
-    {
       "runSlot": "2026-10-30-06",
       "unitId": "UNIT-TZAMB-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-TZAMB-001-night-shift-maintenance-dst-window",
@@ -1501,11 +1486,24 @@
       "failureMode": "single-map-response-mixes-two-forecast-releases",
       "solutionPattern": "immutable-release-namespace-and-validated-atomic-pointer-cutover",
       "labFormat": "multi-object-publication-architecture-simulator"
+    },
+    {
+      "runSlot": "2026-11-03-10",
+      "unitId": "UNIT-HASHKEY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-HASHKEY-001-museum-loan-registry-mutable-key-lookup",
+      "domain": "csharp-hash-collection-key-invariants",
+      "primarySkill": "dictionary-key-hash-stability",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "museum-artifact-loan-approval-registry",
+      "scenarioType": "in-memory-loan-key-correction-after-approval",
+      "primaryRootCause": "mutable-dictionary-key-hash-changes-after-insertion",
+      "failureMode": "existing-entry-unreachable-despite-positive-count",
+      "solutionPattern": "immutable-key-with-controlled-remove-reinsert",
+      "labFormat": "deterministic-hash-key-invariant-regression"
     }
   ],
   "rolling24": [
-    "UNIT-LISTMUT-001",
-    "UNIT-EFCTX-001",
     "UNIT-GITPKG-001",
     "UNIT-SQL-011",
     "UNIT-ROUND-001",
@@ -1527,7 +1525,9 @@
     "UNIT-ENUM-001",
     "UNIT-XXE-001",
     "UNIT-FRAMERD-001",
-    "UNIT-MSGRETRY-001"
+    "UNIT-MSGRETRY-001",
+    "UNIT-PUBLISH-001",
+    "UNIT-HASHKEY-001"
   ],
   "rollingProfile": {
     "windowSize": 24,
@@ -1535,11 +1535,12 @@
       "aspnetcore-request-body-lifecycle": 1,
       "csharp-async-shared-mutable-state": 1,
       "csharp-decimal-rounding-contract": 1,
+      "csharp-hash-collection-key-invariants": 1,
       "csharp-ienumerable-single-pass-consumption": 1,
-      "csharp-list-mutation-semantics": 1,
       "csharp-object-graph-snapshot-isolation": 1,
       "csharp-sortedset-comparer-identity": 1,
       "data-retention-governance-and-cross-store-consistency": 1,
+      "distributed-object-publication-consistency": 1,
       "dotnet-arraysegment-buffer-view-semantics": 1,
       "dotnet-backgroundservice-host-lifecycle": 1,
       "dotnet-file-upload-content-validation": 1,
@@ -1551,34 +1552,32 @@
       "dotnet-stream-read-framing": 1,
       "dotnet-xml-external-entity-trust-boundary": 1,
       "dotnet-zip-archive-extraction-security": 1,
-      "efcore-dbcontext-concurrency": 1,
       "fleet-ota-distributed-systems-architecture": 1,
       "git-ci-artifact-integrity": 1,
       "messaging-failure-policy-and-fairness": 1,
       "sql-outer-join-null-rejection": 1
     },
     "byDifficulty": {
-      "D3": 4,
-      "D4": 20
+      "D3": 3,
+      "D4": 21
     },
     "byMaturity": {
       "L1": 5,
-      "L2": 6,
+      "L2": 5,
       "L3": 5,
       "L4": 5,
       "L5": 2,
-      "L6": 1
+      "L6": 2
     },
     "byFormat": {
       "ci-artifact-contamination-production-forensics": 1,
       "deterministic-aspnetcore-request-body-pipeline-contract-lab": 1,
       "deterministic-async-reentrancy-evidence-investigation": 1,
       "deterministic-buffer-view-contract-lab": 1,
-      "deterministic-collection-mutation-contract-lab": 1,
       "deterministic-financial-rounding-contract-lab": 1,
+      "deterministic-hash-key-invariant-regression": 1,
       "deterministic-startup-readiness-refactoring-with-fault-propagation-contract": 1,
       "document-ingestion-evidence-led-security-incident": 1,
-      "efcore-parallel-query-evidence-investigation": 1,
       "evidence-retention-design-decision-and-incident-replay": 1,
       "filesystem-notification-gap-production-incident-with-local-reconciliation-contract": 1,
       "fleet-ota-architecture-tabletop-with-evidence-and-decision-record": 1,
@@ -1587,6 +1586,7 @@
       "http-stream-resource-ownership-investigation-with-deterministic-handler": 1,
       "local-xml-import-security-incident-with-controlled-canary": 1,
       "messaging-retry-policy-design-decision-with-deterministic-local-simulator": 1,
+      "multi-object-publication-architecture-simulator": 1,
       "observability-metric-contract-refactoring-with-deterministic-meterlistener": 1,
       "one-shot-feed-evidence-driven-investigation": 1,
       "positional-feed-contract-deterministic-lab": 1,
