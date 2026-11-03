@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ENUMJSON-001",
-    "runSlot": "2026-11-03-20",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-ENUMJSON-001-emergency-shelter-status-unknown-enum",
+    "unitId": "UNIT-READINESS-001",
+    "runSlot": "2026-11-03-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-READINESS-001-mobile-clinic-kubernetes-probe-restart-storm",
     "status": "READY",
-    "createdAt": "2026-11-03T20:09:52+07:00"
+    "createdAt": "2026-11-03T21:13:32+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 456,
-    "totalGenerated": 451,
+    "totalRunSlotsAttempted": 457,
+    "totalGenerated": 452,
     "totalFailed": 5
   },
   "learning": {
