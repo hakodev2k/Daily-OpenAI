@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SCHEMAMIG-001",
-    "runSlot": "2026-11-03-22",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SCHEMAMIG-001-regional-transit-fare-ledger-zero-downtime-schema-migration",
+    "unitId": "UNIT-OVERFLOW-001",
+    "runSlot": "2026-11-04-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-OVERFLOW-001-solar-farm-energy-counter-overflow",
     "status": "READY",
-    "createdAt": "2026-11-03T22:04:31+07:00"
+    "createdAt": "2026-11-04T00:05:52+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 458,
-    "totalGenerated": 453,
+    "totalRunSlotsAttempted": 459,
+    "totalGenerated": 454,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 57,
+    "elapsedDays": 58,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
