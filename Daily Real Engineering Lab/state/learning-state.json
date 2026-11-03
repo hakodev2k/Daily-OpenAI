@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SEMGATE-001",
-    "runSlot": "2026-11-03-11",
-    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SEMGATE-001-clinic-lab-result-cancelled-gate-release",
+    "unitId": "UNIT-ETAG-001",
+    "runSlot": "2026-11-03-12",
+    "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-ETAG-001-archive-manifest-stale-editor-overwrite",
     "status": "READY",
-    "createdAt": "2026-11-03T11:08:10+07:00"
+    "createdAt": "2026-11-03T12:04:03+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 449,
-    "totalGenerated": 444,
+    "totalRunSlotsAttempted": 450,
+    "totalGenerated": 445,
     "totalFailed": 5
   },
   "learning": {
