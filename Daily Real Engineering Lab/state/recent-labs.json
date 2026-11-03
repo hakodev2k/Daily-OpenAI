@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-18",
-      "unitId": "UNIT-JLIFE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-JLIFE-001-air-quality-json-measurement-lifetime",
-      "domain": "dotnet-json-dom-lifetime",
-      "primarySkill": "jsondocument-jsonelement-lifetime-ownership",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "city-air-quality-station-measurement-publication",
-      "scenarioType": "valid-partner-json-fails-during-deferred-measurement-projection",
-      "primaryRootCause": "jsonelement-escapes-disposed-jsondocument-ownership-scope",
-      "failureMode": "valid-air-quality-readings-fail-with-objectdisposedexception-before-publication",
-      "solutionPattern": "detach-required-json-subtree-from-document-lifetime-before-returning",
-      "labFormat": "json-dom-ownership-deterministic-reproduction"
-    },
-    {
       "runSlot": "2026-10-30-19",
       "unitId": "UNIT-STARTNEW-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-STARTNEW-001-water-treatment-report-dispatch-outer-task",
@@ -1501,6 +1486,21 @@
       "failureMode": "external-allocation-executed-twice-although-cache-has-one-entry",
       "solutionPattern": "cache-lazy-single-execution-holder-and-evict-faulted-reservations",
       "labFormat": "deterministic-concurrent-value-factory-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-04-02",
+      "unitId": "UNIT-BUFFEROWN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-BUFFEROWN-001-weather-balloon-telemetry-buffer-ownership",
+      "domain": "dotnet-memory-ownership-async",
+      "primarySkill": "async-payload-buffer-lifetime",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "high-altitude-weather-balloon-telemetry-relay",
+      "scenarioType": "overlapping-asynchronous-frame-dispatch",
+      "primaryRootCause": "mutable-shared-byte-buffer-rewritten-before-async-transport-consumes-it",
+      "failureMode": "first-telemetry-frame-replaced-by-second-without-transport-error",
+      "solutionPattern": "per-operation-immutable-payload-ownership-until-send-completion",
+      "labFormat": "deterministic-buffer-lifetime-production-incident"
     }
   ],
   "rolling24": [

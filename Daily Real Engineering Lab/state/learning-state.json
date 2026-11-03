@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-GETORADD-001",
-    "runSlot": "2026-11-04-01",
-    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-GETORADD-001-parcel-locker-duplicate-allocation-under-concurrency",
+    "unitId": "UNIT-BUFFEROWN-001",
+    "runSlot": "2026-11-04-02",
+    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-BUFFEROWN-001-weather-balloon-telemetry-buffer-ownership",
     "status": "READY",
-    "createdAt": "2026-11-04T01:04:10+07:00"
+    "createdAt": "2026-11-04T02:05:57+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 460,
-    "totalGenerated": 455,
+    "totalRunSlotsAttempted": 461,
+    "totalGenerated": 456,
     "totalFailed": 5
   },
   "learning": {
