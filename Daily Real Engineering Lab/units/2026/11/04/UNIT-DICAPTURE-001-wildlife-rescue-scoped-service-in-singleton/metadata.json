@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DICAPTURE-001",
+  "runSlot": "2026-11-04-03",
+  "title": "Thông báo ca trực cứu hộ gửi sai người nhận",
+  "domain": "dotnet-dependency-injection-lifetimes",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-04T03:04:17+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "dependency-injection",
+    "hosted-service",
+    "scope-lifetime"
+  ],
+  "prerequisites": [
+    "C# classes",
+    "Microsoft.Extensions.DependencyInjection"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-rescue-volunteer-shift-notification",
+    "scenarioType": "background-worker-cross-scope-notification-leak",
+    "primaryRootCause": "singleton-hosted-service-captures-scoped-recipient-context",
+    "failureMode": "recipient-identity-sticks-across-shifts-and-disposed-scope-is-reused",
+    "solutionPattern": "create-and-dispose-scope-per-message-with-lifetime-safe-dependency-resolution",
+    "labFormat": "dependency-injection-lifetime-refactoring-workshop"
+  }
+}

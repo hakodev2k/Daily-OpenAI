@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-BUFFEROWN-001",
-    "runSlot": "2026-11-04-02",
-    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-BUFFEROWN-001-weather-balloon-telemetry-buffer-ownership",
+    "unitId": "UNIT-DICAPTURE-001",
+    "runSlot": "2026-11-04-03",
+    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-DICAPTURE-001-wildlife-rescue-scoped-service-in-singleton",
     "status": "READY",
-    "createdAt": "2026-11-04T02:05:57+07:00"
+    "createdAt": "2026-11-04T03:04:17+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 461,
-    "totalGenerated": 456,
+    "totalRunSlotsAttempted": 462,
+    "totalGenerated": 457,
     "totalFailed": 5
   },
   "learning": {

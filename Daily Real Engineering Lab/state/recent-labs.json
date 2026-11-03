@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-19",
-      "unitId": "UNIT-STARTNEW-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-STARTNEW-001-water-treatment-report-dispatch-outer-task",
-      "domain": "dotnet-async-task-lifecycle",
-      "primarySkill": "nested-task-ownership-and-exception-propagation",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "municipal-water-treatment-compliance-report-delivery",
-      "scenarioType": "batch-dispatch-reports-success-before-remote-send-finishes-and-loses-late-fault",
-      "primaryRootCause": "task-factory-startnew-async-delegate-produces-nested-task-and-only-outer-task-is-awaited",
-      "failureMode": "premature-job-success-and-missing-partner-rejection-from-job-result",
-      "solutionPattern": "own-and-await-the-complete-async-operation-without-detached-inner-task",
-      "labFormat": "nested-task-production-investigation-with-controlled-gateway"
-    },
-    {
       "runSlot": "2026-10-30-20",
       "unitId": "UNIT-EF-018",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-EF-018-theatre-prop-reservation-tracker-drift",
@@ -1501,6 +1486,21 @@
       "failureMode": "first-telemetry-frame-replaced-by-second-without-transport-error",
       "solutionPattern": "per-operation-immutable-payload-ownership-until-send-completion",
       "labFormat": "deterministic-buffer-lifetime-production-incident"
+    },
+    {
+      "runSlot": "2026-11-04-03",
+      "unitId": "UNIT-DICAPTURE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-DICAPTURE-001-wildlife-rescue-scoped-service-in-singleton",
+      "domain": "dotnet-dependency-injection-lifetimes",
+      "primarySkill": "dependency-injection-scope-ownership",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "wildlife-rescue-volunteer-shift-notification",
+      "scenarioType": "background-worker-cross-scope-notification-leak",
+      "primaryRootCause": "singleton-hosted-service-captures-scoped-recipient-context",
+      "failureMode": "recipient-identity-sticks-across-shifts-and-disposed-scope-is-reused",
+      "solutionPattern": "create-and-dispose-scope-per-message-with-lifetime-safe-dependency-resolution",
+      "labFormat": "dependency-injection-lifetime-refactoring-workshop"
     }
   ],
   "rolling24": [
