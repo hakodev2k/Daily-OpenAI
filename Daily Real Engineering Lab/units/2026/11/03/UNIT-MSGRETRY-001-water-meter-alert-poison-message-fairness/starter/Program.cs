@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 record Alert(string Id, string Site, int Sequence, bool PermanentFailure = false, int TransientFailuresBeforeSuccess = 0);
-sealed class PermanentGatewayException(string message) : Exception(message);
-sealed class TransientGatewayException(string message) : Exception(message);
+sealed class PermanentGatewayException(string message) : Exception(message) { }
+sealed class TransientGatewayException(string message) : Exception(message) { }
 
 sealed class SimulatedGateway
 {
