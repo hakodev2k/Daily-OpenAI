@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-12",
-      "unitId": "UNIT-LPROBE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-LPROBE-001-museum-ticket-kiosk-probe-boundary",
-      "domain": "aspnetcore-health-probe-boundaries",
-      "primarySkill": "aspnetcore-healthchecks",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "national-museum-visitor-ticket-validation",
-      "scenarioType": "external-fraud-scoring-outage-causes-pod-restarts",
-      "primaryRootCause": "liveness-health-endpoint-includes-external-dependency-check",
-      "failureMode": "healthy-process-reported-dead-when-partner-is-unavailable",
-      "solutionPattern": "separate-process-liveness-from-dependency-readiness-using-health-check-tags",
-      "labFormat": "kubernetes-probe-production-incident-contract"
-    },
-    {
       "runSlot": "2026-10-30-13",
       "unitId": "UNIT-BOX-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-BOX-001-hotel-laundry-scan-counter-reconciliation",
@@ -1501,6 +1486,21 @@
       "failureMode": "midpoint-trip-charges-understated",
       "solutionPattern": "explicit-per-trip-decimal-rounding-policy",
       "labFormat": "financial-settlement-investigation"
+    },
+    {
+      "runSlot": "2026-11-03-19",
+      "unitId": "UNIT-AUTHHDR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-AUTHHDR-001-field-service-tenant-token-bleed",
+      "domain": "dotnet-httpclient-request-isolation",
+      "primarySkill": "httpclient-header-ownership",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "regional-field-service-multi-tenant-equipment-diagnostics",
+      "scenarioType": "overlapping-tenant-authenticated-partner-requests",
+      "primaryRootCause": "shared-httpclient-defaultrequestheaders-authorization-mutated-per-request",
+      "failureMode": "tenant-b-partner-call-uses-tenant-a-bearer-token-under-interleaving",
+      "solutionPattern": "immutable-per-http-request-authorization-header-with-shared-client",
+      "labFormat": "deterministic-http-header-isolation-investigation"
     }
   ],
   "rolling24": [
