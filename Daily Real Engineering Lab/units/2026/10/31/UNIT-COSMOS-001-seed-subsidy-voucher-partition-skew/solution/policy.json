@@ -1,4 +1,0 @@
-{
-  "partitionStrategy": "voucher-shard",
-  "description": "Reference policy: stable SHA256-derived voucher shard. Compare only after your own investigation."
-}

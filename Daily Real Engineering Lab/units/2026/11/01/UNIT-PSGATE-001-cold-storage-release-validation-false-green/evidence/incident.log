@@ -1,7 +1,0 @@
-# Synthetic evidence — không phải log production thật
-2026-11-01T14:42:00+07:00 release=cold-storage-reporting-2026.11.01 pipeline=quality-gate state=RUNNING
-2026-11-01T14:42:01+07:00 validator: VALIDATOR_FAIL: 2 reports violate temperature compliance contract.
-2026-11-01T14:42:01+07:00 wrapper: QUALITY_GATE_PASS: fail
-2026-11-01T14:42:01+07:00 orchestrator: child_exit_code=0
-2026-11-01T14:42:02+07:00 pipeline=quality-gate state=SUCCESS
-2026-11-01T14:42:03+07:00 release=promoted

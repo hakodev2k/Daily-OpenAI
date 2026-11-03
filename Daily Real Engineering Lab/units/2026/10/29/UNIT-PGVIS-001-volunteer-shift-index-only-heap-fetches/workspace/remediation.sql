@@ -1,3 +1,0 @@
--- Hãy viết SQL remediation tại đây.
--- verify.ps1 sẽ thực thi file này, KHÔNG sử dụng solution/reference.sql.
--- Phải giữ nguyên 5000 ID và làm cho Heap Fetches = 0.

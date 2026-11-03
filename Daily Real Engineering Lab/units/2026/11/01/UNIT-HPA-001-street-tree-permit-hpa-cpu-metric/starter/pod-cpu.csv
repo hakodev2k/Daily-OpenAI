@@ -1,5 +1,0 @@
-pod,container,usageMilliCpu
-permit-7d6c-a,permit-api,220
-permit-7d6c-a,audit-agent,25
-permit-7d6c-b,permit-api,235
-permit-7d6c-b,audit-agent,30

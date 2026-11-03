@@ -1,1 +1,0 @@
-Theo dõi vòng đời của buffer qua ba thời điểm: lúc request A kết thúc, lúc resource được tái sử dụng, và trước khi request B ghi dữ liệu mới.

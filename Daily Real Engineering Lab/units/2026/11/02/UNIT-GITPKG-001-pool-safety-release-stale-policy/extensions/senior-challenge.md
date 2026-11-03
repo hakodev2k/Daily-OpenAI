@@ -1,2 +1,0 @@
-# Senior challenge — Artifact provenance
-Một pipeline khác sinh `release/generated-rules.json` từ database migration và file này không tracked. Thiết kế cơ chế cho phép file generated hợp lệ mà vẫn chặn stale/untrusted files. Yêu cầu: pinned input revision, manifest versioned, hash, build isolation, negative tests, fail-closed khi generated file thiếu, rollback theo artifact digest và cơ chế audit provenance. So sánh clean checkout, tracked allowlist và signed build manifest theo chi phí vận hành.

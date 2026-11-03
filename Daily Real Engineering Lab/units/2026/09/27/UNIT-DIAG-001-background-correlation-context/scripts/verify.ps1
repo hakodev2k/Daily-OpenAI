@@ -1,2 +1,0 @@
-$p=Get-Content "$PSScriptRoot/../starter/ReceiptApi/Program.cs" -Raw
-if($p -match 'record Job\(string Id, string OperationId\)' -and $p -match 'new Job\(id, op\)' -and $p -match 'j\.OperationId'){Write-Host 'PASS';exit 0}; Write-Error 'FAIL: operation metadata is not propagated through the learner-editable work-item path.';exit 1

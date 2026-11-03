@@ -1,9 +1,0 @@
-{
-  "metric": "coldchain_alarm_evaluations_total",
-  "labels": [
-    "region",
-    "depot",
-    "outcome"
-  ],
-  "description": "Bounded operational metric dimensions; sensor/request evidence retained in controlled event logs."
-}

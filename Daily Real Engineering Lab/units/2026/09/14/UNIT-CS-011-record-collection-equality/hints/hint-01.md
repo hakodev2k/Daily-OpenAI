@@ -1,1 +1,0 @@
-`record` sinh equality dựa trên các member của nó. Hãy kiểm tra semantics equality của từng member thay vì chỉ nhìn vào cú pháp `record`.

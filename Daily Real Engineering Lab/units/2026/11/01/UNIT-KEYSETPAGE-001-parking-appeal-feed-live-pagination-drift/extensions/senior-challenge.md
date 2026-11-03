@@ -1,2 +1,0 @@
-# Senior challenge — thay đổi yêu cầu
-Product Owner yêu cầu bộ lọc `Status=PENDING` theo tenant, thứ tự `Priority DESC, CreatedAt DESC, Id DESC`, đồng thời cho phép chỉnh priority giữa các trang. Thiết kế cursor version, authorization binding, index và semantics cho item đổi vị trí. Nếu audit yêu cầu “mọi item tại thời điểm mở phiên đều xuất hiện đúng một lần”, so sánh keyset stateless với snapshot read model. Không được tuyên bố keyset tự cung cấp snapshot isolation.

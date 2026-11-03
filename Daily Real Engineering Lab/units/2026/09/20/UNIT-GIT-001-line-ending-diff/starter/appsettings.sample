@@ -1,5 +1,0 @@
-FeatureA=true
-FeatureB=false
-TimeoutSeconds=30
-Region=ap-southeast-1
-LogLevel=Information

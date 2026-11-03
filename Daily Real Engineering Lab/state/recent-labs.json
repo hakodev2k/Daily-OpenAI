@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-22",
-      "unitId": "UNIT-OPTS-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-OPTS-001-emergency-shelter-quota-hot-reload",
-      "domain": "dotnet-options-configuration-reload",
-      "primarySkill": "ioptionsmonitor-runtime-configuration",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "community-emergency-shelter-bed-allocation",
-      "scenarioType": "live-capacity-policy-change-not-applied-to-running-reservation-service",
-      "primaryRootCause": "singleton-service-caches-initial-ioptionsmonitor-currentvalue-across-config-reload",
-      "failureMode": "runtime-quota-reduction-not-enforced-until-service-restart",
-      "solutionPattern": "read-current-validated-options-at-reservation-decision-boundary",
-      "labFormat": "live-configuration-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-30-23",
       "unitId": "UNIT-MSET-001",
       "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MSET-001-meter-kit-multiset-stock-reconciliation",
@@ -1501,6 +1486,21 @@
       "failureMode": "recovered-system-exposes-missing-documents-and-inconsistent-dispense-records",
       "solutionPattern": "restore-point-audit-fenced-recovery-and-idempotent-cross-store-reconciliation",
       "labFormat": "disaster-recovery-tabletop-evidence-and-runbook"
+    },
+    {
+      "runSlot": "2026-11-04-06",
+      "unitId": "UNIT-UNIXMS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-UNIXMS-001-harbor-ferry-arrival-timestamp-units",
+      "domain": "dotnet-datetime-contracts",
+      "primarySkill": "datetimeoffset-epoch-unit-contract",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "harbor-ferry-arrival-display",
+      "scenarioType": "partner-feed-millisecond-epoch-ingestion",
+      "primaryRootCause": "unix-millisecond-timestamp-interpreted-as-unix-seconds",
+      "failureMode": "arrival-feed-rejected-as-out-of-range",
+      "solutionPattern": "explicit-epoch-unit-contract-and-roundtrip-regression",
+      "labFormat": "deterministic-timestamp-contract-regression"
     }
   ],
   "rolling24": {

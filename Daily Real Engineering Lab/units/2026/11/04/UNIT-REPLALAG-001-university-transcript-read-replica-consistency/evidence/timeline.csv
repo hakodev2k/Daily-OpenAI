@@ -1,7 +1,0 @@
-requestId,paymentCommitMs,downloadReadMs,primaryRevision,replicaRevisionAtRead,httpStatus,returnedRevision,notes
-A,1000,1120,12,11,200,11,stale-content
-B,2000,2180,12,12,200,12,expected
-C,3000,3150,12,10,404,,paid-not-visible
-D,4000,5400,12,11,200,11,lag-persists
-E,5000,7800,12,12,200,12,converged
-F,6000,6050,12,11,503,,primary-outage-simulated-and-download-policy-unknown

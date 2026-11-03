@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-UNIXMS-001",
+  "runSlot": "2026-11-04-06",
+  "title": "Bảng giờ phà: sai đơn vị Unix timestamp",
+  "domain": "dotnet-datetime-contracts",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-04T06:08:30+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "datetimeoffset-unix-time",
+    "api-contracts",
+    "boundary-testing"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-ferry-arrival-display",
+    "scenarioType": "partner-feed-millisecond-epoch-ingestion",
+    "primaryRootCause": "unix-millisecond-timestamp-interpreted-as-unix-seconds",
+    "failureMode": "arrival-feed-rejected-as-out-of-range",
+    "solutionPattern": "explicit-epoch-unit-contract-and-roundtrip-regression",
+    "labFormat": "deterministic-timestamp-contract-regression"
+  }
+}

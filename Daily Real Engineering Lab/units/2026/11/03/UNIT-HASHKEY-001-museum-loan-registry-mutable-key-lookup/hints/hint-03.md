@@ -1,1 +1,0 @@
-Khóa Dictionary cần giữ nguyên các thành phần tham gia hash/equality trong suốt thời gian nằm trong Dictionary. Nếu thay đổi identity, cần di chuyển entry bằng thao tác remove/add hoặc chọn khóa ổn định.
