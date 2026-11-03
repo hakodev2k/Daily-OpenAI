@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DICAPTURE-001",
-    "runSlot": "2026-11-04-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-DICAPTURE-001-wildlife-rescue-scoped-service-in-singleton",
+    "unitId": "UNIT-REPLALAG-001",
+    "runSlot": "2026-11-04-04",
+    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-REPLALAG-001-university-transcript-read-replica-consistency",
     "status": "READY",
-    "createdAt": "2026-11-04T03:04:17+07:00"
+    "createdAt": "2026-11-04T04:06:52+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 462,
-    "totalGenerated": 457,
+    "totalRunSlotsAttempted": 463,
+    "totalGenerated": 458,
     "totalFailed": 5
   },
   "learning": {
