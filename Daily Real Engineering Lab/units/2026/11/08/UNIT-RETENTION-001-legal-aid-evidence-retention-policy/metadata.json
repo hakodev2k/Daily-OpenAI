@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-RETENTION-001",
+  "runSlot": "2026-11-08-05",
+  "title": "Thiết kế vòng đời bằng chứng số: retention, legal hold và quyền xóa",
+  "domain": "cloud-object-storage-governance",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-08T05:10:40+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "object-storage-retention",
+    "data-lifecycle-governance",
+    "state-machine-design",
+    "auditability"
+  ],
+  "prerequisites": [
+    "object-storage-basics",
+    "background-jobs",
+    "data-privacy-fundamentals"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-legal-aid-case-evidence-portal",
+    "scenarioType": "retention-policy-conflict-between-closed-cases-legal-holds-and-erasure-requests",
+    "primaryRootCause": "single-global-object-expiration-rule-ignores-per-case-retention-state-and-hold-transitions",
+    "failureMode": "held-evidence-can-be-deleted-or-expired-evidence-persists-without-accountable-exception",
+    "solutionPattern": "per-object-retention-state-machine-with-hold-aware-lifecycle-and-auditable-exception-reconciliation",
+    "labFormat": "storage-governance-design-decision-tabletop-with-case-timeline"
+  }
+}
