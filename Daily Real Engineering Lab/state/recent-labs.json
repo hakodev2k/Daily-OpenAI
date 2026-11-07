@@ -1993,6 +1993,21 @@
       "failureMode": "recovered-system-exposes-missing-documents-and-inconsistent-dispense-records",
       "solutionPattern": "restore-point-audit-fenced-recovery-and-idempotent-cross-store-reconciliation",
       "labFormat": "disaster-recovery-tabletop-evidence-and-runbook"
+    },
+    {
+      "runSlot": "2026-11-08-01",
+      "unitId": "UNIT-BODYREAD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-BODYREAD-001-coastal-permit-request-body-audit",
+      "domain": "aspnetcore-request-stream-lifecycle",
+      "primarySkill": "aspnet-core-middleware",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "coastal-construction-permit-intake",
+      "scenarioType": "middleware-audit-before-request-validation",
+      "primaryRootCause": "middleware-consumes-nonrewound-request-body-stream",
+      "failureMode": "valid-json-request-is-rejected-as-empty-after-audit",
+      "solutionPattern": "enable-buffering-with-bounded-audit-and-rewind-before-next",
+      "labFormat": "aspnetcore-middleware-stream-contract-regression"
     }
   ]
 }

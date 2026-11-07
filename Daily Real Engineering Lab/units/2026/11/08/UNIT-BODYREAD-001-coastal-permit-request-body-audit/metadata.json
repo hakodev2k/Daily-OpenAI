@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-BODYREAD-001",
+  "runSlot": "2026-11-08-01",
+  "title": "Coastal permit API: request audit succeeds but validation sees empty body",
+  "domain": "aspnetcore-request-stream-lifecycle",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-08T01:11:18+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "aspnet-core-middleware",
+    "http-request-body-stream",
+    "integration-regression-testing"
+  ],
+  "prerequisites": [
+    ".NET 8 SDK",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coastal-construction-permit-intake",
+    "scenarioType": "middleware-audit-before-request-validation",
+    "primaryRootCause": "middleware-consumes-nonrewound-request-body-stream",
+    "failureMode": "valid-json-request-is-rejected-as-empty-after-audit",
+    "solutionPattern": "enable-buffering-with-bounded-audit-and-rewind-before-next",
+    "labFormat": "aspnetcore-middleware-stream-contract-regression"
+  }
+}

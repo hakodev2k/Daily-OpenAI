@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DRRESTORE-001",
-    "runSlot": "2026-11-04-05",
-    "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-DRRESTORE-001-rural-pharmacy-backup-restore-rpo-rto",
+    "unitId": "UNIT-BODYREAD-001",
+    "runSlot": "2026-11-08-01",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-BODYREAD-001-coastal-permit-request-body-audit",
     "status": "READY",
-    "createdAt": "2026-11-04T05:13:27+07:00"
+    "createdAt": "2026-11-08T01:11:18+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 464,
-    "totalGenerated": 459,
+    "totalRunSlotsAttempted": 465,
+    "totalGenerated": 460,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 58,
+    "elapsedDays": 62,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
