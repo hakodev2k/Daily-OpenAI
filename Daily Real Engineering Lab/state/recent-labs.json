@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-31-00",
-      "unitId": "UNIT-DISP-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-DISP-001-coastal-vessel-archive-dual-failure",
-      "domain": "dotnet-async-resource-exception-provenance",
-      "primarySkill": "async-disposal-primary-error-preservation",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "coastal-vessel-inspection-archive-export",
-      "scenarioType": "archive-upload-and-resource-finalization-fail-in-same-attempt",
-      "primaryRootCause": "await-using-disposeasync-fault-masks-prior-body-exception",
-      "failureMode": "operator-sees-finalization-error-but-original-upload-rejection-is-lost",
-      "solutionPattern": "preserve-primary-and-cleanup-faults-as-ordered-aggregate-with-stack-provenance",
-      "labFormat": "dual-fault-resource-lifecycle-investigation"
-    },
-    {
       "runSlot": "2026-10-31-01",
       "unitId": "UNIT-COOKIE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-COOKIE-001-aquarium-member-profile-session-isolation",
@@ -1501,6 +1486,21 @@
       "failureMode": "old-shift-receives-new-alert-and-current-alert-count-grows",
       "solutionPattern": "explicit-event-handler-ownership-and-unsubscribe-on-shift-transition",
       "labFormat": "production-incident-event-lifecycle-investigation"
+    },
+    {
+      "runSlot": "2026-11-08-04",
+      "unitId": "UNIT-EFBULK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-EFBULK-001-museum-ticket-bulk-price-tracked-state",
+      "domain": "ef-core-change-tracking",
+      "primarySkill": "ef-core-executeupdate-tracker-consistency",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "museum-ticket-holiday-pricing",
+      "scenarioType": "same-request-bulk-write-and-tracked-read",
+      "primaryRootCause": "executeupdate-bypasses-ef-core-change-tracker-snapshot",
+      "failureMode": "successful-bulk-write-returns-stale-tracked-price",
+      "solutionPattern": "targeted-entity-reload-after-bulk-write-preserving-unrelated-pending-changes",
+      "labFormat": "ef-core-bulk-write-refactoring-with-relational-regression"
     }
   ],
   "rolling24": {
