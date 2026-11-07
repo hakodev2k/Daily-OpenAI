@@ -1,0 +1,65 @@
+{
+  "unitId": "UNIT-RESPSTR-001",
+  "runSlot": "2026-11-02-20",
+  "title": "Export CSV báo 200 OK nhưng đọc dữ liệu thất bại",
+  "domain": "dotnet-http-response-stream-ownership",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-02T20:20:14+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "httpclient-response-stream-lifetime",
+    "stream-ownership",
+    "http-failure-path-testing",
+    "async-disposal"
+  ],
+  "primarySkill": "httpclient-response-stream-lifetime",
+  "prerequisites": [
+    "C# using / IDisposable",
+    "HttpClient",
+    "Task and Stream"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Static consistency review only; .NET SDK and PowerShell were not executed in this run.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "canal-gate-water-level-csv-export",
+    "scenarioType": "successful-http-headers-followed-by-payload-read-failure",
+    "primaryRootCause": "httpresponsemessage-disposed-before-returned-content-stream-consumption",
+    "failureMode": "objectdisposedexception-on-first-csv-stream-read-after-http-200",
+    "solutionPattern": "response-owned-stream-disposal-transfer-with-failure-path-cleanup",
+    "labFormat": "http-stream-resource-ownership-investigation-with-deterministic-handler"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/Probe.csproj",
+    "harness/Program.cs",
+    "harness/TrackingHandler.cs",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/ExportClient.cs",
+    "solution/README.md",
+    "solution/SolutionProbe.csproj",
+    "starter/ExportClient.cs",
+    "workspace/my-investigation.md"
+  ]
+}

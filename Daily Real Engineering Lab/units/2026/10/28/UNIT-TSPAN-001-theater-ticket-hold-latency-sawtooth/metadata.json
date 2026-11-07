@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-TSPAN-001",
+  "runSlot": "2026-10-28-13",
+  "title": "Ticket hold chậm nhưng cảnh báo SLA lúc có lúc không",
+  "domain": "dotnet-timespan-semantics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-28T13:06:06+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "timespan-component-vs-total-duration",
+    "sla-boundary-comparison",
+    "deterministic-regression-testing",
+    "incident-evidence-triage"
+  ],
+  "primarySkill": "timespan-component-vs-total-duration",
+  "prerequisites": [
+    "C# TimeSpan basics",
+    ".NET SDK 8+",
+    "PowerShell basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-theater-ticket-hold-partner-gateway",
+    "scenarioType": "slow-partner-acknowledgements-are-inconsistently-classified",
+    "primaryRootCause": "timespan-milliseconds-component-used-instead-of-full-duration",
+    "failureMode": "latency-breach-classification-repeats-a-one-second-sawtooth",
+    "solutionPattern": "compare-complete-timespan-values-and-preserve-strict-sla-boundary",
+    "labFormat": "latency-telemetry-sawtooth-investigation"
+  }
+}

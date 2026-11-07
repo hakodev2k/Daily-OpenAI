@@ -1,0 +1,65 @@
+{
+  "unitId": "UNIT-PUBLISH-001",
+  "runSlot": "2026-11-03-09",
+  "title": "Forest Fire Risk Map: Bản đồ ghép nhầm hai phiên bản",
+  "domain": "distributed-object-publication-consistency",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-03T09:09:42+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "multi-object-release-atomicity",
+    "immutable-artifact-publication",
+    "reader-snapshot-consistency",
+    "concurrent-publisher-fencing"
+  ],
+  "prerequisites": [
+    "dotnet-collections",
+    "object-storage-basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review; GitHub connector cannot execute dotnet or PowerShell.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-forest-fire-risk-map-publication",
+    "scenarioType": "multi-tile-risk-map-published-while-readers-serve-old-release",
+    "primaryRootCause": "mutable-shared-object-keys-expose-partially-published-release",
+    "failureMode": "single-map-response-mixes-two-forecast-releases",
+    "solutionPattern": "immutable-release-namespace-and-validated-atomic-pointer-cutover",
+    "labFormat": "multi-object-publication-architecture-simulator"
+  },
+  "fileManifest": [
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/README.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/global.json",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/starter/FireMap.csproj",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/starter/Program.cs",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/solution/FireMap.csproj",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/solution/Program.cs",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/setup.ps1",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/run.ps1",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/reproduce.ps1",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/verify.ps1",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/docs/prerequisite.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/docs/scenario.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/docs/investigation-guide.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/docs/concepts-after-lab.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/docs/references.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/evidence/incident-timeline.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/expected-results/before.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/expected-results/after.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/hints/hint-01.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/hints/hint-02.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/hints/hint-03.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/workspace/my-investigation.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/extensions/senior-challenge.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/solution/README.md",
+    "Daily Real Engineering Lab/units/2026/11/03/UNIT-PUBLISH-001-forest-fire-risk-map-atomic-release/metadata.json"
+  ]
+}

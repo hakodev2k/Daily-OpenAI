@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-FSWATCH-001",
+  "runSlot": "2026-11-02-14",
+  "title": "Chứng chỉ hiệu chuẩn không đồng bộ với cổng tra cứu",
+  "domain": "dotnet-filesystem-index-consistency",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-02T14:21:34+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "filesystem-event-notification-vs-authoritative-state-reconciliation",
+    "filesystemwatcher-operational-semantics",
+    "directory-inventory-reconciliation",
+    "idempotent-index-upsert",
+    "deletion-tombstone-handling"
+  ],
+  "primarySkill": "filesystem-event-notification-vs-authoritative-state-reconciliation",
+  "prerequisites": [
+    "csharp-dictionaries",
+    "dotnet-file-io",
+    "event-driven-basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review; approved GitHub integration cannot execute dotnet or PowerShell.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "industrial-laboratory-calibration-certificate-search",
+    "scenarioType": "certificate-directory-updates-are-not-reflected-in-search-after-notification-gaps",
+    "primaryRootCause": "event-only-indexing-assumes-filesystem-notifications-are-complete-and-durable",
+    "failureMode": "modified-deleted-and-new-certificates-remain-out-of-sync-with-authoritative-files",
+    "solutionPattern": "periodic-directory-reconciliation-with-idempotent-upsert-and-deletion-cleanup",
+    "labFormat": "filesystem-notification-gap-production-incident-with-local-reconciliation-contract"
+  }
+}

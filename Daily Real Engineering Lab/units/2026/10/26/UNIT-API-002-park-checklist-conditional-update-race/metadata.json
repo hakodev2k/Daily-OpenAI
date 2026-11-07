@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-API-002",
+  "runSlot": "2026-10-26-12",
+  "title": "Hai lượt chỉnh sửa bảng kiểm công viên cùng được chấp nhận",
+  "domain": "api-concurrency-contracts",
+  "primarySkill": "http-conditional-update-optimistic-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-26T12:09:03+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "http-if-match-etag",
+    "optimistic-concurrency",
+    "atomicity",
+    "csharp-task-interleaving",
+    "race-condition-testing"
+  ],
+  "prerequisites": [
+    "HTTP status codes",
+    "C# async/await",
+    "basic concurrency"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-park-maintenance-checklist",
+    "scenarioType": "two-editors-submit-conditional-updates-from-same-revision",
+    "primaryRootCause": "etag-precondition-checked-before-non-atomic-write",
+    "failureMode": "two-conflicting-writes-return-success-while-one-edit-is-lost",
+    "solutionPattern": "atomic-revision-compare-and-swap-with-precondition-failure",
+    "labFormat": "conditional-write-race-investigation"
+  },
+  "validationNotes": "Strict static consistency review only. No .NET build or execution performed by the GitHub-only publishing integration."
+}

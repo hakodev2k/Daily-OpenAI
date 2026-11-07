@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-AZURE-006",
+  "runSlot": "2026-10-07-14",
+  "title": "Managed Identity Token Cache Boundary",
+  "domain": "azure-identity",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-07T14:08:24+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "managed-identity",
+    "access-token-lifecycle",
+    "credential-caching",
+    "production-diagnostics"
+  ],
+  "prerequisites": [
+    "oauth2-access-token-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "inventory-reconciliation-worker",
+    "scenarioType": "long-lived-credential-failure",
+    "primaryRootCause": "application-caches-an-access-token-beyond-its-validity-window",
+    "failureMode": "requests-succeed-after-deploy-then-return-401-after-token-expiry",
+    "solutionPattern": "delegate-token-lifecycle-to-credential-provider-per-request-boundary",
+    "labFormat": "identity-lifecycle-investigation"
+  }
+}

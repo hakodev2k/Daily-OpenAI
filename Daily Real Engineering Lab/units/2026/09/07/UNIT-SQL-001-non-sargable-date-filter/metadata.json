@@ -1,0 +1,22 @@
+{
+  "unitId": "UNIT-SQL-001",
+  "runSlot": "2026-09-07-21",
+  "title": "Có index nhưng query vẫn scan gần như toàn bảng",
+  "domain": "sql",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-07T21:14:51+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["sql-sargability", "query-plans", "index-range-search"],
+  "prerequisites": ["sql-filtering", "basic-indexes"],
+  "validationMode": "static-review",
+  "difficulty": {"generatedLevel": "D2", "dailyBand": ["D1", "D2"], "programPhase": "foundation-depth"},
+  "novelty": {
+    "businessContext": "daily-order-reporting",
+    "scenarioType": "index-present-query-still-scans",
+    "primaryRootCause": "function-on-indexed-column-breaks-sargability",
+    "failureMode": "table-scan-latency-growth",
+    "solutionPattern": "half-open-range-predicate",
+    "labFormat": "query-plan-investigation"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-SNAPISO-001",
+  "runSlot": "2026-11-02-15",
+  "title": "Lịch sử khảo sát rừng ngập mặn tự thay đổi sau khi công bố",
+  "domain": "csharp-object-graph-snapshot-isolation",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-02T15:12:09+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "csharp-reference-semantics",
+    "mutable-object-graphs",
+    "defensive-copying",
+    "regression-testing"
+  ],
+  "primarySkill": "deep-copy-boundary-for-mutable-nested-domain-snapshots",
+  "prerequisites": [
+    "C# reference types",
+    "List<T>",
+    "LINQ basics"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Strict static consistency review; .NET and PowerShell were not executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth",
+    "elapsedDays": 56
+  },
+  "novelty": {
+    "businessContext": "mangrove-restoration-field-survey-revision-history",
+    "scenarioType": "published-survey-revisions-drift-after-field-technician-edits-and-history-reader-mutation",
+    "primaryRootCause": "shallow-copy-and-returned-reference-aliasing-of-nested-mutable-survey-readings",
+    "failureMode": "previously-published-survey-revisions-silently-change-without-a-new-publication",
+    "solutionPattern": "defensive-deep-copy-on-history-ingress-and-egress-with-independent-revision-contracts",
+    "labFormat": "snapshot-history-refactoring-with-bidirectional-aliasing-contract"
+  }
+}

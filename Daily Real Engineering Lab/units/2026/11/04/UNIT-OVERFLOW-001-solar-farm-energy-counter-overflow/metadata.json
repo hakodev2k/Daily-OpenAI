@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-OVERFLOW-001",
+  "runSlot": "2026-11-04-00",
+  "title": "Sản lượng điện âm trong báo cáo trang trại mặt trời",
+  "domain": "csharp-numeric-aggregation",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-04T00:05:52+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "csharp-integer-arithmetic",
+    "numeric-overflow",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "dotnet-cli",
+    "csharp-types"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "solar-farm-energy-inverter-daily-settlement",
+    "scenarioType": "high-volume-telemetry-aggregation",
+    "primaryRootCause": "32-bit-integer-overflow-in-unchecked-energy-sum",
+    "failureMode": "daily-energy-total-becomes-negative-despite-positive-readings",
+    "solutionPattern": "widen-accumulator-before-arithmetic-and-test-boundaries",
+    "labFormat": "deterministic-numeric-boundary-regression"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-ENUM-001",
+  "runSlot": "2026-09-25-17",
+  "title": "Deferred Enumeration Changes the Batch Snapshot",
+  "domain": "csharp-enumeration",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T17:41:00+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "linq",
+    "ienumerable",
+    "deferred-execution"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "invoice-batch-processing",
+    "scenarioType": "mutable-source-deferred-query",
+    "primaryRootCause": "deferred-enumerable-is-reexecuted-after-source-mutation",
+    "failureMode": "audit-count-and-processed-items-describe-different-logical-batches",
+    "solutionPattern": "explicit-snapshot-at-business-boundary",
+    "labFormat": "linq-temporal-semantics-investigation"
+  }
+}

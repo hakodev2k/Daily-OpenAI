@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-SET-001",
+  "runSlot": "2026-10-29-09",
+  "title": "Hàng đợi điều phối phà thiếu yêu cầu dù không có exception",
+  "domain": "dotnet-sortedset-ordering",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T09:11:18.106+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "sortedset-comparer-defines-element-uniqueness",
+    "csharp-icomparer-contract",
+    "deterministic-ordering",
+    "lossless-work-queues"
+  ],
+  "primarySkill": "sortedset-comparer-defines-element-uniqueness",
+  "prerequisites": [
+    "C# collections",
+    "IComparer<T>",
+    "SortedSet<T>"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coastal-ferry-terminal-vehicle-dispatch",
+    "scenarioType": "same-priority-arrivals-disappear-from-dispatch-view",
+    "primaryRootCause": "sortedset-comparer-returns-zero-for-distinct-jobs-with-equal-priority",
+    "failureMode": "distinct-dispatch-requests-silently-rejected-as-duplicates",
+    "solutionPattern": "total-order-comparer-with-stable-arrival-and-id-tiebreakers",
+    "labFormat": "ordered-set-contract-evidence-investigation"
+  }
+}

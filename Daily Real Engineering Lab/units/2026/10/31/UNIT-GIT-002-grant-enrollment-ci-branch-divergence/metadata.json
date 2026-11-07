@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-GIT-002",
+  "runSlot": "2026-10-31-13",
+  "title": "CI báo sai phạm vi thay đổi khi hai nhánh tách xa",
+  "domain": "git-ci-change-detection",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-31T13:10:37+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "git-merge-base-vs-endpoint-diff",
+    "ci-impacted-project-selection",
+    "powershell-regression-testing"
+  ],
+  "primarySkill": "git-merge-base-vs-endpoint-diff",
+  "prerequisites": [
+    "git-branches",
+    "git-diff",
+    "powershell-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-grant-enrollment-monorepo-ci",
+    "scenarioType": "feature-branch-change-detection-after-base-branch-advances",
+    "primaryRootCause": "two-tip-git-diff-includes-main-only-changes-in-feature-impact-set",
+    "failureMode": "ci-build-selector-triggers-unrelated-main-only-projects-and-incorrect-release-scope",
+    "solutionPattern": "merge-base-to-feature-head-change-set-with-multiple-divergence-regression-fixtures",
+    "labFormat": "git-branch-divergence-change-detection-refactoring-workshop"
+  }
+}

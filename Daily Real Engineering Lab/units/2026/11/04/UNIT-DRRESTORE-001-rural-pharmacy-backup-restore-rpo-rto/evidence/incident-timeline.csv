@@ -1,0 +1,15 @@
+time,event,detail
+09:50,db_backup_completed,full snapshot
+09:55,object_replication_checkpoint,replicated through 09:55
+10:00,db_wal_archived,WAL through 10:00
+10:04,db_wal_archived,WAL through 10:04
+10:05,queue_checkpoint,consumer offset 510
+10:06,db_transaction_committed,order P-104 on primary
+10:07,region_unreachable,primary unavailable
+10:12,incident_declared,restore begins
+10:22,db_restore_finished,DB restored through 10:04
+10:29,object_restore_finished,objects restored through 09:55
+10:37,queue_consumer_ready,offset 510
+10:42,api_health_green,health responds
+10:51,reconciliation_finished,manual review pending
+10:58,traffic_reopened,writes enabled in recovery region

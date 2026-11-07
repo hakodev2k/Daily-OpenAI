@@ -1,0 +1,58 @@
+{
+  "unitId": "UNIT-QENC-001",
+  "runSlot": "2026-10-29-00",
+  "title": "Vé cáp treo hợp lệ bị đối tác từ chối theo từng mã",
+  "domain": "http-query-component-encoding",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T00:11:46.688+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "uri-query-component-encoding",
+    "http-client-contracts",
+    "boundary-evidence",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# strings",
+    "HTTP query parameters",
+    "PowerShell and .NET 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "alpine-ski-resort-lift-pass-gate-validation",
+    "scenarioType": "selected-valid-pass-tokens-rejected-at-partner-validation-boundary",
+    "primaryRootCause": "unescaped-reserved-characters-in-opaque-token-interpreted-as-uri-query-syntax",
+    "failureMode": "partner-decoded-pass-identity-differs-from-issued-pass-and-validation-returns-rejection",
+    "solutionPattern": "encode-opaque-token-as-one-uri-query-value-with-roundtrip-regression",
+    "labFormat": "partner-token-contract-investigation"
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/PartnerClient.cs",
+    "solution/README.md",
+    "starter/LiftPassLab.csproj",
+    "starter/PartnerClient.cs",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

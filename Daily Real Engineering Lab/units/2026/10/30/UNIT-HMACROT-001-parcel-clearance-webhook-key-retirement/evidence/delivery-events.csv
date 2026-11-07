@@ -1,0 +1,12 @@
+eventId,createdAtLocal,keyId,attemptAtLocal,attemptKind,httpObserved,businessTransitions,notes
+E101,2026-10-30T08:58:00+07:00,K1,2026-10-30T08:58:10+07:00,first,200,1,normal-old-key
+E102,2026-10-30T09:05:00+07:00,K1,2026-10-30T09:06:00+07:00,first,200,1,during-migration
+E103,2026-10-30T09:08:00+07:00,K1,2026-10-30T09:08:15+07:00,first,504,0,upstream-timeout
+E103,2026-10-30T09:08:00+07:00,K1,2026-10-30T09:40:00+07:00,retry,401,0,first-successful-delivery-blocked-by-retirement
+E104,2026-10-30T09:10:00+07:00,K2,2026-10-30T09:11:00+07:00,first,200,1,new-key
+E105,2026-10-30T09:11:00+07:00,K1,2026-10-30T09:11:30+07:00,first,503,0,temporary-backend-unavailable
+E105,2026-10-30T09:11:00+07:00,K1,2026-10-31T08:50:00+07:00,retry,401,0,late-retry-preserves-original-signature
+E106,2026-10-30T09:14:00+07:00,K2,2026-10-30T09:14:20+07:00,first,200,1,valid
+E106,2026-10-30T09:14:00+07:00,K2,2026-10-30T09:16:00+07:00,retry,200,0,duplicate-ack-without-second-transition
+E107,2026-10-30T09:17:00+07:00,K2,2026-10-30T09:18:00+07:00,first,401,0,invalid-signature
+E108,2026-10-30T09:35:00+07:00,K2,2026-10-30T09:20:00+07:00,first,401,0,timestamp-15-minutes-in-future

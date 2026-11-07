@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-MONEY-001",
+  "runSlot": "2026-10-29-05",
+  "title": "Sai lệch phí đến từng cent trong đối soát marketplace",
+  "domain": "dotnet-financial-arithmetic",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T05:07:57.575+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "decimal-arithmetic",
+    "financial-rounding-boundaries",
+    "reconciliation-regression-testing"
+  ],
+  "primarySkill": "financial-rounding-boundaries",
+  "prerequisites": [
+    "C# decimal",
+    "LINQ GroupBy",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "independent-artisan-marketplace-seller-payouts",
+    "scenarioType": "seller-payout-fee-reconciliation-with-small-sales-and-refunds",
+    "primaryRootCause": "fee-rounded-after-seller-aggregate-instead-of-at-transaction-boundary",
+    "failureMode": "seller-statement-fee-differs-from-sum-of-posted-transaction-fees",
+    "solutionPattern": "per-transaction-decimal-rounding-then-seller-aggregation",
+    "labFormat": "financial-reconciliation-contract-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

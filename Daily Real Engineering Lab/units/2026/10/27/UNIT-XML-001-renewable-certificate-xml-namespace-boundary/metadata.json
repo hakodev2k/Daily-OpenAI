@@ -1,0 +1,64 @@
+{
+  "unitId": "UNIT-XML-001",
+  "runSlot": "2026-10-27-07",
+  "title": "Renewable Certificate XML: Lô được nhận nhưng tổng năng lượng bằng 0",
+  "domain": "dotnet-xml-ingestion",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-27T07:09:06+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "linq-to-xml-expanded-names",
+    "xml-contract-version-validation",
+    "schema-scoped-ingestion",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "csharp-linq",
+    "basic-xml",
+    "dotnet-console"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review; no dotnet build or execution was performed in this GitHub-only run.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "renewable-energy-certificate-reconciliation",
+    "scenarioType": "partner-xml-batch-import-reports-zero-energy-without-parse-error",
+    "primaryRootCause": "xml-expanded-name-and-parent-path-mismatch-in-namespaced-feed",
+    "failureMode": "valid-meter-readings-silently-omitted-while-batch-is-marked-accepted",
+    "solutionPattern": "namespace-aware-schema-scoped-element-selection-and-root-contract-validation",
+    "labFormat": "xml-schema-boundary-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "evidence/incident-notes.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/CertificateImporter.cs",
+    "solution/README.md",
+    "starter/CertificateLab/CertificateImporter.cs",
+    "starter/CertificateLab/CertificateLab.csproj",
+    "starter/CertificateLab/Fixtures.cs",
+    "starter/CertificateLab/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

@@ -1,0 +1,1 @@
+Giữ riêng hai khái niệm `is present` và `value`. Bạn có thể dùng một wrapper tri-state, custom converter hoặc kiểm tra property presence trên JSON tree trước khi apply patch.

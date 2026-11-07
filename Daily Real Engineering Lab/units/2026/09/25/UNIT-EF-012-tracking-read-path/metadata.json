@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-EF-012",
+  "runSlot": "2026-09-25-12",
+  "title": "Tracking Overhead in Read-Only Query Path",
+  "domain": "ef-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T12:08:53+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "ef-core-change-tracking",
+    "read-query-performance"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "operations-dashboard",
+    "scenarioType": "read-path-memory-investigation",
+    "primaryRootCause": "read-only-query-retains-entity-tracking-state-for-large-result-set",
+    "failureMode": "read-request-allocates-and-retains-unnecessary-tracking-state",
+    "solutionPattern": "explicit-read-only-query-tracking-policy",
+    "labFormat": "ef-core-state-management-investigation"
+  }
+}

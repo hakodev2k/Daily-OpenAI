@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-AUTH-002",
+  "runSlot": "2026-09-25-00",
+  "title": "JWT validation after signing-key rotation",
+  "domain": "authentication-oidc",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T00:06:20+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "jwt-validation",
+    "oidc-metadata",
+    "signing-key-rotation",
+    "cache-lifecycle"
+  ],
+  "prerequisites": [
+    "basic-jwt",
+    "basic-oidc"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "internal-partner-api",
+    "scenarioType": "identity-provider-key-rotation",
+    "primaryRootCause": "validator-signing-key-cache-does-not-refresh-when-a-new-token-kid-is-unknown",
+    "failureMode": "newly-signed-valid-tokens-are-rejected-after-key-rotation-until-process-restart",
+    "solutionPattern": "bounded-refresh-on-unknown-key-with-single-retry-and-normal-metadata-refresh-policy",
+    "labFormat": "authentication-lifecycle-investigation"
+  }
+}

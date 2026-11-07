@@ -1,0 +1,11 @@
+{
+  "metric": "coldchain_alarm_evaluations_total",
+  "labels": [
+    "region",
+    "depot",
+    "sensor_id",
+    "outcome",
+    "request_id"
+  ],
+  "description": "Current telemetry projection for alarm evaluation events."
+}

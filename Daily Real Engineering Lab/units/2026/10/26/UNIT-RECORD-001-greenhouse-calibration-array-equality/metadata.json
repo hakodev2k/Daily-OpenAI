@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-RECORD-001",
+  "runSlot": "2026-10-26-11",
+  "title": "Nhà kính liên tục nhận lại cấu hình tưới không thay đổi",
+  "domain": "csharp-record-value-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-26T11:05:54+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "csharp-record-equality",
+    "array-value-semantics",
+    "defensive-copy",
+    "state-reconciliation-testing"
+  ],
+  "prerequisites": [
+    "csharp-record-basics",
+    "arrays-and-dictionaries"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "smart-greenhouse-irrigation-calibration",
+    "scenarioType": "unchanged-config-polls-cause-repeated-controller-writes",
+    "primaryRootCause": "record-generated-equality-compares-array-property-by-reference-not-elements",
+    "failureMode": "unchanged-calibration-snapshots-trigger-redundant-device-config-pushes-and-mutated-input-can-mask-real-change",
+    "solutionPattern": "structural-array-comparison-plus-defensive-cached-snapshot",
+    "labFormat": "record-nested-array-equality-deterministic-failure"
+  }
+}

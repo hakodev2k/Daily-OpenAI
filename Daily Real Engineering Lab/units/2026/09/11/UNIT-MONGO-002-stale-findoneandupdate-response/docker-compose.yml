@@ -1,0 +1,6 @@
+services:
+  mongo:
+    image: mongo:7.0.14
+    ports:
+      - "27018:27017"
+    command: ["mongod", "--bind_ip_all", "--quiet"]

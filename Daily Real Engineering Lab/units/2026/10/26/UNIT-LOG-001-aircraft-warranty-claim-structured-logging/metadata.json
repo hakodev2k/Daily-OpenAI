@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-LOG-001",
+  "runSlot": "2026-10-26-21",
+  "title": "Bảo hành linh kiện: log đọc được nhưng mất thuộc tính truy vấn",
+  "domain": "dotnet-structured-logging",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-26T21:24:17.674+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "microsoft-extensions-logging",
+    "structured-logging",
+    "incident-investigation",
+    "log-schema-contracts"
+  ],
+  "primarySkill": "ilogger-message-template-structured-state",
+  "prerequisites": [
+    "C#",
+    "ILogger",
+    "PowerShell",
+    ".NET SDK 8+"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "aviation-spare-parts-warranty-claims",
+    "scenarioType": "incident-triage-cannot-filter-claim-logs-by-part-number",
+    "primaryRootCause": "interpolated-logging-message-is-rendered-before-structured-state-capture",
+    "failureMode": "human-readable-warning-present-but-structured-claim-and-part-fields-absent",
+    "solutionPattern": "parameterized-message-template-preserves-named-structured-properties",
+    "labFormat": "structured-logging-evidence-production-incident"
+  }
+}

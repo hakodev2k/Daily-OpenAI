@@ -1,0 +1,58 @@
+{
+  "unitId": "UNIT-FDROP-001",
+  "runSlot": "2026-10-29-01",
+  "title": "Hồ sơ hiệu chuẩn đã có trên đĩa nhưng biến mất khỏi sổ kiểm định",
+  "domain": "filesystem-ingestion-reliability",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T01:07:27+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "filesystemwatcher-event-delivery-contract",
+    "directory-reconciliation",
+    "idempotent-file-ingestion",
+    "failure-path-regression"
+  ],
+  "prerequisites": [
+    "C# và .NET 8",
+    "File I/O cơ bản",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "cold-room-calibration-certificate-import",
+    "scenarioType": "completed-calibration-files-not-all-visible-in-shift-close-register",
+    "primaryRootCause": "filesystem-event-notifications-treated-as-complete-durable-ingestion-source",
+    "failureMode": "valid-certificate-remains-on-disk-but-is-never-accepted-after-missed-notification",
+    "solutionPattern": "periodic-directory-inventory-reconciliation-with-idempotent-acceptance",
+    "labFormat": "deterministic-file-drop-reliability-investigation"
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/CertificateIntake.cs",
+    "solution/README.md",
+    "starter/CertificateDropLab.csproj",
+    "starter/CertificateIntake.cs",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

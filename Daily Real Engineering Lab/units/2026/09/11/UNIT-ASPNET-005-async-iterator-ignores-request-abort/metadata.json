@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ASPNET-005",
+  "runSlot": "2026-09-11-19",
+  "title": "Client đã ngắt kết nối nhưng producer vẫn giữ tài nguyên",
+  "domain": "aspnet-core",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-11T19:10:00+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "aspnet-core-request-abort",
+    "async-iterators",
+    "cancellation",
+    "resource-lifetime",
+    "production-troubleshooting"
+  ],
+  "prerequisites": [
+    "async-await fundamentals",
+    "CancellationToken basics",
+    "IAsyncEnumerable basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "audit-export-streaming-api",
+    "scenarioType": "client-abort-resource-retention",
+    "primaryRootCause": "async-iterator-consumer-cancellation-not-bound-to-iterator-token",
+    "failureMode": "canceled-stream-producer-continues-and-holds-limited-resource",
+    "solutionPattern": "bind-enumerator-cancellation-and-propagate-token-through-producer",
+    "labFormat": "aspnet-streaming-production-incident"
+  }
+}

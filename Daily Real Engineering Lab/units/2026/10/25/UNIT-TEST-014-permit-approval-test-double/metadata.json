@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-TEST-014",
+  "runSlot": "2026-10-25-18",
+  "title": "Permit Approval: Green Tests, Missing Production State",
+  "domain": "testing-persistence-contracts",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-25T18:07:37+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "test-double-behavioral-fidelity",
+    "repository-persistence-boundary",
+    "regression-test-design",
+    "csharp-reference-semantics"
+  ],
+  "prerequisites": [
+    "C# classes and interfaces",
+    "async/await",
+    "repository abstraction and test doubles"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-building-permit-approval",
+    "scenarioType": "green-unit-tests-but-status-reverts-after-production-reload",
+    "primaryRootCause": "in-memory-test-double-exposes-shared-entity-reference-while-production-repository-returns-detached-snapshot",
+    "failureMode": "approval-command-reports-success-but-persisted-permit-remains-pending",
+    "solutionPattern": "enforce-explicit-save-boundary-and-test-against-detached-persistence-semantics",
+    "labFormat": "persistence-test-double-contract-investigation"
+  }
+}

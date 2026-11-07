@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-SER-002",
+  "runSlot": "2026-10-25-01",
+  "title": "Audit phê duyệt mất dữ liệu khi lưu JSON",
+  "domain": "serialization",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-25T01:10:13+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "system-text-json-polymorphism",
+    "event-replay",
+    "wire-contracts",
+    "schema-compatibility"
+  ],
+  "primarySkill": "system-text-json-polymorphism",
+  "prerequisites": [
+    "C# inheritance",
+    ".NET 8 SDK",
+    "System.Text.Json basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Static consistency review of .NET 8 project references, deterministic starter symptom, reference polymorphic registry, learner-editable verification path and scripts. GitHub integration only; code was not executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "compliance-document-approval-audit",
+    "scenarioType": "heterogeneous-approval-events-persisted-as-base-contract",
+    "primaryRootCause": "base-type-json-serialization-omits-derived-event-fields",
+    "failureMode": "persisted-audit-events-lose-subtype-fields-and-cannot-be-replayed",
+    "solutionPattern": "explicit-discriminator-polymorphic-wire-contract",
+    "labFormat": "serialization-replay-contract-investigation"
+  }
+}

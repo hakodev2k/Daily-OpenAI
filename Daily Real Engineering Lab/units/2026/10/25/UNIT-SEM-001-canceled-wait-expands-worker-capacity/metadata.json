@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-SEM-001",
+  "runSlot": "2026-10-25-23",
+  "title": "GIS Tile Export: Cancellation Breaks the Worker Limit",
+  "domain": "dotnet-concurrency-capacity",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-25T23:16:04.457+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "semaphore-permit-ownership",
+    "async-cancellation",
+    "bounded-concurrency",
+    "deterministic-concurrency-testing"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "CancellationToken",
+    "TaskCompletionSource",
+    "SemaphoreSlim basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-gis-map-tile-export",
+    "scenarioType": "cancelled-queued-work-during-single-worker-tile-render",
+    "primaryRootCause": "semaphore-release-executes-after-cancelled-wait-that-never-acquired-a-permit",
+    "failureMode": "more-than-configured-concurrent-renderers-after-client-aborts-queued-request",
+    "solutionPattern": "release-semaphore-only-after-successful-acquisition",
+    "labFormat": "cancellation-capacity-contract-incident"
+  }
+}

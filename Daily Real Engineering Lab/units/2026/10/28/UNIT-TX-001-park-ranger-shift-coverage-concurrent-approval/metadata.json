@@ -1,0 +1,45 @@
+{
+  "unitId": "UNIT-TX-001",
+  "runSlot": "2026-10-28-05",
+  "title": "Ca trực kiểm lâm được duyệt nghỉ đồng thời",
+  "domain": "database-concurrency-invariants",
+  "primarySkill": "cross-row-transactional-invariant-preservation",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-28T05:07:03+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "transaction-isolation",
+    "write-skew",
+    "business-invariants",
+    "concurrency",
+    "optimistic-concurrency",
+    "production-design"
+  ],
+  "prerequisites": [
+    "csharp-task-basics",
+    "sql-transactions-introduction"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "national-park-ranger-radio-desk-roster",
+    "scenarioType": "two-independent-leave-approvals-cross-a-minimum-shift-coverage-boundary",
+    "primaryRootCause": "cross-row-coverage-invariant-is-checked-on-separate-snapshots-before-independent-commits",
+    "failureMode": "both-leave-requests-succeed-and-the-shift-has-no-on-duty-ranger",
+    "solutionPattern": "atomically-enforce-shift-wide-coverage-invariant-at-authoritative-write-boundary",
+    "labFormat": "concurrency-invariant-design-decision-with-deterministic-fixture"
+  },
+  "validationNotes": "Static review of source and scripts only. No .NET compilation, runtime test, or real database isolation test was executed.",
+  "labType": "design-decision-with-executable-fixture",
+  "diversityOverride": {
+    "enabled": false
+  }
+}

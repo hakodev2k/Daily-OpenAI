@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-NPARSE-001",
+  "runSlot": "2026-10-31-07",
+  "title": "Paper Mill Gauge Import: Cross-Locale Decimal Contract",
+  "domain": "dotnet-globalization-numeric-wire-format",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-31T07:10:44+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "invariant-numeric-wire-parsing",
+    "decimal",
+    "numberstyles",
+    "cultureinfo",
+    "cross-locale-contract-tests"
+  ],
+  "prerequisites": [
+    "csharp-exceptions",
+    "decimal",
+    "basic-delimited-record-parsing"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-paper-mill-roll-thickness-quality-control",
+    "scenarioType": "same-invariant-gauge-file-imported-on-workstations-with-different-cultures",
+    "primaryRootCause": "currentculture-numberstyles-number-parses-invariant-dot-decimals-as-localized-grouping-or-rejects-them",
+    "failureMode": "cross-site-quality-control-reports-disagree-by-orders-of-magnitude-or-fail-to-import",
+    "solutionPattern": "strict-invariant-wire-decimal-parser-with-no-grouping-and-cross-culture-regression-contract",
+    "labFormat": "cross-locale-numeric-wire-contract-investigation"
+  }
+}

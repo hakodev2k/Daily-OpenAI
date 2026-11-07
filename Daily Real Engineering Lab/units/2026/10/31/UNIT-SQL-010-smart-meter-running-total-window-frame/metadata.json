@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-SQL-010",
+  "runSlot": "2026-10-31-12",
+  "title": "Smart meter: Running total nhảy trước thời điểm ghi nhận",
+  "domain": "sql-window-analytics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-31T12:06:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "sql-window-frame-peer-group-semantics",
+    "sql-analytic-functions",
+    "deterministic-ordering",
+    "sqlite"
+  ],
+  "prerequisites": [
+    "SELECT ORDER BY",
+    "SUM aggregate",
+    "dotnet-cli"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Reviewed SQL window semantics and code/scripts statically; .NET/NuGet execution was not available in this GitHub-only run.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "district-electricity-smart-meter-billing",
+    "scenarioType": "same-timestamp-meter-readings-show-premature-running-total-jump",
+    "primaryRootCause": "default-range-window-frame-includes-all-peer-rows-sharing-order-key",
+    "failureMode": "per-reading-running-energy-total-jumps-ahead-before-next-reading-is-processed",
+    "solutionPattern": "explicit-rows-frame-with-stable-reading-id-tiebreaker",
+    "labFormat": "deterministic-sql-running-total-contract-lab"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-K8S-001",
+  "runSlot": "2026-09-11-05",
+  "title": "Liveness Probe Dependency Restart Loop",
+  "domain": "kubernetes",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-11T05:06:39+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["kubernetes-health-probes", "aspnet-core-health-checks", "failure-isolation", "production-troubleshooting"],
+  "prerequisites": ["http-health-check-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "kubernetes-hosted-order-api",
+    "scenarioType": "dependency-outage-amplified-by-health-policy",
+    "primaryRootCause": "liveness-probe-fails-on-external-database-dependency",
+    "failureMode": "transient-database-outage-triggers-pod-restart-loop",
+    "solutionPattern": "separate-process-liveness-from-dependency-readiness",
+    "labFormat": "kubernetes-production-incident"
+  }
+}

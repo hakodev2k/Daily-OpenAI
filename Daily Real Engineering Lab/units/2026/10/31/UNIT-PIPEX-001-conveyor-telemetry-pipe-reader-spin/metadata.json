@@ -1,0 +1,59 @@
+{
+  "unitId": "UNIT-PIPEX-001",
+  "runSlot": "2026-10-31-20",
+  "title": "Telemetry băng chuyền lặp đọc frame chưa hoàn chỉnh",
+  "domain": "dotnet-system-io-pipelines",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-31T20:13:00.135+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "pipereader-consumed-examined-cursors",
+    "stream-framing",
+    "async-backpressure"
+  ],
+  "primarySkill": "pipereader-consumed-examined-cursors",
+  "prerequisites": [
+    "async-await",
+    "read-only-sequence-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "factory-conveyor-belt-telemetry-ingestion",
+    "scenarioType": "split-newline-delimited-telemetry-frame-with-delayed-tail",
+    "primaryRootCause": "pipereader-incomplete-buffer-is-marked-unexamined-and-returned-again-immediately",
+    "failureMode": "busy-read-loop-on-unchanged-partial-frame",
+    "solutionPattern": "preserve-unconsumed-prefix-and-examine-through-buffer-end",
+    "labFormat": "pipereader-framing-deterministic-contract-lab"
+  },
+  "manifest": [
+    "README.md",
+    "docs/scenario.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/FrameReader.cs",
+    "solution/README.md",
+    "starter/ConveyorTelemetry.csproj",
+    "starter/FrameReader.cs",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

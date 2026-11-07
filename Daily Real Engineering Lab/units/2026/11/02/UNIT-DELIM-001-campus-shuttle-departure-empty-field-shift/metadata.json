@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-DELIM-001",
+  "runSlot": "2026-11-02-19",
+  "title": "Campus Shuttle — Bảng giờ xuất bến bị lệch trường khi thiếu ghi chú",
+  "domain": "dotnet-positional-record-ingestion",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-02T19:04:41+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "csharp-string-split",
+    "positional-data-contract",
+    "defensive-parsing",
+    "behavioral-regression-tests"
+  ],
+  "primarySkill": "positional-delimited-record-empty-field-preservation",
+  "prerequisites": [
+    ".NET SDK 8 hoặc mới hơn",
+    "C# cơ bản và cách đọc console output"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-campus-shuttle-departure-signage",
+    "scenarioType": "vendor-departure-feed-with-empty-optional-boarding-note",
+    "primaryRootCause": "removeemptyentries-drops-empty-positional-field-in-fixed-width-pipe-record",
+    "failureMode": "destination-and-status-shift-into-wrong-display-fields-without-import-error",
+    "solutionPattern": "preserve-empty-positional-tokens-validate-exact-arity-and-required-fields",
+    "labFormat": "positional-feed-contract-deterministic-lab"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "unitId": "UNIT-GIT-001",
+  "runSlot": "2026-10-27-17",
+  "title": "Cổng cấp phép: CI không xác định được file thay đổi của PR",
+  "domain": "git-ci-diff-semantics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-27T17:09:33+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "git-shallow-clone",
+    "ci-change-detection",
+    "explicit-base-head-diff",
+    "failure-path-testing"
+  ],
+  "prerequisites": [
+    "Git CLI",
+    "PowerShell 5.1+",
+    "Git commits and branches"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review only; no Git/PowerShell execution was performed through the approved GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-building-permit-ci",
+    "scenarioType": "shallow-pr-checkout-change-gate-failure",
+    "primaryRootCause": "shallow-clone-lacks-comparison-base-commit-object",
+    "failureMode": "ci-change-detection-errors-and-targeted-tests-cannot-be-selected",
+    "solutionPattern": "explicit-base-sha-and-targeted-fetch-with-fail-closed-tree-diff",
+    "labFormat": "git-history-boundary-ci-investigation"
+  },
+  "manifest": [
+    "metadata.json",
+    "README.md",
+    "baseline/detect-changes.ps1",
+    "docs/references.md",
+    "docs/scenario.md",
+    "evidence/ci-output.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "reproduce.ps1",
+    "setup.ps1",
+    "solution/README.md",
+    "solution/detect-changes.ps1",
+    "starter/detect-changes.ps1",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

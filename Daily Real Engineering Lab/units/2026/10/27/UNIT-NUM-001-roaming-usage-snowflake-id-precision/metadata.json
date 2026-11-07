@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-NUM-001",
+  "runSlot": "2026-10-27-19",
+  "title": "Roaming Usage: Hai Snowflake Event ID bị gộp thành một",
+  "domain": "dotnet-json-numeric-identity",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-27T19:04:31+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "system-text-json",
+    "int64-number-precision",
+    "idempotent-deduplication"
+  ],
+  "primarySkill": "json-64-bit-integer-exactness",
+  "prerequisites": [
+    "C# cơ bản",
+    "dotnet CLI",
+    "JSON number và long"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "telecom-roaming-usage-clearing",
+    "scenarioType": "partner-json-ingestion-of-adjacent-64-bit-snowflake-event-identifiers",
+    "primaryRootCause": "json-64-bit-integer-identifiers-converted-through-double-before-long-deduplication",
+    "failureMode": "distinct-roaming-events-collapse-into-one-dedup-key-and-underbill-usage",
+    "solutionPattern": "parse-json-integer-directly-to-int64-and-preserve-exact-identity-through-deduplication",
+    "labFormat": "numeric-identifier-integrity-deterministic-failure"
+  }
+}

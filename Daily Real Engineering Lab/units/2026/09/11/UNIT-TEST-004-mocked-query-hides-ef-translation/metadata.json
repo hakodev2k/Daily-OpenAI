@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-TEST-004",
+  "runSlot": "2026-09-11-11",
+  "title": "Mocked Query Hides EF Translation Failure",
+  "domain": "testing",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T11:21:00+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["integration-testing", "ef-core-query-translation", "iqueryable", "sqlite"],
+  "prerequisites": ["linq-basics", "ef-core-query-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "product-search-regression",
+    "scenarioType": "test-production-provider-divergence",
+    "primaryRootCause": "linq-to-objects-test-double-does-not-exercise-relational-query-translation",
+    "failureMode": "unit-test-passes-while-relational-query-fails-at-runtime",
+    "solutionPattern": "provider-translatable-query-plus-relational-integration-test",
+    "labFormat": "testing-provider-investigation"
+  }
+}

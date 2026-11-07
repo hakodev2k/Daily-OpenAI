@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SEARCH-001",
+  "runSlot": "2026-09-10-15",
+  "title": "SQL hay Elasticsearch cho Support Case Search?",
+  "domain": "search-architecture",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-09-10T15:10:09+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "elasticsearch",
+    "sql-query-design",
+    "search-architecture",
+    "eventual-consistency",
+    "authorization-boundaries",
+    "technical-tradeoffs"
+  ],
+  "prerequisites": [
+    "sql-indexing-basics",
+    "http-api-design-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "support-case-search-portal",
+    "scenarioType": "read-path-architecture-decision",
+    "primaryRootCause": "technology-selected-before-query-and-operational-evidence",
+    "failureMode": "unnecessary-search-platform-complexity-or-unresolved-database-latency",
+    "solutionPattern": "evidence-driven-read-path-selection-with-explicit-revisit-triggers",
+    "labFormat": "search-design-decision-lab"
+  }
+}

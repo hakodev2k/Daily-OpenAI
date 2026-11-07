@@ -1,0 +1,58 @@
+{
+  "unitId": "UNIT-CDICT-001",
+  "runSlot": "2026-10-29-02",
+  "title": "Một flight corridor nhưng cơ quan cấp phép nhận hai yêu cầu",
+  "domain": "dotnet-concurrent-collections",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T02:04:35+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "concurrentdictionary-getoradd-factory-contract",
+    "concurrency-side-effect-boundaries",
+    "single-flight-in-process",
+    "idempotency-trade-offs"
+  ],
+  "prerequisites": [
+    "C#/.NET 8",
+    "Task và Thread cơ bản",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "drone-flight-corridor-permit-provisioning",
+    "scenarioType": "simultaneous-requests-for-one-flight-corridor-permit",
+    "primaryRootCause": "concurrentdictionary-getoradd-valuefactory-can-run-multiple-times-for-one-key",
+    "failureMode": "external-authority-issues-two-permits-while-cache-retains-one",
+    "solutionPattern": "single-execution-lazy-value-with-side-effect-only-after-cache-winner-selection",
+    "labFormat": "concurrent-cache-factory-investigation"
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/PermitRegistry.cs",
+    "solution/README.md",
+    "starter/PermitLab.csproj",
+    "starter/PermitRegistry.cs",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

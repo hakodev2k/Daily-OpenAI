@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-CANCEL-001",
+  "runSlot": "2026-10-25-03",
+  "title": "Cancellation Bị Mất Khi Scanner Vẫn Đang Chạy",
+  "domain": "dotnet-cancellation-lifecycle",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-25T03:16:20+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "linked-cancellation-token-lifetime",
+    "async-task-ownership",
+    "cooperative-cancellation",
+    "failure-path-regression-testing"
+  ],
+  "prerequisites": [
+    "Task và async/await cơ bản",
+    "CancellationToken và CancellationTokenSource",
+    "Phân biệt lifetime của request và downstream operation"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "insurance-claim-document-scanning",
+    "scenarioType": "request-aborted-while-external-scanner-is-in-flight",
+    "primaryRootCause": "linked-cancellation-token-source-disposed-before-returned-task-completes",
+    "failureMode": "upstream-request-or-host-cancellation-does-not-stop-pending-scanner-call",
+    "solutionPattern": "retain-linked-cancellation-source-lifetime-through-awaited-operation",
+    "labFormat": "async-cancellation-lifecycle-refactoring-workshop"
+  }
+}

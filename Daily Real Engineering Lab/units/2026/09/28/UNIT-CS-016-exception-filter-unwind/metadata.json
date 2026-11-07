@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CS-016",
+  "runSlot": "2026-09-28-04",
+  "title": "Exception Filter Before Stack Unwind",
+  "domain": "csharp",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-28T04:11:46+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "csharp-exceptions",
+    "exception-filters",
+    "stack-unwinding",
+    "finally"
+  ],
+  "prerequisites": [
+    "try-catch-finally"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "background-job-operation-lifecycle",
+    "scenarioType": "exception-handler-timeline-investigation",
+    "primaryRootCause": "exception-filter-is-evaluated-before-stack-unwind-runs-inner-finally-cleanup",
+    "failureMode": "filter-policy-observes-transient-pre-cleanup-state-and-makes-wrong-handler-decision",
+    "solutionPattern": "move-state-dependent-policy-after-unwind-or-make-filter-independent-of-cleanup-state",
+    "labFormat": "csharp-exception-semantics-investigation"
+  }
+}

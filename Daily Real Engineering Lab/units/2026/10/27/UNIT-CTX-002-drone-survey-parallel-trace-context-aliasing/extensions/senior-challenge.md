@@ -1,0 +1,2 @@
+# Senior Challenge — Correlation boundaries
+Mở rộng pipeline để mỗi tile đi qua hai nested async stages và một nhánh retry. Thiết kế correlation context chỉ đọc, truyền rõ ràng qua public API khi có thể; so sánh với ambient context ở lớp logging. Bổ sung test chạy đồng thời hai survey có tile ID trùng nhau nhưng survey ID khác nhau. Đánh giá tác động của ExecutionContext flow, allocations và khả năng debug; không dùng Thread.Sleep để tạo test race.

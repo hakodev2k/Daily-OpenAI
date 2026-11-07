@@ -1,0 +1,63 @@
+{
+  "unitId": "UNIT-OFFSYNC-001",
+  "runSlot": "2026-10-27-13",
+  "title": "Đồng bộ Work Order offline khi hai thiết bị cùng chỉnh sửa",
+  "domain": "offline-sync-consistency",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-27T13:05:59+07:00",
+  "estimatedMinutes": 80,
+  "skills": [
+    "offline-first-sync",
+    "optimistic-concurrency",
+    "idempotency",
+    "conflict-resolution",
+    "architecture-decision"
+  ],
+  "primarySkill": "offline-field-level-conflict-resolution",
+  "prerequisites": [
+    "C# records và Dictionary",
+    "optimistic concurrency cơ bản",
+    "idempotency của API"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "water-utility-field-technician-offline-work-orders",
+    "scenarioType": "multi-device-offline-concurrent-field-edits",
+    "primaryRootCause": "global-client-timestamp-last-write-wins-collapses-independent-fields-and-accepts-stale-field-edits",
+    "failureMode": "independent-note-lost-stale-status-accepted-and-retry-not-idempotent",
+    "solutionPattern": "per-field-base-revision-with-immutable-change-id-deduplication-and-explicit-conflicts",
+    "labFormat": "offline-sync-contract-design-decision-with-executable-fixture"
+  },
+  "manifest": [
+    "README.md",
+    "metadata.json",
+    "global.json",
+    "setup.ps1",
+    "run.ps1",
+    "reproduce.ps1",
+    "verify.ps1",
+    "starter/OfflineSyncLab.csproj",
+    "starter/Program.cs",
+    "starter/SyncEngine.cs",
+    "solution/SyncEngine.cs",
+    "solution/README.md",
+    "docs/scenario.md",
+    "evidence/timeline.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "expected-results/before.md",
+    "expected-results/after.md",
+    "workspace/my-investigation.md",
+    "extensions/senior-challenge.md"
+  ]
+}

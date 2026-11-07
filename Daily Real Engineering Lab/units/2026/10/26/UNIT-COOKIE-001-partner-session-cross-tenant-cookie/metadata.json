@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-COOKIE-001",
+  "runSlot": "2026-10-26-13",
+  "title": "Session của tenant A xuất hiện trong request gửi cho tenant B",
+  "domain": "http-client-session-security",
+  "primarySkill": "httpclient-cookiecontainer-isolation",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-26T13:10:04+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "httpclient-handler-lifecycle",
+    "cookiecontainer",
+    "multi-tenant-session-isolation",
+    "security-boundary-testing",
+    "aspnet-core-minimal-api"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "HTTP cookies",
+    "HttpClient",
+    "ASP.NET Core basic routing"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "GitHub-only integration: source, commands, lifecycle, HTTP response expectations and references reviewed statically; .NET restore/build/tests were not executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-procurement-partner-quote-gateway",
+    "scenarioType": "sequential-tenant-sessions-through-one-outbound-http-handler",
+    "primaryRootCause": "httpclienthandler-shares-cookiecontainer-across-tenant-security-contexts",
+    "failureMode": "tenant-a-session-cookie-forwarded-on-tenant-b-request-causing-cross-tenant-session-confusion",
+    "solutionPattern": "tenant-scoped-cookiecontainer-and-httpclient-lifecycle-isolation",
+    "labFormat": "http-cookie-isolation-production-incident"
+  }
+}

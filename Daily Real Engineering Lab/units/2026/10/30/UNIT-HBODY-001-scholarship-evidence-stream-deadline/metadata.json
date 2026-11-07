@@ -1,0 +1,66 @@
+{
+  "unitId": "UNIT-HBODY-001",
+  "runSlot": "2026-10-30-09",
+  "title": "Tải hồ sơ học bổng vượt deadline dù HTTP đã trả headers",
+  "domain": "dotnet-http-streaming-deadlines",
+  "labFormat": "http-stream-body-deadline-production-investigation",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-30T09:13:18+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "httpclient-responseheadersread",
+    "http-content-streaming",
+    "cancellationtoken-propagation",
+    "production-timeout-diagnostics"
+  ],
+  "primarySkill": "http-response-body-end-to-end-deadline",
+  "prerequisites": [
+    "async-await",
+    "http-request-response",
+    "cancellationtoken"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review only; GitHub-only execution did not run .NET restore/build or the harness. No runtime verification is claimed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-scholarship-evidence-document-ingestion",
+    "scenarioType": "partner-download-returns-headers-fast-but-stream-body-stalls",
+    "primaryRootCause": "httpclient-timeout-ends-at-headers-with-responseheadersread-and-body-read-has-no-deadline-token",
+    "failureMode": "scholarship-evidence-worker-exceeds-request-deadline-while-reading-response-body",
+    "solutionPattern": "single-linked-end-to-end-cancellation-budget-propagated-through-headers-and-body-read",
+    "labFormat": "http-stream-body-deadline-production-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "evidence/incident-summary.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/LabHarness.csproj",
+    "harness/Program.cs",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/PartnerAttachmentClient.cs",
+    "solution/README.md",
+    "starter/PartnerAttachmentClient.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

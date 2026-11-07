@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-REDIS-006",
+  "runSlot": "2026-10-31-17",
+  "title": "Máy laser cutter bị giữ chỗ sau khi tiến trình đặt lịch dừng đột ngột",
+  "domain": "redis-atomic-expiry-contract",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-31T17:09:33+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "redis-atomic-conditional-write",
+    "crash-consistency",
+    "lease-expiration",
+    "failure-injection"
+  ],
+  "primarySkill": "redis-atomic-set-nx-expiry",
+  "prerequisites": [
+    "C# async-independent control flow",
+    "Redis key and TTL concepts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth",
+    "elapsedDays": 54
+  },
+  "novelty": {
+    "businessContext": "makerspace-laser-cutter-machine-slot-holds",
+    "scenarioType": "booking-client-process-crashes-between-lease-claim-and-expiration-configuration",
+    "primaryRootCause": "two-command-conditional-key-claim-and-expiry-not-atomic-across-process-crash",
+    "failureMode": "persistent-orphaned-hold-blocks-machine-booking-beyond-lease-window",
+    "solutionPattern": "single-atomic-conditional-key-write-with-expiration",
+    "labFormat": "deterministic-client-crash-boundary-contract-lab"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

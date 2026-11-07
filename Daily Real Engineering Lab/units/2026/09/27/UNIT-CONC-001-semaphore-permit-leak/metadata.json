@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-CONC-001",
+  "runSlot": "2026-09-27-15",
+  "title": "Worker dừng tiến triển sau một số lỗi cục bộ",
+  "domain": "dotnet-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-27T15:09:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "SemaphoreSlim",
+    "async-await",
+    "resource-lifecycle",
+    "background-processing"
+  ],
+  "prerequisites": [
+    "Task",
+    "async/await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "document-thumbnail-worker",
+    "scenarioType": "bounded-concurrency-progress-loss",
+    "primaryRootCause": "semaphore-permit-is-not-returned-when-processing-throws",
+    "failureMode": "queued-work-waits-indefinitely-after-permit-leak",
+    "solutionPattern": "exception-safe-acquire-release-lifecycle",
+    "labFormat": "concurrency-progress-investigation"
+  }
+}

@@ -1,0 +1,8 @@
+$ErrorActionPreference = 'Stop'
+Write-Host 'Verify learner-editable starter code, not the reference solution.'
+Write-Host '1. Run: dotnet build ./starter/RequestBodyLab.csproj'
+Write-Host '2. Run: dotnet run --project ./starter/RequestBodyLab.csproj --no-launch-profile'
+Write-Host '3. In another terminal send:'
+Write-Host 'Invoke-WebRequest http://127.0.0.1:5081/orders -Method Post -ContentType application/json -Body ''{"orderId":"11111111-1111-1111-1111-111111111111","sku":"BOOK-42"}'''
+Write-Host 'PASS criteria: HTTP 201, response contains BOOK-42, and application console still records the audit payload.'
+Write-Host 'Also send malformed JSON and confirm it is rejected rather than accepted as a valid order.'

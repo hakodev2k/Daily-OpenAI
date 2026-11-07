@@ -1,0 +1,2 @@
+# Hint 3 — concept
+Kiểm tra redirect handling mặc định của HttpClient với 302 và phân biệt "HTTP success" với một acknowledgement nghiệp vụ có ID. Xem cách kiểm soát redirect target trước khi replay POST.

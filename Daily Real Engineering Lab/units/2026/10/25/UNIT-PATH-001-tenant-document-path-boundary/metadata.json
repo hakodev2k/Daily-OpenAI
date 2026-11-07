@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-PATH-001",
+  "runSlot": "2026-10-25-14",
+  "title": "Báo cáo tenant bị đọc nhầm qua ranh giới thư mục",
+  "domain": "dotnet-filesystem-security",
+  "primarySkill": "filesystem-path-containment",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-25T14:08:33+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "filesystem-path-containment",
+    "path-normalization",
+    "authorization-boundaries",
+    "filesystem-threat-modeling",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C#",
+    "System.IO.Path",
+    "filesystem permissions",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-compliance-document-download",
+    "scenarioType": "tenant-document-access-incident-with-sibling-directory",
+    "primaryRootCause": "string-prefix-check-treats-sibling-directory-as-child-of-authorized-root",
+    "failureMode": "authenticated-tenant-can-read-file-from-sibling-tenant-backup-directory",
+    "solutionPattern": "canonical-relative-path-boundary-validation-before-file-access",
+    "labFormat": "filesystem-authorization-incident"
+  },
+  "qualityNotes": "Static consistency review only (GitHub-only publishing): baseline and starter harness semantics, three fixture cases, PowerShell exit codes and reference fix reviewed; .NET code was not executed."
+}

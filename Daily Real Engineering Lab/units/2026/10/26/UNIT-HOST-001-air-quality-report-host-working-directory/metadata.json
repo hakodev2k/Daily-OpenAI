@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-HOST-001",
+  "runSlot": "2026-10-26-09",
+  "title": "Nightly Air-Quality Report — Deployment Launch Context",
+  "domain": "dotnet-hosting-deployment",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-26T09:15:35.926+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "application-content-paths",
+    "dotnet-process-working-directory",
+    "deployment-diagnostics",
+    "failure-path-regression-testing"
+  ],
+  "prerequisites": [
+    "dotnet-cli",
+    "powershell-basics",
+    "file-io"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "air-quality-compliance-nightly-reports",
+    "scenarioType": "same-dotnet-artifact-fails-under-scheduler-launch-context",
+    "primaryRootCause": "relative-template-path-resolves-against-launcher-working-directory",
+    "failureMode": "report-job-file-not-found-only-in-scheduled-host",
+    "solutionPattern": "anchor-packaged-template-to-application-base-directory",
+    "labFormat": "deployment-launch-context-production-incident"
+  }
+}

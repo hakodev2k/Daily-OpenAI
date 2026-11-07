@@ -1,0 +1,65 @@
+{
+  "unitId": "UNIT-OCACHE-001",
+  "runSlot": "2026-10-30-05",
+  "title": "Thông báo đóng hồ bơi hiển thị sai ngôn ngữ sau đợt tăng tải",
+  "domain": "aspnetcore-output-caching",
+  "labFormat": "localized-response-cache-production-forensics",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-30T05:07:09+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "aspnet-core",
+    "output-caching",
+    "http-content-negotiation",
+    "production-diagnostics",
+    "cache-key-design"
+  ],
+  "primarySkill": "aspnetcore-output-cache-variation-contract",
+  "prerequisites": [
+    "aspnet-core-minimal-api",
+    "http-request-headers"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of .NET 8 minimal API, output-cache policy, PowerShell scripts and expected evidence; code not executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-swimming-pool-closure-notification-portal",
+    "scenarioType": "bilingual-closure-notice-switches-language-but-serves-prior-response",
+    "primaryRootCause": "output-cache-policy-does-not-vary-by-accept-language-header",
+    "failureMode": "english-visitor-receives-vietnamese-closure-notice-after-vietnamese-cache-warmup",
+    "solutionPattern": "declare-accept-language-as-output-cache-variation-dimension-with-cardinality-review",
+    "labFormat": "localized-response-cache-production-forensics"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "evidence/incident-summary.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "scripts/probe.ps1",
+    "setup.ps1",
+    "solution/PoolNotices.csproj",
+    "solution/Program.cs",
+    "solution/README.md",
+    "starter/PoolNotices.csproj",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

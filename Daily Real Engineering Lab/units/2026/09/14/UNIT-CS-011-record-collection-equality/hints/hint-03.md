@@ -1,0 +1,1 @@
+Business identity cần structural equality cho collection. Hãy đảm bảo `Equals` và `GetHashCode` dùng cùng một rule cho ordered columns.

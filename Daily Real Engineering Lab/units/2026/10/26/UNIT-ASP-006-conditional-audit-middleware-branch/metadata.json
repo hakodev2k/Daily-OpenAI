@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-ASP-006",
+  "runSlot": "2026-10-26-01",
+  "title": "Conditional Audit Middleware Breaks Maintenance API Routes",
+  "domain": "aspnet-core-middleware",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-26T01:13:13+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "aspnet-core-middleware-branch-semantics",
+    "request-pipeline-control-flow",
+    "behavioral-regression-testing"
+  ],
+  "prerequisites": [
+    "C# async/await basics",
+    "ASP.NET Core middleware concepts",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "factory-equipment-maintenance-api",
+    "scenarioType": "conditional-audit-policy-deployment-breaks-maintenance-routes",
+    "primaryRootCause": "mapwhen-branch-does-not-rejoin-main-pipeline",
+    "failureMode": "api-routes-404-with-audit-header-while-health-remains-200",
+    "solutionPattern": "usewhen-rejoining-branch-for-conditional-audit-middleware",
+    "labFormat": "middleware-branch-deterministic-failure"
+  }
+}

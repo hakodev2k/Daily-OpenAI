@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-OBS-008",
+  "runSlot": "2026-09-28-10",
+  "title": "Metric cardinality bùng nổ",
+  "domain": "observability",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-28T10:06:21+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "metrics-cardinality",
+    "aspnet-core-routing",
+    "observability"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-order-observability",
+    "scenarioType": "telemetry-cost-and-query-degradation",
+    "primaryRootCause": "raw-request-path-with-user-identifier-is-used-as-metric-dimension",
+    "failureMode": "metric-series-count-grows-with-user-cardinality",
+    "solutionPattern": "bounded-route-template-dimensions-with-high-cardinality-context-moved-to-logs-traces",
+    "labFormat": "metrics-cardinality-investigation"
+  }
+}

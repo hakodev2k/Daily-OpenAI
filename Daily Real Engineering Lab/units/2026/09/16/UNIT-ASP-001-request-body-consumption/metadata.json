@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-ASP-001",
+  "runSlot": "2026-09-16-11",
+  "title": "Request Body Disappears After Audit Middleware",
+  "domain": "aspnet-core",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-16T11:38:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["aspnet-core-request-pipeline", "http-request-body", "middleware", "stream-semantics"],
+  "prerequisites": ["aspnet-core-middleware-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "order-audit-api",
+    "scenarioType": "request-pipeline-payload-loss",
+    "primaryRootCause": "middleware-consumes-forward-only-request-body-before-endpoint",
+    "failureMode": "audit-sees-json-but-endpoint-receives-empty-body",
+    "solutionPattern": "buffer-and-rewind-request-body-before-next-middleware",
+    "labFormat": "aspnet-core-runtime-failure"
+  }
+}

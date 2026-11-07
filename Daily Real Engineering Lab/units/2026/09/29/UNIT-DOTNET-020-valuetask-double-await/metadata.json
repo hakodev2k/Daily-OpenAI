@@ -1,0 +1,22 @@
+{
+  "unitId": "UNIT-DOTNET-020",
+  "runSlot": "2026-09-29-02",
+  "title": "Async result chỉ lỗi ở slow path",
+  "domain": "dotnet-runtime",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-29T02:07:14+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["valuetask-semantics", "async-await", "async-api-contracts"],
+  "prerequisites": ["csharp-async-await"],
+  "validationMode": "static-review",
+  "difficulty": {"generatedLevel":"D3","dailyBand":["D2","D3"],"programPhase":"foundation-to-investigation"},
+  "novelty": {
+    "businessContext":"pricing-worker-telemetry",
+    "scenarioType":"fast-path-slow-path-contract-divergence",
+    "primaryRootCause":"same-valuetask-instance-is-consumed-more-than-once",
+    "failureMode":"source-backed-slow-path-fails-on-second-consumption-while-inline-fast-path-appears-correct",
+    "solutionPattern":"consume-valuetask-once-and-reuse-materialized-result",
+    "labFormat":"async-contract-investigation"
+  }
+}

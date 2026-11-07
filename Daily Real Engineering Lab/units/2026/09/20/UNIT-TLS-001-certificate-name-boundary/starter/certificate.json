@@ -1,0 +1,6 @@
+{
+  "subject": "CN=partner-api.internal.example",
+  "dnsNames": ["partner-api.internal.example"],
+  "valid": true,
+  "trusted": true
+}

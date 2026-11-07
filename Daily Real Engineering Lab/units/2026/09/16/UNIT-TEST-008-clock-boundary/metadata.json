@@ -1,0 +1,22 @@
+{
+  "unitId": "UNIT-TEST-008",
+  "runSlot": "2026-09-16-06",
+  "title": "Test suite fails around a time boundary",
+  "domain": "testing",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-16T06:10:43+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["unit-testing", "time-dependent-code", "dependency-boundaries", "boundary-testing"],
+  "prerequisites": ["csharp", "unit-testing-basics"],
+  "validationMode": "static-review",
+  "difficulty": {"generatedLevel": "D2", "dailyBand": ["D1", "D2"], "programPhase": "foundation-depth"},
+  "novelty": {
+    "businessContext": "subscription-entitlement",
+    "scenarioType": "time-boundary-flaky-test",
+    "primaryRootCause": "business-logic-reads-ambient-clock-at-multiple-observation-points",
+    "failureMode": "boundary-test-result-depends-on-execution-timing",
+    "solutionPattern": "explicit-clock-dependency-with-single-operation-time",
+    "labFormat": "deterministic-testing-investigation"
+  }
+}

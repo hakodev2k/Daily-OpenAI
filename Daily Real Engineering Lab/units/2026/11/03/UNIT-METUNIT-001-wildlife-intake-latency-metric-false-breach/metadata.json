@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-METUNIT-001",
+  "runSlot": "2026-11-03-02",
+  "title": "Dashboard báo động độ trễ dù API cứu hộ vẫn nhanh",
+  "domain": "dotnet-observability-metrics-contract",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-03T02:05:20+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "System.Diagnostics.Metrics",
+    "histogram-unit-contract",
+    "SLO-troubleshooting",
+    "regression-testing"
+  ],
+  "primarySkill": "dotnet-histogram-unit-contract-and-slo-evidence",
+  "prerequisites": [
+    "C# TimeSpan",
+    ".NET 8 SDK",
+    "p95/SLO fundamentals"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-wildlife-rehabilitation-intake-appointment-api",
+    "scenarioType": "latency-dashboard-reports-slo-breach-while-traces-remain-fast",
+    "primaryRootCause": "histogram-records-milliseconds-despite-declared-seconds-unit",
+    "failureMode": "p95-inflated-by-1000-and-false-slo-breach",
+    "solutionPattern": "record-consistent-seconds-with-meterlistener-contract-regression",
+    "labFormat": "observability-metric-contract-refactoring-with-deterministic-meterlistener"
+  }
+}

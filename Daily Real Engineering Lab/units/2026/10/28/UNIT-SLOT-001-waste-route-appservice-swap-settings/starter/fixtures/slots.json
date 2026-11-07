@@ -1,0 +1,44 @@
+{
+  "production": {
+    "name": "production",
+    "settings": {
+      "ROUTE_DB_ENDPOINT": {
+        "value": "sql-prod.internal",
+        "slotSetting": false
+      },
+      "RELEASE_LABEL": {
+        "value": "v1",
+        "slotSetting": false
+      },
+      "FEATURE_NEW_ROUTER": {
+        "value": "false",
+        "slotSetting": false
+      },
+      "SLOT_ENVIRONMENT": {
+        "value": "production",
+        "slotSetting": true
+      }
+    }
+  },
+  "staging": {
+    "name": "staging",
+    "settings": {
+      "ROUTE_DB_ENDPOINT": {
+        "value": "sql-stage.internal",
+        "slotSetting": false
+      },
+      "RELEASE_LABEL": {
+        "value": "v2",
+        "slotSetting": false
+      },
+      "FEATURE_NEW_ROUTER": {
+        "value": "true",
+        "slotSetting": false
+      },
+      "SLOT_ENVIRONMENT": {
+        "value": "staging",
+        "slotSetting": true
+      }
+    }
+  }
+}

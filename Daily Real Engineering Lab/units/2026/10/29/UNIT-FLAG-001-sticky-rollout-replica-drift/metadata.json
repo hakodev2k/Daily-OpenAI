@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-FLAG-001",
+  "runSlot": "2026-10-29-06",
+  "title": "Beta rollout đổi nhóm khi chuyển replica",
+  "domain": "feature-flag-rollout-consistency",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-29T06:17:08.723+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "deterministic-cohort-assignment",
+    "feature-flag-rollout",
+    "multi-replica-consistency"
+  ],
+  "primarySkill": "deterministic-cohort-assignment",
+  "prerequisites": [
+    "C#",
+    "hashing",
+    "feature flag basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-water-usage-portal-beta",
+    "scenarioType": "multi-replica-progressive-rollout-cohort-drift",
+    "primaryRootCause": "instance-specific-seed-contaminates-sticky-cohort-hash",
+    "failureMode": "same-authenticated-user-switches-beta-assignment-across-replicas",
+    "solutionPattern": "versioned-canonical-identity-stable-hash-bucket-independent-of-replica",
+    "labFormat": "feature-flag-cohort-refactoring-workshop"
+  }
+}

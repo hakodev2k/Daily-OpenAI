@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-TEST-012",
+  "runSlot": "2026-09-28-03",
+  "title": "Timeout không kết thúc công việc nền",
+  "domain": "testing",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-28T03:08:07+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "failure-path-testing",
+    "async-task-lifecycle",
+    "cancellation",
+    "test-isolation"
+  ],
+  "prerequisites": [
+    "Task",
+    "async-await",
+    "CancellationToken"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "notification-adapter-integration-tests",
+    "scenarioType": "timeout-lifecycle-investigation",
+    "primaryRootCause": "timeout-wrapper-stops-waiting-without-cancelling-or-joining-the-underlying-operation",
+    "failureMode": "timed-out-test-leaves-orphan-work-that-mutates-shared-state-after-test-boundary",
+    "solutionPattern": "structured-task-ownership-with-propagated-cancellation-and-terminal-cleanup",
+    "labFormat": "failure-path-testing-investigation"
+  }
+}

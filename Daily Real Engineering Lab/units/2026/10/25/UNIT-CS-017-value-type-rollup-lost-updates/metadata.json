@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-CS-017",
+  "runSlot": "2026-10-25-00",
+  "title": "Dashboard công việc hiển thị 0 dù sự kiện đã xử lý",
+  "domain": "csharp-value-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-25T00:05:31+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "csharp-value-type-copy-semantics",
+    "dictionary-aggregation",
+    "state-invariants",
+    "regression-testing"
+  ],
+  "primarySkill": "csharp-value-type-copy-semantics",
+  "prerequisites": [
+    "C# struct và class",
+    ".NET CLI",
+    "Dictionary<TKey,TValue>"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Reviewed starter/reference project wiring, script targets, deterministic repro and learner-editable verification assertions. No .NET SDK execution; GitHub integration only.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "field-service-daily-completion-rollup",
+    "scenarioType": "batch-event-aggregation-produces-zero-dashboard-totals",
+    "primaryRootCause": "dictionary-trygetvalue-returns-a-copy-of-a-mutable-value-type-and-local-updates-are-not-persisted",
+    "failureMode": "processed-events-are-logged-but-per-technician-counters-remain-zero",
+    "solutionPattern": "explicit-write-back-of-updated-value-type-to-dictionary",
+    "labFormat": "value-type-copy-deterministic-failure"
+  }
+}

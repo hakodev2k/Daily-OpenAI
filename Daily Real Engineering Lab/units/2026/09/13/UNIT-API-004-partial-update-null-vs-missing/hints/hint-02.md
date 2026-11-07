@@ -1,0 +1,1 @@
+Một nullable CLR property chỉ biểu diễn được `value` hoặc `null`. Partial update cần thêm một trạng thái nữa: property không xuất hiện trong payload.

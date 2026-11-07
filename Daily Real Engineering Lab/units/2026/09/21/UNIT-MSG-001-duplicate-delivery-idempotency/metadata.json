@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-MSG-001",
+  "runSlot": "2026-09-21-01",
+  "title": "Duplicate Delivery at the Side-Effect Boundary",
+  "domain": "messaging",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-21T01:08:21+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["message-processing", "idempotency", "failure-path-testing"],
+  "prerequisites": ["C# basics", "at-least-once delivery concept"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "warehouse-shipment-worker",
+    "scenarioType": "message-redelivery-after-ambiguous-completion",
+    "primaryRootCause": "consumer-performs-non-idempotent-side-effect-without-durable-message-identity-guard",
+    "failureMode": "redelivered-message-creates-duplicate-shipment-record",
+    "solutionPattern": "atomic-idempotency-guard-at-side-effect-boundary",
+    "labFormat": "messaging-deterministic-failure"
+  }
+}

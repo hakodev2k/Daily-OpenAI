@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-ETIME-001",
+  "runSlot": "2026-10-28-19",
+  "title": "Lượt xe theo khung 5 phút lệch dù tổng lượt qua trạm vẫn đúng",
+  "domain": "event-time-stream-processing",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-28T19:15:20.217+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "event-time-vs-processing-time",
+    "dotnet-datetimeoffset-utc-normalization",
+    "telemetry-window-reconciliation",
+    "evidence-driven-debugging"
+  ],
+  "primarySkill": "event-time-vs-ingestion-time-windowing",
+  "prerequisites": [
+    "csharp-collections-and-linq",
+    "datetimeoffset-basics",
+    "time-window-aggregation"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "toll-plaza-vehicle-flow-telemetry",
+    "scenarioType": "late-gate-events-distort-five-minute-traffic-reconciliation",
+    "primaryRootCause": "processing-time-used-to-bucket-delayed-sensor-events",
+    "failureMode": "five-minute-net-flow-misallocated-while-total-count-remains-correct",
+    "solutionPattern": "bucket-by-utc-event-occurrence-time-with-boundary-regression-tests",
+    "labFormat": "event-time-telemetry-reconciliation-incident"
+  },
+  "validationNotes": "Strict static consistency and deterministic fixture review only; GitHub integration cannot execute dotnet. Starter and reference C# have not been runtime-tested."
+}

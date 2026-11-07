@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-ARCH-006",
+  "runSlot": "2026-09-27-16",
+  "title": "Chọn boundary cho upload file lớn",
+  "domain": "architecture",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-09-27T16:15:00+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "azure-blob-storage",
+    "api-architecture",
+    "large-file-upload",
+    "security-boundaries",
+    "failure-recovery"
+  ],
+  "prerequisites": [
+    "http-basics",
+    "blob-storage-concepts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "creator-video-portal",
+    "scenarioType": "large-object-transfer-boundary-decision",
+    "primaryRootCause": "application-server-is-unnecessarily-coupled-to-bulk-byte-transfer",
+    "failureMode": "api-capacity-and-retry-cost-scale-with-multi-gigabyte-upload-duration",
+    "solutionPattern": "separate-control-plane-from-storage-data-plane",
+    "labFormat": "architecture-design-decision"
+  }
+}

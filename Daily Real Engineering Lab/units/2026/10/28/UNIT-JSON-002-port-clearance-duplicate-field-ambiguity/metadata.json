@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-JSON-002",
+  "runSlot": "2026-10-28-02",
+  "title": "Hồ sơ thông quan đổi quyết định kiểm tra dù API vẫn xử lý thành công",
+  "domain": "api-json-contracts",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-28T02:06:56.967+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "json-duplicate-logical-property-detection",
+    "system-text-json",
+    "partner-ingress-validation",
+    "negative-path-testing"
+  ],
+  "primarySkill": "json-duplicate-logical-property-detection",
+  "prerequisites": [
+    "C# records và exceptions",
+    "System.Text.Json cơ bản",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "port-customs-clearance-declaration",
+    "scenarioType": "partner-json-payload-changes-inspection-decision-without-schema-error",
+    "primaryRootCause": "case-insensitive-json-deserializer-accepts-conflicting-logical-property-names-with-last-value-winning",
+    "failureMode": "ambiguous-declaration-silently-downgrades-mandatory-cargo-inspection",
+    "solutionPattern": "reject-duplicate-top-level-logical-property-names-before-typed-deserialization",
+    "labFormat": "partner-payload-contract-investigation"
+  }
+}

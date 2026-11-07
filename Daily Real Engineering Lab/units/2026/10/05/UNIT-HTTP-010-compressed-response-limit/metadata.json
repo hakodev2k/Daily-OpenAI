@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-HTTP-010",
+  "runSlot": "2026-10-05-23",
+  "title": "Partner export vượt giới hạn dù response header trông nhỏ",
+  "domain": "http-networking",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-05T23:08:09+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "http-content-encoding",
+    "streaming-response-bounds",
+    "memory-safety"
+  ],
+  "prerequisites": [
+    "httpclient-basics",
+    "streams"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "partner-data-export-worker",
+    "scenarioType": "compressed-response-resource-boundary",
+    "primaryRootCause": "response-size-policy-is-evaluated-on-header-metadata-while-automatic-decompression-expands-the-consumed-body",
+    "failureMode": "high-compression-ratio-response-bypasses-intended-memory-bound-and-is-fully-materialized",
+    "solutionPattern": "stream-and-enforce-a-running-limit-on-the-post-decompression-byte-boundary",
+    "labFormat": "http-resource-boundary-investigation"
+  }
+}

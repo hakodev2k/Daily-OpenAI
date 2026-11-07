@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-CACHE-003",
+  "runSlot": "2026-09-10-08",
+  "title": "Hot cache key không bao giờ nhận cấu hình mới",
+  "domain": "caching",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-10T08:11:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["cache-expiration-semantics", "sliding-expiration", "absolute-expiration", "freshness-bounds"],
+  "prerequisites": ["basic-caching"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "pricing-rule-cache",
+    "scenarioType": "hot-key-staleness",
+    "primaryRootCause": "sliding-expiration-refreshes-hot-entry-indefinitely",
+    "failureMode": "hot-tenant-never-observes-source-update",
+    "solutionPattern": "absolute-max-age-with-optional-sliding-expiration",
+    "labFormat": "cache-expiration-policy-investigation"
+  }
+}

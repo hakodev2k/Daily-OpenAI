@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-INIT-001",
+  "runSlot": "2026-10-28-00",
+  "title": "Ruleset thẩm định bảo hiểm không phục hồi sau lỗi tạm thời",
+  "domain": "dotnet-async-initialization",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-28T00:13:58+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "async-initialization-fault-recovery",
+    "task-lifecycle",
+    "single-flight-initialization",
+    "transient-failure-handling"
+  ],
+  "primarySkill": "async-initialization-fault-recovery",
+  "prerequisites": [
+    "Task<T>",
+    "exception handling",
+    "basic concurrency"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "insurance-underwriting-ruleset-evaluation",
+    "scenarioType": "transient-partner-outage-followed-by-permanent-in-process-read-failure",
+    "primaryRootCause": "faulted-task-retained-by-long-lived-lazy-async-initializer",
+    "failureMode": "all-subsequent-rule-evaluations-fail-after-partner-recovers-without-new-fetch",
+    "solutionPattern": "retry-faulted-initialization-while-preserving-single-flight-success-caching",
+    "labFormat": "async-initializer-transient-failure-deterministic-lab"
+  }
+}

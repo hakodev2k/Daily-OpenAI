@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-GIT-002",
+  "runSlot": "2026-09-25-12",
+  "title": "Release History Loses Change Grouping",
+  "domain": "git",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T12:08:53+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "git-history",
+    "release-traceability"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "release-audit-workflow",
+    "scenarioType": "history-traceability-investigation",
+    "primaryRootCause": "integration-strategy-removes-change-grouping-needed-by-release-audit",
+    "failureMode": "release-history-cannot-reliably-map-related-changes-to-one-reviewed-unit",
+    "solutionPattern": "choose-history-integration-policy-from-traceability-requirements",
+    "labFormat": "git-history-investigation"
+  }
+}

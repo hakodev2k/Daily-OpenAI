@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-DI-001",
+  "runSlot": "2026-10-29-04",
+  "title": "Bản kê phòng thi xuất lẫn dữ liệu giữa hai ca",
+  "domain": "dotnet-dependency-injection",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-29T04:10:10.191+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "dependency-injection-scope-ownership",
+    "scoped-service-lifetime",
+    "service-provider-validation",
+    "batch-isolation"
+  ],
+  "primarySkill": "dependency-injection-scope-ownership",
+  "prerequisites": [
+    "C# basics",
+    "Dependency Injection basics",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review; .NET SDK and PowerShell unavailable in generation environment; no runtime execution claimed.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-exam-seating-manifest-export",
+    "scenarioType": "sequential-batch-export-in-one-long-lived-worker",
+    "primaryRootCause": "singleton-captures-scoped-composer-resolved-from-root-container",
+    "failureMode": "later-session-manifest-includes-prior-session-rows",
+    "solutionPattern": "scope-per-export-work-item-with-strict-di-validation",
+    "labFormat": "dependency-injection-lifetime-deterministic-failure"
+  },
+  "expectedFailure": "reproduce succeeds on starter; verify fails on starter; verify succeeds after correct fix",
+  "learnerEditablePath": "starter/Program.cs"
+}

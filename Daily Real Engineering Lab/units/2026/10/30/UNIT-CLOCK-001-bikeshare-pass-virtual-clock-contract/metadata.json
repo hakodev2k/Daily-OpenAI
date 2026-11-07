@@ -1,0 +1,66 @@
+{
+  "unitId": "UNIT-CLOCK-001",
+  "runSlot": "2026-10-30-10",
+  "title": "Vé xe đạp bị từ chối trong bài kiểm thử thời gian",
+  "domain": "dotnet-timeprovider-testability",
+  "labFormat": "virtual-clock-testability-refactoring-workshop",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-30T10:14:31.683+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "timeprovider-injection",
+    "datetimeoffset-utc-expiry-contract",
+    "deterministic-temporal-testing",
+    "refactoring-for-testability"
+  ],
+  "primarySkill": "timeprovider-injected-clock-consistency",
+  "prerequisites": [
+    "csharp-dependency-injection",
+    "datetimeoffset",
+    "unit-test-assertions"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review of C# project references, six deterministic temporal assertions, scripts, starter/solution boundary and repository paths; no .NET execution because this run uses only GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "city-bikeshare-temporary-unlock-pass",
+    "scenarioType": "qa-virtual-time-replay-disagrees-with-pass-validity-decisions",
+    "primaryRootCause": "pass-validation-reads-static-system-clock-instead-of-injected-timeprovider",
+    "failureMode": "valid-future-dated-test-pass-rejected-and-expiry-boundary-cannot-be-reproduced-with-virtual-clock",
+    "solutionPattern": "use-injected-timeprovider-getutcnow-at-evaluation-boundary-with-temporal-contract-regression",
+    "labFormat": "virtual-clock-testability-refactoring-workshop"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "evidence/qa-ticket.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "harness/LabHarness.csproj",
+    "harness/Program.cs",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/PassGate.cs",
+    "solution/README.md",
+    "starter/PassGate.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

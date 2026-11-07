@@ -1,0 +1,22 @@
+{
+  "unitId": "UNIT-SQL-004",
+  "runSlot": "2026-09-10-22",
+  "title": "Inventory Transfer Concurrency Design",
+  "domain": "sql",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-09-10T22:07:49+07:00",
+  "estimatedMinutes": 60,
+  "skills": ["sql-server-concurrency", "transactions", "resource-ordering", "concurrency-design"],
+  "prerequisites": ["basic-sql-transactions"],
+  "validationMode": "static-review",
+  "difficulty": {"generatedLevel": "D2", "dailyBand": ["D1", "D2"], "programPhase": "foundation-depth"},
+  "novelty": {
+    "businessContext": "inventory-transfer-service",
+    "scenarioType": "concurrency-control-decision",
+    "primaryRootCause": "inconsistent-resource-order",
+    "failureMode": "concurrent-transaction-conflict",
+    "solutionPattern": "deterministic-resource-order",
+    "labFormat": "database-concurrency-design-decision"
+  }
+}

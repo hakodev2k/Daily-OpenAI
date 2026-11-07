@@ -1,0 +1,15 @@
+{
+  "unitId":"UNIT-ES-002",
+  "runSlot":"2026-09-15-12",
+  "title":"Bulk indexing reports success while documents are missing",
+  "domain":"elasticsearch",
+  "maturityLevel":"L2",
+  "status":"READY",
+  "createdAt":"2026-09-15T12:07:15+07:00",
+  "estimatedMinutes":45,
+  "skills":["elasticsearch-bulk-api","partial-failure-handling","json-response-analysis"],
+  "prerequisites":["http-status-semantics","json"],
+  "validationMode":"static-review",
+  "difficulty":{"generatedLevel":"D2","dailyBand":["D1","D2"],"programPhase":"foundation-depth"},
+  "novelty":{"businessContext":"catalog-search-indexing","scenarioType":"batch-partial-success","primaryRootCause":"bulk-response-top-level-transport-success-treated-as-operation-success","failureMode":"failed-documents-are-silently-counted-as-successful-batch","solutionPattern":"inspect-and-propagate-per-operation-bulk-failures","labFormat":"search-integration-investigation"}
+}

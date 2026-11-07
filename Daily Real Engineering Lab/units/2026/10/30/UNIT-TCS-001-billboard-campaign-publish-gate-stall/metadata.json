@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-TCS-001",
+  "runSlot": "2026-10-30-21",
+  "title": "Billboard campaign publish gate stall",
+  "domain": "dotnet-task-continuation-scheduling",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-30T21:12:16+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "taskcompletionsource-continuation-scheduling",
+    "semaphoreslim-critical-sections",
+    "async-deadlock-diagnostics"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "Task lifecycle",
+    "SemaphoreSlim"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "outdoor-digital-billboard-campaign-publishing",
+    "scenarioType": "publish-signal-causes-stalled-consumer-and-producer",
+    "primaryRootCause": "taskcompletionsource-inline-continuation-blocks-on-publisher-held-semaphore",
+    "failureMode": "publisher-and-subscriber-deadlock-with-zero-deliveries",
+    "solutionPattern": "schedule-continuations-asynchronously-across-critical-section",
+    "labFormat": "continuation-scheduling-production-deadlock-investigation"
+  }
+}

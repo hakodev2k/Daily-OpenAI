@@ -1,0 +1,2 @@
+# Hint 3
+Nếu `Accept-Language` quyết định body, cache policy phải phân biệt các language variant (hoặc origin/HTTP contract phải dùng một cơ chế variant tương đương). Đừng chỉ purge cache hay giảm TTL.

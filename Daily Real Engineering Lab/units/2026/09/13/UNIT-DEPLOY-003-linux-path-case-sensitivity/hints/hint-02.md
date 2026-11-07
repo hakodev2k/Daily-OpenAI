@@ -1,0 +1,1 @@
+Filesystem semantics không giống nhau giữa mọi OS. Hãy xem lookup hiện tại đang giả định điều gì về chữ hoa/chữ thường.

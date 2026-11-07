@@ -1,0 +1,22 @@
+{
+  "unitId":"UNIT-REDIS-005",
+  "runSlot":"2026-09-27-15",
+  "title":"Cache Dependency Degradation Under Partial Outage",
+  "domain":"redis-caching",
+  "maturityLevel":"L2",
+  "status":"READY",
+  "createdAt":"2026-09-27T15:19:00+07:00",
+  "estimatedMinutes":45,
+  "skills":["redis","cache-aside","failure-degradation","resilience","cancellation"],
+  "prerequisites":["cache-aside-basics","async-await-basics"],
+  "validationMode":"static-review",
+  "difficulty":{"generatedLevel":"D3","dailyBand":["D2","D3"],"programPhase":"foundation-to-investigation"},
+  "novelty":{
+    "businessContext":"cms-content-delivery-api",
+    "scenarioType":"optional-cache-partial-outage",
+    "primaryRootCause":"cache-availability-is-coupled-to-request-success-even-when-authoritative-origin-is-healthy",
+    "failureMode":"transient-cache-timeouts-propagate-as-request-failures-despite-healthy-origin",
+    "solutionPattern":"bounded-cache-failure-degradation-to-authoritative-origin",
+    "labFormat":"cache-dependency-degradation-investigation"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-BG-001",
+  "runSlot": "2026-10-15-01",
+  "title": "Background job xử lý trùng khi tải tăng",
+  "domain": "dotnet-background-jobs",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-15T01:11:49.040+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "dotnet-background-jobs",
+    "async-await",
+    "task-lifecycle",
+    "cancellation",
+    "production-diagnostics"
+  ],
+  "prerequisites": [
+    "csharp-task-basics",
+    "cancellation-token-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "partner-order-status-sync-worker",
+    "scenarioType": "slow-dependency-scheduled-batch-overlap",
+    "primaryRootCause": "timer-callback-dispatches-async-work-without-awaiting-previous-invocation",
+    "failureMode": "multiple-inflight-batches-and-unowned-shutdown-work",
+    "solutionPattern": "single-owner-awaitable-periodic-loop-with-cooperative-shutdown",
+    "labFormat": "scheduled-job-overlap-production-incident"
+  }
+}

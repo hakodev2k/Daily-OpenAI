@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-TASK-001",
+  "runSlot": "2026-09-25-21",
+  "title": "Async Callback Escapes the Caller Contract",
+  "domain": "dotnet-async",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T21:07:41+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "async-await",
+    "task",
+    "exception-propagation"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "profile-import",
+    "scenarioType": "async-callback-investigation",
+    "primaryRootCause": "async-lambda-is-converted-to-action-producing-async-void",
+    "failureMode": "caller-reports-success-before-work-completes-and-cannot-observe-later-failure",
+    "solutionPattern": "task-returning-callback-contract-awaited-by-caller",
+    "labFormat": "async-contract-investigation"
+  }
+}

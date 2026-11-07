@@ -1,0 +1,49 @@
+{
+  "unitId": "UNIT-ES-003",
+  "runSlot": "2026-10-27-09",
+  "title": "Railway Search Bulk Partial Failure",
+  "domain": "elasticsearch-bulk-ingestion",
+  "primarySkill": "elasticsearch-bulk-item-result-semantics",
+  "secondarySkills": [
+    "http-response-contracts",
+    "bounded-retry",
+    "failure-classification",
+    "search-index-operability"
+  ],
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-27T09:04:45+07:00",
+  "estimatedMinutes": 70,
+  "prerequisites": [
+    "C# async/await",
+    "HTTP status codes",
+    "JSON parsing"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of shared fake gateway, starter, reference, PowerShell semantics, and expected invariants; .NET execution not performed through GitHub connector.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "railway-timetable-search-index-synchronization",
+    "scenarioType": "nightly-bulk-index-request-returns-http-200-with-mixed-document-outcomes",
+    "primaryRootCause": "bulk-http-success-mistaken-for-success-of-every-index-action",
+    "failureMode": "transiently-rejected-and-permanently-invalid-documents-silently-disappear-from-search",
+    "solutionPattern": "inspect-per-item-bulk-status-retry-only-transient-items-and-quarantine-permanent-failures",
+    "labFormat": "search-bulk-partial-failure-production-incident"
+  },
+  "businessImpact": "Missing train routes in dispatcher search after an apparently successful nightly synchronization.",
+  "expectedArtifacts": [
+    "reproduction evidence",
+    "two hypotheses",
+    "fixed starter implementation",
+    "verification output",
+    "trade-off notes"
+  ],
+  "executable": true
+}

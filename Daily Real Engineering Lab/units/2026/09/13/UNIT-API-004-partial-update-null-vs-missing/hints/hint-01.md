@@ -1,0 +1,1 @@
+Đừng nhìn vào giá trị `Tag` trước. Hãy so sánh hai JSON input ở boundary và hỏi: thông tin nào tồn tại trên wire nhưng biến mất sau deserialization?

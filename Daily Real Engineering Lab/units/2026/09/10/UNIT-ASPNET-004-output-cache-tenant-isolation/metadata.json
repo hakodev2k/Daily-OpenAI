@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-ASPNET-004",
+  "runSlot": "2026-09-10-17",
+  "title": "Output Cache Tenant Isolation",
+  "domain": "aspnet-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-10T17:11:02+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "aspnet-core-output-caching",
+    "cache-key-design",
+    "multi-tenant-data-isolation",
+    "http-request-headers"
+  ],
+  "prerequisites": [
+    "ASP.NET Core Minimal APIs",
+    "HTTP request headers",
+    "basic caching concepts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-feature-flags-api",
+    "scenarioType": "cross-tenant-response-reuse",
+    "primaryRootCause": "output-cache-key-omits-tenant-header",
+    "failureMode": "tenant-b-receives-tenant-a-payload",
+    "solutionPattern": "vary-output-cache-by-tenant-header-or-disable-cache",
+    "labFormat": "aspnet-output-cache-isolation-investigation"
+  }
+}

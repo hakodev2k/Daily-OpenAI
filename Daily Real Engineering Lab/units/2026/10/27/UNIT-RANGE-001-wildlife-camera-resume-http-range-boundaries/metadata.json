@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-RANGE-001",
+  "runSlot": "2026-10-27-06",
+  "title": "Ảnh camera động vật bị lỗi sau khi tải từng HTTP byte range",
+  "domain": "http-partial-content",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-27T06:09:31+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "http-range-content-range-boundary-semantics",
+    "http-206-partial-content",
+    "binary-integrity-validation",
+    "failure-path-testing"
+  ],
+  "prerequisites": [
+    ".NET SDK 8.x",
+    "PowerShell 7 hoặc Windows PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-camera-image-archive",
+    "scenarioType": "parallelized-range-download-reassembled-into-corrupted-camera-image",
+    "primaryRootCause": "http-byte-range-last-position-is-inclusive-but-chunk-builder-uses-exclusive-boundary",
+    "failureMode": "reassembled-image-contains-overlapping-duplicate-boundary-bytes",
+    "solutionPattern": "inclusive-end-offset-with-content-range-and-payload-length-contract-validation",
+    "labFormat": "byte-range-resume-production-incident"
+  }
+}

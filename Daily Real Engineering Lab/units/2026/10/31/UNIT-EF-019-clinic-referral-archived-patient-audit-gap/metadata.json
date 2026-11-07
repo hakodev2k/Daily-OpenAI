@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-EF-019",
+  "runSlot": "2026-10-31-16",
+  "title": "Báo cáo chuyển tuyến thiếu sự kiện sau khi hồ sơ bệnh nhân được lưu trữ",
+  "domain": "ef-core-relational-query-semantics",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-31T16:07:34+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "ef-core-global-query-filters",
+    "required-navigation-join-semantics",
+    "relational-query-projection",
+    "audit-data-integrity"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "EF Core LINQ",
+    "SQL JOIN",
+    "PowerShell",
+    "SQLite in-memory"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Đã đối chiếu tĩnh manifest, SQL/EF query semantics và hai đường chạy reproduce/verify; không thực thi dotnet restore/build do phạm vi công cụ chỉ cho phép GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-clinic-referral-audit-export",
+    "scenarioType": "historical-referral-events-disappear-after-patient-archival",
+    "primaryRootCause": "required-efcore-navigation-inner-join-combines-with-principal-global-query-filter",
+    "failureMode": "compliance-export-silently-omits-valid-historical-referral-events",
+    "solutionPattern": "project-audit-only-columns-without-loading-filtered-principal-navigation",
+    "labFormat": "filtered-required-navigation-production-forensics"
+  }
+}

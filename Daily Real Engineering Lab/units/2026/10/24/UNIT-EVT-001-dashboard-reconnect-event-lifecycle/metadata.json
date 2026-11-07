@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-EVT-001",
+  "runSlot": "2026-10-24-23",
+  "title": "Dashboard nhận notification trùng sau reconnect",
+  "domain": "dotnet-event-lifecycle",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-24T23:06:24+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "csharp-events",
+    "resource-lifecycle",
+    "idempotent-reconnect",
+    "behavioral-regression-tests"
+  ],
+  "primarySkill": "event-subscription-lifecycle",
+  "prerequisites": [
+    "C# delegates/events",
+    "IDisposable",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "real-time-operations-dashboard",
+    "scenarioType": "dashboard-session-disconnect-reconnect",
+    "primaryRootCause": "event-subscription-not-released-at-session-disconnect",
+    "failureMode": "duplicate-and-post-disconnect-notifications",
+    "solutionPattern": "symmetric-event-subscription-lifecycle",
+    "labFormat": "event-lifecycle-refactoring-workshop"
+  }
+}

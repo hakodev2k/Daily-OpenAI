@@ -1,0 +1,65 @@
+{
+  "unitId": "UNIT-IPTRUST-001",
+  "runSlot": "2026-10-30-08",
+  "title": "Callback hiệu chuẩn thiết bị bị chấp nhận sai nguồn IP",
+  "domain": "aspnetcore-proxy-client-ip-trust",
+  "labFormat": "trusted-proxy-source-identity-investigation",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-30T08:10:21+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "aspnet-core-forwarded-headers",
+    "reverse-proxy-trust-boundary",
+    "ip-allowlist",
+    "negative-path-testing"
+  ],
+  "primarySkill": "reverse-proxy-source-ip-trust-boundary",
+  "prerequisites": [
+    "http-headers-basics",
+    "aspnetcore-networking-basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review of net8.0 SDK-only fixture harness, trust contract, reproduction and learner-path verification; .NET runtime not executed because this run uses only GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "industrial-calibration-partner-callback-gateway",
+    "scenarioType": "direct-origin-request-forges-forwarded-source-identity",
+    "primaryRootCause": "untrusted-http-forwarded-for-used-before-verifying-connection-peer-is-managed-proxy",
+    "failureMode": "spoofed-direct-callback-passes-partner-ip-allowlist",
+    "solutionPattern": "trusted-single-hop-proxy-peer-gate-then-validated-forwarded-ip-policy",
+    "labFormat": "trusted-proxy-source-identity-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "Lab.csproj",
+    "README.md",
+    "evidence/incident-log.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/GatewayAuthorizer.cs",
+    "solution/README.md",
+    "starter/GatewayAuthorizer.cs",
+    "tests/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

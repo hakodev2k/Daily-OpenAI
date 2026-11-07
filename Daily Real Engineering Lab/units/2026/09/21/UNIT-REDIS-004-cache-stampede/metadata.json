@@ -1,0 +1,22 @@
+{
+  "unitId": "UNIT-REDIS-004",
+  "runSlot": "2026-09-21-07",
+  "title": "Cache Miss Burst Under Concurrency",
+  "domain": "redis-caching",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-21T07:07:41+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["cache-stampede", "concurrency", "cache-aside"],
+  "prerequisites": ["task-async-basics", "cache-aside-basics"],
+  "validationMode": "static-review",
+  "difficulty": {"generatedLevel": "D2", "dailyBand": ["D1", "D2"], "programPhase": "foundation-depth"},
+  "novelty": {
+    "businessContext": "product-catalog-read-api",
+    "scenarioType": "concurrent-cold-key-burst",
+    "primaryRootCause": "cache-aside-miss-path-does-not-coordinate-concurrent-loaders-for-the-same-key",
+    "failureMode": "one-expensive-downstream-load-is-multiplied-by-concurrent-callers-after-expiry",
+    "solutionPattern": "per-key-single-flight-cache-fill",
+    "labFormat": "cache-concurrency-investigation"
+  }
+}

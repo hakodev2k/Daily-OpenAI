@@ -1,0 +1,31 @@
+{
+  "unitId": "UNIT-AZURE-005",
+  "runSlot": "2026-09-15-00",
+  "title": "Slot Setting Swap Boundary",
+  "domain": "azure-app-service",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-15T00:06:40+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "azure-app-service-slots",
+    "deployment-configuration",
+    "environment-isolation",
+    "production-troubleshooting"
+  ],
+  "prerequisites": ["basic-configuration-concepts"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "image-processing-api-rollout",
+    "scenarioType": "deployment-slot-configuration-drift",
+    "primaryRootCause": "environment-specific-setting-is-configured-to-swap-with-application-content",
+    "failureMode": "production-instance-writes-to-staging-storage-after-slot-swap",
+    "solutionPattern": "pin-environment-specific-configuration-to-deployment-slot",
+    "labFormat": "azure-slot-configuration-investigation"
+  }
+}

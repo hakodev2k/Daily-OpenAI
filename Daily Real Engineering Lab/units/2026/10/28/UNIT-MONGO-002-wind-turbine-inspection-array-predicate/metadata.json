@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-MONGO-002",
+  "runSlot": "2026-10-28-10",
+  "title": "Turbine bị điều phối sửa phanh dù kiểm tra phanh đạt",
+  "domain": "mongodb-array-query-semantics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-28T10:09:29+07:00",
+  "estimatedMinutes": 50,
+  "primarySkill": "mongodb-elemmatch-same-element-predicate",
+  "skills": [
+    "mongodb-array-of-documents-query",
+    "mongodb-query-predicate-semantics",
+    "production-incident-triage",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "Docker Engine + Docker Compose v2",
+    "MongoDB document/array basics",
+    "PowerShell 7 hoặc Windows PowerShell 5.1"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wind-farm-turbine-inspection-dispatch",
+    "scenarioType": "inspection-array-predicate-produces-unjustified-brake-repair-tickets",
+    "primaryRootCause": "independent-dotted-array-predicates-match-different-embedded-documents",
+    "failureMode": "false-positive-brake-repair-dispatch-from-unrelated-failed-inspection",
+    "solutionPattern": "single-array-element-conjunctive-filter-with-elemmatch",
+    "labFormat": "mongodb-document-array-query-evidence-investigation"
+  }
+}

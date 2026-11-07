@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-POOL-001",
+  "runSlot": "2026-10-27-03",
+  "title": "Harbor sensor payload: ranh giới độ dài buffer",
+  "domain": "dotnet-buffer-serialization",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-27T03:11:19+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "arraypool-valid-length-boundary",
+    "dotnet-arraypool",
+    "base64-serialization",
+    "data-boundary-testing"
+  ],
+  "prerequisites": [
+    "C# Stream",
+    "byte[] và Span<T>",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-navigation-sensor-telemetry-relay",
+    "scenarioType": "short-telemetry-payload-encoded-into-oversized-transport-frame",
+    "primaryRootCause": "pooled-array-capacity-used-instead-of-valid-payload-length-during-base64-serialization",
+    "failureMode": "outbound-telemetry-frame-includes-extra-stale-bytes-and-violates-partner-length-contract",
+    "solutionPattern": "serialize-only-populated-buffer-segment-and-return-rental-in-finally",
+    "labFormat": "pooled-buffer-serialization-deterministic-failure"
+  }
+}

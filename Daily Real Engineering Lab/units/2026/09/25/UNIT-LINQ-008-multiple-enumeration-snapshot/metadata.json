@@ -1,0 +1,34 @@
+{
+  "unitId": "UNIT-LINQ-008",
+  "runSlot": "2026-09-25-10",
+  "title": "Multiple Enumeration Across a Changing Data Source",
+  "domain": "csharp-linq",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T10:09:49+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "linq",
+    "ienumerable",
+    "deferred-execution",
+    "data-snapshot"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "warehouse-pick-batch",
+    "scenarioType": "multi-pass-query-over-changing-source",
+    "primaryRootCause": "deferred-sequence-is-enumerated-multiple-times-while-source-state-changes-between-passes",
+    "failureMode": "summary-count-and-exported-items-disagree-within-one-operation",
+    "solutionPattern": "define-one-operation-snapshot-boundary",
+    "labFormat": "linq-consistency-investigation"
+  }
+}

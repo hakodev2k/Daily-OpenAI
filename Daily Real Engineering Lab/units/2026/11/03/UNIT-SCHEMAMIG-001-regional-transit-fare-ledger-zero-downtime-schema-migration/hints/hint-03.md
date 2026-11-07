@@ -1,0 +1,2 @@
+# Hint 3
+Xem xét một giai đoạn mở rộng schema tương thích ngược, một giai đoạn chuyển đổi/backfill có kiểm chứng, và một giai đoạn contract chỉ sau khi không còn đường ghi/đọc cũ. Dữ liệu mới có thể không biểu diễn được bằng schema cũ; hãy định nghĩa rollback gate.

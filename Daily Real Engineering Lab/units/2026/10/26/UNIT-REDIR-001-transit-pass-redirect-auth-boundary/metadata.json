@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-REDIR-001",
+  "runSlot": "2026-10-26-17",
+  "title": "Partner Redirect Removes Transit Validation Credentials",
+  "domain": "http-redirect-authentication",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-26T17:05:14+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "http-authorization-redirect-boundary",
+    "httpclient-handler-policy",
+    "http-307-redirects",
+    "outbound-security-boundaries",
+    "integration-regression-testing"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "HttpClient",
+    "HTTP 307 and 401",
+    ".NET 8 SDK"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-transit-pass-validation-gateway",
+    "scenarioType": "partner-gateway-307-to-authenticated-validation-endpoint",
+    "primaryRootCause": "httpclient-automatic-redirect-clears-authorization-header",
+    "failureMode": "gateway-accepts-authenticated-request-but-redirected-validation-returns-401",
+    "solutionPattern": "explicit-same-origin-redirect-policy-with-per-hop-authorized-request",
+    "labFormat": "outbound-auth-redirect-production-incident"
+  }
+}

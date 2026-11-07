@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-DPKEY-001",
+  "runSlot": "2026-11-02-07",
+  "title": "Housing repair portal: phiên đăng nhập lỗi khi chuyển replica",
+  "domain": "aspnetcore-data-protection-key-management",
+  "primarySkill": "aspnetcore-data-protection-shared-key-ring-and-app-isolation",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-02T07:09:54.865+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "aspnetcore-data-protection",
+    "key-ring-persistence",
+    "multi-replica-authentication",
+    "deployment-decision"
+  ],
+  "prerequisites": [
+    "C# console application",
+    ".NET 8 SDK",
+    "HTTP cookie/session basics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review only. GitHub-only execution scope; .NET and PowerShell were not executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth",
+    "elapsedDays": 56
+  },
+  "novelty": {
+    "businessContext": "municipal-housing-repair-request-portal",
+    "scenarioType": "rolling-deployment-routes-protected-session-ticket-between-two-api-replicas",
+    "primaryRootCause": "replicas-use-independent-aspnetcore-data-protection-key-rings",
+    "failureMode": "intermittent-session-unprotect-failure-on-cross-replica-routing",
+    "solutionPattern": "durable-shared-key-ring-with-stable-application-discriminator-and-isolation-contracts",
+    "labFormat": "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness"
+  }
+}

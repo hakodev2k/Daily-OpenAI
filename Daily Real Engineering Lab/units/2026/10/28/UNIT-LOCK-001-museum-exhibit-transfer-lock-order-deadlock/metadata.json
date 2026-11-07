@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-LOCK-001",
+  "runSlot": "2026-10-28-17",
+  "title": "Chuyển hiện vật giữa hai kho bị treo khi xử lý đồng thời",
+  "domain": "dotnet-monitor-concurrency",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-28T17:10:35+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "monitor-lock-ordering",
+    "deadlock-diagnosis",
+    "concurrency-invariants"
+  ],
+  "primarySkill": "monitor-lock-ordering",
+  "prerequisites": [
+    "csharp-lock",
+    "threads-and-shared-state"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "museum-exhibit-conservation-inventory",
+    "scenarioType": "opposite-direction-concurrent-collection-transfers",
+    "primaryRootCause": "two-transfer-operations-acquire-shared-resource-monitors-in-opposite-order",
+    "failureMode": "both-transfer-workers-wait-indefinitely-on-each-others-held-monitor",
+    "solutionPattern": "global-canonical-resource-lock-order-with-invariant-regression",
+    "labFormat": "deterministic-two-resource-deadlock-incident"
+  },
+  "validationNotes": "Strict static review; .NET code was not executed through the GitHub integration."
+}

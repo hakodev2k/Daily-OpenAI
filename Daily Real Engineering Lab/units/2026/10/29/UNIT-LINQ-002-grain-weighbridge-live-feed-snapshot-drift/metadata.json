@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-LINQ-002",
+  "runSlot": "2026-10-29-07",
+  "title": "Báo cáo cân nhập kho trộn hai snapshot của live feed",
+  "domain": "linq-deferred-execution-live-sources",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T07:09:42+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "linq-multiple-enumeration-live-feed-snapshot-consistency",
+    "IEnumerable-deferred-execution",
+    "single-pass-aggregation",
+    "production-evidence"
+  ],
+  "primarySkill": "linq-multiple-enumeration-live-feed-snapshot-consistency",
+  "prerequisites": [
+    "C# collections",
+    "IEnumerable<T>",
+    "LINQ terminal operators"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "grain-cooperative-weighbridge-receipt-settlement",
+    "scenarioType": "report-count-and-total-disagree-during-live-ingestion",
+    "primaryRootCause": "independent-linq-terminal-operators-reenumerate-changing-live-feed-snapshots",
+    "failureMode": "receipt-count-from-earlier-snapshot-combined-with-weight-total-from-later-snapshot",
+    "solutionPattern": "single-pass-aggregation-over-one-source-enumeration",
+    "labFormat": "live-feed-consistency-evidence-investigation"
+  }
+}

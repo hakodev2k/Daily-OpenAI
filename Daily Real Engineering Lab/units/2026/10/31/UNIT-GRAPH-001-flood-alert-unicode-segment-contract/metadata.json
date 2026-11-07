@@ -1,0 +1,58 @@
+{
+  "unitId": "UNIT-GRAPH-001",
+  "runSlot": "2026-10-31-03",
+  "title": "Cắt thông báo cảnh báo lũ làm hỏng ký tự Unicode",
+  "domain": "dotnet-unicode-text-segmentation",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-31T03:13:58+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "unicode-grapheme-boundaries-and-utf8-byte-budgets",
+    "dotnet-utf16-string-semantics",
+    "utf8-encoding-validation",
+    "contract-driven-refactoring"
+  ],
+  "prerequisites": [
+    "csharp-string-basics",
+    "dotnet-console-cli"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-flood-alert-sms-dispatch",
+    "scenarioType": "multilingual-alert-split-under-provider-utf8-byte-limit",
+    "primaryRootCause": "utf16-string-length-used-as-utf8-byte-and-grapheme-boundary",
+    "failureMode": "segments-exceed-provider-byte-limit-or-contain-split-graphemes-and-invalid-surrogates",
+    "solutionPattern": "grapheme-aware-utf8-byte-budget-segmentation-with-oversize-cluster-rejection",
+    "labFormat": "multilingual-message-segmentation-refactoring-workshop"
+  },
+  "manifest": [
+    "README.md",
+    "contract/Program.cs",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/MessageSplitter.cs",
+    "solution/README.md",
+    "solution/Solution.csproj",
+    "starter/MessageSplitter.cs",
+    "starter/Starter.csproj",
+    "workspace/my-investigation.md"
+  ]
+}

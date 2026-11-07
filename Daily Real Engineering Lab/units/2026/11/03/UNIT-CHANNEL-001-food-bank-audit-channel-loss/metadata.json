@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CHANNEL-001",
+  "runSlot": "2026-11-03-13",
+  "title": "Cold-chain audit: telemetry accepted but missing",
+  "domain": "dotnet-channel-backpressure-and-delivery-semantics",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-03T13:05:56+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "system-threading-channels",
+    "backpressure",
+    "lossless-audit-streams"
+  ],
+  "primarySkill": "bounded-channel-full-mode-delivery-contract",
+  "prerequisites": [
+    "dotnet-task-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-food-bank-cold-chain-temperature-audit",
+    "scenarioType": "burst-of-telemetry-events-while-audit-reader-is-paused",
+    "primaryRootCause": "bounded-channel-dropoldest-overflow-policy-silently-evicts-unread-audit-events",
+    "failureMode": "all-producer-writes-report-success-but-compliance-audit-has-sequence-gaps",
+    "solutionPattern": "lossless-backpressure-with-explicit-producer-completion-and-drain",
+    "labFormat": "deterministic-bounded-channel-data-loss-investigation"
+  }
+}

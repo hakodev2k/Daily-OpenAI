@@ -1,0 +1,1 @@
+Hãy coi path trong deployment artifact là một contract case-sensitive. Sửa bên cấu hình/code để khớp chính xác artifact thay vì làm lookup case-insensitive.

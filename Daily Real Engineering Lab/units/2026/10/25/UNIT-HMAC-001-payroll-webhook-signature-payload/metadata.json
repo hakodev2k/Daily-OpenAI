@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-HMAC-001",
+  "runSlot": "2026-10-25-15",
+  "title": "Payroll Webhook Signature Mismatch",
+  "domain": "api-integration-security",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-25T15:14:57.006+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "webhook-hmac-integrity",
+    "http-body-byte-contract",
+    "cryptographic-signature-verification",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "dotnet-8-console",
+    "http-webhooks-basics",
+    "hmac-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "payroll-provider-webhook-ingress",
+    "scenarioType": "valid-signed-json-webhooks-intermittently-rejected-by-format",
+    "primaryRootCause": "receiver-computes-hmac-over-reserialized-json-instead-of-signed-raw-bytes",
+    "failureMode": "legitimate-pretty-printed-webhooks-fail-signature-verification",
+    "solutionPattern": "authenticate-original-body-byte-sequence-before-deserialization",
+    "labFormat": "webhook-integrity-contract-refactoring-workshop"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "unitId": "UNIT-PQ-001",
+  "runSlot": "2026-10-25-20",
+  "title": "Baggage Alert Dispatch: Equal-Severity Ordering",
+  "domain": "dotnet-priority-queue-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-25T20:11:03.808+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "priorityqueue-ordering-contract",
+    "stable-priority-scheduling",
+    "deterministic-regression-tests"
+  ],
+  "prerequisites": [
+    "C# collections",
+    "LINQ basics",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "airport-baggage-reconciliation-alert-dispatch",
+    "scenarioType": "equal-severity-alerts-dispatched-in-unexpected-order",
+    "primaryRootCause": "priority-queue-does-not-guarantee-fifo-for-equal-priority-elements",
+    "failureMode": "same-severity-baggage-alerts-break-first-received-first-served-contract",
+    "solutionPattern": "lexicographic-severity-and-monotonic-sequence-priority",
+    "labFormat": "priority-scheduler-order-contract-deterministic-failure"
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/BaggageDispatch.csproj",
+    "solution/Program.cs",
+    "solution/README.md",
+    "starter/BaggageDispatch.csproj",
+    "starter/Program.cs",
+    "workspace/my-investigation.md"
+  ]
+}

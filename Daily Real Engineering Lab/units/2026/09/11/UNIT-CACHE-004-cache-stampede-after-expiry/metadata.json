@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-CACHE-004",
+  "runSlot": "2026-09-11-07",
+  "title": "Cache Stampede After Expiry",
+  "domain": "caching",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T07:06:08+07:00",
+  "estimatedMinutes": 45,
+  "skills": ["cache-aside", "redis-concepts", "concurrency", "aspnet-core-capacity"],
+  "prerequisites": ["basic-caching", "task-async-await"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "pricing-api-hot-product",
+    "scenarioType": "concurrent-cache-miss-amplification",
+    "primaryRootCause": "cache-aside-miss-path-allows-concurrent-loaders-for-same-key",
+    "failureMode": "hot-key-expiry-causes-downstream-request-burst",
+    "solutionPattern": "per-key-single-flight-with-double-checked-cache",
+    "labFormat": "caching-concurrency-investigation"
+  }
+}

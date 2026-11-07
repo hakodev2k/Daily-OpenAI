@@ -1,0 +1,5 @@
+# References (đọc sau lab)
+- Microsoft Learn — [Memory<T> and Span<T> usage guidelines](https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/memory-t-usage-guidelines)
+- Microsoft Learn — [ReadOnlyMemory<T>](https://learn.microsoft.com/en-us/dotnet/api/system.readonlymemory-1)
+- Microsoft Learn — [ArrayPool<T>](https://learn.microsoft.com/en-us/dotnet/api/system.buffers.arraypool-1)
+- Microsoft Learn — [Encoding.GetBytes](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding.getbytes)

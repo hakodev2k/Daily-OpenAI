@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-OPT-001",
+  "runSlot": "2026-10-25-11",
+  "title": "Partner đổi credential giữa ca: gateway vẫn nhận 401",
+  "domain": "aspnet-core-options",
+  "primarySkill": "dotnet-options-reload-lifecycle",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-25T11:10:45+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "dotnet-options-reload-lifecycle",
+    "dependency-injection-singleton",
+    "configuration-change-notifications",
+    "credential-rotation-verification"
+  ],
+  "prerequisites": [
+    "C#/.NET 8",
+    "Dependency Injection",
+    "IConfiguration",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "clinical-laboratory-results-partner-gateway",
+    "scenarioType": "partner-credential-version-rotated-during-long-running-host",
+    "primaryRootCause": "singleton-gateway-captures-startup-IOptions-value-despite-configuration-reload",
+    "failureMode": "partner-returns-unauthorized-after-rotation-while-configuration-provider-reports-new-version",
+    "solutionPattern": "resolve-current-options-at-outbound-operation-boundary-with-controlled-validation",
+    "labFormat": "credential-rotation-refactoring-workshop"
+  },
+  "qualityNotes": "GitHub-only execution: strict static review of C# harness, configuration reload behavior, PowerShell scripts, expected results, and learner-editable verification. No dotnet build or runtime execution was performed."
+}

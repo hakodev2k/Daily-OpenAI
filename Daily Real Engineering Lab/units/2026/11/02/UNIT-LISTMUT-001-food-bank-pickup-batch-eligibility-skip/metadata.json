@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-LISTMUT-001",
+  "runSlot": "2026-11-02-08",
+  "title": "Lô hàng không đủ điều kiện vẫn được đưa vào lịch lấy hàng",
+  "domain": "csharp-list-mutation-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-02T08:12:01+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "csharp-list-mutation-loop-invariants",
+    "collection-correctness",
+    "regression-testing"
+  ],
+  "primarySkill": "csharp-list-mutation-loop-invariants",
+  "prerequisites": [
+    "csharp-for-loop",
+    "list-t-basics",
+    "dateonly-comparison"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review only. GitHub integration cannot execute .NET or PowerShell; no runtime validation claimed.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-food-bank-donation-pickup",
+    "scenarioType": "in-place-donation-lot-eligibility-filter",
+    "primaryRootCause": "forward-index-list-removal-skips-shifted-adjacent-elements",
+    "failureMode": "expired-or-quarantined-lots-survive-single-pass-dispatch-screening",
+    "solutionPattern": "stable-predicate-based-in-place-list-compaction",
+    "labFormat": "deterministic-collection-mutation-contract-lab"
+  }
+}

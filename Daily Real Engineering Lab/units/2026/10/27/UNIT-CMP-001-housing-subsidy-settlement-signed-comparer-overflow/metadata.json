@@ -1,0 +1,61 @@
+{
+  "unitId": "UNIT-CMP-001",
+  "runSlot": "2026-10-27-12",
+  "title": "Thứ tự đối soát trợ cấp nhà ở sai ở dữ liệu biên",
+  "domain": "csharp-comparer-contract",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-27T12:07:57+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "csharp-comparer-contract",
+    "integer-arithmetic-overflow",
+    "deterministic-ordering",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# records",
+    "IComparer<T>",
+    "Array.Sort"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-housing-subsidy-settlement",
+    "scenarioType": "signed-settlement-adjustment-order-drift",
+    "primaryRootCause": "subtraction-based-int-comparer-overflows-at-opposite-signed-boundaries",
+    "failureMode": "large-debit-credit-records-export-in-inverted-order",
+    "solutionPattern": "compareto-based-total-order-with-ordinal-reference-tie-breaker",
+    "labFormat": "deterministic-collection-order-contract"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/Program.cs",
+    "solution/README.md",
+    "solution/SettlementOrderLab.csproj",
+    "starter/Program.cs",
+    "starter/SettlementOrderLab.csproj",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

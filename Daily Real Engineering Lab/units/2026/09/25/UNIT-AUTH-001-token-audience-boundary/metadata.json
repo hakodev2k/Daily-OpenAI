@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-AUTH-001",
+  "runSlot": "2026-09-25-12",
+  "title": "Token Audience Boundary Across Internal APIs",
+  "domain": "authentication-authorization",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-25T12:08:53+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "jwt-validation",
+    "token-audience",
+    "api-boundaries"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "internal-order-and-reporting-platform",
+    "scenarioType": "cross-api-token-validation",
+    "primaryRootCause": "resource-api-validates-signature-and-issuer-but-does-not-enforce-its-own-audience",
+    "failureMode": "token-issued-for-one-api-is-accepted-by-another-api",
+    "solutionPattern": "resource-specific-audience-validation-at-each-api-boundary",
+    "labFormat": "identity-contract-investigation"
+  }
+}

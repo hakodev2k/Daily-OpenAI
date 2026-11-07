@@ -1,0 +1,67 @@
+{
+  "unitId": "UNIT-OUTBOX-001",
+  "runSlot": "2026-10-25-06",
+  "title": "Sự kiện bị bỏ qua sau một lần gửi thất bại",
+  "domain": "messaging-outbox",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-25T06:09:20+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "outbox-checkpoint-ordering",
+    "message-delivery-semantics",
+    "fault-injection",
+    "distributed-systems"
+  ],
+  "prerequisites": [
+    "C# async-await",
+    "ordered message processing",
+    "at-least-once delivery"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "loyalty-reward-redemption-events",
+    "scenarioType": "outbox-batch-partial-publish-failure",
+    "primaryRootCause": "high-watermark-advances-past-unacknowledged-gap",
+    "failureMode": "earlier-outbox-event-permanently-skipped-after-transient-publish-error",
+    "solutionPattern": "advance-only-contiguous-acknowledged-prefix-and-retry-gap",
+    "labFormat": "messaging-partial-failure-production-incident"
+  },
+  "assumptions": [
+    "single active dispatcher",
+    "ordered immutable outbox sequences",
+    "checkpoint persistence is durable in production",
+    "consumer idempotency modeled in-memory"
+  ],
+  "manifest": [
+    "README.md",
+    "global.json",
+    "starter/OutboxStarter.csproj",
+    "starter/OutboxPipeline.cs",
+    "harness/IncidentHarness.csproj",
+    "harness/Program.cs",
+    "solution/OutboxPipeline.cs",
+    "solution/OutboxStarter.csproj",
+    "solution/README.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "workspace/my-investigation.md",
+    "evidence/incident-timeline.md",
+    "expected-results/before.md",
+    "expected-results/after.md",
+    "scripts/run.ps1",
+    "scripts/reproduce.ps1",
+    "scripts/verify.ps1",
+    "scripts/setup.ps1",
+    "metadata.json"
+  ]
+}

@@ -1,0 +1,2 @@
+# After — learner fix
+`./scripts/verify.ps1` trả exit 0, in `CONTRACT_OK`. EV-217 được xác nhận bằng `RCPT-EV-217` và được partner lưu đúng một lần; EV-218 bị từ chối; tổng số receipt = 1. Kiểm tra cả functional behavior và method/redirect/receipt contract, không chỉ ứng dụng khởi động thành công.

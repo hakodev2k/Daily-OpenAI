@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-CACHE-001",
+  "runSlot": "2026-09-08-01",
+  "title": "Một request khuyến mãi làm request sau trả sai giá",
+  "domain": "caching",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-08T01:08:58+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["cache-semantics", "mutable-reference-sharing", "request-isolation"],
+  "prerequisites": ["csharp-reference-types", "basic-caching"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "product-pricing-promotion",
+    "scenarioType": "cross-request-cache-contamination",
+    "primaryRootCause": "shared-mutable-cache-entry",
+    "failureMode": "later-request-observes-mutated-price",
+    "solutionPattern": "immutable-cache-value-and-request-local-transformation",
+    "labFormat": "caching-consistency-lab"
+  }
+}

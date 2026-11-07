@@ -1,0 +1,66 @@
+{
+  "unitId": "UNIT-GZIP-001",
+  "runSlot": "2026-10-30-00",
+  "title": "Bản xuất dữ liệu âm thanh không vượt qua kiểm tra toàn vẹn",
+  "domain": "dotnet-gzip-stream-lifecycle",
+  "labFormat": "gzip-integrity-contract-investigation",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-30T00:06:56+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "gzip-format-integrity",
+    "stream-disposal-order",
+    "binary-contract-testing",
+    "dotnet-resource-lifetime"
+  ],
+  "primarySkill": "gzip-stream-finalization-and-trailer-integrity",
+  "prerequisites": [
+    "dotnet-stream-basics",
+    "using-disposal",
+    "binary-file-formats"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Static consistency review only; .NET build and runtime checks were not executed by this GitHub-only automation.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-acoustic-survey-nightly-archive",
+    "scenarioType": "compressed-export-passes-payload-smoke-test-but-fails-integrity-contract",
+    "primaryRootCause": "gzip-compressor-finalized-after-output-buffer-snapshot",
+    "failureMode": "exported-gzip-object-missing-required-crc32-and-isize-trailer",
+    "solutionPattern": "complete-compression-stream-lifetime-before-reading-output-buffer",
+    "labFormat": "gzip-integrity-contract-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "global.json",
+    "metadata.json",
+    "starter/ArchiveExporter.cs",
+    "harness/LabHarness.csproj",
+    "harness/Program.cs",
+    "setup.ps1",
+    "run.ps1",
+    "reproduce.ps1",
+    "verify.ps1",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "docs/investigation-guide.md",
+    "evidence/incident-summary.md",
+    "expected-results/before.md",
+    "expected-results/after.md",
+    "workspace/my-investigation.md",
+    "solution/ArchiveExporter.cs",
+    "solution/README.md"
+  ]
+}

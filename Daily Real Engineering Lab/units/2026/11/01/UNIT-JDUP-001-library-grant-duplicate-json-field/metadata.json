@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-JDUP-001",
+  "runSlot": "2026-11-01-19",
+  "title": "Khoản hỗ trợ thiết bị thư viện bị ghi nhận sai hạn mức",
+  "domain": "dotnet-json-payload-contract-security",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-01T19:15:31.650+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "system-text-json",
+    "input-validation",
+    "api-trust-boundary",
+    "negative-contract-testing"
+  ],
+  "primarySkill": "json-duplicate-property-canonical-interpretation",
+  "prerequisites": [
+    "C# records and collections",
+    "JSON object properties",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-public-library-equipment-grants",
+    "scenarioType": "automatic-grant-approval-differs-from-posted-accounting-amount",
+    "primaryRootCause": "duplicate-json-property-interpreted-differently-by-enumeration-and-getproperty",
+    "failureMode": "limit-check-bypass-through-differential-json-property-selection",
+    "solutionPattern": "reject-duplicate-json-keys-and-use-single-validated-canonical-command",
+    "labFormat": "json-parser-differential-contract-investigation"
+  },
+  "validationNotes": "Strict static consistency review of .NET 8 source, CLI paths, contract cases and scripts; no .NET execution performed."
+}

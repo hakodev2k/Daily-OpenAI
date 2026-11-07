@@ -1,0 +1,63 @@
+{
+  "unitId": "UNIT-GUID-001",
+  "runSlot": "2026-10-27-22",
+  "title": "Emergency Dispatch — UUID không khớp giữa .NET và đối tác",
+  "domain": "dotnet-guid-wire-interoperability",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-27T22:09:26+07:00",
+  "estimatedMinutes": 70,
+  "primarySkill": "guid-network-byte-order-contract",
+  "skills": [
+    "guid-network-byte-order-contract",
+    "csharp-guid-binary-representation",
+    "cross-language-wire-protocol",
+    "binary-contract-testing"
+  ],
+  "prerequisites": [
+    "C# Guid",
+    "hexadecimal bytes",
+    "binary integration contracts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "emergency-vehicle-dispatch-cross-language-event-gateway",
+    "scenarioType": "dotnet-uuid-transport-to-java-device-registry",
+    "primaryRootCause": "guid-default-byte-array-uses-mixed-endian-layout-instead-of-network-order-uuid",
+    "failureMode": "local-guid-roundtrip-passes-but-cross-language-identifier-lookup-fails",
+    "solutionPattern": "explicit-network-order-guid-encoding-and-decoding-with-cross-language-golden-vectors",
+    "labFormat": "binary-uuid-cross-language-incident"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "manifest": [
+    "README.md",
+    "checks/ContractChecks.csproj",
+    "checks/Program.cs",
+    "docs/investigation-guide.md",
+    "evidence/partner-vectors.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "solution/README.md",
+    "solution/VehicleEventCodec.cs",
+    "starter/GuidWireLab.csproj",
+    "starter/VehicleEventCodec.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

@@ -1,0 +1,1 @@
+Tập trung vào contract của object pool: việc trả một buffer về pool không đồng nghĩa nội dung cũ của buffer được xóa.

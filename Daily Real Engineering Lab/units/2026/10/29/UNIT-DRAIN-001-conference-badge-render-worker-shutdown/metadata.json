@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-DRAIN-001",
+  "runSlot": "2026-10-29-23",
+  "title": "Bản render thẻ hội nghị biến mất khi worker bị dừng",
+  "domain": "dotnet-background-worker-delivery-semantics",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-29T23:12:33+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "worker-delivery-acknowledgement-boundaries",
+    "cancellation-and-exception-safety",
+    "at-least-once-processing",
+    "idempotent-artifact-publication"
+  ],
+  "primarySkill": "worker-delivery-acknowledgement-boundaries",
+  "prerequisites": [
+    ".NET SDK 8.x",
+    "PowerShell",
+    "Task/CancellationToken và exception handling cơ bản"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review of standalone .NET 8 project, deterministic TaskCompletionSource cancellation, two failure paths, learner-editable verification, separate reproduction and reference code. No .NET execution: repository interaction restricted to GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "conference-attendee-badge-rendering",
+    "scenarioType": "rolling-deployment-cancels-inflight-badge-render-and-upload-receipt",
+    "primaryRootCause": "worker-finally-acknowledges-delivery-even-when-render-cancelled-or-fails-after-publish",
+    "failureMode": "cancelled-badge-job-vanishes-and-ambiguous-publish-failure-is-not-retried",
+    "solutionPattern": "ack-only-after-success-release-on-failure-with-idempotent-artifact-publication",
+    "labFormat": "worker-shutdown-ack-boundary-refactoring-workshop"
+  }
+}

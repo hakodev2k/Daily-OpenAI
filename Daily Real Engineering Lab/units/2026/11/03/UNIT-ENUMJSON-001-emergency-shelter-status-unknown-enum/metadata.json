@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ENUMJSON-001",
+  "runSlot": "2026-11-03-20",
+  "title": "Shelter occupancy status drift",
+  "domain": "dotnet-json-contract-validation",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-03T20:09:52+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "system-text-json",
+    "enum-contract",
+    "boundary-validation"
+  ],
+  "prerequisites": [
+    "C# enum",
+    "JSON"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-emergency-shelter-occupancy-feed",
+    "scenarioType": "partner-numeric-enum-schema-drift",
+    "primaryRootCause": "json-deserializer-accepts-undefined-enum-numeric-value",
+    "failureMode": "unknown-shelter-status-silently-skips-review",
+    "solutionPattern": "validate-defined-enum-at-ingestion-boundary",
+    "labFormat": "contract-drift-refactoring-with-local-regression-harness"
+  }
+}

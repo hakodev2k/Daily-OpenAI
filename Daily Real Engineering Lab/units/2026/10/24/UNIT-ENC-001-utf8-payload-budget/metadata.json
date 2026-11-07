@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-ENC-001",
+  "runSlot": "2026-10-24-19",
+  "title": "SMS gateway chấp nhận nội bộ nhưng bị đối tác từ chối",
+  "domain": "dotnet-text-encoding",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-24T19:10:47+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "dotnet-string-semantics",
+    "utf8-encoding",
+    "api-payload-contracts",
+    "boundary-testing"
+  ],
+  "primarySkill": "utf8-wire-size-contract",
+  "prerequisites": [
+    "C# string",
+    ".NET CLI",
+    "HTTP status codes"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review of policy, simulator, run/reproduce/verify paths and boundary cases. No .NET SDK execution in this GitHub-only run.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "customer-sms-delivery-gateway",
+    "scenarioType": "partner-wire-payload-budget-mismatch",
+    "primaryRootCause": "utf16-code-unit-length-used-as-utf8-wire-byte-size",
+    "failureMode": "gateway-accepts-request-locally-but-partner-rejects-multibyte-text-with-413",
+    "solutionPattern": "enforce-wire-byte-budget-at-payload-policy-boundary",
+    "labFormat": "wire-encoding-deterministic-failure"
+  }
+}

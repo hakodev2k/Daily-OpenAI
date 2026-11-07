@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-SEARCH-001",
+  "runSlot": "2026-10-26-07",
+  "title": "Cắt chuyển search index v2 không gián đoạn tìm phòng thuê",
+  "domain": "search-index-operations",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-26T07:10:11+07:00",
+  "estimatedMinutes": 80,
+  "primarySkill": "search-index-zero-downtime-migration",
+  "skills": [
+    "search-index-versioning",
+    "cdc-replay-consistency",
+    "cutover-rollback",
+    "capacity-planning",
+    "architecture-decision-record"
+  ],
+  "prerequisites": [
+    "Search index là read model",
+    "CDC và event replay cơ bản",
+    "PowerShell cơ bản"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "short-term-rental-discovery-marketplace",
+    "scenarioType": "search-schema-v2-rollout-with-live-source-updates",
+    "primaryRootCause": "in-place-index-rebuild-has-no-consistent-snapshot-and-catchup-cutover-boundary",
+    "failureMode": "live-search-availability-and-freshness-regress-during-index-schema-replacement",
+    "solutionPattern": "versioned-index-snapshot-plus-cdc-catchup-validated-alias-cutover-with-rollback",
+    "labFormat": "search-index-migration-design-decision"
+  }
+}

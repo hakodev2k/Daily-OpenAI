@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-HTTP-012",
+  "runSlot": "2026-10-26-03",
+  "title": "Partner Retry Fails Before Second HTTP Attempt",
+  "domain": "http-client-lifecycle",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-26T03:13:13.659+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "httpclient-request-lifecycle",
+    "retry-boundaries",
+    "idempotency-key",
+    "contract-regression-testing"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "HttpClient",
+    "HTTP 503",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-library-interbranch-book-transfer",
+    "scenarioType": "transient-partner-503-on-first-transfer-dispatch",
+    "primaryRootCause": "http-request-message-reused-across-sendasync-retry-attempts",
+    "failureMode": "second-attempt-throws-before-partner-receives-retry",
+    "solutionPattern": "new-request-and-content-per-attempt-with-stable-idempotency-key",
+    "labFormat": "http-retry-request-lifecycle-production-incident"
+  }
+}

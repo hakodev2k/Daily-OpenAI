@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-JDRIFT-001",
+  "runSlot": "2026-10-29-12",
+  "title": "Phiếu giữ linh kiện đường sắt bị ghi nhận thành 0 sau thay đổi JSON",
+  "domain": "json-ingress-contract-validation",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-29T12:13:30+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "system-text-json",
+    "json-contract-validation",
+    "schema-versioning",
+    "production-forensics",
+    "regression-testing"
+  ],
+  "primarySkill": "system-text-json-required-and-unmapped-member-contract",
+  "prerequisites": [
+    "C# properties và nullable/reference types",
+    "System.Text.Json trong .NET 8",
+    "dotnet CLI và PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "rail-maintenance-spare-parts-reservation-feed",
+    "scenarioType": "partner-json-field-rename-silently-releases-reserved-inventory",
+    "primaryRootCause": "system-text-json-ignores-unmapped-property-and-defaults-absent-int-to-zero",
+    "failureMode": "valid-reservations-are-imported-as-zero-units-after-unannounced-schema-change",
+    "solutionPattern": "versioned-strict-json-contract-with-required-fields-and-explicit-invariant-validation",
+    "labFormat": "json-contract-drift-production-incident"
+  }
+}

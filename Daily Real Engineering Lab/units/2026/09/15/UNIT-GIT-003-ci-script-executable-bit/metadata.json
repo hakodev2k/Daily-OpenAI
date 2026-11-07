@@ -1,0 +1,31 @@
+{
+  "unitId": "UNIT-GIT-003",
+  "runSlot": "2026-09-15-20",
+  "title": "CI script chạy local nhưng fail trên Linux runner",
+  "domain": "git-devops",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-15T20:10:24+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["git-file-mode", "linux-executable-bit", "ci-cd", "cross-platform-deployment"],
+  "prerequisites": ["git-index-basics", "shell-script-basics"],
+  "validationMode": "partial-execution",
+  "validationNote": "Core Git mode behavior and shell execution semantics were validated in a Linux execution environment; PowerShell wrappers were statically reviewed because PowerShell was unavailable.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "linux-ci-build-pipeline",
+    "scenarioType": "cross-platform-checkout-execution-failure",
+    "primaryRootCause": "git-index-stores-shell-script-as-non-executable-mode",
+    "failureMode": "linux-runner-direct-script-execution-is-denied-after-checkout",
+    "solutionPattern": "persist-executable-bit-in-git-index",
+    "labFormat": "git-ci-metadata-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false,
+    "reason": ""
+  }
+}

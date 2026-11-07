@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-EF-006",
+  "runSlot": "2026-09-12-23",
+  "title": "Parallel DbContext Operations",
+  "domain": "ef-core",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-12T23:11:41+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["ef-core-dbcontext-lifetime", "async-concurrency", "task-whenall"],
+  "prerequisites": ["async-await", "ef-core-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "operations-dashboard-api",
+    "scenarioType": "parallel-query-aggregation",
+    "primaryRootCause": "single-dbcontext-used-by-overlapping-operations",
+    "failureMode": "concurrent-operation-invalidoperationexception",
+    "solutionPattern": "serialize-shared-context-or-use-independent-context-per-parallel-operation",
+    "labFormat": "ef-core-concurrency-investigation"
+  }
+}

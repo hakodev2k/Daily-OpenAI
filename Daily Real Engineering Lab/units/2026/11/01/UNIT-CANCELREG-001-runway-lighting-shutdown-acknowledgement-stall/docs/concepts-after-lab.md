@@ -1,0 +1,5 @@
+# Concepts after lab — chỉ xem sau khi tự sửa
+
+`CancellationTokenSource.Cancel()` chạy callback đã đăng ký như một phần của lời gọi hủy. Callback dài hoặc đồng bộ chờ I/O làm chậm đường điều khiển. `TaskCompletionSource` kết hợp `RunContinuationsAsynchronously` cho phép phát tín hiệu nhanh và để Task riêng sở hữu công việc cleanup. Một callback `async void` hoặc `Task.Run` không được theo dõi có thể che lỗi và làm mất dữ liệu. Host phải await Task cleanup trước khi công bố graceful shutdown hoàn tất. Với production, thêm timeout/budget cho downstream, log riêng acknowledgement/cleanup và kiểm thử token đã cancelled trước khi đăng ký.
+
+Tài liệu chính thức: [CancellationToken.Register](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken.register), [CancellationTokenSource.Cancel](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtokensource.cancel), [TaskCompletionSource](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskcompletionsource-1).

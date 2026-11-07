@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-PIPEIO-001",
+  "runSlot": "2026-11-01-08",
+  "title": "Worker kết xuất bảng điểm treo khi ghi log chẩn đoán",
+  "domain": "dotnet-process-pipe-backpressure",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-01T08:11:29+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "process-redirected-stream-concurrent-draining",
+    "os-pipe-backpressure",
+    "process-exit-code-contract",
+    "timeout-and-child-process-cleanup"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "ProcessStartInfo",
+    "PowerShell cơ bản"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-transcript-pdf-rendering",
+    "scenarioType": "render-worker-times-out-only-on-verbose-stderr-output",
+    "primaryRootCause": "sequential-stdout-read-before-stderr-drain-blocks-child-on-full-stderr-pipe",
+    "failureMode": "false-render-timeout-while-child-is-blocked-on-redirected-stderr",
+    "solutionPattern": "concurrent-stdout-stderr-drain-with-timeout-cleanup-and-child-exit-propagation",
+    "labFormat": "subprocess-redirected-pipe-backpressure-investigation"
+  }
+}

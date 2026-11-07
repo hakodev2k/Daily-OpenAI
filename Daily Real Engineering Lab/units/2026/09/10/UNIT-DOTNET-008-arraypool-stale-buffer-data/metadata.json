@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-DOTNET-008",
+  "runSlot": "2026-09-10-14",
+  "title": "Dữ liệu request trước xuất hiện trong buffer của request sau",
+  "domain": "dotnet-memory",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-10T14:07:19+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["arraypool", "buffer-lifecycle", "data-isolation", "memory-reuse"],
+  "prerequisites": ["span-and-array-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-document-processing",
+    "scenarioType": "pooled-buffer-data-isolation",
+    "primaryRootCause": "sensitive-buffer-returned-to-pool-without-clearing",
+    "failureMode": "later-renter-observes-prior-tenant-bytes",
+    "solutionPattern": "clear-sensitive-buffer-before-or-during-pool-return",
+    "labFormat": "memory-pool-lifecycle-investigation"
+  }
+}

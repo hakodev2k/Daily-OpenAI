@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-CACHE-001",
+  "runSlot": "2026-10-24-21",
+  "title": "Schema cache đúng kết quả nhưng lãng phí biên dịch dưới tải đồng thời",
+  "domain": "dotnet-caching-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-24T21:04:06+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "concurrent-dictionary",
+    "lazy-initialization",
+    "cache-single-flight",
+    "thread-safety",
+    "regression-testing"
+  ],
+  "primarySkill": "concurrent-dictionary-factory-semantics",
+  "prerequisites": [
+    "C# collections",
+    "Thread",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static review only; .NET 8 SDK was not executed. Run scripts locally to validate behavior.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-form-schema-validation",
+    "scenarioType": "simultaneous-cold-cache-schema-compilation",
+    "primaryRootCause": "concurrent-dictionary-getoradd-value-factory-can-execute-more-than-once",
+    "failureMode": "duplicate-expensive-compilation-despite-correct-single-cached-value",
+    "solutionPattern": "cache-lazy-single-flight-initializer-per-key",
+    "labFormat": "cache-initialization-contention-investigation"
+  }
+}

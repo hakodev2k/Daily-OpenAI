@@ -1,0 +1,66 @@
+{
+  "unitId": "UNIT-ZIPSEC-001",
+  "runSlot": "2026-10-29-18",
+  "title": "Hatchery Evidence ZIP Escapes Intake Directory",
+  "domain": "dotnet-zip-extraction-security",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-29T18:06:43+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "ziparchive-entry-path-trust-boundary",
+    "filesystem-path-canonicalization",
+    "security-negative-testing"
+  ],
+  "primarySkill": "ziparchive-entry-path-trust-boundary",
+  "prerequisites": [
+    "C# file I/O",
+    "ZipArchive",
+    "Path.Combine"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review; .NET runtime not available, source not executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "aquaculture-hatchery-compliance-zip-intake",
+    "scenarioType": "partner-upload-extraction-creates-files-outside-isolated-review-directory",
+    "primaryRootCause": "untrusted-zip-entry-name-is-joined-to-destination-without-canonical-containment-check",
+    "failureMode": "archive-entry-can-plant-a-file-in-adjacent-review-workspace",
+    "solutionPattern": "preflight-all-archive-entry-paths-against-canonical-root-then-extract-fail-closed",
+    "labFormat": "archive-upload-security-production-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  },
+  "files": [
+    "README.md",
+    "global.json",
+    "starter/ArchiveIntake.csproj",
+    "starter/ArchiveIntake.cs",
+    "checks/ArchiveChecks.csproj",
+    "checks/Program.cs",
+    "setup.ps1",
+    "run.ps1",
+    "reproduce.ps1",
+    "verify.ps1",
+    "docs/scenario.md",
+    "evidence/incident.log",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "expected-results/before.md",
+    "expected-results/after.md",
+    "workspace/my-investigation.md",
+    "solution/ArchiveIntake.cs",
+    "solution/README.md",
+    "extensions/senior-challenge.md",
+    "metadata.json"
+  ]
+}

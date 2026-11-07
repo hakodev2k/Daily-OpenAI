@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-SQL-002",
+  "runSlot": "2026-09-27-01",
+  "title": "Hai giao dịch đều đúng, quy tắc nghiệp vụ vẫn bị phá vỡ",
+  "domain": "sql-server",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-27T01:08:38+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "sql-transactions",
+    "isolation-levels",
+    "concurrency",
+    "business-invariants"
+  ],
+  "prerequisites": [
+    "basic-sql",
+    "transactions"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "on-call-doctor-roster",
+    "scenarioType": "concurrent-business-invariant-violation",
+    "primaryRootCause": "read-committed-transactions-protect-individual-statements-but-not-a-cross-row-business-invariant",
+    "failureMode": "two-successful-concurrent-updates-leave-zero-doctors-on-call",
+    "solutionPattern": "serialize-the-invariant-decision-with-an-appropriate-concurrency-control-boundary",
+    "labFormat": "sql-transaction-interleaving-investigation"
+  }
+}

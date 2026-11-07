@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-AUDIT-001",
+  "runSlot": "2026-10-29-13",
+  "title": "Khi bản xuất audit của lô vô trùng không còn khớp",
+  "domain": "audit-trail-integrity-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-10-29T13:09:07+07:00",
+  "estimatedMinutes": 90,
+  "skills": [
+    "audit-trail-tamper-evidence",
+    "security-trust-boundaries",
+    "architecture-decision-records",
+    "cryptographic-verification-design",
+    "operational-recovery"
+  ],
+  "prerequisites": [
+    "transactional-outbox-basics",
+    "sha256-vs-digital-signatures",
+    "database-transaction-boundaries"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "sterile-pharmaceutical-batch-release-audit",
+    "scenarioType": "historical-audit-export-disagreement-under-privileged-maintenance",
+    "primaryRootCause": "audit-records-and-export-history-share-a-mutable-administrator-trust-boundary",
+    "failureMode": "historical-release-approval-can-disappear-without-independent-integrity-alarm",
+    "solutionPattern": "independently-anchored-per-batch-digest-chain-with-segregated-signing-and-replay-verification",
+    "labFormat": "audit-evidence-trust-boundary-architecture-case-study"
+  },
+  "scope": "local architecture tabletop; fixtures are illustrative, not real cryptographic attestations",
+  "validationNotes": "Static review of Markdown/CSV/JSON, PowerShell read-only commands and acceptance contract; no runtime or cryptographic execution claimed."
+}

@@ -1,0 +1,2 @@
+# Senior extension — unknown outcome
+Partner xử lý transfer thành công nhưng kết nối rớt trước khi response về. Thiết kế policy cho unknown outcome, phân biệt transport failure với 503, quy định lifetime của Idempotency-Key và cách reconciliation qua GET transfer status. Xác định deadline, exponential backoff có jitter, metric duplicate-suppression và giới hạn tổng attempts. Không mặc định retry POST nếu partner không có idempotency contract.

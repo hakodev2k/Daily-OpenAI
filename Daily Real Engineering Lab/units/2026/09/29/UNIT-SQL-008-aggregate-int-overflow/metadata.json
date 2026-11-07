@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SQL-008",
+  "runSlot": "2026-09-29-00",
+  "title": "Settlement report chỉ lỗi khi tổng tiền đủ lớn",
+  "domain": "sql-server",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-29T00:55:00+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "sql-aggregate-type-semantics",
+    "sql-server-integer-types",
+    "production-debugging"
+  ],
+  "prerequisites": [
+    "basic-sql-aggregates",
+    "sql-server-local-instance"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "merchant-settlement-report",
+    "scenarioType": "data-volume-dependent-aggregate-failure",
+    "primaryRootCause": "sum-over-int-expression-uses-int-accumulator-and-overflows",
+    "failureMode": "arithmetic-overflow-only-after-valid-rows-cross-aggregate-type-range",
+    "solutionPattern": "widen-expression-type-before-aggregation",
+    "labFormat": "sql-type-semantics-deterministic-failure"
+  }
+}

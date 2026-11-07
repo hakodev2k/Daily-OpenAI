@@ -1,0 +1,1 @@
+So sánh chính xác chuỗi path trong artifact manifest với path từ cấu hình. Đừng chỉ kiểm tra việc file có tồn tại hay không.

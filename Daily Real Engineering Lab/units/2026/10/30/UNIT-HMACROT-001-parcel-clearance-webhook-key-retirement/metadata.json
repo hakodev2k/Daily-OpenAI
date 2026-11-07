@@ -1,0 +1,61 @@
+{
+  "unitId": "UNIT-HMACROT-001",
+  "runSlot": "2026-10-30-02",
+  "title": "Quyết định xoay khóa webhook khi retry kéo dài hơn thời hạn thu hồi",
+  "domain": "webhook-signing-key-rotation",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-30T02:05:00+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "webhook-key-retirement-vs-delayed-first-delivery",
+    "hmac-signature-verification-trust-boundaries",
+    "webhook-retry-semantics",
+    "durable-inbox-idempotency",
+    "authenticated-event-reconciliation",
+    "architecture-decision-record"
+  ],
+  "primarySkill": "webhook-key-retirement-vs-delayed-first-delivery",
+  "prerequisites": [
+    "HMAC-SHA256",
+    "HTTP webhook retries",
+    "ASP.NET Core authentication boundaries",
+    "database transactions",
+    "OAuth2 client credentials"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Tabletop decision lab; synthetic event timeline, cross-file references and duration arithmetic reviewed statically. No application code executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "cross-border-parcel-customs-clearance",
+    "scenarioType": "partner-webhook-rotation-with-original-signature-preserved-on-delayed-retry",
+    "primaryRootCause": "immutable-old-key-signatures-outlive-mandatory-old-key-verification-cutoff",
+    "failureMode": "late-first-delivery-either-rejected-or-requires-prohibited-old-key-trust",
+    "solutionPattern": "hard-key-retirement-with-independent-authoritative-event-feed-reconciliation-and-idempotent-inbox",
+    "labFormat": "webhook-trust-cutover-architecture-decision-tabletop"
+  },
+  "manifest": [
+    "README.md",
+    "docs/scenario.md",
+    "evidence/delivery-events.csv",
+    "evidence/partner-contract.md",
+    "evidence/security-policy.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/requirement-change.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "solution/README.md",
+    "verification/acceptance-checklist.md",
+    "workspace/decision-record.md"
+  ]
+}

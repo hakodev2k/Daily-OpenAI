@@ -1,0 +1,15 @@
+{
+  "unitId":"UNIT-DOTNET-012",
+  "runSlot":"2026-09-12-20",
+  "title":"Event publisher báo thành công rồi process vẫn crash",
+  "domain":"dotnet-async",
+  "maturityLevel":"L2",
+  "status":"READY",
+  "createdAt":"2026-09-12T20:07:51+07:00",
+  "estimatedMinutes":40,
+  "skills":["async-void","task-based-contracts","exception-propagation","event-handling"],
+  "prerequisites":["async-await","exceptions"],
+  "validationMode":"static-review",
+  "difficulty":{"generatedLevel":"D2","dailyBand":["D1","D2"],"programPhase":"foundation-depth"},
+  "novelty":{"businessContext":"order-status-notification-worker","scenarioType":"asynchronous-event-failure-boundary","primaryRootCause":"async-void-subscriber-does-not-return-observable-task-to-publisher","failureMode":"publisher-reports-success-before-unhandled-subscriber-exception-terminates-process","solutionPattern":"task-returning-subscriber-contract-awaited-by-publisher","labFormat":"async-event-contract-investigation"}
+}

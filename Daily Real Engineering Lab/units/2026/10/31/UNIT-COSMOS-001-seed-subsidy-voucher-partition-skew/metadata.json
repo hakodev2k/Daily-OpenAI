@@ -1,0 +1,55 @@
+{
+  "unitId": "UNIT-COSMOS-001",
+  "runSlot": "2026-10-31-15",
+  "title": "Phân vùng redemption voucher khi một hợp tác xã tạo tải đột biến",
+  "domain": "azure-cosmos-db-partition-design",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-31T15:11:46+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "cosmos-db-logical-partitioning",
+    "deterministic-idempotency-routing",
+    "point-read-and-cross-partition-query-tradeoffs",
+    "hot-partition-capacity-reasoning"
+  ],
+  "prerequisites": [
+    "PowerShell 7",
+    "NoSQL partition-key concepts",
+    "basic idempotency"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review only. PowerShell simulator and scripts were not executed; Cosmos DB capacity must be verified in a real environment.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "agricultural-seed-subsidy-voucher-redemption",
+    "scenarioType": "single-cooperative-skewed-redemption-burst",
+    "primaryRootCause": "cooperative-id-partition-key-concentrates-dominant-issuer-workload",
+    "failureMode": "logical-partition-hotspot-and-disproportionate-throttling",
+    "solutionPattern": "deterministic-voucher-derived-shard-with-idempotent-create-and-query-read-model",
+    "labFormat": "partition-capacity-design-decision-with-deterministic-policy-simulator"
+  },
+  "primarySkill": "cosmos-db-logical-partitioning",
+  "secondarySkills": [
+    "idempotent-redemption",
+    "capacity-budgeting",
+    "query-shape-design"
+  ],
+  "scenario": "seed-subsidy-redemption-skew",
+  "rootCause": "skewed-cooperative-partition-key",
+  "solutionPattern": "deterministic-voucher-sharding",
+  "reproducibility": {
+    "entryPoint": "run.ps1",
+    "reproduce": "reproduce.ps1",
+    "verify": "verify.ps1",
+    "learnerEditable": "starter/policy.json"
+  },
+  "expectedOutcome": "Deterministic routing for retries, direct voucher-ID reads, and no synthetic bucket above 22% of 1000 original redemptions."
+}

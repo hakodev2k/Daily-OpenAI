@@ -1,0 +1,2 @@
+# Hint 3
+Một policy chỉ quyết định ở đầu request không thể biết request nào sẽ trở thành tail-latency outlier. Hãy thử giữ một budget nhỏ cho baseline traffic nhưng luôn giữ trace khi outcome sau xử lý vượt một diagnostic threshold.

@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-STATUS-001",
+  "runSlot": "2026-10-28-18",
+  "title": "Dashboard báo toàn HTTP 200 dù API cảnh báo lũ trả 429 và 503",
+  "domain": "aspnet-core-response-observability",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-28T18:10:50.893+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "aspnet-core-middleware-pipeline",
+    "http-response-status-observability",
+    "evidence-driven-production-debugging"
+  ],
+  "primarySkill": "aspnet-core-response-status-observability",
+  "prerequisites": [
+    "aspnet-core-requestdelegate",
+    "http-status-codes",
+    "csharp-async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-flood-warning-bulletin-api",
+    "scenarioType": "client-error-and-upstream-outage-omitted-from-http-status-metrics",
+    "primaryRootCause": "middleware-records-response-status-before-downstream-handler",
+    "failureMode": "client-429-503-404-but-dashboard-records-200",
+    "solutionPattern": "record-completed-response-status-after-next-with-defined-exception-boundary",
+    "labFormat": "response-metrics-evidence-investigation"
+  },
+  "validationNotes": "Strict static consistency review only. GitHub integration cannot execute dotnet; starter and reference code were not runtime-tested."
+}

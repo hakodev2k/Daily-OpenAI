@@ -1,0 +1,31 @@
+{
+  "unitId": "UNIT-CS-016",
+  "runSlot": "2026-09-27-03",
+  "title": "Import Result Changes with Machine Culture",
+  "domain": "csharp",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-27T03:10:36+07:00",
+  "estimatedMinutes": 30,
+  "skills": [
+    "globalization",
+    "parsing"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "supplier-price-import",
+    "scenarioType": "environment-dependent-data-parsing",
+    "primaryRootCause": "machine-current-culture-implicitly-controls-external-decimal-format",
+    "failureMode": "same-import-row-produces-different-price-across-environments",
+    "solutionPattern": "explicit-external-data-culture-contract",
+    "labFormat": "globalization-deterministic-failure"
+  }
+}

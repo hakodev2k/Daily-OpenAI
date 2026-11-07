@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-DAG-001",
+  "runSlot": "2026-10-27-02",
+  "title": "Kế hoạch rollout firmware báo thành công dù còn bước chưa chạy",
+  "domain": "dotnet-workflow-dependency-planning",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-27T02:07:37+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "dependency-graph-validation",
+    "topological-ordering",
+    "production-incident-triage",
+    "deterministic-regression-testing"
+  ],
+  "primarySkill": "dependency-graph-validation",
+  "prerequisites": [
+    "C# collections",
+    "LINQ basics",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-telecom-fiber-cabinet-firmware-rollout",
+    "scenarioType": "nightly-firmware-rollout-reports-success-with-unprocessed-dependent-steps",
+    "primaryRootCause": "dependency-planner-treats-no-ready-work-as-normal-completion-without-validating-the-dependency-graph",
+    "failureMode": "cyclic-or-unknown-prerequisites-yield-successful-partial-rollout-plan",
+    "solutionPattern": "validate-dependency-identities-and-use-complete-topological-plan-with-explicit-cycle-rejection",
+    "labFormat": "dependency-graph-production-incident"
+  }
+}

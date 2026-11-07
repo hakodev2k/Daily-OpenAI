@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-BUFFEROWN-001",
+  "runSlot": "2026-11-04-02",
+  "title": "Gói telemetry bị thay nội dung khi truyền bất đồng bộ",
+  "domain": "dotnet-memory-ownership-async",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-04T02:05:57+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "memory-ownership",
+    "read-only-memory",
+    "async-lifetime",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "Task",
+    "byte-array",
+    "ReadOnlyMemory"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "high-altitude-weather-balloon-telemetry-relay",
+    "scenarioType": "overlapping-asynchronous-frame-dispatch",
+    "primaryRootCause": "mutable-shared-byte-buffer-rewritten-before-async-transport-consumes-it",
+    "failureMode": "first-telemetry-frame-replaced-by-second-without-transport-error",
+    "solutionPattern": "per-operation-immutable-payload-ownership-until-send-completion",
+    "labFormat": "deterministic-buffer-lifetime-production-incident"
+  }
+}

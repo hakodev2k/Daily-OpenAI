@@ -1,0 +1,15 @@
+{
+  "maxFileMiB": 2048,
+  "concurrentUploads": 16,
+  "maxCompletionSeconds": 300,
+  "appInstanceMemoryBudgetMiB": 1536,
+  "proxyOutboundMiBPerSecondPerInstance": 80,
+  "directBlobAggregateMiBPerSecond": 240,
+  "perStreamBufferMiB": 8,
+  "appBaseMemoryMiB": 128,
+  "monthlyInstanceCostUnits": 150,
+  "monthlyComputeBudgetUnits": 450,
+  "maxInstances": 3,
+  "maxTokenTtlMinutes": 20,
+  "retentionYears": 7
+}

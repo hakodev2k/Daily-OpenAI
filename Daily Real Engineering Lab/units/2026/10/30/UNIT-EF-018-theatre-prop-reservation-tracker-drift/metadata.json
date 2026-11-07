@@ -1,0 +1,57 @@
+{
+  "unitId": "UNIT-EF-018",
+  "runSlot": "2026-10-30-20",
+  "title": "Kho đạo cụ nhà hát: số lượng khả dụng lệch sau hai nghiệp vụ",
+  "domain": "ef-core-change-tracking",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-30T20:11:42+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "efcore-executeupdate-tracked-entity-coherence",
+    "ef-core-change-tracking",
+    "sqlite-in-memory",
+    "inventory-invariants"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "EF Core DbContext and SaveChanges"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-theatre-prop-rental-counter",
+    "scenarioType": "bulk-stage-allocation-followed-by-counter-rental-in-same-dbcontext",
+    "primaryRootCause": "set-based-executeupdate-bypasses-tracked-entity-snapshot-before-followup-savechanges",
+    "failureMode": "counter-rental-overwrites-earlier-bulk-allocation-and-accepts-unavailable-props",
+    "solutionPattern": "refresh-tracked-state-before-dependent-mutation-and-test-inventory-availability-guard",
+    "labFormat": "tracked-state-vs-set-based-write-refactoring-workshop"
+  },
+  "manifest": [
+    "README.md",
+    "docs/scenario.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "setup.ps1",
+    "solution/Program.cs",
+    "solution/README.md",
+    "starter/Program.cs",
+    "starter/PropInventory.csproj",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

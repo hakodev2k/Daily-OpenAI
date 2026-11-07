@@ -1,0 +1,34 @@
+{
+  "unitId": "UNIT-DOTNET-006",
+  "runSlot": "2026-09-10-01",
+  "title": "Batch job báo thiếu lỗi khi nhiều dependency cùng fail",
+  "domain": "dotnet-async",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-10T01:09:06+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "task-whenall",
+    "async-failure-aggregation",
+    "exception-observation",
+    "parallel-io"
+  ],
+  "prerequisites": [
+    "async-await",
+    "Task"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "payroll-reconciliation",
+    "scenarioType": "parallel-dependency-multi-failure-reporting",
+    "primaryRootCause": "awaited-whenall-exception-treated-as-complete-failure-set",
+    "failureMode": "batch-report-omits-sibling-task-failures",
+    "solutionPattern": "retain-group-task-and-report-all-inner-failures",
+    "labFormat": "async-failure-investigation"
+  }
+}

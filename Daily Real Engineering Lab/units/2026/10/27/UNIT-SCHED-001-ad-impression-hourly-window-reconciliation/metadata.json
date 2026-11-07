@@ -1,0 +1,62 @@
+{
+  "unitId": "UNIT-SCHED-001",
+  "runSlot": "2026-10-27-00",
+  "title": "Hourly ad impression settlement: missed accounting windows",
+  "domain": "dotnet-periodic-scheduling",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-27T00:13:48+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "periodictimer-tick-coalescing-and-window-checkpoints",
+    "backgroundservice-scheduling",
+    "checkpoint-recovery",
+    "deterministic-failure-testing"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "async-await",
+    "datetimeoffset-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "digital-advertising-hourly-impression-settlement",
+    "scenarioType": "slow-hourly-settlement-leaves-unprocessed-accounting-windows",
+    "primaryRootCause": "periodic-timer-wakeup-treated-as-one-logical-window-despite-coalesced-ticks",
+    "failureMode": "hourly-ad-impression-windows-remain-unsettled-after-worker-lag",
+    "solutionPattern": "watermark-driven-due-window-reconciliation-with-checkpoint-after-success",
+    "labFormat": "scheduled-window-reconciliation-refactoring-workshop"
+  },
+  "manifest": [
+    "README.md",
+    "docs/concepts-after-lab.md",
+    "docs/references.md",
+    "docs/scenario.md",
+    "evidence/timeline.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "run.ps1",
+    "solution/README.md",
+    "solution/WindowScheduler.cs",
+    "starter/AdWindowLab.csproj",
+    "starter/Program.cs",
+    "starter/WindowScheduler.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ],
+  "validationNotes": "Strict static consistency review; code not executed (approved GitHub integration only)."
+}

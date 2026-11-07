@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-STREAMPOS-001",
+  "runSlot": "2026-10-29-10",
+  "title": "Bản ghi telemetry biến mất sau khi worker tiếp tục từ checkpoint",
+  "domain": "dotnet-streamreader-checkpoint-semantics",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-29T10:09:02.482+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "streamreader-buffered-read-ahead-checkpoint",
+    "dotnet-stream-position",
+    "durable-ingestion-cursors",
+    "restart-regression-testing"
+  ],
+  "primarySkill": "streamreader-buffered-read-ahead-checkpoint",
+  "prerequisites": [
+    "C# StreamReader/FileStream",
+    "line-oriented append-only files",
+    "basic checkpointing"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "satellite-ground-station-pass-telemetry-import",
+    "scenarioType": "small-batch-ingestion-resumes-after-worker-restart",
+    "primaryRootCause": "underlying-filestream-position-advances-beyond-consumed-lines-due-to-streamreader-buffered-read-ahead",
+    "failureMode": "persisted-byte-cursor-skips-unprocessed-records-after-restart",
+    "solutionPattern": "logical-line-count-checkpoint-with-append-only-replay-and-truncation-detection",
+    "labFormat": "stream-checkpoint-production-forensics"
+  }
+}

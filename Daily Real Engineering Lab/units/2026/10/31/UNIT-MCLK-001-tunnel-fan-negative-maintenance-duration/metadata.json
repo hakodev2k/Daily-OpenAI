@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-MCLK-001",
+  "runSlot": "2026-10-31-23",
+  "title": "Thời lượng bảo trì quạt thông gió đường hầm bị âm",
+  "domain": "dotnet-clock-domain-semantics",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-31T23:12:57+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "timeprovider-monotonic-duration",
+    "utc-audit-timestamps",
+    "deterministic-regression-testing"
+  ],
+  "primarySkill": "monotonic-duration-vs-wall-clock-utc",
+  "prerequisites": [
+    "csharp-async-await",
+    "datetimeoffset-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "highway-tunnel-ventilation-maintenance",
+    "scenarioType": "maintenance-sla-duration-drift-after-system-clock-adjustment",
+    "primaryRootCause": "utc-wall-clock-subtraction-used-for-elapsed-duration-across-clock-step",
+    "failureMode": "negative-or-inflated-maintenance-duration-and-false-sla-breach",
+    "solutionPattern": "monotonic-timeprovider-timestamp-for-duration-with-utc-audit-instants-preserved",
+    "labFormat": "clock-domain-refactoring-with-deterministic-step-simulator"
+  }
+}

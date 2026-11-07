@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-PGIDX-001",
+  "runSlot": "2026-10-26-20",
+  "title": "Import thẻ thư viện: UPSERT lỗi dù unique index vẫn tồn tại",
+  "domain": "postgresql-index-inference",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-26T20:20:02.951+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "postgresql-partial-unique-index",
+    "insert-on-conflict-index-inference",
+    "soft-delete-uniqueness",
+    "sql-verification"
+  ],
+  "primarySkill": "postgresql-on-conflict-partial-index-inference",
+  "prerequisites": [
+    "SQL INSERT/UPDATE",
+    "PostgreSQL",
+    "Docker Compose",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-library-patron-card-import",
+    "scenarioType": "idempotent-patron-import-fails-after-soft-delete-index-policy-rollout",
+    "primaryRootCause": "on-conflict-target-does-not-match-partial-unique-index-predicate",
+    "failureMode": "valid-import-raises-no-matching-unique-constraint-error-despite-active-uniqueness-index",
+    "solutionPattern": "infer-partial-unique-index-using-matching-conflict-target-predicate-and-regression-fixtures",
+    "labFormat": "postgresql-upsert-index-contract-investigation"
+  }
+}

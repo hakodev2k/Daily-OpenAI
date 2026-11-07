@@ -1,0 +1,27 @@
+{
+  "unitId": "UNIT-DOTNET-005",
+  "runSlot": "2026-09-09-20",
+  "title": "Upload Passes Validation but Stores an Empty File",
+  "domain": "dotnet-io",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-09-09T20:10:26+07:00",
+  "estimatedMinutes": 35,
+  "skills": ["stream-semantics", "io-lifecycle", "sha256", "storage-pipeline"],
+  "prerequisites": ["basic-stream-usage"],
+  "validationMode": "static-review",
+  "validationNote": "Runtime execution was attempted, but the available container does not have the dotnet CLI. Starter, reproduction contract, learner verification path and reference implementation were statically cross-checked.",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "document-upload-storage",
+    "scenarioType": "multi-stage-stream-processing",
+    "primaryRootCause": "stream-position-left-at-end-after-pre-read",
+    "failureMode": "validated-upload-stores-empty-payload",
+    "solutionPattern": "explicit-stream-position-contract",
+    "labFormat": "stream-lifecycle-failure"
+  }
+}

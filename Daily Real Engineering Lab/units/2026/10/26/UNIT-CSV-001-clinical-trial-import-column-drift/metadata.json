@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-CSV-001",
+  "runSlot": "2026-10-26-16",
+  "title": "Báo cáo thử nghiệm lâm sàng bị lệch cột sau khi nhập CSV",
+  "domain": "dotnet-csv-data-ingestion",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-26T16:16:54.058+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "csv-record-grammar",
+    "csharp-string-parsing",
+    "data-integrity-regression-testing",
+    "third-party-file-contracts"
+  ],
+  "prerequisites": [
+    "csharp-strings",
+    "collections",
+    "dotnet-cli"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "clinical-trial-site-report-import",
+    "scenarioType": "partner-csv-export-with-quoted-multiline-clinical-notes",
+    "primaryRootCause": "line-and-delimiter-splitting-ignores-csv-quoted-record-grammar",
+    "failureMode": "valid-clinical-notes-shift-columns-and-split-one-record-into-multiple-patients",
+    "solutionPattern": "stateful-csv-record-parser-respecting-quoted-delimiters-escaped-quotes-and-record-boundaries",
+    "labFormat": "partner-data-import-deterministic-failure"
+  }
+}

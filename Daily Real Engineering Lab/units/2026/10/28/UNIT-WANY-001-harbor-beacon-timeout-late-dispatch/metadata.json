@@ -1,0 +1,54 @@
+{
+  "unitId": "UNIT-WANY-001",
+  "runSlot": "2026-10-28-15",
+  "title": "Harbor beacon: late dispatch after timeout",
+  "domain": "dotnet-async-timeout-boundaries",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-28T15:10:38+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "task-whenany",
+    "cancellation-propagation",
+    "retry-side-effects"
+  ],
+  "primarySkill": "task-whenany-timeout-cancellation-contract",
+  "prerequisites": [
+    "C# Task/await",
+    "CancellationToken",
+    "basic retry semantics"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Strict static consistency review only. .NET code not executed; this run uses the approved GitHub integration exclusively.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-weather-beacon-alert-dispatch",
+    "scenarioType": "deadline-expiry-followed-by-retry-of-same-alert",
+    "primaryRootCause": "task-whenany-timeout-returns-without-cancelling-and-joining-pending-send",
+    "failureMode": "timed-out-send-commits-after-retry-producing-duplicate-alert",
+    "solutionPattern": "linked-cancellation-and-drain-before-return-with-production-idempotency-boundary",
+    "labFormat": "deterministic-timeout-lifecycle-failure-lab"
+  },
+  "manifest": [
+    "README.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "solution/AlertDispatcher.cs",
+    "solution/README.md",
+    "starter/AlertDispatcher.cs",
+    "starter/HarborAlertLab.csproj",
+    "starter/Program.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

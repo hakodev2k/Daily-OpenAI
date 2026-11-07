@@ -1,0 +1,56 @@
+{
+  "unitId": "UNIT-AENUM-001",
+  "runSlot": "2026-10-31-02",
+  "title": "Luồng quét kiểm định thang máy vẫn gửi dữ liệu sau khi hủy",
+  "domain": "dotnet-async-stream-cancellation",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-30T19:09:18.086Z",
+  "estimatedMinutes": 50,
+  "skills": [
+    "iasyncenumerable-cancellation-forwarding",
+    "async-iterator-compiler-contract",
+    "cooperative-cancellation"
+  ],
+  "prerequisites": [
+    "csharp-async-await",
+    "cancellationtoken-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-elevator-inspection-handheld-scanner",
+    "scenarioType": "operator-cancels-live-inspection-after-first-receipt",
+    "primaryRootCause": "async-iterator-cancellation-token-parameter-not-marked-enumeratorcancellation",
+    "failureMode": "stream-continues-emitting-receipts-after-consumer-cancels",
+    "solutionPattern": "bind-getasyncenumerator-token-to-producer-cancellation-parameter",
+    "labFormat": "async-stream-cancellation-contract-investigation"
+  },
+  "manifest": [
+    "README.md",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "extensions/senior-challenge.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/README.md",
+    "solution/ShipmentScanStream.cs",
+    "starter/ElevatorScanLab.csproj",
+    "starter/Program.cs",
+    "starter/ShipmentScanStream.cs",
+    "workspace/my-investigation.md"
+  ]
+}

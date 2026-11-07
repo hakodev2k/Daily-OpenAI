@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-SQL-001",
+  "runSlot": "2026-09-25-16",
+  "title": "Transaction Retry Boundary and Duplicate Side Effects",
+  "domain": "sql-database-engineering",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-25T16:10:11+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "transactions",
+    "retry-boundaries",
+    "idempotency"
+  ],
+  "prerequisites": [
+    "basic-sql-transactions"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "invoice-finalization-service",
+    "scenarioType": "transient-database-failure-with-external-side-effect",
+    "primaryRootCause": "retry-reexecutes-nontransactional-side-effect-after-ambiguous-database-outcome",
+    "failureMode": "invoice-is-committed-once-but-customer-notification-is-sent-twice",
+    "solutionPattern": "separate-transactional-state-change-from-idempotent-post-commit-delivery",
+    "labFormat": "transaction-boundary-production-incident"
+  }
+}

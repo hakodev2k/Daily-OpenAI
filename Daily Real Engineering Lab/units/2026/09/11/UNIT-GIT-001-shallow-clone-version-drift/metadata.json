@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-GIT-001",
+  "runSlot": "2026-09-11-00",
+  "title": "Shallow Clone Version Drift",
+  "domain": "git-ci",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-11T00:29:00+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "git",
+    "ci-cd",
+    "release-versioning",
+    "repository-history"
+  ],
+  "prerequisites": [
+    "basic-git-commands"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "ci-release-versioning",
+    "scenarioType": "environment-specific-build-metadata-drift",
+    "primaryRootCause": "shallow-clone-omits-tag-reachable-history",
+    "failureMode": "ci-artifact-falls-back-to-wrong-version",
+    "solutionPattern": "detect-shallow-history-and-recover-required-release-metadata",
+    "labFormat": "git-ci-investigation"
+  }
+}

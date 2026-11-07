@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-CMPID-001",
+  "runSlot": "2026-11-02-03",
+  "title": "Vé nhà hát: cùng mã QR nhưng hai kiosk xác thực khác nhau",
+  "domain": "csharp-string-identity-comparison",
+  "primarySkill": "culture-independent-opaque-identifier-comparison",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-02T03:11:32+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "csharp-stringcomparer",
+    "dictionary-key-semantics",
+    "globalization",
+    "identity-contract-testing"
+  ],
+  "prerequisites": [
+    "C# Dictionary và string",
+    "CultureInfo cơ bản",
+    ".NET 8 SDK",
+    "PowerShell 5.1+ hoặc 7"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review only; .NET SDK and PowerShell execution were not performed under the GitHub-only tool scope.",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth",
+    "elapsedDays": 56
+  },
+  "novelty": {
+    "businessContext": "regional-theater-qr-admission-kiosks",
+    "scenarioType": "same-printed-ascii-pass-code-produces-different-lookup-and-duplicate-behavior-across-kiosk-locales",
+    "primaryRootCause": "culture-sensitive-case-insensitive-dictionary-comparer-applied-to-opaque-ascii-pass-identifiers",
+    "failureMode": "legitimate-ascii-case-variant-rejected-and-non-ascii-lookalike-accepted-in-turkish-locale",
+    "solutionPattern": "explicit-ordinal-ignore-case-identifier-contract-independent-of-current-culture",
+    "labFormat": "cross-locale-identifier-registry-deterministic-reproduction"
+  }
+}

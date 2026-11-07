@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-ARCH-001",
+  "runSlot": "2026-09-25-18",
+  "title": "Choose the Boundary for Partner Integrations",
+  "domain": "architecture",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-09-25T18:09:47+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "architecture-decisions",
+    "integration-boundaries",
+    "operational-tradeoffs"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "b2b-order-platform",
+    "scenarioType": "service-boundary-design-decision",
+    "primaryRootCause": "integration-change-rate-and-failure-boundary-are-not-aligned-with-current-module-boundary",
+    "failureMode": "partner-specific-changes-and-outages-create-cross-team-release-and-support-coupling",
+    "solutionPattern": "explicit-integration-boundary-selected-from-change-and-failure-characteristics",
+    "labFormat": "architecture-boundary-decision"
+  }
+}

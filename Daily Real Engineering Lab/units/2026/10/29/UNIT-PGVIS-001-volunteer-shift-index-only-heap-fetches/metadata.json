@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-PGVIS-001",
+  "runSlot": "2026-10-29-03",
+  "title": "Báo cáo ca tình nguyện chậm dù có covering index",
+  "domain": "postgresql-query-plans",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-29T03:06:41+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "postgresql-visibility-map-and-index-only-scan",
+    "explain-analyze-buffers",
+    "autovacuum-operations",
+    "production-query-diagnostics"
+  ],
+  "primarySkill": "postgresql-visibility-map-and-index-only-scan",
+  "prerequisites": [
+    "SQL indexes",
+    "PostgreSQL EXPLAIN",
+    "Docker Desktop / PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "nonprofit-volunteer-shift-reporting",
+    "scenarioType": "read-query-regression-after-nonindexed-column-updates",
+    "primaryRootCause": "visibility-map-all-visible-bits-cleared-by-updates-while-autovacuum-is-disabled",
+    "failureMode": "covering-index-query-still-fetches-many-heap-tuples",
+    "solutionPattern": "restore-visibility-maintenance-and-monitor-heap-fetch-regression",
+    "labFormat": "postgresql-query-plan-production-forensics"
+  },
+  "note": "Strict static review only; Docker/PostgreSQL scripts were not executed."
+}

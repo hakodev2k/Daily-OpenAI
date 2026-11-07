@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-HTTP-011",
+  "runSlot": "2026-10-24-22",
+  "title": "Rò rỉ ngữ cảnh tenant giữa các outbound HTTP request",
+  "domain": "http-networking",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-24T22:13:17+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "httpclient-request-headers",
+    "request-isolation",
+    "async-interleaving",
+    "multi-tenant-security"
+  ],
+  "primarySkill": "httpclient-request-context-isolation",
+  "prerequisites": [
+    "HttpClient fundamentals",
+    "async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-logistics-partner-proxy",
+    "scenarioType": "overlapping-outbound-requests-with-tenant-specific-context",
+    "primaryRootCause": "shared-httpclient-default-request-headers-mutated-per-request",
+    "failureMode": "outbound-requests-carry-another-tenants-routing-header",
+    "solutionPattern": "isolate-tenant-context-on-each-http-request-message",
+    "labFormat": "http-request-context-isolation-investigation"
+  }
+}

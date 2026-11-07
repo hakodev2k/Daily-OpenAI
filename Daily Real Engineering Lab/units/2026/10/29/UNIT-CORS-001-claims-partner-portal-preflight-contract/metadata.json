@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-CORS-001",
+  "runSlot": "2026-10-29-15",
+  "title": "SPA đối tác không gửi được preview bồi thường",
+  "domain": "aspnetcore-cors",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T15:10:58.375+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "aspnetcore-cors-preflight-policy-contract",
+    "http-browser-request-semantics",
+    "security-regression-testing"
+  ],
+  "primarySkill": "aspnetcore-cors-preflight-policy-contract",
+  "prerequisites": [
+    ".NET SDK 8",
+    "HTTP headers",
+    "ASP.NET Core minimal APIs"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "insurance-claims-partner-spa",
+    "scenarioType": "cross-origin-claim-preview-browser-preflight-fails-while-direct-post-succeeds",
+    "primaryRootCause": "cors-policy-request-header-allowlist-excludes-spa-custom-header",
+    "failureMode": "browser-blocks-cross-origin-post-after-preflight-without-allow-origin",
+    "solutionPattern": "explicit-cors-header-contract-with-negative-origin-method-regression",
+    "labFormat": "cors-preflight-contract-investigation"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-API-003",
+  "runSlot": "2026-09-12-18",
+  "title": "Undefined Numeric Enum State",
+  "domain": "api-engineering",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-12T18:11:25+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["aspnet-core", "system-text-json", "api-contracts", "domain-validation"],
+  "prerequisites": ["minimal-api-basics", "csharp-enums"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "order-status-integration-api",
+    "scenarioType": "syntactically-valid-payload-creates-invalid-domain-state",
+    "primaryRootCause": "json-enum-converter-allows-integer-values-outside-defined-enum-members",
+    "failureMode": "api-accepts-undefined-order-status",
+    "solutionPattern": "enforce-enum-wire-contract-at-deserialization-boundary",
+    "labFormat": "api-contract-investigation"
+  }
+}

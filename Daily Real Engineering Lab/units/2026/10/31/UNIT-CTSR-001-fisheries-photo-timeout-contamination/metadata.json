@@ -1,0 +1,59 @@
+{
+  "unitId": "UNIT-CTSR-001",
+  "runSlot": "2026-10-31-19",
+  "title": "Ảnh cập cảng bị timeout dây chuyền",
+  "domain": "dotnet-cancellation-source-lifecycle",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-31T19:07:39+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "cancellationtokensource-per-operation-lifetime",
+    "linked-cancellation-token-propagation",
+    "async-failure-classification"
+  ],
+  "primarySkill": "cancellationtokensource-per-operation-lifetime",
+  "prerequisites": [
+    "async-await",
+    "cancellationtoken-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coastal-fisheries-landing-photo-compliance",
+    "scenarioType": "slow-first-photo-followed-by-two-immediate-partner-responses",
+    "primaryRootCause": "cancelled-cancellationtokensource-reused-across-independent-photo-inspections",
+    "failureMode": "later-fast-photos-falsely-reported-as-timeouts",
+    "solutionPattern": "per-inspection-linked-cancellation-source-and-deadline",
+    "labFormat": "batch-timeout-lifecycle-refactoring-workshop"
+  },
+  "manifest": [
+    "README.md",
+    "global.json",
+    "starter/CoastalInspection.csproj",
+    "starter/PhotoInspectionService.cs",
+    "starter/Program.cs",
+    "solution/PhotoInspectionService.cs",
+    "setup.ps1",
+    "run.ps1",
+    "reproduce.ps1",
+    "verify.ps1",
+    "docs/scenario.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "expected-results/before.md",
+    "expected-results/after.md",
+    "workspace/my-investigation.md",
+    "solution/README.md",
+    "extensions/senior-challenge.md",
+    "metadata.json"
+  ]
+}

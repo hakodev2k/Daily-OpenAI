@@ -1,0 +1,43 @@
+{
+  "unitId": "UNIT-MTTL-001",
+  "runSlot": "2026-10-30-14",
+  "title": "Thẻ Wi-Fi khách hết hạn nhưng cổng truy cập vẫn cho phép",
+  "domain": "mongodb-ttl-access-policy-design",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-30T14:09:54+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "mongodb-ttl-cleanup-semantics",
+    "authorization-expiry-at-decision-boundary",
+    "revocation-consistency",
+    "architecture-tradeoff-analysis",
+    "contract-regression-testing"
+  ],
+  "prerequisites": [
+    "C#/.NET 8",
+    "UTC DateTimeOffset comparisons",
+    "basic MongoDB TTL concepts",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coworking-guest-wifi-access-pass",
+    "scenarioType": "expired-or-revoked-guest-pass-accepted-during-asynchronous-storage-cleanup",
+    "primaryRootCause": "authorization-equates-document-existence-with-current-validity-despite-eventual-ttl-cleanup",
+    "failureMode": "expired-or-revoked-pass-remains-accepted-until-storage-document-disappears",
+    "solutionPattern": "enforce-expiry-and-revocation-at-each-authorization-decision-while-ttl-remains-storage-housekeeping",
+    "labFormat": "security-access-lifecycle-design-decision-with-local-contract-simulator"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

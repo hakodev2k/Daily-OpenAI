@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-DESIGN-001",
+  "runSlot": "2026-09-25-21",
+  "title": "Time Is a Hidden Dependency",
+  "domain": "software-design",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-09-25T21:07:41+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "testability",
+    "dependency-design",
+    "time-boundaries"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "subscription-renewal",
+    "scenarioType": "legacy-refactoring",
+    "primaryRootCause": "business-rule-reads-wall-clock-directly-at-multiple-points",
+    "failureMode": "boundary-tests-are-nondeterministic-and-rule-evaluation-can-observe-different-instants",
+    "solutionPattern": "explicit-time-provider-at-business-boundary",
+    "labFormat": "design-refactoring-lab"
+  }
+}

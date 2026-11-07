@@ -1,0 +1,33 @@
+{
+  "unitId": "UNIT-PERF-002",
+  "runSlot": "2026-09-25-09",
+  "title": "Large Object Allocation Pressure in Export Pipeline",
+  "domain": "performance",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-09-25T09:45:00+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "dotnet-gc",
+    "allocations",
+    "streaming"
+  ],
+  "prerequisites": [],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D2",
+      "D3"
+    ],
+    "programPhase": "foundation-to-investigation"
+  },
+  "novelty": {
+    "businessContext": "monthly-audit-export",
+    "scenarioType": "memory-pressure-under-repeated-exports",
+    "primaryRootCause": "repeated-large-contiguous-buffer-materialization",
+    "failureMode": "allocation-spikes-and-gen2-gc-pauses",
+    "solutionPattern": "bounded-streaming-with-buffer-reuse",
+    "labFormat": "performance-production-incident"
+  }
+}

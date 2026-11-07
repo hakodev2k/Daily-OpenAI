@@ -1,0 +1,1 @@
+Hai array có cùng phần tử không nhất thiết `Equals` nhau. Kiểm tra `EqualityComparer<IReadOnlyList<string>>.Default` đang so sánh điều gì.

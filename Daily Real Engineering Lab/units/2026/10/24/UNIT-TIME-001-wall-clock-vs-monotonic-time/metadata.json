@@ -1,0 +1,42 @@
+{
+  "unitId": "UNIT-TIME-001",
+  "runSlot": "2026-10-24-16",
+  "title": "Watchdog kết thúc batch sai thời điểm",
+  "domain": "dotnet-timekeeping",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-10-24T16:13:24+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "monotonic-elapsed-time",
+    "timeprovider",
+    "incident-investigation",
+    "deterministic-regression-testing",
+    "timeout-semantics"
+  ],
+  "primarySkill": "monotonic-elapsed-time",
+  "prerequisites": [
+    "C# classes",
+    "TimeSpan",
+    "dotnet CLI",
+    "timeout semantics"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review; .NET SDK was not executed. Run reproduce.ps1 and verify.ps1 locally.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "fulfillment-batch-lease-watchdog",
+    "scenarioType": "host-clock-correction-during-batch-execution",
+    "primaryRootCause": "wall-clock-time-difference-used-to-measure-elapsed-time",
+    "failureMode": "batch-deadline-fires-prematurely-or-is-delayed-after-clock-adjustment",
+    "solutionPattern": "use-monotonic-timestamps-for-in-process-elapsed-budget",
+    "labFormat": "timekeeping-production-incident"
+  }
+}

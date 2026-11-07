@@ -1,0 +1,50 @@
+{
+  "unitId": "UNIT-DP-001",
+  "runSlot": "2026-10-27-11",
+  "title": "Festival Pass: session token hợp lệ bị từ chối khi đổi replica",
+  "domain": "aspnet-core-data-protection",
+  "primarySkill": "aspnet-core-data-protection-key-ring-lifecycle",
+  "secondarySkills": [
+    "multi-replica-state",
+    "cryptographic-purpose-isolation",
+    "deployment-configuration",
+    "security-regression-testing"
+  ],
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-10-27T11:14:21.912+07:00",
+  "estimatedMinutes": 75,
+  "prerequisites": [
+    "C# cơ bản",
+    "ASP.NET Core Data Protection concepts",
+    "PowerShell",
+    ".NET SDK 10"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Đã kiểm tra tĩnh manifest, csproj Compile Include, API DataProtectionProvider, kịch bản mint/read qua process độc lập, exit codes 0/21 và đường learner-editable; không thực thi dotnet vì workflow chỉ sử dụng GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-festival-mobile-ticket-session",
+    "scenarioType": "cross-replica-authentication-ticket-rejection-after-scaling",
+    "primaryRootCause": "ephemeral-data-protection-key-rings-created-independently-per-replica",
+    "failureMode": "valid-session-token-rejected-by-another-replica-and-after-process-restart",
+    "solutionPattern": "shared-persisted-key-ring-with-stable-application-discriminator-and-purpose-isolation",
+    "labFormat": "multi-replica-security-lifecycle-refactoring-workshop"
+  },
+  "businessImpact": "Người mua vé đăng nhập thành công nhưng phiên bị từ chối khi load balancer chuyển sang replica khác hoặc sau khi rollout.",
+  "expectedArtifacts": [
+    "log reproduce giữa các process",
+    "ít nhất ba hypothesis",
+    "thay đổi starter/KeyRingFactory.cs",
+    "log verify gồm negative security cases",
+    "phân tích key-ring storage và bảo vệ key at rest"
+  ],
+  "executable": true
+}

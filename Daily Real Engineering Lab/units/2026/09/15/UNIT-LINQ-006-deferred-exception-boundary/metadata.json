@@ -1,0 +1,30 @@
+{
+  "unitId": "UNIT-LINQ-006",
+  "runSlot": "2026-09-15-23",
+  "title": "Deferred Exception Boundary",
+  "domain": "linq",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-15T23:07:48+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["linq", "ienumerable", "deferred-execution", "exception-boundaries"],
+  "prerequisites": ["basic-linq", "exception-handling"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "batch-financial-import",
+    "scenarioType": "exception-contract-escape",
+    "primaryRootCause": "deferred-linq-executes-after-intended-exception-boundary",
+    "failureMode": "raw-format-exception-escapes-after-service-return",
+    "solutionPattern": "align-enumeration-with-owned-exception-boundary",
+    "labFormat": "linq-execution-boundary-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false,
+    "reason": ""
+  }
+}

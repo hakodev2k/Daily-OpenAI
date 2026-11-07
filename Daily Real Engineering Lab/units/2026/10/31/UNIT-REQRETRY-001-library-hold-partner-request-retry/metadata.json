@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-REQRETRY-001",
+  "runSlot": "2026-10-31-10",
+  "title": "Library Hold Relay: Partner 503 Retry Contract",
+  "domain": "http-request-retry-semantics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-31T10:13:53+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "httpclient-sendasync-request-lifecycle",
+    "bounded-retry",
+    "idempotency-keys",
+    "failure-path-contract-testing"
+  ],
+  "prerequisites": [
+    "csharp-async-await",
+    "http-status-codes",
+    "httpclient-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "city-library-interbranch-book-hold-partner",
+    "scenarioType": "transient-503-followed-by-retry-of-partner-hold-request",
+    "primaryRootCause": "same-http-request-message-instance-is-reused-across-sendasync-attempts",
+    "failureMode": "first-partner-503-is-followed-by-invalidoperationexception-before-second-request-reaches-partner",
+    "solutionPattern": "fresh-request-and-content-per-attempt-with-stable-idempotency-key-and-bounded-status-aware-retry",
+    "labFormat": "http-partner-retry-contract-investigation"
+  }
+}

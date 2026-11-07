@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-ZIP-001",
+  "runSlot": "2026-10-26-04",
+  "title": "Gói ZIP hồ sơ kiểm định tải về nhưng không mở được",
+  "domain": "dotnet-zip-archive",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-26T04:14:10.165+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "system-io-compression",
+    "resource-lifetime",
+    "archive-integrity",
+    "failure-path-verification"
+  ],
+  "primarySkill": "ziparchive-finalization-lifecycle",
+  "prerequisites": [
+    "C# using/IDisposable",
+    "Stream và byte[] cơ bản"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "cultural-heritage-inspection-evidence-export",
+    "scenarioType": "downloaded-evidence-package-rejected-by-standard-zip-reader",
+    "primaryRootCause": "ziparchive-central-directory-written-after-response-byte-snapshot",
+    "failureMode": "exported-zip-omits-final-directory-and-is-not-readable",
+    "solutionPattern": "finalize-ziparchive-before-materializing-response-payload",
+    "labFormat": "archive-finalization-lifecycle-investigation"
+  },
+  "validationNotes": "Strict static review only; no local dotnet execution performed because this run uses only the authorized GitHub integration."
+}

@@ -1,0 +1,26 @@
+{
+  "unitId": "UNIT-DOTNET-015",
+  "runSlot": "2026-09-14-08",
+  "title": "Request timeout nhưng work phía sau vẫn tiếp tục chạy",
+  "domain": "dotnet-async",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-14T08:10:03+07:00",
+  "estimatedMinutes": 40,
+  "skills": ["task-whenany", "timeouts", "cancellation", "async-lifecycle"],
+  "prerequisites": ["task-basics", "cancellation-token-basics"],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "pricing-aggregation-api",
+    "scenarioType": "timeout-capacity-leak",
+    "primaryRootCause": "timeout-race-returns-without-canceling-and-observing-losing-operation",
+    "failureMode": "timed-out-requests-accumulate-background-work-and-consume-limited-capacity",
+    "solutionPattern": "cancel-and-observe-losing-work-before-leaving-timeout-boundary",
+    "labFormat": "async-lifecycle-investigation"
+  }
+}

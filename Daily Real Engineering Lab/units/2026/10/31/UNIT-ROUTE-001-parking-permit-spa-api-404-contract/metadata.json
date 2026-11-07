@@ -1,0 +1,59 @@
+{
+  "unitId": "UNIT-ROUTE-001",
+  "runSlot": "2026-10-31-04",
+  "title": "API trả HTML 200 khi route không tồn tại",
+  "domain": "aspnetcore-route-fallback",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-10-31T04:09:11.542+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "aspnetcore-endpoint-routing-fallback-precedence",
+    "aspnetcore-minimal-api",
+    "http-status-and-content-type-contracts",
+    "negative-path-testing"
+  ],
+  "prerequisites": [
+    "aspnetcore-minimal-api-basics",
+    "dotnet-cli"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D3",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-parking-permit-renewal-portal",
+    "scenarioType": "unknown-api-url-returns-spa-html-success-instead-of-api-not-found",
+    "primaryRootCause": "spa-nonfile-fallback-catches-unmatched-api-paths-with-html-200",
+    "failureMode": "api-clients-receive-200-html-for-missing-json-endpoints-and-misclassify-failures",
+    "solutionPattern": "explicit-api-namespace-json-404-route-before-spa-fallback",
+    "labFormat": "aspnetcore-spa-fallback-contract-deterministic-lab"
+  },
+  "manifest": [
+    "README.md",
+    "contract/Contract.csproj",
+    "contract/Program.cs",
+    "expected-results/after.md",
+    "expected-results/before.md",
+    "global.json",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/setup.ps1",
+    "scripts/verify.ps1",
+    "solution/PermitRoutes.cs",
+    "solution/README.md",
+    "solution/Solution.csproj",
+    "starter/PermitRoutes.cs",
+    "starter/Starter.csproj",
+    "workspace/my-investigation.md"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "unitId": "UNIT-OTA-001",
+  "runSlot": "2026-11-02-18",
+  "title": "Thiết kế rollout firmware an toàn cho 24.000 solar inverter mất kết nối",
+  "domain": "fleet-ota-distributed-systems-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-02T18:05:28+07:00",
+  "estimatedMinutes": 100,
+  "skills": [
+    "distributed-rollout-safety",
+    "device-state-machines",
+    "offline-event-reconciliation",
+    "capacity-planning",
+    "signed-artifact-trust",
+    "architecture-decision-records"
+  ],
+  "primarySkill": "fleet-ota-campaign-safety-and-recovery-architecture",
+  "prerequisites": [
+    "HTTP polling và retry",
+    "idempotency và optimistic concurrency",
+    "distributed messaging concepts"
+  ],
+  "validationMode": "static-review",
+  "validationNote": "Static review of architecture tabletop, event arithmetic, state contracts, acceptance scenarios and alternatives. No implementation was executed.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth",
+    "elapsedDays": 56
+  },
+  "novelty": {
+    "businessContext": "rural-solar-inverter-fleet-firmware-operations",
+    "scenarioType": "intermittently-connected-fleet-staged-ota-with-delayed-ack-and-unsafe-canary",
+    "primaryRootCause": "rollout-control-plane-lacks-explicit-campaign-gates-and-device-attempt-fencing",
+    "failureMode": "faulty-release-expands-despite-canary-failures-and-stale-device-acknowledgements",
+    "solutionPattern": "regional-pull-rollout-with-durable-attempt-state-guardrails-and-safe-rollback-policy",
+    "labFormat": "fleet-ota-architecture-tabletop-with-evidence-and-decision-record"
+  }
+}

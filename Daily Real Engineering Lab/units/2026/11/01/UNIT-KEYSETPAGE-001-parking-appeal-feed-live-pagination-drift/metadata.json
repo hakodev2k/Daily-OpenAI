@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-KEYSETPAGE-001",
+  "runSlot": "2026-11-01-20",
+  "title": "Hồ sơ khiếu nại bãi đỗ xe bị lặp và bỏ sót khi tải trang",
+  "domain": "api-pagination-live-feed",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-01T20:09:23+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "api-pagination",
+    "sql-ordering",
+    "concurrent-data-changes",
+    "regression-testing"
+  ],
+  "primarySkill": "offset-vs-keyset-pagination-under-concurrent-inserts",
+  "prerequisites": [
+    "C# LINQ",
+    "HTTP paging concepts",
+    "SQL ORDER BY"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-parking-appeal-review-inbox",
+    "scenarioType": "live-appeal-insertion-and-deletion-between-consecutive-page-requests",
+    "primaryRootCause": "offset-pagination-references-mutable-row-positions-under-concurrent-feed-changes",
+    "failureMode": "duplicate-and-omitted-appeals-across-a-multi-page-review-session",
+    "solutionPattern": "seek-pagination-using-stable-composite-createdat-id-cursor",
+    "labFormat": "live-feed-pagination-multi-signal-production-incident"
+  },
+  "validationNotes": "Strict static consistency review of .NET 8 starter/reference/checks and PowerShell commands; execution unavailable under GitHub-only tool scope."
+}

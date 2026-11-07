@@ -1,0 +1,41 @@
+{
+  "unitId": "UNIT-PDETAIL-001",
+  "runSlot": "2026-10-30-15",
+  "title": "Đồng bộ kiểm kê cây đô thị: phản hồi lỗi mất thông tin điều tra",
+  "domain": "http-client-problem-details-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-30T15:10:50+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "http-problem-details-error-classification",
+    "httpclient-response-lifecycle",
+    "safe-error-observability",
+    "retryability-policy"
+  ],
+  "prerequisites": [
+    "C#/.NET 8",
+    "HTTP status and headers",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-urban-tree-survey-partner-sync",
+    "scenarioType": "partner-422-503-and-legacy-500-errors-lose-actionable-contract-fields",
+    "primaryRootCause": "ensuresuccessstatuscode-throws-before-reading-structured-partner-error-response",
+    "failureMode": "permanent-data-rejection-and-transient-outage-both-surface-as-generic-http-exceptions-without-problem-code-or-trace-id",
+    "solutionPattern": "parse-bounded-problem-details-and-emit-typed-status-aware-error-with-safe-fallback",
+    "labFormat": "partner-http-error-contract-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

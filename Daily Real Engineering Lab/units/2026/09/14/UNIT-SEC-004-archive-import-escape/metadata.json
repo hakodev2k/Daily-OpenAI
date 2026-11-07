@@ -1,0 +1,34 @@
+{
+  "unitId": "UNIT-SEC-004",
+  "runSlot": "2026-09-14-01",
+  "title": "Archive Import Vượt Khỏi Workspace",
+  "domain": "security",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-09-14T01:08:41+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "secure-file-handling",
+    "path-canonicalization",
+    "ziparchive",
+    "trust-boundaries"
+  ],
+  "prerequisites": [
+    "C# file I/O basics",
+    "System.IO.Compression basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D2",
+    "dailyBand": ["D1", "D2"],
+    "programPhase": "foundation-depth"
+  },
+  "novelty": {
+    "businessContext": "customer-theme-package-import",
+    "scenarioType": "untrusted-archive-file-write",
+    "primaryRootCause": "archive-entry-path-is-combined-with-destination-without-canonical-containment-validation",
+    "failureMode": "archive-entry-writes-file-outside-approved-import-root",
+    "solutionPattern": "canonicalize-target-path-and-enforce-destination-root-containment",
+    "labFormat": "security-archive-investigation"
+  }
+}

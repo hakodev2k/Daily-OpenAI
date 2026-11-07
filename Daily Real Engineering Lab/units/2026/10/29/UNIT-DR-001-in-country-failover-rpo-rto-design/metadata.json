@@ -1,0 +1,43 @@
+{
+  "unitId": "UNIT-DR-001",
+  "runSlot": "2026-10-29-08",
+  "title": "Thiết kế failover nội địa: RPO, RTO và giới hạn lưu trú dữ liệu",
+  "domain": "disaster-recovery-data-residency",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-10-29T08:04:29+07:00",
+  "estimatedMinutes": 80,
+  "skills": [
+    "rpo-rto-data-residency-feasibility-and-write-admission",
+    "disaster-recovery-architecture",
+    "replication-lag-evidence",
+    "failover-fencing",
+    "architecture-decision-record"
+  ],
+  "primarySkill": "rpo-rto-data-residency-feasibility-and-write-admission",
+  "prerequisites": [
+    "RPO/RTO",
+    "database replication",
+    "durable commit",
+    "p99 latency",
+    "primary/standby"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Architecture tabletop, không có runtime. Dữ liệu synthetic; đã kiểm tra consistency, references và phép tính bằng static review.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-cultural-heritage-access-pass-platform",
+    "scenarioType": "region-wide-outage-recovery-plan-under-jurisdiction-and-slo-constraints",
+    "primaryRootCause": "no-proven-recovery-option-satisfies-residency-rpo-rto-and-write-latency-together",
+    "failureMode": "disaster-recovery-plan-advertises-unproven-rpo-rto-and-single-writer-safety",
+    "solutionPattern": "constraint-gated-in-jurisdiction-standby-with-write-admission-and-drill-evidence",
+    "labFormat": "disaster-recovery-architecture-decision-tabletop"
+  }
+}

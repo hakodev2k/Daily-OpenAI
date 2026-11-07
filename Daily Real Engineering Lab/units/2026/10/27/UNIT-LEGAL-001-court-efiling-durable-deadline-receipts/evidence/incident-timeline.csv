@@ -1,0 +1,15 @@
+case,at_utc,event,request_id,idempotency_key,receipt_id,authoritative_store,notes
+A,2026-10-27T09:59:58.400Z,api_request_started,req-A,party-17:filing-204,,none,deadline_local_17:00
+A,2026-10-27T09:59:58.520Z,api_200_sent,req-A,party-17:filing-204,R-204,unconfirmed,receipt_visible_to_client
+A,2026-10-27T09:59:58.690Z,primary_site_lost,req-A,party-17:filing-204,R-204,absent_after_failover,store_write_not_observed
+B,2026-10-27T09:59:59.850Z,api_request_started,req-B,party-31:filing-883,,none,deadline_local_17:00
+B,2026-10-27T10:00:00.050Z,store_commit_observed,req-B,party-31:filing-883,R-883,present,request_started_before_deadline
+B,2026-10-27T10:00:00.110Z,api_200_sent,req-B,party-31:filing-883,R-883,present,deadline_verdict_marked_on_time
+C,2026-10-27T09:59:55.000Z,api_request_started,req-C1,party-42:filing-109,,none,client_times_out
+C,2026-10-27T09:59:55.300Z,store_commit_observed,req-C1,party-42:filing-109,R-109,present,client_did_not_receive_response
+C,2026-10-27T09:59:56.100Z,client_retry,req-C2,party-42:filing-109,,present,new_request_id_same_key
+C,2026-10-27T09:59:56.500Z,second_receipt_created,req-C2,party-42:filing-109,R-110,present,two_receipts_for_one_intent
+D,2026-10-27T09:57:20.000Z,receipt_created,req-D,party-53:filing-512,R-512,present,scanner_unavailable_45_minutes
+D,2026-10-27T10:42:20.000Z,scanner_resumed,worker-D,party-53:filing-512,R-512,present,receipt_still_visible
+E,2026-10-27T09:59:57.100Z,inter_site_partition,req-E,party-62:filing-777,,unknown,replication_ack_missing
+E,2026-10-27T09:59:57.600Z,api_200_sent,req-E,party-62:filing-777,R-777,unknown,replica_cannot_confirm_durability

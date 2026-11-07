@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-BASEURI-001",
+  "runSlot": "2026-10-29-20",
+  "title": "API cảnh báo cháy rừng trả 404 sau nâng cấp đối tác",
+  "domain": "http-uri-composition",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-10-29T20:08:55+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "httpclient-baseaddress-relative-uri-resolution",
+    "http-request-uri-contracts",
+    "http-404-diagnostics",
+    "behavioral-regression-testing"
+  ],
+  "primarySkill": "httpclient-baseaddress-relative-uri-resolution",
+  "prerequisites": [
+    ".NET SDK 8.x",
+    "PowerShell",
+    "HTTP URI cơ bản"
+  ],
+  "validationMode": "static-review",
+  "validationNotes": "Strict static consistency review of URI resolution, three fixtures, script exit semantics, and learner-path verification. dotnet not executed because this run is restricted to the GitHub integration.",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "forest-fire-early-warning-partner-notification",
+    "scenarioType": "partner-v3-notice-endpoint-returns-404-while-direct-smoke-test-succeeds",
+    "primaryRootCause": "leading-slash-relative-request-reference-discards-httpclient-baseaddress-path-prefix",
+    "failureMode": "partner-notices-misdirected-to-origin-root-after-versioned-api-cutover",
+    "solutionPattern": "relative-request-target-preserves-configured-base-path-with-route-contract-regression",
+    "labFormat": "http-base-uri-route-contract-investigation"
+  }
+}
