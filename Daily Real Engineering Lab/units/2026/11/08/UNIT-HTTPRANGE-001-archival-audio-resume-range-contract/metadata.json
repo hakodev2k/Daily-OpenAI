@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-HTTPRANGE-001",
+  "runSlot": "2026-11-08-06",
+  "title": "Audio archive tải tiếp bị hỏng khi máy chủ bỏ qua Range",
+  "domain": "http-download-resume-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-08T06:09:42+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "http-range",
+    "partial-content",
+    "download-integrity"
+  ],
+  "prerequisites": [
+    "http-status-codes",
+    "csharp-file-io"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "oral-history-archive-audio-download",
+    "scenarioType": "client-resumes-partial-audio-file-after-network-interruption",
+    "primaryRootCause": "download-client-appends-full-200-response-when-server-ignores-range",
+    "failureMode": "resumed-audio-file-contains-duplicated-prefix-and-corrupts-checksum",
+    "solutionPattern": "validate-206-content-range-before-append-and-restart-on-200",
+    "labFormat": "http-range-resume-deterministic-contract-lab"
+  }
+}
