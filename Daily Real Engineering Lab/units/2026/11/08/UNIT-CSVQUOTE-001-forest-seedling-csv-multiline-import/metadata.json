@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CSVQUOTE-001",
+  "runSlot": "2026-11-08-02",
+  "title": "Bản ghi CSV nhiều dòng làm lệch kiểm kê cây giống",
+  "domain": "dotnet-csv-import-parsing",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-08T02:07:40+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "csv-record-framing",
+    "csharp-state-machine",
+    "data-import-contract-tests"
+  ],
+  "prerequisites": [
+    ".NET 8 SDK",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "forest-nursery-seedling-provenance-import",
+    "scenarioType": "vendor-csv-notes-contain-embedded-newlines-and-escaped-quotes",
+    "primaryRootCause": "line-oriented-csv-parser-confuses-physical-lines-with-logical-records",
+    "failureMode": "valid-multiline-nursery-note-becomes-extra-row-and-triggers-false-rejection",
+    "solutionPattern": "stateful-rfc4180-quoted-field-parser-with-record-boundary-validation",
+    "labFormat": "csv-import-investigation-with-fixture-driven-regression"
+  }
+}
