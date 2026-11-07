@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CSVQUOTE-001",
-    "runSlot": "2026-11-08-02",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CSVQUOTE-001-forest-seedling-csv-multiline-import",
+    "unitId": "UNIT-EVENTSUB-001",
+    "runSlot": "2026-11-08-03",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-EVENTSUB-001-mountain-rescue-shift-alert-duplicate-delivery",
     "status": "READY",
-    "createdAt": "2026-11-08T02:07:40+07:00"
+    "createdAt": "2026-11-08T03:04:41+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 466,
-    "totalGenerated": 461,
+    "totalRunSlotsAttempted": 467,
+    "totalGenerated": 462,
     "totalFailed": 5
   },
   "learning": {

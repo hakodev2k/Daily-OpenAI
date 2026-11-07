@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-30-23",
-      "unitId": "UNIT-MSET-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/30/UNIT-MSET-001-meter-kit-multiset-stock-reconciliation",
-      "domain": "csharp-linq-multiset-reconciliation",
-      "primarySkill": "linq-set-vs-multiset-semantics",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "district-water-meter-replacement-kit-warehouse",
-      "scenarioType": "manifest-vs-scanner-quantity-reconciliation",
-      "primaryRootCause": "set-difference-collapses-repeated-sku-occurrences-in-counted-stock",
-      "failureMode": "missing-and-surplus-physical-kits-not-reported-when-sku-exists-on-both-sides",
-      "solutionPattern": "frequency-aware-multiset-difference-preserving-occurrence-counts",
-      "labFormat": "deterministic-stock-reconciliation-contract-lab"
-    },
-    {
       "runSlot": "2026-10-31-00",
       "unitId": "UNIT-DISP-001",
       "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-DISP-001-coastal-vessel-archive-dual-failure",
@@ -1501,6 +1486,21 @@
       "failureMode": "valid-multiline-nursery-note-becomes-extra-row-and-triggers-false-rejection",
       "solutionPattern": "stateful-rfc4180-quoted-field-parser-with-record-boundary-validation",
       "labFormat": "csv-import-investigation-with-fixture-driven-regression"
+    },
+    {
+      "runSlot": "2026-11-08-03",
+      "unitId": "UNIT-EVENTSUB-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-EVENTSUB-001-mountain-rescue-shift-alert-duplicate-delivery",
+      "domain": "dotnet-event-lifecycle",
+      "primarySkill": "csharp-event-subscription-lifecycle",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "mountain-search-and-rescue-shift-alerting",
+      "scenarioType": "long-lived-notification-hub-with-rotating-incident-duty",
+      "primaryRootCause": "event-subscribers-accumulate-across-shift-transitions",
+      "failureMode": "old-shift-receives-new-alert-and-current-alert-count-grows",
+      "solutionPattern": "explicit-event-handler-ownership-and-unsubscribe-on-shift-transition",
+      "labFormat": "production-incident-event-lifecycle-investigation"
     }
   ],
   "rolling24": {
@@ -1634,36 +1634,6 @@
     }
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-03-03",
-      "unitId": "UNIT-RETENTION-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-RETENTION-001-warranty-evidence-retention-legal-hold",
-      "domain": "data-retention-governance-and-cross-store-consistency",
-      "primarySkill": "retention-legal-hold-delete-eligibility-and-cross-store-consistency",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "home-appliance-warranty-dispute-evidence",
-      "scenarioType": "retention-expiry-conflicts-with-legal-hold-and-cross-store-deletion",
-      "primaryRootCause": "independent-relational-and-object-retention-decisions-without-authoritative-hold-and-deletion-coordination",
-      "failureMode": "held-evidence-lost-while-expired-unheld-objects-survive",
-      "solutionPattern": "hold-aware-eligibility-fenced-deletion-state-machine-and-cross-store-reconciliation",
-      "labFormat": "evidence-retention-design-decision-and-incident-replay"
-    },
-    {
-      "runSlot": "2026-11-03-04",
-      "unitId": "UNIT-SEGMENT-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SEGMENT-001-offshore-buoy-telemetry-buffer-window",
-      "domain": "dotnet-arraysegment-buffer-view-semantics",
-      "primarySkill": "arraysegment-offset-count-window-contract",
-      "maturityLevel": "L1",
-      "difficulty": "D4",
-      "businessContext": "offshore-buoy-sensor-uplink",
-      "scenarioType": "binary-frame-payload-differs-only-for-windowed-input",
-      "primaryRootCause": "arraysegment-payload-copy-uses-backing-array-origin-instead-of-window-start",
-      "failureMode": "wire-frame-contains-unrelated-prefix-bytes-and-omits-tail-of-measurement",
-      "solutionPattern": "honor-arraysegment-offset-and-count-in-framing-boundary",
-      "labFormat": "deterministic-buffer-view-contract-lab"
-    },
     {
       "runSlot": "2026-11-03-05",
       "unitId": "UNIT-ENUM-001",
@@ -1995,19 +1965,34 @@
       "labFormat": "disaster-recovery-tabletop-evidence-and-runbook"
     },
     {
-      "runSlot": "2026-11-08-01",
-      "unitId": "UNIT-BODYREAD-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-BODYREAD-001-coastal-permit-request-body-audit",
-      "domain": "aspnetcore-request-stream-lifecycle",
-      "primarySkill": "aspnet-core-middleware",
-      "maturityLevel": "L1",
+      "runSlot": "2026-11-08-02",
+      "unitId": "UNIT-CSVQUOTE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CSVQUOTE-001-forest-seedling-csv-multiline-import",
+      "domain": "dotnet-csv-import-parsing",
+      "primarySkill": "csv-record-framing",
+      "maturityLevel": "L2",
       "difficulty": "D4",
-      "businessContext": "coastal-construction-permit-intake",
-      "scenarioType": "middleware-audit-before-request-validation",
-      "primaryRootCause": "middleware-consumes-nonrewound-request-body-stream",
-      "failureMode": "valid-json-request-is-rejected-as-empty-after-audit",
-      "solutionPattern": "enable-buffering-with-bounded-audit-and-rewind-before-next",
-      "labFormat": "aspnetcore-middleware-stream-contract-regression"
+      "businessContext": "forest-nursery-seedling-provenance-import",
+      "scenarioType": "vendor-csv-notes-contain-embedded-newlines-and-escaped-quotes",
+      "primaryRootCause": "line-oriented-csv-parser-confuses-physical-lines-with-logical-records",
+      "failureMode": "valid-multiline-nursery-note-becomes-extra-row-and-triggers-false-rejection",
+      "solutionPattern": "stateful-rfc4180-quoted-field-parser-with-record-boundary-validation",
+      "labFormat": "csv-import-investigation-with-fixture-driven-regression"
+    },
+    {
+      "runSlot": "2026-11-08-03",
+      "unitId": "UNIT-EVENTSUB-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-EVENTSUB-001-mountain-rescue-shift-alert-duplicate-delivery",
+      "domain": "dotnet-event-lifecycle",
+      "primarySkill": "csharp-event-subscription-lifecycle",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "mountain-search-and-rescue-shift-alerting",
+      "scenarioType": "long-lived-notification-hub-with-rotating-incident-duty",
+      "primaryRootCause": "event-subscribers-accumulate-across-shift-transitions",
+      "failureMode": "old-shift-receives-new-alert-and-current-alert-count-grows",
+      "solutionPattern": "explicit-event-handler-ownership-and-unsubscribe-on-shift-transition",
+      "labFormat": "production-incident-event-lifecycle-investigation"
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-EVENTSUB-001",
+  "runSlot": "2026-11-08-03",
+  "title": "Mountain rescue alerts: deliveries multiply after duty handover",
+  "domain": "dotnet-event-lifecycle",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-08T03:04:41+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "csharp-events",
+    "lifetime-management",
+    "production-diagnostics"
+  ],
+  "prerequisites": [
+    "C# delegates and events",
+    ".NET 8 SDK"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "mountain-search-and-rescue-shift-alerting",
+    "scenarioType": "long-lived-notification-hub-with-rotating-incident-duty",
+    "primaryRootCause": "event-subscribers-accumulate-across-shift-transitions",
+    "failureMode": "old-shift-receives-new-alert-and-current-alert-count-grows",
+    "solutionPattern": "explicit-event-handler-ownership-and-unsubscribe-on-shift-transition",
+    "labFormat": "production-incident-event-lifecycle-investigation"
+  }
+}
