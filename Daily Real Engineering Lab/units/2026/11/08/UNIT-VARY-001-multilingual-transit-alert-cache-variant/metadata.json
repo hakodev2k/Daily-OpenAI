@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-VARY-001",
+  "runSlot": "2026-11-08-16",
+  "title": "Bản tin giao thông hiển thị sai ngôn ngữ sau khi bật cache",
+  "domain": "http-response-variant-caching",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-08T16:07:17+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "http-vary",
+    "cache-key-design",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    ".NET 8 SDK",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "city-transit-multilingual-service-alerts",
+    "scenarioType": "same-resource-serves-language-variants-behind-memory-cache",
+    "primaryRootCause": "cache-key-excludes-content-language-dimension",
+    "failureMode": "first-request-language-contaminates-subsequent-language-response",
+    "solutionPattern": "canonicalized-language-aware-cache-key-with-order-independent-regression",
+    "labFormat": "cache-variant-refactoring-with-deterministic-order-replay"
+  }
+}
