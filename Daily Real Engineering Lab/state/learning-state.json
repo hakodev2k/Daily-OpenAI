@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LEASEFENCE-001",
-    "runSlot": "2026-11-08-22",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-LEASEFENCE-001-mobile-clinic-export-stale-worker-fencing",
+    "unitId": "UNIT-OFFLINECONFLICT-001",
+    "runSlot": "2026-11-08-23",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-OFFLINECONFLICT-001-school-meal-allergy-offline-sync-conflicts",
     "status": "READY",
-    "createdAt": "2026-11-08T22:13:01+07:00"
+    "createdAt": "2026-11-08T23:05:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 485,
-    "totalGenerated": 480,
+    "totalRunSlotsAttempted": 486,
+    "totalGenerated": 481,
     "totalFailed": 5
   },
   "learning": {
