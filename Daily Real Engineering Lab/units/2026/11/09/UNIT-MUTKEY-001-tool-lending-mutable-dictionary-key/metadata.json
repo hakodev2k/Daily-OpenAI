@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-MUTKEY-001",
+  "runSlot": "2026-11-09-00",
+  "title": "Phiếu mượn dụng cụ biến mất khỏi bảng tra cứu",
+  "domain": "dotnet-collections-identity",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-09T00:09:00+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "dictionary-hashcode-contract",
+    "mutable-identity",
+    "csharp-equality"
+  ],
+  "primarySkill": "dictionary-hashcode-contract",
+  "prerequisites": [
+    "csharp-classes",
+    "collections"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-tool-lending-inventory",
+    "scenarioType": "reservation-index-lookup-after-asset-record-edit",
+    "primaryRootCause": "mutable-object-hashcode-changes-after-dictionary-insertion",
+    "failureMode": "previously-inserted-reservation-key-becomes-unfindable",
+    "solutionPattern": "immutable-stable-identity-key-for-dictionary-index",
+    "labFormat": "deterministic-mutable-key-lookup-contract"
+  }
+}

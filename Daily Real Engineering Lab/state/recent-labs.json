@@ -1291,6 +1291,21 @@
       "failureMode": "unsafe-stale-allergy-clearance-on-serving-tablet",
       "solutionPattern": "server-authoritative-safety-state-with-revision-checked-review",
       "labFormat": "offline-first-safety-architecture-event-replay"
+    },
+    {
+      "runSlot": "2026-11-09-00",
+      "unitId": "UNIT-MUTKEY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-MUTKEY-001-tool-lending-mutable-dictionary-key",
+      "domain": "dotnet-collections-identity",
+      "primarySkill": "dictionary-hashcode-contract",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "municipal-tool-lending-inventory",
+      "scenarioType": "reservation-index-lookup-after-asset-record-edit",
+      "primaryRootCause": "mutable-object-hashcode-changes-after-dictionary-insertion",
+      "failureMode": "previously-inserted-reservation-key-becomes-unfindable",
+      "solutionPattern": "immutable-stable-identity-key-for-dictionary-index",
+      "labFormat": "deterministic-mutable-key-lookup-contract"
     }
   ],
   "rolling24": {

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OFFLINECONFLICT-001",
-    "runSlot": "2026-11-08-23",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-OFFLINECONFLICT-001-school-meal-allergy-offline-sync-conflicts",
+    "unitId": "UNIT-MUTKEY-001",
+    "runSlot": "2026-11-09-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-MUTKEY-001-tool-lending-mutable-dictionary-key",
     "status": "READY",
-    "createdAt": "2026-11-08T23:05:31+07:00"
+    "createdAt": "2026-11-09T00:09:00+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 486,
-    "totalGenerated": 481,
+    "totalRunSlotsAttempted": 487,
+    "totalGenerated": 482,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 62,
+    "elapsedDays": 63,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
