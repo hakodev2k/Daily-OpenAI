@@ -1506,7 +1506,6 @@
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "csharp-hash-collection-key-invariants": 1,
       "dotnet-semaphoreslim-cancellation-ownership": 1,
       "api-optimistic-concurrency-contract": 1,
       "dotnet-channel-backpressure-and-delivery-semantics": 1,
@@ -1529,21 +1528,21 @@
       "cloud-object-storage-governance": 1,
       "http-download-resume-semantics": 1,
       "csharp-linq-query-semantics": 1,
-      "dotnet-system-threading-channels": 1
+      "dotnet-system-threading-channels": 1,
+      "dotnet-timezone-scheduling": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L1": 4,
       "L2": 5,
       "L3": 5,
-      "L4": 4,
+      "L4": 5,
       "L5": 4,
+      "L1": 3,
       "L6": 2
     },
     "byFormat": {
-      "deterministic-hash-key-invariant-regression": 1,
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
       "production-incident-replay-with-conditional-update-contract": 1,
       "deterministic-bounded-channel-data-loss-investigation": 1,
@@ -1566,13 +1565,13 @@
       "storage-governance-design-decision-tabletop-with-case-timeline": 1,
       "http-range-resume-deterministic-contract-lab": 1,
       "linq-query-semantics-investigation-with-permutation-regression": 1,
-      "deterministic-channel-overload-incident-reproduction": 1
+      "deterministic-channel-overload-incident-reproduction": 1,
+      "legacy-scheduler-timezone-refactoring-with-calendar-regression": 1
     }
   },
   "rollingProfile": {
     "count": 24,
     "byDomain": {
-      "csharp-hash-collection-key-invariants": 1,
       "dotnet-semaphoreslim-cancellation-ownership": 1,
       "api-optimistic-concurrency-contract": 1,
       "dotnet-channel-backpressure-and-delivery-semantics": 1,
@@ -1595,21 +1594,21 @@
       "cloud-object-storage-governance": 1,
       "http-download-resume-semantics": 1,
       "csharp-linq-query-semantics": 1,
-      "dotnet-system-threading-channels": 1
+      "dotnet-system-threading-channels": 1,
+      "dotnet-timezone-scheduling": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L1": 4,
       "L2": 5,
       "L3": 5,
-      "L4": 4,
+      "L4": 5,
       "L5": 4,
+      "L1": 3,
       "L6": 2
     },
     "byFormat": {
-      "deterministic-hash-key-invariant-regression": 1,
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
       "production-incident-replay-with-conditional-update-contract": 1,
       "deterministic-bounded-channel-data-loss-investigation": 1,
@@ -1632,7 +1631,8 @@
       "storage-governance-design-decision-tabletop-with-case-timeline": 1,
       "http-range-resume-deterministic-contract-lab": 1,
       "linq-query-semantics-investigation-with-permutation-regression": 1,
-      "deterministic-channel-overload-incident-reproduction": 1
+      "deterministic-channel-overload-incident-reproduction": 1,
+      "legacy-scheduler-timezone-refactoring-with-calendar-regression": 1
     }
   },
   "recentLabs": [
