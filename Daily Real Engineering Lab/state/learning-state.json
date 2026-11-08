@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CHANNEL-001",
-    "runSlot": "2026-11-08-09",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CHANNEL-001-flood-warning-channel-loss",
+    "unitId": "UNIT-DSTWINDOW-001",
+    "runSlot": "2026-11-08-10",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-DSTWINDOW-001-public-library-booking-daylight-saving-window",
     "status": "READY",
-    "createdAt": "2026-11-08T09:13:24+07:00"
+    "createdAt": "2026-11-08T10:04:05+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 472,
-    "totalGenerated": 467,
+    "totalRunSlotsAttempted": 473,
+    "totalGenerated": 468,
     "totalFailed": 5
   },
   "learning": {

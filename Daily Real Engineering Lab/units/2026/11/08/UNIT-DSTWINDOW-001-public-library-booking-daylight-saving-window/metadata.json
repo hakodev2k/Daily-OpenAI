@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-DSTWINDOW-001",
+  "runSlot": "2026-11-08-10",
+  "title": "Cửa sổ đặt chỗ thư viện lệch một giờ khi chuyển DST",
+  "domain": "dotnet-timezone-scheduling",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-08T10:04:05+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "datetimeoffset",
+    "timezoneinfo",
+    "calendar-scheduling",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    ".NET 8 SDK",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-library-room-booking-in-north-america",
+    "scenarioType": "calendar-opening-time-crosses-daylight-saving-transition",
+    "primaryRootCause": "fixed-utc-offset-used-instead-of-zone-rules-for-future-local-time",
+    "failureMode": "booking-window-opens-one-hour-early-after-dst-transition",
+    "solutionPattern": "convert-local-calendar-time-through-timezoneinfo-with-invalid-ambiguous-policy",
+    "labFormat": "legacy-scheduler-timezone-refactoring-with-calendar-regression"
+  }
+}
