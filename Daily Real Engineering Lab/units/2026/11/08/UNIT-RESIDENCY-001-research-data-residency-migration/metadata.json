@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-RESIDENCY-001",
+  "runSlot": "2026-11-08-12",
+  "title": "Chuyển vùng dữ liệu tenant khi worker vẫn đang ghi",
+  "domain": "multi-region-data-residency-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-08T12:09:55+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "tenant-data-residency",
+    "multi-region-cutover",
+    "background-worker-fencing",
+    "audit-reconciliation"
+  ],
+  "prerequisites": [
+    "HTTP routing",
+    "queue consumer semantics",
+    "database transactions"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "cross-border-materials-research-saas",
+    "scenarioType": "tenant-data-residency-cutover-with-inflight-writes",
+    "primaryRootCause": "application-routing-switches-before-all-write-paths-and-async-workers-are-region-fenced",
+    "failureMode": "post-cutover-personal-data-and-derived-artifacts-continue-writing-to-old-region",
+    "solutionPattern": "region-scoped-write-fencing-with-versioned-tenant-home-and-audited-drain-reconciliation",
+    "labFormat": "data-residency-architecture-cutover-tabletop"
+  }
+}
