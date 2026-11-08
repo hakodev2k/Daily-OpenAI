@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-31-08",
-      "unitId": "UNIT-PQ-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-PQ-001-blood-courier-urgent-dispatch-priority",
-      "domain": "dotnet-priorityqueue-scheduling",
-      "primarySkill": "priorityqueue-priority-snapshot-and-reprioritization",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "regional-blood-bank-temperature-controlled-courier-dispatch",
-      "scenarioType": "urgent-courier-request-escalated-after-queue-admission",
-      "primaryRootCause": "priorityqueue-enqueue-priority-is-a-snapshot-while-request-urgency-is-mutated-later",
-      "failureMode": "critical-blood-delivery-remains-behind-lower-priority-route-despite-updated-request-record",
-      "solutionPattern": "versioned-queue-tickets-with-stale-ticket-skip-and-stable-fifo-tiebreaker",
-      "labFormat": "priority-escalation-deterministic-scheduling-contract"
-    },
-    {
       "runSlot": "2026-10-31-09",
       "unitId": "UNIT-MBUF-001",
       "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-MBUF-001-orchard-sensor-frame-transport-length",
@@ -1501,6 +1486,21 @@
       "failureMode": "post-cutover-personal-data-and-derived-artifacts-continue-writing-to-old-region",
       "solutionPattern": "region-scoped-write-fencing-with-versioned-tenant-home-and-audited-drain-reconciliation",
       "labFormat": "data-residency-architecture-cutover-tabletop"
+    },
+    {
+      "runSlot": "2026-11-08-13",
+      "unitId": "UNIT-READLOOP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-READLOOP-001-harbor-buoy-fragmented-frame-read",
+      "domain": "dotnet-stream-framing",
+      "primarySkill": "stream-readasync-partial-read-semantics",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "harbor-buoy-wave-height-telemetry",
+      "scenarioType": "tcp-frame-arrives-in-multiple-small-read-chunks",
+      "primaryRootCause": "stream-readasync-return-count-assumed-to-equal-requested-byte-count",
+      "failureMode": "valid-length-prefixed-sensor-frame-truncated-or-decoded-with-zero-padding",
+      "solutionPattern": "loop-until-exact-payload-length-or-explicit-end-of-stream",
+      "labFormat": "fragmented-stream-read-deterministic-contract"
     }
   ],
   "rolling24": {

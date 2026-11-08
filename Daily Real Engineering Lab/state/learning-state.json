@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RESIDENCY-001",
-    "runSlot": "2026-11-08-12",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-RESIDENCY-001-research-data-residency-migration",
+    "unitId": "UNIT-READLOOP-001",
+    "runSlot": "2026-11-08-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-READLOOP-001-harbor-buoy-fragmented-frame-read",
     "status": "READY",
-    "createdAt": "2026-11-08T12:09:55+07:00"
+    "createdAt": "2026-11-08T13:09:09+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 475,
-    "totalGenerated": 470,
+    "totalRunSlotsAttempted": 476,
+    "totalGenerated": 471,
     "totalFailed": 5
   },
   "learning": {

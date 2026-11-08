@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-READLOOP-001",
+  "runSlot": "2026-11-08-13",
+  "title": "Khung telemetry phao cảng bị cắt khi đường truyền phân mảnh",
+  "domain": "dotnet-stream-framing",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-08T13:09:09+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "stream-readasync-partial-read-semantics",
+    "binary-framing",
+    "async-io",
+    "protocol-integrity"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "Stream basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-buoy-wave-height-telemetry",
+    "scenarioType": "tcp-frame-arrives-in-multiple-small-read-chunks",
+    "primaryRootCause": "stream-readasync-return-count-assumed-to-equal-requested-byte-count",
+    "failureMode": "valid-length-prefixed-sensor-frame-truncated-or-decoded-with-zero-padding",
+    "solutionPattern": "loop-until-exact-payload-length-or-explicit-end-of-stream",
+    "labFormat": "fragmented-stream-read-deterministic-contract"
+  }
+}
