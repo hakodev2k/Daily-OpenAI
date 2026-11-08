@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-PAGECURSOR-001",
+  "runSlot": "2026-11-09-06",
+  "title": "Museum export: bản ghi biến mất ở ranh giới phân trang",
+  "domain": "database-pagination-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-09T06:08:56+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "keyset-pagination",
+    "stable-ordering",
+    "sql-cursor-contract"
+  ],
+  "prerequisites": [
+    "C# LINQ",
+    "SQL ORDER BY"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-museum-artifact-digitization",
+    "scenarioType": "batch-export-with-tied-updated-at-timestamps",
+    "primaryRootCause": "non-unique-keyset-cursor-omits-tie-breaker",
+    "failureMode": "records-with-same-timestamp-are-silently-skipped-across-pages",
+    "solutionPattern": "composite-lexicographic-cursor-with-stable-unique-id",
+    "labFormat": "deterministic-pagination-boundary-contract"
+  }
+}
