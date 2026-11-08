@@ -1246,6 +1246,21 @@
       "failureMode": "mixed-version-requests-fail-and-rollback-cannot-write-donor-contact-preference",
       "solutionPattern": "expand-migrate-contract-with-compatibility-matrix-backfill-and-observed-cutover-gates",
       "labFormat": "schema-rollout-decision-tabletop-with-compatibility-matrix"
+    },
+    {
+      "runSlot": "2026-11-08-18",
+      "unitId": "UNIT-DECIMAL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-DECIMAL-001-food-bank-donation-ledger-cent-drift",
+      "domain": "dotnet-financial-numeric-semantics",
+      "primarySkill": "decimal-rounding-boundaries",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "regional-food-bank-donation-reconciliation",
+      "scenarioType": "import-small-fractional-donations-and-aggregate-daily-totals",
+      "primaryRootCause": "binary-floating-point-rounding-before-financial-cent-aggregation",
+      "failureMode": "reconciliation-total-differs-by-one-cent-on-boundary-values",
+      "solutionPattern": "decimal-first-parsing-and-explicit-midpoint-rounding-at-defined-ledger-boundary",
+      "labFormat": "financial-numeric-contract-reproduction-with-boundary-matrix"
     }
   ],
   "rolling24": [

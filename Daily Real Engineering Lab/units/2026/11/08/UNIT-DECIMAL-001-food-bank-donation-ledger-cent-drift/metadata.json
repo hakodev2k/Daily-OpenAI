@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DECIMAL-001",
+  "runSlot": "2026-11-08-18",
+  "title": "Food bank donation ledger cent drift",
+  "domain": "dotnet-financial-numeric-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-08T18:09:13+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "decimal",
+    "midpoint-rounding",
+    "financial-reconciliation"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "csharp-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-food-bank-donation-reconciliation",
+    "scenarioType": "import-small-fractional-donations-and-aggregate-daily-totals",
+    "primaryRootCause": "binary-floating-point-rounding-before-financial-cent-aggregation",
+    "failureMode": "reconciliation-total-differs-by-one-cent-on-boundary-values",
+    "solutionPattern": "decimal-first-parsing-and-explicit-midpoint-rounding-at-defined-ledger-boundary",
+    "labFormat": "financial-numeric-contract-reproduction-with-boundary-matrix"
+  }
+}
