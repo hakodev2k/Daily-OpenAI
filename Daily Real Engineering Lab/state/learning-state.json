@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-READLOOP-001",
-    "runSlot": "2026-11-08-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-READLOOP-001-harbor-buoy-fragmented-frame-read",
+    "unitId": "UNIT-OVERPOST-001",
+    "runSlot": "2026-11-08-14",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-OVERPOST-001-volunteer-credential-review-overposting",
     "status": "READY",
-    "createdAt": "2026-11-08T13:09:09+07:00"
+    "createdAt": "2026-11-08T14:05:05+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 476,
-    "totalGenerated": 471,
+    "totalRunSlotsAttempted": 477,
+    "totalGenerated": 472,
     "totalFailed": 5
   },
   "learning": {
