@@ -1,0 +1,1 @@
+Thử thay consumer bằng một handler có thể throw ở alert 7. Thiết kế shutdown, error propagation, retry có giới hạn và persistence để không báo delivery thành công khi consumer đã lỗi. So sánh at-least-once và exactly-once business effect.

@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CHANNEL-001",
+  "runSlot": "2026-11-08-09",
+  "title": "Cảnh báo lũ bị mất khi hàng đợi quá tải",
+  "domain": "dotnet-system-threading-channels",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-08T09:13:24+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "system-threading-channels",
+    "backpressure",
+    "async-producer-consumer"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    ".NET 8 SDK"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "river-flood-sensor-warning-dispatch",
+    "scenarioType": "burst-ingestion-with-slow-notification-consumer",
+    "primaryRootCause": "bounded-channel-drop-oldest-policy-silently-discards-critical-alerts",
+    "failureMode": "published-alert-count-exceeds-delivered-count-with-no-exception",
+    "solutionPattern": "lossless-bounded-channel-backpressure-with-awaited-writes-and-completion",
+    "labFormat": "deterministic-channel-overload-incident-reproduction"
+  }
+}

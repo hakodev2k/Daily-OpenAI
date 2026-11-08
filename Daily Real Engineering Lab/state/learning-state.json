@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LINQRANK-001",
-    "runSlot": "2026-11-08-08",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-LINQRANK-001-scholarship-applicant-best-score-selection",
+    "unitId": "UNIT-CHANNEL-001",
+    "runSlot": "2026-11-08-09",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CHANNEL-001-flood-warning-channel-loss",
     "status": "READY",
-    "createdAt": "2026-11-08T08:05:19+07:00"
+    "createdAt": "2026-11-08T09:13:24+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 471,
-    "totalGenerated": 466,
+    "totalRunSlotsAttempted": 472,
+    "totalGenerated": 467,
     "totalFailed": 5
   },
   "learning": {
