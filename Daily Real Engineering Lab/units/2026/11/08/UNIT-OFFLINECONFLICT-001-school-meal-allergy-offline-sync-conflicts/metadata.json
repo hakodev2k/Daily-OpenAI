@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-OFFLINECONFLICT-001",
+  "runSlot": "2026-11-08-23",
+  "title": "Đồng bộ offline danh sách dị ứng bữa ăn học đường",
+  "domain": "offline-first-safety-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-08T23:05:31+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "offline-sync",
+    "conflict-resolution",
+    "safety-invariants",
+    "architecture-tradeoffs"
+  ],
+  "prerequisites": [
+    "optimistic-concurrency",
+    "eventual-consistency"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "rural-school-meal-allergy-roster",
+    "scenarioType": "offline-tablet-conflicts-with-central-allergy-update",
+    "primaryRootCause": "last-write-wins-overwrites-safety-critical-restriction",
+    "failureMode": "unsafe-stale-allergy-clearance-on-serving-tablet",
+    "solutionPattern": "server-authoritative-safety-state-with-revision-checked-review",
+    "labFormat": "offline-first-safety-architecture-event-replay"
+  }
+}
