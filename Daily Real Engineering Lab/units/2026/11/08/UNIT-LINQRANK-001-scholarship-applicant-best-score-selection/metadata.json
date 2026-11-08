@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-LINQRANK-001",
+  "runSlot": "2026-11-08-08",
+  "title": "Hồ sơ học bổng: chọn sai điểm tốt nhất khi dữ liệu đổi thứ tự",
+  "domain": "csharp-linq-query-semantics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-08T08:05:19+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "linq-operator-order",
+    "distinctby",
+    "deterministic-tiebreaker",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# records",
+    "LINQ OrderBy/DistinctBy"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-scholarship-application-ranking",
+    "scenarioType": "multiple-score-revisions-per-applicant-with-independent-reviewers",
+    "primaryRootCause": "deduplicate-before-priority-order-selects-first-arrival-not-best-scored-revision",
+    "failureMode": "scholarship-shortlist-excludes-qualified-applicant-when-input-order-changes",
+    "solutionPattern": "rank-by-score-and-tiebreaker-before-selecting-one-record-per-applicant",
+    "labFormat": "linq-query-semantics-investigation-with-permutation-regression"
+  }
+}

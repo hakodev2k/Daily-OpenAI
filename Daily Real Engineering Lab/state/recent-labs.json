@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-31-03",
-      "unitId": "UNIT-GRAPH-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-GRAPH-001-flood-alert-unicode-segment-contract",
-      "domain": "dotnet-unicode-text-segmentation",
-      "primarySkill": "unicode-grapheme-boundaries-and-utf8-byte-budgets",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "regional-flood-alert-sms-dispatch",
-      "scenarioType": "multilingual-alert-split-under-provider-utf8-byte-limit",
-      "primaryRootCause": "utf16-string-length-used-as-utf8-byte-and-grapheme-boundary",
-      "failureMode": "segments-exceed-provider-byte-limit-or-contain-split-graphemes-and-invalid-surrogates",
-      "solutionPattern": "grapheme-aware-utf8-byte-budget-segmentation-with-oversize-cluster-rejection",
-      "labFormat": "multilingual-message-segmentation-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-10-31-04",
       "unitId": "UNIT-ROUTE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-ROUTE-001-parking-permit-spa-api-404-contract",
@@ -1501,12 +1486,26 @@
       "failureMode": "resumed-audio-file-contains-duplicated-prefix-and-corrupts-checksum",
       "solutionPattern": "validate-206-content-range-before-append-and-restart-on-200",
       "labFormat": "http-range-resume-deterministic-contract-lab"
+    },
+    {
+      "runSlot": "2026-11-08-08",
+      "unitId": "UNIT-LINQRANK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-LINQRANK-001-scholarship-applicant-best-score-selection",
+      "domain": "csharp-linq-query-semantics",
+      "primarySkill": "linq-operator-order",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-scholarship-application-ranking",
+      "scenarioType": "multiple-score-revisions-per-applicant-with-independent-reviewers",
+      "primaryRootCause": "deduplicate-before-priority-order-selects-first-arrival-not-best-scored-revision",
+      "failureMode": "scholarship-shortlist-excludes-qualified-applicant-when-input-order-changes",
+      "solutionPattern": "rank-by-score-and-tiebreaker-before-selecting-one-record-per-applicant",
+      "labFormat": "linq-query-semantics-investigation-with-permutation-regression"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "messaging-failure-policy-and-fairness": 1,
       "distributed-object-publication-consistency": 1,
       "csharp-hash-collection-key-invariants": 1,
       "dotnet-semaphoreslim-cancellation-ownership": 1,
@@ -1529,21 +1528,21 @@
       "dotnet-event-lifecycle": 1,
       "ef-core-change-tracking": 1,
       "cloud-object-storage-governance": 1,
-      "http-download-resume-semantics": 1
+      "http-download-resume-semantics": 1,
+      "csharp-linq-query-semantics": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 5,
       "L6": 3,
       "L1": 4,
-      "L2": 4,
+      "L2": 5,
       "L3": 4,
-      "L4": 4
+      "L4": 4,
+      "L5": 4
     },
     "byFormat": {
-      "messaging-retry-policy-design-decision-with-deterministic-local-simulator": 1,
       "multi-object-publication-architecture-simulator": 1,
       "deterministic-hash-key-invariant-regression": 1,
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
@@ -1566,13 +1565,13 @@
       "production-incident-event-lifecycle-investigation": 1,
       "ef-core-bulk-write-refactoring-with-relational-regression": 1,
       "storage-governance-design-decision-tabletop-with-case-timeline": 1,
-      "http-range-resume-deterministic-contract-lab": 1
+      "http-range-resume-deterministic-contract-lab": 1,
+      "linq-query-semantics-investigation-with-permutation-regression": 1
     }
   },
   "rollingProfile": {
     "count": 24,
     "byDomain": {
-      "messaging-failure-policy-and-fairness": 1,
       "distributed-object-publication-consistency": 1,
       "csharp-hash-collection-key-invariants": 1,
       "dotnet-semaphoreslim-cancellation-ownership": 1,
@@ -1595,21 +1594,21 @@
       "dotnet-event-lifecycle": 1,
       "ef-core-change-tracking": 1,
       "cloud-object-storage-governance": 1,
-      "http-download-resume-semantics": 1
+      "http-download-resume-semantics": 1,
+      "csharp-linq-query-semantics": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 5,
       "L6": 3,
       "L1": 4,
-      "L2": 4,
+      "L2": 5,
       "L3": 4,
-      "L4": 4
+      "L4": 4,
+      "L5": 4
     },
     "byFormat": {
-      "messaging-retry-policy-design-decision-with-deterministic-local-simulator": 1,
       "multi-object-publication-architecture-simulator": 1,
       "deterministic-hash-key-invariant-regression": 1,
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
@@ -1632,25 +1631,11 @@
       "production-incident-event-lifecycle-investigation": 1,
       "ef-core-bulk-write-refactoring-with-relational-regression": 1,
       "storage-governance-design-decision-tabletop-with-case-timeline": 1,
-      "http-range-resume-deterministic-contract-lab": 1
+      "http-range-resume-deterministic-contract-lab": 1,
+      "linq-query-semantics-investigation-with-permutation-regression": 1
     }
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-03-08",
-      "unitId": "UNIT-MSGRETRY-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-MSGRETRY-001-water-meter-alert-poison-message-fairness",
-      "domain": "messaging-failure-policy-and-fairness",
-      "primarySkill": "messaging-retry-policy",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "regional-water-meter-leak-alert-dispatch",
-      "scenarioType": "poison-gateway-recipient-blocks-independent-site-notifications",
-      "primaryRootCause": "unbounded-head-of-line-retry-without-error-classification-or-site-fairness",
-      "failureMode": "one-permanent-rejection-starves-all-independent-site-alert-deliveries",
-      "solutionPattern": "bounded-classified-delayed-retry-with-per-site-ordering-fair-scheduling-and-dead-letter",
-      "labFormat": "messaging-retry-policy-design-decision-with-deterministic-local-simulator"
-    },
     {
       "runSlot": "2026-11-03-09",
       "unitId": "UNIT-PUBLISH-001",
@@ -1995,6 +1980,21 @@
       "failureMode": "resumed-audio-file-contains-duplicated-prefix-and-corrupts-checksum",
       "solutionPattern": "validate-206-content-range-before-append-and-restart-on-200",
       "labFormat": "http-range-resume-deterministic-contract-lab"
+    },
+    {
+      "runSlot": "2026-11-08-08",
+      "unitId": "UNIT-LINQRANK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-LINQRANK-001-scholarship-applicant-best-score-selection",
+      "domain": "csharp-linq-query-semantics",
+      "primarySkill": "linq-operator-order",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "regional-scholarship-application-ranking",
+      "scenarioType": "multiple-score-revisions-per-applicant-with-independent-reviewers",
+      "primaryRootCause": "deduplicate-before-priority-order-selects-first-arrival-not-best-scored-revision",
+      "failureMode": "scholarship-shortlist-excludes-qualified-applicant-when-input-order-changes",
+      "solutionPattern": "rank-by-score-and-tiebreaker-before-selecting-one-record-per-applicant",
+      "labFormat": "linq-query-semantics-investigation-with-permutation-regression"
     }
   ]
 }
