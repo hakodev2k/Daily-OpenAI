@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OVERPOST-001",
-    "runSlot": "2026-11-08-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-OVERPOST-001-volunteer-credential-review-overposting",
+    "unitId": "UNIT-CANCELCLASS-001",
+    "runSlot": "2026-11-08-15",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CANCELCLASS-001-wildlife-tracker-cancellation-classification",
     "status": "READY",
-    "createdAt": "2026-11-08T14:05:05+07:00"
+    "createdAt": "2026-11-08T15:12:47+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 477,
-    "totalGenerated": 472,
+    "totalRunSlotsAttempted": 478,
+    "totalGenerated": 473,
     "totalFailed": 5
   },
   "learning": {

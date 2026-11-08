@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CANCELCLASS-001",
+  "runSlot": "2026-11-08-15",
+  "title": "Satellite Tracker: Cancellation bị ghi nhận nhầm thành timeout",
+  "domain": "dotnet-async-cancellation",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-08T15:12:47+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "cancellation-token",
+    "operationcanceledexception",
+    "incident-classification"
+  ],
+  "prerequisites": [
+    "Task",
+    "async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-migration-satellite-tracker-uplink",
+    "scenarioType": "canceled-telemetry-upload-reported-as-dependency-timeout",
+    "primaryRootCause": "operationcanceledexception-caught-without-caller-token-cancellation-classification",
+    "failureMode": "operator-dashboard-reports-timeout-when-field-device-request-was-canceled",
+    "solutionPattern": "classify-caller-cancellation-before-dependency-timeout-and-preserve-single-attempt",
+    "labFormat": "cancellation-incident-evidence-and-contract-replay"
+  }
+}

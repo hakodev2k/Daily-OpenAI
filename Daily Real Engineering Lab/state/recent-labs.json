@@ -1201,24 +1201,24 @@
       "failureMode": "self-service-client-can-approve-own-volunteer-profile",
       "solutionPattern": "allowlisted-update-dto-and-server-owned-review-state",
       "labFormat": "security-boundary-investigation-with-local-contract-regression"
+    },
+    {
+      "runSlot": "2026-11-08-15",
+      "unitId": "UNIT-CANCELCLASS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CANCELCLASS-001-wildlife-tracker-cancellation-classification",
+      "domain": "dotnet-async-cancellation",
+      "primarySkill": "cancellation-origin-classification",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "wildlife-migration-satellite-tracker-uplink",
+      "scenarioType": "canceled-telemetry-upload-reported-as-dependency-timeout",
+      "primaryRootCause": "operationcanceledexception-caught-without-caller-token-cancellation-classification",
+      "failureMode": "operator-dashboard-reports-timeout-when-field-device-request-was-canceled",
+      "solutionPattern": "classify-caller-cancellation-before-dependency-timeout-and-preserve-single-attempt",
+      "labFormat": "cancellation-incident-evidence-and-contract-replay"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-03-17",
-      "unitId": "UNIT-KEYNORM-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-KEYNORM-001-community-garden-plot-import-case-collision",
-      "domain": "csharp-dictionary-identity-contract",
-      "primarySkill": "dictionary-duplicate-identity-and-overwrite",
-      "maturityLevel": "L1",
-      "difficulty": "D4",
-      "businessContext": "community-garden-plot-registration",
-      "scenarioType": "two-source-plot-import-identity-collision",
-      "primaryRootCause": "case-insensitive-dictionary-indexer-overwrites-distinct-source-rows-without-conflict-detection",
-      "failureMode": "input-row-count-exceeds-persisted-plot-count-and-owner-is-lost",
-      "solutionPattern": "explicit-business-key-comparer-with-duplicate-rejection-before-commit",
-      "labFormat": "deterministic-batch-identity-contract-lab"
-    },
     {
       "runSlot": "2026-11-03-18",
       "unitId": "UNIT-DECROUND-001",
@@ -1563,12 +1563,26 @@
       "failureMode": "self-service-client-can-approve-own-volunteer-profile",
       "solutionPattern": "allowlisted-update-dto-and-server-owned-review-state",
       "labFormat": "security-boundary-investigation-with-local-contract-regression"
+    },
+    {
+      "runSlot": "2026-11-08-15",
+      "unitId": "UNIT-CANCELCLASS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CANCELCLASS-001-wildlife-tracker-cancellation-classification",
+      "domain": "dotnet-async-cancellation",
+      "primarySkill": "cancellation-origin-classification",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "wildlife-migration-satellite-tracker-uplink",
+      "scenarioType": "canceled-telemetry-upload-reported-as-dependency-timeout",
+      "primaryRootCause": "operationcanceledexception-caught-without-caller-token-cancellation-classification",
+      "failureMode": "operator-dashboard-reports-timeout-when-field-device-request-was-canceled",
+      "solutionPattern": "classify-caller-cancellation-before-dependency-timeout-and-preserve-single-attempt",
+      "labFormat": "cancellation-incident-evidence-and-contract-replay"
     }
   ],
   "rollingProfile": {
     "count": 24,
     "byDomain": {
-      "csharp-dictionary-identity-contract": 1,
       "csharp-decimal-financial-contract": 1,
       "dotnet-httpclient-request-isolation": 1,
       "dotnet-json-contract-validation": 1,
@@ -1591,21 +1605,21 @@
       "api-multi-tenant-rate-limiting": 1,
       "multi-region-data-residency-architecture": 1,
       "dotnet-stream-framing": 1,
-      "aspnetcore-api-input-security": 1
+      "aspnetcore-api-input-security": 1,
+      "dotnet-async-cancellation": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L1": 4,
       "L2": 5,
-      "L3": 4,
+      "L3": 5,
       "L4": 4,
       "L5": 4,
-      "L6": 3
+      "L6": 3,
+      "L1": 3
     },
     "byFormat": {
-      "deterministic-batch-identity-contract-lab": 1,
       "financial-settlement-investigation": 1,
       "deterministic-http-header-isolation-investigation": 1,
       "contract-drift-refactoring-with-local-regression-harness": 1,
@@ -1628,7 +1642,8 @@
       "capacity-policy-design-decision-with-deterministic-replay": 1,
       "data-residency-architecture-cutover-tabletop": 1,
       "fragmented-stream-read-deterministic-contract": 1,
-      "security-boundary-investigation-with-local-contract-regression": 1
+      "security-boundary-investigation-with-local-contract-regression": 1,
+      "cancellation-incident-evidence-and-contract-replay": 1
     }
   },
   "recentLabs": [
@@ -2831,6 +2846,21 @@
       "failureMode": "self-service-client-can-approve-own-volunteer-profile",
       "solutionPattern": "allowlisted-update-dto-and-server-owned-review-state",
       "labFormat": "security-boundary-investigation-with-local-contract-regression"
+    },
+    {
+      "runSlot": "2026-11-08-15",
+      "unitId": "UNIT-CANCELCLASS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CANCELCLASS-001-wildlife-tracker-cancellation-classification",
+      "domain": "dotnet-async-cancellation",
+      "primarySkill": "cancellation-origin-classification",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "wildlife-migration-satellite-tracker-uplink",
+      "scenarioType": "canceled-telemetry-upload-reported-as-dependency-timeout",
+      "primaryRootCause": "operationcanceledexception-caught-without-caller-token-cancellation-classification",
+      "failureMode": "operator-dashboard-reports-timeout-when-field-device-request-was-canceled",
+      "solutionPattern": "classify-caller-cancellation-before-dependency-timeout-and-preserve-single-attempt",
+      "labFormat": "cancellation-incident-evidence-and-contract-replay"
     }
   ]
 }
