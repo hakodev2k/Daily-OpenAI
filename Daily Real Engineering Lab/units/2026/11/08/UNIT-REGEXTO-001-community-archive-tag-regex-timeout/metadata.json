@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-REGEXTO-001",
+  "runSlot": "2026-11-08-19",
+  "title": "Archive tag validation stalls on malformed input",
+  "domain": "dotnet-regex-performance",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-08T19:11:50+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "regex-timeout-diagnostics",
+    "regex-backtracking",
+    "input-validation"
+  ],
+  "prerequisites": [
+    "C# basics",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-archive-tagging",
+    "scenarioType": "malformed-tag-validation-timeout",
+    "primaryRootCause": "nested-quantifier-catastrophic-regex-backtracking",
+    "failureMode": "worker-timeout-on-nonmatching-long-tag",
+    "solutionPattern": "bounded-linear-time-regex-with-explicit-input-contract",
+    "labFormat": "regex-performance-forensics-with-adversarial-fixture"
+  }
+}

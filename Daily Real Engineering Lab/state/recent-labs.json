@@ -1261,6 +1261,21 @@
       "failureMode": "reconciliation-total-differs-by-one-cent-on-boundary-values",
       "solutionPattern": "decimal-first-parsing-and-explicit-midpoint-rounding-at-defined-ledger-boundary",
       "labFormat": "financial-numeric-contract-reproduction-with-boundary-matrix"
+    },
+    {
+      "runSlot": "2026-11-08-19",
+      "unitId": "UNIT-REGEXTO-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-REGEXTO-001-community-archive-tag-regex-timeout",
+      "domain": "dotnet-regex-performance",
+      "primarySkill": "regex-timeout-diagnostics",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "community-archive-tagging",
+      "scenarioType": "malformed-tag-validation-timeout",
+      "primaryRootCause": "nested-quantifier-catastrophic-regex-backtracking",
+      "failureMode": "worker-timeout-on-nonmatching-long-tag",
+      "solutionPattern": "bounded-linear-time-regex-with-explicit-input-contract",
+      "labFormat": "regex-performance-forensics-with-adversarial-fixture"
     }
   ],
   "rolling24": [

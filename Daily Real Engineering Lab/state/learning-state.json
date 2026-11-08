@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DECIMAL-001",
-    "runSlot": "2026-11-08-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-DECIMAL-001-food-bank-donation-ledger-cent-drift",
+    "unitId": "UNIT-REGEXTO-001",
+    "runSlot": "2026-11-08-19",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-REGEXTO-001-community-archive-tag-regex-timeout",
     "status": "READY",
-    "createdAt": "2026-11-08T18:09:13+07:00"
+    "createdAt": "2026-11-08T19:11:50+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 481,
-    "totalGenerated": 476,
+    "totalRunSlotsAttempted": 482,
+    "totalGenerated": 477,
     "totalFailed": 5
   },
   "learning": {
