@@ -1306,6 +1306,21 @@
       "failureMode": "previously-inserted-reservation-key-becomes-unfindable",
       "solutionPattern": "immutable-stable-identity-key-for-dictionary-index",
       "labFormat": "deterministic-mutable-key-lookup-contract"
+    },
+    {
+      "runSlot": "2026-11-09-01",
+      "unitId": "UNIT-POOLBUF-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-POOLBUF-001-field-survey-pooled-buffer-corruption",
+      "domain": "dotnet-memory-pooling",
+      "primarySkill": "arraypool-ownership",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "wetland-field-survey-photo-thumbnail-processing",
+      "scenarioType": "async-thumbnail-encoding-with-buffer-pool-reuse",
+      "primaryRootCause": "arraypool-buffer-returned-before-delayed-consumer-finishes-reading",
+      "failureMode": "thumbnail-checksum-changes-after-unrelated-pool-renter-overwrites-memory",
+      "solutionPattern": "transfer-buffer-ownership-until-consumer-completes-with-try-finally-return",
+      "labFormat": "asynchronous-buffer-lifetime-investigation"
     }
   ],
   "rolling24": {
@@ -2703,6 +2718,21 @@
       "failureMode": "unsafe-stale-allergy-clearance-on-serving-tablet",
       "solutionPattern": "server-authoritative-safety-state-with-revision-checked-review",
       "labFormat": "offline-first-safety-architecture-event-replay"
+    },
+    {
+      "runSlot": "2026-11-09-01",
+      "unitId": "UNIT-POOLBUF-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-POOLBUF-001-field-survey-pooled-buffer-corruption",
+      "domain": "dotnet-memory-pooling",
+      "primarySkill": "arraypool-ownership",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "wetland-field-survey-photo-thumbnail-processing",
+      "scenarioType": "async-thumbnail-encoding-with-buffer-pool-reuse",
+      "primaryRootCause": "arraypool-buffer-returned-before-delayed-consumer-finishes-reading",
+      "failureMode": "thumbnail-checksum-changes-after-unrelated-pool-renter-overwrites-memory",
+      "solutionPattern": "transfer-buffer-ownership-until-consumer-completes-with-try-finally-return",
+      "labFormat": "asynchronous-buffer-lifetime-investigation"
     }
   ]
 }
