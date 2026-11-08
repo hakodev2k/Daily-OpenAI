@@ -1,0 +1,7 @@
+sequence,committedAt,recordId,operation,revision,visibility
+500,08:59,R-0420,UPDATE,7,public
+501,09:01,R-9001,INSERT,1,public
+502,09:02,R-0420,UPDATE,8,public
+503,09:03,R-9002,INSERT,1,public
+504,09:04,R-0077,UPDATE,12,withdrawn
+505,09:05,R-0420,UPDATE,9,public

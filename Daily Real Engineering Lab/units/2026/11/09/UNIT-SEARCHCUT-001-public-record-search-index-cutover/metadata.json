@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SEARCHCUT-001",
+  "runSlot": "2026-11-09-04",
+  "title": "Chuyển search index không gián đoạn khi dữ liệu vẫn thay đổi",
+  "domain": "search-index-migration",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-09T04:04:17+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "search-index-cutover",
+    "change-data-capture",
+    "consistency-reconciliation"
+  ],
+  "prerequisites": [
+    "basic-search-indexing",
+    "event-ordering"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-public-records-search",
+    "scenarioType": "zero-downtime-search-index-rebuild-with-live-updates",
+    "primaryRootCause": "in-place-index-rebuild-exposes-partial-documents-and-loses-concurrent-updates",
+    "failureMode": "search-results-temporarily-incomplete-and-recent-record-amendments-disappear",
+    "solutionPattern": "versioned-index-blue-green-cutover-with-change-sequence-replay-and-readiness-gates",
+    "labFormat": "search-migration-design-decision-with-event-timeline-tabletop"
+  }
+}

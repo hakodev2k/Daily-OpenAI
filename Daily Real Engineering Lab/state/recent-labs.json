@@ -1351,6 +1351,21 @@
       "failureMode": "stale-editor-overwrites-newer-allocation-after-weak-validator-match",
       "solutionPattern": "strong-etag-comparison-and-atomic-precondition-update",
       "labFormat": "http-validator-refactoring-with-deterministic-concurrency-contract"
+    },
+    {
+      "runSlot": "2026-11-09-04",
+      "unitId": "UNIT-SEARCHCUT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-SEARCHCUT-001-public-record-search-index-cutover",
+      "domain": "search-index-migration",
+      "primarySkill": "search-index-cutover",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "municipal-public-records-search",
+      "scenarioType": "zero-downtime-search-index-rebuild-with-live-updates",
+      "primaryRootCause": "in-place-index-rebuild-exposes-partial-documents-and-loses-concurrent-updates",
+      "failureMode": "search-results-temporarily-incomplete-and-recent-record-amendments-disappear",
+      "solutionPattern": "versioned-index-blue-green-cutover-with-change-sequence-replay-and-readiness-gates",
+      "labFormat": "search-migration-design-decision-with-event-timeline-tabletop"
     }
   ],
   "rolling24": {
@@ -1420,9 +1435,7 @@
     }
   },
   "rollingProfile": {
-    "count": 24,
-    "byDomain": {
-      "database-read-replica-consistency": 1,
+    "domains": {
       "disaster-recovery-and-cross-store-reconciliation": 1,
       "dotnet-csv-import-parsing": 1,
       "dotnet-event-lifecycle": 1,
@@ -1445,21 +1458,21 @@
       "dotnet-collections-identity": 1,
       "dotnet-memory-pooling": 1,
       "aspnetcore-reverse-proxy-security": 1,
-      "http-conditional-requests": 1
+      "http-conditional-requests": 1,
+      "search-index-migration": 1
     },
-    "byDifficulty": {
+    "difficulty": {
       "D4": 24
     },
-    "byMaturity": {
-      "L5": 4,
+    "maturity": {
       "L6": 3,
       "L2": 4,
       "L3": 5,
       "L4": 5,
+      "L5": 4,
       "L1": 3
     },
-    "byFormat": {
-      "read-replica-consistency-design-decision-with-timeline-replay": 1,
+    "formats": {
       "disaster-recovery-tabletop-evidence-and-runbook": 1,
       "csv-import-investigation-with-fixture-driven-regression": 1,
       "production-incident-event-lifecycle-investigation": 1,
@@ -1482,7 +1495,8 @@
       "deterministic-mutable-key-lookup-contract": 1,
       "asynchronous-buffer-lifetime-investigation": 1,
       "http-proxy-trust-boundary-security-investigation": 1,
-      "http-validator-refactoring-with-deterministic-concurrency-contract": 1
+      "http-validator-refactoring-with-deterministic-concurrency-contract": 1,
+      "search-migration-design-decision-with-event-timeline-tabletop": 1
     }
   },
   "recentLabs": [
@@ -1845,6 +1859,21 @@
       "failureMode": "stale-editor-overwrites-newer-allocation-after-weak-validator-match",
       "solutionPattern": "strong-etag-comparison-and-atomic-precondition-update",
       "labFormat": "http-validator-refactoring-with-deterministic-concurrency-contract"
+    },
+    {
+      "runSlot": "2026-11-09-04",
+      "unitId": "UNIT-SEARCHCUT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-SEARCHCUT-001-public-record-search-index-cutover",
+      "domain": "search-index-migration",
+      "primarySkill": "search-index-cutover",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "municipal-public-records-search",
+      "scenarioType": "zero-downtime-search-index-rebuild-with-live-updates",
+      "primaryRootCause": "in-place-index-rebuild-exposes-partial-documents-and-loses-concurrent-updates",
+      "failureMode": "search-results-temporarily-incomplete-and-recent-record-amendments-disappear",
+      "solutionPattern": "versioned-index-blue-green-cutover-with-change-sequence-replay-and-readiness-gates",
+      "labFormat": "search-migration-design-decision-with-event-timeline-tabletop"
     }
   ]
 }
