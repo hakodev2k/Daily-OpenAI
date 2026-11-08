@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-31-06",
-      "unitId": "UNIT-CFLIGHT-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CFLIGHT-001-solar-subsidy-tariff-cache-burst",
-      "domain": "cache-stampede-concurrency-control",
-      "primarySkill": "per-key-single-flight-cache-miss-coalescing",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "rural-solar-installation-subsidy-tariff-quotation",
-      "scenarioType": "simultaneous-same-key-quote-requests-after-cache-age-out",
-      "primaryRootCause": "expired-shared-tariff-entry-allows-every-concurrent-miss-to-fetch-provider-independently",
-      "failureMode": "twelve-identical-client-requests-amplify-one-tariff-refresh-into-twelve-rate-limited-provider-calls",
-      "solutionPattern": "per-key-lazy-single-flight-with-fault-eviction-and-independent-keys",
-      "labFormat": "cache-expiry-burst-decision-and-contract-lab"
-    },
-    {
       "runSlot": "2026-10-31-07",
       "unitId": "UNIT-NPARSE-001",
       "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-NPARSE-001-paper-mill-gauge-invariant-decimal-contract",
@@ -1501,6 +1486,21 @@
       "failureMode": "booking-window-opens-one-hour-early-after-dst-transition",
       "solutionPattern": "convert-local-calendar-time-through-timezoneinfo-with-invalid-ambiguous-policy",
       "labFormat": "legacy-scheduler-timezone-refactoring-with-calendar-regression"
+    },
+    {
+      "runSlot": "2026-11-08-11",
+      "unitId": "UNIT-QUOTAS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-QUOTAS-001-community-water-meter-api-tenant-fairness",
+      "domain": "api-multi-tenant-rate-limiting",
+      "primarySkill": "multi-tenant-rate-limiting",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "community-water-meter-reading-portal",
+      "scenarioType": "noisy-tenant-saturates-shared-ingestion-capacity",
+      "primaryRootCause": "global-only-request-quota-allows-one-tenant-to-monopolize-shared-budget",
+      "failureMode": "low-volume-tenant-requests-rejected-while-bulk-tenant-consumes-budget",
+      "solutionPattern": "hierarchical-global-and-per-tenant-budget-with-observable-429-contract",
+      "labFormat": "capacity-policy-design-decision-with-deterministic-replay"
     }
   ],
   "rolling24": {

@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-QUOTAS-001",
+  "runSlot": "2026-11-08-11",
+  "title": "API quota công bằng giữa các tenant của hệ thống đồng hồ nước",
+  "domain": "api-multi-tenant-rate-limiting",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-08T11:07:50+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "multi-tenant-rate-limiting",
+    "api-capacity-planning",
+    "fairness",
+    "load-shedding"
+  ],
+  "prerequisites": [
+    "C# basics",
+    "HTTP 429",
+    "ASP.NET Core rate limiting concepts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-water-meter-reading-portal",
+    "scenarioType": "noisy-tenant-saturates-shared-ingestion-capacity",
+    "primaryRootCause": "global-only-request-quota-allows-one-tenant-to-monopolize-shared-budget",
+    "failureMode": "low-volume-tenant-requests-rejected-while-bulk-tenant-consumes-budget",
+    "solutionPattern": "hierarchical-global-and-per-tenant-budget-with-observable-429-contract",
+    "labFormat": "capacity-policy-design-decision-with-deterministic-replay"
+  }
+}
