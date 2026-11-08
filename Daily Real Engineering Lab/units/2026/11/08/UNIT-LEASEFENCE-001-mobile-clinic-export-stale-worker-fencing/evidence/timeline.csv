@@ -1,0 +1,12 @@
+time,event,worker,leaseGeneration,reportVersion,note
+09:00:00,ACQUIRE,A,41,,lease until 09:00:30
+09:00:05,COMPUTE,A,41,v1,old patient snapshot
+09:00:15,PAUSE,A,41,,network partition
+09:00:30,EXPIRE,A,41,,deadline reached
+09:00:31,ACQUIRE,B,42,,new lease
+09:00:34,COMPUTE,B,42,v2,new patient snapshot
+09:00:38,WRITE,B,42,v2,object replace succeeds
+09:00:39,COMPLETE,B,42,v2,status completed
+09:00:45,RESUME,A,41,v1,old worker resumes
+09:00:46,WRITE,A,41,v1,object replace succeeds
+09:00:47,COMPLETE,A,41,v1,status completed

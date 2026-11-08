@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JSONEVOLVE-001",
-    "runSlot": "2026-11-08-21",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-JSONEVOLVE-001-emergency-shelter-status-forward-compatible-json",
+    "unitId": "UNIT-LEASEFENCE-001",
+    "runSlot": "2026-11-08-22",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-LEASEFENCE-001-mobile-clinic-export-stale-worker-fencing",
     "status": "READY",
-    "createdAt": "2026-11-08T21:12:54+07:00"
+    "createdAt": "2026-11-08T22:13:01+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 484,
-    "totalGenerated": 479,
+    "totalRunSlotsAttempted": 485,
+    "totalGenerated": 480,
     "totalFailed": 5
   },
   "learning": {

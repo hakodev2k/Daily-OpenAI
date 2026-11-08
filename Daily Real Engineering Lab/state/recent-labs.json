@@ -1306,9 +1306,54 @@
       "failureMode": "one-future-status-aborts-entire-occupancy-import-batch",
       "solutionPattern": "boundary-raw-status-preservation-and-explicit-unknown-state-with-audited-quarantine",
       "labFormat": "forward-compatible-json-contract-modernization-with-regression-matrix"
+    },
+    {
+      "runSlot": "2026-11-08-22",
+      "unitId": "UNIT-LEASEFENCE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-LEASEFENCE-001-mobile-clinic-export-stale-worker-fencing",
+      "domain": "distributed-worker-coordination",
+      "primarySkill": "distributed-lease-fencing",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "mobile-clinic-patient-report-export",
+      "scenarioType": "expired-worker-lease-with-late-side-effect-after-reassignment",
+      "primaryRootCause": "lease-ownership-check-without-monotonic-fencing-at-side-effect-boundary",
+      "failureMode": "stale-worker-overwrites-newer-export-after-lease-reassignment",
+      "solutionPattern": "monotonic-fencing-token-enforced-at-atomic-output-commit",
+      "labFormat": "distributed-worker-lease-design-tabletop-with-timeline-replay"
     }
   ],
   "rolling24": [
+    {
+      "runSlot": "2026-11-03-22",
+      "unitId": "UNIT-SCHEMAMIG-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SCHEMAMIG-001-regional-transit-fare-ledger-zero-downtime-schema-migration",
+      "domain": "postgresql-online-schema-evolution",
+      "primarySkill": "postgresql-schema-migration",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "regional-transit-fare-reconciliation",
+      "scenarioType": "online-postgresql-schema-evolution-with-two-app-versions",
+      "primaryRootCause": "breaking-rename-and-nonnullable-column-deployment-order-incompatible-with-rolling-fleet",
+      "failureMode": "mixed-version-writers-fail-or-silently-drop-fare-adjustment-fields",
+      "solutionPattern": "expand-migrate-contract-with-compatibility-matrix-backfill-watermark-and-rollback-boundaries",
+      "labFormat": "schema-migration-architecture-decision-with-release-drill"
+    },
+    {
+      "runSlot": "2026-11-04-00",
+      "unitId": "UNIT-OVERFLOW-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-OVERFLOW-001-solar-farm-energy-counter-overflow",
+      "domain": "csharp-numeric-aggregation",
+      "primarySkill": "csharp-integer-arithmetic",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "solar-farm-energy-inverter-daily-settlement",
+      "scenarioType": "high-volume-telemetry-aggregation",
+      "primaryRootCause": "32-bit-integer-overflow-in-unchecked-energy-sum",
+      "failureMode": "daily-energy-total-becomes-negative-despite-positive-readings",
+      "solutionPattern": "widen-accumulator-before-arithmetic-and-test-boundaries",
+      "labFormat": "deterministic-numeric-boundary-regression"
+    },
     {
       "runSlot": "2026-11-04-01",
       "unitId": "UNIT-GETORADD-001",
@@ -1595,51 +1640,6 @@
       "labFormat": "cache-variant-refactoring-with-deterministic-order-replay"
     },
     {
-      "runSlot": "2026-11-08-17",
-      "unitId": "UNIT-SCHEMAROLL-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-SCHEMAROLL-001-blood-donation-rolling-schema-cutover",
-      "domain": "database-schema-evolution",
-      "primarySkill": "rolling-schema-compatibility",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "regional-blood-donation-appointment-platform",
-      "scenarioType": "rolling-release-old-and-new-writers-share-migrating-database",
-      "primaryRootCause": "destructive-column-rename-before-all-old-version-writers-retire",
-      "failureMode": "mixed-version-requests-fail-and-rollback-cannot-write-donor-contact-preference",
-      "solutionPattern": "expand-migrate-contract-with-compatibility-matrix-backfill-and-observed-cutover-gates",
-      "labFormat": "schema-rollout-decision-tabletop-with-compatibility-matrix"
-    },
-    {
-      "runSlot": "2026-11-08-18",
-      "unitId": "UNIT-DECIMAL-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-DECIMAL-001-food-bank-donation-ledger-cent-drift",
-      "domain": "dotnet-financial-numeric-semantics",
-      "primarySkill": "decimal-rounding-boundaries",
-      "maturityLevel": "L1",
-      "difficulty": "D4",
-      "businessContext": "regional-food-bank-donation-reconciliation",
-      "scenarioType": "import-small-fractional-donations-and-aggregate-daily-totals",
-      "primaryRootCause": "binary-floating-point-rounding-before-financial-cent-aggregation",
-      "failureMode": "reconciliation-total-differs-by-one-cent-on-boundary-values",
-      "solutionPattern": "decimal-first-parsing-and-explicit-midpoint-rounding-at-defined-ledger-boundary",
-      "labFormat": "financial-numeric-contract-reproduction-with-boundary-matrix"
-    },
-    {
-      "runSlot": "2026-11-08-19",
-      "unitId": "UNIT-REGEXTO-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-REGEXTO-001-community-archive-tag-regex-timeout",
-      "domain": "dotnet-regex-performance",
-      "primarySkill": "regex-timeout-diagnostics",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "community-archive-tagging",
-      "scenarioType": "malformed-tag-validation-timeout",
-      "primaryRootCause": "nested-quantifier-catastrophic-regex-backtracking",
-      "failureMode": "worker-timeout-on-nonmatching-long-tag",
-      "solutionPattern": "bounded-linear-time-regex-with-explicit-input-contract",
-      "labFormat": "regex-performance-forensics-with-adversarial-fixture"
-    },
-    {
       "runSlot": "2026-11-08-20",
       "unitId": "UNIT-UNICODEKEY-001",
       "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-UNICODEKEY-001-makerspace-member-unicode-identity-collision",
@@ -1668,10 +1668,27 @@
       "failureMode": "one-future-status-aborts-entire-occupancy-import-batch",
       "solutionPattern": "boundary-raw-status-preservation-and-explicit-unknown-state-with-audited-quarantine",
       "labFormat": "forward-compatible-json-contract-modernization-with-regression-matrix"
+    },
+    {
+      "runSlot": "2026-11-08-22",
+      "unitId": "UNIT-LEASEFENCE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-LEASEFENCE-001-mobile-clinic-export-stale-worker-fencing",
+      "domain": "distributed-worker-coordination",
+      "primarySkill": "distributed-lease-fencing",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "mobile-clinic-patient-report-export",
+      "scenarioType": "expired-worker-lease-with-late-side-effect-after-reassignment",
+      "primaryRootCause": "lease-ownership-check-without-monotonic-fencing-at-side-effect-boundary",
+      "failureMode": "stale-worker-overwrites-newer-export-after-lease-reassignment",
+      "solutionPattern": "monotonic-fencing-token-enforced-at-atomic-output-commit",
+      "labFormat": "distributed-worker-lease-design-tabletop-with-timeline-replay"
     }
   ],
   "rollingProfile": {
     "domains": {
+      "postgresql-online-schema-evolution": 1,
+      "csharp-numeric-aggregation": 1,
       "dotnet-concurrentdictionary-value-factory": 1,
       "dotnet-memory-ownership-async": 1,
       "dotnet-dependency-injection-lifetimes": 1,
@@ -1691,24 +1708,24 @@
       "aspnetcore-api-input-security": 1,
       "dotnet-async-cancellation": 1,
       "http-response-variant-caching": 1,
-      "database-schema-evolution": 1,
-      "dotnet-financial-numeric-semantics": 1,
-      "dotnet-regex-performance": 1,
       "dotnet-unicode-identity": 1,
-      "dotnet-json-contract-evolution": 1
+      "dotnet-json-contract-evolution": 1,
+      "distributed-worker-coordination": 1
     },
-    "difficulties": {
+    "difficulty": {
       "D4": 24
     },
-    "maturities": {
-      "L2": 5,
+    "maturity": {
+      "L6": 3,
+      "L1": 3,
+      "L2": 4,
       "L3": 5,
       "L4": 5,
-      "L5": 4,
-      "L6": 2,
-      "L1": 3
+      "L5": 4
     },
-    "formats": {
+    "format": {
+      "schema-migration-architecture-decision-with-release-drill": 1,
+      "deterministic-numeric-boundary-regression": 1,
       "deterministic-concurrent-value-factory-contract-investigation": 1,
       "deterministic-buffer-lifetime-production-incident": 1,
       "dependency-injection-lifetime-refactoring-workshop": 1,
@@ -1728,11 +1745,9 @@
       "security-boundary-investigation-with-local-contract-regression": 1,
       "cancellation-incident-evidence-and-contract-replay": 1,
       "cache-variant-refactoring-with-deterministic-order-replay": 1,
-      "schema-rollout-decision-tabletop-with-compatibility-matrix": 1,
-      "financial-numeric-contract-reproduction-with-boundary-matrix": 1,
-      "regex-performance-forensics-with-adversarial-fixture": 1,
       "identity-integrity-investigation-with-encoding-fixtures": 1,
-      "forward-compatible-json-contract-modernization-with-regression-matrix": 1
+      "forward-compatible-json-contract-modernization-with-regression-matrix": 1,
+      "distributed-worker-lease-design-tabletop-with-timeline-replay": 1
     }
   },
   "recentLabs": [
@@ -2995,6 +3010,21 @@
       "failureMode": "one-future-status-aborts-entire-occupancy-import-batch",
       "solutionPattern": "boundary-raw-status-preservation-and-explicit-unknown-state-with-audited-quarantine",
       "labFormat": "forward-compatible-json-contract-modernization-with-regression-matrix"
+    },
+    {
+      "runSlot": "2026-11-08-22",
+      "unitId": "UNIT-LEASEFENCE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-LEASEFENCE-001-mobile-clinic-export-stale-worker-fencing",
+      "domain": "distributed-worker-coordination",
+      "primarySkill": "distributed-lease-fencing",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "mobile-clinic-patient-report-export",
+      "scenarioType": "expired-worker-lease-with-late-side-effect-after-reassignment",
+      "primaryRootCause": "lease-ownership-check-without-monotonic-fencing-at-side-effect-boundary",
+      "failureMode": "stale-worker-overwrites-newer-export-after-lease-reassignment",
+      "solutionPattern": "monotonic-fencing-token-enforced-at-atomic-output-commit",
+      "labFormat": "distributed-worker-lease-design-tabletop-with-timeline-replay"
     }
   ]
 }

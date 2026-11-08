@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-LEASEFENCE-001",
+  "runSlot": "2026-11-08-22",
+  "title": "Báo cáo phòng khám bị ghi đè sau khi worker mất lease",
+  "domain": "distributed-worker-coordination",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-08T22:13:01+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "distributed-lease",
+    "fencing-token",
+    "atomic-commit",
+    "failure-recovery"
+  ],
+  "prerequisites": [
+    "distributed-lock-basics",
+    "transaction-atomicity"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "mobile-clinic-patient-report-export",
+    "scenarioType": "expired-worker-lease-with-late-side-effect-after-reassignment",
+    "primaryRootCause": "lease-ownership-check-without-monotonic-fencing-at-side-effect-boundary",
+    "failureMode": "stale-worker-overwrites-newer-export-after-lease-reassignment",
+    "solutionPattern": "monotonic-fencing-token-enforced-at-atomic-output-commit",
+    "labFormat": "distributed-worker-lease-design-tabletop-with-timeline-replay"
+  }
+}
