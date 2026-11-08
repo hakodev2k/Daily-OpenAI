@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MUTKEY-001",
-    "runSlot": "2026-11-09-00",
-    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-MUTKEY-001-tool-lending-mutable-dictionary-key",
+    "unitId": "UNIT-POOLBUF-001",
+    "runSlot": "2026-11-09-01",
+    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-POOLBUF-001-field-survey-pooled-buffer-corruption",
     "status": "READY",
-    "createdAt": "2026-11-09T00:09:00+07:00"
+    "createdAt": "2026-11-09T01:12:15+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 487,
-    "totalGenerated": 482,
+    "totalRunSlotsAttempted": 488,
+    "totalGenerated": 483,
     "totalFailed": 5
   },
   "learning": {
