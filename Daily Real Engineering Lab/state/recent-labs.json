@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-31-07",
-      "unitId": "UNIT-NPARSE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-NPARSE-001-paper-mill-gauge-invariant-decimal-contract",
-      "domain": "dotnet-globalization-numeric-wire-format",
-      "primarySkill": "invariant-numeric-wire-parsing",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "regional-paper-mill-roll-thickness-quality-control",
-      "scenarioType": "same-invariant-gauge-file-imported-on-workstations-with-different-cultures",
-      "primaryRootCause": "currentculture-numberstyles-number-parses-invariant-dot-decimals-as-localized-grouping-or-rejects-them",
-      "failureMode": "cross-site-quality-control-reports-disagree-by-orders-of-magnitude-or-fail-to-import",
-      "solutionPattern": "strict-invariant-wire-decimal-parser-with-no-grouping-and-cross-culture-regression-contract",
-      "labFormat": "cross-locale-numeric-wire-contract-investigation"
-    },
-    {
       "runSlot": "2026-10-31-08",
       "unitId": "UNIT-PQ-001",
       "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-PQ-001-blood-courier-urgent-dispatch-priority",
@@ -1501,6 +1486,21 @@
       "failureMode": "low-volume-tenant-requests-rejected-while-bulk-tenant-consumes-budget",
       "solutionPattern": "hierarchical-global-and-per-tenant-budget-with-observable-429-contract",
       "labFormat": "capacity-policy-design-decision-with-deterministic-replay"
+    },
+    {
+      "runSlot": "2026-11-08-12",
+      "unitId": "UNIT-RESIDENCY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-RESIDENCY-001-research-data-residency-migration",
+      "domain": "multi-region-data-residency-architecture",
+      "primarySkill": "tenant-data-residency-cutover",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "cross-border-materials-research-saas",
+      "scenarioType": "tenant-data-residency-cutover-with-inflight-writes",
+      "primaryRootCause": "application-routing-switches-before-all-write-paths-and-async-workers-are-region-fenced",
+      "failureMode": "post-cutover-personal-data-and-derived-artifacts-continue-writing-to-old-region",
+      "solutionPattern": "region-scoped-write-fencing-with-versioned-tenant-home-and-audited-drain-reconciliation",
+      "labFormat": "data-residency-architecture-cutover-tabletop"
     }
   ],
   "rolling24": {
@@ -1529,7 +1529,7 @@
       "http-download-resume-semantics": 1,
       "csharp-linq-query-semantics": 1,
       "dotnet-system-threading-channels": 1,
-      "dotnet-timezone-scheduling": 1
+      "multi-region-data-residency-architecture": 1
     },
     "byDifficulty": {
       "D4": 24
@@ -1537,10 +1537,10 @@
     "byMaturity": {
       "L2": 5,
       "L3": 5,
-      "L4": 5,
+      "L4": 4,
       "L5": 4,
       "L1": 3,
-      "L6": 2
+      "L6": 3
     },
     "byFormat": {
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
@@ -1566,7 +1566,7 @@
       "http-range-resume-deterministic-contract-lab": 1,
       "linq-query-semantics-investigation-with-permutation-regression": 1,
       "deterministic-channel-overload-incident-reproduction": 1,
-      "legacy-scheduler-timezone-refactoring-with-calendar-regression": 1
+      "data-residency-architecture-cutover-tabletop": 1
     }
   },
   "rollingProfile": {
@@ -1595,7 +1595,7 @@
       "http-download-resume-semantics": 1,
       "csharp-linq-query-semantics": 1,
       "dotnet-system-threading-channels": 1,
-      "dotnet-timezone-scheduling": 1
+      "multi-region-data-residency-architecture": 1
     },
     "byDifficulty": {
       "D4": 24
@@ -1603,10 +1603,10 @@
     "byMaturity": {
       "L2": 5,
       "L3": 5,
-      "L4": 5,
+      "L4": 4,
       "L5": 4,
       "L1": 3,
-      "L6": 2
+      "L6": 3
     },
     "byFormat": {
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
@@ -1632,7 +1632,7 @@
       "http-range-resume-deterministic-contract-lab": 1,
       "linq-query-semantics-investigation-with-permutation-regression": 1,
       "deterministic-channel-overload-incident-reproduction": 1,
-      "legacy-scheduler-timezone-refactoring-with-calendar-regression": 1
+      "data-residency-architecture-cutover-tabletop": 1
     }
   },
   "recentLabs": [
@@ -2010,6 +2010,21 @@
       "failureMode": "published-alert-count-exceeds-delivered-count-with-no-exception",
       "solutionPattern": "lossless-bounded-channel-backpressure-with-awaited-writes-and-completion",
       "labFormat": "deterministic-channel-overload-incident-reproduction"
+    },
+    {
+      "runSlot": "2026-11-08-12",
+      "unitId": "UNIT-RESIDENCY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-RESIDENCY-001-research-data-residency-migration",
+      "domain": "multi-region-data-residency-architecture",
+      "primarySkill": "tenant-data-residency-cutover",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "cross-border-materials-research-saas",
+      "scenarioType": "tenant-data-residency-cutover-with-inflight-writes",
+      "primaryRootCause": "application-routing-switches-before-all-write-paths-and-async-workers-are-region-fenced",
+      "failureMode": "post-cutover-personal-data-and-derived-artifacts-continue-writing-to-old-region",
+      "solutionPattern": "region-scoped-write-fencing-with-versioned-tenant-home-and-audited-drain-reconciliation",
+      "labFormat": "data-residency-architecture-cutover-tabletop"
     }
   ]
 }
