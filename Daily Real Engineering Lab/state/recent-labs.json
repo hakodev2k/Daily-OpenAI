@@ -1231,6 +1231,21 @@
       "failureMode": "first-request-language-contaminates-subsequent-language-response",
       "solutionPattern": "canonicalized-language-aware-cache-key-with-order-independent-regression",
       "labFormat": "cache-variant-refactoring-with-deterministic-order-replay"
+    },
+    {
+      "runSlot": "2026-11-08-17",
+      "unitId": "UNIT-SCHEMAROLL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-SCHEMAROLL-001-blood-donation-rolling-schema-cutover",
+      "domain": "database-schema-evolution",
+      "primarySkill": "rolling-schema-compatibility",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "regional-blood-donation-appointment-platform",
+      "scenarioType": "rolling-release-old-and-new-writers-share-migrating-database",
+      "primaryRootCause": "destructive-column-rename-before-all-old-version-writers-retire",
+      "failureMode": "mixed-version-requests-fail-and-rollback-cannot-write-donor-contact-preference",
+      "solutionPattern": "expand-migrate-contract-with-compatibility-matrix-backfill-and-observed-cutover-gates",
+      "labFormat": "schema-rollout-decision-tabletop-with-compatibility-matrix"
     }
   ],
   "rolling24": [

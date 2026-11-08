@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SCHEMAROLL-001",
+  "runSlot": "2026-11-08-17",
+  "title": "Rolling schema migration cho hệ thống hiến máu",
+  "domain": "database-schema-evolution",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-08T17:06:26+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "postgresql-schema-migrations",
+    "rolling-deployment-compatibility",
+    "backfill-concurrency"
+  ],
+  "prerequisites": [
+    "sql-transactions",
+    "aspnetcore-deployment"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-blood-donation-appointment-platform",
+    "scenarioType": "rolling-release-old-and-new-writers-share-migrating-database",
+    "primaryRootCause": "destructive-column-rename-before-all-old-version-writers-retire",
+    "failureMode": "mixed-version-requests-fail-and-rollback-cannot-write-donor-contact-preference",
+    "solutionPattern": "expand-migrate-contract-with-compatibility-matrix-backfill-and-observed-cutover-gates",
+    "labFormat": "schema-rollout-decision-tabletop-with-compatibility-matrix"
+  }
+}
