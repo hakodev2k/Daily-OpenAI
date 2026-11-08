@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SEARCHCUT-001",
-    "runSlot": "2026-11-09-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-SEARCHCUT-001-public-record-search-index-cutover",
+    "unitId": "UNIT-KEYROT-001",
+    "runSlot": "2026-11-09-05",
+    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-KEYROT-001-civic-grant-signing-key-rotation",
     "status": "READY",
-    "createdAt": "2026-11-09T04:04:17+07:00"
+    "createdAt": "2026-11-09T05:08:09+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 491,
-    "totalGenerated": 486,
+    "totalRunSlotsAttempted": 492,
+    "totalGenerated": 487,
     "totalFailed": 5
   },
   "learning": {

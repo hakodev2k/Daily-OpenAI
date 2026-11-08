@@ -1435,8 +1435,7 @@
     }
   },
   "rollingProfile": {
-    "domains": {
-      "disaster-recovery-and-cross-store-reconciliation": 1,
+    "countsByDomain": {
       "dotnet-csv-import-parsing": 1,
       "dotnet-event-lifecycle": 1,
       "ef-core-change-tracking": 1,
@@ -1459,21 +1458,21 @@
       "dotnet-memory-pooling": 1,
       "aspnetcore-reverse-proxy-security": 1,
       "http-conditional-requests": 1,
-      "search-index-migration": 1
+      "search-index-migration": 1,
+      "identity-signing-key-lifecycle": 1
     },
-    "difficulty": {
+    "countsByDifficulty": {
       "D4": 24
     },
-    "maturity": {
-      "L6": 3,
+    "countsByMaturity": {
       "L2": 4,
       "L3": 5,
       "L4": 5,
       "L5": 4,
-      "L1": 3
+      "L1": 3,
+      "L6": 3
     },
-    "formats": {
-      "disaster-recovery-tabletop-evidence-and-runbook": 1,
+    "countsByFormat": {
       "csv-import-investigation-with-fixture-driven-regression": 1,
       "production-incident-event-lifecycle-investigation": 1,
       "ef-core-bulk-write-refactoring-with-relational-regression": 1,
@@ -1496,7 +1495,8 @@
       "asynchronous-buffer-lifetime-investigation": 1,
       "http-proxy-trust-boundary-security-investigation": 1,
       "http-validator-refactoring-with-deterministic-concurrency-contract": 1,
-      "search-migration-design-decision-with-event-timeline-tabletop": 1
+      "search-migration-design-decision-with-event-timeline-tabletop": 1,
+      "security-architecture-incident-tabletop-with-key-lifecycle-matrix": 1
     }
   },
   "recentLabs": [
@@ -1874,6 +1874,21 @@
       "failureMode": "search-results-temporarily-incomplete-and-recent-record-amendments-disappear",
       "solutionPattern": "versioned-index-blue-green-cutover-with-change-sequence-replay-and-readiness-gates",
       "labFormat": "search-migration-design-decision-with-event-timeline-tabletop"
+    },
+    {
+      "runSlot": "2026-11-09-05",
+      "unitId": "UNIT-KEYROT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-KEYROT-001-civic-grant-signing-key-rotation",
+      "domain": "identity-signing-key-lifecycle",
+      "primarySkill": "jwt-key-rotation",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "municipal-civic-grant-disbursement",
+      "scenarioType": "signing-key-rotation-during-disconnected-partner-verification",
+      "primaryRootCause": "retiring-verification-keys-before-maximum-token-lifetime-and-partner-cache-expiry",
+      "failureMode": "legitimate-grant-payment-claims-rejected-during-rotation-window",
+      "solutionPattern": "overlapping-key-validity-with-kid-pinning-jwks-cache-bounds-and-emergency-revocation-policy",
+      "labFormat": "security-architecture-incident-tabletop-with-key-lifecycle-matrix"
     }
   ]
 }

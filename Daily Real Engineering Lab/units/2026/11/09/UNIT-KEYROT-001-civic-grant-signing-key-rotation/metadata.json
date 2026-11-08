@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-KEYROT-001",
+  "runSlot": "2026-11-09-05",
+  "title": "Signing key rotation across disconnected grant partners",
+  "domain": "identity-signing-key-lifecycle",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-09T05:08:09+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "jwt-key-rotation",
+    "jwks-cache-coordination",
+    "security-incident-response"
+  ],
+  "prerequisites": [
+    "jwt-signature-verification",
+    "clock-skew",
+    "cache-ttl"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-civic-grant-disbursement",
+    "scenarioType": "signing-key-rotation-during-disconnected-partner-verification",
+    "primaryRootCause": "retiring-verification-keys-before-maximum-token-lifetime-and-partner-cache-expiry",
+    "failureMode": "legitimate-grant-payment-claims-rejected-during-rotation-window",
+    "solutionPattern": "overlapping-key-validity-with-kid-pinning-jwks-cache-bounds-and-emergency-revocation-policy",
+    "labFormat": "security-architecture-incident-tabletop-with-key-lifecycle-matrix"
+  }
+}

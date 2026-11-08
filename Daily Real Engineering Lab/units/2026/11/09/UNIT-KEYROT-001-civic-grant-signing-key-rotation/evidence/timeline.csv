@@ -1,0 +1,12 @@
+time,event,partner,detail
+08:00,known_key,all,old kid K1 present in JWKS and caches
+08:55,token_issued,all,K1 exp 09:40
+09:00,issuer_switch,all,issuer begins signing K2
+09:01,token_issued,all,K2 exp 09:46
+09:05,verification,A,A cached only K1
+09:10,verification,B,B cached only K1
+09:12,verification,C,C cached only K1
+09:15,jwks_refresh,A,A obtains K2 if published
+10:00,jwks_refresh,B,B obtains K2 if published
+11:00,jwks_refresh,C,C obtains K2 if published
+10:20,requirement_change,all,credible compromise evidence for K1
