@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-POOLBUF-001",
-    "runSlot": "2026-11-09-01",
-    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-POOLBUF-001-field-survey-pooled-buffer-corruption",
+    "unitId": "UNIT-FWDTRUST-001",
+    "runSlot": "2026-11-09-02",
+    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-FWDTRUST-001-trail-permit-forwarded-header-trust-boundary",
     "status": "READY",
-    "createdAt": "2026-11-09T01:12:15+07:00"
+    "createdAt": "2026-11-09T02:13:12+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 488,
-    "totalGenerated": 483,
+    "totalRunSlotsAttempted": 489,
+    "totalGenerated": 484,
     "totalFailed": 5
   },
   "learning": {

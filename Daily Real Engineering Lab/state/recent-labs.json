@@ -1321,6 +1321,21 @@
       "failureMode": "thumbnail-checksum-changes-after-unrelated-pool-renter-overwrites-memory",
       "solutionPattern": "transfer-buffer-ownership-until-consumer-completes-with-try-finally-return",
       "labFormat": "asynchronous-buffer-lifetime-investigation"
+    },
+    {
+      "runSlot": "2026-11-09-02",
+      "unitId": "UNIT-FWDTRUST-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-FWDTRUST-001-trail-permit-forwarded-header-trust-boundary",
+      "domain": "aspnetcore-reverse-proxy-security",
+      "primarySkill": "trusted-proxy-boundary",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "national-trail-permit-admin-portal",
+      "scenarioType": "reverse-proxy-client-address-spoofing-during-admin-admission",
+      "primaryRootCause": "untrusted-x-forwarded-for-header-used-as-authoritative-client-ip",
+      "failureMode": "external-client-impersonates-allowlisted-office-ip-to-access-admin-route",
+      "solutionPattern": "trusted-proxy-only-forwarded-header-processing-with-network-peer-validation",
+      "labFormat": "http-proxy-trust-boundary-security-investigation"
     }
   ],
   "rolling24": {

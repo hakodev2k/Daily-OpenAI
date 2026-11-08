@@ -1,0 +1,1 @@
+Tạo integration test với reverse proxy thật và app trên hai network namespace/container; gửi forged header trực tiếp và qua proxy, xác minh chính sách trust chain và auth; bổ sung log không chứa thông tin cá nhân.

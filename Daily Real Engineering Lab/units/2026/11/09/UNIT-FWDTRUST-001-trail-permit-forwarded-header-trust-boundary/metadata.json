@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-FWDTRUST-001",
+  "runSlot": "2026-11-09-02",
+  "title": "Trail permit forwarded-header trust boundary",
+  "domain": "aspnetcore-reverse-proxy-security",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-09T02:13:12+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "reverse-proxy-trust",
+    "forwarded-headers",
+    "ip-allowlist"
+  ],
+  "primarySkill": "trusted-proxy-boundary",
+  "prerequisites": [
+    "HTTP headers",
+    "ASP.NET Core middleware"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "national-trail-permit-admin-portal",
+    "scenarioType": "reverse-proxy-client-address-spoofing-during-admin-admission",
+    "primaryRootCause": "untrusted-x-forwarded-for-header-used-as-authoritative-client-ip",
+    "failureMode": "external-client-impersonates-allowlisted-office-ip-to-access-admin-route",
+    "solutionPattern": "trusted-proxy-only-forwarded-header-processing-with-network-peer-validation",
+    "labFormat": "http-proxy-trust-boundary-security-investigation"
+  }
+}
