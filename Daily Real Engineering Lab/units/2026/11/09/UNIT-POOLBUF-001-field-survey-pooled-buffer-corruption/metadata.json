@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-POOLBUF-001",
+  "runSlot": "2026-11-09-01",
+  "title": "Ảnh khảo sát đầm lầy bị sai checksum sau xử lý bất đồng bộ",
+  "domain": "dotnet-memory-pooling",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-09T01:12:15+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "arraypool-ownership",
+    "async-buffer-lifetime",
+    "deterministic-regression-testing"
+  ],
+  "prerequisites": [
+    "C# async Task",
+    "byte arrays"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wetland-field-survey-photo-thumbnail-processing",
+    "scenarioType": "async-thumbnail-encoding-with-buffer-pool-reuse",
+    "primaryRootCause": "arraypool-buffer-returned-before-delayed-consumer-finishes-reading",
+    "failureMode": "thumbnail-checksum-changes-after-unrelated-pool-renter-overwrites-memory",
+    "solutionPattern": "transfer-buffer-ownership-until-consumer-completes-with-try-finally-return",
+    "labFormat": "asynchronous-buffer-lifetime-investigation"
+  }
+}
