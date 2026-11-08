@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ETAG-001",
+  "runSlot": "2026-11-09-03",
+  "title": "Garden Plot API — Conditional Update Mất Dữ Liệu",
+  "domain": "http-conditional-requests",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-09T03:09:43+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "http-etag-preconditions",
+    "optimistic-concurrency",
+    "csharp-testing"
+  ],
+  "prerequisites": [
+    "HTTP headers",
+    "C# .NET 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-garden-plot-allocation",
+    "scenarioType": "concurrent-plot-update-with-conditional-http-request",
+    "primaryRootCause": "weak-etag-accepted-for-if-match-by-normalizing-away-weakness",
+    "failureMode": "stale-editor-overwrites-newer-allocation-after-weak-validator-match",
+    "solutionPattern": "strong-etag-comparison-and-atomic-precondition-update",
+    "labFormat": "http-validator-refactoring-with-deterministic-concurrency-contract"
+  }
+}
