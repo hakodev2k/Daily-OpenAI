@@ -1,0 +1,1 @@
+Synthetic incident: 14:12 web registration accepted; 14:13 mobile registration accepted; front desk sees visually identical identifiers and two allocation balances. Database is healthy, no timeout. Compare codepoints rather than screenshots.

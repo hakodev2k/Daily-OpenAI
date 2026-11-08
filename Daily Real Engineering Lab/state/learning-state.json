@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-REGEXTO-001",
-    "runSlot": "2026-11-08-19",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-REGEXTO-001-community-archive-tag-regex-timeout",
+    "unitId": "UNIT-UNICODEKEY-001",
+    "runSlot": "2026-11-08-20",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-UNICODEKEY-001-makerspace-member-unicode-identity-collision",
     "status": "READY",
-    "createdAt": "2026-11-08T19:11:50+07:00"
+    "createdAt": "2026-11-08T20:09:59+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 482,
-    "totalGenerated": 477,
+    "totalRunSlotsAttempted": 483,
+    "totalGenerated": 478,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-UNICODEKEY-001",
+  "runSlot": "2026-11-08-20",
+  "title": "Hai mã hội viên trông giống nhau nhưng được cấp hai tài khoản",
+  "domain": "dotnet-unicode-identity",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-08T20:09:59+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "unicode-normalization",
+    "identity-uniqueness",
+    "csharp-string-comparison"
+  ],
+  "prerequisites": [
+    "C# collections",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-makerspace-member-registration",
+    "scenarioType": "visually-identical-unicode-member-identifiers-from-two-clients",
+    "primaryRootCause": "unicode-canonical-equivalence-not-applied-before-ordinal-uniqueness-check",
+    "failureMode": "two-visually-identical-member-ids-registered-as-separate-accounts",
+    "solutionPattern": "normalize-to-form-c-at-identity-boundary-and-enforce-canonical-unique-key",
+    "labFormat": "identity-integrity-investigation-with-encoding-fixtures"
+  }
+}
