@@ -1291,24 +1291,24 @@
       "failureMode": "two-visually-identical-member-ids-registered-as-separate-accounts",
       "solutionPattern": "normalize-to-form-c-at-identity-boundary-and-enforce-canonical-unique-key",
       "labFormat": "identity-integrity-investigation-with-encoding-fixtures"
+    },
+    {
+      "runSlot": "2026-11-08-21",
+      "unitId": "UNIT-JSONEVOLVE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-JSONEVOLVE-001-emergency-shelter-status-forward-compatible-json",
+      "domain": "dotnet-json-contract-evolution",
+      "primarySkill": "forward-compatible-json-enum-deserialization",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "emergency-shelter-occupancy-status-feed",
+      "scenarioType": "new-provider-enum-value-arrives-during-rolling-client-upgrade",
+      "primaryRootCause": "strict-json-string-enum-deserialization-rejects-unknown-provider-value",
+      "failureMode": "one-future-status-aborts-entire-occupancy-import-batch",
+      "solutionPattern": "boundary-raw-status-preservation-and-explicit-unknown-state-with-audited-quarantine",
+      "labFormat": "forward-compatible-json-contract-modernization-with-regression-matrix"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-04-00",
-      "unitId": "UNIT-OVERFLOW-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/04/UNIT-OVERFLOW-001-solar-farm-energy-counter-overflow",
-      "domain": "csharp-numeric-aggregation",
-      "primarySkill": "csharp-integer-arithmetic",
-      "maturityLevel": "L1",
-      "difficulty": "D4",
-      "businessContext": "solar-farm-energy-inverter-daily-settlement",
-      "scenarioType": "high-volume-telemetry-aggregation",
-      "primaryRootCause": "32-bit-integer-overflow-in-unchecked-energy-sum",
-      "failureMode": "daily-energy-total-becomes-negative-despite-positive-readings",
-      "solutionPattern": "widen-accumulator-before-arithmetic-and-test-boundaries",
-      "labFormat": "deterministic-numeric-boundary-regression"
-    },
     {
       "runSlot": "2026-11-04-01",
       "unitId": "UNIT-GETORADD-001",
@@ -1653,11 +1653,25 @@
       "failureMode": "two-visually-identical-member-ids-registered-as-separate-accounts",
       "solutionPattern": "normalize-to-form-c-at-identity-boundary-and-enforce-canonical-unique-key",
       "labFormat": "identity-integrity-investigation-with-encoding-fixtures"
+    },
+    {
+      "runSlot": "2026-11-08-21",
+      "unitId": "UNIT-JSONEVOLVE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-JSONEVOLVE-001-emergency-shelter-status-forward-compatible-json",
+      "domain": "dotnet-json-contract-evolution",
+      "primarySkill": "forward-compatible-json-enum-deserialization",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "emergency-shelter-occupancy-status-feed",
+      "scenarioType": "new-provider-enum-value-arrives-during-rolling-client-upgrade",
+      "primaryRootCause": "strict-json-string-enum-deserialization-rejects-unknown-provider-value",
+      "failureMode": "one-future-status-aborts-entire-occupancy-import-batch",
+      "solutionPattern": "boundary-raw-status-preservation-and-explicit-unknown-state-with-audited-quarantine",
+      "labFormat": "forward-compatible-json-contract-modernization-with-regression-matrix"
     }
   ],
   "rollingProfile": {
     "domains": {
-      "csharp-numeric-aggregation": 1,
       "dotnet-concurrentdictionary-value-factory": 1,
       "dotnet-memory-ownership-async": 1,
       "dotnet-dependency-injection-lifetimes": 1,
@@ -1680,21 +1694,21 @@
       "database-schema-evolution": 1,
       "dotnet-financial-numeric-semantics": 1,
       "dotnet-regex-performance": 1,
-      "dotnet-unicode-identity": 1
+      "dotnet-unicode-identity": 1,
+      "dotnet-json-contract-evolution": 1
     },
     "difficulties": {
       "D4": 24
     },
     "maturities": {
-      "L1": 4,
       "L2": 5,
       "L3": 5,
-      "L4": 4,
+      "L4": 5,
       "L5": 4,
-      "L6": 2
+      "L6": 2,
+      "L1": 3
     },
     "formats": {
-      "deterministic-numeric-boundary-regression": 1,
       "deterministic-concurrent-value-factory-contract-investigation": 1,
       "deterministic-buffer-lifetime-production-incident": 1,
       "dependency-injection-lifetime-refactoring-workshop": 1,
@@ -1717,7 +1731,8 @@
       "schema-rollout-decision-tabletop-with-compatibility-matrix": 1,
       "financial-numeric-contract-reproduction-with-boundary-matrix": 1,
       "regex-performance-forensics-with-adversarial-fixture": 1,
-      "identity-integrity-investigation-with-encoding-fixtures": 1
+      "identity-integrity-investigation-with-encoding-fixtures": 1,
+      "forward-compatible-json-contract-modernization-with-regression-matrix": 1
     }
   },
   "recentLabs": [
@@ -2965,6 +2980,21 @@
       "failureMode": "two-visually-identical-member-ids-registered-as-separate-accounts",
       "solutionPattern": "normalize-to-form-c-at-identity-boundary-and-enforce-canonical-unique-key",
       "labFormat": "identity-integrity-investigation-with-encoding-fixtures"
+    },
+    {
+      "runSlot": "2026-11-08-21",
+      "unitId": "UNIT-JSONEVOLVE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-JSONEVOLVE-001-emergency-shelter-status-forward-compatible-json",
+      "domain": "dotnet-json-contract-evolution",
+      "primarySkill": "forward-compatible-json-enum-deserialization",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "emergency-shelter-occupancy-status-feed",
+      "scenarioType": "new-provider-enum-value-arrives-during-rolling-client-upgrade",
+      "primaryRootCause": "strict-json-string-enum-deserialization-rejects-unknown-provider-value",
+      "failureMode": "one-future-status-aborts-entire-occupancy-import-batch",
+      "solutionPattern": "boundary-raw-status-preservation-and-explicit-unknown-state-with-audited-quarantine",
+      "labFormat": "forward-compatible-json-contract-modernization-with-regression-matrix"
     }
   ]
 }

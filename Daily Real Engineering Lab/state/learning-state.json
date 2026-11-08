@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-UNICODEKEY-001",
-    "runSlot": "2026-11-08-20",
-    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-UNICODEKEY-001-makerspace-member-unicode-identity-collision",
+    "unitId": "UNIT-JSONEVOLVE-001",
+    "runSlot": "2026-11-08-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-JSONEVOLVE-001-emergency-shelter-status-forward-compatible-json",
     "status": "READY",
-    "createdAt": "2026-11-08T20:09:59+07:00"
+    "createdAt": "2026-11-08T21:12:54+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 483,
-    "totalGenerated": 478,
+    "totalRunSlotsAttempted": 484,
+    "totalGenerated": 479,
     "totalFailed": 5
   },
   "learning": {

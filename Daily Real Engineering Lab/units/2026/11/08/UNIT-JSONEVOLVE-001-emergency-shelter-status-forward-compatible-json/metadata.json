@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-JSONEVOLVE-001",
+  "runSlot": "2026-11-08-21",
+  "title": "Forward-compatible JSON contract cho trạng thái nhà trú ẩn",
+  "domain": "dotnet-json-contract-evolution",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-08T21:12:54+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "system-text-json",
+    "contract-versioning",
+    "integration-boundaries"
+  ],
+  "prerequisites": [
+    "C# records",
+    "JSON serialization"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "emergency-shelter-occupancy-status-feed",
+    "scenarioType": "new-provider-enum-value-arrives-during-rolling-client-upgrade",
+    "primaryRootCause": "strict-json-string-enum-deserialization-rejects-unknown-provider-value",
+    "failureMode": "one-future-status-aborts-entire-occupancy-import-batch",
+    "solutionPattern": "boundary-raw-status-preservation-and-explicit-unknown-state-with-audited-quarantine",
+    "labFormat": "forward-compatible-json-contract-modernization-with-regression-matrix"
+  }
+}
