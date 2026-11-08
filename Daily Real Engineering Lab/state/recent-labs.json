@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-10-31-04",
-      "unitId": "UNIT-ROUTE-001",
-      "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-ROUTE-001-parking-permit-spa-api-404-contract",
-      "domain": "aspnetcore-route-fallback",
-      "primarySkill": "aspnetcore-endpoint-routing-fallback-precedence",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "municipal-parking-permit-renewal-portal",
-      "scenarioType": "unknown-api-url-returns-spa-html-success-instead-of-api-not-found",
-      "primaryRootCause": "spa-nonfile-fallback-catches-unmatched-api-paths-with-html-200",
-      "failureMode": "api-clients-receive-200-html-for-missing-json-endpoints-and-misclassify-failures",
-      "solutionPattern": "explicit-api-namespace-json-404-route-before-spa-fallback",
-      "labFormat": "aspnetcore-spa-fallback-contract-deterministic-lab"
-    },
-    {
       "runSlot": "2026-10-31-05",
       "unitId": "UNIT-CTXQ-001",
       "path": "Daily Real Engineering Lab/units/2026/10/31/UNIT-CTXQ-001-site-safety-audit-request-context",
@@ -1501,12 +1486,26 @@
       "failureMode": "scholarship-shortlist-excludes-qualified-applicant-when-input-order-changes",
       "solutionPattern": "rank-by-score-and-tiebreaker-before-selecting-one-record-per-applicant",
       "labFormat": "linq-query-semantics-investigation-with-permutation-regression"
+    },
+    {
+      "runSlot": "2026-11-08-09",
+      "unitId": "UNIT-CHANNEL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-CHANNEL-001-flood-warning-channel-loss",
+      "domain": "dotnet-system-threading-channels",
+      "primarySkill": "bounded-channel-backpressure",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "river-flood-sensor-warning-dispatch",
+      "scenarioType": "burst-ingestion-with-slow-notification-consumer",
+      "primaryRootCause": "bounded-channel-drop-oldest-policy-silently-discards-critical-alerts",
+      "failureMode": "published-alert-count-exceeds-delivered-count-with-no-exception",
+      "solutionPattern": "lossless-bounded-channel-backpressure-with-awaited-writes-and-completion",
+      "labFormat": "deterministic-channel-overload-incident-reproduction"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "distributed-object-publication-consistency": 1,
       "csharp-hash-collection-key-invariants": 1,
       "dotnet-semaphoreslim-cancellation-ownership": 1,
       "api-optimistic-concurrency-contract": 1,
@@ -1529,21 +1528,21 @@
       "ef-core-change-tracking": 1,
       "cloud-object-storage-governance": 1,
       "http-download-resume-semantics": 1,
-      "csharp-linq-query-semantics": 1
+      "csharp-linq-query-semantics": 1,
+      "dotnet-system-threading-channels": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L6": 3,
       "L1": 4,
       "L2": 5,
-      "L3": 4,
+      "L3": 5,
       "L4": 4,
-      "L5": 4
+      "L5": 4,
+      "L6": 2
     },
     "byFormat": {
-      "multi-object-publication-architecture-simulator": 1,
       "deterministic-hash-key-invariant-regression": 1,
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
       "production-incident-replay-with-conditional-update-contract": 1,
@@ -1566,13 +1565,13 @@
       "ef-core-bulk-write-refactoring-with-relational-regression": 1,
       "storage-governance-design-decision-tabletop-with-case-timeline": 1,
       "http-range-resume-deterministic-contract-lab": 1,
-      "linq-query-semantics-investigation-with-permutation-regression": 1
+      "linq-query-semantics-investigation-with-permutation-regression": 1,
+      "deterministic-channel-overload-incident-reproduction": 1
     }
   },
   "rollingProfile": {
     "count": 24,
     "byDomain": {
-      "distributed-object-publication-consistency": 1,
       "csharp-hash-collection-key-invariants": 1,
       "dotnet-semaphoreslim-cancellation-ownership": 1,
       "api-optimistic-concurrency-contract": 1,
@@ -1595,21 +1594,21 @@
       "ef-core-change-tracking": 1,
       "cloud-object-storage-governance": 1,
       "http-download-resume-semantics": 1,
-      "csharp-linq-query-semantics": 1
+      "csharp-linq-query-semantics": 1,
+      "dotnet-system-threading-channels": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L6": 3,
       "L1": 4,
       "L2": 5,
-      "L3": 4,
+      "L3": 5,
       "L4": 4,
-      "L5": 4
+      "L5": 4,
+      "L6": 2
     },
     "byFormat": {
-      "multi-object-publication-architecture-simulator": 1,
       "deterministic-hash-key-invariant-regression": 1,
       "cancellation-race-investigation-with-deterministic-permit-probe": 1,
       "production-incident-replay-with-conditional-update-contract": 1,
@@ -1632,7 +1631,8 @@
       "ef-core-bulk-write-refactoring-with-relational-regression": 1,
       "storage-governance-design-decision-tabletop-with-case-timeline": 1,
       "http-range-resume-deterministic-contract-lab": 1,
-      "linq-query-semantics-investigation-with-permutation-regression": 1
+      "linq-query-semantics-investigation-with-permutation-regression": 1,
+      "deterministic-channel-overload-incident-reproduction": 1
     }
   },
   "recentLabs": [
