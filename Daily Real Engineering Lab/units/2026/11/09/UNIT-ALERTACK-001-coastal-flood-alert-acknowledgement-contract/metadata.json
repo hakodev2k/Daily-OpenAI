@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-ALERTACK-001",
+  "runSlot": "2026-11-09-11",
+  "title": "Cảnh báo lũ ven biển: xác nhận nhận lệnh không đồng nghĩa còi đã hoạt động",
+  "domain": "distributed-command-safety",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-09T11:12:12+07:00",
+  "estimatedMinutes": 85,
+  "skills": [
+    "distributed-command-state-machine",
+    "delivery-vs-effect-acknowledgement",
+    "expiry-and-replay-protection",
+    "operational-safety"
+  ],
+  "prerequisites": [
+    "message-delivery-semantics",
+    "idempotency",
+    "monotonic-state-transitions"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coastal-flood-evacuation-siren-control",
+    "scenarioType": "offline-gateway-reconnects-after-command-expiration",
+    "primaryRootCause": "delivery-acknowledgement-confused-with-physical-actuation-and-expiry-fence",
+    "failureMode": "dashboard-marks-warning-active-while-siren-never-sounded-or-stale-command-activates-after-all-clear",
+    "solutionPattern": "separate-delivery-acceptance-and-verified-actuation-with-expiring-command-fence",
+    "labFormat": "safety-critical-command-architecture-with-failure-timeline-replay"
+  }
+}

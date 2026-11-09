@@ -1,0 +1,11 @@
+time,site,event,command,version,detail
+10:00:00,CTRL,DISPATCH,ALERT-41,41,region-east
+10:00:01,BROKER,DELIVERED,ALERT-41,41,240-queues
+10:00:02,G-07,ACCEPTED,ALERT-41,41,relay-controller-offline
+10:00:03,DASHBOARD,ACTIVE_COUNT,ALERT-41,41,240
+10:00:04,G-19,ACCEPTED,ALERT-41,41,relay-sensor-fault
+10:02:00,CTRL,DISPATCH,ALLCLEAR-42,42,region-east
+10:02:01,BROKER,DELIVERED,ALLCLEAR-42,42,239-queues
+10:03:00,G-07,RECONNECT,ALERT-41,41,buffered-command-replayed
+10:03:01,G-07,RELAY_ON,ALERT-41,41,late-actuation
+10:03:03,G-19,HEARTBEAT,NONE,42,relay-feedback-unavailable

@@ -1441,6 +1441,21 @@
       "failureMode": "old-workers-fail-inserts-and-backfill-races-with-live-writes",
       "solutionPattern": "expand-backfill-dual-version-compatibility-gate-validate-contract",
       "labFormat": "zero-downtime-schema-migration-design-tabletop"
+    },
+    {
+      "runSlot": "2026-11-09-11",
+      "unitId": "UNIT-ALERTACK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-ALERTACK-001-coastal-flood-alert-acknowledgement-contract",
+      "domain": "distributed-command-safety",
+      "primarySkill": "distributed-command-state-machine",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "coastal-flood-evacuation-siren-control",
+      "scenarioType": "offline-gateway-reconnects-after-command-expiration",
+      "primaryRootCause": "delivery-acknowledgement-confused-with-physical-actuation-and-expiry-fence",
+      "failureMode": "dashboard-marks-warning-active-while-siren-never-sounded-or-stale-command-activates-after-all-clear",
+      "solutionPattern": "separate-delivery-acceptance-and-verified-actuation-with-expiring-command-fence",
+      "labFormat": "safety-critical-command-architecture-with-failure-timeline-replay"
     }
   ],
   "rolling24": {},
