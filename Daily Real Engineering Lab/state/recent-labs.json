@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-17",
-      "unitId": "UNIT-PDB-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PDB-001-ambulance-dispatch-node-drain-zero-evictions",
-      "domain": "kubernetes-pod-disruption-budget",
-      "primarySkill": "kubernetes-pdb-voluntary-disruption-budget",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "regional-ambulance-dispatch-api-node-maintenance",
-      "scenarioType": "three-replica-maintenance-drain-stalls-despite-all-pods-ready",
-      "primaryRootCause": "percentage-minavailable-is-rounded-down-in-planning-model-while-kubernetes-rounds-up",
-      "failureMode": "maintenance-dashboard-promises-one-eviction-but-kubernetes-disruption-budget-allows-zero",
-      "solutionPattern": "ceil-based-desired-healthy-model-plus-replica-aware-disruption-policy-and-rollout-verification",
-      "labFormat": "pdb-maintenance-policy-decision-with-local-rounding-harness"
-    },
-    {
       "runSlot": "2026-11-01-18",
       "unitId": "UNIT-RWLOCK-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RWLOCK-001-museum-climate-threshold-read-to-write-upgrade",
@@ -1501,6 +1486,21 @@
       "failureMode": "crafted-archive-overwrites-neighboring-record",
       "solutionPattern": "canonical-path-containment-and-entry-type-validation-before-write",
       "labFormat": "security-refactoring-with-adversarial-archive-fixtures"
+    },
+    {
+      "runSlot": "2026-11-10-05",
+      "unitId": "UNIT-OFFSYNC-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-OFFSYNC-001-rural-clinic-offline-record-sync-conflict",
+      "domain": "offline-sync-consistency-architecture",
+      "primarySkill": "offline-sync-conflict-resolution",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "rural-clinic-offline-patient-visit-sync",
+      "scenarioType": "offline-device-reconnect-with-conflicting-clinical-visit-edits",
+      "primaryRootCause": "client-clock-last-write-wins-overwrites-concurrent-offline-changes",
+      "failureMode": "reconnected-tablet-silently-erases-newer-medication-allergy-note",
+      "solutionPattern": "server-issued-revision-cas-and-explicit-conflict-review-with-auditable-merge",
+      "labFormat": "offline-sync-architecture-decision-with-conflict-matrix"
     }
   ],
   "rolling24": [

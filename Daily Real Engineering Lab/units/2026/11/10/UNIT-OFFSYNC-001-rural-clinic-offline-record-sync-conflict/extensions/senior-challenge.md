@@ -1,0 +1,1 @@
+Thiết kế migration zero-downtime cho 2.000 thiết bị có client version cũ, trong đó 10% không cập nhật được trong 30 ngày. Đưa ra admission policy, server-side capability negotiation, kill switch, tải hàng đợi review, RPO/RTO và kế hoạch chứng minh không có silent overwrite.

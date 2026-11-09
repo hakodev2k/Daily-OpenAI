@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-APIVER-001",
-    "runSlot": "2026-11-10-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-APIVER-001-regional-transit-partner-api-version-sunset",
+    "unitId": "UNIT-OFFSYNC-001",
+    "runSlot": "2026-11-10-05",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-OFFSYNC-001-rural-clinic-offline-record-sync-conflict",
     "status": "READY",
-    "createdAt": "2026-11-10T04:13:23+07:00"
+    "createdAt": "2026-11-10T05:05:44+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 514,
-    "totalGenerated": 509,
+    "totalRunSlotsAttempted": 515,
+    "totalGenerated": 510,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,6 @@
+arrivalOrder,eventId,device,baseRevision,clientUpdatedAt,serverReceivedAt,field,value
+1,seed,server,7,2026-11-10T00:00:00Z,2026-11-10T00:00:00Z,all,allergy=none;medication=none;note=initial
+2,op-A1,A,7,2026-11-10T01:15:00Z,2026-11-10T02:10:00Z,allergy,penicillin
+3,op-B1,B,7,2026-11-10T02:30:00Z,2026-11-10T02:11:00Z,note,requires-follow-up
+4,op-A1,A,7,2026-11-10T01:15:00Z,2026-11-10T02:12:00Z,allergy,penicillin
+5,op-B2,B,7,2026-11-10T02:31:00Z,2026-11-10T02:13:00Z,medication,amoxicillin
