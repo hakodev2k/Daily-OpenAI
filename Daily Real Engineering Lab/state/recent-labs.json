@@ -1486,10 +1486,63 @@
       "failureMode": "conservation-priority-reverts-after-successful-bulk-update",
       "solutionPattern": "explicit-tracking-boundary-and-reload-or-isolated-context-with-concurrency-check",
       "labFormat": "ef-core-tracking-investigation-with-two-phase-replay"
+    },
+    {
+      "runSlot": "2026-11-09-15",
+      "unitId": "UNIT-PGTXABORT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-PGTXABORT-001-food-bank-import-postgres-transaction-abort",
+      "domain": "postgresql-transaction-recovery",
+      "primarySkill": "postgresql-transaction-state",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "food-bank-donation-import",
+      "scenarioType": "duplicate-donation-during-multi-row-transaction",
+      "primaryRootCause": "postgresql-unique-violation-leaves-transaction-in-aborted-state",
+      "failureMode": "subsequent-valid-donation-commands-fail-with-25P02",
+      "solutionPattern": "per-row-savepoint-rollback-with-transaction-level-reconciliation",
+      "labFormat": "postgresql-production-incident-evidence-replay"
     }
   ],
-  "rolling24": {},
-  "rollingProfile": {},
+  "rolling24": {
+    "lastUpdatedRunSlot": "2026-11-09-15"
+  },
+  "rollingProfile": {
+    "windowSize": 24,
+    "byDomain": {
+      "api-multi-tenant-rate-limiting": 1,
+      "multi-region-data-residency-architecture": 1,
+      "dotnet-stream-framing": 1,
+      "aspnetcore-api-input-security": 1,
+      "dotnet-async-cancellation": 1,
+      "http-response-variant-caching": 1,
+      "dotnet-unicode-identity": 1,
+      "dotnet-json-contract-evolution": 1,
+      "distributed-worker-coordination": 1,
+      "offline-first-safety-architecture": 1,
+      "dotnet-collections-identity": 1,
+      "dotnet-memory-pooling": 1,
+      "aspnetcore-reverse-proxy-security": 1,
+      "http-conditional-requests": 1,
+      "search-index-migration": 1,
+      "database-pagination-semantics": 1,
+      "dotnet-financial-arithmetic": 1,
+      "dotnet-timezone-scheduling": 1,
+      "dotnet-task-batch-reliability": 1,
+      "postgresql-schema-evolution": 1,
+      "distributed-command-safety": 1,
+      "dotnet-binary-protocol": 1,
+      "ef-core-change-tracking": 1,
+      "postgresql-transaction-recovery": 1
+    },
+    "byMaturity": {
+      "L1": 4,
+      "L2": 4,
+      "L3": 5,
+      "L4": 4,
+      "L5": 4,
+      "L6": 3
+    }
+  },
   "recentLabs": [
     {
       "runSlot": "2026-11-01-06",
@@ -2930,6 +2983,21 @@
       "failureMode": "valid-sensor-frames-produce-implausible-water-temperature",
       "solutionPattern": "field-specific-explicit-endian-decoding-with-signed-boundary-regression",
       "labFormat": "binary-protocol-deterministic-decoder-contract"
+    },
+    {
+      "runSlot": "2026-11-09-15",
+      "unitId": "UNIT-PGTXABORT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-PGTXABORT-001-food-bank-import-postgres-transaction-abort",
+      "domain": "postgresql-transaction-recovery",
+      "primarySkill": "postgresql-transaction-state",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "food-bank-donation-import",
+      "scenarioType": "duplicate-donation-during-multi-row-transaction",
+      "primaryRootCause": "postgresql-unique-violation-leaves-transaction-in-aborted-state",
+      "failureMode": "subsequent-valid-donation-commands-fail-with-25P02",
+      "solutionPattern": "per-row-savepoint-rollback-with-transaction-level-reconciliation",
+      "labFormat": "postgresql-production-incident-evidence-replay"
     }
   ]
 }

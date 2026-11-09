@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-PGTXABORT-001",
+  "runSlot": "2026-11-09-15",
+  "title": "Import quyên góp: một bản ghi trùng làm hỏng cả transaction",
+  "domain": "postgresql-transaction-recovery",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-09T15:31:35+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "postgresql-transaction-state",
+    "savepoints",
+    "sqlstate-diagnostics"
+  ],
+  "prerequisites": [
+    "PostgreSQL transactions",
+    "unique constraints",
+    "psql"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "food-bank-donation-import",
+    "scenarioType": "duplicate-donation-during-multi-row-transaction",
+    "primaryRootCause": "postgresql-unique-violation-leaves-transaction-in-aborted-state",
+    "failureMode": "subsequent-valid-donation-commands-fail-with-25P02",
+    "solutionPattern": "per-row-savepoint-rollback-with-transaction-level-reconciliation",
+    "labFormat": "postgresql-production-incident-evidence-replay"
+  }
+}
