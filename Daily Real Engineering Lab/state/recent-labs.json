@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-14",
-      "unitId": "UNIT-RETRYDATE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RETRYDATE-001-observatory-calibration-retry-after-schedule",
-      "domain": "http-retry-after-header-semantics",
-      "primarySkill": "http-retry-after-date-and-delta-seconds-contract",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "astronomy-observatory-instrument-calibration-export",
-      "scenarioType": "partner-throttle-response-causes-incorrect-retry-schedule-and-budget-decision",
-      "primaryRootCause": "retry-after-http-date-ignored-because-parser-only-accepts-integer-seconds",
-      "failureMode": "retry-too-early-or-retry-after-budget-should-have-expired",
-      "solutionPattern": "parse-delta-seconds-and-http-date-against-injected-receipt-clock-with-budget-guard",
-      "labFormat": "retry-scheduler-policy-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-11-01-15",
       "unitId": "UNIT-PSGATE-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PSGATE-001-cold-storage-release-validation-false-green",
@@ -1501,6 +1486,21 @@
       "failureMode": "summary-count-disagrees-with-exported-record-ids",
       "solutionPattern": "explicit-report-boundary-snapshot-and-single-materialization",
       "labFormat": "deterministic-linq-report-consistency-contract"
+    },
+    {
+      "runSlot": "2026-11-10-01",
+      "unitId": "UNIT-JSONENUM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-JSONENUM-001-marine-research-sample-status-enum-contract",
+      "domain": "dotnet-json-contracts",
+      "primarySkill": "json-enum-boundary-validation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "marine-research-sample-custody",
+      "scenarioType": "partner-json-status-forward-compatibility",
+      "primaryRootCause": "json-string-enum-converter-accepts-undefined-numeric-enum",
+      "failureMode": "unknown-sample-status-accepted-as-ready-for-analysis",
+      "solutionPattern": "strict-string-enum-deserialization-and-defined-value-validation",
+      "labFormat": "adversarial-json-contract-investigation"
     }
   ],
   "rolling24": [

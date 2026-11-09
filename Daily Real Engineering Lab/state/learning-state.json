@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LINQSNAP-001",
-    "runSlot": "2026-11-10-00",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-LINQSNAP-001-urban-tree-census-export-snapshot",
+    "unitId": "UNIT-JSONENUM-001",
+    "runSlot": "2026-11-10-01",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-JSONENUM-001-marine-research-sample-status-enum-contract",
     "status": "READY",
-    "createdAt": "2026-11-10T00:06:26+07:00"
+    "createdAt": "2026-11-10T01:09:07+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 510,
-    "totalGenerated": 505,
+    "totalRunSlotsAttempted": 511,
+    "totalGenerated": 506,
     "totalFailed": 5
   },
   "learning": {

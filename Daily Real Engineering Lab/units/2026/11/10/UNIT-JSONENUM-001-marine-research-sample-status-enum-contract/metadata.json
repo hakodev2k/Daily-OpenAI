@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-JSONENUM-001",
+  "runSlot": "2026-11-10-01",
+  "title": "Marine sample intake: trạng thái bất thường từ partner",
+  "domain": "dotnet-json-contracts",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-10T01:09:07+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "system-text-json",
+    "enum-validation",
+    "api-contracts"
+  ],
+  "prerequisites": [
+    "C# enum",
+    "JSON"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "marine-research-sample-custody",
+    "scenarioType": "partner-json-status-forward-compatibility",
+    "primaryRootCause": "json-string-enum-converter-accepts-undefined-numeric-enum",
+    "failureMode": "unknown-sample-status-accepted-as-ready-for-analysis",
+    "solutionPattern": "strict-string-enum-deserialization-and-defined-value-validation",
+    "labFormat": "adversarial-json-contract-investigation"
+  }
+}
