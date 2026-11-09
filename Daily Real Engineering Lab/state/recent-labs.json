@@ -1867,10 +1867,6 @@
   ],
   "rollingProfile": {
     "domains": {
-      "distributed-worker-coordination": 1,
-      "offline-first-safety-architecture": 1,
-      "dotnet-collections-identity": 1,
-      "dotnet-memory-pooling": 1,
       "aspnetcore-reverse-proxy-security": 1,
       "http-conditional-requests": 1,
       "search-index-migration": 1,
@@ -1890,15 +1886,19 @@
       "dotnet-text-streaming": 1,
       "dotnet-input-semantics": 1,
       "api-rate-limiting-capacity": 1,
-      "csharp-linq-query-execution": 1
+      "csharp-linq-query-execution": 1,
+      "dotnet-json-contracts": 1,
+      "dotnet-priority-queue-scheduling": 1,
+      "dotnet-archive-security": 1,
+      "api-contract-lifecycle": 1
     },
     "maturity": {
+      "L3": 5,
+      "L4": 5,
       "L5": 4,
-      "L6": 3,
-      "L1": 5,
+      "L1": 4,
       "L2": 4,
-      "L3": 4,
-      "L4": 4
+      "L6": 2
     }
   },
   "recentLabs": [
@@ -2261,6 +2261,21 @@
       "failureMode": "crafted-archive-overwrites-neighboring-record",
       "solutionPattern": "canonical-path-containment-and-entry-type-validation-before-write",
       "labFormat": "security-refactoring-with-adversarial-archive-fixtures"
+    },
+    {
+      "runSlot": "2026-11-10-04",
+      "unitId": "UNIT-APIVER-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-APIVER-001-regional-transit-partner-api-version-sunset",
+      "domain": "api-contract-lifecycle",
+      "primarySkill": "api-versioning",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "regional-transit-fare-clearing-partner-integrations",
+      "scenarioType": "breaking-api-contract-retirement-under-uneven-partner-upgrade-capacity",
+      "primaryRootCause": "incompatible-contract-sunset-without-measured-consumer-readiness",
+      "failureMode": "legacy-kiosk-partners-lose-fare-confirmations-at-cutover",
+      "solutionPattern": "consumer-inventory-dual-version-compatibility-and-usage-gated-retirement",
+      "labFormat": "api-lifecycle-design-decision-with-cutover-gate-simulation"
     }
   ]
 }

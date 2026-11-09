@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-APIVER-001",
+  "runSlot": "2026-11-10-04",
+  "title": "Quyết định sunset API thanh toán vé khi đối tác chưa nâng cấp",
+  "domain": "api-contract-lifecycle",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-10T04:13:23+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "api-versioning",
+    "backward-compatibility",
+    "consumer-contracts",
+    "release-governance"
+  ],
+  "prerequisites": [
+    "http-status-codes",
+    "rest-api-contracts",
+    "api-telemetry"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-transit-fare-clearing-partner-integrations",
+    "scenarioType": "breaking-api-contract-retirement-under-uneven-partner-upgrade-capacity",
+    "primaryRootCause": "incompatible-contract-sunset-without-measured-consumer-readiness",
+    "failureMode": "legacy-kiosk-partners-lose-fare-confirmations-at-cutover",
+    "solutionPattern": "consumer-inventory-dual-version-compatibility-and-usage-gated-retirement",
+    "labFormat": "api-lifecycle-design-decision-with-cutover-gate-simulation"
+  }
+}
