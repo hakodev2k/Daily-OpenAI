@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-RATELIMIT-001",
+  "runSlot": "2026-11-09-23",
+  "title": "Thiết kế quota công bằng cho API trả kết quả xét nghiệm",
+  "domain": "api-rate-limiting-capacity",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-09T23:12:16+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "api-rate-limiting",
+    "tenant-isolation",
+    "capacity-planning",
+    "slo-design"
+  ],
+  "prerequisites": [
+    "HTTP 429",
+    "throughput-vs-latency",
+    "basic-concurrency"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-public-health-laboratory-results-api",
+    "scenarioType": "shared-api-quota-contention-between-urgent-and-bulk-tenants",
+    "primaryRootCause": "global-request-limit-allows-one-bulk-tenant-to-exhaust-urgent-clinic-capacity",
+    "failureMode": "urgent-clinic-results-return-429-despite-idle-dedicated-budget",
+    "solutionPattern": "tenant-weighted-token-buckets-with-global-safety-cap-and-priority-reservation",
+    "labFormat": "api-capacity-allocation-design-tabletop-with-workload-replay"
+  }
+}
