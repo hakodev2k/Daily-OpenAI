@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DSTBOOK-001",
+  "runSlot": "2026-11-09-08",
+  "title": "Đặt phòng thư viện vào ngày đổi giờ mùa hè",
+  "domain": "dotnet-timezone-scheduling",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-09T08:09:20+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "timezoneinfo-dst",
+    "datetimeoffset",
+    "api-validation"
+  ],
+  "prerequisites": [
+    "DateTimeKind",
+    "UTC"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-public-library-room-reservations",
+    "scenarioType": "local-wall-clock-booking-during-daylight-saving-transition",
+    "primaryRootCause": "timezone-conversion-without-invalid-or-ambiguous-local-time-policy",
+    "failureMode": "nonexistent-local-time-accepted-and-overlap-time-mapped-without-explicit-offset",
+    "solutionPattern": "validate-local-time-and-require-explicit-offset-for-overlap-before-utc-storage",
+    "labFormat": "time-zone-production-incident-with-deterministic-boundary-fixtures"
+  }
+}

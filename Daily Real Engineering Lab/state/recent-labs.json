@@ -1396,6 +1396,21 @@
       "failureMode": "distributed-credit-cents-do-not-equal-authoritative-settlement",
       "solutionPattern": "integer-minor-unit-largest-remainder-with-deterministic-tie-break",
       "labFormat": "financial-reconciliation-investigation-with-permutation-fixtures"
+    },
+    {
+      "runSlot": "2026-11-09-08",
+      "unitId": "UNIT-DSTBOOK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-DSTBOOK-001-regional-library-room-daylight-saving-booking",
+      "domain": "dotnet-timezone-scheduling",
+      "primarySkill": "timezone-dst-booking-validation",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "regional-public-library-room-reservations",
+      "scenarioType": "local-wall-clock-booking-during-daylight-saving-transition",
+      "primaryRootCause": "timezone-conversion-without-invalid-or-ambiguous-local-time-policy",
+      "failureMode": "nonexistent-local-time-accepted-and-overlap-time-mapped-without-explicit-offset",
+      "solutionPattern": "validate-local-time-and-require-explicit-offset-for-overlap-before-utc-storage",
+      "labFormat": "time-zone-production-incident-with-deterministic-boundary-fixtures"
     }
   ],
   "rolling24": {

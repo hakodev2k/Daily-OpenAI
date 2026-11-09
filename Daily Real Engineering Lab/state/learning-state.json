@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MONEYALLOC-001",
-    "runSlot": "2026-11-09-07",
-    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-MONEYALLOC-001-community-solar-credit-cent-reconciliation",
+    "unitId": "UNIT-DSTBOOK-001",
+    "runSlot": "2026-11-09-08",
+    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-DSTBOOK-001-regional-library-room-daylight-saving-booking",
     "status": "READY",
-    "createdAt": "2026-11-09T07:06:21+07:00"
+    "createdAt": "2026-11-09T08:09:20+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 494,
-    "totalGenerated": 489,
+    "totalRunSlotsAttempted": 495,
+    "totalGenerated": 490,
     "totalFailed": 5
   },
   "learning": {
