@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-MONEYALLOC-001",
+  "runSlot": "2026-11-09-07",
+  "title": "Đối soát phân bổ tín dụng điện mặt trời đến từng cent",
+  "domain": "dotnet-financial-arithmetic",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-09T07:06:21+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "decimal-arithmetic",
+    "rounding",
+    "financial-invariants",
+    "deterministic-allocation"
+  ],
+  "prerequisites": [
+    "C# records",
+    "decimal",
+    "LINQ"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-solar-credit-settlement",
+    "scenarioType": "proportional-cent-distribution-with-conservation-contract",
+    "primaryRootCause": "independent-per-recipient-rounding-breaks-total-conservation",
+    "failureMode": "distributed-credit-cents-do-not-equal-authoritative-settlement",
+    "solutionPattern": "integer-minor-unit-largest-remainder-with-deterministic-tie-break",
+    "labFormat": "financial-reconciliation-investigation-with-permutation-fixtures"
+  }
+}
