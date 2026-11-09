@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-09",
-      "unitId": "UNIT-HPA-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HPA-001-street-tree-permit-hpa-cpu-metric",
-      "domain": "kubernetes-hpa-cpu-utilization",
-      "primarySkill": "kubernetes-hpa-resource-utilization",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "municipal-street-tree-pruning-permit-api",
-      "scenarioType": "hpa-stalls-under-load-despite-container-cpu-usage-metrics",
-      "primaryRootCause": "sidecar-container-lacks-cpu-request-making-pod-cpu-utilization-undefined",
-      "failureMode": "hpa-cpu-target-unknown-and-no-replica-increase-despite-rising-api-latency",
-      "solutionPattern": "resource-request-completeness-and-evidence-based-request-sizing-for-hpa",
-      "labFormat": "autoscaling-control-signal-design-decision-with-local-policy-model"
-    },
-    {
       "runSlot": "2026-11-01-10",
       "unitId": "UNIT-BAGPII-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-BAGPII-001-ferry-checkin-trace-baggage-privacy",
@@ -1501,6 +1486,21 @@
       "failureMode": "large-valid-batch-reports-negative-total-grams",
       "solutionPattern": "promote-operands-before-multiplication-and-check-boundaries",
       "labFormat": "numeric-overflow-boundary-contract"
+    },
+    {
+      "runSlot": "2026-11-09-20",
+      "unitId": "UNIT-SEMCANCEL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-SEMCANCEL-001-greenhouse-irrigation-permit-cancellation",
+      "domain": "dotnet-concurrency-cancellation",
+      "primarySkill": "semaphoreslim-permit-ownership",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "botanical-greenhouse-irrigation-scheduler",
+      "scenarioType": "canceled-waiter-while-exclusive-controller-is-occupied",
+      "primaryRootCause": "semaphore-release-executed-after-canceled-wait-without-acquisition",
+      "failureMode": "semaphore-count-corruption-and-semaphorefullexception-on-legitimate-holder-release",
+      "solutionPattern": "track-successful-permit-acquisition-and-release-only-owned-permit",
+      "labFormat": "cancellation-ownership-investigation-with-deterministic-gate-replay"
     }
   ],
   "rolling24": [
