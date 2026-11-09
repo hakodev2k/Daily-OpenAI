@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-11",
-      "unitId": "UNIT-REDRIVE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-REDRIVE-001-water-quality-dead-letter-status-regression",
-      "domain": "distributed-event-projection-versioning",
-      "primarySkill": "monotonic-snapshot-projection-and-redrive-safety",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "regional-drinking-water-test-site-publication",
-      "scenarioType": "out-of-order-dead-letter-redrive-after-newer-full-snapshot",
-      "primaryRootCause": "arrival-order-last-write-wins-on-versioned-full-snapshot-events",
-      "failureMode": "late-redrive-regresses-public-water-safety-status-and-duplicates-projection-effects",
-      "solutionPattern": "per-aggregate-monotonic-version-guard-plus-durable-inbox-and-atomic-projection-commit",
-      "labFormat": "dead-letter-redrive-state-projection-architecture-tabletop-with-local-contract-harness"
-    },
-    {
       "runSlot": "2026-11-01-12",
       "unitId": "UNIT-EXSTACK-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-EXSTACK-001-freight-manifest-error-origin-lost",
@@ -1501,12 +1486,26 @@
       "failureMode": "rescuer-location-names-contain-replacement-characters-when-frame-boundaries-split-codepoints",
       "solutionPattern": "stateful-decoder-across-chunks-with-final-flush",
       "labFormat": "stream-decoding-production-incident-with-byte-level-evidence"
+    },
+    {
+      "runSlot": "2026-11-09-22",
+      "unitId": "UNIT-REGEXLIT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-REGEXLIT-001-harbor-container-id-literal-filter",
+      "domain": "dotnet-input-semantics",
+      "primarySkill": "literal-identifier-matching",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "harbor-container-yard-asset-reconciliation",
+      "scenarioType": "literal-container-label-lookup-with-regex-metacharacters",
+      "primaryRootCause": "unescaped-user-supplied-literal-interpreted-as-regex-pattern",
+      "failureMode": "lookup-returns-unrelated-container-labels-or-throws-on-valid-literal",
+      "solutionPattern": "ordinal-exact-string-comparison-with-explicit-case-policy",
+      "labFormat": "legacy-lookup-refactoring-with-adversarial-contract-tests"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "http-response-variant-caching": 1,
       "dotnet-unicode-identity": 1,
       "dotnet-json-contract-evolution": 1,
       "distributed-worker-coordination": 1,
@@ -1529,21 +1528,21 @@
       "disaster-recovery-cross-store-consistency": 1,
       "csharp-numeric-semantics": 1,
       "dotnet-concurrency-cancellation": 1,
-      "dotnet-text-streaming": 1
+      "dotnet-text-streaming": 1,
+      "dotnet-input-semantics": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L4": 5,
       "L3": 5,
+      "L4": 5,
       "L5": 3,
       "L6": 3,
       "L1": 4,
       "L2": 4
     },
     "byFormat": {
-      "cache-variant-refactoring-with-deterministic-order-replay": 1,
       "identity-integrity-investigation-with-encoding-fixtures": 1,
       "forward-compatible-json-contract-modernization-with-regression-matrix": 1,
       "distributed-worker-lease-design-tabletop-with-timeline-replay": 1,
@@ -1566,15 +1565,13 @@
       "cross-store-disaster-recovery-architecture-replay": 1,
       "numeric-overflow-boundary-contract": 1,
       "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
-      "stream-decoding-production-incident-with-byte-level-evidence": 1
+      "stream-decoding-production-incident-with-byte-level-evidence": 1,
+      "legacy-lookup-refactoring-with-adversarial-contract-tests": 1
     }
   },
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
-      "aspnetcore-api-input-security": 1,
-      "dotnet-async-cancellation": 1,
-      "http-response-variant-caching": 1,
       "dotnet-unicode-identity": 1,
       "dotnet-json-contract-evolution": 1,
       "distributed-worker-coordination": 1,
@@ -1595,23 +1592,23 @@
       "postgresql-transaction-recovery": 1,
       "http-client-reliability": 1,
       "disaster-recovery-cross-store-consistency": 1,
-      "csharp-numeric-semantics": 1
+      "csharp-numeric-semantics": 1,
+      "dotnet-concurrency-cancellation": 1,
+      "dotnet-text-streaming": 1,
+      "dotnet-input-semantics": 1
     },
     "byMaturity": {
-      "L2": 4,
       "L3": 5,
       "L4": 5,
       "L5": 3,
       "L6": 3,
-      "L1": 4
+      "L1": 4,
+      "L2": 4
     },
     "byDifficulty": {
       "D4": 24
     },
     "byFormat": {
-      "security-boundary-investigation-with-local-contract-regression": 1,
-      "cancellation-incident-evidence-and-contract-replay": 1,
-      "cache-variant-refactoring-with-deterministic-order-replay": 1,
       "identity-integrity-investigation-with-encoding-fixtures": 1,
       "forward-compatible-json-contract-modernization-with-regression-matrix": 1,
       "distributed-worker-lease-design-tabletop-with-timeline-replay": 1,
@@ -1632,25 +1629,14 @@
       "postgresql-production-incident-evidence-replay": 1,
       "http-upload-retry-refactoring-with-scripted-handler": 1,
       "cross-store-disaster-recovery-architecture-replay": 1,
-      "numeric-overflow-boundary-contract": 1
-    }
+      "numeric-overflow-boundary-contract": 1,
+      "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
+      "stream-decoding-production-incident-with-byte-level-evidence": 1,
+      "legacy-lookup-refactoring-with-adversarial-contract-tests": 1
+    },
+    "count": 24
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-01-10",
-      "unitId": "UNIT-BAGPII-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-BAGPII-001-ferry-checkin-trace-baggage-privacy",
-      "domain": "dotnet-distributed-tracing-privacy",
-      "primarySkill": "w3c-baggage-privacy-and-correlation-boundary",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "regional-ferry-passenger-checkin",
-      "scenarioType": "trace-correlation-works-but-downstream-telemetry-contains-sensitive-passenger-attributes",
-      "primaryRootCause": "personal-data-attributes-placed-in-cross-service-activity-baggage-instead-of-restricted-local-context",
-      "failureMode": "sensitive-passenger-values-propagated-to-third-party-trace-collector",
-      "solutionPattern": "opaque-correlation-only-baggage-and-data-minimization-at-trace-boundary",
-      "labFormat": "privacy-leak-distributed-trace-production-incident"
-    },
     {
       "runSlot": "2026-11-01-11",
       "unitId": "UNIT-REDRIVE-001",
@@ -3135,6 +3121,21 @@
       "failureMode": "rescuer-location-names-contain-replacement-characters-when-frame-boundaries-split-codepoints",
       "solutionPattern": "stateful-decoder-across-chunks-with-final-flush",
       "labFormat": "stream-decoding-production-incident-with-byte-level-evidence"
+    },
+    {
+      "runSlot": "2026-11-09-22",
+      "unitId": "UNIT-REGEXLIT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-REGEXLIT-001-harbor-container-id-literal-filter",
+      "domain": "dotnet-input-semantics",
+      "primarySkill": "literal-identifier-matching",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "harbor-container-yard-asset-reconciliation",
+      "scenarioType": "literal-container-label-lookup-with-regex-metacharacters",
+      "primaryRootCause": "unescaped-user-supplied-literal-interpreted-as-regex-pattern",
+      "failureMode": "lookup-returns-unrelated-container-labels-or-throws-on-valid-literal",
+      "solutionPattern": "ordinal-exact-string-comparison-with-explicit-case-policy",
+      "labFormat": "legacy-lookup-refactoring-with-adversarial-contract-tests"
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-REGEXLIT-001",
+  "runSlot": "2026-11-09-22",
+  "title": "Đối soát nhãn container tại cảng",
+  "domain": "dotnet-input-semantics",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-09T22:17:25+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "literal-identifier-matching",
+    "regex-api",
+    "contract-testing",
+    "legacy-refactoring"
+  ],
+  "prerequisites": [
+    "C# strings",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-container-yard-asset-reconciliation",
+    "scenarioType": "literal-container-label-lookup-with-regex-metacharacters",
+    "primaryRootCause": "unescaped-user-supplied-literal-interpreted-as-regex-pattern",
+    "failureMode": "lookup-returns-unrelated-container-labels-or-throws-on-valid-literal",
+    "solutionPattern": "ordinal-exact-string-comparison-with-explicit-case-policy",
+    "labFormat": "legacy-lookup-refactoring-with-adversarial-contract-tests"
+  }
+}
