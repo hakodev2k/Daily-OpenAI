@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-15",
-      "unitId": "UNIT-PSGATE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PSGATE-001-cold-storage-release-validation-false-green",
-      "domain": "powershell-native-process-exit-contract",
-      "primarySkill": "powershell-native-command-exit-code-propagation",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "regional-cold-storage-temperature-compliance-release",
-      "scenarioType": "native-validation-reports-failure-but-ci-wrapper-exits-successfully",
-      "primaryRootCause": "powershell-wrapper-ignores-native-process-exit-status-and-ends-with-successful-output-command",
-      "failureMode": "failed-temperature-report-validation-promoted-as-green-release-gate",
-      "solutionPattern": "explicit-native-exit-code-check-and-process-exit-propagation",
-      "labFormat": "ci-release-gate-forensics-with-deterministic-fake-validator"
-    },
-    {
       "runSlot": "2026-11-01-16",
       "unitId": "UNIT-REDIR-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-REDIR-001-elevator-inspection-evidence-redirect-false-success",
@@ -1501,6 +1486,21 @@
       "failureMode": "unknown-sample-status-accepted-as-ready-for-analysis",
       "solutionPattern": "strict-string-enum-deserialization-and-defined-value-validation",
       "labFormat": "adversarial-json-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-10-02",
+      "unitId": "UNIT-PQSTALE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-PQSTALE-001-mountain-rescue-dispatch-priority-revision",
+      "domain": "dotnet-priority-queue-scheduling",
+      "primarySkill": "priorityqueue-heap-ordering",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "mountain-rescue-helicopter-dispatch",
+      "scenarioType": "incident-severity-revised-after-queue-admission",
+      "primaryRootCause": "priorityqueue-does-not-reorder-existing-entry-when-incident-priority-mutates",
+      "failureMode": "upgraded-life-threatening-call-dispatched-after-routine-call",
+      "solutionPattern": "versioned-immutable-queue-tickets-with-stale-entry-rejection",
+      "labFormat": "dispatch-scheduling-multi-signal-investigation"
     }
   ],
   "rolling24": [
