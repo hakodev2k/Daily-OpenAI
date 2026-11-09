@@ -1,0 +1,38 @@
+{
+  "unitId": "UNIT-UTF8STREAM-001",
+  "runSlot": "2026-11-09-21",
+  "title": "Radio cứu hộ: tên địa điểm lỗi ký tự khi TCP chia gói",
+  "domain": "dotnet-text-streaming",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-09T21:17:59+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "utf8-streaming-decoder",
+    "network-framing",
+    "unicode-correctness"
+  ],
+  "primarySkill": "utf8-streaming-decoder",
+  "prerequisites": [
+    "C# string",
+    "byte[]",
+    "UTF-8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-rescue-radio-dispatch",
+    "scenarioType": "fragmented-utf8-radio-message-ingestion",
+    "primaryRootCause": "stateless-utf8-decoding-per-network-chunk-discards-multibyte-sequence-state",
+    "failureMode": "rescuer-location-names-contain-replacement-characters-when-frame-boundaries-split-codepoints",
+    "solutionPattern": "stateful-decoder-across-chunks-with-final-flush",
+    "labFormat": "stream-decoding-production-incident-with-byte-level-evidence"
+  }
+}
