@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ZIPSLIP-001",
+  "runSlot": "2026-11-10-03",
+  "title": "Museum digitization ZIP extraction boundary",
+  "domain": "dotnet-archive-security",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-10T03:08:42+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "zip-entry-path-validation",
+    "filesystem-trust-boundary",
+    "security-regression-testing"
+  ],
+  "prerequisites": [
+    "path-normalization",
+    "dotnet-io"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "museum-digitization-archive-intake",
+    "scenarioType": "untrusted-zip-batch-extraction",
+    "primaryRootCause": "archive-entry-path-resolved-outside-authorized-extraction-root",
+    "failureMode": "crafted-archive-overwrites-neighboring-record",
+    "solutionPattern": "canonical-path-containment-and-entry-type-validation-before-write",
+    "labFormat": "security-refactoring-with-adversarial-archive-fixtures"
+  }
+}
