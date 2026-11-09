@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-18",
-      "unitId": "UNIT-RWLOCK-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RWLOCK-001-museum-climate-threshold-read-to-write-upgrade",
-      "domain": "dotnet-readerwriterlockslim",
-      "primarySkill": "readerwriterlockslim-read-to-write-upgrade",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "regional-museum-climate-sensor-threshold-registry",
-      "scenarioType": "cache-miss-after-climate-sensor-threshold-catalog-expands",
-      "primaryRootCause": "readerwriterlockslim-read-lock-holder-attempts-enterwritelock-without-upgradeable-mode",
-      "failureMode": "missing-threshold-lookup-throws-lockrecursionexception-while-existing-lookup-succeeds",
-      "solutionPattern": "fast-read-then-upgradeable-read-double-check-and-short-write-critical-section",
-      "labFormat": "read-to-write-lock-upgrade-deterministic-contract-lab"
-    },
-    {
       "runSlot": "2026-11-01-19",
       "unitId": "UNIT-JDUP-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-JDUP-001-library-grant-duplicate-json-field",
@@ -1501,6 +1486,21 @@
       "failureMode": "reconnected-tablet-silently-erases-newer-medication-allergy-note",
       "solutionPattern": "server-issued-revision-cas-and-explicit-conflict-review-with-auditable-merge",
       "labFormat": "offline-sync-architecture-decision-with-conflict-matrix"
+    },
+    {
+      "runSlot": "2026-11-10-06",
+      "unitId": "UNIT-SLICE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-SLICE-001-wildfire-sensor-packet-window-offset",
+      "domain": "dotnet-buffer-slicing",
+      "primarySkill": "arraysegment-offset-count",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "wildfire-perimeter-sensor-gateway",
+      "scenarioType": "frame-payload-is-decoded-from-subwindow-of-reused-receive-buffer",
+      "primaryRootCause": "arraysegment-offset-is-ignored-when-decoding-payload-window",
+      "failureMode": "sensor-reading-is-taken-from-frame-header-or-previous-buffer-region",
+      "solutionPattern": "respect-segment-offset-and-count-with-boundary-regression-tests",
+      "labFormat": "deterministic-binary-buffer-window-contract"
     }
   ],
   "rolling24": [

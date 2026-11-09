@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SLICE-001",
+  "runSlot": "2026-11-10-06",
+  "title": "Wildfire sensor: sai cửa sổ payload trong bộ đệm tái sử dụng",
+  "domain": "dotnet-buffer-slicing",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-10T06:06:00+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "arraysegment-offset-count",
+    "binary-primitives",
+    "buffer-window-contract"
+  ],
+  "prerequisites": [
+    "C# arrays",
+    "little-endian integers"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildfire-perimeter-sensor-gateway",
+    "scenarioType": "frame-payload-is-decoded-from-subwindow-of-reused-receive-buffer",
+    "primaryRootCause": "arraysegment-offset-is-ignored-when-decoding-payload-window",
+    "failureMode": "sensor-reading-is-taken-from-frame-header-or-previous-buffer-region",
+    "solutionPattern": "respect-segment-offset-and-count-with-boundary-regression-tests",
+    "labFormat": "deterministic-binary-buffer-window-contract"
+  }
+}
