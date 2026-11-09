@@ -1506,7 +1506,6 @@
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "dotnet-system-threading-channels": 1,
       "dotnet-timezone-scheduling": 2,
       "api-multi-tenant-rate-limiting": 1,
       "multi-region-data-residency-architecture": 1,
@@ -1528,23 +1527,25 @@
       "dotnet-task-batch-reliability": 1,
       "dotnet-binary-protocol": 1,
       "postgresql-transaction-recovery": 1,
-      "http-client-reliability": 1
+      "http-client-reliability": 1,
+      "observability-sampling-architecture": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L3": 6,
       "L4": 6,
-      "L5": 3,
+      "L5": 4,
       "L6": 2,
       "L1": 4,
-      "L2": 3
+      "L2": 3,
+      "L3": 5
     }
   },
   "rollingProfile": {
     "windowSize": 24,
     "byDomain": {
+      "dotnet-timezone-scheduling": 2,
       "api-multi-tenant-rate-limiting": 1,
       "multi-region-data-residency-architecture": 1,
       "dotnet-stream-framing": 1,
@@ -1562,21 +1563,19 @@
       "search-index-migration": 1,
       "database-pagination-semantics": 1,
       "dotnet-financial-arithmetic": 1,
-      "dotnet-timezone-scheduling": 1,
       "dotnet-task-batch-reliability": 1,
-      "postgresql-schema-evolution": 1,
-      "distributed-command-safety": 1,
       "dotnet-binary-protocol": 1,
-      "ef-core-change-tracking": 1,
-      "postgresql-transaction-recovery": 1
+      "postgresql-transaction-recovery": 1,
+      "http-client-reliability": 1,
+      "observability-sampling-architecture": 1
     },
     "byMaturity": {
-      "L1": 4,
-      "L2": 4,
-      "L3": 5,
-      "L4": 4,
+      "L4": 6,
       "L5": 4,
-      "L6": 3
+      "L6": 2,
+      "L1": 4,
+      "L2": 3,
+      "L3": 5
     }
   },
   "recentLabs": [
@@ -3049,6 +3048,21 @@
       "failureMode": "second-attempt-throws-before-network-send-and-upload-is-lost",
       "solutionPattern": "fresh-request-and-fresh-content-per-attempt-with-bounded-retry-and-idempotency-key",
       "labFormat": "http-upload-retry-refactoring-with-scripted-handler"
+    },
+    {
+      "runSlot": "2026-11-09-17",
+      "unitId": "UNIT-TRACELOSS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-TRACELOSS-001-rail-ticket-trace-sampling-incident",
+      "domain": "observability-sampling-architecture",
+      "primarySkill": "distributed-tracing-sampling",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "intercity-rail-ticket-payment-observability",
+      "scenarioType": "rare-payment-timeout-hidden-by-head-based-trace-sampling",
+      "primaryRootCause": "head-sampling-drops-traces-before-rare-error-status-is-known",
+      "failureMode": "critical-payment-timeout-traces-missing-while-metrics-report-errors",
+      "solutionPattern": "error-aware-tail-sampling-with-bounded-memory-and-always-on-low-cardinality-metrics",
+      "labFormat": "observability-design-decision-with-evidence-budget-replay"
     }
   ]
 }

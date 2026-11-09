@@ -1,0 +1,5 @@
+case,requests,errors
+normal-day,1200000,1800
+incident-30min,50000,4000
+low-traffic-hour,1200,2
+collector-pressure,100000,10000

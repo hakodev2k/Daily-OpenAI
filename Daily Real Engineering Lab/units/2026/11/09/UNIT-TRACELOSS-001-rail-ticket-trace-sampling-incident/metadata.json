@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-TRACELOSS-001",
+  "runSlot": "2026-11-09-17",
+  "title": "Điều tra trace biến mất trong thanh toán vé tàu",
+  "domain": "observability-sampling-architecture",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-09T17:07:23+07:00",
+  "estimatedMinutes": 80,
+  "skills": [
+    "distributed-tracing-sampling",
+    "observability-budgeting",
+    "incident-investigation"
+  ],
+  "prerequisites": [
+    "metrics-vs-traces"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "intercity-rail-ticket-payment-observability",
+    "scenarioType": "rare-payment-timeout-hidden-by-head-based-trace-sampling",
+    "primaryRootCause": "head-sampling-drops-traces-before-rare-error-status-is-known",
+    "failureMode": "critical-payment-timeout-traces-missing-while-metrics-report-errors",
+    "solutionPattern": "error-aware-tail-sampling-with-bounded-memory-and-always-on-low-cardinality-metrics",
+    "labFormat": "observability-design-decision-with-evidence-budget-replay"
+  }
+}
