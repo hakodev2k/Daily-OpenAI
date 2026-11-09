@@ -1,0 +1,31 @@
+{
+  "outageAt": "2026-11-09T08:10:00Z",
+  "databaseReplicaCutoff": "2026-11-09T08:09:30Z",
+  "blobReplicaCutoff": "2026-11-09T08:07:00Z",
+  "cases": [
+    {
+      "id": "A-101",
+      "committedAt": "2026-11-09T08:06:00Z",
+      "requiredBlob": "vax-101",
+      "blobReplicatedAt": "2026-11-09T08:06:30Z"
+    },
+    {
+      "id": "A-102",
+      "committedAt": "2026-11-09T08:08:30Z",
+      "requiredBlob": "vax-102",
+      "blobReplicatedAt": "2026-11-09T08:09:45Z"
+    },
+    {
+      "id": "A-103",
+      "committedAt": "2026-11-09T08:09:00Z",
+      "requiredBlob": "vax-103",
+      "blobReplicatedAt": null
+    },
+    {
+      "id": "A-104",
+      "committedAt": "2026-11-09T08:07:00Z",
+      "requiredBlob": "vax-104",
+      "blobReplicatedAt": "2026-11-09T08:07:00Z"
+    }
+  ]
+}

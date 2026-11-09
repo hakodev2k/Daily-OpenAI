@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TRACELOSS-001",
-    "runSlot": "2026-11-09-17",
-    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-TRACELOSS-001-rail-ticket-trace-sampling-incident",
+    "unitId": "UNIT-DRBLOB-001",
+    "runSlot": "2026-11-09-18",
+    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-DRBLOB-001-animal-shelter-disaster-recovery-attachment-gap",
     "status": "READY",
-    "createdAt": "2026-11-09T17:07:23+07:00"
+    "createdAt": "2026-11-09T18:13:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 503,
-    "totalGenerated": 498,
+    "totalRunSlotsAttempted": 504,
+    "totalGenerated": 499,
     "totalFailed": 5
   },
   "learning": {

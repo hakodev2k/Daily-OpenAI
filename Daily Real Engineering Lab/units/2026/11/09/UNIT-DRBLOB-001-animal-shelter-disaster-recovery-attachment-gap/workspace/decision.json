@@ -1,0 +1,12 @@
+{
+  "strategy": "metadata-only",
+  "enforceAttachmentReadiness": false,
+  "quarantineMissing": false,
+  "requireCrossStoreRecoveryWatermark": false,
+  "drillCases": [
+    "A-101",
+    "A-102",
+    "A-103",
+    "A-104"
+  ]
+}

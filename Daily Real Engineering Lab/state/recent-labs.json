@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-07",
-      "unitId": "UNIT-HASHKEY-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HASHKEY-001-parcel-manifest-route-change-lost-scans",
-      "domain": "csharp-hash-key-identity-semantics",
-      "primarySkill": "dictionary-hash-key-invariants",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "regional-parcel-sortation-night-shift",
-      "scenarioType": "parcel-route-reassignment-manifest-lookup-discontinuity",
-      "primaryRootCause": "mutable-route-zone-participates-in-dictionary-key-hash-and-equality",
-      "failureMode": "lost-scan-lookup-and-phantom-duplicate-key-after-route-change",
-      "solutionPattern": "stable-parcel-identity-comparer-independent-of-mutable-routing-state",
-      "labFormat": "deterministic-mutable-hash-key-contract-lab"
-    },
-    {
       "runSlot": "2026-11-01-08",
       "unitId": "UNIT-PIPEIO-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-PIPEIO-001-university-render-worker-stderr-backpressure",
@@ -1501,6 +1486,21 @@
       "failureMode": "second-attempt-throws-before-network-send-and-upload-is-lost",
       "solutionPattern": "fresh-request-and-fresh-content-per-attempt-with-bounded-retry-and-idempotency-key",
       "labFormat": "http-upload-retry-refactoring-with-scripted-handler"
+    },
+    {
+      "runSlot": "2026-11-09-18",
+      "unitId": "UNIT-DRBLOB-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-DRBLOB-001-animal-shelter-disaster-recovery-attachment-gap",
+      "domain": "disaster-recovery-cross-store-consistency",
+      "primarySkill": "cross-store-disaster-recovery-consistency",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "regional-animal-shelter-adoption-case-archive",
+      "scenarioType": "region-outage-after-database-replication-before-object-replication",
+      "primaryRootCause": "database-replica-rpo-does-not-cover-separately-replicated-blob-attachments",
+      "failureMode": "restored-adoption-case-references-unavailable-vaccination-documents",
+      "solutionPattern": "cross-store-recovery-watermark-and-attachment-readiness-gate-with-quarantine",
+      "labFormat": "cross-store-disaster-recovery-architecture-replay"
     }
   ],
   "rolling24": {

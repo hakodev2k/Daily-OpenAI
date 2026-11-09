@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-DRBLOB-001",
+  "runSlot": "2026-11-09-18",
+  "title": "Khôi phục hồ sơ nhận nuôi sau sự cố vùng",
+  "domain": "disaster-recovery-cross-store-consistency",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-09T18:13:31+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "disaster-recovery",
+    "cross-store-consistency",
+    "rpo-rto",
+    "readiness-gates"
+  ],
+  "prerequisites": [
+    "object-storage-basics",
+    "postgresql-replication-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-animal-shelter-adoption-case-archive",
+    "scenarioType": "region-outage-after-database-replication-before-object-replication",
+    "primaryRootCause": "database-replica-rpo-does-not-cover-separately-replicated-blob-attachments",
+    "failureMode": "restored-adoption-case-references-unavailable-vaccination-documents",
+    "solutionPattern": "cross-store-recovery-watermark-and-attachment-readiness-gate-with-quarantine",
+    "labFormat": "cross-store-disaster-recovery-architecture-replay"
+  }
+}

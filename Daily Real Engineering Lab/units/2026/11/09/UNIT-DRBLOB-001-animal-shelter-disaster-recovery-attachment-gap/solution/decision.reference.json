@@ -1,0 +1,12 @@
+{
+  "strategy": "reconcile-and-quarantine",
+  "enforceAttachmentReadiness": true,
+  "quarantineMissing": true,
+  "requireCrossStoreRecoveryWatermark": true,
+  "drillCases": [
+    "A-101",
+    "A-102",
+    "A-103",
+    "A-104"
+  ]
+}
