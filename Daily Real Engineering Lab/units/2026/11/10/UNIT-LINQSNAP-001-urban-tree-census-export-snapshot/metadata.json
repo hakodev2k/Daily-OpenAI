@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-LINQSNAP-001",
+  "runSlot": "2026-11-10-00",
+  "title": "Báo cáo kiểm kê cây xanh thay đổi giữa hai lần đọc",
+  "domain": "csharp-linq-query-execution",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-10T00:06:26+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "linq-deferred-execution",
+    "enumeration-consistency",
+    "snapshot-boundary"
+  ],
+  "prerequisites": [
+    "C# collections",
+    "LINQ basics",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "urban-tree-canopy-census-export",
+    "scenarioType": "two-stage-report-build-over-live-mutable-observation-list",
+    "primaryRootCause": "deferred-linq-query-reenumerated-after-source-mutates",
+    "failureMode": "summary-count-disagrees-with-exported-record-ids",
+    "solutionPattern": "explicit-report-boundary-snapshot-and-single-materialization",
+    "labFormat": "deterministic-linq-report-consistency-contract"
+  }
+}

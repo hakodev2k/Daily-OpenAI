@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-13",
-      "unitId": "UNIT-MWHEAD-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-MWHEAD-001-city-bus-arrivals-middleware-response-header",
-      "domain": "aspnetcore-middleware-response-lifecycle",
-      "primarySkill": "aspnetcore-response-start-lifecycle",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "city-bus-real-time-stop-arrivals",
-      "scenarioType": "successful-body-response-omits-request-correlation-header-on-two-endpoints",
-      "primaryRootCause": "middleware-mutates-response-headers-after-downstream-has-started-the-response",
-      "failureMode": "missing-correlation-header-and-post-response-middleware-exception",
-      "solutionPattern": "register-response-onstarting-callback-before-invoking-downstream-pipeline",
-      "labFormat": "middleware-response-lifecycle-contract-reproduction"
-    },
-    {
       "runSlot": "2026-11-01-14",
       "unitId": "UNIT-RETRYDATE-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-RETRYDATE-001-observatory-calibration-retry-after-schedule",
@@ -1501,24 +1486,24 @@
       "failureMode": "urgent-clinic-results-return-429-despite-idle-dedicated-budget",
       "solutionPattern": "tenant-weighted-token-buckets-with-global-safety-cap-and-priority-reservation",
       "labFormat": "api-capacity-allocation-design-tabletop-with-workload-replay"
+    },
+    {
+      "runSlot": "2026-11-10-00",
+      "unitId": "UNIT-LINQSNAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-LINQSNAP-001-urban-tree-census-export-snapshot",
+      "domain": "csharp-linq-query-execution",
+      "primarySkill": "linq-deferred-execution",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "urban-tree-canopy-census-export",
+      "scenarioType": "two-stage-report-build-over-live-mutable-observation-list",
+      "primaryRootCause": "deferred-linq-query-reenumerated-after-source-mutates",
+      "failureMode": "summary-count-disagrees-with-exported-record-ids",
+      "solutionPattern": "explicit-report-boundary-snapshot-and-single-materialization",
+      "labFormat": "deterministic-linq-report-consistency-contract"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-08-21",
-      "unitId": "UNIT-JSONEVOLVE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/08/UNIT-JSONEVOLVE-001-emergency-shelter-status-forward-compatible-json",
-      "domain": "dotnet-json-contract-evolution",
-      "primarySkill": "forward-compatible-json-enum-deserialization",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "emergency-shelter-occupancy-status-feed",
-      "scenarioType": "new-provider-enum-value-arrives-during-rolling-client-upgrade",
-      "primaryRootCause": "strict-json-string-enum-deserialization-rejects-unknown-provider-value",
-      "failureMode": "one-future-status-aborts-entire-occupancy-import-batch",
-      "solutionPattern": "boundary-raw-status-preservation-and-explicit-unknown-state-with-audited-quarantine",
-      "labFormat": "forward-compatible-json-contract-modernization-with-regression-matrix"
-    },
     {
       "runSlot": "2026-11-08-22",
       "unitId": "UNIT-LEASEFENCE-001",
@@ -1863,11 +1848,25 @@
       "failureMode": "urgent-clinic-results-return-429-despite-idle-dedicated-budget",
       "solutionPattern": "tenant-weighted-token-buckets-with-global-safety-cap-and-priority-reservation",
       "labFormat": "api-capacity-allocation-design-tabletop-with-workload-replay"
+    },
+    {
+      "runSlot": "2026-11-10-00",
+      "unitId": "UNIT-LINQSNAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-LINQSNAP-001-urban-tree-census-export-snapshot",
+      "domain": "csharp-linq-query-execution",
+      "primarySkill": "linq-deferred-execution",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "urban-tree-canopy-census-export",
+      "scenarioType": "two-stage-report-build-over-live-mutable-observation-list",
+      "primaryRootCause": "deferred-linq-query-reenumerated-after-source-mutates",
+      "failureMode": "summary-count-disagrees-with-exported-record-ids",
+      "solutionPattern": "explicit-report-boundary-snapshot-and-single-materialization",
+      "labFormat": "deterministic-linq-report-consistency-contract"
     }
   ],
   "rollingProfile": {
     "domains": {
-      "dotnet-json-contract-evolution": 1,
       "distributed-worker-coordination": 1,
       "offline-first-safety-architecture": 1,
       "dotnet-collections-identity": 1,
@@ -1890,48 +1889,19 @@
       "dotnet-concurrency-cancellation": 1,
       "dotnet-text-streaming": 1,
       "dotnet-input-semantics": 1,
-      "api-rate-limiting-capacity": 1
+      "api-rate-limiting-capacity": 1,
+      "csharp-linq-query-execution": 1
     },
     "maturity": {
-      "L1": 4,
+      "L5": 4,
+      "L6": 3,
+      "L1": 5,
       "L2": 4,
       "L3": 4,
-      "L4": 5,
-      "L5": 4,
-      "L6": 3
+      "L4": 4
     }
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-01-12",
-      "unitId": "UNIT-EXSTACK-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-EXSTACK-001-freight-manifest-error-origin-lost",
-      "domain": "csharp-exception-provenance",
-      "primarySkill": "csharp-exception-rethrow-semantics",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "ocean-freight-customs-manifest-import",
-      "scenarioType": "invalid-package-count-error-provenance-lost-across-import-layer",
-      "primaryRootCause": "caught-exception-rethrown-as-variable-resets-original-stack-trace",
-      "failureMode": "incident-diagnostics-omit-original-manifest-parser-frame",
-      "solutionPattern": "preserve-current-exception-stack-when-rethrowing-within-catch",
-      "labFormat": "deterministic-exception-provenance-investigation"
-    },
-    {
-      "runSlot": "2026-11-01-13",
-      "unitId": "UNIT-MWHEAD-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-MWHEAD-001-city-bus-arrivals-middleware-response-header",
-      "domain": "aspnetcore-middleware-response-lifecycle",
-      "primarySkill": "aspnetcore-response-start-lifecycle",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "city-bus-real-time-stop-arrivals",
-      "scenarioType": "successful-body-response-omits-request-correlation-header-on-two-endpoints",
-      "primaryRootCause": "middleware-mutates-response-headers-after-downstream-has-started-the-response",
-      "failureMode": "missing-correlation-header-and-post-response-middleware-exception",
-      "solutionPattern": "register-response-onstarting-callback-before-invoking-downstream-pipeline",
-      "labFormat": "middleware-response-lifecycle-contract-reproduction"
-    },
     {
       "runSlot": "2026-11-01-14",
       "unitId": "UNIT-RETRYDATE-001",
@@ -3358,6 +3328,21 @@
       "labFormat": "numeric-overflow-boundary-contract"
     },
     {
+      "runSlot": "2026-11-09-20",
+      "unitId": "UNIT-SEMCANCEL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-SEMCANCEL-001-greenhouse-irrigation-permit-cancellation",
+      "domain": "dotnet-concurrency-cancellation",
+      "primarySkill": "semaphoreslim-permit-ownership",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "botanical-greenhouse-irrigation-scheduler",
+      "scenarioType": "canceled-waiter-while-exclusive-controller-is-occupied",
+      "primaryRootCause": "semaphore-release-executed-after-canceled-wait-without-acquisition",
+      "failureMode": "semaphore-count-corruption-and-semaphorefullexception-on-legitimate-holder-release",
+      "solutionPattern": "track-successful-permit-acquisition-and-release-only-owned-permit",
+      "labFormat": "cancellation-ownership-investigation-with-deterministic-gate-replay"
+    },
+    {
       "runSlot": "2026-11-09-21",
       "unitId": "UNIT-UTF8STREAM-001",
       "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-UTF8STREAM-001-wildlife-rescue-radio-stream-utf8-boundaries",
@@ -3401,6 +3386,21 @@
       "failureMode": "urgent-clinic-results-return-429-despite-idle-dedicated-budget",
       "solutionPattern": "tenant-weighted-token-buckets-with-global-safety-cap-and-priority-reservation",
       "labFormat": "api-capacity-allocation-design-tabletop-with-workload-replay"
+    },
+    {
+      "runSlot": "2026-11-10-00",
+      "unitId": "UNIT-LINQSNAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-LINQSNAP-001-urban-tree-census-export-snapshot",
+      "domain": "csharp-linq-query-execution",
+      "primarySkill": "linq-deferred-execution",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "urban-tree-canopy-census-export",
+      "scenarioType": "two-stage-report-build-over-live-mutable-observation-list",
+      "primaryRootCause": "deferred-linq-query-reenumerated-after-source-mutates",
+      "failureMode": "summary-count-disagrees-with-exported-record-ids",
+      "solutionPattern": "explicit-report-boundary-snapshot-and-single-materialization",
+      "labFormat": "deterministic-linq-report-consistency-contract"
     }
   ]
 }
