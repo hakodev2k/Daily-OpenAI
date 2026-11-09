@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-06",
-      "unitId": "UNIT-CLOSURE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-CLOSURE-001-ranger-patrol-deferred-notice-misdirection",
-      "domain": "csharp-deferred-work-closure-semantics",
-      "primarySkill": "csharp-closure-capture",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "national-park-ranger-shift-handoff",
-      "scenarioType": "batch-notification-deferred-execution-cross-recipient-misdirection",
-      "primaryRootCause": "reused-mutable-local-captured-by-deferred-delegates",
-      "failureMode": "all-batch-notices-delivered-to-last-ranger-instead-of-distinct-recipients",
-      "solutionPattern": "capture-immutable-per-item-command-before-enqueue",
-      "labFormat": "deferred-batch-ownership-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-11-01-07",
       "unitId": "UNIT-HASHKEY-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-HASHKEY-001-parcel-manifest-route-change-lost-scans",
@@ -1501,10 +1486,61 @@
       "failureMode": "subsequent-valid-donation-commands-fail-with-25P02",
       "solutionPattern": "per-row-savepoint-rollback-with-transaction-level-reconciliation",
       "labFormat": "postgresql-production-incident-evidence-replay"
+    },
+    {
+      "runSlot": "2026-11-09-16",
+      "unitId": "UNIT-HTTPRETRY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-HTTPRETRY-001-heritage-photo-upload-retry-request-reuse",
+      "domain": "http-client-reliability",
+      "primarySkill": "httpclient-request-lifecycle",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "heritage-photo-archive-upload",
+      "scenarioType": "transient-503-while-uploading-photo-with-retry",
+      "primaryRootCause": "same-http-request-message-sent-twice-after-transient-failure",
+      "failureMode": "second-attempt-throws-before-network-send-and-upload-is-lost",
+      "solutionPattern": "fresh-request-and-fresh-content-per-attempt-with-bounded-retry-and-idempotency-key",
+      "labFormat": "http-upload-retry-refactoring-with-scripted-handler"
     }
   ],
   "rolling24": {
-    "lastUpdatedRunSlot": "2026-11-09-15"
+    "count": 24,
+    "byDomain": {
+      "dotnet-system-threading-channels": 1,
+      "dotnet-timezone-scheduling": 2,
+      "api-multi-tenant-rate-limiting": 1,
+      "multi-region-data-residency-architecture": 1,
+      "dotnet-stream-framing": 1,
+      "aspnetcore-api-input-security": 1,
+      "dotnet-async-cancellation": 1,
+      "http-response-variant-caching": 1,
+      "dotnet-unicode-identity": 1,
+      "dotnet-json-contract-evolution": 1,
+      "distributed-worker-coordination": 1,
+      "offline-first-safety-architecture": 1,
+      "dotnet-collections-identity": 1,
+      "dotnet-memory-pooling": 1,
+      "aspnetcore-reverse-proxy-security": 1,
+      "http-conditional-requests": 1,
+      "search-index-migration": 1,
+      "database-pagination-semantics": 1,
+      "dotnet-financial-arithmetic": 1,
+      "dotnet-task-batch-reliability": 1,
+      "dotnet-binary-protocol": 1,
+      "postgresql-transaction-recovery": 1,
+      "http-client-reliability": 1
+    },
+    "byDifficulty": {
+      "D4": 24
+    },
+    "byMaturity": {
+      "L3": 6,
+      "L4": 6,
+      "L5": 3,
+      "L6": 2,
+      "L1": 4,
+      "L2": 3
+    }
   },
   "rollingProfile": {
     "windowSize": 24,
@@ -2998,6 +3034,21 @@
       "failureMode": "subsequent-valid-donation-commands-fail-with-25P02",
       "solutionPattern": "per-row-savepoint-rollback-with-transaction-level-reconciliation",
       "labFormat": "postgresql-production-incident-evidence-replay"
+    },
+    {
+      "runSlot": "2026-11-09-16",
+      "unitId": "UNIT-HTTPRETRY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-HTTPRETRY-001-heritage-photo-upload-retry-request-reuse",
+      "domain": "http-client-reliability",
+      "primarySkill": "httpclient-request-lifecycle",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "heritage-photo-archive-upload",
+      "scenarioType": "transient-503-while-uploading-photo-with-retry",
+      "primaryRootCause": "same-http-request-message-sent-twice-after-transient-failure",
+      "failureMode": "second-attempt-throws-before-network-send-and-upload-is-lost",
+      "solutionPattern": "fresh-request-and-fresh-content-per-attempt-with-bounded-retry-and-idempotency-key",
+      "labFormat": "http-upload-retry-refactoring-with-scripted-handler"
     }
   ]
 }

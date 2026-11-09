@@ -1,0 +1,1 @@
+Thiết kế thêm một case: server đã lưu ảnh nhưng client mất response. Đề xuất hợp đồng idempotency key, thời gian lưu, payload hash, trạng thái in-progress và kiểm thử concurrent duplicates. Giải thích tại sao `HttpClient` reuse là đúng nhưng `HttpRequestMessage` reuse là sai.

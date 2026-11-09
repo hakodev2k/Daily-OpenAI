@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-HTTPRETRY-001",
+  "runSlot": "2026-11-09-16",
+  "title": "HTTP upload retry: request lifecycle và an toàn dữ liệu",
+  "domain": "http-client-reliability",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-09T16:30:12+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "httpclient-request-lifecycle",
+    "retry-semantics",
+    "idempotency",
+    "failure-path-testing"
+  ],
+  "prerequisites": [
+    ".NET SDK 8",
+    "PowerShell 7"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "heritage-photo-archive-upload",
+    "scenarioType": "transient-503-while-uploading-photo-with-retry",
+    "primaryRootCause": "same-http-request-message-sent-twice-after-transient-failure",
+    "failureMode": "second-attempt-throws-before-network-send-and-upload-is-lost",
+    "solutionPattern": "fresh-request-and-fresh-content-per-attempt-with-bounded-retry-and-idempotency-key",
+    "labFormat": "http-upload-retry-refactoring-with-scripted-handler"
+  }
+}

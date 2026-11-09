@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PGTXABORT-001",
-    "runSlot": "2026-11-09-15",
-    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-PGTXABORT-001-food-bank-import-postgres-transaction-abort",
+    "unitId": "UNIT-HTTPRETRY-001",
+    "runSlot": "2026-11-09-16",
+    "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-HTTPRETRY-001-heritage-photo-upload-retry-request-reuse",
     "status": "READY",
-    "createdAt": "2026-11-09T15:31:35+07:00"
+    "createdAt": "2026-11-09T16:30:12+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 501,
-    "totalGenerated": 496,
+    "totalRunSlotsAttempted": 502,
+    "totalGenerated": 497,
     "totalFailed": 5
   },
   "learning": {
