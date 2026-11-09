@@ -1456,6 +1456,21 @@
       "failureMode": "dashboard-marks-warning-active-while-siren-never-sounded-or-stale-command-activates-after-all-clear",
       "solutionPattern": "separate-delivery-acceptance-and-verified-actuation-with-expiring-command-fence",
       "labFormat": "safety-critical-command-architecture-with-failure-timeline-replay"
+    },
+    {
+      "runSlot": "2026-11-09-12",
+      "unitId": "UNIT-ENDIAN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-ENDIAN-001-river-gauge-binary-packet-byte-order",
+      "domain": "dotnet-binary-protocol",
+      "primarySkill": "binary-protocol-endianness",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "river-flood-level-telemetry",
+      "scenarioType": "mixed-field-binary-sensor-frame-interpretation",
+      "primaryRootCause": "network-byte-order-assumed-for-little-endian-temperature-field",
+      "failureMode": "valid-sensor-frames-produce-implausible-water-temperature",
+      "solutionPattern": "field-specific-explicit-endian-decoding-with-signed-boundary-regression",
+      "labFormat": "binary-protocol-deterministic-decoder-contract"
     }
   ],
   "rolling24": {},
@@ -2885,6 +2900,21 @@
       "failureMode": "valid-survey-sites-not-persisted-when-one-site-import-fails",
       "solutionPattern": "per-item-outcome-isolation-with-complete-batch-accounting",
       "labFormat": "batch-processing-modernization-with-partial-failure-contract"
+    },
+    {
+      "runSlot": "2026-11-09-12",
+      "unitId": "UNIT-ENDIAN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-ENDIAN-001-river-gauge-binary-packet-byte-order",
+      "domain": "dotnet-binary-protocol",
+      "primarySkill": "binary-protocol-endianness",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "river-flood-level-telemetry",
+      "scenarioType": "mixed-field-binary-sensor-frame-interpretation",
+      "primaryRootCause": "network-byte-order-assumed-for-little-endian-temperature-field",
+      "failureMode": "valid-sensor-frames-produce-implausible-water-temperature",
+      "solutionPattern": "field-specific-explicit-endian-decoding-with-signed-boundary-regression",
+      "labFormat": "binary-protocol-deterministic-decoder-contract"
     }
   ]
 }

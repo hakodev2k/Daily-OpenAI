@@ -1,0 +1,1 @@
+Starter gốc: normal, negative và boundary đều FAIL ở temperatureDeciC; station ID và sequence vẫn đúng; length-guard PASS. `reproduce.ps1` exit 0 chỉ khi đúng 3 fixture sai như mô tả. `verify.ps1` exit 1.

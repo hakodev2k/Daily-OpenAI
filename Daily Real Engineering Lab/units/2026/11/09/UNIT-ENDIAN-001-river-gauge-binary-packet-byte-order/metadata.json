@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-ENDIAN-001",
+  "runSlot": "2026-11-09-12",
+  "title": "Giải mã gói telemetry trạm đo sông: sai byte order",
+  "domain": "dotnet-binary-protocol",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-09T12:13:07+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "binary-primitives",
+    "endianness",
+    "span",
+    "protocol-contract-testing"
+  ],
+  "prerequisites": [
+    ".NET 8 SDK",
+    "PowerShell 7 hoặc Windows PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "river-flood-level-telemetry",
+    "scenarioType": "mixed-field-binary-sensor-frame-interpretation",
+    "primaryRootCause": "network-byte-order-assumed-for-little-endian-temperature-field",
+    "failureMode": "valid-sensor-frames-produce-implausible-water-temperature",
+    "solutionPattern": "field-specific-explicit-endian-decoding-with-signed-boundary-regression",
+    "labFormat": "binary-protocol-deterministic-decoder-contract"
+  }
+}
