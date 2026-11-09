@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-SCHEMAMIG-001",
+  "runSlot": "2026-11-09-10",
+  "title": "Triển khai ràng buộc NOT NULL không gián đoạn cho dữ liệu trạm xe đạp",
+  "domain": "postgresql-schema-evolution",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-09T10:13:24+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "postgresql-online-schema-migration",
+    "rolling-deployment-compatibility",
+    "backfill-reconciliation"
+  ],
+  "prerequisites": [
+    "SQL constraints",
+    "application deployments",
+    "transactions"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "city-bike-share-dock-telemetry",
+    "scenarioType": "rolling-api-and-worker-deployment-with-required-station-zone-column",
+    "primaryRootCause": "not-null-schema-contract-enforced-before-legacy-writers-and-backfill-are-retired",
+    "failureMode": "old-workers-fail-inserts-and-backfill-races-with-live-writes",
+    "solutionPattern": "expand-backfill-dual-version-compatibility-gate-validate-contract",
+    "labFormat": "zero-downtime-schema-migration-design-tabletop"
+  }
+}

@@ -1426,6 +1426,21 @@
       "failureMode": "valid-survey-sites-not-persisted-when-one-site-import-fails",
       "solutionPattern": "per-item-outcome-isolation-with-complete-batch-accounting",
       "labFormat": "batch-processing-modernization-with-partial-failure-contract"
+    },
+    {
+      "runSlot": "2026-11-09-10",
+      "unitId": "UNIT-SCHEMAMIG-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-SCHEMAMIG-001-bike-share-dock-nullability-rollout",
+      "domain": "postgresql-schema-evolution",
+      "primarySkill": "postgresql-online-schema-migration",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "city-bike-share-dock-telemetry",
+      "scenarioType": "rolling-api-and-worker-deployment-with-required-station-zone-column",
+      "primaryRootCause": "not-null-schema-contract-enforced-before-legacy-writers-and-backfill-are-retired",
+      "failureMode": "old-workers-fail-inserts-and-backfill-races-with-live-writes",
+      "solutionPattern": "expand-backfill-dual-version-compatibility-gate-validate-contract",
+      "labFormat": "zero-downtime-schema-migration-design-tabletop"
     }
   ],
   "rolling24": {},
