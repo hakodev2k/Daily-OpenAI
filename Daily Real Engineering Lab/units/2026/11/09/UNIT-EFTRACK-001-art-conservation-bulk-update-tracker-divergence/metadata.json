@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-EFTRACK-001",
+  "runSlot": "2026-11-09-13",
+  "title": "EF Core bulk update và tracked entity: hồ sơ bảo tồn bị ghi đè",
+  "domain": "ef-core-change-tracking",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-09T13:08:28+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "ef-core-executeupdate",
+    "change-tracker",
+    "optimistic-concurrency",
+    "integration-testing"
+  ],
+  "prerequisites": [
+    ".NET SDK 8",
+    "SQLite provider qua NuGet"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "art-conservation-condition-register",
+    "scenarioType": "bulk-condition-update-while-tracked-entity-remains-in-request-scope",
+    "primaryRootCause": "set-based-update-bypasses-ef-core-change-tracker-and-later-save-overwrites-fresh-value",
+    "failureMode": "conservation-priority-reverts-after-successful-bulk-update",
+    "solutionPattern": "explicit-tracking-boundary-and-reload-or-isolated-context-with-concurrency-check",
+    "labFormat": "ef-core-tracking-investigation-with-two-phase-replay"
+  }
+}
