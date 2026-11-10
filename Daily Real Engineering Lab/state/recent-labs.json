@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-14",
-      "unitId": "UNIT-FSWATCH-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-FSWATCH-001-calibration-certificate-index-drift",
-      "domain": "dotnet-filesystem-index-consistency",
-      "primarySkill": "filesystem-event-notification-vs-authoritative-state-reconciliation",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "industrial-laboratory-calibration-certificate-search",
-      "scenarioType": "certificate-directory-updates-are-not-reflected-in-search-after-notification-gaps",
-      "primaryRootCause": "event-only-indexing-assumes-filesystem-notifications-are-complete-and-durable",
-      "failureMode": "modified-deleted-and-new-certificates-remain-out-of-sync-with-authoritative-files",
-      "solutionPattern": "periodic-directory-reconciliation-with-idempotent-upsert-and-deletion-cleanup",
-      "labFormat": "filesystem-notification-gap-production-incident-with-local-reconciliation-contract"
-    },
-    {
       "runSlot": "2026-11-02-15",
       "unitId": "UNIT-SNAPISO-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SNAPISO-001-mangrove-restoration-survey-revision-drift",
@@ -1501,6 +1486,21 @@
       "failureMode": "elapsed-hours-undercounted",
       "solutionPattern": "subtract-instants-not-wall-clock",
       "labFormat": "time-contract-refactoring"
+    },
+    {
+      "runSlot": "2026-11-11-04",
+      "unitId": "UNIT-ROLLOUT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-ROLLOUT-001-public-bike-dock-firmware-canary-guardrails",
+      "domain": "deployment-release-engineering",
+      "primarySkill": "progressive-delivery",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "public-bike-dock-firmware-rollout",
+      "scenarioType": "canary-promotion-under-heterogeneous-station-populations",
+      "primaryRootCause": "fleet-aggregate-health-masks-severe-cohort-regression",
+      "failureMode": "unsafe-rollout-promotion-despite-riverside-device-failure",
+      "solutionPattern": "cohort-specific-guardrails-with-stage-gates-and-targeted-rollback",
+      "labFormat": "progressive-delivery-adr-with-synthetic-cohort-evidence"
     }
   ],
   "rolling24": {
