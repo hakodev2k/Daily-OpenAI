@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-11",
-      "unitId": "UNIT-SQL-011",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SQL-011-library-branch-incident-report-outer-join",
-      "domain": "sql-outer-join-null-rejection",
-      "primarySkill": "sql-left-join-predicate-placement-and-null-rejection",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "municipal-public-library-device-incident-readiness",
-      "scenarioType": "zero-incident-branches-disappear-from-filtered-dashboard",
-      "primaryRootCause": "right-side-incident-predicates-in-where-null-reject-outer-join-rows",
-      "failureMode": "branches-with-no-matching-open-critical-incident-omitted-despite-correct-city-total",
-      "solutionPattern": "filter-right-side-rows-in-left-join-on-and-count-nonnull-incident-id",
-      "labFormat": "sql-outer-join-report-contract-refactoring"
-    },
-    {
       "runSlot": "2026-11-02-12",
       "unitId": "UNIT-ROUND-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-ROUND-001-reusable-crate-deposit-refund-midpoint",
@@ -1501,6 +1486,21 @@
       "failureMode": "duplicate-accession-records-and-failed-lookup-for-equivalent-identifier",
       "solutionPattern": "normalize-unicode-to-form-c-at-ingress-and-lookup-with-ordinal-comparison",
       "labFormat": "deterministic-unicode-data-integrity-reproduction"
+    },
+    {
+      "runSlot": "2026-11-11-01",
+      "unitId": "UNIT-MEMCAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-MEMCAP-001-wildfire-drone-telemetry-buffer-capacity",
+      "domain": "dotnet-binary-buffer-contract",
+      "primarySkill": "memorystream-capacity-vs-length",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "wildfire-drone-thermal-telemetry",
+      "scenarioType": "binary-packet-contains-trailing-zero-padding",
+      "primaryRootCause": "memorystream-getbuffer-returns-allocated-capacity-not-written-length",
+      "failureMode": "telemetry-frame-length-exceeds-valid-payload-and-parser-rejects-frame",
+      "solutionPattern": "transmit-only-written-memory-window-with-explicit-length-contract",
+      "labFormat": "binary-wire-payload-evidence-investigation"
     }
   ],
   "rolling24": {

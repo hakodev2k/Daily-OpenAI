@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-MEMCAP-001",
+  "runSlot": "2026-11-11-01",
+  "title": "Drone telemetry: frame dài hơn payload",
+  "domain": "dotnet-binary-buffer-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-11T01:05:36+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "memorystream-buffer-semantics",
+    "binary-protocol-validation",
+    "byte-level-investigation"
+  ],
+  "prerequisites": [
+    "dotnet-memory-stream",
+    "span"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildfire-drone-thermal-telemetry",
+    "scenarioType": "binary-packet-contains-trailing-zero-padding",
+    "primaryRootCause": "memorystream-getbuffer-returns-allocated-capacity-not-written-length",
+    "failureMode": "telemetry-frame-length-exceeds-valid-payload-and-parser-rejects-frame",
+    "solutionPattern": "transmit-only-written-memory-window-with-explicit-length-contract",
+    "labFormat": "binary-wire-payload-evidence-investigation"
+  }
+}
