@@ -51,11 +51,21 @@ sealed class InvoiceRepository : IDisposable
 
 sealed class IrrigationInvoiceWorker
 {
+    private readonly IServiceScope _scope;
     private readonly InvoiceRepository _repository;
+    private bool _firstBatch = true;
     public IrrigationInvoiceWorker(IServiceScopeFactory scopeFactory)
     {
-        using var scope = scopeFactory.CreateScope();
-        _repository = scope.ServiceProvider.GetRequiredService<InvoiceRepository>();
+        _scope = scopeFactory.CreateScope();
+        _repository = _scope.ServiceProvider.GetRequiredService<InvoiceRepository>();
     }
-    public void Process(string batch) => _repository.Commit(batch);
+    public void Process(string batch)
+    {
+        _repository.Commit(batch);
+        if (_firstBatch)
+        {
+            _firstBatch = false;
+            _scope.Dispose();
+        }
+    }
 }
