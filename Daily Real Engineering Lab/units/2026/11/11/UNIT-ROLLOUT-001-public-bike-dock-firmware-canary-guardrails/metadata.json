@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-ROLLOUT-001",
+  "runSlot": "2026-11-11-04",
+  "title": "Public bike dock firmware canary guardrails",
+  "domain": "deployment-release-engineering",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-11T04:10:18+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "progressive-delivery",
+    "cohort-metrics",
+    "rollback-design",
+    "engineering-decision-record"
+  ],
+  "prerequisites": [
+    "basic-slo",
+    "percentage-arithmetic"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-bike-dock-firmware-rollout",
+    "scenarioType": "canary-promotion-under-heterogeneous-station-populations",
+    "primaryRootCause": "fleet-aggregate-health-masks-severe-cohort-regression",
+    "failureMode": "unsafe-rollout-promotion-despite-riverside-device-failure",
+    "solutionPattern": "cohort-specific-guardrails-with-stage-gates-and-targeted-rollback",
+    "labFormat": "progressive-delivery-adr-with-synthetic-cohort-evidence"
+  }
+}
