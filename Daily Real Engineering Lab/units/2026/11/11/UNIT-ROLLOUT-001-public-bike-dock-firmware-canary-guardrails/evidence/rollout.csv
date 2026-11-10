@@ -1,0 +1,5 @@
+cohort,firmware,stations,unlock_attempts,failed_unlocks,window_minutes
+urban,v3.7,1600,160000,800,60
+riverside,v3.7,300,30000,150,60
+urban,v3.8,80,8000,40,60
+riverside,v3.8,20,2000,180,60
