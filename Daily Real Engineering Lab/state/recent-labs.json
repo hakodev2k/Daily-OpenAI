@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-00",
-      "unitId": "UNIT-RLPART-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-RLPART-001-veterinary-clinic-tenant-admission-leak",
-      "domain": "aspnetcore-partitioned-rate-limiting",
-      "primarySkill": "partitioned-rate-limiter-tenant-isolation",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "regional-veterinary-vaccination-clinic-partner-api",
-      "scenarioType": "one-clinic-traffic-burst-blocks-another-and-cross-endpoint-requests-escape-quota",
-      "primaryRootCause": "fixed-window-limiter-partitions-by-request-path-instead-of-authenticated-clinic-identity",
-      "failureMode": "cross-clinic-429-coupling-and-same-clinic-quota-bypass-on-another-endpoint",
-      "solutionPattern": "authenticated-tenant-claim-as-stable-partition-key-with-cross-route-and-cross-tenant-contracts",
-      "labFormat": "multi-tenant-admission-fairness-incident-with-local-policy-harness"
-    },
-    {
       "runSlot": "2026-11-02-01",
       "unitId": "UNIT-SQLITE-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SQLITE-001-water-pump-offline-sync-inspection-loss",
@@ -1501,6 +1486,21 @@
       "failureMode": "existing-seed-lot-cannot-be-found-or-removed-after-relocation",
       "solutionPattern": "immutable-stable-lot-id-as-hash-key-with-mutable-details-outside-index",
       "labFormat": "deterministic-collection-invariant-reproduction"
+    },
+    {
+      "runSlot": "2026-11-10-13",
+      "unitId": "UNIT-URIPATH-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-URIPATH-001-rail-freight-gateway-base-path-routing",
+      "domain": "dotnet-uri-resolution",
+      "primarySkill": "system-uri-relative-resolution",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "rail-freight-container-status-partner-gateway",
+      "scenarioType": "partner-api-prefix-migration-with-healthy-host-and-404-business-routes",
+      "primaryRootCause": "root-relative-uri-composition-discards-configured-gateway-base-path",
+      "failureMode": "outbound-requests-route-to-host-root-instead-of-partner-namespace",
+      "solutionPattern": "relative-uri-composition-with-explicit-base-path-and-route-contract",
+      "labFormat": "uri-routing-investigation-with-deterministic-contract-harness"
     }
   ],
   "rolling24": {

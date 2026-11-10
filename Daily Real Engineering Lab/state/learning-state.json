@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HASHMUT-001",
-    "runSlot": "2026-11-10-12",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-HASHMUT-001-seed-bank-inventory-mutable-hash-key",
+    "unitId": "UNIT-URIPATH-001",
+    "runSlot": "2026-11-10-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-URIPATH-001-rail-freight-gateway-base-path-routing",
     "status": "READY",
-    "createdAt": "2026-11-10T12:06:37+07:00"
+    "createdAt": "2026-11-10T13:12:27+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 522,
-    "totalGenerated": 517,
+    "totalRunSlotsAttempted": 523,
+    "totalGenerated": 518,
     "totalFailed": 5
   },
   "learning": {

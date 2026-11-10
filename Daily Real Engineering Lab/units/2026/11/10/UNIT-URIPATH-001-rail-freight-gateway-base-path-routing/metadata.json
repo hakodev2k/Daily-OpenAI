@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-URIPATH-001",
+  "runSlot": "2026-11-10-13",
+  "title": "Rail freight partner gateway URI path prefix regression",
+  "domain": "dotnet-uri-resolution",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-10T13:12:27+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "system-uri-relative-resolution",
+    "http-outbound-routing",
+    "contract-testing"
+  ],
+  "prerequisites": [
+    "basic-http-uri"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "rail-freight-container-status-partner-gateway",
+    "scenarioType": "partner-api-prefix-migration-with-healthy-host-and-404-business-routes",
+    "primaryRootCause": "root-relative-uri-composition-discards-configured-gateway-base-path",
+    "failureMode": "outbound-requests-route-to-host-root-instead-of-partner-namespace",
+    "solutionPattern": "relative-uri-composition-with-explicit-base-path-and-route-contract",
+    "labFormat": "uri-routing-investigation-with-deterministic-contract-harness"
+  }
+}
