@@ -1,0 +1,32 @@
+{
+  "unitId": "UNIT-QUOTAFAIR-001",
+  "runSlot": "2026-11-10-22",
+  "title": "Fairness cho gateway cảnh báo vô tuyến",
+  "domain": "multi-tenant-capacity-governance",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-10T22:11:14+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "tenant-fairness-scheduling",
+    "admission-control",
+    "delivery-semantics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-emergency-radio-broadcast",
+    "scenarioType": "multi-tenant-priority-contention-under-fixed-radio-capacity",
+    "primaryRootCause": "unbounded-shared-admission-without-service-class-capacity-isolation",
+    "failureMode": "critical-rescue-alerts-miss-delivery-slo-while-test-traffic-occupies-gateway",
+    "solutionPattern": "reserved-work-conserving-fair-scheduling-with-bounded-admission-and-idempotent-inbox",
+    "labFormat": "capacity-governance-adr-with-traffic-evidence"
+  }
+}
