@@ -1505,36 +1505,6 @@
   ],
   "rolling24": [
     {
-      "runSlot": "2026-11-09-06",
-      "unitId": "UNIT-PAGECURSOR-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-PAGECURSOR-001-museum-artifact-keyset-pagination-tie",
-      "domain": "database-pagination-semantics",
-      "primarySkill": "keyset-pagination",
-      "maturityLevel": "L1",
-      "difficulty": "D4",
-      "businessContext": "regional-museum-artifact-digitization",
-      "scenarioType": "batch-export-with-tied-updated-at-timestamps",
-      "primaryRootCause": "non-unique-keyset-cursor-omits-tie-breaker",
-      "failureMode": "records-with-same-timestamp-are-silently-skipped-across-pages",
-      "solutionPattern": "composite-lexicographic-cursor-with-stable-unique-id",
-      "labFormat": "deterministic-pagination-boundary-contract"
-    },
-    {
-      "runSlot": "2026-11-09-07",
-      "unitId": "UNIT-MONEYALLOC-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-MONEYALLOC-001-community-solar-credit-cent-reconciliation",
-      "domain": "dotnet-financial-arithmetic",
-      "primarySkill": "financial-cent-allocation",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "community-solar-credit-settlement",
-      "scenarioType": "proportional-cent-distribution-with-conservation-contract",
-      "primaryRootCause": "independent-per-recipient-rounding-breaks-total-conservation",
-      "failureMode": "distributed-credit-cents-do-not-equal-authoritative-settlement",
-      "solutionPattern": "integer-minor-unit-largest-remainder-with-deterministic-tie-break",
-      "labFormat": "financial-reconciliation-investigation-with-permutation-fixtures"
-    },
-    {
       "runSlot": "2026-11-09-08",
       "unitId": "UNIT-DSTBOOK-001",
       "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-DSTBOOK-001-regional-library-room-daylight-saving-booking",
@@ -1805,19 +1775,34 @@
       "labFormat": "security-refactoring-with-adversarial-archive-fixtures"
     },
     {
-      "runSlot": "2026-11-10-04",
-      "unitId": "UNIT-APIVER-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-APIVER-001-regional-transit-partner-api-version-sunset",
-      "domain": "api-contract-lifecycle",
-      "primarySkill": "api-versioning",
-      "maturityLevel": "L5",
+      "runSlot": "2026-11-10-05",
+      "unitId": "UNIT-OFFSYNC-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-OFFSYNC-001-rural-clinic-offline-record-sync-conflict",
+      "domain": "offline-sync-consistency-architecture",
+      "primarySkill": "offline-sync-conflict-resolution",
+      "maturityLevel": "L6",
       "difficulty": "D4",
-      "businessContext": "regional-transit-fare-clearing-partner-integrations",
-      "scenarioType": "breaking-api-contract-retirement-under-uneven-partner-upgrade-capacity",
-      "primaryRootCause": "incompatible-contract-sunset-without-measured-consumer-readiness",
-      "failureMode": "legacy-kiosk-partners-lose-fare-confirmations-at-cutover",
-      "solutionPattern": "consumer-inventory-dual-version-compatibility-and-usage-gated-retirement",
-      "labFormat": "api-lifecycle-design-decision-with-cutover-gate-simulation"
+      "businessContext": "rural-clinic-offline-patient-visit-sync",
+      "scenarioType": "offline-device-reconnect-with-conflicting-clinical-visit-edits",
+      "primaryRootCause": "client-clock-last-write-wins-overwrites-concurrent-offline-changes",
+      "failureMode": "reconnected-tablet-silently-erases-newer-medication-allergy-note",
+      "solutionPattern": "server-issued-revision-cas-and-explicit-conflict-review-with-auditable-merge",
+      "labFormat": "offline-sync-architecture-decision-with-conflict-matrix"
+    },
+    {
+      "runSlot": "2026-11-10-06",
+      "unitId": "UNIT-SLICE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-SLICE-001-wildfire-sensor-packet-window-offset",
+      "domain": "dotnet-buffer-slicing",
+      "primarySkill": "arraysegment-offset-count",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "wildfire-perimeter-sensor-gateway",
+      "scenarioType": "frame-payload-is-decoded-from-subwindow-of-reused-receive-buffer",
+      "primaryRootCause": "arraysegment-offset-is-ignored-when-decoding-payload-window",
+      "failureMode": "sensor-reading-is-taken-from-frame-header-or-previous-buffer-region",
+      "solutionPattern": "respect-segment-offset-and-count-with-boundary-regression-tests",
+      "labFormat": "deterministic-binary-buffer-window-contract"
     },
     {
       "runSlot": "2026-11-10-07",
@@ -1835,19 +1820,19 @@
       "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
     },
     {
-      "runSlot": "2026-11-10-09",
-      "unitId": "UNIT-DISCOPE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-DISCOPE-001-community-garden-worker-scope-lifetime",
-      "domain": "aspnet-core-dependency-injection",
-      "primarySkill": "dependency-injection-scope-ownership",
-      "maturityLevel": "L4",
+      "runSlot": "2026-11-10-08",
+      "unitId": "UNIT-CHANNELBP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CHANNELBP-001-avalanche-sensor-ingestion-backpressure",
+      "domain": "dotnet-channel-backpressure",
+      "primarySkill": "system-threading-channels",
+      "maturityLevel": "L3",
       "difficulty": "D4",
-      "businessContext": "community-garden-irrigation-invoice-processing",
-      "scenarioType": "long-lived-hosted-worker-processes-sequential-invoice-batches",
-      "primaryRootCause": "scoped-repository-captured-by-singleton-worker-and-used-after-scope-disposal",
-      "failureMode": "second-batch-throws-objectdisposedexception-and-first-batch-only-is-committed",
-      "solutionPattern": "create-and-dispose-a-new-dependency-injection-scope-per-work-item",
-      "labFormat": "background-worker-lifetime-refactoring-with-deterministic-two-batch-replay"
+      "businessContext": "alpine-avalanche-monitoring-station",
+      "scenarioType": "burst-ingestion-under-slow-telemetry-sink",
+      "primaryRootCause": "bounded-channel-drop-oldest-mode-silently-discards-queued-alerts",
+      "failureMode": "accepted-alert-count-exceeds-delivered-alert-count-without-write-failure",
+      "solutionPattern": "wait-mode-with-explicit-backpressure-and-accepted-delivered-invariants",
+      "labFormat": "burst-queue-production-incident-with-deterministic-capacity-gates"
     },
     {
       "runSlot": "2026-11-10-10",
@@ -1863,12 +1848,25 @@
       "failureMode": "duplicate-and-missing-permit-ids-across-pages",
       "solutionPattern": "stable-keyset-cursor-with-deterministic-tie-breaker-and-snapshot-boundary",
       "labFormat": "pagination-contract-design-with-deterministic-concurrent-insert-replay"
+    },
+    {
+      "runSlot": "2026-11-10-11",
+      "unitId": "UNIT-LICENSECAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-LICENSECAP-001-public-library-ebook-concurrent-license-allocation",
+      "domain": "distributed-license-capacity",
+      "primarySkill": "distributed-concurrency",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "public-library-ebook-lending",
+      "scenarioType": "simultaneous-loan-requests-across-regions-and-retry-after-timeout",
+      "primaryRootCause": "non-atomic-license-capacity-check-and-commit-across-application-instances",
+      "failureMode": "licensed-copy-count-exceeded-and-duplicate-loan-on-retry",
+      "solutionPattern": "transactional-unique-loan-idempotency-with-serialized-capacity-admission-and-expiring-hold-reconciliation",
+      "labFormat": "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop"
     }
   ],
   "rollingProfile": {
-    "domains": {
-      "database-pagination-semantics": 1,
-      "dotnet-financial-arithmetic": 1,
+    "domain": {
       "dotnet-timezone-scheduling": 1,
       "dotnet-task-batch-reliability": 1,
       "postgresql-schema-evolution": 1,
@@ -1887,25 +1885,25 @@
       "dotnet-json-contracts": 1,
       "dotnet-priority-queue-scheduling": 1,
       "dotnet-archive-security": 1,
-      "api-contract-lifecycle": 1,
+      "offline-sync-consistency-architecture": 1,
+      "dotnet-buffer-slicing": 1,
       "dotnet-cancellation-diagnostics": 1,
-      "aspnet-core-dependency-injection": 1,
-      "sql-api-pagination-consistency": 1
+      "dotnet-channel-backpressure": 1,
+      "sql-api-pagination-consistency": 1,
+      "distributed-license-capacity": 1
     },
     "difficulty": {
       "D4": 24
     },
-    "maturity": {
+    "maturityLevel": {
+      "L3": 5,
+      "L4": 4,
+      "L5": 3,
+      "L6": 4,
       "L1": 4,
-      "L2": 5,
-      "L3": 4,
-      "L4": 5,
-      "L5": 4,
-      "L6": 2
+      "L2": 4
     },
-    "formats": {
-      "deterministic-pagination-boundary-contract": 1,
-      "financial-reconciliation-investigation-with-permutation-fixtures": 1,
+    "labFormat": {
       "time-zone-production-incident-with-deterministic-boundary-fixtures": 1,
       "batch-processing-modernization-with-partial-failure-contract": 1,
       "zero-downtime-schema-migration-design-tabletop": 1,
@@ -1924,10 +1922,12 @@
       "adversarial-json-contract-investigation": 1,
       "dispatch-scheduling-multi-signal-investigation": 1,
       "security-refactoring-with-adversarial-archive-fixtures": 1,
-      "api-lifecycle-design-decision-with-cutover-gate-simulation": 1,
+      "offline-sync-architecture-decision-with-conflict-matrix": 1,
+      "deterministic-binary-buffer-window-contract": 1,
       "cancellation-diagnostics-investigation-with-deterministic-replay": 1,
-      "background-worker-lifetime-refactoring-with-deterministic-two-batch-replay": 1,
-      "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1
+      "burst-queue-production-incident-with-deterministic-capacity-gates": 1,
+      "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
+      "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop": 1
     }
   },
   "recentLabs": [
