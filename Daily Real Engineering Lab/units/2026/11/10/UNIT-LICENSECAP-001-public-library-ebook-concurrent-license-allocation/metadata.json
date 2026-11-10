@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-LICENSECAP-001",
+  "runSlot": "2026-11-10-11",
+  "title": "Thư viện số: cấp quyền mượn ebook khi yêu cầu đồng thời và retry",
+  "domain": "distributed-license-capacity",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-10T11:08:51+07:00",
+  "estimatedMinutes": 80,
+  "skills": [
+    "distributed-concurrency",
+    "database-transactions",
+    "idempotency",
+    "architecture-tradeoffs"
+  ],
+  "prerequisites": [
+    "SQL transaction isolation",
+    "HTTP retry semantics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-library-ebook-lending",
+    "scenarioType": "simultaneous-loan-requests-across-regions-and-retry-after-timeout",
+    "primaryRootCause": "non-atomic-license-capacity-check-and-commit-across-application-instances",
+    "failureMode": "licensed-copy-count-exceeded-and-duplicate-loan-on-retry",
+    "solutionPattern": "transactional-unique-loan-idempotency-with-serialized-capacity-admission-and-expiring-hold-reconciliation",
+    "labFormat": "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop"
+  }
+}

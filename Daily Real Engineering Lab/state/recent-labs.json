@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-22",
-      "unitId": "UNIT-INTOVF-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-INTOVF-001-solar-cooperative-energy-credit-rollover",
-      "domain": "csharp-integer-arithmetic-overflow",
-      "primarySkill": "csharp-intermediate-integer-overflow-and-widening",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "community-solar-energy-credit-reconciliation",
-      "scenarioType": "daily-meter-aggregation-crosses-large-volume-threshold",
-      "primaryRootCause": "int32-accumulator-overflows-before-implicit-widening-to-int64",
-      "failureMode": "large-positive-meter-generation-total-becomes-negative-while-small-batches-pass",
-      "solutionPattern": "wide-accumulator-from-first-addition-with-checked-arithmetic-and-boundary-contracts",
-      "labFormat": "deterministic-energy-aggregation-numeric-boundary-contract"
-    },
-    {
       "runSlot": "2026-11-01-23",
       "unitId": "UNIT-CANCELREG-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-CANCELREG-001-runway-lighting-shutdown-acknowledgement-stall",
@@ -1501,6 +1486,21 @@
       "failureMode": "duplicate-and-missing-permit-ids-across-pages",
       "solutionPattern": "stable-keyset-cursor-with-deterministic-tie-breaker-and-snapshot-boundary",
       "labFormat": "pagination-contract-design-with-deterministic-concurrent-insert-replay"
+    },
+    {
+      "runSlot": "2026-11-10-11",
+      "unitId": "UNIT-LICENSECAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-LICENSECAP-001-public-library-ebook-concurrent-license-allocation",
+      "domain": "distributed-license-capacity",
+      "primarySkill": "distributed-concurrency",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "public-library-ebook-lending",
+      "scenarioType": "simultaneous-loan-requests-across-regions-and-retry-after-timeout",
+      "primaryRootCause": "non-atomic-license-capacity-check-and-commit-across-application-instances",
+      "failureMode": "licensed-copy-count-exceeded-and-duplicate-loan-on-retry",
+      "solutionPattern": "transactional-unique-loan-idempotency-with-serialized-capacity-admission-and-expiring-hold-reconciliation",
+      "labFormat": "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop"
     }
   ],
   "rolling24": [
