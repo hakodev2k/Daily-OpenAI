@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-FILEATOMIC-001",
+  "runSlot": "2026-11-10-20",
+  "title": "Báo cáo kiểm kê động vật bị hỏng sau khi tiến trình dừng giữa lúc ghi",
+  "domain": "dotnet-file-io-durability",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-10T20:11:48+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "file-io",
+    "crash-consistency",
+    "failure-injection",
+    "recovery-contract"
+  ],
+  "prerequisites": [
+    ".NET 8 SDK",
+    "PowerShell 7 hoặc Windows PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-sanctuary-daily-census",
+    "scenarioType": "report-replacement-interrupted-by-mid-write-fault",
+    "primaryRootCause": "in-place-truncation-of-last-known-good-report-before-replacement-completes",
+    "failureMode": "previously-valid-report-becomes-truncated-after-failed-refresh",
+    "solutionPattern": "same-directory-staged-write-with-flush-and-atomic-replace-plus-temp-cleanup",
+    "labFormat": "filesystem-crash-consistency-incident-with-fault-injection"
+  }
+}

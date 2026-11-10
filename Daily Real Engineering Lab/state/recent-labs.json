@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-06",
-      "unitId": "UNIT-LANGQ-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-LANGQ-001-heritage-caption-language-negotiation",
-      "domain": "http-accept-language-content-negotiation",
-      "primarySkill": "http-accept-language-quality-weights",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "regional-heritage-archive-caption-api",
-      "scenarioType": "client-language-preference-mismatch-after-mobile-release",
-      "primaryRootCause": "first-header-token-selected-without-weighted-language-negotiation",
-      "failureMode": "wrong-caption-language-or-false-fallback-on-valid-client-preferences",
-      "solutionPattern": "quality-weighted-supported-language-selection-with-explicit-exclusions-and-contract-tests",
-      "labFormat": "api-localization-compatibility-refactoring-workshop"
-    },
-    {
       "runSlot": "2026-11-02-07",
       "unitId": "UNIT-DPKEY-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DPKEY-001-housing-repair-portal-split-key-rings",
@@ -1501,11 +1486,25 @@
       "failureMode": "older-command-overwrites-newer-desired-buoy-mode",
       "solutionPattern": "cooperative-cancellation-plus-monotonic-generation-fence-at-side-effect-boundary",
       "labFormat": "deterministic-async-lifecycle-investigation"
+    },
+    {
+      "runSlot": "2026-11-10-20",
+      "unitId": "UNIT-FILEATOMIC-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-FILEATOMIC-001-wildlife-sanctuary-daily-census-crash-consistency",
+      "domain": "dotnet-file-io-durability",
+      "primarySkill": "file-replacement-crash-consistency",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "wildlife-sanctuary-daily-census",
+      "scenarioType": "report-replacement-interrupted-by-mid-write-fault",
+      "primaryRootCause": "in-place-truncation-of-last-known-good-report-before-replacement-completes",
+      "failureMode": "previously-valid-report-becomes-truncated-after-failed-refresh",
+      "solutionPattern": "same-directory-staged-write-with-flush-and-atomic-replace-plus-temp-cleanup",
+      "labFormat": "filesystem-crash-consistency-incident-with-fault-injection"
     }
   ],
   "rolling24": {
     "domains": {
-      "http-client-reliability": 1,
       "disaster-recovery-cross-store-consistency": 1,
       "csharp-numeric-semantics": 1,
       "dotnet-concurrency-cancellation": 1,
@@ -1528,21 +1527,21 @@
       "distributed-observability": 1,
       "data-lineage-regulatory-architecture": 1,
       "dotnet-decimal-accounting": 1,
-      "dotnet-async-lifecycle": 1
+      "dotnet-async-lifecycle": 1,
+      "dotnet-file-io-durability": 1
     },
     "difficulty": {
       "D4": 24
     },
     "maturity": {
-      "L4": 3,
       "L6": 4,
       "L1": 5,
       "L2": 5,
-      "L3": 4,
+      "L3": 5,
+      "L4": 2,
       "L5": 3
     },
     "formats": {
-      "http-upload-retry-refactoring-with-scripted-handler": 1,
       "cross-store-disaster-recovery-architecture-replay": 1,
       "numeric-overflow-boundary-contract": 1,
       "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
@@ -1565,12 +1564,12 @@
       "observability-sampling-policy-design-with-evidence-budget-tabletop": 1,
       "calibration-provenance-architecture-decision-with-replay-matrix": 1,
       "deterministic-monetary-rounding-contract-reproduction": 1,
-      "deterministic-async-lifecycle-investigation": 1
+      "deterministic-async-lifecycle-investigation": 1,
+      "filesystem-crash-consistency-incident-with-fault-injection": 1
     }
   },
   "rollingProfile": {
     "domains": {
-      "http-client-reliability": 1,
       "disaster-recovery-cross-store-consistency": 1,
       "csharp-numeric-semantics": 1,
       "dotnet-concurrency-cancellation": 1,
@@ -1593,21 +1592,21 @@
       "distributed-observability": 1,
       "data-lineage-regulatory-architecture": 1,
       "dotnet-decimal-accounting": 1,
-      "dotnet-async-lifecycle": 1
+      "dotnet-async-lifecycle": 1,
+      "dotnet-file-io-durability": 1
     },
     "difficulty": {
       "D4": 24
     },
     "maturity": {
-      "L4": 3,
       "L6": 4,
       "L1": 5,
       "L2": 5,
-      "L3": 4,
+      "L3": 5,
+      "L4": 2,
       "L5": 3
     },
     "formats": {
-      "http-upload-retry-refactoring-with-scripted-handler": 1,
       "cross-store-disaster-recovery-architecture-replay": 1,
       "numeric-overflow-boundary-contract": 1,
       "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
@@ -1630,25 +1629,11 @@
       "observability-sampling-policy-design-with-evidence-budget-tabletop": 1,
       "calibration-provenance-architecture-decision-with-replay-matrix": 1,
       "deterministic-monetary-rounding-contract-reproduction": 1,
-      "deterministic-async-lifecycle-investigation": 1
+      "deterministic-async-lifecycle-investigation": 1,
+      "filesystem-crash-consistency-incident-with-fault-injection": 1
     }
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-09-10",
-      "unitId": "UNIT-SCHEMAMIG-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-SCHEMAMIG-001-bike-share-dock-nullability-rollout",
-      "domain": "postgresql-schema-evolution",
-      "primarySkill": "postgresql-online-schema-migration",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "city-bike-share-dock-telemetry",
-      "scenarioType": "rolling-api-and-worker-deployment-with-required-station-zone-column",
-      "primaryRootCause": "not-null-schema-contract-enforced-before-legacy-writers-and-backfill-are-retired",
-      "failureMode": "old-workers-fail-inserts-and-backfill-races-with-live-writes",
-      "solutionPattern": "expand-backfill-dual-version-compatibility-gate-validate-contract",
-      "labFormat": "zero-downtime-schema-migration-design-tabletop"
-    },
     {
       "runSlot": "2026-11-09-11",
       "unitId": "UNIT-ALERTACK-001",
@@ -2023,6 +2008,21 @@
       "failureMode": "older-command-overwrites-newer-desired-buoy-mode",
       "solutionPattern": "cooperative-cancellation-plus-monotonic-generation-fence-at-side-effect-boundary",
       "labFormat": "deterministic-async-lifecycle-investigation"
+    },
+    {
+      "runSlot": "2026-11-10-20",
+      "unitId": "UNIT-FILEATOMIC-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-FILEATOMIC-001-wildlife-sanctuary-daily-census-crash-consistency",
+      "domain": "dotnet-file-io-durability",
+      "primarySkill": "file-replacement-crash-consistency",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "wildlife-sanctuary-daily-census",
+      "scenarioType": "report-replacement-interrupted-by-mid-write-fault",
+      "primaryRootCause": "in-place-truncation-of-last-known-good-report-before-replacement-completes",
+      "failureMode": "previously-valid-report-becomes-truncated-after-failed-refresh",
+      "solutionPattern": "same-directory-staged-write-with-flush-and-atomic-replace-plus-temp-cleanup",
+      "labFormat": "filesystem-crash-consistency-incident-with-fault-injection"
     }
   ]
 }
