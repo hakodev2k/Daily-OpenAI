@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-HASHMUT-001",
+  "runSlot": "2026-11-10-12",
+  "title": "Ngân hàng hạt giống: lô hàng biến mất khỏi bộ chỉ mục sau chuyển kho",
+  "domain": "csharp-collections",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-10T12:06:37+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "hashset-invariants",
+    "equality-and-hashcode",
+    "mutable-state"
+  ],
+  "prerequisites": [
+    "C# classes",
+    "HashSet<T> basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-seed-bank-inventory",
+    "scenarioType": "mutable-lot-location-updated-after-hashset-admission",
+    "primaryRootCause": "hash-based-collection-key-fields-mutated-after-insertion",
+    "failureMode": "existing-seed-lot-cannot-be-found-or-removed-after-relocation",
+    "solutionPattern": "immutable-stable-lot-id-as-hash-key-with-mutable-details-outside-index",
+    "labFormat": "deterministic-collection-invariant-reproduction"
+  }
+}
