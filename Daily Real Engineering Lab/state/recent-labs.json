@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-01",
-      "unitId": "UNIT-SQLITE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SQLITE-001-water-pump-offline-sync-inspection-loss",
-      "domain": "sqlite-relational-write-semantics",
-      "primarySkill": "sqlite-replace-vs-upsert-cascade-semantics",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "rural-water-pump-maintenance-offline-equipment-sync",
-      "scenarioType": "offline-equipment-label-resync-succeeds-but-linked-inspection-history-disappears",
-      "primaryRootCause": "sqlite-insert-or-replace-deletes-conflicting-parent-row-and-cascades-child-deletion",
-      "failureMode": "inspection-records-disappear-after-successful-metadata-sync-with-zero-foreign-key-violations",
-      "solutionPattern": "targeted-sqlite-on-conflict-do-update-preserving-parent-row-and-child-references",
-      "labFormat": "offline-sqlite-upsert-refactoring-with-cascade-integrity-contract"
-    },
-    {
       "runSlot": "2026-11-02-02",
       "unitId": "UNIT-DNSPOOL-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DNSPOOL-001-crop-warning-api-dns-failover-stale-connection",
@@ -1501,6 +1486,21 @@
       "failureMode": "outbound-requests-route-to-host-root-instead-of-partner-namespace",
       "solutionPattern": "relative-uri-composition-with-explicit-base-path-and-route-contract",
       "labFormat": "uri-routing-investigation-with-deterministic-contract-harness"
+    },
+    {
+      "runSlot": "2026-11-10-14",
+      "unitId": "UNIT-HMACBYTES-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-HMACBYTES-001-orchard-cooperative-webhook-signature-byte-fidelity",
+      "domain": "http-webhook-authentication",
+      "primarySkill": "hmac-request-authentication",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "orchard-cooperative-harvest-settlement-webhooks",
+      "scenarioType": "signed-json-webhook-with-semantically-equivalent-wire-encodings",
+      "primaryRootCause": "hmac-computed-over-json-reserialization-instead-of-original-request-bytes",
+      "failureMode": "valid-partner-webhook-rejected-after-json-whitespace-or-property-order-change",
+      "solutionPattern": "authenticate-exact-raw-payload-bytes-before-json-parsing-with-fixed-time-signature-check",
+      "labFormat": "webhook-signature-production-incident-with-wire-byte-forensics"
     }
   ],
   "rolling24": {

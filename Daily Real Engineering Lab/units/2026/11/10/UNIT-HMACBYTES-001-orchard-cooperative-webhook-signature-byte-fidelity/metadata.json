@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-HMACBYTES-001",
+  "runSlot": "2026-11-10-14",
+  "title": "Webhook chữ ký hợp lệ nhưng bị từ chối theo định dạng JSON",
+  "domain": "http-webhook-authentication",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-10T14:12:32+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "hmac-request-authentication",
+    "raw-http-body-integrity",
+    "cryptographic-comparison"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "http-headers",
+    "utf8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "orchard-cooperative-harvest-settlement-webhooks",
+    "scenarioType": "signed-json-webhook-with-semantically-equivalent-wire-encodings",
+    "primaryRootCause": "hmac-computed-over-json-reserialization-instead-of-original-request-bytes",
+    "failureMode": "valid-partner-webhook-rejected-after-json-whitespace-or-property-order-change",
+    "solutionPattern": "authenticate-exact-raw-payload-bytes-before-json-parsing-with-fixed-time-signature-check",
+    "labFormat": "webhook-signature-production-incident-with-wire-byte-forensics"
+  }
+}
