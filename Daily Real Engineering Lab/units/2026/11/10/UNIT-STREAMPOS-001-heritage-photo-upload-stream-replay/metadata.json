@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-STREAMPOS-001",
+  "runSlot": "2026-11-10-21",
+  "title": "Ảnh số hóa có checksum đúng nhưng object rỗng",
+  "domain": "dotnet-stream-io",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-10T21:11:02+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "stream-position-ownership",
+    "sha256",
+    "io-pipeline-refactoring"
+  ],
+  "prerequisites": [
+    "dotnet-stream-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "heritage-museum-photo-digitization",
+    "scenarioType": "content-hash-then-object-storage-upload",
+    "primaryRootCause": "hashing-consumes-shared-stream-before-upload",
+    "failureMode": "uploaded-object-empty-despite-nonempty-verified-source",
+    "solutionPattern": "explicit-stream-replay-boundary-with-seek-or-buffer-policy",
+    "labFormat": "legacy-file-upload-pipeline-refactoring-with-byte-contract-tests"
+  }
+}

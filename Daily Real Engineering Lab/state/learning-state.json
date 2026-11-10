@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-FILEATOMIC-001",
-    "runSlot": "2026-11-10-20",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-FILEATOMIC-001-wildlife-sanctuary-daily-census-crash-consistency",
+    "unitId": "UNIT-STREAMPOS-001",
+    "runSlot": "2026-11-10-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-STREAMPOS-001-heritage-photo-upload-stream-replay",
     "status": "READY",
-    "createdAt": "2026-11-10T20:11:48+07:00"
+    "createdAt": "2026-11-10T21:11:02+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 530,
-    "totalGenerated": 525,
+    "totalRunSlotsAttempted": 531,
+    "totalGenerated": 526,
     "totalFailed": 5
   },
   "learning": {

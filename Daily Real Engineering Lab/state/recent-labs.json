@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-07",
-      "unitId": "UNIT-DPKEY-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DPKEY-001-housing-repair-portal-split-key-rings",
-      "domain": "aspnetcore-data-protection-key-management",
-      "primarySkill": "aspnetcore-data-protection-shared-key-ring-and-app-isolation",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "municipal-housing-repair-request-portal",
-      "scenarioType": "rolling-deployment-routes-protected-session-ticket-between-two-api-replicas",
-      "primaryRootCause": "replicas-use-independent-aspnetcore-data-protection-key-rings",
-      "failureMode": "intermittent-session-unprotect-failure-on-cross-replica-routing",
-      "solutionPattern": "durable-shared-key-ring-with-stable-application-discriminator-and-isolation-contracts",
-      "labFormat": "multi-replica-session-compatibility-design-decision-with-real-data-protection-harness"
-    },
-    {
       "runSlot": "2026-11-02-08",
       "unitId": "UNIT-LISTMUT-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-LISTMUT-001-food-bank-pickup-batch-eligibility-skip",
@@ -1501,6 +1486,21 @@
       "failureMode": "previously-valid-report-becomes-truncated-after-failed-refresh",
       "solutionPattern": "same-directory-staged-write-with-flush-and-atomic-replace-plus-temp-cleanup",
       "labFormat": "filesystem-crash-consistency-incident-with-fault-injection"
+    },
+    {
+      "runSlot": "2026-11-10-21",
+      "unitId": "UNIT-STREAMPOS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-STREAMPOS-001-heritage-photo-upload-stream-replay",
+      "domain": "dotnet-stream-io",
+      "primarySkill": "stream-position-ownership",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "heritage-museum-photo-digitization",
+      "scenarioType": "content-hash-then-object-storage-upload",
+      "primaryRootCause": "hashing-consumes-shared-stream-before-upload",
+      "failureMode": "uploaded-object-empty-despite-nonempty-verified-source",
+      "solutionPattern": "explicit-stream-replay-boundary-with-seek-or-buffer-policy",
+      "labFormat": "legacy-file-upload-pipeline-refactoring-with-byte-contract-tests"
     }
   ],
   "rolling24": {
@@ -2023,6 +2023,21 @@
       "failureMode": "previously-valid-report-becomes-truncated-after-failed-refresh",
       "solutionPattern": "same-directory-staged-write-with-flush-and-atomic-replace-plus-temp-cleanup",
       "labFormat": "filesystem-crash-consistency-incident-with-fault-injection"
+    },
+    {
+      "runSlot": "2026-11-10-21",
+      "unitId": "UNIT-STREAMPOS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-STREAMPOS-001-heritage-photo-upload-stream-replay",
+      "domain": "dotnet-stream-io",
+      "primarySkill": "stream-position-ownership",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "heritage-museum-photo-digitization",
+      "scenarioType": "content-hash-then-object-storage-upload",
+      "primaryRootCause": "hashing-consumes-shared-stream-before-upload",
+      "failureMode": "uploaded-object-empty-despite-nonempty-verified-source",
+      "solutionPattern": "explicit-stream-replay-boundary-with-seek-or-buffer-policy",
+      "labFormat": "legacy-file-upload-pipeline-refactoring-with-byte-contract-tests"
     }
   ]
 }
