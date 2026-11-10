@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-05",
-      "unitId": "UNIT-CSVFORM-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-CSVFORM-001-youth-league-roster-spreadsheet-formula-risk",
-      "domain": "csv-spreadsheet-export-security",
-      "primarySkill": "csv-spreadsheet-formula-injection-boundary",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "community-youth-football-league-registration-export",
-      "scenarioType": "valid-csv-roster-contains-untrusted-formula-like-spreadsheet-cells",
-      "primaryRootCause": "csv-quoting-is-not-spreadsheet-formula-neutralization",
-      "failureMode": "untrusted-registration-field-may-be-interpreted-as-spreadsheet-formula",
-      "solutionPattern": "spreadsheet-specific-cell-neutralization-before-csv-quoting-with-roundtrip-contract",
-      "labFormat": "csv-output-trust-boundary-multi-signal-security-incident"
-    },
-    {
       "runSlot": "2026-11-02-06",
       "unitId": "UNIT-LANGQ-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-LANGQ-001-heritage-caption-language-negotiation",
@@ -1501,6 +1486,21 @@
       "failureMode": "cent-level-reconciliation-discrepancy-with-positive-and-negative-lines",
       "solutionPattern": "explicit-midpoint-away-from-zero-round-each-line-before-sum",
       "labFormat": "deterministic-monetary-rounding-contract-reproduction"
+    },
+    {
+      "runSlot": "2026-11-10-19",
+      "unitId": "UNIT-TASKRACE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-TASKRACE-001-harbor-buoy-command-timeout-race",
+      "domain": "dotnet-async-lifecycle",
+      "primarySkill": "task-whenany-timeout",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "harbor-buoy-remote-command-control",
+      "scenarioType": "timed-out-remote-command-overlaps-newer-command",
+      "primaryRootCause": "timeout-race-returns-before-losing-operation-is-stopped-or-fenced",
+      "failureMode": "older-command-overwrites-newer-desired-buoy-mode",
+      "solutionPattern": "cooperative-cancellation-plus-monotonic-generation-fence-at-side-effect-boundary",
+      "labFormat": "deterministic-async-lifecycle-investigation"
     }
   ],
   "rolling24": {

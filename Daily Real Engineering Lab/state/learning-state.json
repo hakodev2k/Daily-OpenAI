@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ROUNDLINE-001",
-    "runSlot": "2026-11-10-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-ROUNDLINE-001-community-solar-credit-invoice-rounding",
+    "unitId": "UNIT-TASKRACE-001",
+    "runSlot": "2026-11-10-19",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-TASKRACE-001-harbor-buoy-command-timeout-race",
     "status": "READY",
-    "createdAt": "2026-11-10T18:08:32+07:00"
+    "createdAt": "2026-11-10T19:11:02+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 528,
-    "totalGenerated": 523,
+    "totalRunSlotsAttempted": 529,
+    "totalGenerated": 524,
     "totalFailed": 5
   },
   "learning": {

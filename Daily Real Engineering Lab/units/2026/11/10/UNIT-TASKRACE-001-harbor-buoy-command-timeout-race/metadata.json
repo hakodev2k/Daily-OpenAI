@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-TASKRACE-001",
+  "runSlot": "2026-11-10-19",
+  "title": "Lệnh điều khiển phao cảng hoàn tất sau timeout",
+  "domain": "dotnet-async-lifecycle",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-10T19:11:02+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "task-whenany-timeout",
+    "async-operation-lifecycle",
+    "cancellation-and-fencing"
+  ],
+  "prerequisites": [
+    "C# Task",
+    "async/await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-buoy-remote-command-control",
+    "scenarioType": "timed-out-remote-command-overlaps-newer-command",
+    "primaryRootCause": "timeout-race-returns-before-losing-operation-is-stopped-or-fenced",
+    "failureMode": "older-command-overwrites-newer-desired-buoy-mode",
+    "solutionPattern": "cooperative-cancellation-plus-monotonic-generation-fence-at-side-effect-boundary",
+    "labFormat": "deterministic-async-lifecycle-investigation"
+  }
+}
