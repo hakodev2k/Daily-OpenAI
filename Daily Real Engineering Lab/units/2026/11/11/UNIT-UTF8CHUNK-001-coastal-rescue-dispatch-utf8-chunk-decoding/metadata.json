@@ -1,0 +1,51 @@
+{
+  "unitId": "UNIT-UTF8CHUNK-001",
+  "runSlot": "2026-11-11-02",
+  "title": "Bản tin cứu hộ ven biển bị hỏng ký tự khi đọc luồng phân mảnh",
+  "domain": "dotnet-text-streaming",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-11T02:04:36+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "incremental-utf8-stream-decoding",
+    "network-stream-framing",
+    "text-data-integrity"
+  ],
+  "prerequisites": [
+    "utf8-byte-encoding",
+    "dotnet-strings"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coastal-rescue-radio-dispatch",
+    "scenarioType": "fragmented-network-utf8-message-import",
+    "primaryRootCause": "independent-utf8-decoding-of-arbitrary-byte-chunks-loses-multibyte-sequence-state",
+    "failureMode": "valid-vietnamese-diacritics-become-replacement-characters-only-at-chunk-boundaries",
+    "solutionPattern": "stateful-incremental-decoder-with-final-flush-and-replay-contract",
+    "labFormat": "fragmented-stream-production-incident-with-byte-boundary-evidence"
+  },
+  "primarySkill": "incremental-utf8-stream-decoding",
+  "manifest": [
+    "README.md",
+    "metadata.json",
+    "starter/RescueDecoder.csproj",
+    "starter/Program.cs",
+    "reproduce.ps1",
+    "verify.ps1",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "workspace/my-investigation.md",
+    "solution/README.md",
+    "solution/Program.cs"
+  ]
+}

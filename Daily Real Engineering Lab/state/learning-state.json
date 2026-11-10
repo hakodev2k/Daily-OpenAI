@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MEMCAP-001",
-    "runSlot": "2026-11-11-01",
-    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-MEMCAP-001-wildfire-drone-telemetry-buffer-capacity",
+    "unitId": "UNIT-UTF8CHUNK-001",
+    "runSlot": "2026-11-11-02",
+    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-UTF8CHUNK-001-coastal-rescue-dispatch-utf8-chunk-decoding",
     "status": "READY",
-    "createdAt": "2026-11-11T01:05:36+07:00"
+    "createdAt": "2026-11-11T02:04:36+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 535,
-    "totalGenerated": 530,
+    "totalRunSlotsAttempted": 536,
+    "totalGenerated": 531,
     "totalFailed": 5
   },
   "learning": {

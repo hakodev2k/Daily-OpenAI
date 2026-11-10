@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-12",
-      "unitId": "UNIT-ROUND-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-ROUND-001-reusable-crate-deposit-refund-midpoint",
-      "domain": "csharp-decimal-rounding-contract",
-      "primarySkill": "decimal-midpoint-rounding-business-policy",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "reusable-logistics-crate-deposit-clearing",
-      "scenarioType": "partner-reconciliation-cent-level-discrepancy-on-signed-refunds",
-      "primaryRootCause": "implicit-midpoint-to-even-rounding-conflicts-with-contractual-away-from-zero-policy",
-      "failureMode": "half-cent-aggregate-refunds-and-reversals-disagree-with-partner-settlement",
-      "solutionPattern": "explicit-decimal-midpoint-policy-applied-once-to-aggregated-signed-amount",
-      "labFormat": "deterministic-financial-rounding-contract-lab"
-    },
-    {
       "runSlot": "2026-11-02-13",
       "unitId": "UNIT-HOSTEX-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-HOSTEX-001-air-quality-worker-host-stop",
@@ -1501,6 +1486,21 @@
       "failureMode": "telemetry-frame-length-exceeds-valid-payload-and-parser-rejects-frame",
       "solutionPattern": "transmit-only-written-memory-window-with-explicit-length-contract",
       "labFormat": "binary-wire-payload-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-11-11-02",
+      "unitId": "UNIT-UTF8CHUNK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-UTF8CHUNK-001-coastal-rescue-dispatch-utf8-chunk-decoding",
+      "domain": "dotnet-text-streaming",
+      "primarySkill": "incremental-utf8-stream-decoding",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "coastal-rescue-radio-dispatch",
+      "scenarioType": "fragmented-network-utf8-message-import",
+      "primaryRootCause": "independent-utf8-decoding-of-arbitrary-byte-chunks-loses-multibyte-sequence-state",
+      "failureMode": "valid-vietnamese-diacritics-become-replacement-characters-only-at-chunk-boundaries",
+      "solutionPattern": "stateful-incremental-decoder-with-final-flush-and-replay-contract",
+      "labFormat": "fragmented-stream-production-incident-with-byte-boundary-evidence"
     }
   ],
   "rolling24": {
