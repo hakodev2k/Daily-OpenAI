@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-08",
-      "unitId": "UNIT-LISTMUT-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-LISTMUT-001-food-bank-pickup-batch-eligibility-skip",
-      "domain": "csharp-list-mutation-semantics",
-      "primarySkill": "csharp-list-mutation-loop-invariants",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "community-food-bank-donation-pickup",
-      "scenarioType": "in-place-donation-lot-eligibility-filter",
-      "primaryRootCause": "forward-index-list-removal-skips-shifted-adjacent-elements",
-      "failureMode": "expired-or-quarantined-lots-survive-single-pass-dispatch-screening",
-      "solutionPattern": "stable-predicate-based-in-place-list-compaction",
-      "labFormat": "deterministic-collection-mutation-contract-lab"
-    },
-    {
       "runSlot": "2026-11-02-09",
       "unitId": "UNIT-EFCTX-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-EFCTX-001-wastewater-inspection-report-parallel-failure",
@@ -1501,6 +1486,21 @@
       "failureMode": "uploaded-object-empty-despite-nonempty-verified-source",
       "solutionPattern": "explicit-stream-replay-boundary-with-seek-or-buffer-policy",
       "labFormat": "legacy-file-upload-pipeline-refactoring-with-byte-contract-tests"
+    },
+    {
+      "runSlot": "2026-11-10-22",
+      "unitId": "UNIT-QUOTAFAIR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-QUOTAFAIR-001-emergency-radio-alert-tenant-quota-fairness",
+      "domain": "multi-tenant-capacity-governance",
+      "primarySkill": "tenant-fairness-scheduling",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "regional-emergency-radio-broadcast",
+      "scenarioType": "multi-tenant-priority-contention-under-fixed-radio-capacity",
+      "primaryRootCause": "unbounded-shared-admission-without-service-class-capacity-isolation",
+      "failureMode": "critical-rescue-alerts-miss-delivery-slo-while-test-traffic-occupies-gateway",
+      "solutionPattern": "reserved-work-conserving-fair-scheduling-with-bounded-admission-and-idempotent-inbox",
+      "labFormat": "capacity-governance-adr-with-traffic-evidence"
     }
   ],
   "rolling24": {
