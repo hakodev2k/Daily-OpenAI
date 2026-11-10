@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-21",
-      "unitId": "UNIT-FILEPUB-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-FILEPUB-001-coastal-flood-alert-snapshot-torn-read",
-      "domain": "dotnet-file-publication-consistency",
-      "primarySkill": "atomic-file-snapshot-publication",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "coastal-flood-warning-public-dashboard",
-      "scenarioType": "hourly-snapshot-refresh-overlaps-concurrent-dashboard-read-and-exporter-failure",
-      "primaryRootCause": "in-place-file-truncation-before-new-snapshot-is-complete",
-      "failureMode": "dashboard-reads-empty-alert-and-failed-export-erases-last-good-snapshot",
-      "solutionPattern": "same-directory-staged-write-flush-and-atomic-file-replacement-with-failure-cleanup",
-      "labFormat": "file-snapshot-publication-refactoring-with-deterministic-reader-crash-contracts"
-    },
-    {
       "runSlot": "2026-11-01-22",
       "unitId": "UNIT-INTOVF-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-INTOVF-001-solar-cooperative-energy-credit-rollover",
@@ -1501,39 +1486,24 @@
       "failureMode": "accepted-alert-count-exceeds-delivered-alert-count-without-write-failure",
       "solutionPattern": "wait-mode-with-explicit-backpressure-and-accepted-delivered-invariants",
       "labFormat": "burst-queue-production-incident-with-deterministic-capacity-gates"
+    },
+    {
+      "runSlot": "2026-11-10-10",
+      "unitId": "UNIT-PAGECURSOR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-PAGECURSOR-001-municipal-permit-feed-pagination-drift",
+      "domain": "sql-api-pagination-consistency",
+      "primarySkill": "keyset-pagination-consistency",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "municipal-building-permit-public-feed",
+      "scenarioType": "client-paginates-while-new-permits-arrive",
+      "primaryRootCause": "offset-pages-shift-under-concurrent-inserts",
+      "failureMode": "duplicate-and-missing-permit-ids-across-pages",
+      "solutionPattern": "stable-keyset-cursor-with-deterministic-tie-breaker-and-snapshot-boundary",
+      "labFormat": "pagination-contract-design-with-deterministic-concurrent-insert-replay"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-09-03",
-      "unitId": "UNIT-ETAG-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-ETAG-001-community-garden-plot-etag-precondition",
-      "domain": "http-conditional-requests",
-      "primarySkill": "http-etag-preconditions",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "community-garden-plot-allocation",
-      "scenarioType": "concurrent-plot-update-with-conditional-http-request",
-      "primaryRootCause": "weak-etag-accepted-for-if-match-by-normalizing-away-weakness",
-      "failureMode": "stale-editor-overwrites-newer-allocation-after-weak-validator-match",
-      "solutionPattern": "strong-etag-comparison-and-atomic-precondition-update",
-      "labFormat": "http-validator-refactoring-with-deterministic-concurrency-contract"
-    },
-    {
-      "runSlot": "2026-11-09-04",
-      "unitId": "UNIT-SEARCHCUT-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-SEARCHCUT-001-public-record-search-index-cutover",
-      "domain": "search-index-migration",
-      "primarySkill": "search-index-cutover",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "municipal-public-records-search",
-      "scenarioType": "zero-downtime-search-index-rebuild-with-live-updates",
-      "primaryRootCause": "in-place-index-rebuild-exposes-partial-documents-and-loses-concurrent-updates",
-      "failureMode": "search-results-temporarily-incomplete-and-recent-record-amendments-disappear",
-      "solutionPattern": "versioned-index-blue-green-cutover-with-change-sequence-replay-and-readiness-gates",
-      "labFormat": "search-migration-design-decision-with-event-timeline-tabletop"
-    },
     {
       "runSlot": "2026-11-09-06",
       "unitId": "UNIT-PAGECURSOR-001",
@@ -1863,12 +1833,40 @@
       "failureMode": "downstream-timeout-misreported-as-client-aborted",
       "solutionPattern": "preserve-independent-cancellation-sources-and-classify-at-boundary",
       "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
+    },
+    {
+      "runSlot": "2026-11-10-09",
+      "unitId": "UNIT-DISCOPE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-DISCOPE-001-community-garden-worker-scope-lifetime",
+      "domain": "aspnet-core-dependency-injection",
+      "primarySkill": "dependency-injection-scope-ownership",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "community-garden-irrigation-invoice-processing",
+      "scenarioType": "long-lived-hosted-worker-processes-sequential-invoice-batches",
+      "primaryRootCause": "scoped-repository-captured-by-singleton-worker-and-used-after-scope-disposal",
+      "failureMode": "second-batch-throws-objectdisposedexception-and-first-batch-only-is-committed",
+      "solutionPattern": "create-and-dispose-a-new-dependency-injection-scope-per-work-item",
+      "labFormat": "background-worker-lifetime-refactoring-with-deterministic-two-batch-replay"
+    },
+    {
+      "runSlot": "2026-11-10-10",
+      "unitId": "UNIT-PAGECURSOR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-PAGECURSOR-001-municipal-permit-feed-pagination-drift",
+      "domain": "sql-api-pagination-consistency",
+      "primarySkill": "keyset-pagination-consistency",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "municipal-building-permit-public-feed",
+      "scenarioType": "client-paginates-while-new-permits-arrive",
+      "primaryRootCause": "offset-pages-shift-under-concurrent-inserts",
+      "failureMode": "duplicate-and-missing-permit-ids-across-pages",
+      "solutionPattern": "stable-keyset-cursor-with-deterministic-tie-breaker-and-snapshot-boundary",
+      "labFormat": "pagination-contract-design-with-deterministic-concurrent-insert-replay"
     }
   ],
   "rollingProfile": {
     "domains": {
-      "http-conditional-requests": 1,
-      "search-index-migration": 1,
       "database-pagination-semantics": 1,
       "dotnet-financial-arithmetic": 1,
       "dotnet-timezone-scheduling": 1,
@@ -1890,15 +1888,46 @@
       "dotnet-priority-queue-scheduling": 1,
       "dotnet-archive-security": 1,
       "api-contract-lifecycle": 1,
-      "dotnet-cancellation-diagnostics": 1
+      "dotnet-cancellation-diagnostics": 1,
+      "aspnet-core-dependency-injection": 1,
+      "sql-api-pagination-consistency": 1
+    },
+    "difficulty": {
+      "D4": 24
     },
     "maturity": {
-      "L4": 5,
-      "L5": 4,
       "L1": 4,
       "L2": 5,
       "L3": 4,
+      "L4": 5,
+      "L5": 4,
       "L6": 2
+    },
+    "formats": {
+      "deterministic-pagination-boundary-contract": 1,
+      "financial-reconciliation-investigation-with-permutation-fixtures": 1,
+      "time-zone-production-incident-with-deterministic-boundary-fixtures": 1,
+      "batch-processing-modernization-with-partial-failure-contract": 1,
+      "zero-downtime-schema-migration-design-tabletop": 1,
+      "safety-critical-command-architecture-with-failure-timeline-replay": 1,
+      "binary-protocol-deterministic-decoder-contract": 1,
+      "ef-core-tracking-investigation-with-two-phase-replay": 1,
+      "postgresql-production-incident-evidence-replay": 1,
+      "http-upload-retry-refactoring-with-scripted-handler": 1,
+      "cross-store-disaster-recovery-architecture-replay": 1,
+      "numeric-overflow-boundary-contract": 1,
+      "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
+      "stream-decoding-production-incident-with-byte-level-evidence": 1,
+      "legacy-lookup-refactoring-with-adversarial-contract-tests": 1,
+      "api-capacity-allocation-design-tabletop-with-workload-replay": 1,
+      "deterministic-linq-report-consistency-contract": 1,
+      "adversarial-json-contract-investigation": 1,
+      "dispatch-scheduling-multi-signal-investigation": 1,
+      "security-refactoring-with-adversarial-archive-fixtures": 1,
+      "api-lifecycle-design-decision-with-cutover-gate-simulation": 1,
+      "cancellation-diagnostics-investigation-with-deterministic-replay": 1,
+      "background-worker-lifetime-refactoring-with-deterministic-two-batch-replay": 1,
+      "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1
     }
   },
   "recentLabs": [
@@ -2306,6 +2335,21 @@
       "failureMode": "second-batch-throws-objectdisposedexception-and-first-batch-only-is-committed",
       "solutionPattern": "create-and-dispose-a-new-dependency-injection-scope-per-work-item",
       "labFormat": "background-worker-lifetime-refactoring-with-deterministic-two-batch-replay"
+    },
+    {
+      "runSlot": "2026-11-10-10",
+      "unitId": "UNIT-PAGECURSOR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-PAGECURSOR-001-municipal-permit-feed-pagination-drift",
+      "domain": "sql-api-pagination-consistency",
+      "primarySkill": "keyset-pagination-consistency",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "municipal-building-permit-public-feed",
+      "scenarioType": "client-paginates-while-new-permits-arrive",
+      "primaryRootCause": "offset-pages-shift-under-concurrent-inserts",
+      "failureMode": "duplicate-and-missing-permit-ids-across-pages",
+      "solutionPattern": "stable-keyset-cursor-with-deterministic-tie-breaker-and-snapshot-boundary",
+      "labFormat": "pagination-contract-design-with-deterministic-concurrent-insert-replay"
     }
   ]
 }

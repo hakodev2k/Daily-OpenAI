@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DISCOPE-001",
-    "runSlot": "2026-11-10-09",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-DISCOPE-001-community-garden-worker-scope-lifetime",
+    "unitId": "UNIT-PAGECURSOR-001",
+    "runSlot": "2026-11-10-10",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-PAGECURSOR-001-municipal-permit-feed-pagination-drift",
     "status": "READY",
-    "createdAt": "2026-11-10T09:04:33+07:00"
+    "createdAt": "2026-11-10T10:13:42+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 519,
-    "totalGenerated": 514,
+    "totalRunSlotsAttempted": 520,
+    "totalGenerated": 515,
     "totalFailed": 5
   },
   "learning": {

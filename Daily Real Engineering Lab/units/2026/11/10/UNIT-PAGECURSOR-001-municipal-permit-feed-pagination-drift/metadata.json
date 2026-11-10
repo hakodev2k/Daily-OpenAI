@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-PAGECURSOR-001",
+  "runSlot": "2026-11-10-10",
+  "title": "Phân trang hồ sơ cấp phép khi dữ liệu thay đổi",
+  "domain": "sql-api-pagination-consistency",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-10T10:13:42+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "sql-pagination",
+    "api-contracts",
+    "concurrency-consistency"
+  ],
+  "prerequisites": [
+    "LINQ OrderBy/ThenBy",
+    "HTTP cursor pagination"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-building-permit-public-feed",
+    "scenarioType": "client-paginates-while-new-permits-arrive",
+    "primaryRootCause": "offset-pages-shift-under-concurrent-inserts",
+    "failureMode": "duplicate-and-missing-permit-ids-across-pages",
+    "solutionPattern": "stable-keyset-cursor-with-deterministic-tie-breaker-and-snapshot-boundary",
+    "labFormat": "pagination-contract-design-with-deterministic-concurrent-insert-replay"
+  }
+}
