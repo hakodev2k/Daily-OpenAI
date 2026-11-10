@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-04",
-      "unitId": "UNIT-UTF8CHUNK-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-UTF8CHUNK-001-bike-share-repair-notes-stream-corruption",
-      "domain": "dotnet-streaming-text-decoding",
-      "primarySkill": "utf8-stateful-decoding-across-transport-chunks",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "bike-share-kiosk-maintenance-notes",
-      "scenarioType": "same-utf8-message-corrupted-only-when-gateway-changes-byte-fragment-boundaries",
-      "primaryRootCause": "stateless-per-fragment-utf8-decoding-discards-incomplete-multibyte-sequence",
-      "failureMode": "unicode-replacement-corruption-and-silent-acceptance-of-invalid-utf8",
-      "solutionPattern": "stateful-strict-utf8-decoder-with-end-of-message-flush-and-negative-contracts",
-      "labFormat": "chunked-text-stream-investigation-with-contract-harness"
-    },
-    {
       "runSlot": "2026-11-02-05",
       "unitId": "UNIT-CSVFORM-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-CSVFORM-001-youth-league-roster-spreadsheet-formula-risk",
@@ -1501,6 +1486,21 @@
       "failureMode": "previously-signed-water-quality-reports-change-without-new-measurements",
       "solutionPattern": "immutable-raw-measurements-and-version-pinned-calibration-with-reproducible-report-snapshots",
       "labFormat": "calibration-provenance-architecture-decision-with-replay-matrix"
+    },
+    {
+      "runSlot": "2026-11-10-18",
+      "unitId": "UNIT-ROUNDLINE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-ROUNDLINE-001-community-solar-credit-invoice-rounding",
+      "domain": "dotnet-decimal-accounting",
+      "primarySkill": "monetary-rounding-contract",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "community-solar-energy-credit-billing",
+      "scenarioType": "per-line-credit-invoice-reconciliation",
+      "primaryRootCause": "rounding-after-aggregation-and-default-bankers-rounding-conflict-with-line-contract",
+      "failureMode": "cent-level-reconciliation-discrepancy-with-positive-and-negative-lines",
+      "solutionPattern": "explicit-midpoint-away-from-zero-round-each-line-before-sum",
+      "labFormat": "deterministic-monetary-rounding-contract-reproduction"
     }
   ],
   "rolling24": {

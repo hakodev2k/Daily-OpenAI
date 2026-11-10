@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CALPROV-001",
-    "runSlot": "2026-11-10-17",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CALPROV-001-reservoir-water-quality-calibration-provenance",
+    "unitId": "UNIT-ROUNDLINE-001",
+    "runSlot": "2026-11-10-18",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-ROUNDLINE-001-community-solar-credit-invoice-rounding",
     "status": "READY",
-    "createdAt": "2026-11-10T17:05:39+07:00"
+    "createdAt": "2026-11-10T18:08:32+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 527,
-    "totalGenerated": 522,
+    "totalRunSlotsAttempted": 528,
+    "totalGenerated": 523,
     "totalFailed": 5
   },
   "learning": {

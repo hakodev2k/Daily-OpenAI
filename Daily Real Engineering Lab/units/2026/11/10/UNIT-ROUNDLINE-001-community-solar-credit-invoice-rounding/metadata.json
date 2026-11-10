@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ROUNDLINE-001",
+  "runSlot": "2026-11-10-18",
+  "title": "Đối soát hóa đơn tín chỉ điện mặt trời và chính sách làm tròn",
+  "domain": "dotnet-decimal-accounting",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-10T18:08:32+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "decimal-arithmetic",
+    "monetary-rounding-contract",
+    "billing-reconciliation"
+  ],
+  "prerequisites": [
+    "C# decimal",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-solar-energy-credit-billing",
+    "scenarioType": "per-line-credit-invoice-reconciliation",
+    "primaryRootCause": "rounding-after-aggregation-and-default-bankers-rounding-conflict-with-line-contract",
+    "failureMode": "cent-level-reconciliation-discrepancy-with-positive-and-negative-lines",
+    "solutionPattern": "explicit-midpoint-away-from-zero-round-each-line-before-sum",
+    "labFormat": "deterministic-monetary-rounding-contract-reproduction"
+  }
+}
