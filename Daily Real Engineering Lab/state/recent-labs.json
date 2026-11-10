@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-03",
-      "unitId": "UNIT-CMPID-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-CMPID-001-theater-pass-culture-dependent-lookup",
-      "domain": "csharp-string-identity-comparison",
-      "primarySkill": "culture-independent-opaque-identifier-comparison",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "regional-theater-qr-admission-kiosks",
-      "scenarioType": "same-printed-ascii-pass-code-produces-different-lookup-and-duplicate-behavior-across-kiosk-locales",
-      "primaryRootCause": "culture-sensitive-case-insensitive-dictionary-comparer-applied-to-opaque-ascii-pass-identifiers",
-      "failureMode": "legitimate-ascii-case-variant-rejected-and-non-ascii-lookalike-accepted-in-turkish-locale",
-      "solutionPattern": "explicit-ordinal-ignore-case-identifier-contract-independent-of-current-culture",
-      "labFormat": "cross-locale-identifier-registry-deterministic-reproduction"
-    },
-    {
       "runSlot": "2026-11-02-04",
       "unitId": "UNIT-UTF8CHUNK-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-UTF8CHUNK-001-bike-share-repair-notes-stream-corruption",
@@ -1501,79 +1486,25 @@
       "failureMode": "critical-error-investigation-lacks-correlated-trace-despite-high-throughput-success-traces",
       "solutionPattern": "tail-aware-error-retention-with-budgeted-probabilistic-success-sampling-and-privacy-guardrails",
       "labFormat": "observability-sampling-policy-design-with-evidence-budget-tabletop"
+    },
+    {
+      "runSlot": "2026-11-10-17",
+      "unitId": "UNIT-CALPROV-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CALPROV-001-reservoir-water-quality-calibration-provenance",
+      "domain": "data-lineage-regulatory-architecture",
+      "primarySkill": "temporal-data-provenance",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "reservoir-water-quality-compliance-reporting",
+      "scenarioType": "sensor-calibration-revision-after-regulatory-report-publication",
+      "primaryRootCause": "historical-observations-recomputed-with-current-calibration-without-version-provenance",
+      "failureMode": "previously-signed-water-quality-reports-change-without-new-measurements",
+      "solutionPattern": "immutable-raw-measurements-and-version-pinned-calibration-with-reproducible-report-snapshots",
+      "labFormat": "calibration-provenance-architecture-decision-with-replay-matrix"
     }
   ],
   "rolling24": {
-    "count": 24,
     "domains": {
-      "dotnet-task-batch-reliability": 1,
-      "postgresql-schema-evolution": 1,
-      "distributed-command-safety": 1,
-      "dotnet-binary-protocol": 1,
-      "ef-core-change-tracking": 1,
-      "postgresql-transaction-recovery": 1,
-      "http-client-reliability": 1,
-      "disaster-recovery-cross-store-consistency": 1,
-      "csharp-numeric-semantics": 1,
-      "dotnet-concurrency-cancellation": 1,
-      "dotnet-text-streaming": 1,
-      "dotnet-input-semantics": 1,
-      "api-rate-limiting-capacity": 1,
-      "csharp-linq-query-execution": 1,
-      "dotnet-json-contracts": 1,
-      "dotnet-priority-queue-scheduling": 1,
-      "dotnet-archive-security": 1,
-      "offline-sync-consistency-architecture": 1,
-      "dotnet-buffer-slicing": 1,
-      "dotnet-cancellation-diagnostics": 1,
-      "dotnet-channel-backpressure": 1,
-      "sql-api-pagination-consistency": 1,
-      "distributed-license-capacity": 1,
-      "csharp-collections": 1
-    },
-    "difficulty": {
-      "D4": 24
-    },
-    "maturity": {
-      "L4": 4,
-      "L5": 3,
-      "L6": 4,
-      "L1": 5,
-      "L2": 4,
-      "L3": 4
-    },
-    "formats": {
-      "batch-processing-modernization-with-partial-failure-contract": 1,
-      "zero-downtime-schema-migration-design-tabletop": 1,
-      "safety-critical-command-architecture-with-failure-timeline-replay": 1,
-      "binary-protocol-deterministic-decoder-contract": 1,
-      "ef-core-tracking-investigation-with-two-phase-replay": 1,
-      "postgresql-production-incident-evidence-replay": 1,
-      "http-upload-retry-refactoring-with-scripted-handler": 1,
-      "cross-store-disaster-recovery-architecture-replay": 1,
-      "numeric-overflow-boundary-contract": 1,
-      "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
-      "stream-decoding-production-incident-with-byte-level-evidence": 1,
-      "legacy-lookup-refactoring-with-adversarial-contract-tests": 1,
-      "api-capacity-allocation-design-tabletop-with-workload-replay": 1,
-      "deterministic-linq-report-consistency-contract": 1,
-      "adversarial-json-contract-investigation": 1,
-      "dispatch-scheduling-multi-signal-investigation": 1,
-      "security-refactoring-with-adversarial-archive-fixtures": 1,
-      "offline-sync-architecture-decision-with-conflict-matrix": 1,
-      "deterministic-binary-buffer-window-contract": 1,
-      "cancellation-diagnostics-investigation-with-deterministic-replay": 1,
-      "burst-queue-production-incident-with-deterministic-capacity-gates": 1,
-      "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
-      "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop": 1,
-      "deterministic-collection-invariant-reproduction": 1
-    }
-  },
-  "rollingProfile": {
-    "domains": {
-      "postgresql-schema-evolution": 1,
-      "distributed-command-safety": 1,
-      "dotnet-binary-protocol": 1,
       "ef-core-change-tracking": 1,
       "postgresql-transaction-recovery": 1,
       "http-client-reliability": 1,
@@ -1594,23 +1525,23 @@
       "sql-api-pagination-consistency": 1,
       "distributed-license-capacity": 1,
       "csharp-collections": 1,
-      "aspnet-core-caching": 1
+      "dotnet-uri-resolution": 1,
+      "http-webhook-authentication": 1,
+      "distributed-observability": 1,
+      "data-lineage-regulatory-architecture": 1
     },
     "difficulty": {
       "D4": 24
     },
     "maturity": {
-      "L5": 3,
+      "L2": 5,
+      "L3": 5,
+      "L4": 3,
       "L6": 4,
-      "L1": 5,
-      "L2": 4,
-      "L3": 4,
-      "L4": 4
+      "L1": 4,
+      "L5": 3
     },
     "formats": {
-      "zero-downtime-schema-migration-design-tabletop": 1,
-      "safety-critical-command-architecture-with-failure-timeline-replay": 1,
-      "binary-protocol-deterministic-decoder-contract": 1,
       "ef-core-tracking-investigation-with-two-phase-replay": 1,
       "postgresql-production-incident-evidence-replay": 1,
       "http-upload-retry-refactoring-with-scripted-handler": 1,
@@ -1631,25 +1562,79 @@
       "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
       "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop": 1,
       "deterministic-collection-invariant-reproduction": 1,
-      "cache-boundary-refactoring-with-adversarial-cross-station-tests": 1
+      "uri-routing-investigation-with-deterministic-contract-harness": 1,
+      "webhook-signature-production-incident-with-wire-byte-forensics": 1,
+      "observability-sampling-policy-design-with-evidence-budget-tabletop": 1,
+      "calibration-provenance-architecture-decision-with-replay-matrix": 1
+    },
+    "count": 24
+  },
+  "rollingProfile": {
+    "domains": {
+      "ef-core-change-tracking": 1,
+      "postgresql-transaction-recovery": 1,
+      "http-client-reliability": 1,
+      "disaster-recovery-cross-store-consistency": 1,
+      "csharp-numeric-semantics": 1,
+      "dotnet-concurrency-cancellation": 1,
+      "dotnet-text-streaming": 1,
+      "dotnet-input-semantics": 1,
+      "api-rate-limiting-capacity": 1,
+      "csharp-linq-query-execution": 1,
+      "dotnet-json-contracts": 1,
+      "dotnet-priority-queue-scheduling": 1,
+      "dotnet-archive-security": 1,
+      "offline-sync-consistency-architecture": 1,
+      "dotnet-buffer-slicing": 1,
+      "dotnet-cancellation-diagnostics": 1,
+      "dotnet-channel-backpressure": 1,
+      "sql-api-pagination-consistency": 1,
+      "distributed-license-capacity": 1,
+      "csharp-collections": 1,
+      "dotnet-uri-resolution": 1,
+      "http-webhook-authentication": 1,
+      "distributed-observability": 1,
+      "data-lineage-regulatory-architecture": 1
+    },
+    "difficulty": {
+      "D4": 24
+    },
+    "maturity": {
+      "L2": 5,
+      "L3": 5,
+      "L4": 3,
+      "L6": 4,
+      "L1": 4,
+      "L5": 3
+    },
+    "formats": {
+      "ef-core-tracking-investigation-with-two-phase-replay": 1,
+      "postgresql-production-incident-evidence-replay": 1,
+      "http-upload-retry-refactoring-with-scripted-handler": 1,
+      "cross-store-disaster-recovery-architecture-replay": 1,
+      "numeric-overflow-boundary-contract": 1,
+      "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
+      "stream-decoding-production-incident-with-byte-level-evidence": 1,
+      "legacy-lookup-refactoring-with-adversarial-contract-tests": 1,
+      "api-capacity-allocation-design-tabletop-with-workload-replay": 1,
+      "deterministic-linq-report-consistency-contract": 1,
+      "adversarial-json-contract-investigation": 1,
+      "dispatch-scheduling-multi-signal-investigation": 1,
+      "security-refactoring-with-adversarial-archive-fixtures": 1,
+      "offline-sync-architecture-decision-with-conflict-matrix": 1,
+      "deterministic-binary-buffer-window-contract": 1,
+      "cancellation-diagnostics-investigation-with-deterministic-replay": 1,
+      "burst-queue-production-incident-with-deterministic-capacity-gates": 1,
+      "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
+      "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop": 1,
+      "deterministic-collection-invariant-reproduction": 1,
+      "uri-routing-investigation-with-deterministic-contract-harness": 1,
+      "webhook-signature-production-incident-with-wire-byte-forensics": 1,
+      "observability-sampling-policy-design-with-evidence-budget-tabletop": 1,
+      "calibration-provenance-architecture-decision-with-replay-matrix": 1
     }
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-09-09",
-      "unitId": "UNIT-WHENALL-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-WHENALL-001-forest-restoration-batch-partial-failure",
-      "domain": "dotnet-task-batch-reliability",
-      "primarySkill": "task-whenall-failure-isolation",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "forest-restoration-seedling-survival-survey",
-      "scenarioType": "parallel-independent-survey-import-with-one-invalid-site",
-      "primaryRootCause": "aggregate-task-failure-prevents-collection-of-successful-sibling-results",
-      "failureMode": "valid-survey-sites-not-persisted-when-one-site-import-fails",
-      "solutionPattern": "per-item-outcome-isolation-with-complete-batch-accounting",
-      "labFormat": "batch-processing-modernization-with-partial-failure-contract"
-    },
     {
       "runSlot": "2026-11-09-10",
       "unitId": "UNIT-SCHEMAMIG-001",
@@ -2009,6 +1994,21 @@
       "failureMode": "valid-response-for-one-station-returned-to-another",
       "solutionPattern": "canonical-composite-cache-key-with-isolation-regression",
       "labFormat": "cache-boundary-refactoring-with-adversarial-cross-station-tests"
+    },
+    {
+      "runSlot": "2026-11-10-17",
+      "unitId": "UNIT-CALPROV-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CALPROV-001-reservoir-water-quality-calibration-provenance",
+      "domain": "data-lineage-regulatory-architecture",
+      "primarySkill": "temporal-data-provenance",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "reservoir-water-quality-compliance-reporting",
+      "scenarioType": "sensor-calibration-revision-after-regulatory-report-publication",
+      "primaryRootCause": "historical-observations-recomputed-with-current-calibration-without-version-provenance",
+      "failureMode": "previously-signed-water-quality-reports-change-without-new-measurements",
+      "solutionPattern": "immutable-raw-measurements-and-version-pinned-calibration-with-reproducible-report-snapshots",
+      "labFormat": "calibration-provenance-architecture-decision-with-replay-matrix"
     }
   ]
 }

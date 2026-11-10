@@ -1,0 +1,50 @@
+{
+  "unitId": "UNIT-CALPROV-001",
+  "runSlot": "2026-11-10-17",
+  "title": "Hồ sơ chất lượng nước thay đổi sau khi đã ký",
+  "domain": "data-lineage-regulatory-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-10T17:05:39+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "temporal-data-provenance",
+    "regulatory-reporting",
+    "event-audit",
+    "data-versioning"
+  ],
+  "prerequisites": [
+    "SQL transactions",
+    "immutable records",
+    "API contracts"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "reservoir-water-quality-compliance-reporting",
+    "scenarioType": "sensor-calibration-revision-after-regulatory-report-publication",
+    "primaryRootCause": "historical-observations-recomputed-with-current-calibration-without-version-provenance",
+    "failureMode": "previously-signed-water-quality-reports-change-without-new-measurements",
+    "solutionPattern": "immutable-raw-measurements-and-version-pinned-calibration-with-reproducible-report-snapshots",
+    "labFormat": "calibration-provenance-architecture-decision-with-replay-matrix"
+  },
+  "manifest": [
+    "README.md",
+    "metadata.json",
+    "requirements.md",
+    "evidence/timeline.md",
+    "workspace/my-investigation.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "verification/acceptance.md",
+    "solution/README.md"
+  ]
+}
