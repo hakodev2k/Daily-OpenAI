@@ -1505,8 +1505,6 @@
   ],
   "rolling24": {
     "domains": {
-      "ef-core-change-tracking": 1,
-      "postgresql-transaction-recovery": 1,
       "http-client-reliability": 1,
       "disaster-recovery-cross-store-consistency": 1,
       "csharp-numeric-semantics": 1,
@@ -1528,22 +1526,22 @@
       "dotnet-uri-resolution": 1,
       "http-webhook-authentication": 1,
       "distributed-observability": 1,
-      "data-lineage-regulatory-architecture": 1
+      "data-lineage-regulatory-architecture": 1,
+      "dotnet-decimal-accounting": 1,
+      "dotnet-async-lifecycle": 1
     },
     "difficulty": {
       "D4": 24
     },
     "maturity": {
-      "L2": 5,
-      "L3": 5,
       "L4": 3,
       "L6": 4,
-      "L1": 4,
+      "L1": 5,
+      "L2": 5,
+      "L3": 4,
       "L5": 3
     },
     "formats": {
-      "ef-core-tracking-investigation-with-two-phase-replay": 1,
-      "postgresql-production-incident-evidence-replay": 1,
       "http-upload-retry-refactoring-with-scripted-handler": 1,
       "cross-store-disaster-recovery-architecture-replay": 1,
       "numeric-overflow-boundary-contract": 1,
@@ -1565,14 +1563,13 @@
       "uri-routing-investigation-with-deterministic-contract-harness": 1,
       "webhook-signature-production-incident-with-wire-byte-forensics": 1,
       "observability-sampling-policy-design-with-evidence-budget-tabletop": 1,
-      "calibration-provenance-architecture-decision-with-replay-matrix": 1
-    },
-    "count": 24
+      "calibration-provenance-architecture-decision-with-replay-matrix": 1,
+      "deterministic-monetary-rounding-contract-reproduction": 1,
+      "deterministic-async-lifecycle-investigation": 1
+    }
   },
   "rollingProfile": {
     "domains": {
-      "ef-core-change-tracking": 1,
-      "postgresql-transaction-recovery": 1,
       "http-client-reliability": 1,
       "disaster-recovery-cross-store-consistency": 1,
       "csharp-numeric-semantics": 1,
@@ -1594,22 +1591,22 @@
       "dotnet-uri-resolution": 1,
       "http-webhook-authentication": 1,
       "distributed-observability": 1,
-      "data-lineage-regulatory-architecture": 1
+      "data-lineage-regulatory-architecture": 1,
+      "dotnet-decimal-accounting": 1,
+      "dotnet-async-lifecycle": 1
     },
     "difficulty": {
       "D4": 24
     },
     "maturity": {
-      "L2": 5,
-      "L3": 5,
       "L4": 3,
       "L6": 4,
-      "L1": 4,
+      "L1": 5,
+      "L2": 5,
+      "L3": 4,
       "L5": 3
     },
     "formats": {
-      "ef-core-tracking-investigation-with-two-phase-replay": 1,
-      "postgresql-production-incident-evidence-replay": 1,
       "http-upload-retry-refactoring-with-scripted-handler": 1,
       "cross-store-disaster-recovery-architecture-replay": 1,
       "numeric-overflow-boundary-contract": 1,
@@ -1631,7 +1628,9 @@
       "uri-routing-investigation-with-deterministic-contract-harness": 1,
       "webhook-signature-production-incident-with-wire-byte-forensics": 1,
       "observability-sampling-policy-design-with-evidence-budget-tabletop": 1,
-      "calibration-provenance-architecture-decision-with-replay-matrix": 1
+      "calibration-provenance-architecture-decision-with-replay-matrix": 1,
+      "deterministic-monetary-rounding-contract-reproduction": 1,
+      "deterministic-async-lifecycle-investigation": 1
     }
   },
   "recentLabs": [
@@ -2009,6 +2008,21 @@
       "failureMode": "previously-signed-water-quality-reports-change-without-new-measurements",
       "solutionPattern": "immutable-raw-measurements-and-version-pinned-calibration-with-reproducible-report-snapshots",
       "labFormat": "calibration-provenance-architecture-decision-with-replay-matrix"
+    },
+    {
+      "runSlot": "2026-11-10-19",
+      "unitId": "UNIT-TASKRACE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-TASKRACE-001-harbor-buoy-command-timeout-race",
+      "domain": "dotnet-async-lifecycle",
+      "primarySkill": "task-whenany-timeout",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "harbor-buoy-remote-command-control",
+      "scenarioType": "timed-out-remote-command-overlaps-newer-command",
+      "primaryRootCause": "timeout-race-returns-before-losing-operation-is-stopped-or-fenced",
+      "failureMode": "older-command-overwrites-newer-desired-buoy-mode",
+      "solutionPattern": "cooperative-cancellation-plus-monotonic-generation-fence-at-side-effect-boundary",
+      "labFormat": "deterministic-async-lifecycle-investigation"
     }
   ]
 }
