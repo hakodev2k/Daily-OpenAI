@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CANCELSRC-001",
+  "runSlot": "2026-11-10-07",
+  "title": "Ferry ETA cancellation attribution",
+  "domain": "dotnet-cancellation-diagnostics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-10T07:07:57+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "cancellationtoken",
+    "timeout-budget",
+    "observability"
+  ],
+  "prerequisites": [
+    "Task.Delay",
+    "CancellationTokenSource"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coastal-ferry-arrival-status-aggregation",
+    "scenarioType": "downstream-time-budget-versus-client-disconnect",
+    "primaryRootCause": "linked-cancellation-token-erases-distinction-between-timeout-and-caller-cancellation",
+    "failureMode": "downstream-timeout-misreported-as-client-aborted",
+    "solutionPattern": "preserve-independent-cancellation-sources-and-classify-at-boundary",
+    "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
+  }
+}

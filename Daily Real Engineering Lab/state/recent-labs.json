@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-19",
-      "unitId": "UNIT-JDUP-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-JDUP-001-library-grant-duplicate-json-field",
-      "domain": "dotnet-json-payload-contract-security",
-      "primarySkill": "json-duplicate-property-canonical-interpretation",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "municipal-public-library-equipment-grants",
-      "scenarioType": "automatic-grant-approval-differs-from-posted-accounting-amount",
-      "primaryRootCause": "duplicate-json-property-interpreted-differently-by-enumeration-and-getproperty",
-      "failureMode": "limit-check-bypass-through-differential-json-property-selection",
-      "solutionPattern": "reject-duplicate-json-keys-and-use-single-validated-canonical-command",
-      "labFormat": "json-parser-differential-contract-investigation"
-    },
-    {
       "runSlot": "2026-11-01-20",
       "unitId": "UNIT-KEYSETPAGE-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-KEYSETPAGE-001-parking-appeal-feed-live-pagination-drift",
@@ -1501,39 +1486,24 @@
       "failureMode": "sensor-reading-is-taken-from-frame-header-or-previous-buffer-region",
       "solutionPattern": "respect-segment-offset-and-count-with-boundary-regression-tests",
       "labFormat": "deterministic-binary-buffer-window-contract"
+    },
+    {
+      "runSlot": "2026-11-10-07",
+      "unitId": "UNIT-CANCELSRC-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CANCELSRC-001-coastal-ferry-status-timeout-attribution",
+      "domain": "dotnet-cancellation-diagnostics",
+      "primarySkill": "cancellation-source-attribution",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "coastal-ferry-arrival-status-aggregation",
+      "scenarioType": "downstream-time-budget-versus-client-disconnect",
+      "primaryRootCause": "linked-cancellation-token-erases-distinction-between-timeout-and-caller-cancellation",
+      "failureMode": "downstream-timeout-misreported-as-client-aborted",
+      "solutionPattern": "preserve-independent-cancellation-sources-and-classify-at-boundary",
+      "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-09-01",
-      "unitId": "UNIT-POOLBUF-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-POOLBUF-001-field-survey-pooled-buffer-corruption",
-      "domain": "dotnet-memory-pooling",
-      "primarySkill": "arraypool-ownership",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "wetland-field-survey-photo-thumbnail-processing",
-      "scenarioType": "async-thumbnail-encoding-with-buffer-pool-reuse",
-      "primaryRootCause": "arraypool-buffer-returned-before-delayed-consumer-finishes-reading",
-      "failureMode": "thumbnail-checksum-changes-after-unrelated-pool-renter-overwrites-memory",
-      "solutionPattern": "transfer-buffer-ownership-until-consumer-completes-with-try-finally-return",
-      "labFormat": "asynchronous-buffer-lifetime-investigation"
-    },
-    {
-      "runSlot": "2026-11-09-02",
-      "unitId": "UNIT-FWDTRUST-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/09/UNIT-FWDTRUST-001-trail-permit-forwarded-header-trust-boundary",
-      "domain": "aspnetcore-reverse-proxy-security",
-      "primarySkill": "trusted-proxy-boundary",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "national-trail-permit-admin-portal",
-      "scenarioType": "reverse-proxy-client-address-spoofing-during-admin-admission",
-      "primaryRootCause": "untrusted-x-forwarded-for-header-used-as-authoritative-client-ip",
-      "failureMode": "external-client-impersonates-allowlisted-office-ip-to-access-admin-route",
-      "solutionPattern": "trusted-proxy-only-forwarded-header-processing-with-network-peer-validation",
-      "labFormat": "http-proxy-trust-boundary-security-investigation"
-    },
     {
       "runSlot": "2026-11-09-03",
       "unitId": "UNIT-ETAG-001",
@@ -1863,11 +1833,40 @@
       "failureMode": "crafted-archive-overwrites-neighboring-record",
       "solutionPattern": "canonical-path-containment-and-entry-type-validation-before-write",
       "labFormat": "security-refactoring-with-adversarial-archive-fixtures"
+    },
+    {
+      "runSlot": "2026-11-10-04",
+      "unitId": "UNIT-APIVER-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-APIVER-001-regional-transit-partner-api-version-sunset",
+      "domain": "api-contract-lifecycle",
+      "primarySkill": "api-versioning",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "regional-transit-fare-clearing-partner-integrations",
+      "scenarioType": "breaking-api-contract-retirement-under-uneven-partner-upgrade-capacity",
+      "primaryRootCause": "incompatible-contract-sunset-without-measured-consumer-readiness",
+      "failureMode": "legacy-kiosk-partners-lose-fare-confirmations-at-cutover",
+      "solutionPattern": "consumer-inventory-dual-version-compatibility-and-usage-gated-retirement",
+      "labFormat": "api-lifecycle-design-decision-with-cutover-gate-simulation"
+    },
+    {
+      "runSlot": "2026-11-10-07",
+      "unitId": "UNIT-CANCELSRC-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CANCELSRC-001-coastal-ferry-status-timeout-attribution",
+      "domain": "dotnet-cancellation-diagnostics",
+      "primarySkill": "cancellation-source-attribution",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "coastal-ferry-arrival-status-aggregation",
+      "scenarioType": "downstream-time-budget-versus-client-disconnect",
+      "primaryRootCause": "linked-cancellation-token-erases-distinction-between-timeout-and-caller-cancellation",
+      "failureMode": "downstream-timeout-misreported-as-client-aborted",
+      "solutionPattern": "preserve-independent-cancellation-sources-and-classify-at-boundary",
+      "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
     }
   ],
   "rollingProfile": {
     "domains": {
-      "aspnetcore-reverse-proxy-security": 1,
       "http-conditional-requests": 1,
       "search-index-migration": 1,
       "database-pagination-semantics": 1,
@@ -1890,14 +1889,15 @@
       "dotnet-json-contracts": 1,
       "dotnet-priority-queue-scheduling": 1,
       "dotnet-archive-security": 1,
-      "api-contract-lifecycle": 1
+      "api-contract-lifecycle": 1,
+      "dotnet-cancellation-diagnostics": 1
     },
     "maturity": {
-      "L3": 5,
       "L4": 5,
       "L5": 4,
       "L1": 4,
-      "L2": 4,
+      "L2": 5,
+      "L3": 4,
       "L6": 2
     }
   },
@@ -2276,6 +2276,21 @@
       "failureMode": "legacy-kiosk-partners-lose-fare-confirmations-at-cutover",
       "solutionPattern": "consumer-inventory-dual-version-compatibility-and-usage-gated-retirement",
       "labFormat": "api-lifecycle-design-decision-with-cutover-gate-simulation"
+    },
+    {
+      "runSlot": "2026-11-10-07",
+      "unitId": "UNIT-CANCELSRC-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CANCELSRC-001-coastal-ferry-status-timeout-attribution",
+      "domain": "dotnet-cancellation-diagnostics",
+      "primarySkill": "cancellation-source-attribution",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "coastal-ferry-arrival-status-aggregation",
+      "scenarioType": "downstream-time-budget-versus-client-disconnect",
+      "primaryRootCause": "linked-cancellation-token-erases-distinction-between-timeout-and-caller-cancellation",
+      "failureMode": "downstream-timeout-misreported-as-client-aborted",
+      "solutionPattern": "preserve-independent-cancellation-sources-and-classify-at-boundary",
+      "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
     }
   ]
 }

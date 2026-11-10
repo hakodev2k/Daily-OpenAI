@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SLICE-001",
-    "runSlot": "2026-11-10-06",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-SLICE-001-wildfire-sensor-packet-window-offset",
+    "unitId": "UNIT-CANCELSRC-001",
+    "runSlot": "2026-11-10-07",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CANCELSRC-001-coastal-ferry-status-timeout-attribution",
     "status": "READY",
-    "createdAt": "2026-11-10T06:06:00+07:00"
+    "createdAt": "2026-11-10T07:07:57+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 516,
-    "totalGenerated": 511,
+    "totalRunSlotsAttempted": 517,
+    "totalGenerated": 512,
     "totalFailed": 5
   },
   "learning": {
