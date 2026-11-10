@@ -1866,7 +1866,7 @@
     }
   ],
   "rollingProfile": {
-    "domain": {
+    "domains": {
       "dotnet-timezone-scheduling": 1,
       "dotnet-task-batch-reliability": 1,
       "postgresql-schema-evolution": 1,
@@ -1895,7 +1895,7 @@
     "difficulty": {
       "D4": 24
     },
-    "maturityLevel": {
+    "maturity": {
       "L3": 5,
       "L4": 4,
       "L5": 3,
@@ -1903,7 +1903,7 @@
       "L1": 4,
       "L2": 4
     },
-    "labFormat": {
+    "formats": {
       "time-zone-production-incident-with-deterministic-boundary-fixtures": 1,
       "batch-processing-modernization-with-partial-failure-contract": 1,
       "zero-downtime-schema-migration-design-tabletop": 1,
