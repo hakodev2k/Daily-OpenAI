@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-QUOTAFAIR-001",
-    "runSlot": "2026-11-10-22",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-QUOTAFAIR-001-emergency-radio-alert-tenant-quota-fairness",
+    "unitId": "UNIT-RECALL-001",
+    "runSlot": "2026-11-10-23",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-RECALL-001-school-meal-allergen-recall-propagation",
     "status": "READY",
-    "createdAt": "2026-11-10T22:11:14+07:00"
+    "createdAt": "2026-11-10T23:11:38+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 532,
-    "totalGenerated": 527,
+    "totalRunSlotsAttempted": 533,
+    "totalGenerated": 528,
     "totalFailed": 5
   },
   "learning": {

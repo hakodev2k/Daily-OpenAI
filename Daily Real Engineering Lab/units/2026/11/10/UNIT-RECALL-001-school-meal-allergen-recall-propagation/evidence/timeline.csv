@@ -1,0 +1,12 @@
+minute,source,lotId,revision,state,projectionRevision,decision,note
+09:00,registry,LOT-A17,11,APPROVED,11,NONE,picklist
+09:04,registry,LOT-A17,12,RECALLED,11,NONE,recall-committed
+09:05,broker,LOT-A17,12,RECALLED,11,NONE,event-delayed
+09:16,kitchen,LOT-A17,12,RECALLED,11,ALLOW,unsafe-dispatch
+09:19,projector,LOT-A17,12,RECALLED,12,NONE,projection-updated
+09:20,broker,LOT-A17,11,APPROVED,12,NONE,old-event-redelivery
+09:21,kitchen,LOT-A17,12,RECALLED,12,DENY,updated-view
+09:23,registry,LOT-B08,7,APPROVED,7,NONE,normal
+09:24,kitchen,LOT-B08,7,APPROVED,7,ALLOW,normal-dispatch
+09:25,registry,LOT-C19,5,RECALLED,4,NONE,registry-timeout
+09:26,kitchen,LOT-C19,5,RECALLED,4,ALLOW,unsafe-fail-open

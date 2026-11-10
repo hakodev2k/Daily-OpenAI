@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-09",
-      "unitId": "UNIT-EFCTX-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-EFCTX-001-wastewater-inspection-report-parallel-failure",
-      "domain": "efcore-dbcontext-concurrency",
-      "primarySkill": "efcore-dbcontext-parallel-query-lifetime",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "district-wastewater-inspection-compliance-dashboard",
-      "scenarioType": "parallel-status-report-queries-fail-under-deterministic-overlap",
-      "primaryRootCause": "two-overlapping-efcore-queries-share-one-dbcontext-instance",
-      "failureMode": "report-generation-throws-concurrent-operation-exception-instead-of-producing-complete-status-groups",
-      "solutionPattern": "one-dbcontext-lifetime-per-overlapping-query-with-factory-and-joined-result-contract",
-      "labFormat": "efcore-parallel-query-evidence-investigation"
-    },
-    {
       "runSlot": "2026-11-02-10",
       "unitId": "UNIT-GITPKG-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-GITPKG-001-pool-safety-release-stale-policy",
@@ -1501,78 +1486,51 @@
       "failureMode": "critical-rescue-alerts-miss-delivery-slo-while-test-traffic-occupies-gateway",
       "solutionPattern": "reserved-work-conserving-fair-scheduling-with-bounded-admission-and-idempotent-inbox",
       "labFormat": "capacity-governance-adr-with-traffic-evidence"
+    },
+    {
+      "runSlot": "2026-11-10-23",
+      "unitId": "UNIT-RECALL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-RECALL-001-school-meal-allergen-recall-propagation",
+      "domain": "event-driven-safety-consistency",
+      "primarySkill": "safety-critical-consistency-boundaries",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "school-meal-allergen-recall",
+      "scenarioType": "delayed-recall-after-picklist",
+      "primaryRootCause": "eventual-projection-used-as-safety-authority-at-dispatch",
+      "failureMode": "recalled-lot-dispatched-during-projection-lag",
+      "solutionPattern": "linearizable-dispatch-recall-admission-with-fail-closed-hold",
+      "labFormat": "safety-architecture-timeline-tabletop"
     }
   ],
-  "rolling24": {
-    "domains": {
-      "disaster-recovery-cross-store-consistency": 1,
-      "csharp-numeric-semantics": 1,
-      "dotnet-concurrency-cancellation": 1,
-      "dotnet-text-streaming": 1,
-      "dotnet-input-semantics": 1,
-      "api-rate-limiting-capacity": 1,
-      "csharp-linq-query-execution": 1,
-      "dotnet-json-contracts": 1,
-      "dotnet-priority-queue-scheduling": 1,
-      "dotnet-archive-security": 1,
-      "offline-sync-consistency-architecture": 1,
-      "dotnet-buffer-slicing": 1,
-      "dotnet-cancellation-diagnostics": 1,
-      "dotnet-channel-backpressure": 1,
-      "sql-api-pagination-consistency": 1,
-      "distributed-license-capacity": 1,
-      "csharp-collections": 1,
-      "dotnet-uri-resolution": 1,
-      "http-webhook-authentication": 1,
-      "distributed-observability": 1,
-      "data-lineage-regulatory-architecture": 1,
-      "dotnet-decimal-accounting": 1,
-      "dotnet-async-lifecycle": 1,
-      "dotnet-file-io-durability": 1
-    },
-    "difficulty": {
-      "D4": 24
-    },
-    "maturity": {
-      "L6": 4,
-      "L1": 5,
-      "L2": 5,
-      "L3": 5,
-      "L4": 2,
-      "L5": 3
-    },
-    "formats": {
-      "cross-store-disaster-recovery-architecture-replay": 1,
-      "numeric-overflow-boundary-contract": 1,
-      "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
-      "stream-decoding-production-incident-with-byte-level-evidence": 1,
-      "legacy-lookup-refactoring-with-adversarial-contract-tests": 1,
-      "api-capacity-allocation-design-tabletop-with-workload-replay": 1,
-      "deterministic-linq-report-consistency-contract": 1,
-      "adversarial-json-contract-investigation": 1,
-      "dispatch-scheduling-multi-signal-investigation": 1,
-      "security-refactoring-with-adversarial-archive-fixtures": 1,
-      "offline-sync-architecture-decision-with-conflict-matrix": 1,
-      "deterministic-binary-buffer-window-contract": 1,
-      "cancellation-diagnostics-investigation-with-deterministic-replay": 1,
-      "burst-queue-production-incident-with-deterministic-capacity-gates": 1,
-      "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
-      "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop": 1,
-      "deterministic-collection-invariant-reproduction": 1,
-      "uri-routing-investigation-with-deterministic-contract-harness": 1,
-      "webhook-signature-production-incident-with-wire-byte-forensics": 1,
-      "observability-sampling-policy-design-with-evidence-budget-tabletop": 1,
-      "calibration-provenance-architecture-decision-with-replay-matrix": 1,
-      "deterministic-monetary-rounding-contract-reproduction": 1,
-      "deterministic-async-lifecycle-investigation": 1,
-      "filesystem-crash-consistency-incident-with-fault-injection": 1
-    }
-  },
+  "rolling24": [
+    "UNIT-UTF8STREAM-001",
+    "UNIT-REGEXLIT-001",
+    "UNIT-RATELIMIT-001",
+    "UNIT-LINQSNAP-001",
+    "UNIT-JSONENUM-001",
+    "UNIT-PQSTALE-001",
+    "UNIT-ZIPSLIP-001",
+    "UNIT-OFFSYNC-001",
+    "UNIT-SLICE-001",
+    "UNIT-CANCELSRC-001",
+    "UNIT-CHANNELBP-001",
+    "UNIT-PAGECURSOR-001",
+    "UNIT-LICENSECAP-001",
+    "UNIT-HASHMUT-001",
+    "UNIT-URIPATH-001",
+    "UNIT-HMACBYTES-001",
+    "UNIT-TRACEBUDGET-001",
+    "UNIT-CALPROV-001",
+    "UNIT-ROUNDLINE-001",
+    "UNIT-TASKRACE-001",
+    "UNIT-FILEATOMIC-001",
+    "UNIT-STREAMPOS-001",
+    "UNIT-QUOTAFAIR-001",
+    "UNIT-RECALL-001"
+  ],
   "rollingProfile": {
     "domains": {
-      "disaster-recovery-cross-store-consistency": 1,
-      "csharp-numeric-semantics": 1,
-      "dotnet-concurrency-cancellation": 1,
       "dotnet-text-streaming": 1,
       "dotnet-input-semantics": 1,
       "api-rate-limiting-capacity": 1,
@@ -1593,23 +1551,23 @@
       "data-lineage-regulatory-architecture": 1,
       "dotnet-decimal-accounting": 1,
       "dotnet-async-lifecycle": 1,
-      "dotnet-file-io-durability": 1
+      "dotnet-file-io-durability": 1,
+      "dotnet-stream-io": 1,
+      "multi-tenant-capacity-governance": 1,
+      "event-driven-safety-consistency": 1
     },
     "difficulty": {
       "D4": 24
     },
     "maturity": {
-      "L6": 4,
-      "L1": 5,
-      "L2": 5,
       "L3": 5,
-      "L4": 2,
-      "L5": 3
+      "L4": 3,
+      "L5": 4,
+      "L1": 4,
+      "L2": 4,
+      "L6": 4
     },
     "formats": {
-      "cross-store-disaster-recovery-architecture-replay": 1,
-      "numeric-overflow-boundary-contract": 1,
-      "cancellation-ownership-investigation-with-deterministic-gate-replay": 1,
       "stream-decoding-production-incident-with-byte-level-evidence": 1,
       "legacy-lookup-refactoring-with-adversarial-contract-tests": 1,
       "api-capacity-allocation-design-tabletop-with-workload-replay": 1,
@@ -1630,7 +1588,10 @@
       "calibration-provenance-architecture-decision-with-replay-matrix": 1,
       "deterministic-monetary-rounding-contract-reproduction": 1,
       "deterministic-async-lifecycle-investigation": 1,
-      "filesystem-crash-consistency-incident-with-fault-injection": 1
+      "filesystem-crash-consistency-incident-with-fault-injection": 1,
+      "legacy-file-upload-pipeline-refactoring-with-byte-contract-tests": 1,
+      "capacity-governance-adr-with-traffic-evidence": 1,
+      "safety-architecture-timeline-tabletop": 1
     }
   },
   "recentLabs": [
@@ -2038,6 +1999,21 @@
       "failureMode": "uploaded-object-empty-despite-nonempty-verified-source",
       "solutionPattern": "explicit-stream-replay-boundary-with-seek-or-buffer-policy",
       "labFormat": "legacy-file-upload-pipeline-refactoring-with-byte-contract-tests"
+    },
+    {
+      "runSlot": "2026-11-10-23",
+      "unitId": "UNIT-RECALL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-RECALL-001-school-meal-allergen-recall-propagation",
+      "domain": "event-driven-safety-consistency",
+      "primarySkill": "safety-critical-consistency-boundaries",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "school-meal-allergen-recall",
+      "scenarioType": "delayed-recall-after-picklist",
+      "primaryRootCause": "eventual-projection-used-as-safety-authority-at-dispatch",
+      "failureMode": "recalled-lot-dispatched-during-projection-lag",
+      "solutionPattern": "linearizable-dispatch-recall-admission-with-fail-closed-hold",
+      "labFormat": "safety-architecture-timeline-tabletop"
     }
   ]
 }

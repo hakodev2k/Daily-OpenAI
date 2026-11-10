@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-RECALL-001",
+  "runSlot": "2026-11-10-23",
+  "title": "School Meal Allergen Recall — Safety Across Delayed Projections",
+  "domain": "event-driven-safety-consistency",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-10T23:11:38+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "eventual-consistency",
+    "safety-invariants",
+    "revision-fencing",
+    "idempotency"
+  ],
+  "prerequisites": [
+    "database-transactions",
+    "message-delivery-semantics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "school-meal-allergen-recall",
+    "scenarioType": "delayed-recall-after-picklist",
+    "primaryRootCause": "eventual-projection-used-as-safety-authority-at-dispatch",
+    "failureMode": "recalled-lot-dispatched-during-projection-lag",
+    "solutionPattern": "linearizable-dispatch-recall-admission-with-fail-closed-hold",
+    "labFormat": "safety-architecture-timeline-tabletop"
+  }
+}
