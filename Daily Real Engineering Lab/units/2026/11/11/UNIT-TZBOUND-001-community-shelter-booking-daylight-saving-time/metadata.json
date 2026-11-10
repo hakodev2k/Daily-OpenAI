@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-TZBOUND-001",
+  "runSlot": "2026-11-11-03",
+  "title": "Đêm đổi giờ tại nhà tạm trú",
+  "domain": "dotnet-time-arithmetic",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-11T03:13:13+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "datetimeoffset",
+    "dst",
+    "time-contract-testing"
+  ],
+  "prerequisites": [
+    "C#",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-shelter-overnight-bed-booking",
+    "scenarioType": "stay-spans-dst-fall-back",
+    "primaryRootCause": "local-clock-subtraction-discards-offset-change",
+    "failureMode": "elapsed-hours-undercounted",
+    "solutionPattern": "subtract-instants-not-wall-clock",
+    "labFormat": "time-contract-refactoring"
+  }
+}

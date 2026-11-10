@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-13",
-      "unitId": "UNIT-HOSTEX-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-HOSTEX-001-air-quality-worker-host-stop",
-      "domain": "dotnet-backgroundservice-host-lifecycle",
-      "primarySkill": "backgroundservice-unhandled-exception-host-stop-policy",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "urban-air-quality-sensor-alert-relay",
-      "scenarioType": "one-partner-delivery-failure-stops-entire-hosted-alert-processing-service",
-      "primaryRootCause": "unhandled-per-item-gateway-exception-escapes-backgroundservice-executeasync-and-default-stophost-shuts-down-host",
-      "failureMode": "subsequent-independent-alert-never-attempted-and-worker-host-stops-prematurely",
-      "solutionPattern": "catch-classified-recoverable-item-failure-record-failed-delivery-and-continue-while-preserving-fatal-fail-fast",
-      "labFormat": "hosted-worker-lifecycle-evidence-investigation"
-    },
-    {
       "runSlot": "2026-11-02-14",
       "unitId": "UNIT-FSWATCH-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-FSWATCH-001-calibration-certificate-index-drift",
@@ -1501,6 +1486,21 @@
       "failureMode": "valid-vietnamese-diacritics-become-replacement-characters-only-at-chunk-boundaries",
       "solutionPattern": "stateful-incremental-decoder-with-final-flush-and-replay-contract",
       "labFormat": "fragmented-stream-production-incident-with-byte-boundary-evidence"
+    },
+    {
+      "runSlot": "2026-11-11-03",
+      "unitId": "UNIT-TZBOUND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-TZBOUND-001-community-shelter-booking-daylight-saving-time",
+      "domain": "dotnet-time-arithmetic",
+      "primarySkill": "datetimeoffset-elapsed-vs-wall-clock",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "community-shelter-overnight-bed-booking",
+      "scenarioType": "stay-spans-dst-fall-back",
+      "primaryRootCause": "local-clock-subtraction-discards-offset-change",
+      "failureMode": "elapsed-hours-undercounted",
+      "solutionPattern": "subtract-instants-not-wall-clock",
+      "labFormat": "time-contract-refactoring"
     }
   ],
   "rolling24": {
