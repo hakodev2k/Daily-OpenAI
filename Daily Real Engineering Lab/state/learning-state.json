@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-STREAMPOS-001",
-    "runSlot": "2026-11-10-21",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-STREAMPOS-001-heritage-photo-upload-stream-replay",
+    "unitId": "UNIT-QUOTAFAIR-001",
+    "runSlot": "2026-11-10-22",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-QUOTAFAIR-001-emergency-radio-alert-tenant-quota-fairness",
     "status": "READY",
-    "createdAt": "2026-11-10T21:11:02+07:00"
+    "createdAt": "2026-11-10T22:11:14+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 531,
-    "totalGenerated": 526,
+    "totalRunSlotsAttempted": 532,
+    "totalGenerated": 527,
     "totalFailed": 5
   },
   "learning": {
