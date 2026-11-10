@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-TRACEBUDGET-001",
+  "runSlot": "2026-11-10-16",
+  "title": "Thiết kế trace sampling dưới ngân sách cho cảnh báo lũ",
+  "domain": "distributed-observability",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-10T16:12:17+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "distributed-tracing-sampling",
+    "observability-cost-model",
+    "production-slo-tradeoffs"
+  ],
+  "prerequisites": [
+    "trace-span-parenting",
+    "probability",
+    "metrics-vs-traces"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "river-basin-flood-warning-notification-service",
+    "scenarioType": "rare-failed-alerts-invisible-in-head-sampled-traces",
+    "primaryRootCause": "head-sampling-before-request-outcome-known-discards-rare-failed-traces",
+    "failureMode": "critical-error-investigation-lacks-correlated-trace-despite-high-throughput-success-traces",
+    "solutionPattern": "tail-aware-error-retention-with-budgeted-probabilistic-success-sampling-and-privacy-guardrails",
+    "labFormat": "observability-sampling-policy-design-with-evidence-budget-tabletop"
+  }
+}

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CACHEKEY-001",
-    "runSlot": "2026-11-10-15",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CACHEKEY-001-regional-weather-station-cache-key-collision",
+    "unitId": "UNIT-TRACEBUDGET-001",
+    "runSlot": "2026-11-10-16",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-TRACEBUDGET-001-river-flood-warning-rare-error-trace-sampling",
     "status": "READY",
-    "createdAt": "2026-11-10T15:05:13+07:00"
+    "createdAt": "2026-11-10T16:12:17+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 525,
-    "totalGenerated": 520,
+    "totalRunSlotsAttempted": 526,
+    "totalGenerated": 521,
     "totalFailed": 5
   },
   "learning": {

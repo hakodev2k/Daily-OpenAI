@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-02",
-      "unitId": "UNIT-DNSPOOL-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DNSPOOL-001-crop-warning-api-dns-failover-stale-connection",
-      "domain": "dotnet-http-connection-lifecycle",
-      "primarySkill": "httpclient-connection-pool-dns-refresh-policy",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "agricultural-pest-forecast-alert-api",
-      "scenarioType": "regional-backend-cutover-with-dns-answer-change-and-persistent-http-connection",
-      "primaryRootCause": "persistent-connection-reuse-outlives-dns-answer-change-without-connection-age-policy",
-      "failureMode": "requests-continue-to-retired-region-despite-new-dns-record",
-      "solutionPattern": "bounded-pooled-connection-lifetime-with-resolver-cache-and-capacity-budget",
-      "labFormat": "dns-failover-connection-lifetime-design-decision-with-deterministic-policy-harness"
-    },
-    {
       "runSlot": "2026-11-02-03",
       "unitId": "UNIT-CMPID-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-CMPID-001-theater-pass-culture-dependent-lookup",
@@ -1501,6 +1486,21 @@
       "failureMode": "valid-partner-webhook-rejected-after-json-whitespace-or-property-order-change",
       "solutionPattern": "authenticate-exact-raw-payload-bytes-before-json-parsing-with-fixed-time-signature-check",
       "labFormat": "webhook-signature-production-incident-with-wire-byte-forensics"
+    },
+    {
+      "runSlot": "2026-11-10-16",
+      "unitId": "UNIT-TRACEBUDGET-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-TRACEBUDGET-001-river-flood-warning-rare-error-trace-sampling",
+      "domain": "distributed-observability",
+      "primarySkill": "distributed-tracing-sampling",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "river-basin-flood-warning-notification-service",
+      "scenarioType": "rare-failed-alerts-invisible-in-head-sampled-traces",
+      "primaryRootCause": "head-sampling-before-request-outcome-known-discards-rare-failed-traces",
+      "failureMode": "critical-error-investigation-lacks-correlated-trace-despite-high-throughput-success-traces",
+      "solutionPattern": "tail-aware-error-retention-with-budgeted-probabilistic-success-sampling-and-privacy-guardrails",
+      "labFormat": "observability-sampling-policy-design-with-evidence-budget-tabletop"
     }
   ],
   "rolling24": {
