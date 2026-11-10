@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DISCOPE-001",
+  "runSlot": "2026-11-10-09",
+  "title": "Community garden worker: vòng đời scoped dependency",
+  "domain": "aspnet-core-dependency-injection",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-10T09:04:33+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "dependency-injection-lifetimes",
+    "backgroundservice",
+    "scope-ownership"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "dependency-injection-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-garden-irrigation-invoice-processing",
+    "scenarioType": "long-lived-hosted-worker-processes-sequential-invoice-batches",
+    "primaryRootCause": "scoped-repository-captured-by-singleton-worker-and-used-after-scope-disposal",
+    "failureMode": "second-batch-throws-objectdisposedexception-and-first-batch-only-is-committed",
+    "solutionPattern": "create-and-dispose-a-new-dependency-injection-scope-per-work-item",
+    "labFormat": "background-worker-lifetime-refactoring-with-deterministic-two-batch-replay"
+  }
+}

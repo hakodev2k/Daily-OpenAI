@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CHANNELBP-001",
-    "runSlot": "2026-11-10-08",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CHANNELBP-001-avalanche-sensor-ingestion-backpressure",
+    "unitId": "UNIT-DISCOPE-001",
+    "runSlot": "2026-11-10-09",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-DISCOPE-001-community-garden-worker-scope-lifetime",
     "status": "READY",
-    "createdAt": "2026-11-10T08:13:26+07:00"
+    "createdAt": "2026-11-10T09:04:33+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 518,
-    "totalGenerated": 513,
+    "totalRunSlotsAttempted": 519,
+    "totalGenerated": 514,
     "totalFailed": 5
   },
   "learning": {

@@ -2291,6 +2291,21 @@
       "failureMode": "downstream-timeout-misreported-as-client-aborted",
       "solutionPattern": "preserve-independent-cancellation-sources-and-classify-at-boundary",
       "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
+    },
+    {
+      "runSlot": "2026-11-10-09",
+      "unitId": "UNIT-DISCOPE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-DISCOPE-001-community-garden-worker-scope-lifetime",
+      "domain": "aspnet-core-dependency-injection",
+      "primarySkill": "dependency-injection-scope-ownership",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "community-garden-irrigation-invoice-processing",
+      "scenarioType": "long-lived-hosted-worker-processes-sequential-invoice-batches",
+      "primaryRootCause": "scoped-repository-captured-by-singleton-worker-and-used-after-scope-disposal",
+      "failureMode": "second-batch-throws-objectdisposedexception-and-first-batch-only-is-committed",
+      "solutionPattern": "create-and-dispose-a-new-dependency-injection-scope-per-work-item",
+      "labFormat": "background-worker-lifetime-refactoring-with-deterministic-two-batch-replay"
     }
   ]
 }
