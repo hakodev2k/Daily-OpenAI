@@ -1571,7 +1571,6 @@
   },
   "rollingProfile": {
     "domains": {
-      "dotnet-task-batch-reliability": 1,
       "postgresql-schema-evolution": 1,
       "distributed-command-safety": 1,
       "dotnet-binary-protocol": 1,
@@ -1594,21 +1593,21 @@
       "dotnet-channel-backpressure": 1,
       "sql-api-pagination-consistency": 1,
       "distributed-license-capacity": 1,
-      "csharp-collections": 1
+      "csharp-collections": 1,
+      "aspnet-core-caching": 1
     },
     "difficulty": {
       "D4": 24
     },
     "maturity": {
-      "L4": 4,
       "L5": 3,
       "L6": 4,
       "L1": 5,
       "L2": 4,
-      "L3": 4
+      "L3": 4,
+      "L4": 4
     },
     "formats": {
-      "batch-processing-modernization-with-partial-failure-contract": 1,
       "zero-downtime-schema-migration-design-tabletop": 1,
       "safety-critical-command-architecture-with-failure-timeline-replay": 1,
       "binary-protocol-deterministic-decoder-contract": 1,
@@ -1631,7 +1630,8 @@
       "burst-queue-production-incident-with-deterministic-capacity-gates": 1,
       "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
       "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop": 1,
-      "deterministic-collection-invariant-reproduction": 1
+      "deterministic-collection-invariant-reproduction": 1,
+      "cache-boundary-refactoring-with-adversarial-cross-station-tests": 1
     }
   },
   "recentLabs": [
@@ -1994,6 +1994,21 @@
       "failureMode": "existing-seed-lot-cannot-be-found-or-removed-after-relocation",
       "solutionPattern": "immutable-stable-lot-id-as-hash-key-with-mutable-details-outside-index",
       "labFormat": "deterministic-collection-invariant-reproduction"
+    },
+    {
+      "runSlot": "2026-11-10-15",
+      "unitId": "UNIT-CACHEKEY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CACHEKEY-001-regional-weather-station-cache-key-collision",
+      "domain": "aspnet-core-caching",
+      "primarySkill": "cache-key-design",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "regional-weather-station-forecast",
+      "scenarioType": "multi-station-cache-contamination",
+      "primaryRootCause": "cache-key-omits-station-identifier",
+      "failureMode": "valid-response-for-one-station-returned-to-another",
+      "solutionPattern": "canonical-composite-cache-key-with-isolation-regression",
+      "labFormat": "cache-boundary-refactoring-with-adversarial-cross-station-tests"
     }
   ]
 }

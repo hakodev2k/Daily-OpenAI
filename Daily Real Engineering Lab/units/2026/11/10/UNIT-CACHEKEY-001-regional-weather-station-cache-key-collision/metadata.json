@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CACHEKEY-001",
+  "runSlot": "2026-11-10-15",
+  "title": "Cache key trùng giữa các trạm đo thời tiết",
+  "domain": "aspnet-core-caching",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-10T15:05:13+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "cache-key-design",
+    "multi-tenant-isolation",
+    "aspnet-core"
+  ],
+  "prerequisites": [
+    "C# dictionaries",
+    "HTTP caching"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-weather-station-forecast",
+    "scenarioType": "multi-station-cache-contamination",
+    "primaryRootCause": "cache-key-omits-station-identifier",
+    "failureMode": "valid-response-for-one-station-returned-to-another",
+    "solutionPattern": "canonical-composite-cache-key-with-isolation-regression",
+    "labFormat": "cache-boundary-refactoring-with-adversarial-cross-station-tests"
+  }
+}
