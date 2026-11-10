@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CANCELSRC-001",
-    "runSlot": "2026-11-10-07",
-    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CANCELSRC-001-coastal-ferry-status-timeout-attribution",
+    "unitId": "UNIT-CHANNELBP-001",
+    "runSlot": "2026-11-10-08",
+    "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CHANNELBP-001-avalanche-sensor-ingestion-backpressure",
     "status": "READY",
-    "createdAt": "2026-11-10T07:07:57+07:00"
+    "createdAt": "2026-11-10T08:13:26+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 517,
-    "totalGenerated": 512,
+    "totalRunSlotsAttempted": 518,
+    "totalGenerated": 513,
     "totalFailed": 5
   },
   "learning": {

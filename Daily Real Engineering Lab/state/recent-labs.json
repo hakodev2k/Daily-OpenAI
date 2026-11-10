@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-01-20",
-      "unitId": "UNIT-KEYSETPAGE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-KEYSETPAGE-001-parking-appeal-feed-live-pagination-drift",
-      "domain": "api-pagination-live-feed",
-      "primarySkill": "offset-vs-keyset-pagination-under-concurrent-inserts",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "municipal-parking-appeal-review-inbox",
-      "scenarioType": "live-appeal-insertion-and-deletion-between-consecutive-page-requests",
-      "primaryRootCause": "offset-pagination-references-mutable-row-positions-under-concurrent-feed-changes",
-      "failureMode": "duplicate-and-omitted-appeals-across-a-multi-page-review-session",
-      "solutionPattern": "seek-pagination-using-stable-composite-createdat-id-cursor",
-      "labFormat": "live-feed-pagination-multi-signal-production-incident"
-    },
-    {
       "runSlot": "2026-11-01-21",
       "unitId": "UNIT-FILEPUB-001",
       "path": "Daily Real Engineering Lab/units/2026/11/01/UNIT-FILEPUB-001-coastal-flood-alert-snapshot-torn-read",
@@ -1501,6 +1486,21 @@
       "failureMode": "downstream-timeout-misreported-as-client-aborted",
       "solutionPattern": "preserve-independent-cancellation-sources-and-classify-at-boundary",
       "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
+    },
+    {
+      "runSlot": "2026-11-10-08",
+      "unitId": "UNIT-CHANNELBP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CHANNELBP-001-avalanche-sensor-ingestion-backpressure",
+      "domain": "dotnet-channel-backpressure",
+      "primarySkill": "system-threading-channels",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "alpine-avalanche-monitoring-station",
+      "scenarioType": "burst-ingestion-under-slow-telemetry-sink",
+      "primaryRootCause": "bounded-channel-drop-oldest-mode-silently-discards-queued-alerts",
+      "failureMode": "accepted-alert-count-exceeds-delivered-alert-count-without-write-failure",
+      "solutionPattern": "wait-mode-with-explicit-backpressure-and-accepted-delivered-invariants",
+      "labFormat": "burst-queue-production-incident-with-deterministic-capacity-gates"
     }
   ],
   "rolling24": [
