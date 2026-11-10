@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CUSTODY-001",
+  "runSlot": "2026-11-11-06",
+  "title": "Chuỗi bảo quản bằng chứng cứu hộ offline",
+  "domain": "evidence-integrity-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-11T06:11:08+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "evidence-integrity",
+    "offline-sync",
+    "security-architecture"
+  ],
+  "prerequisites": [
+    "SHA-256",
+    "digital-signature-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "mountain-rescue-evidence",
+    "scenarioType": "offline-photo-sync-and-disputed-exports",
+    "primaryRootCause": "mutable-artifacts-and-unverified-export-provenance",
+    "failureMode": "same-incident-exports-disagree-without-verifiable-history",
+    "solutionPattern": "immutable-content-hash-plus-signed-custody-and-versioned-export",
+    "labFormat": "architecture-tabletop-with-adversarial-evidence"
+  }
+}

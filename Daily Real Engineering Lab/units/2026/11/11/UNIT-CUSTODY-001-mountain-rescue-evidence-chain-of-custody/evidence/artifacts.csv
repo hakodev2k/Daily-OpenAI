@@ -1,0 +1,5 @@
+id,incident_id,kind,sha256_prefix,claimed_capture_time
+P-A,IR-208,photo,8f62e4a1,2026-11-10T08:12:00+07:00
+P-B,IR-208,photo,49bb2c08,2026-11-10T08:14:00+07:00
+E-01,IR-208,export,1e31ab90,
+E-02,IR-208,export,dc92f1b7,

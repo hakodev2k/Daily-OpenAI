@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ROLLOUT-001",
-    "runSlot": "2026-11-11-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-ROLLOUT-001-public-bike-dock-firmware-canary-guardrails",
+    "unitId": "UNIT-CUSTODY-001",
+    "runSlot": "2026-11-11-06",
+    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CUSTODY-001-mountain-rescue-evidence-chain-of-custody",
     "status": "READY",
-    "createdAt": "2026-11-11T04:10:18+07:00"
+    "createdAt": "2026-11-11T06:11:08+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 538,
-    "totalGenerated": 533,
+    "totalRunSlotsAttempted": 539,
+    "totalGenerated": 534,
     "totalFailed": 5
   },
   "learning": {

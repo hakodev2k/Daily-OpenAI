@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-15",
-      "unitId": "UNIT-SNAPISO-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SNAPISO-001-mangrove-restoration-survey-revision-drift",
-      "domain": "csharp-object-graph-snapshot-isolation",
-      "primarySkill": "deep-copy-boundary-for-mutable-nested-domain-snapshots",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "mangrove-restoration-field-survey-revision-history",
-      "scenarioType": "published-survey-revisions-drift-after-field-technician-edits-and-history-reader-mutation",
-      "primaryRootCause": "shallow-copy-and-returned-reference-aliasing-of-nested-mutable-survey-readings",
-      "failureMode": "previously-published-survey-revisions-silently-change-without-a-new-publication",
-      "solutionPattern": "defensive-deep-copy-on-history-ingress-and-egress-with-independent-revision-contracts",
-      "labFormat": "snapshot-history-refactoring-with-bidirectional-aliasing-contract"
-    },
-    {
       "runSlot": "2026-11-02-16",
       "unitId": "UNIT-SSET-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-SSET-001-hatchery-oxygen-alert-priority-loss",
@@ -1501,6 +1486,21 @@
       "failureMode": "unsafe-rollout-promotion-despite-riverside-device-failure",
       "solutionPattern": "cohort-specific-guardrails-with-stage-gates-and-targeted-rollback",
       "labFormat": "progressive-delivery-adr-with-synthetic-cohort-evidence"
+    },
+    {
+      "runSlot": "2026-11-11-06",
+      "unitId": "UNIT-CUSTODY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CUSTODY-001-mountain-rescue-evidence-chain-of-custody",
+      "domain": "evidence-integrity-architecture",
+      "primarySkill": "evidence-chain-of-custody",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "mountain-rescue-evidence",
+      "scenarioType": "offline-photo-sync-and-disputed-exports",
+      "primaryRootCause": "mutable-artifacts-and-unverified-export-provenance",
+      "failureMode": "same-incident-exports-disagree-without-verifiable-history",
+      "solutionPattern": "immutable-content-hash-plus-signed-custody-and-versioned-export",
+      "labFormat": "architecture-tabletop-with-adversarial-evidence"
     }
   ],
   "rolling24": {
