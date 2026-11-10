@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-UNICODE-001",
+  "runSlot": "2026-11-11-00",
+  "title": "Mã hiện vật trông giống nhau nhưng lookup không khớp",
+  "domain": "dotnet-unicode-string-identity",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-11T00:05:18+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "unicode-normalization",
+    "dotnet-string-comparison",
+    "data-ingestion-contract"
+  ],
+  "primarySkill": "unicode-normalization-boundary",
+  "prerequisites": [
+    ".NET 8 SDK",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "museum-artifact-accession-registry",
+    "scenarioType": "visually-identical-import-keys-from-different-unicode-normalization-forms",
+    "primaryRootCause": "ordinal-string-identity-compares-decomposed-and-composed-unicode-sequences-as-distinct",
+    "failureMode": "duplicate-accession-records-and-failed-lookup-for-equivalent-identifier",
+    "solutionPattern": "normalize-unicode-to-form-c-at-ingress-and-lookup-with-ordinal-comparison",
+    "labFormat": "deterministic-unicode-data-integrity-reproduction"
+  }
+}
