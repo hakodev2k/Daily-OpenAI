@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-20",
-      "unitId": "UNIT-RESPSTR-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-RESPSTR-001-canal-gate-csv-export-200-read-failure",
-      "domain": "dotnet-http-response-stream-ownership",
-      "primarySkill": "httpclient-response-stream-lifetime",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "canal-gate-water-level-csv-export",
-      "scenarioType": "successful-http-headers-followed-by-payload-read-failure",
-      "primaryRootCause": "httpresponsemessage-disposed-before-returned-content-stream-consumption",
-      "failureMode": "objectdisposedexception-on-first-csv-stream-read-after-http-200",
-      "solutionPattern": "response-owned-stream-disposal-transfer-with-failure-path-cleanup",
-      "labFormat": "http-stream-resource-ownership-investigation-with-deterministic-handler"
-    },
-    {
       "runSlot": "2026-11-02-22",
       "unitId": "UNIT-READY-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-READY-001-cooling-center-occupancy-startup-readiness",
@@ -1501,6 +1486,21 @@
       "failureMode": "legacy-alert-worker-silently-misses-temperature-excursion-during-upgrade",
       "solutionPattern": "versioned-additive-event-contract-with-upcaster-and-consumer-contract-gates",
       "labFormat": "event-schema-compatibility-design-decision-with-replay-matrix"
+    },
+    {
+      "runSlot": "2026-11-11-18",
+      "unitId": "UNIT-WATERMARK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-WATERMARK-001-river-flood-sensor-late-data-watermark",
+      "domain": "stream-processing-event-time",
+      "primarySkill": "event-time-processing",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "river-basin-flood-forecast-operations",
+      "scenarioType": "out-of-order-sensor-readings-with-late-corrections",
+      "primaryRootCause": "processing-time-window-closes-before-valid-late-event-time-observations",
+      "failureMode": "false-flood-clearance-issued-from-incomplete-water-level-window",
+      "solutionPattern": "event-time-watermark-with-bounded-lateness-and-revisioned-alert-corrections",
+      "labFormat": "architecture-tabletop-event-time-replay"
     }
   ],
   "rolling24": {
@@ -1508,8 +1508,6 @@
   },
   "rollingProfile": {
     "domains": {
-      "dotnet-cancellation-diagnostics": 1,
-      "dotnet-channel-backpressure": 1,
       "sql-api-pagination-consistency": 1,
       "distributed-license-capacity": 1,
       "csharp-collections": 1,
@@ -1531,22 +1529,22 @@
       "evidence-integrity-architecture": 1,
       "dotnet-globalization-boundaries": 1,
       "http-partial-content-integrity": 1,
-      "dotnet-cancellation-lifecycle": 1
+      "dotnet-cancellation-lifecycle": 1,
+      "event-contract-evolution": 1,
+      "stream-processing-event-time": 1
     },
     "difficulties": {
       "D4": 24
     },
     "maturity": {
-      "L2": 5,
-      "L3": 5,
-      "L5": 4,
-      "L6": 4,
+      "L5": 5,
+      "L6": 5,
       "L1": 4,
+      "L2": 4,
+      "L3": 4,
       "L4": 2
     },
     "formats": {
-      "cancellation-diagnostics-investigation-with-deterministic-replay": 1,
-      "burst-queue-production-incident-with-deterministic-capacity-gates": 1,
       "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
       "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop": 1,
       "deterministic-collection-invariant-reproduction": 1,
@@ -1568,40 +1566,12 @@
       "architecture-tabletop-with-adversarial-evidence": 1,
       "deterministic-cross-culture-import-contract": 1,
       "http-partial-content-contract-investigation": 1,
-      "cancellation-lifecycle-production-incident-replay": 1
+      "cancellation-lifecycle-production-incident-replay": 1,
+      "event-schema-compatibility-design-decision-with-replay-matrix": 1,
+      "architecture-tabletop-event-time-replay": 1
     }
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-10-07",
-      "unitId": "UNIT-CANCELSRC-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CANCELSRC-001-coastal-ferry-status-timeout-attribution",
-      "domain": "dotnet-cancellation-diagnostics",
-      "primarySkill": "cancellation-source-attribution",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "coastal-ferry-arrival-status-aggregation",
-      "scenarioType": "downstream-time-budget-versus-client-disconnect",
-      "primaryRootCause": "linked-cancellation-token-erases-distinction-between-timeout-and-caller-cancellation",
-      "failureMode": "downstream-timeout-misreported-as-client-aborted",
-      "solutionPattern": "preserve-independent-cancellation-sources-and-classify-at-boundary",
-      "labFormat": "cancellation-diagnostics-investigation-with-deterministic-replay"
-    },
-    {
-      "runSlot": "2026-11-10-08",
-      "unitId": "UNIT-CHANNELBP-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CHANNELBP-001-avalanche-sensor-ingestion-backpressure",
-      "domain": "dotnet-channel-backpressure",
-      "primarySkill": "system-threading-channels",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "alpine-avalanche-monitoring-station",
-      "scenarioType": "burst-ingestion-under-slow-telemetry-sink",
-      "primaryRootCause": "bounded-channel-drop-oldest-mode-silently-discards-queued-alerts",
-      "failureMode": "accepted-alert-count-exceeds-delivered-alert-count-without-write-failure",
-      "solutionPattern": "wait-mode-with-explicit-backpressure-and-accepted-delivered-invariants",
-      "labFormat": "burst-queue-production-incident-with-deterministic-capacity-gates"
-    },
     {
       "runSlot": "2026-11-10-10",
       "unitId": "UNIT-PAGECURSOR-001",
@@ -1933,19 +1903,34 @@
       "labFormat": "cancellation-lifecycle-production-incident-replay"
     },
     {
-      "runSlot": "2026-11-11-14",
-      "unitId": "UNIT-CONFIGSNAP-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CONFIGSNAP-001-library-kiosk-printer-config-reload",
-      "domain": "dotnet-configuration-lifecycle",
-      "primarySkill": "runtime-configuration-reload",
-      "maturityLevel": "L4",
+      "runSlot": "2026-11-11-15",
+      "unitId": "UNIT-SCHEMAEV-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-SCHEMAEV-001-regional-blood-bank-temperature-event-schema-evolution",
+      "domain": "event-contract-evolution",
+      "primarySkill": "event-schema-compatibility",
+      "maturityLevel": "L5",
       "difficulty": "D4",
-      "businessContext": "public-library-self-service-kiosk",
-      "scenarioType": "live-printer-settings-update-during-long-running-service",
-      "primaryRootCause": "service-constructor-captures-stale-configuration-object",
-      "failureMode": "new-labels-use-obsolete-printer-routing-after-config-update",
-      "solutionPattern": "read-one-immutable-config-snapshot-per-operation",
-      "labFormat": "legacy-config-lifecycle-refactoring-with-observable-contract"
+      "businessContext": "regional-blood-bank-cold-storage-telemetry",
+      "scenarioType": "mixed-version-temperature-events-during-phased-device-upgrade",
+      "primaryRootCause": "unversioned-payload-semantic-change-breaks-old-alert-consumer",
+      "failureMode": "legacy-alert-worker-silently-misses-temperature-excursion-during-upgrade",
+      "solutionPattern": "versioned-additive-event-contract-with-upcaster-and-consumer-contract-gates",
+      "labFormat": "event-schema-compatibility-design-decision-with-replay-matrix"
+    },
+    {
+      "runSlot": "2026-11-11-18",
+      "unitId": "UNIT-WATERMARK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-WATERMARK-001-river-flood-sensor-late-data-watermark",
+      "domain": "stream-processing-event-time",
+      "primarySkill": "event-time-processing",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "river-basin-flood-forecast-operations",
+      "scenarioType": "out-of-order-sensor-readings-with-late-corrections",
+      "primaryRootCause": "processing-time-window-closes-before-valid-late-event-time-observations",
+      "failureMode": "false-flood-clearance-issued-from-incomplete-water-level-window",
+      "solutionPattern": "event-time-watermark-with-bounded-lateness-and-revisioned-alert-corrections",
+      "labFormat": "architecture-tabletop-event-time-replay"
     }
   ]
 }

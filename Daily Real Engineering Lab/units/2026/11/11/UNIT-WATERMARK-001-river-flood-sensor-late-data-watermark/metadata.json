@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-WATERMARK-001",
+  "runSlot": "2026-11-11-18",
+  "title": "River Flood Forecast — Late Data, Watermarks and Alert Corrections",
+  "domain": "stream-processing-event-time",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-11T18:13:02+07:00",
+  "estimatedMinutes": 80,
+  "skills": [
+    "event-time-processing",
+    "watermark-policy",
+    "late-data-corrections",
+    "stream-replay",
+    "operational-slos"
+  ],
+  "prerequisites": [
+    "message-ordering",
+    "distributed-clocks",
+    "time-window-aggregation"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "river-basin-flood-forecast-operations",
+    "scenarioType": "out-of-order-sensor-readings-with-late-corrections",
+    "primaryRootCause": "processing-time-window-closes-before-valid-late-event-time-observations",
+    "failureMode": "false-flood-clearance-issued-from-incomplete-water-level-window",
+    "solutionPattern": "event-time-watermark-with-bounded-lateness-and-revisioned-alert-corrections",
+    "labFormat": "architecture-tabletop-event-time-replay"
+  }
+}
