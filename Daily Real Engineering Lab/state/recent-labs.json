@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-19",
-      "unitId": "UNIT-DELIM-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DELIM-001-campus-shuttle-departure-empty-field-shift",
-      "domain": "dotnet-positional-record-ingestion",
-      "primarySkill": "positional-delimited-record-empty-field-preservation",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "university-campus-shuttle-departure-signage",
-      "scenarioType": "vendor-departure-feed-with-empty-optional-boarding-note",
-      "primaryRootCause": "removeemptyentries-drops-empty-positional-field-in-fixed-width-pipe-record",
-      "failureMode": "destination-and-status-shift-into-wrong-display-fields-without-import-error",
-      "solutionPattern": "preserve-empty-positional-tokens-validate-exact-arity-and-required-fields",
-      "labFormat": "positional-feed-contract-deterministic-lab"
-    },
-    {
       "runSlot": "2026-11-02-20",
       "unitId": "UNIT-RESPSTR-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-RESPSTR-001-canal-gate-csv-export-200-read-failure",
@@ -1501,6 +1486,21 @@
       "failureMode": "subsequent-healthy-cycle-cancelled-before-actuation",
       "solutionPattern": "per-cycle-linked-cancellation-budget-with-explicit-resource-ownership",
       "labFormat": "cancellation-lifecycle-production-incident-replay"
+    },
+    {
+      "runSlot": "2026-11-11-15",
+      "unitId": "UNIT-SCHEMAEV-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-SCHEMAEV-001-regional-blood-bank-temperature-event-schema-evolution",
+      "domain": "event-contract-evolution",
+      "primarySkill": "event-schema-compatibility",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "regional-blood-bank-cold-storage-telemetry",
+      "scenarioType": "mixed-version-temperature-events-during-phased-device-upgrade",
+      "primaryRootCause": "unversioned-payload-semantic-change-breaks-old-alert-consumer",
+      "failureMode": "legacy-alert-worker-silently-misses-temperature-excursion-during-upgrade",
+      "solutionPattern": "versioned-additive-event-contract-with-upcaster-and-consumer-contract-gates",
+      "labFormat": "event-schema-compatibility-design-decision-with-replay-matrix"
     }
   ],
   "rolling24": {

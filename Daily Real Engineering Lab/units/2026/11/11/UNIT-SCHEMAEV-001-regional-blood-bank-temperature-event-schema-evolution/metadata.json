@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SCHEMAEV-001",
+  "runSlot": "2026-11-11-15",
+  "title": "Schema evolution cho sự kiện nhiệt độ kho máu",
+  "domain": "event-contract-evolution",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-11T15:04:24+07:00",
+  "estimatedMinutes": 90,
+  "skills": [
+    "event-schema-compatibility",
+    "consumer-driven-contracts",
+    "safe-rollout"
+  ],
+  "prerequisites": [
+    "JSON",
+    "event consumers"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-blood-bank-cold-storage-telemetry",
+    "scenarioType": "mixed-version-temperature-events-during-phased-device-upgrade",
+    "primaryRootCause": "unversioned-payload-semantic-change-breaks-old-alert-consumer",
+    "failureMode": "legacy-alert-worker-silently-misses-temperature-excursion-during-upgrade",
+    "solutionPattern": "versioned-additive-event-contract-with-upcaster-and-consumer-contract-gates",
+    "labFormat": "event-schema-compatibility-design-decision-with-replay-matrix"
+  }
+}

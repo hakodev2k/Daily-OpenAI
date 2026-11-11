@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CONFIGSNAP-001",
-    "runSlot": "2026-11-11-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CONFIGSNAP-001-library-kiosk-printer-config-reload",
+    "unitId": "UNIT-SCHEMAEV-001",
+    "runSlot": "2026-11-11-15",
+    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-SCHEMAEV-001-regional-blood-bank-temperature-event-schema-evolution",
     "status": "READY",
-    "createdAt": "2026-11-11T14:10:29+07:00"
+    "createdAt": "2026-11-11T15:04:24+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 543,
-    "totalGenerated": 538,
+    "totalRunSlotsAttempted": 544,
+    "totalGenerated": 539,
     "totalFailed": 5
   },
   "learning": {

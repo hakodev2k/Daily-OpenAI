@@ -1,0 +1,6 @@
+{"deviceId":"BK-17","recordedAt":"2026-11-11T10:00:30+07:00","temperatureC":4.3}
+{"deviceId":"BK-17","recordedAt":"2026-11-11T10:01:30+07:00","celsius":8.4,"schemaVersion":2}
+{"deviceId":"BK-18","recordedAt":"2026-11-11T10:01:45+07:00","temperatureC":7.2}
+{"deviceId":"BK-19","recordedAt":"2026-11-11T10:02:00+07:00","celsius":4.1,"schemaVersion":2}
+{"deviceId":"BK-20","recordedAt":"2026-11-11T10:02:15+07:00","celsius":"7.8","schemaVersion":2}
+{"deviceId":"BK-21","recordedAt":"2026-11-11T10:02:30+07:00","temperatureC":5.1,"celsius":8.9,"schemaVersion":2}
