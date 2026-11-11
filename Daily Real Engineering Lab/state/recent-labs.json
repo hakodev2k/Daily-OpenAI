@@ -3,36 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-22",
-      "unitId": "UNIT-READY-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-READY-001-cooling-center-occupancy-startup-readiness",
-      "domain": "dotnet-startup-readiness-contract",
-      "primarySkill": "dotnet-async-initialization-readiness",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "businessContext": "community-cooling-center-occupancy-board",
-      "scenarioType": "startup-snapshot-slow-or-faulted-partner-with-time-based-grace-expiry",
-      "primaryRootCause": "fixed-grace-period-used-as-readiness-proxy-before-async-initialization-completes",
-      "failureMode": "first-dashboard-read-returns-unknown-as-empty-and-suppresses-initialization-failure",
-      "solutionPattern": "await-actual-initialization-completion-and-propagate-fault-before-snapshot-read",
-      "labFormat": "deterministic-startup-readiness-refactoring-with-fault-propagation-contract"
-    },
-    {
-      "runSlot": "2026-11-02-23",
-      "unitId": "UNIT-REQBODY-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-REQBODY-001-volunteer-dispatch-audit-body-consumption",
-      "domain": "aspnetcore-request-body-lifecycle",
-      "primarySkill": "aspnetcore-request-body-stream-replay-boundary",
-      "maturityLevel": "L1",
-      "difficulty": "D3",
-      "businessContext": "regional-volunteer-emergency-supply-dispatch",
-      "scenarioType": "json-dispatch-webhook-rejected-after-audit-middleware-is-enabled",
-      "primaryRootCause": "request-audit-middleware-consumes-forward-only-http-request-body-before-endpoint-deserialization",
-      "failureMode": "valid-dispatch-json-receives-400-while-audit-records-nonempty-payload",
-      "solutionPattern": "buffer-request-body-before-observation-and-restore-position-for-downstream-consumers",
-      "labFormat": "deterministic-aspnetcore-request-body-pipeline-contract-lab"
-    },
-    {
       "runSlot": "2026-11-03-00",
       "unitId": "UNIT-SBUILDER-001",
       "path": "Daily Real Engineering Lab/units/2026/11/03/UNIT-SBUILDER-001-seed-bank-label-cross-request-mixing",
@@ -1516,6 +1486,21 @@
       "failureMode": "lost-update-between-independent-clients",
       "solutionPattern": "strong-etag-if-match-precondition-and-412-reconciliation",
       "labFormat": "deterministic-two-client-http-concurrency-replay"
+    },
+    {
+      "runSlot": "2026-11-12-02",
+      "unitId": "UNIT-JSONLIFE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-JSONLIFE-001-fishery-permit-json-element-lifetime",
+      "domain": "dotnet-json-dom-lifetime",
+      "primarySkill": "system-text-json-lifetime",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "coastal-fishery-permit-reconciliation",
+      "scenarioType": "json-payload-crosses-parser-boundary",
+      "primaryRootCause": "json-element-view-retains-disposed-document",
+      "failureMode": "object-disposed-on-late-property-access",
+      "solutionPattern": "clone-at-ownership-transfer",
+      "labFormat": "multi-stage-json-lifetime-investigation"
     }
   ],
   "rolling24": {
