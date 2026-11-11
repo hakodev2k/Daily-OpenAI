@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CTSREUSE-001",
-    "runSlot": "2026-11-11-11",
-    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CTSREUSE-001-greenhouse-irrigation-cancellation-budget-reuse",
+    "unitId": "UNIT-CONFIGSNAP-001",
+    "runSlot": "2026-11-11-14",
+    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CONFIGSNAP-001-library-kiosk-printer-config-reload",
     "status": "READY",
-    "createdAt": "2026-11-11T11:05:15+07:00"
+    "createdAt": "2026-11-11T14:10:29+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 542,
-    "totalGenerated": 537,
+    "totalRunSlotsAttempted": 543,
+    "totalGenerated": 538,
     "totalFailed": 5
   },
   "learning": {

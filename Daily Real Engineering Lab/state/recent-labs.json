@@ -1931,6 +1931,21 @@
       "failureMode": "subsequent-healthy-cycle-cancelled-before-actuation",
       "solutionPattern": "per-cycle-linked-cancellation-budget-with-explicit-resource-ownership",
       "labFormat": "cancellation-lifecycle-production-incident-replay"
+    },
+    {
+      "runSlot": "2026-11-11-14",
+      "unitId": "UNIT-CONFIGSNAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CONFIGSNAP-001-library-kiosk-printer-config-reload",
+      "domain": "dotnet-configuration-lifecycle",
+      "primarySkill": "runtime-configuration-reload",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "public-library-self-service-kiosk",
+      "scenarioType": "live-printer-settings-update-during-long-running-service",
+      "primaryRootCause": "service-constructor-captures-stale-configuration-object",
+      "failureMode": "new-labels-use-obsolete-printer-routing-after-config-update",
+      "solutionPattern": "read-one-immutable-config-snapshot-per-operation",
+      "labFormat": "legacy-config-lifecycle-refactoring-with-observable-contract"
     }
   ]
 }

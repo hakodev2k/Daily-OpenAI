@@ -1,0 +1,54 @@
+{
+  "unitId": "UNIT-CONFIGSNAP-001",
+  "runSlot": "2026-11-11-14",
+  "title": "Library Kiosk: Printer Settings After Refresh",
+  "domain": "dotnet-configuration-lifecycle",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-11T14:10:29+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "runtime-configuration-reload",
+    "object-lifetime",
+    "immutable-snapshot"
+  ],
+  "prerequisites": [
+    "csharp-reference-semantics",
+    "dotnet-console"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-library-self-service-kiosk",
+    "scenarioType": "live-printer-settings-update-during-long-running-service",
+    "primaryRootCause": "service-constructor-captures-stale-configuration-object",
+    "failureMode": "new-labels-use-obsolete-printer-routing-after-config-update",
+    "solutionPattern": "read-one-immutable-config-snapshot-per-operation",
+    "labFormat": "legacy-config-lifecycle-refactoring-with-observable-contract"
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "expected-results/results.md",
+    "extensions/senior-challenge.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/verify.ps1",
+    "solution/Program.cs",
+    "solution/README.md",
+    "starter/Kiosk.csproj",
+    "starter/Program.cs",
+    "workspace/my-investigation.md"
+  ]
+}
