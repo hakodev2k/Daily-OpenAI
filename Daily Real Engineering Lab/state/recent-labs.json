@@ -1961,6 +1961,21 @@
       "failureMode": "lost-update-between-independent-clients",
       "solutionPattern": "strong-etag-if-match-precondition-and-412-reconciliation",
       "labFormat": "deterministic-two-client-http-concurrency-replay"
+    },
+    {
+      "runSlot": "2026-11-11-23",
+      "unitId": "UNIT-LINQSNAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-LINQSNAP-001-community-food-bank-inventory-report-snapshot",
+      "domain": "dotnet-linq-evaluation",
+      "primarySkill": "linq-deferred-execution",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "community-food-bank-inventory",
+      "scenarioType": "report-during-stock-adjustment",
+      "primaryRootCause": "deferred-linq-reenumeration",
+      "failureMode": "footer-and-detail-disagree",
+      "solutionPattern": "immutable-projection-snapshot",
+      "labFormat": "linq-investigation-replay"
     }
   ]
 }

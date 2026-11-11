@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-LINQSNAP-001",
+  "runSlot": "2026-11-11-23",
+  "title": "Báo cáo tồn kho thay đổi giữa hai lần đọc",
+  "domain": "dotnet-linq-evaluation",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-11T23:13:17+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "linq-deferred-execution",
+    "report-consistency"
+  ],
+  "prerequisites": [
+    "IEnumerable",
+    "LINQ"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-food-bank-inventory",
+    "scenarioType": "report-during-stock-adjustment",
+    "primaryRootCause": "deferred-linq-reenumeration",
+    "failureMode": "footer-and-detail-disagree",
+    "solutionPattern": "immutable-projection-snapshot",
+    "labFormat": "linq-investigation-replay"
+  }
+}
