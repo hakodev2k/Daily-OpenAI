@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-17",
-      "unitId": "UNIT-UPSIG-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-UPSIG-001-building-permit-pdf-ingestion-spoof",
-      "domain": "dotnet-file-upload-content-validation",
-      "primarySkill": "untrusted-upload-metadata-vs-file-content-boundary",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "municipal-building-permit-blueprint-intake",
-      "scenarioType": "metadata-accepted-document-reaches-downstream-pdf-parser-and-fails",
-      "primaryRootCause": "upload-admission-trusts-client-provided-extension-and-content-type-without-checking-file-bytes",
-      "failureMode": "non-pdf-payload-accepted-into-permit-document-queue-and-rejected-later-by-parser",
-      "solutionPattern": "bounded-file-byte-signature-gate-before-persistence-with-negative-contract-tests",
-      "labFormat": "document-ingestion-evidence-led-security-incident"
-    },
-    {
       "runSlot": "2026-11-02-18",
       "unitId": "UNIT-OTA-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-OTA-001-solar-inverter-fleet-safe-firmware-rollout",
@@ -1501,6 +1486,21 @@
       "failureMode": "gross-weight-import-rejected-or-misread-on-vietnamese-or-german-host",
       "solutionPattern": "explicit-invariant-culture-and-numberstyles-at-wire-boundary",
       "labFormat": "deterministic-cross-culture-import-contract"
+    },
+    {
+      "runSlot": "2026-11-11-08",
+      "unitId": "UNIT-RANGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-RANGE-001-mountain-aerial-map-resume-content-range",
+      "domain": "http-partial-content-integrity",
+      "primarySkill": "http-range-resume-validation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "mountain-aerial-map-offline-field-sync",
+      "scenarioType": "partial-download-resume-with-server-range-disagreement",
+      "primaryRootCause": "resumed-download-appends-206-body-without-validating-content-range-start",
+      "failureMode": "locally-assembled-map-has-overlapping-bytes-despite-successful-status",
+      "solutionPattern": "strict-206-content-range-offset-and-total-contract-before-append",
+      "labFormat": "http-partial-content-contract-investigation"
     }
   ],
   "rolling24": {

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CSVDEC-001",
-    "runSlot": "2026-11-11-07",
-    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CSVDEC-001-regional-grain-weighbridge-csv-decimal-culture",
+    "unitId": "UNIT-RANGE-001",
+    "runSlot": "2026-11-11-08",
+    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-RANGE-001-mountain-aerial-map-resume-content-range",
     "status": "READY",
-    "createdAt": "2026-11-11T07:05:54+07:00"
+    "createdAt": "2026-11-11T08:10:37+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 540,
-    "totalGenerated": 535,
+    "totalRunSlotsAttempted": 541,
+    "totalGenerated": 536,
     "totalFailed": 5
   },
   "learning": {
