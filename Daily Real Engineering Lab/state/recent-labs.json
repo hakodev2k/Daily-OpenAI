@@ -406,6 +406,21 @@
       "failureMode": "historical-handover-snapshot-changes-after-live-triage-update",
       "solutionPattern": "deep-copy-collection-at-snapshot-boundary-and-expose-read-only-data",
       "labFormat": "legacy-immutable-snapshot-refactoring-with-aliasing-regression"
+    },
+    {
+      "runSlot": "2026-11-12-04",
+      "unitId": "UNIT-EVENTORDER-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-EVENTORDER-001-regional-transit-refund-event-ordering",
+      "domain": "distributed-event-consistency",
+      "primarySkill": "event-ordering",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "regional-transit-ticket-refunds",
+      "scenarioType": "out-of-order-asynchronous-refund-events",
+      "primaryRootCause": "consumer-applies-arrival-order-instead-of-aggregate-version-order",
+      "failureMode": "refunded-ticket-regresses-to-paid-after-delayed-delivery",
+      "solutionPattern": "monotonic-aggregate-sequence-fence-with-idempotent-duplicate-handling",
+      "labFormat": "event-consumer-design-decision-with-deterministic-replay"
     }
   ],
   "rolling24": [
