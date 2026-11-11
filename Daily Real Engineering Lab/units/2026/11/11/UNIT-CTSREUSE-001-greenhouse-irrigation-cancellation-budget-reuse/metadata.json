@@ -1,0 +1,52 @@
+{
+  "unitId": "UNIT-CTSREUSE-001",
+  "runSlot": "2026-11-11-11",
+  "title": "Greenhouse Irrigation: Cancelled Second Cycle",
+  "domain": "dotnet-cancellation-lifecycle",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-11T11:05:15+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "cancellationtokensource-lifetime",
+    "linked-cancellation",
+    "background-worker-diagnostics"
+  ],
+  "prerequisites": [
+    "async-await",
+    "cancellation-token-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "greenhouse-irrigation-automation",
+    "scenarioType": "repeated-worker-cycle-with-expired-time-budget",
+    "primaryRootCause": "cancellationtokensource-reused-after-terminal-cancellation",
+    "failureMode": "subsequent-healthy-cycle-cancelled-before-actuation",
+    "solutionPattern": "per-cycle-linked-cancellation-budget-with-explicit-resource-ownership",
+    "labFormat": "cancellation-lifecycle-production-incident-replay"
+  },
+  "manifest": [
+    "README.md",
+    "docs/investigation-guide.md",
+    "expected-results/results.md",
+    "hints/hint-01.md",
+    "hints/hint-02.md",
+    "hints/hint-03.md",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/run.ps1",
+    "scripts/verify.ps1",
+    "solution/Program.cs",
+    "starter/Greenhouse.csproj",
+    "starter/Program.cs",
+    "workspace/my-investigation.md"
+  ]
+}

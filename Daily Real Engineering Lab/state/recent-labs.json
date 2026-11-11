@@ -3,21 +3,6 @@
   "maxRecentLabs": 100,
   "labs": [
     {
-      "runSlot": "2026-11-02-18",
-      "unitId": "UNIT-OTA-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-OTA-001-solar-inverter-fleet-safe-firmware-rollout",
-      "domain": "fleet-ota-distributed-systems-architecture",
-      "primarySkill": "fleet-ota-campaign-safety-and-recovery-architecture",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "rural-solar-inverter-fleet-firmware-operations",
-      "scenarioType": "intermittently-connected-fleet-staged-ota-with-delayed-ack-and-unsafe-canary",
-      "primaryRootCause": "rollout-control-plane-lacks-explicit-campaign-gates-and-device-attempt-fencing",
-      "failureMode": "faulty-release-expands-despite-canary-failures-and-stale-device-acknowledgements",
-      "solutionPattern": "regional-pull-rollout-with-durable-attempt-state-guardrails-and-safe-rollback-policy",
-      "labFormat": "fleet-ota-architecture-tabletop-with-evidence-and-decision-record"
-    },
-    {
       "runSlot": "2026-11-02-19",
       "unitId": "UNIT-DELIM-001",
       "path": "Daily Real Engineering Lab/units/2026/11/02/UNIT-DELIM-001-campus-shuttle-departure-empty-field-shift",
@@ -1501,79 +1486,28 @@
       "failureMode": "locally-assembled-map-has-overlapping-bytes-despite-successful-status",
       "solutionPattern": "strict-206-content-range-offset-and-total-contract-before-append",
       "labFormat": "http-partial-content-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-11-11",
+      "unitId": "UNIT-CTSREUSE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CTSREUSE-001-greenhouse-irrigation-cancellation-budget-reuse",
+      "domain": "dotnet-cancellation-lifecycle",
+      "primarySkill": "cancellationtokensource-lifetime",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "greenhouse-irrigation-automation",
+      "scenarioType": "repeated-worker-cycle-with-expired-time-budget",
+      "primaryRootCause": "cancellationtokensource-reused-after-terminal-cancellation",
+      "failureMode": "subsequent-healthy-cycle-cancelled-before-actuation",
+      "solutionPattern": "per-cycle-linked-cancellation-budget-with-explicit-resource-ownership",
+      "labFormat": "cancellation-lifecycle-production-incident-replay"
     }
   ],
   "rolling24": {
-    "count": 24,
-    "byDomain": {
-      "offline-sync-consistency-architecture": 1,
-      "dotnet-buffer-slicing": 1,
-      "dotnet-cancellation-diagnostics": 1,
-      "dotnet-channel-backpressure": 1,
-      "sql-api-pagination-consistency": 1,
-      "distributed-license-capacity": 1,
-      "csharp-collections": 1,
-      "dotnet-uri-resolution": 1,
-      "http-webhook-authentication": 1,
-      "distributed-observability": 1,
-      "data-lineage-regulatory-architecture": 1,
-      "dotnet-decimal-accounting": 1,
-      "dotnet-async-lifecycle": 1,
-      "dotnet-file-io-durability": 1,
-      "dotnet-stream-io": 1,
-      "multi-tenant-capacity-governance": 1,
-      "event-driven-safety-consistency": 1,
-      "dotnet-unicode-string-identity": 1,
-      "dotnet-binary-buffer-contract": 1,
-      "dotnet-text-streaming": 1,
-      "dotnet-time-arithmetic": 1,
-      "deployment-release-engineering": 1,
-      "evidence-integrity-architecture": 1,
-      "dotnet-globalization-boundaries": 1
-    },
-    "byDifficulty": {
-      "D4": 24
-    },
-    "byMaturity": {
-      "L6": 5,
-      "L1": 5,
-      "L2": 4,
-      "L3": 4,
-      "L5": 4,
-      "L4": 2
-    },
-    "byFormat": {
-      "offline-sync-architecture-decision-with-conflict-matrix": 1,
-      "deterministic-binary-buffer-window-contract": 1,
-      "cancellation-diagnostics-investigation-with-deterministic-replay": 1,
-      "burst-queue-production-incident-with-deterministic-capacity-gates": 1,
-      "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
-      "architecture-capacity-invariant-decision-with-concurrent-timeline-tabletop": 1,
-      "deterministic-collection-invariant-reproduction": 1,
-      "uri-routing-investigation-with-deterministic-contract-harness": 1,
-      "webhook-signature-production-incident-with-wire-byte-forensics": 1,
-      "observability-sampling-policy-design-with-evidence-budget-tabletop": 1,
-      "calibration-provenance-architecture-decision-with-replay-matrix": 1,
-      "deterministic-monetary-rounding-contract-reproduction": 1,
-      "deterministic-async-lifecycle-investigation": 1,
-      "filesystem-crash-consistency-incident-with-fault-injection": 1,
-      "legacy-file-upload-pipeline-refactoring-with-byte-contract-tests": 1,
-      "capacity-governance-adr-with-traffic-evidence": 1,
-      "safety-architecture-timeline-tabletop": 1,
-      "deterministic-unicode-data-integrity-reproduction": 1,
-      "binary-wire-payload-evidence-investigation": 1,
-      "fragmented-stream-production-incident-with-byte-boundary-evidence": 1,
-      "time-contract-refactoring": 1,
-      "progressive-delivery-adr-with-synthetic-cohort-evidence": 1,
-      "architecture-tabletop-with-adversarial-evidence": 1,
-      "deterministic-cross-culture-import-contract": 1
-    }
+    "count": 24
   },
   "rollingProfile": {
-    "count": 24,
-    "byDomain": {
-      "offline-sync-consistency-architecture": 1,
-      "dotnet-buffer-slicing": 1,
+    "domains": {
       "dotnet-cancellation-diagnostics": 1,
       "dotnet-channel-backpressure": 1,
       "sql-api-pagination-consistency": 1,
@@ -1595,22 +1529,22 @@
       "dotnet-time-arithmetic": 1,
       "deployment-release-engineering": 1,
       "evidence-integrity-architecture": 1,
-      "dotnet-globalization-boundaries": 1
+      "dotnet-globalization-boundaries": 1,
+      "http-partial-content-integrity": 1,
+      "dotnet-cancellation-lifecycle": 1
     },
-    "byDifficulty": {
+    "difficulties": {
       "D4": 24
     },
-    "byMaturity": {
-      "L6": 5,
-      "L1": 5,
-      "L2": 4,
-      "L3": 4,
+    "maturity": {
+      "L2": 5,
+      "L3": 5,
       "L5": 4,
+      "L6": 4,
+      "L1": 4,
       "L4": 2
     },
-    "byFormat": {
-      "offline-sync-architecture-decision-with-conflict-matrix": 1,
-      "deterministic-binary-buffer-window-contract": 1,
+    "formats": {
       "cancellation-diagnostics-investigation-with-deterministic-replay": 1,
       "burst-queue-production-incident-with-deterministic-capacity-gates": 1,
       "pagination-contract-design-with-deterministic-concurrent-insert-replay": 1,
@@ -1632,40 +1566,12 @@
       "time-contract-refactoring": 1,
       "progressive-delivery-adr-with-synthetic-cohort-evidence": 1,
       "architecture-tabletop-with-adversarial-evidence": 1,
-      "deterministic-cross-culture-import-contract": 1
+      "deterministic-cross-culture-import-contract": 1,
+      "http-partial-content-contract-investigation": 1,
+      "cancellation-lifecycle-production-incident-replay": 1
     }
   },
   "recentLabs": [
-    {
-      "runSlot": "2026-11-10-05",
-      "unitId": "UNIT-OFFSYNC-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-OFFSYNC-001-rural-clinic-offline-record-sync-conflict",
-      "domain": "offline-sync-consistency-architecture",
-      "primarySkill": "offline-sync-conflict-resolution",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "rural-clinic-offline-patient-visit-sync",
-      "scenarioType": "offline-device-reconnect-with-conflicting-clinical-visit-edits",
-      "primaryRootCause": "client-clock-last-write-wins-overwrites-concurrent-offline-changes",
-      "failureMode": "reconnected-tablet-silently-erases-newer-medication-allergy-note",
-      "solutionPattern": "server-issued-revision-cas-and-explicit-conflict-review-with-auditable-merge",
-      "labFormat": "offline-sync-architecture-decision-with-conflict-matrix"
-    },
-    {
-      "runSlot": "2026-11-10-06",
-      "unitId": "UNIT-SLICE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-SLICE-001-wildfire-sensor-packet-window-offset",
-      "domain": "dotnet-buffer-slicing",
-      "primarySkill": "arraysegment-offset-count",
-      "maturityLevel": "L1",
-      "difficulty": "D4",
-      "businessContext": "wildfire-perimeter-sensor-gateway",
-      "scenarioType": "frame-payload-is-decoded-from-subwindow-of-reused-receive-buffer",
-      "primaryRootCause": "arraysegment-offset-is-ignored-when-decoding-payload-window",
-      "failureMode": "sensor-reading-is-taken-from-frame-header-or-previous-buffer-region",
-      "solutionPattern": "respect-segment-offset-and-count-with-boundary-regression-tests",
-      "labFormat": "deterministic-binary-buffer-window-contract"
-    },
     {
       "runSlot": "2026-11-10-07",
       "unitId": "UNIT-CANCELSRC-001",
@@ -1995,6 +1901,36 @@
       "failureMode": "gross-weight-import-rejected-or-misread-on-vietnamese-or-german-host",
       "solutionPattern": "explicit-invariant-culture-and-numberstyles-at-wire-boundary",
       "labFormat": "deterministic-cross-culture-import-contract"
+    },
+    {
+      "runSlot": "2026-11-11-08",
+      "unitId": "UNIT-RANGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-RANGE-001-mountain-aerial-map-resume-content-range",
+      "domain": "http-partial-content-integrity",
+      "primarySkill": "http-range-resume-validation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "mountain-aerial-map-offline-field-sync",
+      "scenarioType": "partial-download-resume-with-server-range-disagreement",
+      "primaryRootCause": "resumed-download-appends-206-body-without-validating-content-range-start",
+      "failureMode": "locally-assembled-map-has-overlapping-bytes-despite-successful-status",
+      "solutionPattern": "strict-206-content-range-offset-and-total-contract-before-append",
+      "labFormat": "http-partial-content-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-11-11",
+      "unitId": "UNIT-CTSREUSE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CTSREUSE-001-greenhouse-irrigation-cancellation-budget-reuse",
+      "domain": "dotnet-cancellation-lifecycle",
+      "primarySkill": "cancellationtokensource-lifetime",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "greenhouse-irrigation-automation",
+      "scenarioType": "repeated-worker-cycle-with-expired-time-budget",
+      "primaryRootCause": "cancellationtokensource-reused-after-terminal-cancellation",
+      "failureMode": "subsequent-healthy-cycle-cancelled-before-actuation",
+      "solutionPattern": "per-cycle-linked-cancellation-budget-with-explicit-resource-ownership",
+      "labFormat": "cancellation-lifecycle-production-incident-replay"
     }
   ]
 }

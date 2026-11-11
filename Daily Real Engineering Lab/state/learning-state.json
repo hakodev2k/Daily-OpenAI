@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RANGE-001",
-    "runSlot": "2026-11-11-08",
-    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-RANGE-001-mountain-aerial-map-resume-content-range",
+    "unitId": "UNIT-CTSREUSE-001",
+    "runSlot": "2026-11-11-11",
+    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CTSREUSE-001-greenhouse-irrigation-cancellation-budget-reuse",
     "status": "READY",
-    "createdAt": "2026-11-11T08:10:37+07:00"
+    "createdAt": "2026-11-11T11:05:15+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 541,
-    "totalGenerated": 536,
+    "totalRunSlotsAttempted": 542,
+    "totalGenerated": 537,
     "totalFailed": 5
   },
   "learning": {
