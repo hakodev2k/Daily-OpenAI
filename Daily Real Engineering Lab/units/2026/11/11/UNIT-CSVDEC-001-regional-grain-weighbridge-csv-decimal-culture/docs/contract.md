@@ -1,0 +1,1 @@
+Partner CSV: một dòng `ticketId,kilograms`; decimal dùng dấu chấm, không dùng dấu phân nhóm; phải bảo toàn precision của `decimal`. Quan sát lỗi trên các locale khác nhau; kiểm thử lỗi parse và chính sách validation ở ingestion boundary.

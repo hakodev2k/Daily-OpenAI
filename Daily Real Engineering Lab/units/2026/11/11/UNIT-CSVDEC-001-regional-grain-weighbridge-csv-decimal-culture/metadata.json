@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CSVDEC-001",
+  "runSlot": "2026-11-11-07",
+  "title": "Grain Weighbridge CSV: Decimal Values Change Across Hosts",
+  "domain": "dotnet-globalization-boundaries",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-11T07:05:54+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "decimal-parsing",
+    "cultureinfo",
+    "data-contract-validation"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "basic-csharp"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-grain-weighbridge-invoice-import",
+    "scenarioType": "partner-csv-import-across-os-cultures",
+    "primaryRootCause": "ambient-current-culture-controls-decimal-parsing-of-invariant-partner-payload",
+    "failureMode": "gross-weight-import-rejected-or-misread-on-vietnamese-or-german-host",
+    "solutionPattern": "explicit-invariant-culture-and-numberstyles-at-wire-boundary",
+    "labFormat": "deterministic-cross-culture-import-contract"
+  }
+}

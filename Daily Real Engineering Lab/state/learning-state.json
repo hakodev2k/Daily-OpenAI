@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CUSTODY-001",
-    "runSlot": "2026-11-11-06",
-    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CUSTODY-001-mountain-rescue-evidence-chain-of-custody",
+    "unitId": "UNIT-CSVDEC-001",
+    "runSlot": "2026-11-11-07",
+    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CSVDEC-001-regional-grain-weighbridge-csv-decimal-culture",
     "status": "READY",
-    "createdAt": "2026-11-11T06:11:08+07:00"
+    "createdAt": "2026-11-11T07:05:54+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 539,
-    "totalGenerated": 534,
+    "totalRunSlotsAttempted": 540,
+    "totalGenerated": 535,
     "totalFailed": 5
   },
   "learning": {
