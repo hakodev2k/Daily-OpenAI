@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-WATERMARK-001",
-    "runSlot": "2026-11-11-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-WATERMARK-001-river-flood-sensor-late-data-watermark",
+    "unitId": "UNIT-ETAG-001",
+    "runSlot": "2026-11-11-22",
+    "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-ETAG-001-public-library-book-catalog-optimistic-concurrency",
     "status": "READY",
-    "createdAt": "2026-11-11T18:13:02+07:00"
+    "createdAt": "2026-11-11T22:13:15+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 545,
-    "totalGenerated": 540,
+    "totalRunSlotsAttempted": 546,
+    "totalGenerated": 541,
     "totalFailed": 5
   },
   "learning": {

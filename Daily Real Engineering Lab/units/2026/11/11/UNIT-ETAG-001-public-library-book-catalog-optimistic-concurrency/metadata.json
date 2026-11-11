@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ETAG-001",
+  "runSlot": "2026-11-11-22",
+  "title": "Lost update khi hai thủ thư sửa cùng bản ghi sách",
+  "domain": "http-concurrency-control",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-11T22:13:15+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "http-etag",
+    "optimistic-concurrency",
+    "conditional-requests"
+  ],
+  "prerequisites": [
+    "HTTP PUT",
+    "C# console"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-library-book-catalog",
+    "scenarioType": "two-editors-update-same-resource",
+    "primaryRootCause": "unconditional-full-resource-replacement-without-version-precondition",
+    "failureMode": "lost-update-between-independent-clients",
+    "solutionPattern": "strong-etag-if-match-precondition-and-412-reconciliation",
+    "labFormat": "deterministic-two-client-http-concurrency-replay"
+  }
+}
