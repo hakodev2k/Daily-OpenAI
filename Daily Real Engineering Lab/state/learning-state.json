@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-EVENTORDER-001",
-    "runSlot": "2026-11-12-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-EVENTORDER-001-regional-transit-refund-event-ordering",
+    "unitId": "UNIT-KEYRETIRE-001",
+    "runSlot": "2026-11-12-05",
+    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-KEYRETIRE-001-regional-archive-backup-key-retirement",
     "status": "READY",
-    "createdAt": "2026-11-12T04:05:39+07:00"
+    "createdAt": "2026-11-12T05:08:08+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 550,
-    "totalGenerated": 545,
+    "totalRunSlotsAttempted": 551,
+    "totalGenerated": 546,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-KEYRETIRE-001",
+  "runSlot": "2026-11-12-05",
+  "title": "Bản sao lưu kho lưu trữ không thể phục hồi sau khi xoay vòng khóa",
+  "domain": "cloud-key-lifecycle-architecture",
+  "maturityLevel": "L6",
+  "status": "READY",
+  "createdAt": "2026-11-12T05:08:08+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "key-rotation",
+    "backup-restore",
+    "retention-policy",
+    "recovery-drill"
+  ],
+  "prerequisites": [
+    "envelope-encryption",
+    "key-vault-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-civic-records-archive",
+    "scenarioType": "disaster-recovery-restore-after-key-rotation",
+    "primaryRootCause": "key-retired-before-last-dependent-backup-retention-expired",
+    "failureMode": "backup-integrity-check-passes-but-old-restore-unavailable",
+    "solutionPattern": "key-version-dependency-inventory-with-retention-aware-retirement-and-restore-drills",
+    "labFormat": "architecture-recovery-decision-with-deterministic-backup-replay"
+  }
+}

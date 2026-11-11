@@ -421,6 +421,21 @@
       "failureMode": "refunded-ticket-regresses-to-paid-after-delayed-delivery",
       "solutionPattern": "monotonic-aggregate-sequence-fence-with-idempotent-duplicate-handling",
       "labFormat": "event-consumer-design-decision-with-deterministic-replay"
+    },
+    {
+      "runSlot": "2026-11-12-05",
+      "unitId": "UNIT-KEYRETIRE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-KEYRETIRE-001-regional-archive-backup-key-retirement",
+      "domain": "cloud-key-lifecycle-architecture",
+      "primarySkill": "key-rotation",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "regional-civic-records-archive",
+      "scenarioType": "disaster-recovery-restore-after-key-rotation",
+      "primaryRootCause": "key-retired-before-last-dependent-backup-retention-expired",
+      "failureMode": "backup-integrity-check-passes-but-old-restore-unavailable",
+      "solutionPattern": "key-version-dependency-inventory-with-retention-aware-retirement-and-restore-drills",
+      "labFormat": "architecture-recovery-decision-with-deterministic-backup-replay"
     }
   ],
   "rolling24": [
@@ -1226,6 +1241,21 @@
       "failureMode": "historical-handover-snapshot-changes-after-live-triage-update",
       "solutionPattern": "deep-copy-collection-at-snapshot-boundary-and-expose-read-only-data",
       "labFormat": "legacy-immutable-snapshot-refactoring-with-aliasing-regression"
+    },
+    {
+      "runSlot": "2026-11-12-05",
+      "unitId": "UNIT-KEYRETIRE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-KEYRETIRE-001-regional-archive-backup-key-retirement",
+      "domain": "cloud-key-lifecycle-architecture",
+      "primarySkill": "key-rotation",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "regional-civic-records-archive",
+      "scenarioType": "disaster-recovery-restore-after-key-rotation",
+      "primaryRootCause": "key-retired-before-last-dependent-backup-retention-expired",
+      "failureMode": "backup-integrity-check-passes-but-old-restore-unavailable",
+      "solutionPattern": "key-version-dependency-inventory-with-retention-aware-retirement-and-restore-drills",
+      "labFormat": "architecture-recovery-decision-with-deterministic-backup-replay"
     }
   ]
 }
