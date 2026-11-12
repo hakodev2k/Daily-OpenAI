@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-HTTPBODY-001",
+  "runSlot": "2026-11-12-14",
+  "title": "Webhook hải quan mất payload sau lớp audit",
+  "domain": "aspnetcore-request-pipeline",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-12T14:07:33+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "aspnetcore-middleware",
+    "request-body-stream",
+    "http-integration-testing"
+  ],
+  "prerequisites": [
+    "ASP.NET Core minimal API",
+    ".NET SDK 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-customs-shipment-webhook",
+    "scenarioType": "middleware-audits-raw-body-before-endpoint-deserialization",
+    "primaryRootCause": "nonseekable-request-body-consumed-before-next-pipeline-reader",
+    "failureMode": "webhook-endpoint-receives-empty-json-after-audit-middleware",
+    "solutionPattern": "bounded-request-body-buffering-with-position-reset-and-leave-open",
+    "labFormat": "aspnet-core-middleware-refactoring-with-live-http-replay"
+  }
+}

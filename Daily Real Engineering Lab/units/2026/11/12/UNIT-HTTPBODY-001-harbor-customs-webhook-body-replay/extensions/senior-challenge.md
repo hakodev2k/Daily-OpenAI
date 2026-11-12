@@ -1,0 +1,1 @@
+Thêm contract tests cho payload vượt 64 KiB, malformed JSON, concurrent requests, aborted client, audit redaction và logging không lộ PII. Thiết kế policy 413 rõ ràng thay vì để lỗi stream biến thành 500.

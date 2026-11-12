@@ -1316,6 +1316,26 @@
       "failureMode": "existing-parcel-lookup-fails-after-route-correction",
       "solutionPattern": "stable-parcel-id-as-dictionary-key-with-mutable-route-in-value",
       "labFormat": "deterministic-hash-identity-regression"
+    },
+    {
+      "runSlot": "2026-11-12-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-HTTPBODY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-HTTPBODY-001-harbor-customs-webhook-body-replay",
+      "domain": "aspnetcore-request-pipeline",
+      "format": "aspnet-core-middleware-refactoring-with-live-http-replay",
+      "primarySkill": "aspnetcore-request-body-lifecycle",
+      "scenarioCategory": "middleware-audits-raw-body-before-endpoint-deserialization",
+      "rootCauseCategory": "nonseekable-request-body-consumed-before-next-pipeline-reader",
+      "failureMode": "webhook-endpoint-receives-empty-json-after-audit-middleware",
+      "solutionPattern": "bounded-request-body-buffering-with-position-reset-and-leave-open",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "createdAt": "2026-11-12T14:07:33+07:00",
+      "validationMode": "static-review",
+      "businessContext": "harbor-customs-shipment-webhook",
+      "primaryRootCause": "nonseekable-request-body-consumed-before-next-pipeline-reader",
+      "labFormat": "aspnet-core-middleware-refactoring-with-live-http-replay"
     }
   ]
 }

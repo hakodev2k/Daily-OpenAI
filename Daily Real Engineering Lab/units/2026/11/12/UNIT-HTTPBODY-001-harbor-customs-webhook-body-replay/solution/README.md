@@ -1,0 +1,3 @@
+# Spoiler — Reference solution
+
+ASP.NET Core request body thường là forward-only stream. Audit middleware đọc đến cuối nên endpoint downstream không còn bytes để deserialize. `EnableBuffering` trước lần đọc đầu tiên, giới hạn buffer và đặt `Body.Position = 0` trước `next`. Giữ `leaveOpen: true` để không đóng stream của request. Không dùng `Request.Body = new MemoryStream(...)` tùy tiện, không tắt audit, không giả lập payload trong endpoint. Kiểm soát payload lớn, `IOException` do vượt buffer limit, dữ liệu nhạy cảm trong log và cancellation; giới hạn 64 KiB là policy lab, không mặc định production. Chạy `pwsh ./run.ps1 -Project solution`.
