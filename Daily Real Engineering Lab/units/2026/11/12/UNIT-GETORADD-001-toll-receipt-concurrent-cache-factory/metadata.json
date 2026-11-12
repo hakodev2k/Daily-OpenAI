@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-GETORADD-001",
+  "runSlot": "2026-11-12-13",
+  "title": "Biên nhận thu phí bị phát hành hai lần khi tải đồng thời",
+  "domain": "dotnet-concurrent-collections",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-12T13:06:36+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "ConcurrentDictionary.GetOrAdd",
+    "side-effect-safety",
+    "concurrency-verification"
+  ],
+  "prerequisites": [
+    "Task",
+    "ConcurrentDictionary",
+    "Interlocked"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "highway-toll-receipt-issuance",
+    "scenarioType": "two-requests-same-idempotency-key-under-overlap",
+    "primaryRootCause": "concurrentdictionary-value-factory-may-execute-multiple-times-before-single-value-is-stored",
+    "failureMode": "duplicate-external-serial-side-effects-despite-identical-returned-cache-value",
+    "solutionPattern": "lazy-single-execution-per-key-with-side-effect-ownership",
+    "labFormat": "multi-cause-production-incident-with-synchronized-factory-replay"
+  }
+}

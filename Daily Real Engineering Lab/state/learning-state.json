@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TZRULE-001",
-    "runSlot": "2026-11-12-12",
-    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-TZRULE-001-coastal-ferry-seasonal-departure-timezone",
+    "unitId": "UNIT-GETORADD-001",
+    "runSlot": "2026-11-12-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-GETORADD-001-toll-receipt-concurrent-cache-factory",
     "status": "READY",
-    "createdAt": "2026-11-12T12:08:23+07:00"
+    "createdAt": "2026-11-12T13:06:36+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 553,
-    "totalGenerated": 548,
+    "totalRunSlotsAttempted": 554,
+    "totalGenerated": 549,
     "totalFailed": 5
   },
   "learning": {

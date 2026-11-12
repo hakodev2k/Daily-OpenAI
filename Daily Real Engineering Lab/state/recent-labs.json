@@ -466,6 +466,21 @@
       "failureMode": "summer-departure-converted-to-wrong-utc-instant",
       "solutionPattern": "convert-wall-clock-with-explicit-timezone-rules-and-invalid-ambiguous-time-policy",
       "labFormat": "timezone-conversion-investigation-with-deterministic-seasonal-clock-replay"
+    },
+    {
+      "runSlot": "2026-11-12-13",
+      "unitId": "UNIT-GETORADD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-GETORADD-001-toll-receipt-concurrent-cache-factory",
+      "domain": "dotnet-concurrent-collections",
+      "primarySkill": "concurrentdictionary-factory-execution",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "businessContext": "highway-toll-receipt-issuance",
+      "scenarioType": "two-requests-same-idempotency-key-under-overlap",
+      "primaryRootCause": "concurrentdictionary-value-factory-may-execute-multiple-times-before-single-value-is-stored",
+      "failureMode": "duplicate-external-serial-side-effects-despite-identical-returned-cache-value",
+      "solutionPattern": "lazy-single-execution-per-key-with-side-effect-ownership",
+      "labFormat": "multi-cause-production-incident-with-synchronized-factory-replay"
     }
   ],
   "rolling24": [
