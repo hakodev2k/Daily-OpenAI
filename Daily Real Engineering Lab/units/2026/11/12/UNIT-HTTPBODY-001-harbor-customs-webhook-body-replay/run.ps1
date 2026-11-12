@@ -1,8 +1,8 @@
-param([string]$Project = "starter")
+param([ValidateSet("starter","solution")][string]$Project = "starter")
 $ErrorActionPreference = "Stop"
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $port = Get-Random -Minimum 21000 -Maximum 29000
-$p = Start-Process dotnet -ArgumentList @("run","--no-launch-profile","--project",(Join-Path $here "$Project/Webhook.csproj"),"--urls","http://127.0.0.1:$port") -PassThru -NoNewWindow
+$p = Start-Process dotnet -WorkingDirectory $here -ArgumentList @("run","--no-launch-profile","--project","$Project/Webhook.csproj","--urls","http://127.0.0.1:$port") -PassThru -NoNewWindow
 try {
   $ready = $false
   for ($i=0; $i -lt 50; $i++) {
