@@ -1,0 +1,2 @@
+# Concepts after lab
+HTTP `Set-Cookie` là response header có ngữ nghĩa đặc biệt: không được coalesce nhiều cookie thành một comma-separated field. `Expires` cũng chứa dấu phẩy, vì vậy split dấu phẩy không khôi phục an toàn. Phân biệt representation của collection trong ứng dụng với wire-level header cardinality; test proxy/gateway bằng raw header fields. Khi chuyển sang ASP.NET Core, kiểm tra hành vi `Response.Cookies.Append` và `Headers.Append` thay vì thao tác nối chuỗi.

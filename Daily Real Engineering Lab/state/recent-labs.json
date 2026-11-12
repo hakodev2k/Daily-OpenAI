@@ -496,6 +496,21 @@
       "failureMode": "database-connection-rejection-during-horizontal-scaling",
       "solutionPattern": "global-connection-budget-with-replica-aware-pool-caps-and-admission-controls",
       "labFormat": "capacity-architecture-design-decision-with-deterministic-scenario-replay"
+    },
+    {
+      "runSlot": "2026-11-13-05",
+      "unitId": "UNIT-COOKIEHDR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-COOKIEHDR-001-community-theater-session-cookie-headers",
+      "domain": "http-response-contract",
+      "primarySkill": "http-set-cookie",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "community-theater-ticket-booking",
+      "scenarioType": "gateway-response-cookie-migration",
+      "primaryRootCause": "set-cookie-header-fields-coalesced-into-one-comma-delimited-value",
+      "failureMode": "browser-receives-ambiguous-cookie-boundaries-and-loses-session-or-preference",
+      "solutionPattern": "preserve-separate-set-cookie-field-values-through-response-adapter",
+      "labFormat": "http-header-contract-investigation-with-local-deterministic-harness"
     }
   ],
   "rolling24": [

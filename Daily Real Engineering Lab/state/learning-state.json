@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-WHENANY-001",
-    "runSlot": "2026-11-13-00",
-    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-WHENANY-001-remote-sensor-failover-first-success",
+    "unitId": "UNIT-COOKIEHDR-001",
+    "runSlot": "2026-11-13-05",
+    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-COOKIEHDR-001-community-theater-session-cookie-headers",
     "status": "READY",
-    "createdAt": "2026-11-13T00:11:07+07:00"
+    "createdAt": "2026-11-13T05:13:50+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 557,
-    "totalGenerated": 552,
+    "totalRunSlotsAttempted": 558,
+    "totalGenerated": 553,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-COOKIEHDR-001",
+  "runSlot": "2026-11-13-05",
+  "title": "Cookie của cổng đặt vé bị mất sau gateway",
+  "domain": "http-response-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-13T05:13:50+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "http-set-cookie",
+    "header-cardinality",
+    "gateway-contract-testing"
+  ],
+  "prerequisites": [
+    "http-headers",
+    "dotnet-console"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-theater-ticket-booking",
+    "scenarioType": "gateway-response-cookie-migration",
+    "primaryRootCause": "set-cookie-header-fields-coalesced-into-one-comma-delimited-value",
+    "failureMode": "browser-receives-ambiguous-cookie-boundaries-and-loses-session-or-preference",
+    "solutionPattern": "preserve-separate-set-cookie-field-values-through-response-adapter",
+    "labFormat": "http-header-contract-investigation-with-local-deterministic-harness"
+  }
+}
