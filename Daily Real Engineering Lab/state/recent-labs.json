@@ -1371,6 +1371,26 @@
       "failureMode": "database-connection-rejection-during-horizontal-scaling",
       "solutionPattern": "global-connection-budget-with-replica-aware-pool-caps-and-admission-controls",
       "labFormat": "capacity-architecture-design-decision-with-deterministic-scenario-replay"
+    },
+    {
+      "runSlot": "2026-11-13-00",
+      "status": "SUCCESS",
+      "unitId": "UNIT-WHENANY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-WHENANY-001-remote-sensor-failover-first-success",
+      "domain": "dotnet-async-failover",
+      "format": "asynchronous-failover-investigation-with-two-case-replay",
+      "primarySkill": "task-whenany-success-semantics",
+      "scenarioCategory": "redundant-source-fast-failure-slow-success",
+      "rootCauseCategory": "whenany-first-completion-treated-as-first-success",
+      "failureMode": "false-outage-despite-healthy-secondary",
+      "solutionPattern": "consume-completions-until-first-success-or-aggregate-failures",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-13T00:11:07+07:00",
+      "validationMode": "static-review",
+      "businessContext": "urban-air-quality-sensor-gateway",
+      "primaryRootCause": "whenany-first-completion-treated-as-first-success",
+      "labFormat": "asynchronous-failover-investigation-with-two-case-replay"
     }
   ]
 }

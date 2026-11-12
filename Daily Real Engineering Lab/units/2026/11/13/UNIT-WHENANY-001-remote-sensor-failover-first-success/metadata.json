@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-WHENANY-001",
+  "runSlot": "2026-11-13-00",
+  "title": "Điều tra failover gateway cảm biến",
+  "domain": "dotnet-async-failover",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-13T00:11:07+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "task-whenany",
+    "async-failover",
+    "exception-observation"
+  ],
+  "prerequisites": [
+    "async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "urban-air-quality-sensor-gateway",
+    "scenarioType": "redundant-source-fast-failure-slow-success",
+    "primaryRootCause": "whenany-first-completion-treated-as-first-success",
+    "failureMode": "false-outage-despite-healthy-secondary",
+    "solutionPattern": "consume-completions-until-first-success-or-aggregate-failures",
+    "labFormat": "asynchronous-failover-investigation-with-two-case-replay"
+  }
+}

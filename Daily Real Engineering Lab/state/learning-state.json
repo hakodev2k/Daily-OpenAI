@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PGPOOL-001",
-    "runSlot": "2026-11-12-16",
-    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-PGPOOL-001-vaccination-booking-postgres-connection-budget",
+    "unitId": "UNIT-WHENANY-001",
+    "runSlot": "2026-11-13-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-WHENANY-001-remote-sensor-failover-first-success",
     "status": "READY",
-    "createdAt": "2026-11-12T16:09:22+07:00"
+    "createdAt": "2026-11-13T00:11:07+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 556,
-    "totalGenerated": 551,
+    "totalRunSlotsAttempted": 557,
+    "totalGenerated": 552,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 66,
+    "elapsedDays": 67,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
