@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-MUTDICT-001",
-    "runSlot": "2026-11-12-07",
-    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-MUTDICT-001-parcel-routing-mutable-dictionary-key",
+    "unitId": "UNIT-TZRULE-001",
+    "runSlot": "2026-11-12-12",
+    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-TZRULE-001-coastal-ferry-seasonal-departure-timezone",
     "status": "READY",
-    "createdAt": "2026-11-12T07:09:01+07:00"
+    "createdAt": "2026-11-12T12:08:23+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 552,
-    "totalGenerated": 547,
+    "totalRunSlotsAttempted": 553,
+    "totalGenerated": 548,
     "totalFailed": 5
   },
   "learning": {
