@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-MUTDICT-001",
+  "runSlot": "2026-11-12-07",
+  "title": "Parcel routing mutable Dictionary key",
+  "domain": "csharp-collections-identity",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-12T07:09:01+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "dictionary-hashing",
+    "object-identity",
+    "mutable-domain-state"
+  ],
+  "prerequisites": [
+    "C# records",
+    "Dictionary<TKey,TValue>"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "intercity-parcel-dispatch-routing",
+    "scenarioType": "route-reassignment-after-manifest-indexing",
+    "primaryRootCause": "mutable-value-equality-key-changes-hash-after-dictionary-insertion",
+    "failureMode": "existing-parcel-lookup-fails-after-route-correction",
+    "solutionPattern": "stable-parcel-id-as-dictionary-key-with-mutable-route-in-value",
+    "labFormat": "deterministic-hash-identity-regression"
+  }
+}

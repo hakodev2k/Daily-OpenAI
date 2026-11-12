@@ -436,6 +436,21 @@
       "failureMode": "backup-integrity-check-passes-but-old-restore-unavailable",
       "solutionPattern": "key-version-dependency-inventory-with-retention-aware-retirement-and-restore-drills",
       "labFormat": "architecture-recovery-decision-with-deterministic-backup-replay"
+    },
+    {
+      "runSlot": "2026-11-12-07",
+      "unitId": "UNIT-MUTDICT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-MUTDICT-001-parcel-routing-mutable-dictionary-key",
+      "domain": "csharp-collections-identity",
+      "primarySkill": "dictionary-key-stability",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "intercity-parcel-dispatch-routing",
+      "scenarioType": "route-reassignment-after-manifest-indexing",
+      "primaryRootCause": "mutable-value-equality-key-changes-hash-after-dictionary-insertion",
+      "failureMode": "existing-parcel-lookup-fails-after-route-correction",
+      "solutionPattern": "stable-parcel-id-as-dictionary-key-with-mutable-route-in-value",
+      "labFormat": "deterministic-hash-identity-regression"
     }
   ],
   "rolling24": [
@@ -1256,6 +1271,21 @@
       "failureMode": "backup-integrity-check-passes-but-old-restore-unavailable",
       "solutionPattern": "key-version-dependency-inventory-with-retention-aware-retirement-and-restore-drills",
       "labFormat": "architecture-recovery-decision-with-deterministic-backup-replay"
+    },
+    {
+      "runSlot": "2026-11-12-07",
+      "unitId": "UNIT-MUTDICT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-MUTDICT-001-parcel-routing-mutable-dictionary-key",
+      "domain": "csharp-collections-identity",
+      "primarySkill": "dictionary-key-stability",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "intercity-parcel-dispatch-routing",
+      "scenarioType": "route-reassignment-after-manifest-indexing",
+      "primaryRootCause": "mutable-value-equality-key-changes-hash-after-dictionary-insertion",
+      "failureMode": "existing-parcel-lookup-fails-after-route-correction",
+      "solutionPattern": "stable-parcel-id-as-dictionary-key-with-mutable-route-in-value",
+      "labFormat": "deterministic-hash-identity-regression"
     }
   ]
 }
