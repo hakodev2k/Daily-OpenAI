@@ -1,0 +1,8 @@
+{
+  "maxReplicas": 18,
+  "maxPoolPerPod": 30,
+  "dbMaxConnections": 240,
+  "reservedConnections": 40,
+  "requiredHeadroom": 20,
+  "admissionLimitPerPod": 100
+}

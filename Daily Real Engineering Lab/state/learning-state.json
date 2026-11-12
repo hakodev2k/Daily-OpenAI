@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HTTPBODY-001",
-    "runSlot": "2026-11-12-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-HTTPBODY-001-harbor-customs-webhook-body-replay",
+    "unitId": "UNIT-PGPOOL-001",
+    "runSlot": "2026-11-12-16",
+    "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-PGPOOL-001-vaccination-booking-postgres-connection-budget",
     "status": "READY",
-    "createdAt": "2026-11-12T14:07:33+07:00"
+    "createdAt": "2026-11-12T16:09:22+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 555,
-    "totalGenerated": 550,
+    "totalRunSlotsAttempted": 556,
+    "totalGenerated": 551,
     "totalFailed": 5
   },
   "learning": {

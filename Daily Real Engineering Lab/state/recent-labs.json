@@ -481,69 +481,24 @@
       "failureMode": "duplicate-external-serial-side-effects-despite-identical-returned-cache-value",
       "solutionPattern": "lazy-single-execution-per-key-with-side-effect-ownership",
       "labFormat": "multi-cause-production-incident-with-synchronized-factory-replay"
+    },
+    {
+      "runSlot": "2026-11-12-16",
+      "unitId": "UNIT-PGPOOL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-PGPOOL-001-vaccination-booking-postgres-connection-budget",
+      "domain": "database-capacity-architecture",
+      "primarySkill": "postgres-connection-budget",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "district-vaccination-appointment-booking",
+      "scenarioType": "autoscale-during-public-registration-burst",
+      "primaryRootCause": "independent-per-pod-connection-pools-exceed-shared-postgres-connection-budget",
+      "failureMode": "database-connection-rejection-during-horizontal-scaling",
+      "solutionPattern": "global-connection-budget-with-replica-aware-pool-caps-and-admission-controls",
+      "labFormat": "capacity-architecture-design-decision-with-deterministic-scenario-replay"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-10-13",
-      "unitId": "UNIT-URIPATH-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-URIPATH-001-rail-freight-gateway-base-path-routing",
-      "domain": "dotnet-uri-resolution",
-      "primarySkill": "system-uri-relative-resolution",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "rail-freight-container-status-partner-gateway",
-      "scenarioType": "partner-api-prefix-migration-with-healthy-host-and-404-business-routes",
-      "primaryRootCause": "root-relative-uri-composition-discards-configured-gateway-base-path",
-      "failureMode": "outbound-requests-route-to-host-root-instead-of-partner-namespace",
-      "solutionPattern": "relative-uri-composition-with-explicit-base-path-and-route-contract",
-      "labFormat": "uri-routing-investigation-with-deterministic-contract-harness"
-    },
-    {
-      "runSlot": "2026-11-10-14",
-      "unitId": "UNIT-HMACBYTES-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-HMACBYTES-001-orchard-cooperative-webhook-signature-byte-fidelity",
-      "domain": "http-webhook-authentication",
-      "primarySkill": "hmac-request-authentication",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "orchard-cooperative-harvest-settlement-webhooks",
-      "scenarioType": "signed-json-webhook-with-semantically-equivalent-wire-encodings",
-      "primaryRootCause": "hmac-computed-over-json-reserialization-instead-of-original-request-bytes",
-      "failureMode": "valid-partner-webhook-rejected-after-json-whitespace-or-property-order-change",
-      "solutionPattern": "authenticate-exact-raw-payload-bytes-before-json-parsing-with-fixed-time-signature-check",
-      "labFormat": "webhook-signature-production-incident-with-wire-byte-forensics"
-    },
-    {
-      "runSlot": "2026-11-10-16",
-      "unitId": "UNIT-TRACEBUDGET-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-TRACEBUDGET-001-river-flood-warning-rare-error-trace-sampling",
-      "domain": "distributed-observability",
-      "primarySkill": "distributed-tracing-sampling",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "river-basin-flood-warning-notification-service",
-      "scenarioType": "rare-failed-alerts-invisible-in-head-sampled-traces",
-      "primaryRootCause": "head-sampling-before-request-outcome-known-discards-rare-failed-traces",
-      "failureMode": "critical-error-investigation-lacks-correlated-trace-despite-high-throughput-success-traces",
-      "solutionPattern": "tail-aware-error-retention-with-budgeted-probabilistic-success-sampling-and-privacy-guardrails",
-      "labFormat": "observability-sampling-policy-design-with-evidence-budget-tabletop"
-    },
-    {
-      "runSlot": "2026-11-10-17",
-      "unitId": "UNIT-CALPROV-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-CALPROV-001-reservoir-water-quality-calibration-provenance",
-      "domain": "data-lineage-regulatory-architecture",
-      "primarySkill": "temporal-data-provenance",
-      "maturityLevel": "L6",
-      "difficulty": "D4",
-      "businessContext": "reservoir-water-quality-compliance-reporting",
-      "scenarioType": "sensor-calibration-revision-after-regulatory-report-publication",
-      "primaryRootCause": "historical-observations-recomputed-with-current-calibration-without-version-provenance",
-      "failureMode": "previously-signed-water-quality-reports-change-without-new-measurements",
-      "solutionPattern": "immutable-raw-measurements-and-version-pinned-calibration-with-reproducible-report-snapshots",
-      "labFormat": "calibration-provenance-architecture-decision-with-replay-matrix"
-    },
     {
       "runSlot": "2026-11-10-18",
       "unitId": "UNIT-ROUNDLINE-001",
@@ -843,14 +798,75 @@
       "failureMode": "historical-handover-snapshot-changes-after-live-triage-update",
       "solutionPattern": "deep-copy-collection-at-snapshot-boundary-and-expose-read-only-data",
       "labFormat": "legacy-immutable-snapshot-refactoring-with-aliasing-regression"
+    },
+    {
+      "runSlot": "2026-11-12-05",
+      "unitId": "UNIT-KEYRETIRE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-KEYRETIRE-001-regional-archive-backup-key-retirement",
+      "domain": "cloud-key-lifecycle-architecture",
+      "primarySkill": "key-rotation",
+      "maturityLevel": "L6",
+      "difficulty": "D4",
+      "businessContext": "regional-civic-records-archive",
+      "scenarioType": "disaster-recovery-restore-after-key-rotation",
+      "primaryRootCause": "key-retired-before-last-dependent-backup-retention-expired",
+      "failureMode": "backup-integrity-check-passes-but-old-restore-unavailable",
+      "solutionPattern": "key-version-dependency-inventory-with-retention-aware-retirement-and-restore-drills",
+      "labFormat": "architecture-recovery-decision-with-deterministic-backup-replay"
+    },
+    {
+      "runSlot": "2026-11-12-07",
+      "unitId": "UNIT-MUTDICT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-MUTDICT-001-parcel-routing-mutable-dictionary-key",
+      "domain": "csharp-collections-identity",
+      "primarySkill": "dictionary-key-stability",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "intercity-parcel-dispatch-routing",
+      "scenarioType": "route-reassignment-after-manifest-indexing",
+      "primaryRootCause": "mutable-value-equality-key-changes-hash-after-dictionary-insertion",
+      "failureMode": "existing-parcel-lookup-fails-after-route-correction",
+      "solutionPattern": "stable-parcel-id-as-dictionary-key-with-mutable-route-in-value",
+      "labFormat": "deterministic-hash-identity-regression"
+    },
+    {
+      "runSlot": "2026-11-12-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-HTTPBODY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-HTTPBODY-001-harbor-customs-webhook-body-replay",
+      "domain": "aspnetcore-request-pipeline",
+      "format": "aspnet-core-middleware-refactoring-with-live-http-replay",
+      "primarySkill": "aspnetcore-request-body-lifecycle",
+      "scenarioCategory": "middleware-audits-raw-body-before-endpoint-deserialization",
+      "rootCauseCategory": "nonseekable-request-body-consumed-before-next-pipeline-reader",
+      "failureMode": "webhook-endpoint-receives-empty-json-after-audit-middleware",
+      "solutionPattern": "bounded-request-body-buffering-with-position-reset-and-leave-open",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "createdAt": "2026-11-12T14:07:33+07:00",
+      "validationMode": "static-review",
+      "businessContext": "harbor-customs-shipment-webhook",
+      "primaryRootCause": "nonseekable-request-body-consumed-before-next-pipeline-reader",
+      "labFormat": "aspnet-core-middleware-refactoring-with-live-http-replay"
+    },
+    {
+      "runSlot": "2026-11-12-16",
+      "unitId": "UNIT-PGPOOL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-PGPOOL-001-vaccination-booking-postgres-connection-budget",
+      "domain": "database-capacity-architecture",
+      "primarySkill": "postgres-connection-budget",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "district-vaccination-appointment-booking",
+      "scenarioType": "autoscale-during-public-registration-burst",
+      "primaryRootCause": "independent-per-pod-connection-pools-exceed-shared-postgres-connection-budget",
+      "failureMode": "database-connection-rejection-during-horizontal-scaling",
+      "solutionPattern": "global-connection-budget-with-replica-aware-pool-caps-and-admission-controls",
+      "labFormat": "capacity-architecture-design-decision-with-deterministic-scenario-replay"
     }
   ],
   "rollingProfile": {
     "domains": {
-      "dotnet-uri-resolution": 1,
-      "http-webhook-authentication": 1,
-      "distributed-observability": 1,
-      "data-lineage-regulatory-architecture": 1,
       "dotnet-decimal-accounting": 1,
       "dotnet-async-lifecycle": 1,
       "dotnet-file-io-durability": 1,
@@ -870,15 +886,19 @@
       "stream-processing-event-time": 1,
       "http-concurrency-control": 1,
       "dotnet-linq-evaluation": 1,
-      "csharp-object-identity": 1
+      "csharp-object-identity": 1,
+      "cloud-key-lifecycle-architecture": 1,
+      "csharp-collections-identity": 1,
+      "aspnetcore-request-pipeline": 1,
+      "database-capacity-architecture": 1
     },
     "maturity": {
-      "L2": 5,
-      "L3": 4,
+      "L1": 5,
+      "L2": 4,
+      "L3": 3,
+      "L4": 4,
       "L5": 4,
-      "L6": 4,
-      "L1": 4,
-      "L4": 3
+      "L6": 4
     }
   },
   "recentLabs": [
@@ -1336,6 +1356,21 @@
       "businessContext": "harbor-customs-shipment-webhook",
       "primaryRootCause": "nonseekable-request-body-consumed-before-next-pipeline-reader",
       "labFormat": "aspnet-core-middleware-refactoring-with-live-http-replay"
+    },
+    {
+      "runSlot": "2026-11-12-16",
+      "unitId": "UNIT-PGPOOL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-PGPOOL-001-vaccination-booking-postgres-connection-budget",
+      "domain": "database-capacity-architecture",
+      "primarySkill": "postgres-connection-budget",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "businessContext": "district-vaccination-appointment-booking",
+      "scenarioType": "autoscale-during-public-registration-burst",
+      "primaryRootCause": "independent-per-pod-connection-pools-exceed-shared-postgres-connection-budget",
+      "failureMode": "database-connection-rejection-during-horizontal-scaling",
+      "solutionPattern": "global-connection-budget-with-replica-aware-pool-caps-and-admission-controls",
+      "labFormat": "capacity-architecture-design-decision-with-deterministic-scenario-replay"
     }
   ]
 }

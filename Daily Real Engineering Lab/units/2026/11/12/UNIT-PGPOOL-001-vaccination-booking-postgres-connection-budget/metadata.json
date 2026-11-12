@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-PGPOOL-001",
+  "runSlot": "2026-11-12-16",
+  "title": "Khi autoscaling làm vượt ngân sách PostgreSQL connections",
+  "domain": "database-capacity-architecture",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-12T16:09:22+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "postgres-connection-budget",
+    "hpa-capacity-planning",
+    "bounded-admission"
+  ],
+  "prerequisites": [
+    "PostgreSQL max_connections",
+    "connection pooling",
+    "Kubernetes HPA"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "district-vaccination-appointment-booking",
+    "scenarioType": "autoscale-during-public-registration-burst",
+    "primaryRootCause": "independent-per-pod-connection-pools-exceed-shared-postgres-connection-budget",
+    "failureMode": "database-connection-rejection-during-horizontal-scaling",
+    "solutionPattern": "global-connection-budget-with-replica-aware-pool-caps-and-admission-controls",
+    "labFormat": "capacity-architecture-design-decision-with-deterministic-scenario-replay"
+  }
+}
