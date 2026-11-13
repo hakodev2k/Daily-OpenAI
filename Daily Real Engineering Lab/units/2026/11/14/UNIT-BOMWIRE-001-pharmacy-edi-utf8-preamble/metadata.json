@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-BOMWIRE-001",
+  "runSlot": "2026-11-14-01",
+  "title": "EDI dược phẩm: file UTF-8 nhìn đúng nhưng gateway từ chối",
+  "domain": "dotnet-text-encoding-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-14T01:04:30+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "utf8-encoding",
+    "wire-protocol",
+    "binary-evidence",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "dotnet-8-sdk"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "pharmacy-wholesale-edi-batch",
+    "scenarioType": "partner-import-rejects-first-record-after-export-upgrade",
+    "primaryRootCause": "utf8-byte-order-mark-emitted-before-fixed-ascii-record-prefix",
+    "failureMode": "edi-gateway-rejects-valid-looking-first-header",
+    "solutionPattern": "explicit-bomless-utf8-wire-encoding-and-byte-contract-regression",
+    "labFormat": "binary-wire-contract-investigation-with-local-replay"
+  }
+}

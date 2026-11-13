@@ -1523,6 +1523,24 @@
       "businessContext": "university-exam-submission",
       "primaryRootCause": "central-api-upload-path-exceeds-request-capacity-and-failure-budget",
       "labFormat": "capacity-and-threat-model-design-decision-with-quantitative-replay"
+    },
+    {
+      "runSlot": "2026-11-14-01",
+      "status": "SUCCESS",
+      "unitId": "UNIT-BOMWIRE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-BOMWIRE-001-pharmacy-edi-utf8-preamble",
+      "domain": "dotnet-text-encoding-contract",
+      "format": "binary-wire-contract-investigation-with-local-replay",
+      "primarySkill": "utf8-bom-wire-contract",
+      "scenarioCategory": "partner-import-rejects-first-record-after-export-upgrade",
+      "rootCauseCategory": "utf8-byte-order-mark-emitted-before-fixed-ascii-record-prefix",
+      "failureMode": "edi-gateway-rejects-valid-looking-first-header",
+      "solutionPattern": "explicit-bomless-utf8-wire-encoding-and-byte-contract-regression",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-14T01:04:30+07:00",
+      "validationMode": "static-review",
+      "businessContext": "pharmacy-wholesale-edi-batch"
     }
   ]
 }
