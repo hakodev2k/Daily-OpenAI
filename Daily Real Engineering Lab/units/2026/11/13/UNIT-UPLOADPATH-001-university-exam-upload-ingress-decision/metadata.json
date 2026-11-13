@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-UPLOADPATH-001",
+  "runSlot": "2026-11-13-21",
+  "title": "Thiết kế đường upload bài thi khi 12.000 sinh viên nộp cùng lúc",
+  "domain": "azure-storage-api-architecture",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-13T21:07:43+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "blob-upload-architecture",
+    "capacity-planning",
+    "upload-finalization",
+    "security-boundaries"
+  ],
+  "prerequisites": [
+    "HTTP request lifecycle",
+    "Azure Blob Storage basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-exam-submission",
+    "scenarioType": "burst-large-file-ingress-architecture-decision",
+    "primaryRootCause": "central-api-upload-path-exceeds-request-capacity-and-failure-budget",
+    "failureMode": "upload-timeouts-and-memory-pressure-during-exam-deadline",
+    "solutionPattern": "direct-blob-staged-upload-with-server-side-finalization-and-orphan-cleanup",
+    "labFormat": "capacity-and-threat-model-design-decision-with-quantitative-replay"
+  }
+}
