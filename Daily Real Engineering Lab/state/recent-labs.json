@@ -1503,6 +1503,26 @@
       "failureMode": "premature-retry-amplifies-rate-limit",
       "solutionPattern": "parse-delta-or-http-date-with-bounded-nonnegative-delay",
       "labFormat": "http-contract-refactoring-with-fixed-clock-replay"
+    },
+    {
+      "runSlot": "2026-11-13-21",
+      "status": "SUCCESS",
+      "unitId": "UNIT-UPLOADPATH-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-UPLOADPATH-001-university-exam-upload-ingress-decision",
+      "domain": "azure-storage-api-architecture",
+      "format": "capacity-and-threat-model-design-decision-with-quantitative-replay",
+      "primarySkill": "blob-upload-architecture",
+      "scenarioCategory": "burst-large-file-ingress-architecture-decision",
+      "rootCauseCategory": "central-api-upload-path-exceeds-request-capacity-and-failure-budget",
+      "failureMode": "upload-timeouts-and-memory-pressure-during-exam-deadline",
+      "solutionPattern": "direct-blob-staged-upload-with-server-side-finalization-and-orphan-cleanup",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-13T21:07:43+07:00",
+      "validationMode": "static-review",
+      "businessContext": "university-exam-submission",
+      "primaryRootCause": "central-api-upload-path-exceeds-request-capacity-and-failure-budget",
+      "labFormat": "capacity-and-threat-model-design-decision-with-quantitative-replay"
     }
   ]
 }
