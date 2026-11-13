@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-RETRYAFTER-001",
+  "runSlot": "2026-11-13-18",
+  "title": "Cổng bán vé bảo tàng và hợp đồng Retry-After",
+  "domain": "http-retry-contract",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-13T18:04:59+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "http-retry-after",
+    "http-date",
+    "bounded-retry-policy"
+  ],
+  "prerequisites": [
+    "http-status-codes",
+    "datetimeoffset"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "museum-online-ticketing",
+    "scenarioType": "partner-gateway-retry-header-format-migration",
+    "primaryRootCause": "retry-after-http-date-form-not-parsed",
+    "failureMode": "premature-retry-amplifies-rate-limit",
+    "solutionPattern": "parse-delta-or-http-date-with-bounded-nonnegative-delay",
+    "labFormat": "http-contract-refactoring-with-fixed-clock-replay"
+  }
+}

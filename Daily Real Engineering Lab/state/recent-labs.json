@@ -546,24 +546,24 @@
       "failureMode": "objectdisposedexception-after-parse",
       "solutionPattern": "clone-json-subtree-before-document-disposal",
       "labFormat": "json-resource-lifetime-investigation"
+    },
+    {
+      "runSlot": "2026-11-13-18",
+      "unitId": "UNIT-RETRYAFTER-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-RETRYAFTER-001-museum-ticket-retry-after-contract",
+      "domain": "http-retry-contract",
+      "primarySkill": "http-retry-after",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "museum-online-ticketing",
+      "scenarioType": "partner-gateway-retry-header-format-migration",
+      "primaryRootCause": "retry-after-http-date-form-not-parsed",
+      "failureMode": "premature-retry-amplifies-rate-limit",
+      "solutionPattern": "parse-delta-or-http-date-with-bounded-nonnegative-delay",
+      "labFormat": "http-contract-refactoring-with-fixed-clock-replay"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-10-20",
-      "unitId": "UNIT-FILEATOMIC-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/10/UNIT-FILEATOMIC-001-wildlife-sanctuary-daily-census-crash-consistency",
-      "domain": "dotnet-file-io-durability",
-      "primarySkill": "file-replacement-crash-consistency",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "wildlife-sanctuary-daily-census",
-      "scenarioType": "report-replacement-interrupted-by-mid-write-fault",
-      "primaryRootCause": "in-place-truncation-of-last-known-good-report-before-replacement-completes",
-      "failureMode": "previously-valid-report-becomes-truncated-after-failed-refresh",
-      "solutionPattern": "same-directory-staged-write-with-flush-and-atomic-replace-plus-temp-cleanup",
-      "labFormat": "filesystem-crash-consistency-incident-with-fault-injection"
-    },
     {
       "runSlot": "2026-11-10-21",
       "unitId": "UNIT-STREAMPOS-001",
@@ -923,6 +923,21 @@
       "businessContext": "city-parking-meter-ledger",
       "primaryRootCause": "open-repeatable-read-transaction-pins-old-mvcc-row-versions",
       "labFormat": "postgres-mvcc-evidence-triage-and-operations-decision"
+    },
+    {
+      "runSlot": "2026-11-13-18",
+      "unitId": "UNIT-RETRYAFTER-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-RETRYAFTER-001-museum-ticket-retry-after-contract",
+      "domain": "http-retry-contract",
+      "primarySkill": "http-retry-after",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "museum-online-ticketing",
+      "scenarioType": "partner-gateway-retry-header-format-migration",
+      "primaryRootCause": "retry-after-http-date-form-not-parsed",
+      "failureMode": "premature-retry-amplifies-rate-limit",
+      "solutionPattern": "parse-delta-or-http-date-with-bounded-nonnegative-delay",
+      "labFormat": "http-contract-refactoring-with-fixed-clock-replay"
     }
   ],
   "rollingProfile": {
@@ -1473,6 +1488,21 @@
       "businessContext": "city-parking-meter-ledger",
       "primaryRootCause": "open-repeatable-read-transaction-pins-old-mvcc-row-versions",
       "labFormat": "postgres-mvcc-evidence-triage-and-operations-decision"
+    },
+    {
+      "runSlot": "2026-11-13-18",
+      "unitId": "UNIT-RETRYAFTER-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-RETRYAFTER-001-museum-ticket-retry-after-contract",
+      "domain": "http-retry-contract",
+      "primarySkill": "http-retry-after",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "businessContext": "museum-online-ticketing",
+      "scenarioType": "partner-gateway-retry-header-format-migration",
+      "primaryRootCause": "retry-after-http-date-form-not-parsed",
+      "failureMode": "premature-retry-amplifies-rate-limit",
+      "solutionPattern": "parse-delta-or-http-date-with-bounded-nonnegative-delay",
+      "labFormat": "http-contract-refactoring-with-fixed-clock-replay"
     }
   ]
 }
