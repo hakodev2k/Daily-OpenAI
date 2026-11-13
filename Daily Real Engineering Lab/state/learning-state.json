@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PGVACUUM-001",
-    "runSlot": "2026-11-13-08",
-    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-PGVACUUM-001-parking-ledger-long-snapshot-vacuum",
+    "unitId": "UNIT-JSONLIFE-001",
+    "runSlot": "2026-11-13-12",
+    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-JSONLIFE-001-marine-survey-json-lifetime",
     "status": "READY",
-    "createdAt": "2026-11-13T08:04:34+07:00"
+    "createdAt": "2026-11-13T12:12:17+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 559,
-    "totalGenerated": 554,
+    "totalRunSlotsAttempted": 560,
+    "totalGenerated": 555,
     "totalFailed": 5
   },
   "learning": {

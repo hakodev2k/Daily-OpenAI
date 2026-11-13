@@ -1,0 +1,20 @@
+{
+  "unitId": "UNIT-JSONLIFE-001",
+  "files": [
+    "README.md",
+    "global.json",
+    "hints/01.md",
+    "hints/02.md",
+    "hints/03.md",
+    "manifest.json",
+    "metadata.json",
+    "reference-solution/README.md",
+    "reference-solution/SurveyImport.cs",
+    "reproduce.ps1",
+    "starter/Program.cs",
+    "starter/Survey.csproj",
+    "starter/SurveyImport.cs",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}

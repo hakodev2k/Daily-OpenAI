@@ -531,6 +531,21 @@
       "businessContext": "city-parking-meter-ledger",
       "primaryRootCause": "open-repeatable-read-transaction-pins-old-mvcc-row-versions",
       "labFormat": "postgres-mvcc-evidence-triage-and-operations-decision"
+    },
+    {
+      "runSlot": "2026-11-13-12",
+      "unitId": "UNIT-JSONLIFE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-JSONLIFE-001-marine-survey-json-lifetime",
+      "domain": "dotnet-json-resource-lifetime",
+      "primarySkill": "json-dom-lifetime",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "marine-plankton-survey",
+      "scenarioType": "deferred-json-subtree-processing",
+      "primaryRootCause": "json-element-borrowed-from-disposed-jsondocument",
+      "failureMode": "objectdisposedexception-after-parse",
+      "solutionPattern": "clone-json-subtree-before-document-disposal",
+      "labFormat": "json-resource-lifetime-investigation"
     }
   ],
   "rolling24": [
