@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RETRYAFTER-001",
-    "runSlot": "2026-11-13-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-RETRYAFTER-001-museum-ticket-retry-after-contract",
+    "unitId": "UNIT-UPLOADPATH-001",
+    "runSlot": "2026-11-13-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-UPLOADPATH-001-university-exam-upload-ingress-decision",
     "status": "READY",
-    "createdAt": "2026-11-13T18:04:59+07:00"
+    "createdAt": "2026-11-13T21:07:43+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 561,
-    "totalGenerated": 556,
+    "totalRunSlotsAttempted": 562,
+    "totalGenerated": 557,
     "totalFailed": 5
   },
   "learning": {
