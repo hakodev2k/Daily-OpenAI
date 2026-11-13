@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TICKCOALESCE-001",
-    "runSlot": "2026-11-14-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-TICKCOALESCE-001-rail-platform-occupancy-polling",
+    "unitId": "UNIT-GATEOWN-001",
+    "runSlot": "2026-11-14-04",
+    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-GATEOWN-001-warehouse-scanner-cancelled-wait",
     "status": "READY",
-    "createdAt": "2026-11-14T03:11:21+07:00"
+    "createdAt": "2026-11-14T04:07:38+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 564,
-    "totalGenerated": 559,
+    "totalRunSlotsAttempted": 565,
+    "totalGenerated": 560,
     "totalFailed": 5
   },
   "learning": {

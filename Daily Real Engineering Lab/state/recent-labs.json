@@ -1388,6 +1388,26 @@
       "scenarioType": "slow-polling-cycle-during-peak-commuter-window",
       "primaryRootCause": "periodictimer-coalesces-ticks-instead-of-queuing-every-elapsed-interval",
       "labFormat": "scheduler-semantics-investigation-with-virtual-time-evidence"
+    },
+    {
+      "runSlot": "2026-11-14-04",
+      "status": "SUCCESS",
+      "unitId": "UNIT-GATEOWN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-GATEOWN-001-warehouse-scanner-cancelled-wait",
+      "domain": "dotnet-concurrency",
+      "format": "deterministic-three-actor-concurrency-incident",
+      "primarySkill": "semaphoreslim-ownership",
+      "scenarioCategory": "cancelled-wait-while-single-slot-occupied",
+      "rootCauseCategory": "unconditional-semaphore-release-after-cancelled-wait",
+      "failureMode": "permit-inflation-overlapping-critical-sections",
+      "solutionPattern": "release-only-after-successful-acquisition",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-14T04:07:38+07:00",
+      "validationMode": "static-review",
+      "businessContext": "warehouse-handheld-scanner-firmware",
+      "primaryRootCause": "unconditional-semaphore-release-after-cancelled-wait",
+      "labFormat": "deterministic-three-actor-concurrency-incident"
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-GATEOWN-001",
+  "runSlot": "2026-11-14-04",
+  "title": "Scanner gate khi request bị hủy",
+  "domain": "dotnet-concurrency",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-14T04:07:38+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "semaphoreslim-ownership",
+    "cancellation",
+    "concurrency-invariants"
+  ],
+  "prerequisites": [
+    "async-await",
+    "cancellationtoken"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "warehouse-handheld-scanner-firmware",
+    "scenarioType": "cancelled-wait-while-single-slot-occupied",
+    "primaryRootCause": "unconditional-semaphore-release-after-cancelled-wait",
+    "failureMode": "permit-inflation-overlapping-critical-sections",
+    "solutionPattern": "release-only-after-successful-acquisition",
+    "labFormat": "deterministic-three-actor-concurrency-incident"
+  }
+}
