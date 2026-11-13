@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-TICKCOALESCE-001",
+  "runSlot": "2026-11-14-03",
+  "title": "Bỏ sót cửa sổ quan sát tại ga tàu khi poller bị chậm",
+  "domain": "dotnet-background-scheduling",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-14T03:11:21+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "periodictimer-semantics",
+    "backgroundservice",
+    "sampling-slo"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "System.Threading"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "rail-platform-occupancy-monitoring",
+    "scenarioType": "slow-polling-cycle-during-peak-commuter-window",
+    "primaryRootCause": "periodictimer-coalesces-ticks-instead-of-queuing-every-elapsed-interval",
+    "failureMode": "missed-observation-windows-and-inaccurate-poll-count-assumption",
+    "solutionPattern": "explicit-scheduled-slot-accounting-with-monotonic-deadlines-and-missed-slot-metrics",
+    "labFormat": "scheduler-semantics-investigation-with-virtual-time-evidence"
+  }
+}
