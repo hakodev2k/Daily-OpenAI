@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-COOKIEHDR-001",
-    "runSlot": "2026-11-13-05",
-    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-COOKIEHDR-001-community-theater-session-cookie-headers",
+    "unitId": "UNIT-PGVACUUM-001",
+    "runSlot": "2026-11-13-08",
+    "path": "Daily Real Engineering Lab/units/2026/11/13/UNIT-PGVACUUM-001-parking-ledger-long-snapshot-vacuum",
     "status": "READY",
-    "createdAt": "2026-11-13T05:13:50+07:00"
+    "createdAt": "2026-11-13T08:04:34+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 558,
-    "totalGenerated": 553,
+    "totalRunSlotsAttempted": 559,
+    "totalGenerated": 554,
     "totalFailed": 5
   },
   "learning": {

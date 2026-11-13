@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-PGVACUUM-001",
+  "runSlot": "2026-11-13-08",
+  "title": "Báo cáo đỗ xe giữ snapshot khiến bảng PostgreSQL phình to",
+  "domain": "postgresql-mvcc-operations",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-13T08:04:34+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "postgresql-mvcc",
+    "vacuum-observability",
+    "transaction-lifetime",
+    "operational-tradeoffs"
+  ],
+  "prerequisites": [
+    "SQL transaction isolation",
+    "PostgreSQL basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "city-parking-meter-ledger",
+    "scenarioType": "long-lived-reporting-snapshot-during-heavy-row-churn",
+    "primaryRootCause": "open-repeatable-read-transaction-pins-old-mvcc-row-versions",
+    "failureMode": "dead-tuples-accumulate-and-index-reads-degrade-despite-autovacuum-runs",
+    "solutionPattern": "short-transaction-reporting-with-paginated-export-and-vacuum-observability",
+    "labFormat": "postgres-mvcc-evidence-triage-and-operations-decision"
+  }
+}
