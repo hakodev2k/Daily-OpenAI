@@ -1,0 +1,16 @@
+incident,window,requests,errors,impact
+A,5m,20,1,none-low-traffic
+A,1h,240,1,none-low-traffic
+A,6h,1400,2,none-low-traffic
+B,5m,5000,300,major-user-impact
+B,1h,60000,320,major-user-impact
+B,6h,360000,350,major-user-impact
+C,5m,4000,30,slow-degradation
+C,1h,48000,360,slow-degradation
+C,6h,288000,2160,slow-degradation
+D,5m,3000,1,healthy
+D,1h,36000,12,healthy
+D,6h,216000,72,healthy
+E,5m,100,4,isolated-degraded-branch
+E,1h,1200,30,isolated-degraded-branch
+E,6h,7200,180,isolated-degraded-branch
