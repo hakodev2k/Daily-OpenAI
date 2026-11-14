@@ -597,6 +597,21 @@
       "failureMode": "tenant-a-request-sent-with-tenant-b-authorization-header",
       "solutionPattern": "immutable-per-request-http-requestmessage-headers",
       "labFormat": "deterministic-overlap-http-header-isolation-investigation"
+    },
+    {
+      "runSlot": "2026-11-14-13",
+      "unitId": "UNIT-PRIORITYFIFO-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-PRIORITYFIFO-001-hospital-generator-dispatch",
+      "domain": "dotnet-collections-ordering",
+      "primarySkill": "priorityqueue-stability",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "businessContext": "rural-hospital-emergency-generator-maintenance",
+      "scenarioType": "same-severity-work-orders-arrive-sequentially",
+      "primaryRootCause": "priorityqueue-unstable-equal-priority-order",
+      "failureMode": "fifo-contract-violated-within-severity",
+      "solutionPattern": "composite-priority-severity-arrival-sequence",
+      "labFormat": "deterministic-collection-contract-reproduction"
     }
   ],
   "rolling24": [

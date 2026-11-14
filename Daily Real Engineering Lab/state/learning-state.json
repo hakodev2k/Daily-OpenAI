@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HEADERBLEED-001",
-    "runSlot": "2026-11-14-10",
-    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-HEADERBLEED-001-field-inspection-tenant-header-leak",
+    "unitId": "UNIT-PRIORITYFIFO-001",
+    "runSlot": "2026-11-14-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-PRIORITYFIFO-001-hospital-generator-dispatch",
     "status": "READY",
-    "createdAt": "2026-11-14T10:13:15+07:00"
+    "createdAt": "2026-11-14T13:12:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 566,
-    "totalGenerated": 561,
+    "totalRunSlotsAttempted": 567,
+    "totalGenerated": 562,
     "totalFailed": 5
   },
   "learning": {
