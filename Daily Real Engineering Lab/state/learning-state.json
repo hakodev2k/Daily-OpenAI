@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-GATEOWN-001",
-    "runSlot": "2026-11-14-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-GATEOWN-001-warehouse-scanner-cancelled-wait",
+    "unitId": "UNIT-HEADERBLEED-001",
+    "runSlot": "2026-11-14-10",
+    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-HEADERBLEED-001-field-inspection-tenant-header-leak",
     "status": "READY",
-    "createdAt": "2026-11-14T04:07:38+07:00"
+    "createdAt": "2026-11-14T10:13:15+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 565,
-    "totalGenerated": 560,
+    "totalRunSlotsAttempted": 566,
+    "totalGenerated": 561,
     "totalFailed": 5
   },
   "learning": {
