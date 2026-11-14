@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CHANREAD-001",
+  "runSlot": "2026-11-14-14",
+  "title": "Hai worker nhận kết quả xét nghiệm",
+  "domain": "dotnet-channel-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-14T14:12:17+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "channel-reader-contract",
+    "concurrency",
+    "task-synchronization"
+  ],
+  "prerequisites": [
+    "async-await",
+    "channels-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-clinic-diagnostic-lab-results",
+    "scenarioType": "two-awaiting-consumers-one-completed-work-item",
+    "primaryRootCause": "waittoreadasync-signals-availability-not-exclusive-reservation",
+    "failureMode": "second-consumer-reports-fatal-empty-queue-after-other-consumer-dequeues",
+    "solutionPattern": "retry-tryread-inside-waittoread-loop-until-channel-completion",
+    "labFormat": "deterministic-multi-consumer-channel-contract-investigation"
+  }
+}

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PRIORITYFIFO-001",
-    "runSlot": "2026-11-14-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-PRIORITYFIFO-001-hospital-generator-dispatch",
+    "unitId": "UNIT-CHANREAD-001",
+    "runSlot": "2026-11-14-14",
+    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-CHANREAD-001-community-clinic-lab-result-channel-consumer-race",
     "status": "READY",
-    "createdAt": "2026-11-14T13:12:31+07:00"
+    "createdAt": "2026-11-14T14:12:17+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 567,
-    "totalGenerated": 562,
+    "totalRunSlotsAttempted": 568,
+    "totalGenerated": 563,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,18 @@
+{
+  "unitId": "UNIT-CHANREAD-001",
+  "files": [
+    "README.md",
+    "global.json",
+    "hints/01.md",
+    "hints/02.md",
+    "hints/03.md",
+    "manifest.json",
+    "metadata.json",
+    "scripts/reproduce.ps1",
+    "scripts/verify.ps1",
+    "solution/README.md",
+    "starter/ClinicChannel.csproj",
+    "starter/Program.cs",
+    "workspace/my-investigation.md"
+  ]
+}
