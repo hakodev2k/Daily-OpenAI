@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-JSONDUP-001",
+  "runSlot": "2026-11-14-23",
+  "title": "Hai service, một JSON: quyết định phê duyệt mâu thuẫn",
+  "domain": "json-api-contract-security",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-14T23:07:39+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "json-duplicate-key-validation",
+    "system-text-json",
+    "api-trust-boundary",
+    "contract-testing"
+  ],
+  "prerequisites": [
+    "C# .NET 8",
+    "JSON parsing"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-disaster-relief-grant-approval",
+    "scenarioType": "two-services-interpret-same-json-payload",
+    "primaryRootCause": "duplicate-json-property-names-have-inconsistent-consumer-interpretation",
+    "failureMode": "audit-shows-rejected-while-payout-service-approves",
+    "solutionPattern": "reject-duplicate-property-names-at-ingress-and-test-cross-consumer-contract",
+    "labFormat": "security-contract-investigation-with-local-deterministic-replay"
+  }
+}
