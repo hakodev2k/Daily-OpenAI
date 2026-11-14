@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CHANREAD-001",
-    "runSlot": "2026-11-14-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-CHANREAD-001-community-clinic-lab-result-channel-consumer-race",
+    "unitId": "UNIT-SQLNULL-001",
+    "runSlot": "2026-11-14-22",
+    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-SQLNULL-001-cooperative-seed-distribution-null-exclusion",
     "status": "READY",
-    "createdAt": "2026-11-14T14:12:17+07:00"
+    "createdAt": "2026-11-14T22:07:56+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 568,
-    "totalGenerated": 563,
+    "totalRunSlotsAttempted": 569,
+    "totalGenerated": 564,
     "totalFailed": 5
   },
   "learning": {

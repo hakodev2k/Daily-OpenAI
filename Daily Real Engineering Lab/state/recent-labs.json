@@ -627,6 +627,24 @@
       "failureMode": "second-consumer-reports-fatal-empty-queue-after-other-consumer-dequeues",
       "solutionPattern": "retry-tryread-inside-waittoread-loop-until-channel-completion",
       "labFormat": "deterministic-multi-consumer-channel-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-14-22",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SQLNULL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-SQLNULL-001-cooperative-seed-distribution-null-exclusion",
+      "domain": "sql-query-semantics",
+      "format": "sql-anti-join-contract-investigation",
+      "primarySkill": "sql-null-anti-join",
+      "scenarioCategory": "eligible-recipients-excluded-by-suppression-table",
+      "rootCauseCategory": "sql-not-in-null-three-valued-logic",
+      "failureMode": "valid-recipient-set-empty-when-exclusion-contains-null",
+      "solutionPattern": "correlated-not-exists-with-key-null-policy",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-14T22:07:56+07:00",
+      "validationMode": "static-review",
+      "businessContext": "agricultural-seed-cooperative-distribution"
     }
   ],
   "rolling24": {
@@ -1105,6 +1123,27 @@
       "businessContext": "warehouse-handheld-scanner-firmware",
       "primaryRootCause": "unconditional-semaphore-release-after-cancelled-wait",
       "labFormat": "deterministic-three-actor-concurrency-incident"
+    },
+    {
+      "runSlot": "2026-11-14-22",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SQLNULL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-SQLNULL-001-cooperative-seed-distribution-null-exclusion",
+      "domain": "sql-query-semantics",
+      "format": "sql-anti-join-contract-investigation",
+      "primarySkill": "sql-null-anti-join",
+      "scenarioCategory": "eligible-recipients-excluded-by-suppression-table",
+      "rootCauseCategory": "sql-not-in-null-three-valued-logic",
+      "failureMode": "valid-recipient-set-empty-when-exclusion-contains-null",
+      "solutionPattern": "correlated-not-exists-with-key-null-policy",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-14T22:07:56+07:00",
+      "validationMode": "static-review",
+      "businessContext": "agricultural-seed-cooperative-distribution",
+      "scenarioType": "eligible-recipients-excluded-by-suppression-table",
+      "primaryRootCause": "sql-not-in-null-three-valued-logic",
+      "labFormat": "sql-anti-join-contract-investigation"
     }
   ]
 }
