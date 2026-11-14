@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JSONDUP-001",
-    "runSlot": "2026-11-14-23",
-    "path": "Daily Real Engineering Lab/units/2026/11/14/UNIT-JSONDUP-001-aid-grant-duplicate-json-approval",
+    "unitId": "UNIT-SORTSET-001",
+    "runSlot": "2026-11-15-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-SORTSET-001-veterinary-vaccine-batch-queue",
     "status": "READY",
-    "createdAt": "2026-11-14T23:07:39+07:00"
+    "createdAt": "2026-11-15T00:10:35+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 570,
-    "totalGenerated": 565,
+    "totalRunSlotsAttempted": 571,
+    "totalGenerated": 566,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 68,
+    "elapsedDays": 69,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",

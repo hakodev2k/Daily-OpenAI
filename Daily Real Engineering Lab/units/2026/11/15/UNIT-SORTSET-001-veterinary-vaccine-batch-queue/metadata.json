@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SORTSET-001",
+  "runSlot": "2026-11-15-00",
+  "title": "Lô vaccine biến mất khỏi kế hoạch phân phối",
+  "domain": "dotnet-collections",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-15T00:10:35+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "sortedset-comparer-equality",
+    "collection-invariants",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "IComparer<T>",
+    "C# records"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "veterinary-vaccine-distribution",
+    "scenarioType": "same-expiry-multiple-independent-batches",
+    "primaryRootCause": "sortedset-comparer-equates-distinct-work-items",
+    "failureMode": "silent-drop-of-valid-batches-and-dose-underreporting",
+    "solutionPattern": "total-order-with-identity-tie-breaker-and-duplicate-id-policy",
+    "labFormat": "collection-data-loss-investigation-with-invariant-replay"
+  }
+}

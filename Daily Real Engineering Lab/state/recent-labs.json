@@ -665,6 +665,21 @@
       "businessContext": "regional-disaster-relief-grant-approval",
       "primaryRootCause": "duplicate-json-property-names-have-inconsistent-consumer-interpretation",
       "labFormat": "security-contract-investigation-with-local-deterministic-replay"
+    },
+    {
+      "runSlot": "2026-11-15-00",
+      "unitId": "UNIT-SORTSET-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-SORTSET-001-veterinary-vaccine-batch-queue",
+      "domain": "dotnet-collections",
+      "primarySkill": "sortedset-comparer-equality",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "veterinary-vaccine-distribution",
+      "scenarioType": "same-expiry-multiple-independent-batches",
+      "primaryRootCause": "sortedset-comparer-equates-distinct-work-items",
+      "failureMode": "silent-drop-of-valid-batches-and-dose-underreporting",
+      "solutionPattern": "total-order-with-identity-tie-breaker-and-duplicate-id-policy",
+      "labFormat": "collection-data-loss-investigation-with-invariant-replay"
     }
   ],
   "rolling24": {
