@@ -680,6 +680,26 @@
       "failureMode": "silent-drop-of-valid-batches-and-dose-underreporting",
       "solutionPattern": "total-order-with-identity-tie-breaker-and-duplicate-id-policy",
       "labFormat": "collection-data-loss-investigation-with-invariant-replay"
+    },
+    {
+      "runSlot": "2026-11-15-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SLOBURN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-SLOBURN-001-public-library-catalog-slo-burn",
+      "domain": "observability-slo-engineering",
+      "format": "observability-design-decision-with-replayable-incident-evidence",
+      "primarySkill": "sli-slo-error-budget",
+      "scenarioCategory": "multi-window-slo-alert-routing",
+      "rootCauseCategory": "single-threshold-error-rate-alerts-ignore-budget-consumption-and-traffic-volume",
+      "failureMode": "incident-alert-fatigue-and-late-detection-of-fast-error-budget-burn",
+      "solutionPattern": "multi-window-burn-rate-policy-with-traffic-floor-and-routing",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T03:07:55+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-public-library-search",
+      "primaryRootCause": "single-threshold-error-rate-alerts-ignore-budget-consumption-and-traffic-volume",
+      "labFormat": "observability-design-decision-with-replayable-incident-evidence"
     }
   ],
   "rolling24": {
@@ -1235,6 +1255,26 @@
       "businessContext": "regional-disaster-relief-grant-approval",
       "primaryRootCause": "duplicate-json-property-names-have-inconsistent-consumer-interpretation",
       "labFormat": "security-contract-investigation-with-local-deterministic-replay"
+    },
+    {
+      "runSlot": "2026-11-15-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SLOBURN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-SLOBURN-001-public-library-catalog-slo-burn",
+      "domain": "observability-slo-engineering",
+      "format": "observability-design-decision-with-replayable-incident-evidence",
+      "primarySkill": "sli-slo-error-budget",
+      "scenarioCategory": "multi-window-slo-alert-routing",
+      "rootCauseCategory": "single-threshold-error-rate-alerts-ignore-budget-consumption-and-traffic-volume",
+      "failureMode": "incident-alert-fatigue-and-late-detection-of-fast-error-budget-burn",
+      "solutionPattern": "multi-window-burn-rate-policy-with-traffic-floor-and-routing",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T03:07:55+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-public-library-search",
+      "primaryRootCause": "single-threshold-error-rate-alerts-ignore-budget-consumption-and-traffic-volume",
+      "labFormat": "observability-design-decision-with-replayable-incident-evidence"
     }
   ]
 }
