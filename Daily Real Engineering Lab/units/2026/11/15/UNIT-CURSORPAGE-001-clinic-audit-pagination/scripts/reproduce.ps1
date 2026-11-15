@@ -1,0 +1,1 @@
+$ErrorActionPreference='Stop'; dotnet run --project "$PSScriptRoot/../starter/Starter.csproj" | Tee-Object -Variable output; if (-not ($output -match 'duplicates=6')) { throw 'Starter symptom not reproduced' }

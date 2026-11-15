@@ -1565,6 +1565,47 @@
       "businessContext": "university-scholarship-disbursement",
       "primaryRootCause": "default-bankers-rounding-mismatches-contractual-away-from-zero",
       "labFormat": "financial-reconciliation-investigation-with-boundary-replay"
+    },
+    {
+      "runSlot": "2026-11-15-19",
+      "status": "SUCCESS",
+      "unitId": "UNIT-RANGEBYTES-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-RANGEBYTES-001-media-segment-inclusive-range",
+      "domain": "http-binary-contract",
+      "format": "http-binary-contract-investigation-with-segment-reassembly",
+      "primarySkill": "http-range-semantics",
+      "scenarioCategory": "resumable-byte-range-download",
+      "rootCauseCategory": "http-range-end-is-inclusive-but-slice-length-treated-as-exclusive",
+      "failureMode": "one-byte-overlap-between-consecutive-segments",
+      "solutionPattern": "validate-inclusive-range-and-compute-end-minus-start-plus-one",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T19:07:05+07:00",
+      "validationMode": "static-review",
+      "businessContext": "wildlife-camera-video-evidence-portal",
+      "primaryRootCause": "http-range-end-is-inclusive-but-slice-length-treated-as-exclusive",
+      "labFormat": "http-binary-contract-investigation-with-segment-reassembly"
+    },
+    {
+      "runSlot": "2026-11-15-20",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CURSORPAGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-CURSORPAGE-001-clinic-audit-pagination",
+      "domain": "mongodb-pagination-consistency",
+      "format": "deterministic-paging-replay-and-refactoring",
+      "primarySkill": "mongodb-keyset-pagination",
+      "scenarioCategory": "concurrent-insert-between-pagination-requests",
+      "rootCauseCategory": "offset-pagination-shifts-under-newer-inserts",
+      "failureMode": "duplicate-and-missing-audit-events-across-pages",
+      "solutionPattern": "stable-composite-keyset-cursor-with-snapshot-upper-bound",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T20:04:58+07:00",
+      "validationMode": "static-review",
+      "businessContext": "clinic-audit-event-browser",
+      "scenarioType": "concurrent-insert-between-pagination-requests",
+      "primaryRootCause": "offset-pagination-shifts-under-newer-inserts",
+      "labFormat": "deterministic-paging-replay-and-refactoring"
     }
   ]
 }

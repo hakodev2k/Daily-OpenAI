@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CURSORPAGE-001",
+  "runSlot": "2026-11-15-20",
+  "title": "Trang audit log bị trùng và bỏ sót khi có bản ghi mới",
+  "domain": "mongodb-pagination-consistency",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-15T20:04:58+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "mongodb-keyset-pagination",
+    "stable-ordering",
+    "concurrent-writes"
+  ],
+  "prerequisites": [
+    "C# LINQ",
+    "MongoDB sort/limit"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "clinic-audit-event-browser",
+    "scenarioType": "concurrent-insert-between-pagination-requests",
+    "primaryRootCause": "offset-pagination-shifts-under-newer-inserts",
+    "failureMode": "duplicate-and-missing-audit-events-across-pages",
+    "solutionPattern": "stable-composite-keyset-cursor-with-snapshot-upper-bound",
+    "labFormat": "deterministic-paging-replay-and-refactoring"
+  }
+}

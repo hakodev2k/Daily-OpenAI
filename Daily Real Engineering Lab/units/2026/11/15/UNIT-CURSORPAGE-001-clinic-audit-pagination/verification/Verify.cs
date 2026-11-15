@@ -1,0 +1,12 @@
+using System;
+using System.Linq;
+var source = Enumerable.Range(1, 8).Select(i => new AuditEvent(i, $"audit-{i}")).ToList();
+var snapshot = source.Max(x => x.Sequence);
+var p1 = AuditPaging.ReadPage(source, null, snapshot, 3);
+source.Add(new AuditEvent(9, "late-write"));
+var p2 = AuditPaging.ReadPage(source, p1.Last().Sequence, snapshot, 3);
+var p3 = AuditPaging.ReadPage(source, p2.Last().Sequence, snapshot, 3);
+var all = p1.Concat(p2).Concat(p3).Select(x => x.Sequence).ToArray();
+var expected = Enumerable.Range(1, 8).Reverse().Select(x => (long)x).ToArray();
+if (!all.SequenceEqual(expected)) throw new Exception("FAIL: pages must be 8..1 once each");
+Console.WriteLine("PASS: snapshot cursor pagination stable across concurrent insert");
