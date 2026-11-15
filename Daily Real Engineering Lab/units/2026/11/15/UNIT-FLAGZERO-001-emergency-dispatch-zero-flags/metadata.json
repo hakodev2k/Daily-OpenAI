@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-FLAGZERO-001",
+  "runSlot": "2026-11-15-21",
+  "title": "Emergency Dispatch: zero flags authorization",
+  "domain": "csharp-flags-authorization",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-15T21:07:37+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "csharp-flags-enum",
+    "authorization-policy",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# enum",
+    "bitwise operators"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "emergency-dispatch-role-screening",
+    "scenarioType": "unassigned-operator-access-review",
+    "primaryRootCause": "enum-hasflag-zero-is-always-true",
+    "failureMode": "unassigned-operator-sees-restricted-record",
+    "solutionPattern": "explicit-zero-permission-denial-before-bitmask-check",
+    "labFormat": "deterministic-access-policy-contract-replay"
+  }
+}
