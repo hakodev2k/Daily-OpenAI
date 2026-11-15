@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-POOLLEASE-001",
+  "runSlot": "2026-11-15-09",
+  "title": "Manifest cảng biển bị thay đổi sau khi đọc",
+  "domain": "dotnet-memory-ownership",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-15T09:06:37+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "arraypool",
+    "memory-ownership",
+    "data-isolation"
+  ],
+  "prerequisites": [
+    "C# arrays",
+    "ReadOnlyMemory"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "harbor-cargo-manifest-ingestion",
+    "scenarioType": "historical-payload-mutates-after-next-ingestion",
+    "primaryRootCause": "pooled-array-returned-before-consumer-finished",
+    "failureMode": "cross-shipment-data-contamination",
+    "solutionPattern": "owned-copy-before-returning-buffer-lease",
+    "labFormat": "deterministic-memory-ownership-incident-replay"
+  }
+}
