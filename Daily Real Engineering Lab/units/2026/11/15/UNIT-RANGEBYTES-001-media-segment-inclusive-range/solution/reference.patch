@@ -1,0 +1,5 @@
+--- a/starter/Program.cs
++++ b/starter/Program.cs
+@@
+-    var length = end - start;
++    var length = checked(end - start + 1);
