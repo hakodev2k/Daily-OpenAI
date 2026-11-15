@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DECROUND-001",
-    "runSlot": "2026-11-15-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-DECROUND-001-scholarship-payment-rounding",
+    "unitId": "UNIT-RANGEBYTES-001",
+    "runSlot": "2026-11-15-19",
+    "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-RANGEBYTES-001-media-segment-inclusive-range",
     "status": "READY",
-    "createdAt": "2026-11-15T13:05:00+07:00"
+    "createdAt": "2026-11-15T19:07:05+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 575,
-    "totalGenerated": 570,
+    "totalRunSlotsAttempted": 576,
+    "totalGenerated": 571,
     "totalFailed": 5
   },
   "learning": {
