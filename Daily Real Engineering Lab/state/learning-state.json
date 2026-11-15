@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-FLAGZERO-001",
-    "runSlot": "2026-11-15-21",
-    "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-FLAGZERO-001-emergency-dispatch-zero-flags",
+    "unitId": "UNIT-URIBASE-001",
+    "runSlot": "2026-11-15-22",
+    "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-URIBASE-001-regional-transit-api-path-resolution",
     "status": "READY",
-    "createdAt": "2026-11-15T21:07:37+07:00"
+    "createdAt": "2026-11-15T22:11:45+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 578,
-    "totalGenerated": 573,
+    "totalRunSlotsAttempted": 579,
+    "totalGenerated": 574,
     "totalFailed": 5
   },
   "learning": {
