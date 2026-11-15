@@ -700,6 +700,26 @@
       "businessContext": "municipal-public-library-search",
       "primaryRootCause": "single-threshold-error-rate-alerts-ignore-budget-consumption-and-traffic-volume",
       "labFormat": "observability-design-decision-with-replayable-incident-evidence"
+    },
+    {
+      "runSlot": "2026-11-15-09",
+      "status": "SUCCESS",
+      "unitId": "UNIT-POOLLEASE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-POOLLEASE-001-harbor-cargo-manifest-buffer-lease",
+      "domain": "dotnet-memory-ownership",
+      "format": "deterministic-memory-ownership-incident-replay",
+      "primarySkill": "arraypool-buffer-ownership",
+      "scenarioCategory": "historical-payload-mutates-after-next-ingestion",
+      "rootCauseCategory": "pooled-array-returned-before-consumer-finished",
+      "failureMode": "cross-shipment-data-contamination",
+      "solutionPattern": "owned-copy-before-returning-buffer-lease",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T09:06:37+07:00",
+      "validationMode": "static-review",
+      "businessContext": "harbor-cargo-manifest-ingestion",
+      "primaryRootCause": "pooled-array-returned-before-consumer-finished",
+      "labFormat": "deterministic-memory-ownership-incident-replay"
     }
   ],
   "rolling24": {
@@ -1275,6 +1295,26 @@
       "businessContext": "municipal-public-library-search",
       "primaryRootCause": "single-threshold-error-rate-alerts-ignore-budget-consumption-and-traffic-volume",
       "labFormat": "observability-design-decision-with-replayable-incident-evidence"
+    },
+    {
+      "runSlot": "2026-11-15-09",
+      "status": "SUCCESS",
+      "unitId": "UNIT-POOLLEASE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-POOLLEASE-001-harbor-cargo-manifest-buffer-lease",
+      "domain": "dotnet-memory-ownership",
+      "format": "deterministic-memory-ownership-incident-replay",
+      "primarySkill": "arraypool-buffer-ownership",
+      "scenarioCategory": "historical-payload-mutates-after-next-ingestion",
+      "rootCauseCategory": "pooled-array-returned-before-consumer-finished",
+      "failureMode": "cross-shipment-data-contamination",
+      "solutionPattern": "owned-copy-before-returning-buffer-lease",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T09:06:37+07:00",
+      "validationMode": "static-review",
+      "businessContext": "harbor-cargo-manifest-ingestion",
+      "primaryRootCause": "pooled-array-returned-before-consumer-finished",
+      "labFormat": "deterministic-memory-ownership-incident-replay"
     }
   ]
 }
