@@ -571,6 +571,26 @@
       "businessContext": "emergency-dispatch-role-screening",
       "primaryRootCause": "enum-hasflag-zero-is-always-true",
       "labFormat": "deterministic-access-policy-contract-replay"
+    },
+    {
+      "runSlot": "2026-11-15-22",
+      "status": "GENERATED",
+      "unitId": "UNIT-URIBASE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-URIBASE-001-regional-transit-api-path-resolution",
+      "domain": "http-uri-contract",
+      "format": "uri-routing-investigation-and-contract-hardening",
+      "primarySkill": "dotnet-uri-resolution",
+      "scenarioCategory": "partner-api-version-prefix-migration",
+      "rootCauseCategory": "uri-resolution-rooted-and-parent-relative-references-escape-base-path",
+      "failureMode": "some-requests-routed-outside-versioned-api-prefix",
+      "solutionPattern": "explicit-endpoint-path-contract-with-prefix-containment-and-input-validation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T22:11:45+07:00",
+      "validationMode": "static-review",
+      "businessContext": "regional-transit-partner-api",
+      "primaryRootCause": "uri-resolution-rooted-and-parent-relative-references-escape-base-path",
+      "labFormat": "uri-routing-investigation-and-contract-hardening"
     }
   ],
   "rolling24": [
