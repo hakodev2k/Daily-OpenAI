@@ -1,0 +1,1 @@
+Baseline: `reproduce.ps1` thành công khi phát hiện `sandbox/outside.txt` bị ghi ngoài `sandbox/extracted/`; file hợp lệ cũng được giải nén. Đây là triệu chứng mong đợi của starter, không phải PASS bảo mật.

@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ZIPSLIP-001",
+  "runSlot": "2026-11-15-10",
+  "title": "Ranh giới ghi file khi nhập kho lưu trữ cộng đồng",
+  "domain": "dotnet-file-security",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-15T10:06:02+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "ziparchive",
+    "filesystem-path-validation",
+    "security-regression-testing"
+  ],
+  "prerequisites": [
+    "dotnet-io",
+    "path-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-records-digitization",
+    "scenarioType": "third-party-archive-ingestion",
+    "primaryRootCause": "untrusted-zip-entry-path-escapes-extraction-root",
+    "failureMode": "unauthorized-file-write-outside-sandbox-extract-directory",
+    "solutionPattern": "canonicalize-and-enforce-extraction-root-containment",
+    "labFormat": "security-boundary-investigation-with-local-zip-fixture"
+  }
+}

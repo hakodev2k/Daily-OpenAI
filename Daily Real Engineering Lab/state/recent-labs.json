@@ -1315,6 +1315,26 @@
       "businessContext": "harbor-cargo-manifest-ingestion",
       "primaryRootCause": "pooled-array-returned-before-consumer-finished",
       "labFormat": "deterministic-memory-ownership-incident-replay"
+    },
+    {
+      "runSlot": "2026-11-15-10",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ZIPSLIP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-ZIPSLIP-001-community-records-archive-boundary",
+      "domain": "dotnet-file-security",
+      "format": "security-boundary-investigation-with-local-zip-fixture",
+      "primarySkill": "ziparchive-path-containment",
+      "scenarioCategory": "third-party-archive-ingestion",
+      "rootCauseCategory": "untrusted-zip-entry-path-escapes-extraction-root",
+      "failureMode": "unauthorized-file-write-outside-extract",
+      "solutionPattern": "canonicalize-and-enforce-extraction-root-containment",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T10:06:02+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-records-digitization",
+      "primaryRootCause": "untrusted-zip-entry-path-escapes-extraction-root",
+      "labFormat": "security-boundary-investigation-with-local-zip-fixture"
     }
   ]
 }
