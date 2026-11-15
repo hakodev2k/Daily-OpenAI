@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-RANGEBYTES-001",
+  "runSlot": "2026-11-15-19",
+  "title": "Tải video theo byte range: ghép đoạn bị lặp byte",
+  "domain": "http-binary-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-15T19:07:05+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "http-range-semantics",
+    "binary-stream-boundaries",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    ".NET SDK 8",
+    "PowerShell"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-camera-video-evidence-portal",
+    "scenarioType": "resumable-byte-range-download",
+    "primaryRootCause": "http-range-end-is-inclusive-but-slice-length-treated-as-exclusive",
+    "failureMode": "one-byte-overlap-between-consecutive-segments",
+    "solutionPattern": "validate-inclusive-range-and-compute-end-minus-start-plus-one",
+    "labFormat": "http-binary-contract-investigation-with-segment-reassembly"
+  }
+}
