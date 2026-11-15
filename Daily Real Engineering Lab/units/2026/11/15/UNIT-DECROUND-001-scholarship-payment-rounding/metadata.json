@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DECROUND-001",
+  "runSlot": "2026-11-15-13",
+  "title": "Đối soát học bổng: sai lệch tiền do quy tắc làm tròn",
+  "domain": "dotnet-financial-arithmetic",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-15T13:05:00+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "decimal-midpoint-rounding",
+    "financial-reconciliation",
+    "boundary-testing"
+  ],
+  "prerequisites": [
+    "C# decimal",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-scholarship-disbursement",
+    "scenarioType": "monthly-payout-reconciliation",
+    "primaryRootCause": "default-bankers-rounding-mismatches-contractual-away-from-zero",
+    "failureMode": "payout-discrepancy-at-midpoints",
+    "solutionPattern": "explicit-rounding-policy-at-financial-boundary",
+    "labFormat": "financial-reconciliation-investigation-with-boundary-replay"
+  }
+}
