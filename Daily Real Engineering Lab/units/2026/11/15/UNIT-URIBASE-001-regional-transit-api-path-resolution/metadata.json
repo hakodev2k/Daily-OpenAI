@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-URIBASE-001",
+  "runSlot": "2026-11-15-22",
+  "title": "Đường dẫn API đối tác đổi bất ngờ sau migration",
+  "domain": "http-uri-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-15T22:11:45+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "dotnet-uri-resolution",
+    "http-client-boundaries",
+    "input-validation"
+  ],
+  "prerequisites": [
+    "System.Uri",
+    "HTTP paths"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-transit-partner-api",
+    "scenarioType": "partner-api-version-prefix-migration",
+    "primaryRootCause": "uri-resolution-rooted-and-parent-relative-references-escape-base-path",
+    "failureMode": "some-requests-routed-outside-versioned-api-prefix",
+    "solutionPattern": "explicit-endpoint-path-contract-with-prefix-containment-and-input-validation",
+    "labFormat": "uri-routing-investigation-and-contract-hardening"
+  }
+}
