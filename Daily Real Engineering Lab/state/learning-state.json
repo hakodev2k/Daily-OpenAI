@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SLOBURN-001",
-    "runSlot": "2026-11-15-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-SLOBURN-001-public-library-catalog-slo-burn",
+    "unitId": "UNIT-POOLLEASE-001",
+    "runSlot": "2026-11-15-09",
+    "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-POOLLEASE-001-harbor-cargo-manifest-buffer-lease",
     "status": "READY",
-    "createdAt": "2026-11-15T03:07:55+07:00"
+    "createdAt": "2026-11-15T09:06:37+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 572,
-    "totalGenerated": 567,
+    "totalRunSlotsAttempted": 573,
+    "totalGenerated": 568,
     "totalFailed": 5
   },
   "learning": {
