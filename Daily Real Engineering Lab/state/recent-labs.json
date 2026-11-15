@@ -551,6 +551,26 @@
       "businessContext": "wildlife-camera-video-evidence-portal",
       "primaryRootCause": "http-range-end-is-inclusive-but-slice-length-treated-as-exclusive",
       "labFormat": "http-binary-contract-investigation-with-segment-reassembly"
+    },
+    {
+      "runSlot": "2026-11-15-21",
+      "status": "GENERATED",
+      "unitId": "UNIT-FLAGZERO-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-FLAGZERO-001-emergency-dispatch-zero-flags",
+      "domain": "csharp-flags-authorization",
+      "format": "deterministic-access-policy-contract-replay",
+      "primarySkill": "csharp-flags-enum",
+      "scenarioCategory": "unassigned-operator-access-review",
+      "rootCauseCategory": "enum-hasflag-zero-is-always-true",
+      "failureMode": "unassigned-operator-sees-restricted-record",
+      "solutionPattern": "explicit-zero-permission-denial-before-bitmask-check",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "createdAt": "2026-11-15T21:07:37+07:00",
+      "validationMode": "static-review",
+      "businessContext": "emergency-dispatch-role-screening",
+      "primaryRootCause": "enum-hasflag-zero-is-always-true",
+      "labFormat": "deterministic-access-policy-contract-replay"
     }
   ],
   "rolling24": [
