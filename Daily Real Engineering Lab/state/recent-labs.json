@@ -591,24 +591,29 @@
       "businessContext": "regional-transit-partner-api",
       "primaryRootCause": "uri-resolution-rooted-and-parent-relative-references-escape-base-path",
       "labFormat": "uri-routing-investigation-and-contract-hardening"
+    },
+    {
+      "runSlot": "2026-11-16-13",
+      "status": "SUCCESS",
+      "unitId": "UNIT-STREAMREAD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/16/UNIT-STREAMREAD-001-weather-station-framed-stream-short-read",
+      "domain": "dotnet-stream-io",
+      "format": "binary-stream-contract-investigation-with-deterministic-chunked-transport",
+      "primarySkill": "stream-read-contract",
+      "scenarioCategory": "intermittent-binary-frame-decoding",
+      "rootCauseCategory": "stream-read-may-return-fewer-bytes-than-requested",
+      "failureMode": "partial-header-interpreted-as-complete-sequence",
+      "solutionPattern": "read-exactly-with-explicit-end-of-stream-handling",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-16T13:04:59+07:00",
+      "validationMode": "static-review",
+      "businessContext": "remote-weather-station-telemetry",
+      "primaryRootCause": "stream-read-may-return-fewer-bytes-than-requested",
+      "labFormat": "binary-stream-contract-investigation-with-deterministic-chunked-transport"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-11-08",
-      "unitId": "UNIT-RANGE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-RANGE-001-mountain-aerial-map-resume-content-range",
-      "domain": "http-partial-content-integrity",
-      "primarySkill": "http-range-resume-validation",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "businessContext": "mountain-aerial-map-offline-field-sync",
-      "scenarioType": "partial-download-resume-with-server-range-disagreement",
-      "primaryRootCause": "resumed-download-appends-206-body-without-validating-content-range-start",
-      "failureMode": "locally-assembled-map-has-overlapping-bytes-despite-successful-status",
-      "solutionPattern": "strict-206-content-range-offset-and-total-contract-before-append",
-      "labFormat": "http-partial-content-contract-investigation"
-    },
     {
       "runSlot": "2026-11-11-11",
       "unitId": "UNIT-CTSREUSE-001",
@@ -1018,11 +1023,30 @@
       "businessContext": "university-scholarship-disbursement",
       "primaryRootCause": "default-bankers-rounding-mismatches-contractual-away-from-zero",
       "labFormat": "financial-reconciliation-investigation-with-boundary-replay"
+    },
+    {
+      "runSlot": "2026-11-16-13",
+      "status": "SUCCESS",
+      "unitId": "UNIT-STREAMREAD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/16/UNIT-STREAMREAD-001-weather-station-framed-stream-short-read",
+      "domain": "dotnet-stream-io",
+      "format": "binary-stream-contract-investigation-with-deterministic-chunked-transport",
+      "primarySkill": "stream-read-contract",
+      "scenarioCategory": "intermittent-binary-frame-decoding",
+      "rootCauseCategory": "stream-read-may-return-fewer-bytes-than-requested",
+      "failureMode": "partial-header-interpreted-as-complete-sequence",
+      "solutionPattern": "read-exactly-with-explicit-end-of-stream-handling",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-16T13:04:59+07:00",
+      "validationMode": "static-review",
+      "businessContext": "remote-weather-station-telemetry",
+      "primaryRootCause": "stream-read-may-return-fewer-bytes-than-requested",
+      "labFormat": "binary-stream-contract-investigation-with-deterministic-chunked-transport"
     }
   ],
   "rollingProfile": {
     "domain": {
-      "http-partial-content-integrity": 1,
       "dotnet-cancellation-lifecycle": 1,
       "event-contract-evolution": 1,
       "stream-processing-event-time": 1,
@@ -1045,24 +1069,34 @@
       "observability-slo-engineering": 1,
       "dotnet-memory-ownership": 1,
       "dotnet-file-security": 1,
-      "dotnet-financial-arithmetic": 1
+      "dotnet-financial-arithmetic": 1,
+      "dotnet-stream-io": 1
     },
     "difficulty": {
       "D4": 24
     },
     "maturityLevel": {
-      "L2": 8,
       "L3": 4,
       "L5": 5,
       "L6": 2,
       "L1": 2,
+      "L2": 8,
       "L4": 3
     },
     "format": {
-      "unknown": 11,
+      "cancellation-lifecycle-production-incident-replay": 1,
+      "event-schema-compatibility-design-decision-with-replay-matrix": 1,
+      "architecture-tabletop-event-time-replay": 1,
+      "deterministic-two-client-http-concurrency-replay": 1,
+      "linq-investigation-replay": 1,
+      "legacy-immutable-snapshot-refactoring-with-aliasing-regression": 1,
+      "architecture-recovery-decision-with-deterministic-backup-replay": 1,
+      "deterministic-hash-identity-regression": 1,
       "aspnet-core-middleware-refactoring-with-live-http-replay": 1,
+      "capacity-architecture-design-decision-with-deterministic-scenario-replay": 1,
       "asynchronous-failover-investigation-with-two-case-replay": 1,
       "postgres-mvcc-evidence-triage-and-operations-decision": 1,
+      "http-contract-refactoring-with-fixed-clock-replay": 1,
       "capacity-and-threat-model-design-decision-with-quantitative-replay": 1,
       "binary-wire-contract-investigation-with-local-replay": 1,
       "scheduler-semantics-investigation-with-virtual-time-evidence": 1,
@@ -1072,7 +1106,8 @@
       "observability-design-decision-with-replayable-incident-evidence": 1,
       "deterministic-memory-ownership-incident-replay": 1,
       "security-boundary-investigation-with-local-zip-fixture": 1,
-      "financial-reconciliation-investigation-with-boundary-replay": 1
+      "financial-reconciliation-investigation-with-boundary-replay": 1,
+      "binary-stream-contract-investigation-with-deterministic-chunked-transport": 1
     }
   },
   "recentLabs": [
@@ -1646,6 +1681,26 @@
       "scenarioType": "concurrent-insert-between-pagination-requests",
       "primaryRootCause": "offset-pagination-shifts-under-newer-inserts",
       "labFormat": "deterministic-paging-replay-and-refactoring"
+    },
+    {
+      "runSlot": "2026-11-16-13",
+      "status": "SUCCESS",
+      "unitId": "UNIT-STREAMREAD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/16/UNIT-STREAMREAD-001-weather-station-framed-stream-short-read",
+      "domain": "dotnet-stream-io",
+      "format": "binary-stream-contract-investigation-with-deterministic-chunked-transport",
+      "primarySkill": "stream-read-contract",
+      "scenarioCategory": "intermittent-binary-frame-decoding",
+      "rootCauseCategory": "stream-read-may-return-fewer-bytes-than-requested",
+      "failureMode": "partial-header-interpreted-as-complete-sequence",
+      "solutionPattern": "read-exactly-with-explicit-end-of-stream-handling",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-16T13:04:59+07:00",
+      "validationMode": "static-review",
+      "businessContext": "remote-weather-station-telemetry",
+      "primaryRootCause": "stream-read-may-return-fewer-bytes-than-requested",
+      "labFormat": "binary-stream-contract-investigation-with-deterministic-chunked-transport"
     }
   ]
 }
