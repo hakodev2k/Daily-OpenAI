@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-STREAMREAD-001",
+  "runSlot": "2026-11-16-13",
+  "title": "Weather station framed stream short read",
+  "domain": "dotnet-stream-io",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-16T13:04:59+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "stream-read-contract",
+    "binary-framing",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# Stream",
+    "binary little-endian"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "remote-weather-station-telemetry",
+    "scenarioType": "intermittent-binary-frame-decoding",
+    "primaryRootCause": "stream-read-may-return-fewer-bytes-than-requested",
+    "failureMode": "partial-header-interpreted-as-complete-sequence",
+    "solutionPattern": "read-exactly-with-explicit-end-of-stream-handling",
+    "labFormat": "binary-stream-contract-investigation-with-deterministic-chunked-transport"
+  }
+}
