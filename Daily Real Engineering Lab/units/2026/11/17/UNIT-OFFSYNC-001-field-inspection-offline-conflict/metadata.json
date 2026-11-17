@@ -1,0 +1,46 @@
+{
+  "unitId": "UNIT-OFFSYNC-001",
+  "runSlot": "2026-11-17-07",
+  "title": "Đồng bộ biên bản kiểm định cầu khi mất mạng",
+  "domain": "distributed-offline-sync",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-17T07:13:49+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "offline-sync",
+    "optimistic-concurrency",
+    "idempotency",
+    "business-invariants"
+  ],
+  "prerequisites": [
+    "HTTP",
+    "SQL transactions"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "rural-bridge-safety-inspections",
+    "scenarioType": "offline-mobile-edit-reconciliation-after-network-recovery",
+    "primaryRootCause": "last-write-wins-overwrites-independent-and-safety-critical-field-changes",
+    "failureMode": "lost-inspection-evidence-and-incorrect-bridge-closure-status",
+    "solutionPattern": "field-level-versioned-merge-with-explicit-safety-conflict-review",
+    "labFormat": "offline-sync-conflict-policy-design-with-event-replay"
+  },
+  "manifest": [
+    "README.md",
+    "scenario.md",
+    "evidence.csv",
+    "workspace.md",
+    "hints.md",
+    "solution.md",
+    "metadata.json"
+  ]
+}
