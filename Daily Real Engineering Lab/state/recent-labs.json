@@ -1572,6 +1572,26 @@
       "failureMode": "lost-inspection-evidence-and-incorrect-bridge-closure-status",
       "solutionPattern": "field-level-versioned-merge-with-explicit-safety-conflict-review",
       "labFormat": "offline-sync-conflict-policy-design-with-event-replay"
+    },
+    {
+      "runSlot": "2026-11-17-08",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CULTUREPARSE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-CULTUREPARSE-001-food-cooperative-price-import",
+      "domain": "dotnet-globalization",
+      "format": "cross-culture-data-contract-reproduction",
+      "primarySkill": "culture-aware-number-parsing",
+      "scenarioCategory": "same-payload-different-worker-locale",
+      "rootCauseCategory": "decimal-parse-uses-process-currentculture-instead-of-partner-wire-format",
+      "failureMode": "environment-dependent-import-rejection-and-reconciliation-drift",
+      "solutionPattern": "strict-wire-format-validation-and-invariant-decimal-parsing",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T08:08:32+07:00",
+      "validationMode": "static-review",
+      "businessContext": "food-cooperative-supplier-price-ingestion",
+      "primaryRootCause": "decimal-parse-uses-process-currentculture-instead-of-partner-wire-format",
+      "labFormat": "cross-culture-data-contract-reproduction"
     }
   ]
 }
