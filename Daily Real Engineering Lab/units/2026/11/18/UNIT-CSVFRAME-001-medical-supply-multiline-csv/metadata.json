@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CSVFRAME-001",
+  "runSlot": "2026-11-18-01",
+  "title": "Dòng CSV nhiều dòng làm lệch dữ liệu nhập vật tư y tế",
+  "domain": "dotnet-file-import-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-18T01:13:07+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "csv-record-framing",
+    "streaming-parser",
+    "data-integrity"
+  ],
+  "prerequisites": [
+    "C# strings",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "district-hospital-medical-supply-import",
+    "scenarioType": "partner-csv-with-quoted-multiline-notes",
+    "primaryRootCause": "physical-line-splitting-violates-rfc4180-quoted-record-boundary",
+    "failureMode": "inventory-rows-shift-or-disappear-when-notes-contain-newlines",
+    "solutionPattern": "stateful-csv-record-parser-with-escaped-quote-and-crlf-contract",
+    "labFormat": "data-import-integrity-investigation-with-adversarial-fixtures"
+  }
+}

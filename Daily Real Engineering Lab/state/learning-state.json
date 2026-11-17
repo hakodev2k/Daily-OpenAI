@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SEMLEAK-001",
-    "runSlot": "2026-11-17-22",
-    "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-SEMLEAK-001-warehouse-gate-cancellation",
+    "unitId": "UNIT-CSVFRAME-001",
+    "runSlot": "2026-11-18-01",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-CSVFRAME-001-medical-supply-multiline-csv",
     "status": "READY",
-    "createdAt": "2026-11-17T22:08:35+07:00"
+    "createdAt": "2026-11-18T01:13:07+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 587,
-    "totalGenerated": 582,
+    "totalRunSlotsAttempted": 588,
+    "totalGenerated": 583,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 71,
+    "elapsedDays": 72,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
