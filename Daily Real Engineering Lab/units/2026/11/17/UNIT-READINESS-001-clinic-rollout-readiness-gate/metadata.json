@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-READINESS-001",
+  "runSlot": "2026-11-17-13",
+  "title": "Clinic rollout: readiness gate under cold start",
+  "domain": "deployment-health-probes",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-17T13:07:43+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "kubernetes-readiness",
+    "deployment-troubleshooting",
+    "health-checks"
+  ],
+  "prerequisites": [
+    "dotnet-console",
+    "basic-kubernetes-probes"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-clinic-appointment-rollout",
+    "scenarioType": "cold-start-rollout-traffic-admission",
+    "primaryRootCause": "liveness-used-as-readiness-before-essential-initialization",
+    "failureMode": "early-503-during-rolling-deployment",
+    "solutionPattern": "separate-readiness-from-liveness-and-gate-routing",
+    "labFormat": "deployment-incident-timeline-replay"
+  }
+}

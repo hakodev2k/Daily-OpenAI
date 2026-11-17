@@ -1628,6 +1628,24 @@
       "createdAt": "2026-11-17T11:05:48+07:00",
       "validationMode": "static-review",
       "businessContext": "national-wildlife-camera-survey"
+    },
+    {
+      "runSlot": "2026-11-17-13",
+      "status": "SUCCESS",
+      "unitId": "UNIT-READINESS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-READINESS-001-clinic-rollout-readiness-gate",
+      "domain": "deployment-health-probes",
+      "format": "deployment-incident-timeline-replay",
+      "primarySkill": "kubernetes-readiness",
+      "scenarioCategory": "cold-start-rollout-traffic-admission",
+      "rootCauseCategory": "liveness-used-as-readiness-before-essential-initialization",
+      "failureMode": "early-503-during-rolling-deployment",
+      "solutionPattern": "separate-readiness-from-liveness-and-gate-routing",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T13:07:43+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-clinic-appointment-rollout"
     }
   ]
 }
