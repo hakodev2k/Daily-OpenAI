@@ -1,0 +1,3 @@
+- https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/
+- https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.httprequestrewindextensions.enablebuffering
+- https://learn.microsoft.com/en-us/aspnet/core/fundamentals/http-logging/

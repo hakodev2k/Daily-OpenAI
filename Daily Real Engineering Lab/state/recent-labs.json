@@ -742,6 +742,27 @@
       "businessContext": "municipal-evacuation-bulletin",
       "primaryRootCause": "sliding-expiration-does-not-bound-hot-entry-age",
       "labFormat": "production-cache-freshness-incident"
+    },
+    {
+      "runSlot": "2026-11-18-04",
+      "status": "SUCCESS",
+      "unitId": "UNIT-BODYREWIND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-BODYREWIND-001-permit-audit-request-body",
+      "domain": "aspnetcore-request-pipeline",
+      "format": "aspnetcore-pipeline-contract-investigation",
+      "primarySkill": "aspnetcore-request-body-replay",
+      "scenarioCategory": "middleware-reads-request-before-handler",
+      "rootCauseCategory": "request-body-stream-consumed-by-audit-middleware",
+      "failureMode": "downstream-handler-receives-empty-json",
+      "solutionPattern": "enable-buffering-and-reset-body-position",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T04:07:48+07:00",
+      "validationMode": "static-review",
+      "businessContext": "construction-permit-intake-audit",
+      "scenarioType": "middleware-reads-request-before-handler",
+      "primaryRootCause": "request-body-stream-consumed-by-audit-middleware",
+      "labFormat": "aspnetcore-pipeline-contract-investigation"
     }
   ],
   "rolling24": [

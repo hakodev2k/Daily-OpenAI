@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CACHEAGE-001",
-    "runSlot": "2026-11-18-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-CACHEAGE-001-evacuation-bulletin-freshness",
+    "unitId": "UNIT-BODYREWIND-001",
+    "runSlot": "2026-11-18-04",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-BODYREWIND-001-permit-audit-request-body",
     "status": "READY",
-    "createdAt": "2026-11-18T03:13:24+07:00"
+    "createdAt": "2026-11-18T04:07:48+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 590,
-    "totalGenerated": 585,
+    "totalRunSlotsAttempted": 591,
+    "totalGenerated": 586,
     "totalFailed": 5
   },
   "learning": {

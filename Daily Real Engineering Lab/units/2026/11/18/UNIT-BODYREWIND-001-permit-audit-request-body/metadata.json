@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-BODYREWIND-001",
+  "runSlot": "2026-11-18-04",
+  "title": "Hồ sơ cấp phép mất payload sau audit middleware",
+  "domain": "aspnetcore-request-pipeline",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-18T04:07:48+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "aspnetcore-middleware",
+    "http-request-body-stream",
+    "auditing"
+  ],
+  "prerequisites": [
+    "middleware-ordering",
+    "stream-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "construction-permit-intake-audit",
+    "scenarioType": "middleware-reads-request-before-handler",
+    "primaryRootCause": "request-body-stream-consumed-by-audit-middleware",
+    "failureMode": "downstream-handler-receives-empty-json",
+    "solutionPattern": "enable-buffering-and-reset-body-position",
+    "labFormat": "aspnetcore-pipeline-contract-investigation"
+  }
+}
