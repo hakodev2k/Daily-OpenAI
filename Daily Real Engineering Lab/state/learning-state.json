@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-STREAMREAD-001",
-    "runSlot": "2026-11-16-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/16/UNIT-STREAMREAD-001-weather-station-framed-stream-short-read",
+    "unitId": "UNIT-OFFSYNC-001",
+    "runSlot": "2026-11-17-07",
+    "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-OFFSYNC-001-field-inspection-offline-conflict",
     "status": "READY",
-    "createdAt": "2026-11-16T13:04:59+07:00"
+    "createdAt": "2026-11-17T07:13:49+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 580,
-    "totalGenerated": 575,
+    "totalRunSlotsAttempted": 581,
+    "totalGenerated": 576,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 70,
+    "elapsedDays": 71,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
