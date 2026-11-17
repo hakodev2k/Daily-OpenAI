@@ -1,0 +1,5 @@
+receivedAt,operationId,device,baseVersion,surfaceCrackMm,photoIds,closureRequired,notes
+2026-11-17T06:00:00Z,op-a,inspector-A,10,7.2,p0|p1,true,Crack-widened
+2026-11-17T06:00:05Z,op-b,supervisor-B,10,4.0,p0,false,Routine-review
+2026-11-17T06:00:07Z,op-b,supervisor-B,10,4.0,p0,false,Retry-same-operation
+2026-11-17T06:00:11Z,op-c,inspector-C,11,7.2,p0|p1|p2,true,Additional-photo
