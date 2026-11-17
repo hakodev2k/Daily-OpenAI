@@ -1,0 +1,47 @@
+{
+  "unitId": "UNIT-CULTUREPARSE-001",
+  "runSlot": "2026-11-17-08",
+  "title": "Giá nhập hàng thay đổi giữa các máy chủ",
+  "domain": "dotnet-globalization",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-17T08:08:32+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "culture-aware-number-parsing",
+    "data-contract-validation",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# basics",
+    ".NET CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "food-cooperative-supplier-price-ingestion",
+    "scenarioType": "same-payload-different-worker-locale",
+    "primaryRootCause": "decimal-parse-uses-process-currentculture-instead-of-partner-wire-format",
+    "failureMode": "environment-dependent-import-rejection-and-reconciliation-drift",
+    "solutionPattern": "strict-wire-format-validation-and-invariant-decimal-parsing",
+    "labFormat": "cross-culture-data-contract-reproduction"
+  },
+  "manifest": [
+    "README.md",
+    "starter/PriceImport.csproj",
+    "starter/Program.cs",
+    "reproduce.ps1",
+    "verify.ps1",
+    "workspace/my-investigation.md",
+    "hints.md",
+    "solution.md",
+    "metadata.json"
+  ]
+}
