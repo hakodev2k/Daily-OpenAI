@@ -1685,6 +1685,24 @@
       "createdAt": "2026-11-17T14:14:36+07:00",
       "validationMode": "static-review",
       "businessContext": "coastal-buoy-telemetry"
+    },
+    {
+      "runSlot": "2026-11-17-21",
+      "status": "SUCCESS",
+      "unitId": "UNIT-GETORADD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-GETORADD-001-festival-ticket-single-flight",
+      "domain": "dotnet-concurrency",
+      "format": "deterministic-two-request-side-effect-investigation",
+      "primarySkill": "concurrentdictionary-valuefactory-semantics",
+      "scenarioCategory": "concurrent-first-request-cache-population",
+      "rootCauseCategory": "concurrentdictionary-valuefactory-can-run-multiple-times",
+      "failureMode": "duplicate-external-allocation-despite-single-cache-entry",
+      "solutionPattern": "lazy-executionandpublication-single-flight-with-idempotent-persistence",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T21:05:02+07:00",
+      "validationMode": "static-review",
+      "businessContext": "festival-ticket-allocation"
     }
   ]
 }

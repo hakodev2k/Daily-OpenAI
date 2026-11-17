@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ASYNCENUM-001",
-    "runSlot": "2026-11-17-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-ASYNCENUM-001-coastal-buoy-stream-cancellation",
+    "unitId": "UNIT-GETORADD-001",
+    "runSlot": "2026-11-17-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-GETORADD-001-festival-ticket-single-flight",
     "status": "READY",
-    "createdAt": "2026-11-17T14:14:36+07:00"
+    "createdAt": "2026-11-17T21:05:02+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 585,
-    "totalGenerated": 580,
+    "totalRunSlotsAttempted": 586,
+    "totalGenerated": 581,
     "totalFailed": 5
   },
   "learning": {

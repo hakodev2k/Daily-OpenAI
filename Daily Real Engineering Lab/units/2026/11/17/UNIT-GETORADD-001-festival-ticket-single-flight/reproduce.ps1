@@ -1,0 +1,1 @@
+$ErrorActionPreference='Stop'; $output = & dotnet run --project "$PSScriptRoot/starter/TicketLab.csproj" 2>&1; $code=$LASTEXITCODE; $output | ForEach-Object { Write-Output $_ }; if ($code -eq 2 -and (($output -join "`n") -match 'Allocations=2')) { Write-Host 'REPRODUCED: duplicate allocation'; exit 0 }; Write-Error "Unexpected reproduction result (exit=$code)"; exit 1

@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-GETORADD-001",
+  "runSlot": "2026-11-17-21",
+  "title": "Hai vé được cấp, chỉ một vé được lưu",
+  "domain": "dotnet-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-17T21:05:02+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "concurrentdictionary-getoradd",
+    "single-flight",
+    "side-effect-idempotency"
+  ],
+  "primarySkill": "concurrentdictionary-valuefactory-semantics",
+  "prerequisites": [
+    "Task",
+    "ConcurrentDictionary"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "festival-ticket-allocation",
+    "scenarioType": "concurrent-first-request-cache-population",
+    "primaryRootCause": "concurrentdictionary-valuefactory-can-run-multiple-times",
+    "failureMode": "duplicate-external-allocation-despite-single-cache-entry",
+    "solutionPattern": "lazy-executionandpublication-single-flight-with-idempotent-persistence",
+    "labFormat": "deterministic-two-request-side-effect-investigation"
+  }
+}
