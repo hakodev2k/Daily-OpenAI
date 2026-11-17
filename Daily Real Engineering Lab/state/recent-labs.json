@@ -663,6 +663,24 @@
       "createdAt": "2026-11-17T14:14:36+07:00",
       "validationMode": "static-review",
       "businessContext": "coastal-buoy-telemetry"
+    },
+    {
+      "runSlot": "2026-11-17-22",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SEMLEAK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-SEMLEAK-001-warehouse-gate-cancellation",
+      "domain": "dotnet-concurrency-control",
+      "format": "deterministic-cancellation-interleaving-replay",
+      "primarySkill": "semaphoreslim-permit-ownership",
+      "scenarioCategory": "cancelled-waiter-while-capacity-lease-is-held",
+      "rootCauseCategory": "unconditional-semaphore-release-after-cancelled-wait",
+      "failureMode": "admitted-work-exceeds-capacity-after-cancellation",
+      "solutionPattern": "release-only-after-successful-acquisition",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T22:08:35+07:00",
+      "validationMode": "static-review",
+      "businessContext": "warehouse-loading-dock-slot-control"
     }
   ],
   "rolling24": [

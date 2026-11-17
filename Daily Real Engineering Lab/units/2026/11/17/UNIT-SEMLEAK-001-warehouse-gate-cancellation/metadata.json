@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SEMLEAK-001",
+  "runSlot": "2026-11-17-22",
+  "title": "Cổng bốc dỡ vượt giới hạn sau khi yêu cầu bị hủy",
+  "domain": "dotnet-concurrency-control",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-17T22:08:35+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "semaphoreslim",
+    "cancellation",
+    "resource-lease-ownership"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "CancellationToken"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "warehouse-loading-dock-slot-control",
+    "scenarioType": "cancelled-waiter-while-capacity-lease-is-held",
+    "primaryRootCause": "unconditional-semaphore-release-after-cancelled-wait",
+    "failureMode": "admitted-work-exceeds-capacity-after-cancellation",
+    "solutionPattern": "release-only-after-successful-acquisition",
+    "labFormat": "deterministic-cancellation-interleaving-replay"
+  }
+}
