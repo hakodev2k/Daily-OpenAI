@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-OFFSYNC-001",
-    "runSlot": "2026-11-17-07",
-    "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-OFFSYNC-001-field-inspection-offline-conflict",
+    "unitId": "UNIT-CULTUREPARSE-001",
+    "runSlot": "2026-11-17-08",
+    "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-CULTUREPARSE-001-food-cooperative-price-import",
     "status": "READY",
-    "createdAt": "2026-11-17T07:13:49+07:00"
+    "createdAt": "2026-11-17T08:08:32+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 581,
-    "totalGenerated": 576,
+    "totalRunSlotsAttempted": 582,
+    "totalGenerated": 577,
     "totalFailed": 5
   },
   "learning": {
