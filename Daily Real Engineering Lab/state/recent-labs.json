@@ -645,24 +645,27 @@
       "createdAt": "2026-11-17T11:05:48+07:00",
       "validationMode": "static-review",
       "businessContext": "national-wildlife-camera-survey"
+    },
+    {
+      "runSlot": "2026-11-17-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ASYNCENUM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-ASYNCENUM-001-coastal-buoy-stream-cancellation",
+      "domain": "dotnet-async-streams",
+      "format": "async-stream-contract-investigation-with-two-path-replay",
+      "primarySkill": "async-iterator-cancellation",
+      "scenarioCategory": "cancelled-stream-continues-emitting",
+      "rootCauseCategory": "iterator-parameter-not-bound-to-enumerator-cancellation-token",
+      "failureMode": "post-cancellation-emission",
+      "solutionPattern": "enumerator-cancellation-token-binding",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T14:14:36+07:00",
+      "validationMode": "static-review",
+      "businessContext": "coastal-buoy-telemetry"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-11-11",
-      "unitId": "UNIT-CTSREUSE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/11/UNIT-CTSREUSE-001-greenhouse-irrigation-cancellation-budget-reuse",
-      "domain": "dotnet-cancellation-lifecycle",
-      "primarySkill": "cancellationtokensource-lifetime",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "businessContext": "greenhouse-irrigation-automation",
-      "scenarioType": "repeated-worker-cycle-with-expired-time-budget",
-      "primaryRootCause": "cancellationtokensource-reused-after-terminal-cancellation",
-      "failureMode": "subsequent-healthy-cycle-cancelled-before-actuation",
-      "solutionPattern": "per-cycle-linked-cancellation-budget-with-explicit-resource-ownership",
-      "labFormat": "cancellation-lifecycle-production-incident-replay"
-    },
     {
       "runSlot": "2026-11-11-15",
       "unitId": "UNIT-SCHEMAEV-001",
@@ -1077,6 +1080,24 @@
       "businessContext": "remote-weather-station-telemetry",
       "primaryRootCause": "stream-read-may-return-fewer-bytes-than-requested",
       "labFormat": "binary-stream-contract-investigation-with-deterministic-chunked-transport"
+    },
+    {
+      "runSlot": "2026-11-17-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ASYNCENUM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-ASYNCENUM-001-coastal-buoy-stream-cancellation",
+      "domain": "dotnet-async-streams",
+      "format": "async-stream-contract-investigation-with-two-path-replay",
+      "primarySkill": "async-iterator-cancellation",
+      "scenarioCategory": "cancelled-stream-continues-emitting",
+      "rootCauseCategory": "iterator-parameter-not-bound-to-enumerator-cancellation-token",
+      "failureMode": "post-cancellation-emission",
+      "solutionPattern": "enumerator-cancellation-token-binding",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T14:14:36+07:00",
+      "validationMode": "static-review",
+      "businessContext": "coastal-buoy-telemetry"
     }
   ],
   "rollingProfile": {
@@ -1646,6 +1667,24 @@
       "createdAt": "2026-11-17T13:07:43+07:00",
       "validationMode": "static-review",
       "businessContext": "community-clinic-appointment-rollout"
+    },
+    {
+      "runSlot": "2026-11-17-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ASYNCENUM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-ASYNCENUM-001-coastal-buoy-stream-cancellation",
+      "domain": "dotnet-async-streams",
+      "format": "async-stream-contract-investigation-with-two-path-replay",
+      "primarySkill": "async-iterator-cancellation",
+      "scenarioCategory": "cancelled-stream-continues-emitting",
+      "rootCauseCategory": "iterator-parameter-not-bound-to-enumerator-cancellation-token",
+      "failureMode": "post-cancellation-emission",
+      "solutionPattern": "enumerator-cancellation-token-binding",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T14:14:36+07:00",
+      "validationMode": "static-review",
+      "businessContext": "coastal-buoy-telemetry"
     }
   ]
 }

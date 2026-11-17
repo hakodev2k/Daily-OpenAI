@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ASYNCENUM-001",
+  "runSlot": "2026-11-17-14",
+  "title": "Telemetry tiếp tục sau khi client hủy",
+  "domain": "dotnet-async-streams",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-17T14:14:36+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "IAsyncEnumerable",
+    "async-iterator-cancellation"
+  ],
+  "prerequisites": [
+    "async-await",
+    "CancellationToken"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "coastal-buoy-telemetry",
+    "scenarioType": "cancelled-stream-continues-emitting",
+    "primaryRootCause": "iterator-parameter-not-bound-to-enumerator-cancellation-token",
+    "failureMode": "post-cancellation-emission",
+    "solutionPattern": "enumerator-cancellation-token-binding",
+    "labFormat": "async-stream-contract-investigation-with-two-path-replay"
+  },
+  "manifestFiles": 14
+}

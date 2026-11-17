@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-READINESS-001",
-    "runSlot": "2026-11-17-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-READINESS-001-clinic-rollout-readiness-gate",
+    "unitId": "UNIT-ASYNCENUM-001",
+    "runSlot": "2026-11-17-14",
+    "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-ASYNCENUM-001-coastal-buoy-stream-cancellation",
     "status": "READY",
-    "createdAt": "2026-11-17T13:07:43+07:00"
+    "createdAt": "2026-11-17T14:14:36+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 584,
-    "totalGenerated": 579,
+    "totalRunSlotsAttempted": 585,
+    "totalGenerated": 580,
     "totalFailed": 5
   },
   "learning": {
