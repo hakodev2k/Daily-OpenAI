@@ -1,0 +1,31 @@
+{
+  "unitId": "UNIT-CACHEAGE-001",
+  "runSlot": "2026-11-18-03",
+  "title": "Bản tin sơ tán không cập nhật khi lưu lượng đọc cao",
+  "domain": "caching-consistency",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-18T03:13:24+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "cache-expiration-policy",
+    "deterministic-clock-testing"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-evacuation-bulletin",
+    "scenarioType": "frequent-reads-after-source-revision",
+    "primaryRootCause": "sliding-expiration-does-not-bound-hot-entry-age",
+    "failureMode": "stale-public-safety-instruction",
+    "solutionPattern": "independent-absolute-max-age-and-idle-ttl",
+    "labFormat": "production-cache-freshness-incident"
+  }
+}

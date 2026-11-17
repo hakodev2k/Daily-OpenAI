@@ -722,24 +722,29 @@
       "businessContext": "railway-signal-configuration-snapshot",
       "primaryRootCause": "in-place-overwrite-destroys-last-good-snapshot",
       "labFormat": "file-crash-consistency-investigation"
+    },
+    {
+      "runSlot": "2026-11-18-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CACHEAGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-CACHEAGE-001-evacuation-bulletin-freshness",
+      "domain": "caching-consistency",
+      "format": "production-cache-freshness-incident",
+      "primarySkill": "cache-expiration-policy",
+      "scenarioCategory": "frequent-reads-after-source-revision",
+      "rootCauseCategory": "sliding-expiration-does-not-bound-hot-entry-age",
+      "failureMode": "stale-public-safety-instruction",
+      "solutionPattern": "independent-absolute-max-age-and-idle-ttl",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T03:13:24+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-evacuation-bulletin",
+      "primaryRootCause": "sliding-expiration-does-not-bound-hot-entry-age",
+      "labFormat": "production-cache-freshness-incident"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-12-16",
-      "unitId": "UNIT-PGPOOL-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-PGPOOL-001-vaccination-booking-postgres-connection-budget",
-      "domain": "database-capacity-architecture",
-      "primarySkill": "postgres-connection-budget",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "businessContext": "district-vaccination-appointment-booking",
-      "scenarioType": "autoscale-during-public-registration-burst",
-      "primaryRootCause": "independent-per-pod-connection-pools-exceed-shared-postgres-connection-budget",
-      "failureMode": "database-connection-rejection-during-horizontal-scaling",
-      "solutionPattern": "global-connection-budget-with-replica-aware-pool-caps-and-admission-controls",
-      "labFormat": "capacity-architecture-design-decision-with-deterministic-scenario-replay"
-    },
     {
       "runSlot": "2026-11-13-00",
       "status": "SUCCESS",
@@ -1185,12 +1190,31 @@
       "businessContext": "railway-signal-configuration-snapshot",
       "primaryRootCause": "in-place-overwrite-destroys-last-good-snapshot",
       "labFormat": "file-crash-consistency-investigation"
+    },
+    {
+      "runSlot": "2026-11-18-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CACHEAGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-CACHEAGE-001-evacuation-bulletin-freshness",
+      "domain": "caching-consistency",
+      "format": "production-cache-freshness-incident",
+      "primarySkill": "cache-expiration-policy",
+      "scenarioCategory": "frequent-reads-after-source-revision",
+      "rootCauseCategory": "sliding-expiration-does-not-bound-hot-entry-age",
+      "failureMode": "stale-public-safety-instruction",
+      "solutionPattern": "independent-absolute-max-age-and-idle-ttl",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T03:13:24+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-evacuation-bulletin",
+      "primaryRootCause": "sliding-expiration-does-not-bound-hot-entry-age",
+      "labFormat": "production-cache-freshness-incident"
     }
   ],
   "rollingProfile": {
-    "domains": {
-      "aspnetcore-request-pipeline": 1,
-      "database-capacity-architecture": 1,
+    "windowSize": 24,
+    "byDomain": {
       "dotnet-async-failover": 1,
       "postgresql-mvcc-operations": 1,
       "http-retry-contract": 1,
@@ -1212,25 +1236,23 @@
       "dotnet-json-lifetime": 1,
       "dotnet-async-streams": 1,
       "dotnet-concurrency-control": 1,
-      "dotnet-file-import-contract": 1
+      "dotnet-file-import-contract": 1,
+      "dotnet-file-consistency": 1,
+      "caching-consistency": 1
     },
-    "difficulty": {
-      "D4": 24
-    },
-    "maturity": {
-      "L4": 2,
-      "L5": 5,
-      "L2": 13,
-      "L3": 3,
+    "byMaturity": {
+      "L2": 14,
+      "L5": 4,
+      "L4": 1,
+      "L3": 4,
       "L1": 1
     },
-    "formats": {
-      "aspnet-core-middleware-refactoring-with-live-http-replay": 1,
-      "capacity-architecture-design-decision-with-deterministic-scenario-replay": 1,
+    "byFormat": {
       "asynchronous-failover-investigation-with-two-case-replay": 1,
       "postgres-mvcc-evidence-triage-and-operations-decision": 1,
       "http-contract-refactoring-with-fixed-clock-replay": 1,
       "capacity-and-threat-model-design-decision-with-quantitative-replay": 1,
+      "unknown": 4,
       "scheduler-semantics-investigation-with-virtual-time-evidence": 1,
       "deterministic-three-actor-concurrency-incident": 1,
       "sql-anti-join-contract-investigation": 1,
@@ -1244,7 +1266,12 @@
       "uri-routing-investigation-and-contract-hardening": 1,
       "binary-stream-contract-investigation-with-deterministic-chunked-transport": 1,
       "offline-sync-conflict-policy-design-with-event-replay": 1,
-      "data-import-integrity-investigation-with-adversarial-fixtures": 1
+      "data-import-integrity-investigation-with-adversarial-fixtures": 1,
+      "file-crash-consistency-investigation": 1,
+      "production-cache-freshness-incident": 1
+    },
+    "byDifficulty": {
+      "D4": 24
     }
   },
   "recentLabs": [
@@ -1826,6 +1853,26 @@
       "businessContext": "railway-signal-configuration-snapshot",
       "primaryRootCause": "in-place-overwrite-destroys-last-good-snapshot",
       "labFormat": "file-crash-consistency-investigation"
+    },
+    {
+      "runSlot": "2026-11-18-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CACHEAGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-CACHEAGE-001-evacuation-bulletin-freshness",
+      "domain": "caching-consistency",
+      "format": "production-cache-freshness-incident",
+      "primarySkill": "cache-expiration-policy",
+      "scenarioCategory": "frequent-reads-after-source-revision",
+      "rootCauseCategory": "sliding-expiration-does-not-bound-hot-entry-age",
+      "failureMode": "stale-public-safety-instruction",
+      "solutionPattern": "independent-absolute-max-age-and-idle-ttl",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T03:13:24+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-evacuation-bulletin",
+      "primaryRootCause": "sliding-expiration-does-not-bound-hot-entry-age",
+      "labFormat": "production-cache-freshness-incident"
     }
   ]
 }
