@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ATOMICFILE-001",
+  "runSlot": "2026-11-18-02",
+  "title": "Cấu hình tín hiệu đường sắt bị hỏng sau khi ghi gián đoạn",
+  "domain": "dotnet-file-consistency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-18T02:06:32+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "file-io-atomicity",
+    "failure-injection",
+    "json-integrity"
+  ],
+  "prerequisites": [
+    "csharp-file-io",
+    "exception-handling"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "railway-signal-configuration-snapshot",
+    "scenarioType": "interrupted-local-configuration-update",
+    "primaryRootCause": "in-place-overwrite-destroys-last-good-snapshot",
+    "failureMode": "truncated-json-after-injected-io-interruption",
+    "solutionPattern": "same-directory-staged-write-and-atomic-rename",
+    "labFormat": "file-crash-consistency-investigation"
+  }
+}

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CSVFRAME-001",
-    "runSlot": "2026-11-18-01",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-CSVFRAME-001-medical-supply-multiline-csv",
+    "unitId": "UNIT-ATOMICFILE-001",
+    "runSlot": "2026-11-18-02",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-ATOMICFILE-001-rail-signal-config-crash-consistency",
     "status": "READY",
-    "createdAt": "2026-11-18T01:13:07+07:00"
+    "createdAt": "2026-11-18T02:06:32+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 588,
-    "totalGenerated": 583,
+    "totalRunSlotsAttempted": 589,
+    "totalGenerated": 584,
     "totalFailed": 5
   },
   "learning": {

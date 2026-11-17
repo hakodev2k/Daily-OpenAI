@@ -702,29 +702,29 @@
       "primaryRootCause": "physical-line-splitting-violates-rfc4180-quoted-record-boundary",
       "labFormat": "data-import-integrity-investigation-with-adversarial-fixtures",
       "scenarioType": "partner-csv-with-quoted-multiline-notes"
+    },
+    {
+      "runSlot": "2026-11-18-02",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ATOMICFILE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-ATOMICFILE-001-rail-signal-config-crash-consistency",
+      "domain": "dotnet-file-consistency",
+      "format": "file-crash-consistency-investigation",
+      "primarySkill": "file-io-atomicity",
+      "scenarioCategory": "interrupted-local-configuration-update",
+      "rootCauseCategory": "in-place-overwrite-destroys-last-good-snapshot",
+      "failureMode": "truncated-json-after-injected-io-interruption",
+      "solutionPattern": "same-directory-staged-write-and-atomic-rename",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T02:06:32+07:00",
+      "validationMode": "static-review",
+      "businessContext": "railway-signal-configuration-snapshot",
+      "primaryRootCause": "in-place-overwrite-destroys-last-good-snapshot",
+      "labFormat": "file-crash-consistency-investigation"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-12-14",
-      "status": "SUCCESS",
-      "unitId": "UNIT-HTTPBODY-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/12/UNIT-HTTPBODY-001-harbor-customs-webhook-body-replay",
-      "domain": "aspnetcore-request-pipeline",
-      "format": "aspnet-core-middleware-refactoring-with-live-http-replay",
-      "primarySkill": "aspnetcore-request-body-lifecycle",
-      "scenarioCategory": "middleware-audits-raw-body-before-endpoint-deserialization",
-      "rootCauseCategory": "nonseekable-request-body-consumed-before-next-pipeline-reader",
-      "failureMode": "webhook-endpoint-receives-empty-json-after-audit-middleware",
-      "solutionPattern": "bounded-request-body-buffering-with-position-reset-and-leave-open",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "createdAt": "2026-11-12T14:07:33+07:00",
-      "validationMode": "static-review",
-      "businessContext": "harbor-customs-shipment-webhook",
-      "primaryRootCause": "nonseekable-request-body-consumed-before-next-pipeline-reader",
-      "labFormat": "aspnet-core-middleware-refactoring-with-live-http-replay"
-    },
     {
       "runSlot": "2026-11-12-16",
       "unitId": "UNIT-PGPOOL-001",
@@ -1165,6 +1165,26 @@
       "primaryRootCause": "physical-line-splitting-violates-rfc4180-quoted-record-boundary",
       "labFormat": "data-import-integrity-investigation-with-adversarial-fixtures",
       "scenarioType": "partner-csv-with-quoted-multiline-notes"
+    },
+    {
+      "runSlot": "2026-11-18-02",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ATOMICFILE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-ATOMICFILE-001-rail-signal-config-crash-consistency",
+      "domain": "dotnet-file-consistency",
+      "format": "file-crash-consistency-investigation",
+      "primarySkill": "file-io-atomicity",
+      "scenarioCategory": "interrupted-local-configuration-update",
+      "rootCauseCategory": "in-place-overwrite-destroys-last-good-snapshot",
+      "failureMode": "truncated-json-after-injected-io-interruption",
+      "solutionPattern": "same-directory-staged-write-and-atomic-rename",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T02:06:32+07:00",
+      "validationMode": "static-review",
+      "businessContext": "railway-signal-configuration-snapshot",
+      "primaryRootCause": "in-place-overwrite-destroys-last-good-snapshot",
+      "labFormat": "file-crash-consistency-investigation"
     }
   ],
   "rollingProfile": {
@@ -1786,6 +1806,26 @@
       "primaryRootCause": "physical-line-splitting-violates-rfc4180-quoted-record-boundary",
       "labFormat": "data-import-integrity-investigation-with-adversarial-fixtures",
       "scenarioType": "partner-csv-with-quoted-multiline-notes"
+    },
+    {
+      "runSlot": "2026-11-18-02",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ATOMICFILE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-ATOMICFILE-001-rail-signal-config-crash-consistency",
+      "domain": "dotnet-file-consistency",
+      "format": "file-crash-consistency-investigation",
+      "primarySkill": "file-io-atomicity",
+      "scenarioCategory": "interrupted-local-configuration-update",
+      "rootCauseCategory": "in-place-overwrite-destroys-last-good-snapshot",
+      "failureMode": "truncated-json-after-injected-io-interruption",
+      "solutionPattern": "same-directory-staged-write-and-atomic-rename",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T02:06:32+07:00",
+      "validationMode": "static-review",
+      "businessContext": "railway-signal-configuration-snapshot",
+      "primaryRootCause": "in-place-overwrite-destroys-last-good-snapshot",
+      "labFormat": "file-crash-consistency-investigation"
     }
   ]
 }
