@@ -627,6 +627,24 @@
       "failureMode": "lost-inspection-evidence-and-incorrect-bridge-closure-status",
       "solutionPattern": "field-level-versioned-merge-with-explicit-safety-conflict-review",
       "labFormat": "offline-sync-conflict-policy-design-with-event-replay"
+    },
+    {
+      "runSlot": "2026-11-17-11",
+      "status": "SUCCESS",
+      "unitId": "UNIT-JSONLIFE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-JSONLIFE-001-wildlife-survey-json-lifetime",
+      "domain": "dotnet-json-lifetime",
+      "format": "json-lifetime-investigation-with-deterministic-replay",
+      "primarySkill": "system-text-json-ownership",
+      "scenarioCategory": "deferred-json-event-processing",
+      "rootCauseCategory": "json-element-references-disposed-jsondocument",
+      "failureMode": "objectdisposedexception-after-ingest-boundary",
+      "solutionPattern": "clone-json-element-to-own-its-lifetime",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T11:05:48+07:00",
+      "validationMode": "static-review",
+      "businessContext": "national-wildlife-camera-survey"
     }
   ],
   "rolling24": [
@@ -1592,6 +1610,24 @@
       "businessContext": "food-cooperative-supplier-price-ingestion",
       "primaryRootCause": "decimal-parse-uses-process-currentculture-instead-of-partner-wire-format",
       "labFormat": "cross-culture-data-contract-reproduction"
+    },
+    {
+      "runSlot": "2026-11-17-11",
+      "status": "SUCCESS",
+      "unitId": "UNIT-JSONLIFE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/17/UNIT-JSONLIFE-001-wildlife-survey-json-lifetime",
+      "domain": "dotnet-json-lifetime",
+      "format": "json-lifetime-investigation-with-deterministic-replay",
+      "primarySkill": "system-text-json-ownership",
+      "scenarioCategory": "deferred-json-event-processing",
+      "rootCauseCategory": "json-element-references-disposed-jsondocument",
+      "failureMode": "objectdisposedexception-after-ingest-boundary",
+      "solutionPattern": "clone-json-element-to-own-its-lifetime",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-17T11:05:48+07:00",
+      "validationMode": "static-review",
+      "businessContext": "national-wildlife-camera-survey"
     }
   ]
 }
