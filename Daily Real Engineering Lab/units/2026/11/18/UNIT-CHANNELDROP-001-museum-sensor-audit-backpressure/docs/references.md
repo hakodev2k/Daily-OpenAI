@@ -1,0 +1,2 @@
+- Microsoft Learn: https://learn.microsoft.com/dotnet/core/extensions/channels
+- API: https://learn.microsoft.com/dotnet/api/system.threading.channels.boundedchannelfullmode

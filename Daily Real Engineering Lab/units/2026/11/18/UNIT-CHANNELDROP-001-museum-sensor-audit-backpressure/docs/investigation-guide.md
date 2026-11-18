@@ -1,0 +1,1 @@
+Ghi timeline producer/consumer; liệt kê hypothesis về serialization, ordering và queue capacity. Xác minh bằng output và code trước khi chọn fix. Sau sửa thử burst 100 events và consumer có delay để đánh giá backpressure.

@@ -327,3 +327,4 @@
 {"eventType":"LAB_GENERATED","runSlot":"2026-11-18-01","unitId":"UNIT-CSVFRAME-001","path":"Daily Real Engineering Lab/units/2026/11/18/UNIT-CSVFRAME-001-medical-supply-multiline-csv","at":"2026-11-18T01:13:07+07:00","status":"READY"}
 {"eventType":"LAB_GENERATED","runSlot":"2026-11-18-02","unitId":"UNIT-ATOMICFILE-001","path":"Daily Real Engineering Lab/units/2026/11/18/UNIT-ATOMICFILE-001-rail-signal-config-crash-consistency","at":"2026-11-18T02:06:32+07:00","status":"READY"}
 {"eventType":"LAB_GENERATED","runSlot":"2026-11-18-03","unitId":"UNIT-CACHEAGE-001","path":"Daily Real Engineering Lab/units/2026/11/18/UNIT-CACHEAGE-001-evacuation-bulletin-freshness","at":"2026-11-18T03:13:24+07:00","status":"READY"}
+{"eventType":"LAB_GENERATED","runSlot":"2026-11-18-07","unitId":"UNIT-CHANNELDROP-001","path":"Daily Real Engineering Lab/units/2026/11/18/UNIT-CHANNELDROP-001-museum-sensor-audit-backpressure","occurredAt":"2026-11-18T07:12:59+07:00"}

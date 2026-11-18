@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-BODYREWIND-001",
-    "runSlot": "2026-11-18-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-BODYREWIND-001-permit-audit-request-body",
+    "unitId": "UNIT-CHANNELDROP-001",
+    "runSlot": "2026-11-18-07",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-CHANNELDROP-001-museum-sensor-audit-backpressure",
     "status": "READY",
-    "createdAt": "2026-11-18T04:07:48+07:00"
+    "createdAt": "2026-11-18T07:12:59+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 591,
-    "totalGenerated": 586,
+    "totalRunSlotsAttempted": 592,
+    "totalGenerated": 587,
     "totalFailed": 5
   },
   "learning": {
