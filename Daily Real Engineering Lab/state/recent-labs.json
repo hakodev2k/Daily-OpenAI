@@ -839,6 +839,26 @@
       "businessContext": "public-benefit-eligibility-case-audit",
       "primaryRootCause": "operational-store-and-audit-evidence-have-conflicting-retention-and-erasure-requirements",
       "labFormat": "architecture-decision-tabletop-with-change-request"
+    },
+    {
+      "runSlot": "2026-11-18-16",
+      "status": "SUCCESS",
+      "unitId": "UNIT-BATCHFAIL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-BATCHFAIL-001-regional-blood-bank-batch-failure",
+      "domain": "dotnet-task-composition",
+      "format": "batch-outcome-refactoring-with-deterministic-replay",
+      "primarySkill": "task-whenall-partial-outcomes",
+      "scenarioCategory": "parallel-partner-batch-partial-acceptance",
+      "rootCauseCategory": "whenall-aggregate-exception-collapses-per-item-outcomes",
+      "failureMode": "accepted-items-misreported-and-duplicate-retry-risk",
+      "solutionPattern": "settle-and-classify-each-task-with-stable-id-mapping",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T16:08:17+07:00",
+      "validationMode": "static-review",
+      "businessContext": "regional-blood-bank-report-transfer",
+      "primaryRootCause": "whenall-aggregate-exception-collapses-per-item-outcomes",
+      "labFormat": "batch-outcome-refactoring-with-deterministic-replay"
     }
   ],
   "rolling24": [
@@ -2011,6 +2031,26 @@
       "businessContext": "public-benefit-eligibility-case-audit",
       "primaryRootCause": "operational-store-and-audit-evidence-have-conflicting-retention-and-erasure-requirements",
       "labFormat": "architecture-decision-tabletop-with-change-request"
+    },
+    {
+      "runSlot": "2026-11-18-16",
+      "status": "SUCCESS",
+      "unitId": "UNIT-BATCHFAIL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-BATCHFAIL-001-regional-blood-bank-batch-failure",
+      "domain": "dotnet-task-composition",
+      "format": "batch-outcome-refactoring-with-deterministic-replay",
+      "primarySkill": "task-whenall-partial-outcomes",
+      "scenarioCategory": "parallel-partner-batch-partial-acceptance",
+      "rootCauseCategory": "whenall-aggregate-exception-collapses-per-item-outcomes",
+      "failureMode": "accepted-items-misreported-and-duplicate-retry-risk",
+      "solutionPattern": "settle-and-classify-each-task-with-stable-id-mapping",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T16:08:17+07:00",
+      "validationMode": "static-review",
+      "businessContext": "regional-blood-bank-report-transfer",
+      "primaryRootCause": "whenall-aggregate-exception-collapses-per-item-outcomes",
+      "labFormat": "batch-outcome-refactoring-with-deterministic-replay"
     }
   ]
 }
