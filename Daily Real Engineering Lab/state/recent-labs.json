@@ -783,6 +783,21 @@
       "businessContext": "museum-climate-sensor-audit",
       "primaryRootCause": "bounded-channel-dropoldest-silently-discards-pending-events",
       "labFormat": "deterministic-backpressure-contract-replay"
+    },
+    {
+      "runSlot": "2026-11-18-09",
+      "unitId": "UNIT-HASHCONTRACT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-HASHCONTRACT-001-harbor-container-identity",
+      "domain": "dotnet-collections-contract",
+      "primarySkill": "iequalitycomparer-hashcode-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "businessContext": "seaport-container-manifest-deduplication",
+      "scenarioType": "cross-partner-identifier-casing",
+      "primaryRootCause": "equality-and-hashcode-use-different-string-comparison-semantics",
+      "failureMode": "duplicate-logical-containers-and-inconsistent-hashset-lookup",
+      "solutionPattern": "align-equality-and-hashing-with-the-same-ordinal-ignore-case-comparer",
+      "labFormat": "collection-contract-investigation-with-counterexample-replay"
     }
   ],
   "rolling24": [
