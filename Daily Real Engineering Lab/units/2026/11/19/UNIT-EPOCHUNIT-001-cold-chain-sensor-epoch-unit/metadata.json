@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-EPOCHUNIT-001",
+  "runSlot": "2026-11-19-04",
+  "title": "Gateway nhiệt độ báo sai tuổi dữ liệu",
+  "domain": "api-time-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-19T04:09:13+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "unix-epoch-unit-contract",
+    "datetimeoffset",
+    "api-data-validation"
+  ],
+  "prerequisites": [
+    "C# basics",
+    "DateTimeOffset"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "vaccine-cold-chain-telemetry",
+    "scenarioType": "mixed-gateway-timestamp-ingestion",
+    "primaryRootCause": "unix-seconds-interpreted-as-unix-milliseconds",
+    "failureMode": "fresh-sensor-event-misclassified-stale",
+    "solutionPattern": "explicit-versioned-source-timestamp-unit-contract",
+    "labFormat": "multi-source-timestamp-contract-investigation"
+  }
+}

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-JSSAFEINT-001",
-    "runSlot": "2026-11-18-23",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-JSSAFEINT-001-solar-meter-json-integer-precision",
+    "unitId": "UNIT-EPOCHUNIT-001",
+    "runSlot": "2026-11-19-04",
+    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-EPOCHUNIT-001-cold-chain-sensor-epoch-unit",
     "status": "READY",
-    "createdAt": "2026-11-18T23:12:23+07:00"
+    "createdAt": "2026-11-19T04:09:13+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 602,
-    "totalGenerated": 597,
+    "totalRunSlotsAttempted": 604,
+    "totalGenerated": 599,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 72,
+    "elapsedDays": 73,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",
