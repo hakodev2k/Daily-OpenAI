@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DICTKEY-001",
+  "runSlot": "2026-11-19-03",
+  "title": "Mã thiết bị biến mất khỏi Dictionary sau cập nhật",
+  "domain": "csharp-collections-identity",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-19T03:08:00+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "dictionary-key-stability",
+    "hash-based-collections",
+    "value-object-design"
+  ],
+  "prerequisites": [
+    "C# class",
+    "Dictionary<TKey,TValue>"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "industrial-equipment-maintenance-registry",
+    "scenarioType": "mutable-identity-key-in-long-lived-registry",
+    "primaryRootCause": "hash-key-fields-mutated-after-dictionary-insertion",
+    "failureMode": "registered-equipment-cannot-be-found-or-removed-by-reference",
+    "solutionPattern": "immutable-key-snapshot-and-separate-mutable-asset-details",
+    "labFormat": "deterministic-hash-bucket-investigation"
+  }
+}
