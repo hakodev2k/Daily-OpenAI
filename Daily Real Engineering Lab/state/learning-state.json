@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-AUDITRET-001",
-    "runSlot": "2026-11-18-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-AUDITRET-001-public-benefit-audit-retention",
+    "unitId": "UNIT-BATCHFAIL-001",
+    "runSlot": "2026-11-18-16",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-BATCHFAIL-001-regional-blood-bank-batch-failure",
     "status": "READY",
-    "createdAt": "2026-11-18T14:13:03+07:00"
+    "createdAt": "2026-11-18T16:08:17+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 595,
-    "totalGenerated": 590,
+    "totalRunSlotsAttempted": 596,
+    "totalGenerated": 591,
     "totalFailed": 5
   },
   "learning": {
