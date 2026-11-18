@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-BATCHFAIL-001",
-    "runSlot": "2026-11-18-16",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-BATCHFAIL-001-regional-blood-bank-batch-failure",
+    "unitId": "UNIT-CLOCKSKEW-001",
+    "runSlot": "2026-11-18-17",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-CLOCKSKEW-001-field-repair-sla-clock-skew",
     "status": "READY",
-    "createdAt": "2026-11-18T16:08:17+07:00"
+    "createdAt": "2026-11-18T17:04:35+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 596,
-    "totalGenerated": 591,
+    "totalRunSlotsAttempted": 597,
+    "totalGenerated": 592,
     "totalFailed": 5
   },
   "learning": {

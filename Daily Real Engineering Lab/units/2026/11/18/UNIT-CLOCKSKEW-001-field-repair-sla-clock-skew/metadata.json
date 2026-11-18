@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-CLOCKSKEW-001",
+  "runSlot": "2026-11-18-17",
+  "title": "SLA bảo trì hiện duration âm",
+  "domain": "dotnet-time-measurement",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-18T17:04:35+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "monotonic-time",
+    "stopwatch",
+    "observability"
+  ],
+  "prerequisites": [
+    "dotnet-8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "field-equipment-repair-sla",
+    "scenarioType": "wall-clock-adjustment-during-processing",
+    "primaryRootCause": "wall-clock-subtraction-used-for-elapsed-duration",
+    "failureMode": "negative-duration-and-misleading-sla",
+    "solutionPattern": "monotonic-duration-separate-from-audit-wall-time",
+    "labFormat": "deterministic-clock-skew-investigation-with-dual-clock-replay"
+  }
+}
