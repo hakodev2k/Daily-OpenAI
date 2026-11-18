@@ -879,6 +879,26 @@
       "businessContext": "field-equipment-repair-sla",
       "primaryRootCause": "wall-clock-subtraction-used-for-elapsed-duration",
       "labFormat": "deterministic-clock-skew-investigation-with-dual-clock-replay"
+    },
+    {
+      "runSlot": "2026-11-18-18",
+      "status": "SUCCESS",
+      "unitId": "UNIT-PAGECURSOR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-PAGECURSOR-001-water-quality-alert-stable-pagination",
+      "domain": "api-pagination-consistency",
+      "format": "production-data-integrity-pagination-investigation",
+      "primarySkill": "stable-pagination",
+      "scenarioCategory": "concurrent-ingest-during-multi-page-review",
+      "rootCauseCategory": "offset-page-boundary-shifts-under-concurrent-insert",
+      "failureMode": "duplicate-and-omitted-alerts",
+      "solutionPattern": "stable-snapshot-or-keyset-cursor-with-total-order",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T18:08:35+07:00",
+      "validationMode": "static-review",
+      "businessContext": "water-quality-monitoring-alert-dashboard",
+      "primaryRootCause": "offset-page-boundary-shifts-under-concurrent-insert",
+      "labFormat": "production-data-integrity-pagination-investigation"
     }
   ],
   "rolling24": [
@@ -2098,6 +2118,26 @@
       "businessContext": "field-equipment-repair-sla",
       "primaryRootCause": "wall-clock-subtraction-used-for-elapsed-duration",
       "labFormat": "deterministic-clock-skew-investigation-with-dual-clock-replay"
+    },
+    {
+      "runSlot": "2026-11-18-18",
+      "status": "SUCCESS",
+      "unitId": "UNIT-PAGECURSOR-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-PAGECURSOR-001-water-quality-alert-stable-pagination",
+      "domain": "api-pagination-consistency",
+      "format": "production-data-integrity-pagination-investigation",
+      "primarySkill": "stable-pagination",
+      "scenarioCategory": "concurrent-ingest-during-multi-page-review",
+      "rootCauseCategory": "offset-page-boundary-shifts-under-concurrent-insert",
+      "failureMode": "duplicate-and-omitted-alerts",
+      "solutionPattern": "stable-snapshot-or-keyset-cursor-with-total-order",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T18:08:35+07:00",
+      "validationMode": "static-review",
+      "businessContext": "water-quality-monitoring-alert-dashboard",
+      "primaryRootCause": "offset-page-boundary-shifts-under-concurrent-insert",
+      "labFormat": "production-data-integrity-pagination-investigation"
     }
   ]
 }

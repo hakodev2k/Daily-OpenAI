@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-PAGECURSOR-001",
+  "runSlot": "2026-11-18-18",
+  "title": "Trang cảnh báo chất lượng nước bị thiếu và trùng bản ghi",
+  "domain": "api-pagination-consistency",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-18T18:08:35+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "stable-pagination",
+    "api-contract",
+    "deterministic-ordering"
+  ],
+  "prerequisites": [
+    "LINQ OrderBy",
+    "HTTP pagination"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "water-quality-monitoring-alert-dashboard",
+    "scenarioType": "concurrent-ingest-during-multi-page-review",
+    "primaryRootCause": "offset-page-boundary-shifts-under-concurrent-insert",
+    "failureMode": "duplicate-and-omitted-alerts",
+    "solutionPattern": "stable-snapshot-or-keyset-cursor-with-total-order",
+    "labFormat": "production-data-integrity-pagination-investigation"
+  }
+}
