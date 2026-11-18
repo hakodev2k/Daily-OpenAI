@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ARRAYLEASE-001",
-    "runSlot": "2026-11-18-20",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-ARRAYLEASE-001-emergency-radio-buffer-ownership",
+    "unitId": "UNIT-JSONDUP-001",
+    "runSlot": "2026-11-18-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-JSONDUP-001-relief-grant-duplicate-json-keys",
     "status": "READY",
-    "createdAt": "2026-11-18T20:11:46+07:00"
+    "createdAt": "2026-11-18T21:04:30+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 599,
-    "totalGenerated": 594,
+    "totalRunSlotsAttempted": 600,
+    "totalGenerated": 595,
     "totalFailed": 5
   },
   "learning": {

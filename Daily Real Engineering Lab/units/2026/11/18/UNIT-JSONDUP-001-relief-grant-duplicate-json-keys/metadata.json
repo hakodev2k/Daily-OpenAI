@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-JSONDUP-001",
+  "runSlot": "2026-11-18-21",
+  "title": "Hồ sơ hỗ trợ y tế sai lệch giá trị sau import",
+  "domain": "json-ingestion-integrity",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-18T21:04:30+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "system-text-json",
+    "input-validation",
+    "data-integrity"
+  ],
+  "prerequisites": [
+    "dotnet-8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "emergency-health-grant-ingestion",
+    "scenarioType": "ambiguous-partner-json-field",
+    "primaryRootCause": "duplicate-json-property-overrides-earlier-value-during-deserialization",
+    "failureMode": "imported-amount-differs-from-partner-audit-view",
+    "solutionPattern": "reject-duplicate-json-property-names-before-mapping",
+    "labFormat": "adversarial-contract-investigation"
+  }
+}
