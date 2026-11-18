@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-BATCHFAIL-001",
+  "runSlot": "2026-11-18-16",
+  "title": "Đối soát upload batch khi partner chấp nhận một phần",
+  "domain": "dotnet-task-composition",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-18T16:08:17+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "task-whenall",
+    "partial-failure-accounting",
+    "idempotency"
+  ],
+  "prerequisites": [
+    "Task async/await cơ bản"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-blood-bank-report-transfer",
+    "scenarioType": "parallel-partner-batch-partial-acceptance",
+    "primaryRootCause": "whenall-aggregate-exception-collapses-per-item-outcomes",
+    "failureMode": "accepted-items-misreported-and-duplicate-retry-risk",
+    "solutionPattern": "settle-and-classify-each-task-with-stable-id-mapping",
+    "labFormat": "batch-outcome-refactoring-with-deterministic-replay"
+  }
+}
