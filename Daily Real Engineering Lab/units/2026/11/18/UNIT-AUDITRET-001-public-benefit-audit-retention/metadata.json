@@ -1,0 +1,39 @@
+{
+  "unitId": "UNIT-AUDITRET-001",
+  "runSlot": "2026-11-18-14",
+  "title": "Hồ sơ trợ cấp: chọn chiến lược lưu trữ audit 7 năm",
+  "domain": "data-lifecycle-architecture",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-18T14:13:03+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "data-retention-design",
+    "audit-trail-integrity",
+    "postgresql-partitioning",
+    "privacy-erasure",
+    "architecture-tradeoffs"
+  ],
+  "prerequisites": [
+    "SQL indexes",
+    "transactions",
+    "access control"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-benefit-eligibility-case-audit",
+    "scenarioType": "long-retention-evidence-architecture-decision",
+    "primaryRootCause": "operational-store-and-audit-evidence-have-conflicting-retention-and-erasure-requirements",
+    "failureMode": "unbounded-operational-table-growth-or-noncompliant-evidence-deletion",
+    "solutionPattern": "separate-immutable-evidence-retention-with-policy-controlled-access-and-lifecycle",
+    "labFormat": "architecture-decision-tabletop-with-change-request"
+  }
+}

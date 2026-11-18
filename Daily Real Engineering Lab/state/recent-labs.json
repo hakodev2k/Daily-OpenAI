@@ -819,6 +819,26 @@
       "scenarioType": "source-mutates-between-report-projections",
       "primaryRootCause": "deferred-linq-query-reenumerated-across-mutation",
       "labFormat": "deterministic-report-consistency-investigation"
+    },
+    {
+      "runSlot": "2026-11-18-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-AUDITRET-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-AUDITRET-001-public-benefit-audit-retention",
+      "domain": "data-lifecycle-architecture",
+      "format": "architecture-decision-tabletop-with-change-request",
+      "primarySkill": "data-retention-design",
+      "scenarioCategory": "long-retention-evidence-architecture-decision",
+      "rootCauseCategory": "operational-store-and-audit-evidence-have-conflicting-retention-and-erasure-requirements",
+      "failureMode": "unbounded-operational-table-growth-or-noncompliant-evidence-deletion",
+      "solutionPattern": "separate-immutable-evidence-retention-with-policy-controlled-access-and-lifecycle",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T14:13:03+07:00",
+      "validationMode": "static-review",
+      "businessContext": "public-benefit-eligibility-case-audit",
+      "primaryRootCause": "operational-store-and-audit-evidence-have-conflicting-retention-and-erasure-requirements",
+      "labFormat": "architecture-decision-tabletop-with-change-request"
     }
   ],
   "rolling24": [
@@ -1971,6 +1991,26 @@
       "scenarioType": "source-mutates-between-report-projections",
       "primaryRootCause": "deferred-linq-query-reenumerated-across-mutation",
       "labFormat": "deterministic-report-consistency-investigation"
+    },
+    {
+      "runSlot": "2026-11-18-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-AUDITRET-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-AUDITRET-001-public-benefit-audit-retention",
+      "domain": "data-lifecycle-architecture",
+      "format": "architecture-decision-tabletop-with-change-request",
+      "primarySkill": "data-retention-design",
+      "scenarioCategory": "long-retention-evidence-architecture-decision",
+      "rootCauseCategory": "operational-store-and-audit-evidence-have-conflicting-retention-and-erasure-requirements",
+      "failureMode": "unbounded-operational-table-growth-or-noncompliant-evidence-deletion",
+      "solutionPattern": "separate-immutable-evidence-retention-with-policy-controlled-access-and-lifecycle",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T14:13:03+07:00",
+      "validationMode": "static-review",
+      "businessContext": "public-benefit-eligibility-case-audit",
+      "primaryRootCause": "operational-store-and-audit-evidence-have-conflicting-retention-and-erasure-requirements",
+      "labFormat": "architecture-decision-tabletop-with-change-request"
     }
   ]
 }

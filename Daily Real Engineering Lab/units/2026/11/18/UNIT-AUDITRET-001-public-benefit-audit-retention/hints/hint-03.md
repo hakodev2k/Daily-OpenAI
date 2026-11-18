@@ -1,0 +1,2 @@
+# Hint 3 — Concept direction
+Xem xét transactionally persisted event/outbox, partition pruning, archive index, retention hold, object immutability và kiểm chứng phục hồi. Không coi một trong các kỹ thuật này là đáp án mặc định.
