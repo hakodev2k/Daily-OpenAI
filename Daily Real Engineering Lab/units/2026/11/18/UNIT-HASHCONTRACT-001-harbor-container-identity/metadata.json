@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-HASHCONTRACT-001",
+  "runSlot": "2026-11-18-09",
+  "title": "Container identity bị trùng khi nhập manifest cảng",
+  "domain": "dotnet-collections-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-18T09:09:31+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "iequalitycomparer",
+    "hashset",
+    "hashcode-equality-contract"
+  ],
+  "prerequisites": [
+    "C# records",
+    "HashSet<T>"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "seaport-container-manifest-deduplication",
+    "scenarioType": "cross-partner-identifier-casing",
+    "primaryRootCause": "equality-and-hashcode-use-different-string-comparison-semantics",
+    "failureMode": "duplicate-logical-containers-and-inconsistent-hashset-lookup",
+    "solutionPattern": "align-equality-and-hashing-with-the-same-ordinal-ignore-case-comparer",
+    "labFormat": "collection-contract-investigation-with-counterexample-replay"
+  }
+}
