@@ -798,6 +798,27 @@
       "failureMode": "duplicate-logical-containers-and-inconsistent-hashset-lookup",
       "solutionPattern": "align-equality-and-hashing-with-the-same-ordinal-ignore-case-comparer",
       "labFormat": "collection-contract-investigation-with-counterexample-replay"
+    },
+    {
+      "runSlot": "2026-11-18-13",
+      "status": "SUCCESS",
+      "unitId": "UNIT-LINQSNAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-LINQSNAP-001-school-meal-audit-snapshot",
+      "domain": "linq-query-semantics",
+      "format": "deterministic-report-consistency-investigation",
+      "primarySkill": "linq-deferred-execution",
+      "scenarioCategory": "source-mutates-between-report-projections",
+      "rootCauseCategory": "deferred-linq-query-reenumerated-across-mutation",
+      "failureMode": "summary-detail-count-divergence",
+      "solutionPattern": "materialize-consistent-snapshot-before-report-projection",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T13:06:37+07:00",
+      "validationMode": "static-review",
+      "businessContext": "school-meal-audit",
+      "scenarioType": "source-mutates-between-report-projections",
+      "primaryRootCause": "deferred-linq-query-reenumerated-across-mutation",
+      "labFormat": "deterministic-report-consistency-investigation"
     }
   ],
   "rolling24": [
@@ -1929,6 +1950,27 @@
       "businessContext": "municipal-evacuation-bulletin",
       "primaryRootCause": "sliding-expiration-does-not-bound-hot-entry-age",
       "labFormat": "production-cache-freshness-incident"
+    },
+    {
+      "runSlot": "2026-11-18-13",
+      "status": "SUCCESS",
+      "unitId": "UNIT-LINQSNAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-LINQSNAP-001-school-meal-audit-snapshot",
+      "domain": "linq-query-semantics",
+      "format": "deterministic-report-consistency-investigation",
+      "primarySkill": "linq-deferred-execution",
+      "scenarioCategory": "source-mutates-between-report-projections",
+      "rootCauseCategory": "deferred-linq-query-reenumerated-across-mutation",
+      "failureMode": "summary-detail-count-divergence",
+      "solutionPattern": "materialize-consistent-snapshot-before-report-projection",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T13:06:37+07:00",
+      "validationMode": "static-review",
+      "businessContext": "school-meal-audit",
+      "scenarioType": "source-mutates-between-report-projections",
+      "primaryRootCause": "deferred-linq-query-reenumerated-across-mutation",
+      "labFormat": "deterministic-report-consistency-investigation"
     }
   ]
 }

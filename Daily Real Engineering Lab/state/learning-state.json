@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HASHCONTRACT-001",
-    "runSlot": "2026-11-18-09",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-HASHCONTRACT-001-harbor-container-identity",
+    "unitId": "UNIT-LINQSNAP-001",
+    "runSlot": "2026-11-18-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-LINQSNAP-001-school-meal-audit-snapshot",
     "status": "READY",
-    "createdAt": "2026-11-18T09:09:31+07:00"
+    "createdAt": "2026-11-18T13:06:37+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 593,
-    "totalGenerated": 588,
+    "totalRunSlotsAttempted": 594,
+    "totalGenerated": 589,
     "totalFailed": 5
   },
   "learning": {
