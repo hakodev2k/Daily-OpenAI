@@ -1,0 +1,1 @@
+Standard GET sau revoke+60s phải bị từ chối kể cả Range và đường cache; sensitive GET mới ngay sau revoke phải bị từ chối tại enforcement point. Có audit decision với policyVersion, không log SAS; staging đo P99 revoke-to-deny.

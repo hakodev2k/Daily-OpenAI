@@ -1,0 +1,2 @@
+# Investigation
+Đầu tiên tách triệu chứng quan sát và giả thuyết. Đối với mỗi giả thuyết, thiết kế một request replay để bác bỏ. Sau đó vẽ đường đi của HTTP GET, điểm kiểm quyền và trust boundary. Phân biệt token issuance và token redemption. Xác định sự khác biệt giữa GET mới và transfer đang diễn ra. Lập decision matrix, thử thay đổi SLA, định nghĩa chỉ số P99 và failure-path. Đọc solution cuối cùng.

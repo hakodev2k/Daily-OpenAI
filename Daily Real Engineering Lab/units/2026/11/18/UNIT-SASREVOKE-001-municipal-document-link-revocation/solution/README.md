@@ -1,0 +1,9 @@
+# Reference solution (spoiler)
+**Root cause:** SAS là bearer capability: Blob Storage kiểm chữ ký/quyền/hạn token, không truy vấn quyền công dân trong SQL mỗi GET. Revoke trong DB không tự hủy link 30 phút.
+**Standard:** user delegation SAS scope chỉ đọc, TTL rất ngắn, HTTPS, private container, managed identity; đo TTL + clock skew + cache/CDN, không hứa SLA nếu chưa chứng minh. Không coi user delegation SAS là revocable per-document. Key rotation có blast radius và không phù hợp revoke từng người.
+**Sensitive:** authenticated ASP.NET Core download gateway, đọc policy hiện hành mỗi GET (cả Range), stream Blob qua internal identity, không redirect sang SAS, disable shared caching, xử lý backpressure, cancellation và 206. Chặn mọi direct bypass; GET đã bắt đầu trước revoke có thể hoàn tất theo contract.
+**Sequence:** client -> API auth -> classify -> standard issue short SAS / sensitive gateway endpoint; revoke SQL commit policyVersion++; invalidate policy cache; sensitive GET re-authorize before stream. Audit issuance và access decisions, không ghi token.
+**Wrong fixes:** invalidate Redis không hủy SAS; giảm TTL không bảo đảm immediate revoke; rotate account key mỗi revoke làm hỏng link khác; log URL làm lộ credential; gateway redirect sang long-lived SAS tạo bypass.
+**Change A:** 10 giây direct cần kiểm chứng expiry/skew/CDN P99; nếu không chứng minh được, đổi SLA hoặc chuyển gateway. **Change B:** bắt buộc per-GET enforcement, không direct bearer URL.
+**Verification:** staging replay revoke và GET/Range/shared URL, đo P99 revoke-to-deny, thử cache, load 1,000/min với file 80MB, policy DB outage fail-closed, Azure outage, latency và egress. Shadow decision -> canary 1/10/50/100%; rollback gateway-only fail-closed, không về SAS dài hạn.
+**Trade-off:** gateway tăng bandwidth/compute, latency và HA burden nhưng kiểm quyền theo request; direct SAS rẻ và scale tốt nhưng có revocation window.

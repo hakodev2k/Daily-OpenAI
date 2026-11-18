@@ -1,0 +1,7 @@
+time,actor,action,document,policyVersion,status
+10:00:00,citizen-17,issue-link,D400,7,issued-expires-10:30
+10:01:00,officer-3,revoke,D400,8,committed
+10:01:20,citizen-17,GET,D400,8,206
+10:03:00,citizen-17,GET,D400,8,200
+10:30:01,citizen-17,GET,D400,8,403
+10:01:01,citizen-17,GET-sensitive,D401,8,200
