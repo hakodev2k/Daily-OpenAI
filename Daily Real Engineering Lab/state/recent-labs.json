@@ -899,6 +899,24 @@
       "businessContext": "water-quality-monitoring-alert-dashboard",
       "primaryRootCause": "offset-page-boundary-shifts-under-concurrent-insert",
       "labFormat": "production-data-integrity-pagination-investigation"
+    },
+    {
+      "runSlot": "2026-11-18-20",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ARRAYLEASE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-ARRAYLEASE-001-emergency-radio-buffer-ownership",
+      "domain": "dotnet-memory-ownership",
+      "format": "memory-ownership-evidence-replay",
+      "primarySkill": "buffer-ownership",
+      "scenarioCategory": "queued-payload-corruption-after-buffer-reuse",
+      "rootCauseCategory": "pooled-buffer-returned-before-deferred-consumer-finishes",
+      "failureMode": "transmitted-message-differs-from-accepted-message",
+      "solutionPattern": "transfer-owned-snapshot-across-async-boundary",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T20:11:46+07:00",
+      "validationMode": "static-review",
+      "businessContext": "mountain-rescue-radio-dispatch"
     }
   ],
   "rolling24": [
@@ -2138,6 +2156,24 @@
       "businessContext": "water-quality-monitoring-alert-dashboard",
       "primaryRootCause": "offset-page-boundary-shifts-under-concurrent-insert",
       "labFormat": "production-data-integrity-pagination-investigation"
+    },
+    {
+      "runSlot": "2026-11-18-20",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ARRAYLEASE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-ARRAYLEASE-001-emergency-radio-buffer-ownership",
+      "domain": "dotnet-memory-ownership",
+      "format": "memory-ownership-evidence-replay",
+      "primarySkill": "buffer-ownership",
+      "scenarioCategory": "queued-payload-corruption-after-buffer-reuse",
+      "rootCauseCategory": "pooled-buffer-returned-before-deferred-consumer-finishes",
+      "failureMode": "transmitted-message-differs-from-accepted-message",
+      "solutionPattern": "transfer-owned-snapshot-across-async-boundary",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T20:11:46+07:00",
+      "validationMode": "static-review",
+      "businessContext": "mountain-rescue-radio-dispatch"
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PAGECURSOR-001",
-    "runSlot": "2026-11-18-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-PAGECURSOR-001-water-quality-alert-stable-pagination",
+    "unitId": "UNIT-ARRAYLEASE-001",
+    "runSlot": "2026-11-18-20",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-ARRAYLEASE-001-emergency-radio-buffer-ownership",
     "status": "READY",
-    "createdAt": "2026-11-18T18:08:35+07:00"
+    "createdAt": "2026-11-18T20:11:46+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 598,
-    "totalGenerated": 593,
+    "totalRunSlotsAttempted": 599,
+    "totalGenerated": 594,
     "totalFailed": 5
   },
   "learning": {

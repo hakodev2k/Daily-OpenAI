@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ARRAYLEASE-001",
+  "runSlot": "2026-11-18-20",
+  "title": "Bản tin vô tuyến bị thay đổi sau khi xếp hàng gửi",
+  "domain": "dotnet-memory-ownership",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-18T20:11:46+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "buffer-ownership",
+    "array-pooling",
+    "deferred-work"
+  ],
+  "prerequisites": [
+    "C# arrays",
+    "dotnet CLI"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "mountain-rescue-radio-dispatch",
+    "scenarioType": "queued-payload-corruption-after-buffer-reuse",
+    "primaryRootCause": "pooled-buffer-returned-before-deferred-consumer-finishes",
+    "failureMode": "transmitted-message-differs-from-accepted-message",
+    "solutionPattern": "transfer-owned-snapshot-across-async-boundary",
+    "labFormat": "memory-ownership-evidence-replay"
+  }
+}
