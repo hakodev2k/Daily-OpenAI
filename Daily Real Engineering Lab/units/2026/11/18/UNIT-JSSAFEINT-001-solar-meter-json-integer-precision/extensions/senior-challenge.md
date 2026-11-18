@@ -1,0 +1,1 @@
+Thiết kế rollout tương thích cho 3 consumer: React dashboard, Excel exporter và đối tác sử dụng schema cũ. Nêu cách phát hiện client tự ép string ID thành Number; đưa ra contract test cho ID âm, 0, Int64.MaxValue, leading zeros và invalid strings.

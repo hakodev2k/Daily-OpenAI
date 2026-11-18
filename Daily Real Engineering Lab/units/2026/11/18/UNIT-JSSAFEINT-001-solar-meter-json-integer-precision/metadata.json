@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-JSSAFEINT-001",
+  "runSlot": "2026-11-18-23",
+  "title": "Solar meter JSON integer precision",
+  "domain": "cross-language-api-contract",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-18T23:12:23+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "json-number-interop",
+    "dotnet-long",
+    "javascript-number-precision",
+    "api-contract-testing"
+  ],
+  "prerequisites": [
+    "JSON basics",
+    "C# long"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "solar-energy-meter-settlement",
+    "scenarioType": "cross-language-identifier-roundtrip",
+    "primaryRootCause": "javascript-number-cannot-represent-all-int64-identifiers-exactly",
+    "failureMode": "two-distinct-meter-ids-collapse-after-client-parse",
+    "solutionPattern": "string-encoded-opaque-identifiers-with-roundtrip-contract-tests",
+    "labFormat": "cross-language-contract-incident-replay"
+  }
+}

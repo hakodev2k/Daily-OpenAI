@@ -956,6 +956,26 @@
       "scenarioType": "signed-link-access-after-policy-revocation",
       "primaryRootCause": "previously-issued-blob-sas-remains-valid-independent-of-sql-authorization",
       "labFormat": "security-architecture-tabletop-with-threat-replay"
+    },
+    {
+      "runSlot": "2026-11-18-23",
+      "status": "SUCCESS",
+      "unitId": "UNIT-JSSAFEINT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-JSSAFEINT-001-solar-meter-json-integer-precision",
+      "domain": "cross-language-api-contract",
+      "format": "cross-language-contract-incident-replay",
+      "primarySkill": "json-number-interop",
+      "scenarioCategory": "cross-language-identifier-roundtrip",
+      "rootCauseCategory": "javascript-number-cannot-represent-all-int64-identifiers-exactly",
+      "failureMode": "two-distinct-meter-ids-collapse-after-client-parse",
+      "solutionPattern": "string-encoded-opaque-identifiers-with-roundtrip-contract-tests",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-18T23:12:23+07:00",
+      "validationMode": "static-review",
+      "businessContext": "solar-energy-meter-settlement",
+      "primaryRootCause": "javascript-number-cannot-represent-all-int64-identifiers-exactly",
+      "labFormat": "cross-language-contract-incident-replay"
     }
   ],
   "rolling24": [

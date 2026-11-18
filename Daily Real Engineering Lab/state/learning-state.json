@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SASREVOKE-001",
-    "runSlot": "2026-11-18-22",
-    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-SASREVOKE-001-municipal-document-link-revocation",
+    "unitId": "UNIT-JSSAFEINT-001",
+    "runSlot": "2026-11-18-23",
+    "path": "Daily Real Engineering Lab/units/2026/11/18/UNIT-JSSAFEINT-001-solar-meter-json-integer-precision",
     "status": "READY",
-    "createdAt": "2026-11-18T22:12:32+07:00"
+    "createdAt": "2026-11-18T23:12:23+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 601,
-    "totalGenerated": 596,
+    "totalRunSlotsAttempted": 602,
+    "totalGenerated": 597,
     "totalFailed": 5
   },
   "learning": {
