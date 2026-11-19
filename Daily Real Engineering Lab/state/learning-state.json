@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-URIPATH-001",
-    "runSlot": "2026-11-19-20",
-    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-URIPATH-001-regional-dispatch-api-route-drift",
+    "unitId": "UNIT-METRICLABEL-001",
+    "runSlot": "2026-11-19-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-METRICLABEL-001-clinic-telemetry-cardinality",
     "status": "READY",
-    "createdAt": "2026-11-19T20:08:04+07:00"
+    "createdAt": "2026-11-19T21:09:28+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 608,
-    "totalGenerated": 603,
+    "totalRunSlotsAttempted": 609,
+    "totalGenerated": 604,
     "totalFailed": 5
   },
   "learning": {

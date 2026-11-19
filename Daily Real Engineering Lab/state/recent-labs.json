@@ -564,12 +564,31 @@
       "businessContext": "regional-roadside-rescue-dispatch",
       "primaryRootCause": "root-relative-request-uri-discards-configured-base-path",
       "labFormat": "http-routing-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-11-19-21",
+      "status": "SUCCESS",
+      "unitId": "UNIT-METRICLABEL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-METRICLABEL-001-clinic-telemetry-cardinality",
+      "domain": "observability-metrics",
+      "format": "production-metrics-cardinality-investigation",
+      "primarySkill": "metric-label-cardinality",
+      "scenarioCategory": "metric-series-growth-under-stable-request-volume",
+      "rootCauseCategory": "unique-visit-id-used-as-metric-label",
+      "failureMode": "unbounded-time-series-cardinality",
+      "solutionPattern": "bounded-route-status-label-dimensions",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T21:09:28+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-clinic-appointment-telemetry",
+      "primaryRootCause": "unique-visit-id-used-as-metric-label",
+      "labFormat": "production-metrics-cardinality-investigation"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "dotnet-stream-io": 1,
       "distributed-offline-sync": 1,
       "dotnet-json-lifetime": 1,
       "dotnet-async-streams": 1,
@@ -592,20 +611,21 @@
       "api-time-contract": 1,
       "sql-server-schema-evolution": 1,
       "http-conditional-write": 1,
-      "http-uri-resolution": 1
+      "http-uri-resolution": 1,
+      "observability-metrics": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 16,
       "L5": 4,
-      "L3": 2,
+      "L2": 15,
+      "L3": 3,
       "L4": 1,
       "L1": 1
     },
     "byFormat": {
-      "binary-stream-contract-investigation-with-deterministic-chunked-transport": 1,
+      "unknown": 2,
       "json-lifetime-investigation-with-deterministic-replay": 1,
       "async-stream-contract-investigation-with-two-path-replay": 1,
       "deterministic-cancellation-interleaving-replay": 1,
@@ -626,14 +646,13 @@
       "multi-source-timestamp-contract-investigation": 1,
       "migration-decision-tabletop-with-failure-injection": 1,
       "http-precondition-contract-investigation": 1,
-      "http-routing-evidence-investigation": 1
+      "http-routing-evidence-investigation": 1,
+      "production-metrics-cardinality-investigation": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "byDomain": {
-      "http-uri-contract": 1,
-      "dotnet-stream-io": 1,
       "distributed-offline-sync": 1,
       "dotnet-json-lifetime": 1,
       "dotnet-async-streams": 1,
@@ -654,22 +673,22 @@
       "azure-blob-security-architecture": 1,
       "csharp-collections-identity": 1,
       "api-time-contract": 1,
-      "dotnet-concurrency": 1,
-      "sql-server-schema-evolution": 1
+      "sql-server-schema-evolution": 1,
+      "http-conditional-write": 1,
+      "http-uri-resolution": 1,
+      "observability-metrics": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 15,
       "L5": 4,
+      "L2": 15,
       "L3": 3,
       "L4": 1,
       "L1": 1
     },
     "byFormat": {
-      "uri-routing-investigation-and-contract-hardening": 1,
-      "binary-stream-contract-investigation-with-deterministic-chunked-transport": 1,
       "unknown": 2,
       "json-lifetime-investigation-with-deterministic-replay": 1,
       "async-stream-contract-investigation-with-two-path-replay": 1,
@@ -689,8 +708,10 @@
       "security-architecture-tabletop-with-threat-replay": 1,
       "deterministic-hash-bucket-investigation": 1,
       "multi-source-timestamp-contract-investigation": 1,
-      "multi-signal-concurrency-incident": 1,
-      "migration-decision-tabletop-with-failure-injection": 1
+      "migration-decision-tabletop-with-failure-injection": 1,
+      "http-precondition-contract-investigation": 1,
+      "http-routing-evidence-investigation": 1,
+      "production-metrics-cardinality-investigation": 1
     }
   },
   "recentLabs": [
@@ -1254,6 +1275,26 @@
       "businessContext": "regional-roadside-rescue-dispatch",
       "primaryRootCause": "root-relative-request-uri-discards-configured-base-path",
       "labFormat": "http-routing-evidence-investigation"
+    },
+    {
+      "runSlot": "2026-11-19-21",
+      "status": "SUCCESS",
+      "unitId": "UNIT-METRICLABEL-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-METRICLABEL-001-clinic-telemetry-cardinality",
+      "domain": "observability-metrics",
+      "format": "production-metrics-cardinality-investigation",
+      "primarySkill": "metric-label-cardinality",
+      "scenarioCategory": "metric-series-growth-under-stable-request-volume",
+      "rootCauseCategory": "unique-visit-id-used-as-metric-label",
+      "failureMode": "unbounded-time-series-cardinality",
+      "solutionPattern": "bounded-route-status-label-dimensions",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T21:09:28+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-clinic-appointment-telemetry",
+      "primaryRootCause": "unique-visit-id-used-as-metric-label",
+      "labFormat": "production-metrics-cardinality-investigation"
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-METRICLABEL-001",
+  "runSlot": "2026-11-19-21",
+  "title": "Telemetry phòng khám tăng đột biến số lượng time series",
+  "domain": "observability-metrics",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-19T21:09:28+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "metric-label-cardinality",
+    "dotnet-observability",
+    "metrics-design"
+  ],
+  "prerequisites": [
+    "csharp-dictionary",
+    "http-status-codes"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-clinic-appointment-telemetry",
+    "scenarioType": "metric-series-growth-under-stable-request-volume",
+    "primaryRootCause": "unique-visit-id-used-as-metric-label",
+    "failureMode": "unbounded-time-series-cardinality",
+    "solutionPattern": "bounded-route-status-label-dimensions",
+    "labFormat": "production-metrics-cardinality-investigation"
+  }
+}
