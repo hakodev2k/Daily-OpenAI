@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SCHEMAEXPAND-001",
-    "runSlot": "2026-11-19-17",
-    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SCHEMAEXPAND-001-library-loan-zero-downtime-migration",
+    "unitId": "UNIT-ETAGPRE-001",
+    "runSlot": "2026-11-19-19",
+    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-ETAGPRE-001-city-tree-inventory-lost-update",
     "status": "READY",
-    "createdAt": "2026-11-19T17:08:01+07:00"
+    "createdAt": "2026-11-19T19:04:33+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 606,
-    "totalGenerated": 601,
+    "totalRunSlotsAttempted": 607,
+    "totalGenerated": 602,
     "totalFailed": 5
   },
   "learning": {
