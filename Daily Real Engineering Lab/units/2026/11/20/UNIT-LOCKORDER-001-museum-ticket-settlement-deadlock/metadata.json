@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-LOCKORDER-001",
+  "runSlot": "2026-11-20-03",
+  "title": "Quầy vé bảo tàng ngừng quyết toán khi chạy song song",
+  "domain": "dotnet-thread-synchronization",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-20T03:13:09+07:00",
+  "estimatedMinutes": 60,
+  "skills": [
+    "monitor-lock-ordering",
+    "concurrency-diagnostics",
+    "invariant-testing"
+  ],
+  "prerequisites": [
+    "C# lock",
+    "Task.Run",
+    "process-timeout"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "museum-ticket-settlement",
+    "scenarioType": "bidirectional-transfer-concurrency",
+    "primaryRootCause": "inconsistent-monitor-lock-acquisition-order",
+    "failureMode": "mutual-wait-with-no-forward-progress",
+    "solutionPattern": "canonical-lock-order-and-conservation-invariants",
+    "labFormat": "deterministic-concurrent-settlement-incident"
+  }
+}
