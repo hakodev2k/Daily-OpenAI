@@ -1,0 +1,40 @@
+{
+  "unitId": "UNIT-CSVFIELDS-001",
+  "runSlot": "2026-11-20-06",
+  "title": "Dữ liệu kiểm nghiệm thực phẩm bị lệch cột khi nhập lô",
+  "domain": "csharp-delimited-data-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-20T06:05:40+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "csharp-string-splitting",
+    "data-integrity",
+    "contract-testing"
+  ],
+  "primarySkill": "delimited-field-position",
+  "prerequisites": [
+    "dotnet-8",
+    "csharp-arrays"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "food-safety-lab-sample-ingestion",
+    "scenarioType": "optional-measurement-in-partner-batch",
+    "primaryRootCause": "remove-empty-entries-destroys-positional-column-contract",
+    "failureMode": "silent-field-shift-in-import",
+    "solutionPattern": "preserve-empty-fields-and-validate-schema-before-mapping",
+    "labFormat": "deterministic-column-integrity-investigation"
+  },
+  "diversityOverride": {
+    "enabled": false
+  }
+}

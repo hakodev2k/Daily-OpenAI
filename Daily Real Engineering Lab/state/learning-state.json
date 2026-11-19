@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LOCKORDER-001",
-    "runSlot": "2026-11-20-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-LOCKORDER-001-museum-ticket-settlement-deadlock",
+    "unitId": "UNIT-CSVFIELDS-001",
+    "runSlot": "2026-11-20-06",
+    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-CSVFIELDS-001-food-safety-blank-column-shift",
     "status": "READY",
-    "createdAt": "2026-11-20T03:13:09+07:00"
+    "createdAt": "2026-11-20T06:05:40+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 612,
-    "totalGenerated": 607,
+    "totalRunSlotsAttempted": 613,
+    "totalGenerated": 608,
     "totalFailed": 5
   },
   "learning": {
