@@ -506,49 +506,27 @@
       "businessContext": "vaccine-cold-chain-telemetry",
       "primaryRootCause": "unix-seconds-interpreted-as-unix-milliseconds",
       "labFormat": "multi-source-timestamp-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-19-17",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SCHEMAEXPAND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SCHEMAEXPAND-001-library-loan-zero-downtime-migration",
+      "domain": "sql-server-schema-evolution",
+      "format": "migration-decision-tabletop-with-failure-injection",
+      "primarySkill": "schema-migration-compatibility",
+      "scenarioCategory": "rolling-deployment-with-large-table-migration",
+      "rootCauseCategory": "breaking-schema-change-coupled-to-rolling-application-release",
+      "failureMode": "schema-lock-contention-and-old-version-write-failure",
+      "solutionPattern": "expand-backfill-dual-compatibility-contract",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T17:08:01+07:00",
+      "validationMode": "static-review",
+      "businessContext": "city-library-loan-platform"
     }
   ],
   "rolling24": [
-    {
-      "runSlot": "2026-11-15-19",
-      "status": "SUCCESS",
-      "unitId": "UNIT-RANGEBYTES-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-RANGEBYTES-001-media-segment-inclusive-range",
-      "domain": "http-binary-contract",
-      "format": "http-binary-contract-investigation-with-segment-reassembly",
-      "primarySkill": "http-range-semantics",
-      "scenarioCategory": "resumable-byte-range-download",
-      "rootCauseCategory": "http-range-end-is-inclusive-but-slice-length-treated-as-exclusive",
-      "failureMode": "one-byte-overlap-between-consecutive-segments",
-      "solutionPattern": "validate-inclusive-range-and-compute-end-minus-start-plus-one",
-      "maturityLevel": "L2",
-      "difficulty": "D4",
-      "createdAt": "2026-11-15T19:07:05+07:00",
-      "validationMode": "static-review",
-      "businessContext": "wildlife-camera-video-evidence-portal",
-      "primaryRootCause": "http-range-end-is-inclusive-but-slice-length-treated-as-exclusive",
-      "labFormat": "http-binary-contract-investigation-with-segment-reassembly"
-    },
-    {
-      "runSlot": "2026-11-15-21",
-      "status": "GENERATED",
-      "unitId": "UNIT-FLAGZERO-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/15/UNIT-FLAGZERO-001-emergency-dispatch-zero-flags",
-      "domain": "csharp-flags-authorization",
-      "format": "deterministic-access-policy-contract-replay",
-      "primarySkill": "csharp-flags-enum",
-      "scenarioCategory": "unassigned-operator-access-review",
-      "rootCauseCategory": "enum-hasflag-zero-is-always-true",
-      "failureMode": "unassigned-operator-sees-restricted-record",
-      "solutionPattern": "explicit-zero-permission-denial-before-bitmask-check",
-      "maturityLevel": "L1",
-      "difficulty": "D4",
-      "createdAt": "2026-11-15T21:07:37+07:00",
-      "validationMode": "static-review",
-      "businessContext": "emergency-dispatch-role-screening",
-      "primaryRootCause": "enum-hasflag-zero-is-always-true",
-      "labFormat": "deterministic-access-policy-contract-replay"
-    },
     {
       "runSlot": "2026-11-15-22",
       "status": "GENERATED",
@@ -973,13 +951,47 @@
       "businessContext": "vaccine-cold-chain-telemetry",
       "primaryRootCause": "unix-seconds-interpreted-as-unix-milliseconds",
       "labFormat": "multi-source-timestamp-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-19-15",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SEMGATE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SEMGATE-001-airport-baggage-gateway-permit-leak",
+      "domain": "dotnet-concurrency",
+      "format": "multi-signal-concurrency-incident",
+      "primarySkill": "semaphoreslim-exception-safety",
+      "scenarioCategory": "intermittent-partner-failure-followed-by-capacity-collapse",
+      "rootCauseCategory": "semaphore-permit-not-released-on-exception",
+      "failureMode": "permanent-request-queue-after-partner-errors",
+      "solutionPattern": "exception-safe-lease-release-in-finally",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T15:04:49+07:00",
+      "validationMode": "static-review",
+      "businessContext": "airport-baggage-partner-reconciliation"
+    },
+    {
+      "runSlot": "2026-11-19-17",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SCHEMAEXPAND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SCHEMAEXPAND-001-library-loan-zero-downtime-migration",
+      "domain": "sql-server-schema-evolution",
+      "format": "migration-decision-tabletop-with-failure-injection",
+      "primarySkill": "schema-migration-compatibility",
+      "scenarioCategory": "rolling-deployment-with-large-table-migration",
+      "rootCauseCategory": "breaking-schema-change-coupled-to-rolling-application-release",
+      "failureMode": "schema-lock-contention-and-old-version-write-failure",
+      "solutionPattern": "expand-backfill-dual-compatibility-contract",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T17:08:01+07:00",
+      "validationMode": "static-review",
+      "businessContext": "city-library-loan-platform"
     }
   ],
   "rollingProfile": {
     "window": 24,
     "byDomain": {
-      "http-binary-contract": 1,
-      "csharp-flags-authorization": 1,
       "http-uri-contract": 1,
       "dotnet-stream-io": 1,
       "distributed-offline-sync": 1,
@@ -1001,24 +1013,24 @@
       "json-ingestion-integrity": 1,
       "azure-blob-security-architecture": 1,
       "csharp-collections-identity": 1,
-      "api-time-contract": 1
+      "api-time-contract": 1,
+      "dotnet-concurrency": 1,
+      "sql-server-schema-evolution": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 16,
-      "L1": 2,
-      "L5": 3,
-      "L3": 2,
-      "L4": 1
+      "L2": 15,
+      "L5": 4,
+      "L3": 3,
+      "L4": 1,
+      "L1": 1
     },
     "byFormat": {
-      "http-binary-contract-investigation-with-segment-reassembly": 1,
-      "deterministic-access-policy-contract-replay": 1,
       "uri-routing-investigation-and-contract-hardening": 1,
       "binary-stream-contract-investigation-with-deterministic-chunked-transport": 1,
-      "offline-sync-conflict-policy-design-with-event-replay": 1,
+      "unknown": 2,
       "json-lifetime-investigation-with-deterministic-replay": 1,
       "async-stream-contract-investigation-with-two-path-replay": 1,
       "deterministic-cancellation-interleaving-replay": 1,
@@ -1027,7 +1039,6 @@
       "production-cache-freshness-incident": 1,
       "aspnetcore-pipeline-contract-investigation": 1,
       "deterministic-backpressure-contract-replay": 1,
-      "collection-contract-investigation-with-counterexample-replay": 1,
       "deterministic-report-consistency-investigation": 1,
       "architecture-decision-tabletop-with-change-request": 1,
       "batch-outcome-refactoring-with-deterministic-replay": 1,
@@ -1037,7 +1048,9 @@
       "adversarial-contract-investigation": 1,
       "security-architecture-tabletop-with-threat-replay": 1,
       "deterministic-hash-bucket-investigation": 1,
-      "multi-source-timestamp-contract-investigation": 1
+      "multi-source-timestamp-contract-investigation": 1,
+      "multi-signal-concurrency-incident": 1,
+      "migration-decision-tabletop-with-failure-injection": 1
     }
   },
   "recentLabs": [
@@ -1563,6 +1576,24 @@
       "createdAt": "2026-11-19T15:04:49+07:00",
       "validationMode": "static-review",
       "businessContext": "airport-baggage-partner-reconciliation"
+    },
+    {
+      "runSlot": "2026-11-19-17",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SCHEMAEXPAND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SCHEMAEXPAND-001-library-loan-zero-downtime-migration",
+      "domain": "sql-server-schema-evolution",
+      "format": "migration-decision-tabletop-with-failure-injection",
+      "primarySkill": "schema-migration-compatibility",
+      "scenarioCategory": "rolling-deployment-with-large-table-migration",
+      "rootCauseCategory": "breaking-schema-change-coupled-to-rolling-application-release",
+      "failureMode": "schema-lock-contention-and-old-version-write-failure",
+      "solutionPattern": "expand-backfill-dual-compatibility-contract",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T17:08:01+07:00",
+      "validationMode": "static-review",
+      "businessContext": "city-library-loan-platform"
     }
   ]
 }

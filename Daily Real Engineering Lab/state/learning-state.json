@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SEMGATE-001",
-    "runSlot": "2026-11-19-15",
-    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SEMGATE-001-airport-baggage-gateway-permit-leak",
+    "unitId": "UNIT-SCHEMAEXPAND-001",
+    "runSlot": "2026-11-19-17",
+    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SCHEMAEXPAND-001-library-loan-zero-downtime-migration",
     "status": "READY",
-    "createdAt": "2026-11-19T15:04:49+07:00"
+    "createdAt": "2026-11-19T17:08:01+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 605,
-    "totalGenerated": 600,
+    "totalRunSlotsAttempted": 606,
+    "totalGenerated": 601,
     "totalFailed": 5
   },
   "learning": {

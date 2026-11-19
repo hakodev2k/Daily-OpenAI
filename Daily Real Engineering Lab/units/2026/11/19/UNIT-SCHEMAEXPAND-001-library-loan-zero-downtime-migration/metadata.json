@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-SCHEMAEXPAND-001",
+  "runSlot": "2026-11-19-17",
+  "title": "Thay đổi schema không gián đoạn hệ thống mượn sách",
+  "domain": "sql-server-schema-evolution",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-19T17:08:01+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "schema-migration",
+    "sql-server-locking",
+    "expand-contract",
+    "deployment-compatibility"
+  ],
+  "prerequisites": [
+    "sql-server-transactions",
+    "aspnetcore-deployment"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "city-library-loan-platform",
+    "scenarioType": "rolling-deployment-with-large-table-migration",
+    "primaryRootCause": "breaking-schema-change-coupled-to-rolling-application-release",
+    "failureMode": "schema-lock-contention-and-old-version-write-failure",
+    "solutionPattern": "expand-backfill-dual-compatibility-contract",
+    "labFormat": "migration-decision-tabletop-with-failure-injection"
+  }
+}
