@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CULTUREKEY-001",
+  "runSlot": "2026-11-20-00",
+  "title": "Lệnh điều độ đường sắt thay đổi kết quả theo culture",
+  "domain": "csharp-string-semantics",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-20T00:06:06+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "string-comparison",
+    "globalization",
+    "protocol-contract"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "csharp-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "railway-signal-command-ingestion",
+    "scenarioType": "locale-dependent-command-lookup",
+    "primaryRootCause": "culture-sensitive-case-folding-in-protocol-identifier",
+    "failureMode": "identical-command-rejected-on-different-host-culture",
+    "solutionPattern": "ordinal-case-insensitive-protocol-identity",
+    "labFormat": "cross-culture-contract-replay"
+  }
+}

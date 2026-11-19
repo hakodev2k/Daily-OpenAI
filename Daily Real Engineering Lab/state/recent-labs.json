@@ -584,6 +584,25 @@
       "businessContext": "community-clinic-appointment-telemetry",
       "primaryRootCause": "unique-visit-id-used-as-metric-label",
       "labFormat": "production-metrics-cardinality-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-20-00",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CULTUREKEY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-CULTUREKEY-001-railway-signal-command-culture",
+      "domain": "csharp-string-semantics",
+      "format": "cross-culture-contract-replay",
+      "primarySkill": "string-comparison",
+      "scenarioCategory": "locale-dependent-command-lookup",
+      "rootCauseCategory": "culture-sensitive-case-folding-in-protocol-identifier",
+      "failureMode": "identical-command-rejected-on-different-host-culture",
+      "solutionPattern": "ordinal-case-insensitive-protocol-identity",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "createdAt": "2026-11-20T00:06:06+07:00",
+      "validationMode": "static-review",
+      "businessContext": "railway-signal-command-ingestion"
     }
   ],
   "rolling24": {
