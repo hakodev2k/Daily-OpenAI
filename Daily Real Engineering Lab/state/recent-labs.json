@@ -1545,6 +1545,24 @@
       "businessContext": "vaccine-cold-chain-telemetry",
       "primaryRootCause": "unix-seconds-interpreted-as-unix-milliseconds",
       "labFormat": "multi-source-timestamp-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-19-15",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SEMGATE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SEMGATE-001-airport-baggage-gateway-permit-leak",
+      "domain": "dotnet-concurrency",
+      "format": "multi-signal-concurrency-incident",
+      "primarySkill": "semaphoreslim-exception-safety",
+      "scenarioCategory": "intermittent-partner-failure-followed-by-capacity-collapse",
+      "rootCauseCategory": "semaphore-permit-not-released-on-exception",
+      "failureMode": "permanent-request-queue-after-partner-errors",
+      "solutionPattern": "exception-safe-lease-release-in-finally",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T15:04:49+07:00",
+      "validationMode": "static-review",
+      "businessContext": "airport-baggage-partner-reconciliation"
     }
   ]
 }

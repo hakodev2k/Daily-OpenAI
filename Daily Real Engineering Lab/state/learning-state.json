@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-EPOCHUNIT-001",
-    "runSlot": "2026-11-19-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-EPOCHUNIT-001-cold-chain-sensor-epoch-unit",
+    "unitId": "UNIT-SEMGATE-001",
+    "runSlot": "2026-11-19-15",
+    "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SEMGATE-001-airport-baggage-gateway-permit-leak",
     "status": "READY",
-    "createdAt": "2026-11-19T04:09:13+07:00"
+    "createdAt": "2026-11-19T15:04:49+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 604,
-    "totalGenerated": 599,
+    "totalRunSlotsAttempted": 605,
+    "totalGenerated": 600,
     "totalFailed": 5
   },
   "learning": {
