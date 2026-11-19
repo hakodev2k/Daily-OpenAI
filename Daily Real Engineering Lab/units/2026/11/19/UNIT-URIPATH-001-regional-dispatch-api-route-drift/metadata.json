@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-URIPATH-001",
+  "runSlot": "2026-11-19-20",
+  "title": "Regional Dispatch API: request đi sai route",
+  "domain": "http-uri-resolution",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-19T20:08:04+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "http-uri-resolution",
+    "httpclient-baseaddress",
+    "contract-testing"
+  ],
+  "prerequisites": [
+    "http-request-target"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-roadside-rescue-dispatch",
+    "scenarioType": "environment-specific-partner-route-drift",
+    "primaryRootCause": "root-relative-request-uri-discards-configured-base-path",
+    "failureMode": "gateway-404-with-valid-credentials",
+    "solutionPattern": "preserve-base-path-with-directory-base-and-relative-request",
+    "labFormat": "http-routing-evidence-investigation"
+  }
+}
