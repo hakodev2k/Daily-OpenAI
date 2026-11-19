@@ -1,0 +1,4 @@
+// Thay thế riêng thân hàm ManifestService.Confirm trong starter/Program.cs:
+return cargo.Where(x => x.Status == "Ready")
+    .Select(x => new ManifestRow(x.ContainerId, x.WeightTonnes))
+    .ToArray();
