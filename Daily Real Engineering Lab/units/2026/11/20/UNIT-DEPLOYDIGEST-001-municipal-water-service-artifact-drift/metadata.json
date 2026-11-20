@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DEPLOYDIGEST-001",
+  "runSlot": "2026-11-20-12",
+  "title": "Cùng release, khác binary: artifact drift giữa hai vùng",
+  "domain": "deployment-supply-chain",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-20T12:04:37+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "container-image-digest",
+    "ci-cd-promotion",
+    "release-verification"
+  ],
+  "prerequisites": [
+    "docker-tags",
+    "ci-cd"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-water-treatment-control-plane",
+    "scenarioType": "same-release-tag-different-images-across-regions",
+    "primaryRootCause": "mutable-container-tag-used-as-release-identity",
+    "failureMode": "two-regions-run-different-binaries-under-same-label",
+    "solutionPattern": "promote-immutable-digest-and-verify-runtime",
+    "labFormat": "release-provenance-decision-tabletop"
+  }
+}
