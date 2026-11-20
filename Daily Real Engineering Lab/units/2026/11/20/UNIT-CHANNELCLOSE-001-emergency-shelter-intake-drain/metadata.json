@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CHANNELCLOSE-001",
+  "runSlot": "2026-11-20-18",
+  "title": "Đóng pipeline quá sớm trong đợt tiếp nhận cứu trợ",
+  "domain": "dotnet-channel-lifecycle",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-20T18:11:28+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "system-threading-channels",
+    "producer-consumer-lifecycle",
+    "task-coordination"
+  ],
+  "prerequisites": [
+    "Task",
+    "async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "emergency-shelter-intake",
+    "scenarioType": "batch-reconciliation-under-delayed-producer",
+    "primaryRootCause": "channel-completion-before-all-producers-finish",
+    "failureMode": "accepted-intake-record-missing-from-processed-ledger",
+    "solutionPattern": "await-all-producers-before-writer-completion-and-drain-reader",
+    "labFormat": "deterministic-producer-lifecycle-incident"
+  }
+}
