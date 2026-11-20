@@ -824,6 +824,25 @@
       "businessContext": "municipal-construction-permit-portal",
       "primaryRootCause": "forwarded-client-address-accepted-without-verified-proxy-chain",
       "labFormat": "security-decision-tabletop-with-header-chain-replay"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-00",
+      "status": "SUCCESS",
+      "unitId": "UNIT-PAGETOKEN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-PAGETOKEN-001-donation-ledger-pagination-drift",
+      "domain": "sql-api-pagination",
+      "format": "sql-page-timeline-investigation",
+      "primarySkill": "sql-pagination",
+      "scenarioCategory": "live-ledger-pagination-during-concurrent-inserts",
+      "rootCauseCategory": "offset-pagination-shifts-when-new-rows-appear",
+      "failureMode": "duplicate-and-missing-records-across-pages",
+      "solutionPattern": "stable-keyset-cursor-with-total-order-and-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T00:12:15+07:00",
+      "validationMode": "static-review",
+      "businessContext": "nonprofit-donation-audit"
     }
   ],
   "rolling24": {
@@ -1717,6 +1736,25 @@
       "businessContext": "municipal-construction-permit-portal",
       "primaryRootCause": "forwarded-client-address-accepted-without-verified-proxy-chain",
       "labFormat": "security-decision-tabletop-with-header-chain-replay"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-00",
+      "status": "SUCCESS",
+      "unitId": "UNIT-PAGETOKEN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-PAGETOKEN-001-donation-ledger-pagination-drift",
+      "domain": "sql-api-pagination",
+      "format": "sql-page-timeline-investigation",
+      "primarySkill": "sql-pagination",
+      "scenarioCategory": "live-ledger-pagination-during-concurrent-inserts",
+      "rootCauseCategory": "offset-pagination-shifts-when-new-rows-appear",
+      "failureMode": "duplicate-and-missing-records-across-pages",
+      "solutionPattern": "stable-keyset-cursor-with-total-order-and-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T00:12:15+07:00",
+      "validationMode": "static-review",
+      "businessContext": "nonprofit-donation-audit"
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-PROXYTRUST-001",
-    "runSlot": "2026-11-20-23",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-PROXYTRUST-001-municipal-permit-proxy-trust",
+    "unitId": "UNIT-PAGETOKEN-001",
+    "runSlot": "2026-11-21-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-PAGETOKEN-001-donation-ledger-pagination-drift",
     "status": "READY",
-    "createdAt": "2026-11-20T23:06:43+07:00"
+    "createdAt": "2026-11-21T00:12:15+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 623,
-    "totalGenerated": 618,
+    "totalRunSlotsAttempted": 624,
+    "totalGenerated": 619,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 74,
+    "elapsedDays": 75,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",

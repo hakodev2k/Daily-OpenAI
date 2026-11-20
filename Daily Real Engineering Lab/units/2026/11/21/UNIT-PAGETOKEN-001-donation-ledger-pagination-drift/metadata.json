@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-PAGETOKEN-001",
+  "runSlot": "2026-11-21-00",
+  "title": "Sổ quyên góp: phân trang bị lặp và bỏ sót khi dữ liệu thay đổi",
+  "domain": "sql-api-pagination",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-21T00:12:15+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "sql-pagination",
+    "keyset-pagination",
+    "api-contract"
+  ],
+  "prerequisites": [
+    "SQL ORDER BY",
+    "HTTP API"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "nonprofit-donation-audit",
+    "scenarioType": "live-ledger-pagination-during-concurrent-inserts",
+    "primaryRootCause": "offset-pagination-shifts-when-new-rows-appear",
+    "failureMode": "duplicate-and-missing-records-across-pages",
+    "solutionPattern": "stable-keyset-cursor-with-total-order-and-contract",
+    "labFormat": "sql-page-timeline-investigation"
+  }
+}
