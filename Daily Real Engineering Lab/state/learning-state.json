@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ETAG304-001",
-    "runSlot": "2026-11-20-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-ETAG304-001-university-course-catalog-conditional-refresh",
+    "unitId": "UNIT-HEADERCASE-001",
+    "runSlot": "2026-11-20-16",
+    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-HEADERCASE-001-wildlife-rescue-http-header-duplication",
     "status": "READY",
-    "createdAt": "2026-11-20T13:13:10+07:00"
+    "createdAt": "2026-11-20T16:11:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 617,
-    "totalGenerated": 612,
+    "totalRunSlotsAttempted": 618,
+    "totalGenerated": 613,
     "totalFailed": 5
   },
   "learning": {

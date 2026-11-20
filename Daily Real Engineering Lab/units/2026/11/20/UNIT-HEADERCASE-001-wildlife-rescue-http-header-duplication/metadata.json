@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-HEADERCASE-001",
+  "runSlot": "2026-11-20-16",
+  "title": "Gateway cứu hộ động vật route sai khi header bất thường",
+  "domain": "aspnet-core-http-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-20T16:11:31+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "aspnet-core",
+    "http-header-multiplicity",
+    "contract-validation"
+  ],
+  "prerequisites": [
+    "dotnet-8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-rescue-dispatch",
+    "scenarioType": "ambiguous-duplicate-request-header",
+    "primaryRootCause": "header-values-coalesced-before-contract-validation",
+    "failureMode": "ambiguous-zone-silently-routed",
+    "solutionPattern": "reject-ambiguous-multivalue-header-before-routing",
+    "labFormat": "http-input-contract-replay"
+  }
+}
