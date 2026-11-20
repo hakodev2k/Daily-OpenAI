@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ROUNDSTAGE-001",
+  "runSlot": "2026-11-20-07",
+  "title": "Báo cáo thuế vé nhà hát lệch một xu",
+  "domain": "dotnet-financial-arithmetic",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-20T07:06:48+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "decimal-rounding-policy",
+    "financial-ledger-reconciliation",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "decimal",
+    "linq-aggregate"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-theater-ticketing",
+    "scenarioType": "invoice-tax-ledger-reconciliation",
+    "primaryRootCause": "rounding-at-aggregate-level-instead-of-per-invoice-line",
+    "failureMode": "posted-tax-differs-from-sum-of-invoice-line-tax",
+    "solutionPattern": "explicit-line-level-rounding-policy-and-invariant-check",
+    "labFormat": "financial-reconciliation-investigation"
+  }
+}

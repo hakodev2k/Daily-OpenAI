@@ -663,14 +663,31 @@
       "businessContext": "food-safety-lab-sample-ingestion",
       "primaryRootCause": "remove-empty-entries-destroys-positional-column-contract",
       "labFormat": "deterministic-column-integrity-investigation"
+    },
+    {
+      "runSlot": "2026-11-20-07",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ROUNDSTAGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-ROUNDSTAGE-001-community-theater-tax-rounding",
+      "domain": "dotnet-financial-arithmetic",
+      "format": "financial-reconciliation-investigation",
+      "primarySkill": "decimal-rounding-policy",
+      "scenarioCategory": "invoice-tax-ledger-reconciliation",
+      "rootCauseCategory": "rounding-at-aggregate-level-instead-of-per-invoice-line",
+      "failureMode": "posted-tax-differs-from-sum-of-invoice-line-tax",
+      "solutionPattern": "explicit-line-level-rounding-policy-and-invariant-check",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-20T07:06:48+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-theater-ticketing",
+      "primaryRootCause": "rounding-at-aggregate-level-instead-of-per-invoice-line",
+      "labFormat": "financial-reconciliation-investigation"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "distributed-offline-sync": 1,
-      "dotnet-json-lifetime": 1,
-      "dotnet-async-streams": 1,
       "dotnet-concurrency-control": 1,
       "dotnet-file-import-contract": 1,
       "dotnet-file-consistency": 1,
@@ -688,31 +705,32 @@
       "azure-blob-security-architecture": 1,
       "csharp-collections-identity": 1,
       "api-time-contract": 1,
+      "dotnet-concurrency": 1,
       "sql-server-schema-evolution": 1,
-      "http-conditional-write": 1,
       "http-uri-resolution": 1,
-      "observability-metrics": 1
+      "observability-metrics": 1,
+      "csharp-linq-execution": 1,
+      "csharp-delimited-data-contract": 1,
+      "dotnet-financial-arithmetic": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 4,
       "L2": 15,
-      "L3": 3,
+      "L3": 4,
+      "L5": 3,
       "L4": 1,
       "L1": 1
     },
     "byFormat": {
-      "unknown": 2,
-      "json-lifetime-investigation-with-deterministic-replay": 1,
-      "async-stream-contract-investigation-with-two-path-replay": 1,
       "deterministic-cancellation-interleaving-replay": 1,
       "data-import-integrity-investigation-with-adversarial-fixtures": 1,
       "file-crash-consistency-investigation": 1,
       "production-cache-freshness-incident": 1,
       "aspnetcore-pipeline-contract-investigation": 1,
       "deterministic-backpressure-contract-replay": 1,
+      "collection-contract-investigation-with-counterexample-replay": 1,
       "deterministic-report-consistency-investigation": 1,
       "architecture-decision-tabletop-with-change-request": 1,
       "batch-outcome-refactoring-with-deterministic-replay": 1,
@@ -723,10 +741,13 @@
       "security-architecture-tabletop-with-threat-replay": 1,
       "deterministic-hash-bucket-investigation": 1,
       "multi-source-timestamp-contract-investigation": 1,
+      "multi-signal-concurrency-incident": 1,
       "migration-decision-tabletop-with-failure-injection": 1,
-      "http-precondition-contract-investigation": 1,
       "http-routing-evidence-investigation": 1,
-      "production-metrics-cardinality-investigation": 1
+      "production-metrics-cardinality-investigation": 1,
+      "deterministic-export-timeline-investigation": 1,
+      "deterministic-column-integrity-investigation": 1,
+      "financial-reconciliation-investigation": 1
     }
   },
   "rollingProfile": {
@@ -1412,6 +1433,26 @@
       "businessContext": "food-safety-lab-sample-ingestion",
       "primaryRootCause": "remove-empty-entries-destroys-positional-column-contract",
       "labFormat": "deterministic-column-integrity-investigation"
+    },
+    {
+      "runSlot": "2026-11-20-07",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ROUNDSTAGE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-ROUNDSTAGE-001-community-theater-tax-rounding",
+      "domain": "dotnet-financial-arithmetic",
+      "format": "financial-reconciliation-investigation",
+      "primarySkill": "decimal-rounding-policy",
+      "scenarioCategory": "invoice-tax-ledger-reconciliation",
+      "rootCauseCategory": "rounding-at-aggregate-level-instead-of-per-invoice-line",
+      "failureMode": "posted-tax-differs-from-sum-of-invoice-line-tax",
+      "solutionPattern": "explicit-line-level-rounding-policy-and-invariant-check",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-20T07:06:48+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-theater-ticketing",
+      "primaryRootCause": "rounding-at-aggregate-level-instead-of-per-invoice-line",
+      "labFormat": "financial-reconciliation-investigation"
     }
   ]
 }

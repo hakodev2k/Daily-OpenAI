@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CSVFIELDS-001",
-    "runSlot": "2026-11-20-06",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-CSVFIELDS-001-food-safety-blank-column-shift",
+    "unitId": "UNIT-ROUNDSTAGE-001",
+    "runSlot": "2026-11-20-07",
+    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-ROUNDSTAGE-001-community-theater-tax-rounding",
     "status": "READY",
-    "createdAt": "2026-11-20T06:05:40+07:00"
+    "createdAt": "2026-11-20T07:06:48+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 613,
-    "totalGenerated": 608,
+    "totalRunSlotsAttempted": 614,
+    "totalGenerated": 609,
     "totalFailed": 5
   },
   "learning": {
