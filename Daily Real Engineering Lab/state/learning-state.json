@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-UTF8LENGTH-001",
-    "runSlot": "2026-11-21-02",
-    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-UTF8LENGTH-001-relief-sms-frame-truncation",
+    "unitId": "UNIT-RANGE200-001",
+    "runSlot": "2026-11-21-03",
+    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-RANGE200-001-research-archive-resume-corruption",
     "status": "READY",
-    "createdAt": "2026-11-21T02:06:13+07:00"
+    "createdAt": "2026-11-21T03:11:29+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 626,
-    "totalGenerated": 621,
+    "totalRunSlotsAttempted": 627,
+    "totalGenerated": 622,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-RANGE200-001",
+  "runSlot": "2026-11-21-03",
+  "title": "Resume tệp lưu trữ nghiên cứu gây sai checksum",
+  "domain": "http-range-download",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-21T03:11:29+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "http-range-semantics",
+    "download-integrity",
+    "dotnet-io"
+  ],
+  "prerequisites": [
+    "http-status-codes"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "research-data-archive-mirror",
+    "scenarioType": "interrupted-download-resumption",
+    "primaryRootCause": "http-200-full-representation-appended-as-partial-content",
+    "failureMode": "duplicated-prefix-and-checksum-mismatch",
+    "solutionPattern": "status-and-content-range-aware-resume-validation",
+    "labFormat": "http-response-contract-investigation"
+  }
+}

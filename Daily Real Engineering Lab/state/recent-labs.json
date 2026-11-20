@@ -821,6 +821,25 @@
       "createdAt": "2026-11-21T02:06:13+07:00",
       "validationMode": "static-review",
       "businessContext": "flood-relief-sms-dispatch"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-RANGE200-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-RANGE200-001-research-archive-resume-corruption",
+      "domain": "http-range-download",
+      "format": "http-response-contract-investigation",
+      "primarySkill": "http-range-semantics",
+      "scenarioCategory": "interrupted-download-resumption",
+      "rootCauseCategory": "http-200-full-representation-appended-as-partial-content",
+      "failureMode": "duplicated-prefix-and-checksum-mismatch",
+      "solutionPattern": "status-and-content-range-aware-resume-validation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T03:11:29+07:00",
+      "validationMode": "static-review",
+      "businessContext": "research-data-archive-mirror"
     }
   ],
   "rolling24": {
