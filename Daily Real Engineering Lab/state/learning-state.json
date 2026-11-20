@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TIMEOUTSIDE-001",
-    "runSlot": "2026-11-20-22",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-TIMEOUTSIDE-001-heritage-archive-timeout-late-write",
+    "unitId": "UNIT-PROXYTRUST-001",
+    "runSlot": "2026-11-20-23",
+    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-PROXYTRUST-001-municipal-permit-proxy-trust",
     "status": "READY",
-    "createdAt": "2026-11-20T22:13:06+07:00"
+    "createdAt": "2026-11-20T23:06:43+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 622,
-    "totalGenerated": 617,
+    "totalRunSlotsAttempted": 623,
+    "totalGenerated": 618,
     "totalFailed": 5
   },
   "learning": {
