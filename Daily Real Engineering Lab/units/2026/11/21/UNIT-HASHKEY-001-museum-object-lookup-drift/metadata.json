@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-HASHKEY-001",
+  "runSlot": "2026-11-21-01",
+  "title": "Museum object lookup drift",
+  "domain": "csharp-collections",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-21T01:12:40+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "dictionary-key-identity",
+    "hashing",
+    "equality-contract"
+  ],
+  "prerequisites": [
+    "csharp-collections"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "museum-object-relocation",
+    "scenarioType": "in-memory-object-index-mutation",
+    "primaryRootCause": "mutable-key-changes-hash-after-dictionary-insertion",
+    "failureMode": "stored-entry-unreachable-despite-enumeration",
+    "solutionPattern": "immutable-key-and-remove-reinsert-on-identity-change",
+    "labFormat": "collection-invariant-investigation"
+  }
+}
