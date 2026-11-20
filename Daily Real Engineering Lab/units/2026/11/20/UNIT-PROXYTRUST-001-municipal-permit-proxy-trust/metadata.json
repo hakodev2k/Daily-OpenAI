@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-PROXYTRUST-001",
+  "runSlot": "2026-11-20-23",
+  "title": "Cổng cấp phép đô thị: IP audit sai sau khi đổi reverse proxy",
+  "domain": "aspnet-core-reverse-proxy-security",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-20T23:06:43+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "aspnet-core-forwarded-headers",
+    "reverse-proxy-trust-boundary",
+    "security-logging",
+    "deployment-configuration"
+  ],
+  "prerequisites": [
+    "HTTP headers",
+    "ASP.NET Core middleware pipeline"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-construction-permit-portal",
+    "scenarioType": "proxy-topology-change-and-audit-attribution",
+    "primaryRootCause": "forwarded-client-address-accepted-without-verified-proxy-chain",
+    "failureMode": "spoofed-or-misattributed-client-ip-in-audit-and-rate-limit",
+    "solutionPattern": "explicit-trusted-proxy-boundary-and-chain-verification",
+    "labFormat": "security-decision-tabletop-with-header-chain-replay"
+  }
+}
