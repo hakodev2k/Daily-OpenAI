@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-SEMAPHORELEASE-001",
+  "runSlot": "2026-11-21-05",
+  "title": "Aquarium feeding gate: canceled wait leaks concurrency",
+  "domain": "dotnet-concurrency-primitives",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-21T05:09:36+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "SemaphoreSlim",
+    "cancellation",
+    "resource-ownership",
+    "async-await"
+  ],
+  "prerequisites": [
+    "Task",
+    "CancellationToken"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "aquarium-feeding-sensor-control",
+    "scenarioType": "canceled-gate-acquisition-under-contention",
+    "primaryRootCause": "semaphore-released-without-successful-acquisition",
+    "failureMode": "concurrency-limit-exceeded-after-canceled-wait",
+    "solutionPattern": "release-only-after-acquired-with-finally",
+    "labFormat": "cancellation-interleaving-forensic-lab"
+  }
+}

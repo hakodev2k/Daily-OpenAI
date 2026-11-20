@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RANGE200-001",
-    "runSlot": "2026-11-21-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-RANGE200-001-research-archive-resume-corruption",
+    "unitId": "UNIT-SEMAPHORELEASE-001",
+    "runSlot": "2026-11-21-05",
+    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-SEMAPHORELEASE-001-aquarium-feeding-gate-overrelease",
     "status": "READY",
-    "createdAt": "2026-11-21T03:11:29+07:00"
+    "createdAt": "2026-11-21T05:09:36+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 627,
-    "totalGenerated": 622,
+    "totalRunSlotsAttempted": 628,
+    "totalGenerated": 623,
     "totalFailed": 5
   },
   "learning": {

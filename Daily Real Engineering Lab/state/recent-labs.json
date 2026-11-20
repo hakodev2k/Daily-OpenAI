@@ -840,13 +840,30 @@
       "createdAt": "2026-11-21T03:11:29+07:00",
       "validationMode": "static-review",
       "businessContext": "research-data-archive-mirror"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-05",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SEMAPHORELEASE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-SEMAPHORELEASE-001-aquarium-feeding-gate-overrelease",
+      "domain": "dotnet-concurrency-primitives",
+      "format": "cancellation-interleaving-forensic-lab",
+      "primarySkill": "semaphoreslim-acquisition-ownership",
+      "scenarioCategory": "canceled-gate-acquisition-under-contention",
+      "rootCauseCategory": "semaphore-released-without-successful-acquisition",
+      "failureMode": "concurrency-limit-exceeded-after-canceled-wait",
+      "solutionPattern": "release-only-after-acquired-with-finally",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T05:09:36+07:00",
+      "validationMode": "static-review",
+      "businessContext": "aquarium-feeding-sensor-control"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "dotnet-task-composition": 1,
-      "dotnet-time-measurement": 1,
       "api-pagination-consistency": 1,
       "dotnet-memory-ownership": 1,
       "json-ingestion-integrity": 1,
@@ -868,21 +885,20 @@
       "aspnet-core-reverse-proxy-security": 1,
       "sql-api-pagination": 1,
       "csharp-collections": 1,
-      "dotnet-binary-protocol": 1
+      "dotnet-binary-protocol": 1,
+      "http-range-download": 1,
+      "dotnet-concurrency-primitives": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L4": 1,
+      "L3": 5,
       "L2": 13,
-      "L3": 4,
       "L5": 5,
       "L1": 1
     },
     "byFormat": {
-      "batch-outcome-refactoring-with-deterministic-replay": 1,
-      "deterministic-clock-skew-investigation-with-dual-clock-replay": 1,
       "production-data-integrity-pagination-investigation": 1,
       "memory-ownership-evidence-replay": 1,
       "adversarial-contract-investigation": 1,
@@ -904,71 +920,73 @@
       "security-decision-tabletop-with-header-chain-replay": 1,
       "sql-page-timeline-investigation": 1,
       "collection-invariant-investigation": 1,
-      "binary-protocol-forensic-replay": 1
+      "binary-protocol-forensic-replay": 1,
+      "http-response-contract-investigation": 1,
+      "cancellation-interleaving-forensic-lab": 1
     }
   },
   "rollingProfile": {
     "count": 24,
     "byDomain": {
-      "aspnetcore-request-pipeline": 1,
-      "dotnet-channels": 1,
-      "dotnet-collections-contract": 1,
-      "linq-query-semantics": 1,
-      "data-lifecycle-architecture": 1,
-      "dotnet-task-composition": 1,
-      "dotnet-time-measurement": 1,
       "api-pagination-consistency": 1,
       "dotnet-memory-ownership": 1,
       "json-ingestion-integrity": 1,
       "azure-blob-security-architecture": 1,
       "csharp-collections-identity": 1,
       "api-time-contract": 1,
+      "dotnet-concurrency": 1,
       "sql-server-schema-evolution": 1,
-      "http-conditional-write": 1,
       "http-uri-resolution": 1,
       "observability-metrics": 1,
-      "csharp-string-semantics": 1,
       "csharp-linq-execution": 1,
-      "dotnet-thread-synchronization": 1,
       "csharp-delimited-data-contract": 1,
       "dotnet-financial-arithmetic": 1,
       "distributed-event-consistency": 1,
-      "deployment-supply-chain": 1
+      "deployment-supply-chain": 1,
+      "http-cache-semantics": 1,
+      "dotnet-channel-lifecycle": 1,
+      "dotnet-async-cancellation": 1,
+      "aspnet-core-reverse-proxy-security": 1,
+      "sql-api-pagination": 1,
+      "csharp-collections": 1,
+      "dotnet-binary-protocol": 1,
+      "http-range-download": 1,
+      "dotnet-concurrency-primitives": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
+      "L3": 5,
       "L2": 13,
       "L5": 5,
-      "L4": 1,
-      "L3": 3,
-      "L1": 2
+      "L1": 1
     },
     "byFormat": {
-      "aspnetcore-pipeline-contract-investigation": 1,
-      "deterministic-backpressure-contract-replay": 1,
-      "deterministic-report-consistency-investigation": 1,
-      "architecture-decision-tabletop-with-change-request": 1,
-      "batch-outcome-refactoring-with-deterministic-replay": 1,
-      "deterministic-clock-skew-investigation-with-dual-clock-replay": 1,
       "production-data-integrity-pagination-investigation": 1,
       "memory-ownership-evidence-replay": 1,
       "adversarial-contract-investigation": 1,
       "security-architecture-tabletop-with-threat-replay": 1,
       "deterministic-hash-bucket-investigation": 1,
       "multi-source-timestamp-contract-investigation": 1,
+      "multi-signal-concurrency-incident": 1,
       "migration-decision-tabletop-with-failure-injection": 1,
-      "http-precondition-contract-investigation": 1,
       "http-routing-evidence-investigation": 1,
       "production-metrics-cardinality-investigation": 1,
-      "cross-culture-contract-replay": 1,
       "deterministic-export-timeline-investigation": 1,
-      "deterministic-concurrent-settlement-incident": 1,
       "deterministic-column-integrity-investigation": 1,
       "financial-reconciliation-investigation": 1,
       "distributed-consistency-design-tabletop": 1,
-      "release-provenance-decision-tabletop": 1
+      "release-provenance-decision-tabletop": 1,
+      "http-cache-validator-replay": 1,
+      "deterministic-producer-lifecycle-incident": 1,
+      "deterministic-async-timeout-replay": 1,
+      "security-decision-tabletop-with-header-chain-replay": 1,
+      "sql-page-timeline-investigation": 1,
+      "collection-invariant-investigation": 1,
+      "binary-protocol-forensic-replay": 1,
+      "http-response-contract-investigation": 1,
+      "cancellation-interleaving-forensic-lab": 1
     }
   },
   "recentLabs": [
@@ -1791,6 +1809,44 @@
       "createdAt": "2026-11-21T02:06:13+07:00",
       "validationMode": "static-review",
       "businessContext": "flood-relief-sms-dispatch"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-RANGE200-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-RANGE200-001-research-archive-resume-corruption",
+      "domain": "http-range-download",
+      "format": "http-response-contract-investigation",
+      "primarySkill": "http-range-semantics",
+      "scenarioCategory": "interrupted-download-resumption",
+      "rootCauseCategory": "http-200-full-representation-appended-as-partial-content",
+      "failureMode": "duplicated-prefix-and-checksum-mismatch",
+      "solutionPattern": "status-and-content-range-aware-resume-validation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T03:11:29+07:00",
+      "validationMode": "static-review",
+      "businessContext": "research-data-archive-mirror"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-05",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SEMAPHORELEASE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-SEMAPHORELEASE-001-aquarium-feeding-gate-overrelease",
+      "domain": "dotnet-concurrency-primitives",
+      "format": "cancellation-interleaving-forensic-lab",
+      "primarySkill": "semaphoreslim-acquisition-ownership",
+      "scenarioCategory": "canceled-gate-acquisition-under-contention",
+      "rootCauseCategory": "semaphore-released-without-successful-acquisition",
+      "failureMode": "concurrency-limit-exceeded-after-canceled-wait",
+      "solutionPattern": "release-only-after-acquired-with-finally",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T05:09:36+07:00",
+      "validationMode": "static-review",
+      "businessContext": "aquarium-feeding-sensor-control"
     }
   ]
 }
