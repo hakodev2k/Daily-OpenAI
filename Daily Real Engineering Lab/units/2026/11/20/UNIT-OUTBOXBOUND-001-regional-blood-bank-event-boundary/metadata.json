@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-OUTBOXBOUND-001",
+  "runSlot": "2026-11-20-08",
+  "title": "Ranh giới phát sự kiện trong mạng lưới ngân hàng máu",
+  "domain": "distributed-event-consistency",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-20T08:04:36+07:00",
+  "estimatedMinutes": 65,
+  "skills": [
+    "transactional-outbox",
+    "at-least-once-delivery",
+    "consumer-idempotency",
+    "sql-server-transactions"
+  ],
+  "prerequisites": [
+    "sql-transactions",
+    "message-broker-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-blood-bank-distribution",
+    "scenarioType": "sql-broker-dual-write-crash-window",
+    "primaryRootCause": "non-atomic-database-commit-and-event-publication",
+    "failureMode": "lost-or-duplicate-release-event",
+    "solutionPattern": "transactional-outbox-and-consumer-inbox",
+    "labFormat": "distributed-consistency-design-tabletop"
+  }
+}

@@ -683,82 +683,30 @@
       "businessContext": "community-theater-ticketing",
       "primaryRootCause": "rounding-at-aggregate-level-instead-of-per-invoice-line",
       "labFormat": "financial-reconciliation-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-20-08",
+      "status": "SUCCESS",
+      "unitId": "UNIT-OUTBOXBOUND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-OUTBOXBOUND-001-regional-blood-bank-event-boundary",
+      "domain": "distributed-event-consistency",
+      "format": "distributed-consistency-design-tabletop",
+      "primarySkill": "transactional-outbox",
+      "scenarioCategory": "sql-broker-dual-write-crash-window",
+      "rootCauseCategory": "non-atomic-database-commit-and-event-publication",
+      "failureMode": "lost-or-duplicate-release-event",
+      "solutionPattern": "transactional-outbox-and-consumer-inbox",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-20T08:04:36+07:00",
+      "validationMode": "static-review",
+      "businessContext": "regional-blood-bank-distribution"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "dotnet-concurrency-control": 1,
-      "dotnet-file-import-contract": 1,
-      "dotnet-file-consistency": 1,
-      "caching-consistency": 1,
-      "aspnetcore-request-pipeline": 1,
-      "dotnet-channels": 1,
-      "dotnet-collections-contract": 1,
-      "linq-query-semantics": 1,
-      "data-lifecycle-architecture": 1,
-      "dotnet-task-composition": 1,
-      "dotnet-time-measurement": 1,
-      "api-pagination-consistency": 1,
-      "dotnet-memory-ownership": 1,
-      "json-ingestion-integrity": 1,
-      "azure-blob-security-architecture": 1,
-      "csharp-collections-identity": 1,
-      "api-time-contract": 1,
-      "dotnet-concurrency": 1,
-      "sql-server-schema-evolution": 1,
-      "http-uri-resolution": 1,
-      "observability-metrics": 1,
-      "csharp-linq-execution": 1,
-      "csharp-delimited-data-contract": 1,
-      "dotnet-financial-arithmetic": 1
-    },
-    "byDifficulty": {
-      "D4": 24
-    },
-    "byMaturity": {
-      "L2": 15,
-      "L3": 4,
-      "L5": 3,
-      "L4": 1,
-      "L1": 1
-    },
-    "byFormat": {
-      "deterministic-cancellation-interleaving-replay": 1,
-      "data-import-integrity-investigation-with-adversarial-fixtures": 1,
-      "file-crash-consistency-investigation": 1,
-      "production-cache-freshness-incident": 1,
-      "aspnetcore-pipeline-contract-investigation": 1,
-      "deterministic-backpressure-contract-replay": 1,
-      "collection-contract-investigation-with-counterexample-replay": 1,
-      "deterministic-report-consistency-investigation": 1,
-      "architecture-decision-tabletop-with-change-request": 1,
-      "batch-outcome-refactoring-with-deterministic-replay": 1,
-      "deterministic-clock-skew-investigation-with-dual-clock-replay": 1,
-      "production-data-integrity-pagination-investigation": 1,
-      "memory-ownership-evidence-replay": 1,
-      "adversarial-contract-investigation": 1,
-      "security-architecture-tabletop-with-threat-replay": 1,
-      "deterministic-hash-bucket-investigation": 1,
-      "multi-source-timestamp-contract-investigation": 1,
-      "multi-signal-concurrency-incident": 1,
-      "migration-decision-tabletop-with-failure-injection": 1,
-      "http-routing-evidence-investigation": 1,
-      "production-metrics-cardinality-investigation": 1,
-      "deterministic-export-timeline-investigation": 1,
-      "deterministic-column-integrity-investigation": 1,
-      "financial-reconciliation-investigation": 1
-    }
-  },
-  "rollingProfile": {
-    "window": 24,
-    "byDomain": {
-      "distributed-offline-sync": 1,
-      "dotnet-json-lifetime": 1,
-      "dotnet-async-streams": 1,
-      "dotnet-concurrency-control": 1,
-      "dotnet-file-import-contract": 1,
-      "dotnet-file-consistency": 1,
       "caching-consistency": 1,
       "aspnetcore-request-pipeline": 1,
       "dotnet-channels": 1,
@@ -776,25 +724,25 @@
       "sql-server-schema-evolution": 1,
       "http-conditional-write": 1,
       "http-uri-resolution": 1,
-      "observability-metrics": 1
+      "observability-metrics": 1,
+      "csharp-string-semantics": 1,
+      "csharp-linq-execution": 1,
+      "dotnet-thread-synchronization": 1,
+      "csharp-delimited-data-contract": 1,
+      "dotnet-financial-arithmetic": 1,
+      "distributed-event-consistency": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
+      "L3": 4,
+      "L2": 13,
       "L5": 4,
-      "L2": 15,
-      "L3": 3,
       "L4": 1,
-      "L1": 1
+      "L1": 2
     },
     "byFormat": {
-      "unknown": 2,
-      "json-lifetime-investigation-with-deterministic-replay": 1,
-      "async-stream-contract-investigation-with-two-path-replay": 1,
-      "deterministic-cancellation-interleaving-replay": 1,
-      "data-import-integrity-investigation-with-adversarial-fixtures": 1,
-      "file-crash-consistency-investigation": 1,
       "production-cache-freshness-incident": 1,
       "aspnetcore-pipeline-contract-investigation": 1,
       "deterministic-backpressure-contract-replay": 1,
@@ -811,7 +759,77 @@
       "migration-decision-tabletop-with-failure-injection": 1,
       "http-precondition-contract-investigation": 1,
       "http-routing-evidence-investigation": 1,
-      "production-metrics-cardinality-investigation": 1
+      "production-metrics-cardinality-investigation": 1,
+      "cross-culture-contract-replay": 1,
+      "deterministic-export-timeline-investigation": 1,
+      "deterministic-concurrent-settlement-incident": 1,
+      "deterministic-column-integrity-investigation": 1,
+      "financial-reconciliation-investigation": 1,
+      "distributed-consistency-design-tabletop": 1
+    }
+  },
+  "rollingProfile": {
+    "count": 24,
+    "byDomain": {
+      "caching-consistency": 1,
+      "aspnetcore-request-pipeline": 1,
+      "dotnet-channels": 1,
+      "dotnet-collections-contract": 1,
+      "linq-query-semantics": 1,
+      "data-lifecycle-architecture": 1,
+      "dotnet-task-composition": 1,
+      "dotnet-time-measurement": 1,
+      "api-pagination-consistency": 1,
+      "dotnet-memory-ownership": 1,
+      "json-ingestion-integrity": 1,
+      "azure-blob-security-architecture": 1,
+      "csharp-collections-identity": 1,
+      "api-time-contract": 1,
+      "sql-server-schema-evolution": 1,
+      "http-conditional-write": 1,
+      "http-uri-resolution": 1,
+      "observability-metrics": 1,
+      "csharp-string-semantics": 1,
+      "csharp-linq-execution": 1,
+      "dotnet-thread-synchronization": 1,
+      "csharp-delimited-data-contract": 1,
+      "dotnet-financial-arithmetic": 1,
+      "distributed-event-consistency": 1
+    },
+    "byDifficulty": {
+      "D4": 24
+    },
+    "byMaturity": {
+      "L3": 4,
+      "L2": 13,
+      "L5": 4,
+      "L4": 1,
+      "L1": 2
+    },
+    "byFormat": {
+      "production-cache-freshness-incident": 1,
+      "aspnetcore-pipeline-contract-investigation": 1,
+      "deterministic-backpressure-contract-replay": 1,
+      "deterministic-report-consistency-investigation": 1,
+      "architecture-decision-tabletop-with-change-request": 1,
+      "batch-outcome-refactoring-with-deterministic-replay": 1,
+      "deterministic-clock-skew-investigation-with-dual-clock-replay": 1,
+      "production-data-integrity-pagination-investigation": 1,
+      "memory-ownership-evidence-replay": 1,
+      "adversarial-contract-investigation": 1,
+      "security-architecture-tabletop-with-threat-replay": 1,
+      "deterministic-hash-bucket-investigation": 1,
+      "multi-source-timestamp-contract-investigation": 1,
+      "migration-decision-tabletop-with-failure-injection": 1,
+      "http-precondition-contract-investigation": 1,
+      "http-routing-evidence-investigation": 1,
+      "production-metrics-cardinality-investigation": 1,
+      "cross-culture-contract-replay": 1,
+      "deterministic-export-timeline-investigation": 1,
+      "deterministic-concurrent-settlement-incident": 1,
+      "deterministic-column-integrity-investigation": 1,
+      "financial-reconciliation-investigation": 1,
+      "distributed-consistency-design-tabletop": 1
     }
   },
   "recentLabs": [
@@ -1453,6 +1471,25 @@
       "businessContext": "community-theater-ticketing",
       "primaryRootCause": "rounding-at-aggregate-level-instead-of-per-invoice-line",
       "labFormat": "financial-reconciliation-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-20-08",
+      "status": "SUCCESS",
+      "unitId": "UNIT-OUTBOXBOUND-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-OUTBOXBOUND-001-regional-blood-bank-event-boundary",
+      "domain": "distributed-event-consistency",
+      "format": "distributed-consistency-design-tabletop",
+      "primarySkill": "transactional-outbox",
+      "scenarioCategory": "sql-broker-dual-write-crash-window",
+      "rootCauseCategory": "non-atomic-database-commit-and-event-publication",
+      "failureMode": "lost-or-duplicate-release-event",
+      "solutionPattern": "transactional-outbox-and-consumer-inbox",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-20T08:04:36+07:00",
+      "validationMode": "static-review",
+      "businessContext": "regional-blood-bank-distribution"
     }
   ]
 }
