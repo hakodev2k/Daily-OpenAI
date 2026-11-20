@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CHANNELCLOSE-001",
-    "runSlot": "2026-11-20-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-CHANNELCLOSE-001-emergency-shelter-intake-drain",
+    "unitId": "UNIT-TASKCACHE-001",
+    "runSlot": "2026-11-20-21",
+    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-TASKCACHE-001-community-grant-configuration-faulted-task-cache",
     "status": "READY",
-    "createdAt": "2026-11-20T18:11:28+07:00"
+    "createdAt": "2026-11-20T21:05:27+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 620,
-    "totalGenerated": 615,
+    "totalRunSlotsAttempted": 621,
+    "totalGenerated": 616,
     "totalFailed": 5
   },
   "learning": {
