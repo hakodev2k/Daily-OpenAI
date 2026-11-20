@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SEMAPHORELEASE-001",
-    "runSlot": "2026-11-21-05",
-    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-SEMAPHORELEASE-001-aquarium-feeding-gate-overrelease",
+    "unitId": "UNIT-HEADERBLEED-001",
+    "runSlot": "2026-11-21-06",
+    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-HEADERBLEED-001-tenant-auth-header-cross-contamination",
     "status": "READY",
-    "createdAt": "2026-11-21T05:09:36+07:00"
+    "createdAt": "2026-11-21T06:13:26+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 628,
-    "totalGenerated": 623,
+    "totalRunSlotsAttempted": 629,
+    "totalGenerated": 624,
     "totalFailed": 5
   },
   "learning": {

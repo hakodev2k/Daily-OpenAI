@@ -859,6 +859,27 @@
       "createdAt": "2026-11-21T05:09:36+07:00",
       "validationMode": "static-review",
       "businessContext": "aquarium-feeding-sensor-control"
+    },
+    {
+      "runSlot": "2026-11-21-06",
+      "status": "SUCCESS",
+      "unitId": "UNIT-HEADERBLEED-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-HEADERBLEED-001-tenant-auth-header-cross-contamination",
+      "domain": "dotnet-http-security",
+      "format": "concurrency-security-contract-refactoring",
+      "primarySkill": "httpclient-per-request-authorization",
+      "scenarioCategory": "concurrent-tenant-outbound-api-dispatch",
+      "rootCauseCategory": "shared-httpclient-default-authorization-header-mutated-per-tenant",
+      "failureMode": "tenant-a-request-sent-with-tenant-b-credential",
+      "solutionPattern": "immutable-per-request-authorization-header-on-http-request-message",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T06:13:26+07:00",
+      "validationMode": "static-review",
+      "businessContext": "multi-tenant-school-photo-processing",
+      "scenarioType": "concurrent-tenant-outbound-api-dispatch",
+      "primaryRootCause": "shared-httpclient-default-authorization-header-mutated-per-tenant",
+      "labFormat": "concurrency-security-contract-refactoring"
     }
   ],
   "rolling24": {

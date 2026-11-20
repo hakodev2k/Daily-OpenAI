@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-HEADERBLEED-001",
+  "runSlot": "2026-11-21-06",
+  "title": "Lẫn thông tin xác thực giữa hai trường học",
+  "domain": "dotnet-http-security",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-21T06:13:26+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "httpclient-request-headers",
+    "tenant-isolation",
+    "async-concurrency",
+    "failure-path-testing"
+  ],
+  "prerequisites": [
+    "httpclient-basics",
+    "task-async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-school-photo-processing",
+    "scenarioType": "concurrent-tenant-outbound-api-dispatch",
+    "primaryRootCause": "shared-httpclient-default-authorization-header-mutated-per-tenant",
+    "failureMode": "tenant-a-request-sent-with-tenant-b-credential",
+    "solutionPattern": "immutable-per-request-authorization-header-on-http-request-message",
+    "labFormat": "concurrency-security-contract-refactoring"
+  }
+}
