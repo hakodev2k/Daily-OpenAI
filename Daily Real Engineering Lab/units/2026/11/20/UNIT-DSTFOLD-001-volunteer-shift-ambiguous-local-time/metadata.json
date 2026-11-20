@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-DSTFOLD-001",
+  "runSlot": "2026-11-20-17",
+  "title": "Ca trực tình nguyện bị lệch một giờ",
+  "domain": "dotnet-timezone-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-20T17:08:20+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "timezoneinfo-ambiguity",
+    "datetimeoffset",
+    "utc-persistence"
+  ],
+  "prerequisites": [
+    "dotnet-8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "toronto-volunteer-shift-scheduling",
+    "scenarioType": "dst-transition-appointment-confirmation",
+    "primaryRootCause": "local-wall-clock-time-lacks-offset-during-dst-fold-and-gap",
+    "failureMode": "shift-confirmed-at-wrong-instant-or-nonexistent-time",
+    "solutionPattern": "explicit-ambiguous-time-offset-selection-and-invalid-time-rejection",
+    "labFormat": "timezone-contract-investigation-with-cross-platform-custom-zone"
+  }
+}

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HEADERCASE-001",
-    "runSlot": "2026-11-20-16",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-HEADERCASE-001-wildlife-rescue-http-header-duplication",
+    "unitId": "UNIT-DSTFOLD-001",
+    "runSlot": "2026-11-20-17",
+    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-DSTFOLD-001-volunteer-shift-ambiguous-local-time",
     "status": "READY",
-    "createdAt": "2026-11-20T16:11:31+07:00"
+    "createdAt": "2026-11-20T17:08:20+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 618,
-    "totalGenerated": 613,
+    "totalRunSlotsAttempted": 619,
+    "totalGenerated": 614,
     "totalFailed": 5
   },
   "learning": {
