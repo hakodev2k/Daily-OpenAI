@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ETAG304-001",
+  "runSlot": "2026-11-20-13",
+  "title": "Bản cập nhật catalog khóa học biến thành lỗi đồng bộ",
+  "domain": "http-cache-semantics",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-20T13:13:10+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "http-conditional-requests",
+    "etag",
+    "httpclient-error-handling"
+  ],
+  "prerequisites": [
+    "http-status-codes",
+    "csharp-async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "university-course-catalog-synchronization",
+    "scenarioType": "conditional-get-refresh",
+    "primaryRootCause": "304-not-modified-treated-as-failed-refresh",
+    "failureMode": "scheduled-sync-fails-despite-unchanged-upstream-data",
+    "solutionPattern": "conditional-response-branch-with-cached-representation",
+    "labFormat": "http-cache-validator-replay"
+  }
+}

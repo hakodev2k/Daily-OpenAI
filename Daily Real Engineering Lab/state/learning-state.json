@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DEPLOYDIGEST-001",
-    "runSlot": "2026-11-20-12",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-DEPLOYDIGEST-001-municipal-water-service-artifact-drift",
+    "unitId": "UNIT-ETAG304-001",
+    "runSlot": "2026-11-20-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-ETAG304-001-university-course-catalog-conditional-refresh",
     "status": "READY",
-    "createdAt": "2026-11-20T12:04:37+07:00"
+    "createdAt": "2026-11-20T13:13:10+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 616,
-    "totalGenerated": 611,
+    "totalRunSlotsAttempted": 617,
+    "totalGenerated": 612,
     "totalFailed": 5
   },
   "learning": {
