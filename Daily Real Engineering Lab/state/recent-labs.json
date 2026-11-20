@@ -803,6 +803,27 @@
       "businessContext": "community-grant-policy-service",
       "primaryRootCause": "faulted-task-permanently-retained-in-async-cache",
       "labFormat": "async-cache-lifecycle-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-20-23",
+      "status": "SUCCESS",
+      "unitId": "UNIT-PROXYTRUST-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-PROXYTRUST-001-municipal-permit-proxy-trust",
+      "domain": "aspnet-core-reverse-proxy-security",
+      "format": "security-decision-tabletop-with-header-chain-replay",
+      "primarySkill": "aspnet-core-forwarded-headers",
+      "scenarioCategory": "proxy-topology-change-and-audit-attribution",
+      "rootCauseCategory": "forwarded-client-address-accepted-without-verified-proxy-chain",
+      "failureMode": "spoofed-or-misattributed-client-ip-in-audit-and-rate-limit",
+      "solutionPattern": "explicit-trusted-proxy-boundary-and-chain-verification",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-20T23:06:43+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-construction-permit-portal",
+      "primaryRootCause": "forwarded-client-address-accepted-without-verified-proxy-chain",
+      "labFormat": "security-decision-tabletop-with-header-chain-replay"
     }
   ],
   "rolling24": {
@@ -1675,6 +1696,27 @@
       "businessContext": "heritage-archive-bulk-import",
       "primaryRootCause": "task-whenany-timeout-does-not-cancel-underlying-operation",
       "labFormat": "deterministic-async-timeout-replay"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-20-23",
+      "status": "SUCCESS",
+      "unitId": "UNIT-PROXYTRUST-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-PROXYTRUST-001-municipal-permit-proxy-trust",
+      "domain": "aspnet-core-reverse-proxy-security",
+      "format": "security-decision-tabletop-with-header-chain-replay",
+      "primarySkill": "aspnet-core-forwarded-headers",
+      "scenarioCategory": "proxy-topology-change-and-audit-attribution",
+      "rootCauseCategory": "forwarded-client-address-accepted-without-verified-proxy-chain",
+      "failureMode": "spoofed-or-misattributed-client-ip-in-audit-and-rate-limit",
+      "solutionPattern": "explicit-trusted-proxy-boundary-and-chain-verification",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-20T23:06:43+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-construction-permit-portal",
+      "primaryRootCause": "forwarded-client-address-accepted-without-verified-proxy-chain",
+      "labFormat": "security-decision-tabletop-with-header-chain-replay"
     }
   ]
 }
