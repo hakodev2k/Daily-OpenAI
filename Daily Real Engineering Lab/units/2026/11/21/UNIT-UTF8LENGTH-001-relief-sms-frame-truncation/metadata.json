@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-UTF8LENGTH-001",
+  "runSlot": "2026-11-21-02",
+  "title": "Gói tin cứu trợ bị cắt khi gửi tiếng Việt",
+  "domain": "dotnet-binary-protocol",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-21T02:06:13+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "utf8-encoding",
+    "binary-framing",
+    "dotnet-streams"
+  ],
+  "prerequisites": [
+    "C# strings",
+    "byte arrays"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "flood-relief-sms-dispatch",
+    "scenarioType": "binary-framing-of-multilingual-payload",
+    "primaryRootCause": "character-count-used-as-utf8-byte-length",
+    "failureMode": "truncated-payload-and-next-frame-desynchronization",
+    "solutionPattern": "encode-first-and-prefix-actual-byte-length",
+    "labFormat": "binary-protocol-forensic-replay"
+  }
+}

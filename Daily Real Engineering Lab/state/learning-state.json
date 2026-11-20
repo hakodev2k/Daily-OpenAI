@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HASHKEY-001",
-    "runSlot": "2026-11-21-01",
-    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-HASHKEY-001-museum-object-lookup-drift",
+    "unitId": "UNIT-UTF8LENGTH-001",
+    "runSlot": "2026-11-21-02",
+    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-UTF8LENGTH-001-relief-sms-frame-truncation",
     "status": "READY",
-    "createdAt": "2026-11-21T01:12:40+07:00"
+    "createdAt": "2026-11-21T02:06:13+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 625,
-    "totalGenerated": 620,
+    "totalRunSlotsAttempted": 626,
+    "totalGenerated": 621,
     "totalFailed": 5
   },
   "learning": {
