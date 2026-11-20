@@ -1654,6 +1654,27 @@
       "businessContext": "emergency-shelter-intake",
       "primaryRootCause": "channel-completion-before-all-producers-finish",
       "labFormat": "deterministic-producer-lifecycle-incident"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-20-22",
+      "status": "SUCCESS",
+      "unitId": "UNIT-TIMEOUTSIDE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-TIMEOUTSIDE-001-heritage-archive-timeout-late-write",
+      "domain": "dotnet-async-cancellation",
+      "format": "deterministic-async-timeout-replay",
+      "primarySkill": "cooperative-cancellation",
+      "scenarioCategory": "client-timeout-while-write-still-running",
+      "rootCauseCategory": "task-whenany-timeout-does-not-cancel-underlying-operation",
+      "failureMode": "late-write-after-timeout-and-retry",
+      "solutionPattern": "cooperative-cancellation-with-commit-boundary",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-20T22:13:06+07:00",
+      "validationMode": "static-review",
+      "businessContext": "heritage-archive-bulk-import",
+      "primaryRootCause": "task-whenany-timeout-does-not-cancel-underlying-operation",
+      "labFormat": "deterministic-async-timeout-replay"
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-TIMEOUTSIDE-001",
+  "runSlot": "2026-11-20-22",
+  "title": "Timeout trả về nhưng dữ liệu vẫn thay đổi",
+  "domain": "dotnet-async-cancellation",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-20T22:13:06+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "cancellation-token",
+    "task-timeout",
+    "side-effect-boundary"
+  ],
+  "prerequisites": [
+    "async-await",
+    "task-whenany"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "heritage-archive-bulk-import",
+    "scenarioType": "client-timeout-while-write-still-running",
+    "primaryRootCause": "task-whenany-timeout-does-not-cancel-underlying-operation",
+    "failureMode": "late-write-after-timeout-and-retry",
+    "solutionPattern": "cooperative-cancellation-with-commit-boundary",
+    "labFormat": "deterministic-async-timeout-replay"
+  }
+}

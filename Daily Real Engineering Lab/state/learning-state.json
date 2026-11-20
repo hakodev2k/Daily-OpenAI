@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-TASKCACHE-001",
-    "runSlot": "2026-11-20-21",
-    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-TASKCACHE-001-community-grant-configuration-faulted-task-cache",
+    "unitId": "UNIT-TIMEOUTSIDE-001",
+    "runSlot": "2026-11-20-22",
+    "path": "Daily Real Engineering Lab/units/2026/11/20/UNIT-TIMEOUTSIDE-001-heritage-archive-timeout-late-write",
     "status": "READY",
-    "createdAt": "2026-11-20T21:05:27+07:00"
+    "createdAt": "2026-11-20T22:13:06+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 621,
-    "totalGenerated": 616,
+    "totalRunSlotsAttempted": 622,
+    "totalGenerated": 617,
     "totalFailed": 5
   },
   "learning": {
