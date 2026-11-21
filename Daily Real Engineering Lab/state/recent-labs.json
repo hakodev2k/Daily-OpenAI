@@ -1176,10 +1176,28 @@
       "createdAt": "2026-11-22T04:09:25+07:00",
       "validationMode": "static-review",
       "businessContext": "telemedicine-appointment-booking"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-06",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CACHEVARY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-CACHEVARY-001-public-portal-cache-variant-leak",
+      "domain": "http-caching",
+      "format": "cache-policy-design-and-replay-workshop",
+      "primarySkill": "http-cache-key",
+      "scenarioCategory": "multi-variant-edge-cache-architecture",
+      "rootCauseCategory": "cache-key-omits-variant-dimensions",
+      "failureMode": "cross-locale-and-audience-response-contamination",
+      "solutionPattern": "bounded-variant-key-with-cacheability-policy-and-contract-tests",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T06:10:05+07:00",
+      "validationMode": "static-review",
+      "businessContext": "public-transit-service-advisory"
     }
   ],
   "rolling24": [
-    "UNIT-TIMEOUTSIDE-001",
     "UNIT-PROXYTRUST-001",
     "UNIT-PAGETOKEN-001",
     "UNIT-HASHKEY-001",
@@ -1202,12 +1220,12 @@
     "UNIT-TAXROUND-001",
     "UNIT-LINQSNAP-001",
     "UNIT-RETRYAFTER-001",
-    "UNIT-DSTFOLD-001"
+    "UNIT-DSTFOLD-001",
+    "UNIT-CACHEVARY-001"
   ],
   "rollingProfile": {
     "window": 24,
     "byDomain": {
-      "dotnet-async-cancellation": 1,
       "aspnet-core-reverse-proxy-security": 1,
       "sql-api-pagination": 1,
       "csharp-collections": 2,
@@ -1229,20 +1247,20 @@
       "dotnet-financial-arithmetic": 1,
       "csharp-linq-deferred-execution": 1,
       "http-rate-limiting": 1,
-      "dotnet-timezone-contract": 1
+      "dotnet-timezone-contract": 1,
+      "http-caching": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 13,
-      "L5": 4,
+      "L5": 5,
+      "L2": 12,
       "L3": 4,
       "L4": 2,
       "L1": 1
     },
     "byFormat": {
-      "deterministic-async-timeout-replay": 1,
       "security-decision-tabletop-with-header-chain-replay": 1,
       "sql-page-timeline-investigation": 1,
       "collection-invariant-investigation": 1,
@@ -1265,7 +1283,8 @@
       "financial-calculation-refactoring-with-regression-contract": 1,
       "deterministic-linq-snapshot-contract-investigation": 1,
       "protocol-contract-evidence-matrix": 1,
-      "calendar-boundary-contract-investigation": 1
+      "calendar-boundary-contract-investigation": 1,
+      "cache-policy-design-and-replay-workshop": 1
     }
   }
 }
