@@ -1,0 +1,11 @@
+seq,cache_result,observed_body
+1,MISS,R10|vi|general
+2,HIT,R10|vi|general
+3,HIT,R10|vi|general
+4,MISS,R20|en|general
+5,HIT,R20|en|general
+6,HIT,R10|vi|general
+7,HIT,R20|en|general
+8,HIT,R10|vi|general
+9,HIT,R10|vi|general
+10,HIT,R20|en|general
