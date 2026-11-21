@@ -899,6 +899,27 @@
       "createdAt": "2026-11-21T08:09:29+07:00",
       "validationMode": "static-review",
       "businessContext": "school-records-guardian-download"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-10",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SORTEDSET-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-SORTEDSET-001-wildfire-alert-priority-loss",
+      "domain": "csharp-collections",
+      "format": "deterministic-collection-contract-replay",
+      "primarySkill": "sortedset-comparer-contract",
+      "scenarioCategory": "equal-severity-alert-replay",
+      "rootCauseCategory": "sortedset-comparer-collapses-distinct-alerts",
+      "failureMode": "silent-alert-loss",
+      "solutionPattern": "total-order-comparer-with-id-tiebreaker",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T10:07:06+07:00",
+      "validationMode": "static-review",
+      "businessContext": "wildfire-evacuation-alert-queue",
+      "primaryRootCause": "sortedset-comparer-collapses-distinct-alerts",
+      "labFormat": "deterministic-collection-contract-replay"
     }
   ],
   "rolling24": [
