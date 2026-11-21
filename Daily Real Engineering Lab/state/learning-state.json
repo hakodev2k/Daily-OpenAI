@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-DSTFOLD-001",
-    "runSlot": "2026-11-22-04",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-DSTFOLD-001-clinic-appointment-dst-ambiguity",
+    "unitId": "UNIT-CACHEVARY-001",
+    "runSlot": "2026-11-22-06",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-CACHEVARY-001-public-portal-cache-variant-leak",
     "status": "READY",
-    "createdAt": "2026-11-22T04:09:25+07:00"
+    "createdAt": "2026-11-22T06:10:05+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 646,
-    "totalGenerated": 641,
+    "totalRunSlotsAttempted": 647,
+    "totalGenerated": 642,
     "totalFailed": 5
   },
   "learning": {
