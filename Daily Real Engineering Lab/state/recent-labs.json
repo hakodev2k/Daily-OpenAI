@@ -941,6 +941,25 @@
       "businessContext": "hospital-medication-cold-chain",
       "primaryRootCause": "case-insensitive-json-property-collision-overwrites-safety-critical-reading",
       "labFormat": "multi-sample-contract-forensics"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-RESTORECHAIN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-RESTORECHAIN-001-regional-library-backup-restore-chain",
+      "domain": "sql-server-disaster-recovery",
+      "format": "disaster-recovery-evidence-workshop",
+      "primarySkill": "sql-server-restore-chain",
+      "scenarioCategory": "database-disaster-recovery-timeline",
+      "rootCauseCategory": "unreadable-transaction-log-backup-breaks-restore-chain",
+      "failureMode": "point-in-time-recovery-gap",
+      "solutionPattern": "restore-drill-and-recoverability-evidence",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T14:04:21+07:00",
+      "validationMode": "static-review",
+      "businessContext": "regional-public-library-circulation"
     }
   ],
   "rolling24": [
@@ -2377,6 +2396,25 @@
       "createdAt": "2026-11-21T12:05:09+07:00",
       "validationMode": "static-review",
       "businessContext": "remote-weather-station-calibration"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-RESTORECHAIN-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-RESTORECHAIN-001-regional-library-backup-restore-chain",
+      "domain": "sql-server-disaster-recovery",
+      "format": "disaster-recovery-evidence-workshop",
+      "primarySkill": "sql-server-restore-chain",
+      "scenarioCategory": "database-disaster-recovery-timeline",
+      "rootCauseCategory": "unreadable-transaction-log-backup-breaks-restore-chain",
+      "failureMode": "point-in-time-recovery-gap",
+      "solutionPattern": "restore-drill-and-recoverability-evidence",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T14:04:21+07:00",
+      "validationMode": "static-review",
+      "businessContext": "regional-public-library-circulation"
     }
   ]
 }

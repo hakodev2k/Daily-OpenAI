@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-RESTORECHAIN-001",
+  "runSlot": "2026-11-21-14",
+  "title": "Chuỗi backup có thực sự khôi phục được dữ liệu?",
+  "domain": "sql-server-disaster-recovery",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-21T14:04:21+07:00",
+  "estimatedMinutes": 75,
+  "skills": [
+    "sql-server-backup-restore",
+    "rpo-rto",
+    "production-recovery"
+  ],
+  "prerequisites": [
+    "transaction-log",
+    "recovery-model"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-public-library-circulation",
+    "scenarioType": "database-disaster-recovery-timeline",
+    "primaryRootCause": "unreadable-transaction-log-backup-breaks-restore-chain",
+    "failureMode": "point-in-time-recovery-gap",
+    "solutionPattern": "restore-drill-and-recoverability-evidence",
+    "labFormat": "disaster-recovery-evidence-workshop"
+  }
+}
