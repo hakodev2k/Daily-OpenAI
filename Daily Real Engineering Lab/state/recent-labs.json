@@ -1117,10 +1117,30 @@
       "businessContext": "community-market-pos",
       "primaryRootCause": "aggregate-rounding-instead-of-contractual-line-rounding",
       "labFormat": "financial-calculation-refactoring-with-regression-contract"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-02",
+      "status": "SUCCESS",
+      "unitId": "UNIT-LINQSNAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-LINQSNAP-001-community-aid-audit-filter-drift",
+      "domain": "csharp-linq-deferred-execution",
+      "format": "deterministic-linq-snapshot-contract-investigation",
+      "primarySkill": "linq-deferred-execution",
+      "scenarioCategory": "export-preparation-then-filter-and-source-edits",
+      "rootCauseCategory": "deferred-query-retains-mutable-filter-and-source",
+      "failureMode": "previously-prepared-report-changes-on-reenumeration",
+      "solutionPattern": "materialized-export-snapshot-at-business-boundary",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T02:07:42+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-aid-disbursement-audit",
+      "primaryRootCause": "deferred-query-retains-mutable-filter-and-source",
+      "labFormat": "deterministic-linq-snapshot-contract-investigation"
     }
   ],
   "rolling24": [
-    "UNIT-DEPLOYDIGEST-001",
     "UNIT-ETAG304-001",
     "UNIT-CHANNELCLOSE-001",
     "UNIT-TIMEOUTSIDE-001",
@@ -1143,12 +1163,12 @@
     "UNIT-TIMERREENTRY-001",
     "UNIT-ASYNCENUM-001",
     "UNIT-EFCONFLICT-001",
-    "UNIT-TAXROUND-001"
+    "UNIT-TAXROUND-001",
+    "UNIT-LINQSNAP-001"
   ],
   "rollingProfile": {
     "window": 24,
     "byDomain": {
-      "deployment-supply-chain": 1,
       "http-cache-semantics": 1,
       "dotnet-channel-lifecycle": 1,
       "dotnet-async-cancellation": 1,
@@ -1170,20 +1190,20 @@
       "dotnet-background-timers": 1,
       "dotnet-async-streams": 1,
       "database-concurrency": 1,
-      "dotnet-financial-arithmetic": 1
+      "dotnet-financial-arithmetic": 1,
+      "csharp-linq-deferred-execution": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 5,
-      "L2": 11,
+      "L2": 12,
       "L3": 5,
+      "L5": 4,
       "L4": 2,
       "L1": 1
     },
     "byFormat": {
-      "release-provenance-decision-tabletop": 1,
       "http-cache-validator-replay": 1,
       "deterministic-producer-lifecycle-incident": 1,
       "deterministic-async-timeout-replay": 1,
@@ -1206,7 +1226,8 @@
       "controlled-scheduler-incident-replay": 1,
       "async-stream-lifecycle-investigation": 1,
       "deterministic-interleaving-state-machine": 1,
-      "financial-calculation-refactoring-with-regression-contract": 1
+      "financial-calculation-refactoring-with-regression-contract": 1,
+      "deterministic-linq-snapshot-contract-investigation": 1
     }
   }
 }
