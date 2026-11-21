@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-MONOCLOCK-001",
+  "runSlot": "2026-11-21-21",
+  "title": "Đồng hồ điều chỉnh khiến SLA vận chuyển lạnh ghi thời gian âm",
+  "domain": "dotnet-time-measurement",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-21T21:05:59+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "dotnet-timeprovider",
+    "monotonic-clock",
+    "sla-observability"
+  ],
+  "prerequisites": [
+    "C# records",
+    "Stopwatch"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "cold-chain-pharmaceutical-courier",
+    "scenarioType": "clock-correction-during-duration-measurement",
+    "primaryRootCause": "wall-clock-adjustment-used-for-elapsed-time",
+    "failureMode": "negative-or-inflated-sla-duration",
+    "solutionPattern": "monotonic-elapsed-time-with-wall-clock-for-audit",
+    "labFormat": "clock-drift-evidence-investigation"
+  }
+}
