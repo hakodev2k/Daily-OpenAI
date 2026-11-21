@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-ASYNCENUM-001",
-    "runSlot": "2026-11-21-23",
-    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-ASYNCENUM-001-emergency-shelter-stream-cancellation",
+    "unitId": "UNIT-EFCONFLICT-001",
+    "runSlot": "2026-11-22-00",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-EFCONFLICT-001-inventory-reservation-lost-update",
     "status": "READY",
-    "createdAt": "2026-11-21T23:04:04+07:00"
+    "createdAt": "2026-11-22T00:14:02+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 641,
-    "totalGenerated": 636,
+    "totalRunSlotsAttempted": 642,
+    "totalGenerated": 637,
     "totalFailed": 5
   },
   "learning": {
@@ -18,7 +18,7 @@
   },
   "difficultyProgram": {
     "startedAt": "2026-09-07",
-    "elapsedDays": 75,
+    "elapsedDays": 76,
     "currentPhase": "investigation-depth",
     "currentBand": [
       "D3",

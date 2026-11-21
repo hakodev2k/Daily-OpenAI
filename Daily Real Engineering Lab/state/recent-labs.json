@@ -1077,6 +1077,25 @@
       "businessContext": "emergency-shelter-capacity-broadcast",
       "primaryRootCause": "async-iterator-token-not-bound-to-enumerator-cancellation",
       "labFormat": "async-stream-lifecycle-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-00",
+      "status": "SUCCESS",
+      "unitId": "UNIT-EFCONFLICT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-EFCONFLICT-001-inventory-reservation-lost-update",
+      "domain": "database-concurrency",
+      "format": "deterministic-interleaving-state-machine",
+      "primarySkill": "optimistic-concurrency",
+      "scenarioCategory": "concurrent-inventory-reservation",
+      "rootCauseCategory": "read-modify-write-without-version-precondition",
+      "failureMode": "lost-update-and-oversold-seat",
+      "solutionPattern": "optimistic-version-check-and-retry-or-conflict",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T00:14:02+07:00",
+      "validationMode": "static-review",
+      "businessContext": "theater-ticket-seat-hold"
     }
   ],
   "rolling24": [
@@ -1561,8 +1580,6 @@
   "rollingProfile": {
     "window": 24,
     "byDomain": {
-      "csharp-delimited-data-contract": 1,
-      "dotnet-financial-arithmetic": 1,
       "distributed-event-consistency": 1,
       "deployment-supply-chain": 1,
       "http-cache-semantics": 1,
@@ -1583,21 +1600,21 @@
       "dotnet-memory-stream": 1,
       "aspnet-core-request-pipeline": 1,
       "dotnet-time-measurement": 1,
-      "dotnet-background-timers": 1
+      "dotnet-background-timers": 1,
+      "dotnet-async-streams": 1,
+      "database-concurrency": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 11,
       "L5": 6,
+      "L2": 11,
       "L3": 5,
       "L4": 1,
       "L1": 1
     },
     "byFormat": {
-      "deterministic-column-integrity-investigation": 1,
-      "financial-reconciliation-investigation": 1,
       "distributed-consistency-design-tabletop": 1,
       "release-provenance-decision-tabletop": 1,
       "http-cache-validator-replay": 1,
@@ -1619,7 +1636,9 @@
       "deterministic-byte-integrity-contract-lab": 1,
       "aspnet-pipeline-contract-investigation": 1,
       "clock-drift-evidence-investigation": 1,
-      "controlled-scheduler-incident-replay": 1
+      "controlled-scheduler-incident-replay": 1,
+      "async-stream-lifecycle-investigation": 1,
+      "deterministic-interleaving-state-machine": 1
     }
   }
 }

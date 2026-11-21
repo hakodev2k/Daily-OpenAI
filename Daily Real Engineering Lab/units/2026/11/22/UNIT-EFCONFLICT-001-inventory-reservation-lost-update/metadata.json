@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-EFCONFLICT-001",
+  "runSlot": "2026-11-22-00",
+  "title": "Hai yêu cầu giữ hàng cùng ghi đè phiên bản tồn kho",
+  "domain": "database-concurrency",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T00:14:02+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "optimistic-concurrency",
+    "ef-core-concurrency-tokens",
+    "lost-update"
+  ],
+  "prerequisites": [
+    "C# basics",
+    "database transactions"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "theater-ticket-seat-hold",
+    "scenarioType": "concurrent-inventory-reservation",
+    "primaryRootCause": "read-modify-write-without-version-precondition",
+    "failureMode": "lost-update-and-oversold-seat",
+    "solutionPattern": "optimistic-version-check-and-retry-or-conflict",
+    "labFormat": "deterministic-interleaving-state-machine"
+  }
+}
