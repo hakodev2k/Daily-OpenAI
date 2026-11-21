@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-LINQSNAP-001",
+  "runSlot": "2026-11-22-02",
+  "title": "Báo cáo kiểm toán thay đổi sau khi đã chuẩn bị xuất dữ liệu",
+  "domain": "csharp-linq-deferred-execution",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T02:07:42+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "linq-deferred-execution",
+    "snapshot-boundaries",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# IEnumerable",
+    "LINQ Where"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-aid-disbursement-audit",
+    "scenarioType": "export-preparation-then-filter-and-source-edits",
+    "primaryRootCause": "deferred-query-retains-mutable-filter-and-source",
+    "failureMode": "previously-prepared-report-changes-on-reenumeration",
+    "solutionPattern": "materialized-export-snapshot-at-business-boundary",
+    "labFormat": "deterministic-linq-snapshot-contract-investigation"
+  }
+}
