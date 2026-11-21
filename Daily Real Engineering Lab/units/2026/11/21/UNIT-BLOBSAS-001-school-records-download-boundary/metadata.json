@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-BLOBSAS-001",
+  "runSlot": "2026-11-21-08",
+  "title": "Quyết định ranh giới tải hồ sơ học sinh",
+  "domain": "azure-blob-architecture",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-21T08:09:29+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "azure-blob-sas",
+    "authorization",
+    "security-architecture",
+    "capacity-planning"
+  ],
+  "prerequisites": [
+    "http-authorization",
+    "aspnet-core"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "school-records-guardian-download",
+    "scenarioType": "private-document-delivery-architecture",
+    "primaryRootCause": "delegated-download-revocation-versus-bandwidth-tradeoff",
+    "failureMode": "authorization-revocation-and-audit-gap",
+    "solutionPattern": "hybrid-short-ttl-delegation-with-authoritative-gate",
+    "labFormat": "security-architecture-decision-workshop"
+  }
+}
