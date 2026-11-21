@@ -1,0 +1,37 @@
+{
+  "unitId": "UNIT-CULTUREPARSE-001",
+  "runSlot": "2026-11-21-12",
+  "title": "Dữ liệu cảm biến thời tiết đổi nghĩa giữa hai region",
+  "domain": "dotnet-globalization",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-21T12:05:09+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "cultureinfo",
+    "decimal-parse",
+    "protocol-contract",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    ".NET 8 SDK",
+    "PowerShell 7"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "remote-weather-station-calibration",
+    "scenarioType": "cross-region-invariant-data-ingestion",
+    "primaryRootCause": "current-culture-decimal-parsing-of-invariant-protocol",
+    "failureMode": "incorrect-or-rejected-sensor-measurements",
+    "solutionPattern": "explicit-invariant-protocol-parsing-with-fail-closed-validation",
+    "labFormat": "cross-culture-data-contract-investigation"
+  }
+}

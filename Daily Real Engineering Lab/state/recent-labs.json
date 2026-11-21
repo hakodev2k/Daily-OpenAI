@@ -2337,6 +2337,25 @@
       "createdAt": "2026-11-21T08:09:29+07:00",
       "validationMode": "static-review",
       "businessContext": "school-records-guardian-download"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-12",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CULTUREPARSE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-CULTUREPARSE-001-weather-station-sensor-import",
+      "domain": "dotnet-globalization",
+      "format": "cross-culture-data-contract-investigation",
+      "primarySkill": "culture-invariant-decimal-parsing",
+      "scenarioCategory": "cross-region-invariant-data-ingestion",
+      "rootCauseCategory": "current-culture-decimal-parsing-of-invariant-protocol",
+      "failureMode": "incorrect-or-rejected-sensor-measurements",
+      "solutionPattern": "explicit-invariant-protocol-parsing-with-fail-closed-validation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T12:05:09+07:00",
+      "validationMode": "static-review",
+      "businessContext": "remote-weather-station-calibration"
     }
   ]
 }

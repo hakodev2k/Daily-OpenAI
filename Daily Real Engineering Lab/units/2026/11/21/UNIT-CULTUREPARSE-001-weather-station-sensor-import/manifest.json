@@ -1,0 +1,19 @@
+{
+  "unitId": "UNIT-CULTUREPARSE-001",
+  "runSlot": "2026-11-21-12",
+  "files": [
+    "README.md",
+    "evidence/incident.md",
+    "global.json",
+    "hints/01.md",
+    "hints/02.md",
+    "hints/03.md",
+    "metadata.json",
+    "reproduce.ps1",
+    "solution/README.md",
+    "starter/Program.cs",
+    "starter/WeatherImport.csproj",
+    "verify.ps1",
+    "workspace/my-investigation.md"
+  ]
+}
