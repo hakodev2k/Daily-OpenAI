@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-ASYNCENUM-001",
+  "runSlot": "2026-11-21-23",
+  "title": "Luồng cập nhật nơi trú ẩn vẫn chạy sau khi người nhận hủy",
+  "domain": "dotnet-async-streams",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-21T23:04:04+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "iasyncenumerable-cancellation",
+    "cancellationtoken",
+    "async-iterator"
+  ],
+  "prerequisites": [
+    "async-await",
+    "cancellationtoken-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "emergency-shelter-capacity-broadcast",
+    "scenarioType": "client-disconnect-during-async-iterator",
+    "primaryRootCause": "async-iterator-token-not-bound-to-enumerator-cancellation",
+    "failureMode": "stream-keeps-fetching-after-client-cancellation",
+    "solutionPattern": "explicit-enumerator-cancellation-token-propagation",
+    "labFormat": "async-stream-lifecycle-investigation"
+  }
+}

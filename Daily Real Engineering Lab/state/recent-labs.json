@@ -1057,6 +1057,26 @@
       "businessContext": "municipal-water-meter-billing",
       "primaryRootCause": "timer-callbacks-not-serialized",
       "labFormat": "controlled-scheduler-incident-replay"
+    },
+    {
+      "runSlot": "2026-11-21-23",
+      "status": "SUCCESS",
+      "unitId": "UNIT-ASYNCENUM-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-ASYNCENUM-001-emergency-shelter-stream-cancellation",
+      "domain": "dotnet-async-streams",
+      "format": "async-stream-lifecycle-investigation",
+      "primarySkill": "iasyncenumerable-cancellation",
+      "scenarioCategory": "client-disconnect-during-async-iterator",
+      "rootCauseCategory": "async-iterator-token-not-bound-to-enumerator-cancellation",
+      "failureMode": "stream-keeps-fetching-after-client-cancellation",
+      "solutionPattern": "explicit-enumerator-cancellation-token-propagation",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T23:04:04+07:00",
+      "validationMode": "static-review",
+      "businessContext": "emergency-shelter-capacity-broadcast",
+      "primaryRootCause": "async-iterator-token-not-bound-to-enumerator-cancellation",
+      "labFormat": "async-stream-lifecycle-investigation"
     }
   ],
   "rolling24": [
