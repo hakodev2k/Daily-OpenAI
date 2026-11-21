@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-DSTFOLD-001",
+  "runSlot": "2026-11-22-04",
+  "title": "Lịch hẹn phòng khám bị trùng giờ khi chuyển DST",
+  "domain": "dotnet-timezone-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T04:09:25+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "timezoneinfo-dst",
+    "datetime-kind",
+    "api-input-validation"
+  ],
+  "prerequisites": [
+    "C# DateTime",
+    "UTC versus local time"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "telemedicine-appointment-booking",
+    "scenarioType": "ambiguous-local-appointment-time",
+    "primaryRootCause": "ambiguous-dst-fold-time-silently-mapped-to-standard-offset",
+    "failureMode": "two-distinct-instants-share-one-booking-wall-time",
+    "solutionPattern": "explicit-rejection-of-ambiguous-local-times-with-offset-aware-resubmission",
+    "labFormat": "calendar-boundary-contract-investigation"
+  }
+}

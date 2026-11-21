@@ -1157,10 +1157,28 @@
       "createdAt": "2026-11-22T03:13:14+07:00",
       "validationMode": "static-review",
       "businessContext": "public-library-self-checkout-kiosk"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-04",
+      "status": "SUCCESS",
+      "unitId": "UNIT-DSTFOLD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-DSTFOLD-001-clinic-appointment-dst-ambiguity",
+      "domain": "dotnet-timezone-contract",
+      "format": "calendar-boundary-contract-investigation",
+      "primarySkill": "timezoneinfo-dst",
+      "scenarioCategory": "ambiguous-local-appointment-time",
+      "rootCauseCategory": "ambiguous-dst-fold-time-silently-mapped-to-standard-offset",
+      "failureMode": "two-distinct-instants-share-one-booking-wall-time",
+      "solutionPattern": "explicit-rejection-of-ambiguous-local-times-with-offset-aware-resubmission",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T04:09:25+07:00",
+      "validationMode": "static-review",
+      "businessContext": "telemedicine-appointment-booking"
     }
   ],
   "rolling24": [
-    "UNIT-CHANNELCLOSE-001",
     "UNIT-TIMEOUTSIDE-001",
     "UNIT-PROXYTRUST-001",
     "UNIT-PAGETOKEN-001",
@@ -1183,12 +1201,12 @@
     "UNIT-EFCONFLICT-001",
     "UNIT-TAXROUND-001",
     "UNIT-LINQSNAP-001",
-    "UNIT-RETRYAFTER-001"
+    "UNIT-RETRYAFTER-001",
+    "UNIT-DSTFOLD-001"
   ],
   "rollingProfile": {
     "window": 24,
     "byDomain": {
-      "dotnet-channel-lifecycle": 1,
       "dotnet-async-cancellation": 1,
       "aspnet-core-reverse-proxy-security": 1,
       "sql-api-pagination": 1,
@@ -1210,20 +1228,20 @@
       "database-concurrency": 1,
       "dotnet-financial-arithmetic": 1,
       "csharp-linq-deferred-execution": 1,
-      "http-rate-limiting": 1
+      "http-rate-limiting": 1,
+      "dotnet-timezone-contract": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L3": 5,
-      "L2": 12,
+      "L2": 13,
       "L5": 4,
+      "L3": 4,
       "L4": 2,
       "L1": 1
     },
     "byFormat": {
-      "deterministic-producer-lifecycle-incident": 1,
       "deterministic-async-timeout-replay": 1,
       "security-decision-tabletop-with-header-chain-replay": 1,
       "sql-page-timeline-investigation": 1,
@@ -1246,7 +1264,8 @@
       "deterministic-interleaving-state-machine": 1,
       "financial-calculation-refactoring-with-regression-contract": 1,
       "deterministic-linq-snapshot-contract-investigation": 1,
-      "protocol-contract-evidence-matrix": 1
+      "protocol-contract-evidence-matrix": 1,
+      "calendar-boundary-contract-investigation": 1
     }
   }
 }
