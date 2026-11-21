@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-LINQSNAP-001",
-    "runSlot": "2026-11-22-02",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-LINQSNAP-001-community-aid-audit-filter-drift",
+    "unitId": "UNIT-RETRYAFTER-001",
+    "runSlot": "2026-11-22-03",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-RETRYAFTER-001-library-kiosk-retry-after-contract",
     "status": "READY",
-    "createdAt": "2026-11-22T02:07:42+07:00"
+    "createdAt": "2026-11-22T03:13:14+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 644,
-    "totalGenerated": 639,
+    "totalRunSlotsAttempted": 645,
+    "totalGenerated": 640,
     "totalFailed": 5
   },
   "learning": {

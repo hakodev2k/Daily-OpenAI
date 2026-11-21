@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-RETRYAFTER-001",
+  "runSlot": "2026-11-22-03",
+  "title": "Retry-After của kiosk thư viện",
+  "domain": "http-rate-limiting",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T03:13:14+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "http-retry-after",
+    "datetimeoffset",
+    "contract-testing"
+  ],
+  "prerequisites": [
+    "http-429"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-library-self-checkout-kiosk",
+    "scenarioType": "rate-limit-response-contract-investigation",
+    "primaryRootCause": "retry-after-http-date-form-ignored-by-client-parser",
+    "failureMode": "client-retries-before-server-allowed-time",
+    "solutionPattern": "dual-format-retry-after-parser-with-fixed-clock",
+    "labFormat": "protocol-contract-evidence-matrix"
+  }
+}

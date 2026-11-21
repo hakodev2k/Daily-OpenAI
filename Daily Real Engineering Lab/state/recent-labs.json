@@ -1138,10 +1138,28 @@
       "businessContext": "community-aid-disbursement-audit",
       "primaryRootCause": "deferred-query-retains-mutable-filter-and-source",
       "labFormat": "deterministic-linq-snapshot-contract-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-RETRYAFTER-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-RETRYAFTER-001-library-kiosk-retry-after-contract",
+      "domain": "http-rate-limiting",
+      "format": "protocol-contract-evidence-matrix",
+      "primarySkill": "http-retry-after",
+      "scenarioCategory": "rate-limit-response-contract-investigation",
+      "rootCauseCategory": "retry-after-http-date-form-ignored-by-client-parser",
+      "failureMode": "client-retries-before-server-allowed-time",
+      "solutionPattern": "dual-format-retry-after-parser-with-fixed-clock",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T03:13:14+07:00",
+      "validationMode": "static-review",
+      "businessContext": "public-library-self-checkout-kiosk"
     }
   ],
   "rolling24": [
-    "UNIT-ETAG304-001",
     "UNIT-CHANNELCLOSE-001",
     "UNIT-TIMEOUTSIDE-001",
     "UNIT-PROXYTRUST-001",
@@ -1164,12 +1182,12 @@
     "UNIT-ASYNCENUM-001",
     "UNIT-EFCONFLICT-001",
     "UNIT-TAXROUND-001",
-    "UNIT-LINQSNAP-001"
+    "UNIT-LINQSNAP-001",
+    "UNIT-RETRYAFTER-001"
   ],
   "rollingProfile": {
     "window": 24,
     "byDomain": {
-      "http-cache-semantics": 1,
       "dotnet-channel-lifecycle": 1,
       "dotnet-async-cancellation": 1,
       "aspnet-core-reverse-proxy-security": 1,
@@ -1191,20 +1209,20 @@
       "dotnet-async-streams": 1,
       "database-concurrency": 1,
       "dotnet-financial-arithmetic": 1,
-      "csharp-linq-deferred-execution": 1
+      "csharp-linq-deferred-execution": 1,
+      "http-rate-limiting": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 12,
       "L3": 5,
+      "L2": 12,
       "L5": 4,
       "L4": 2,
       "L1": 1
     },
     "byFormat": {
-      "http-cache-validator-replay": 1,
       "deterministic-producer-lifecycle-incident": 1,
       "deterministic-async-timeout-replay": 1,
       "security-decision-tabletop-with-header-chain-replay": 1,
@@ -1227,7 +1245,8 @@
       "async-stream-lifecycle-investigation": 1,
       "deterministic-interleaving-state-machine": 1,
       "financial-calculation-refactoring-with-regression-contract": 1,
-      "deterministic-linq-snapshot-contract-investigation": 1
+      "deterministic-linq-snapshot-contract-investigation": 1,
+      "protocol-contract-evidence-matrix": 1
     }
   }
 }
