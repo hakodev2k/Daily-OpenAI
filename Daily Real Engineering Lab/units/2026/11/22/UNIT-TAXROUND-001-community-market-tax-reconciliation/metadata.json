@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-TAXROUND-001",
+  "runSlot": "2026-11-22-01",
+  "title": "Sai lệch thuế khi đối soát từng dòng hóa đơn",
+  "domain": "dotnet-financial-arithmetic",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-22T01:07:09+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "decimal-rounding",
+    "financial-reconciliation",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# decimal",
+    "LINQ Sum"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "community-market-pos",
+    "scenarioType": "basket-tax-reconciliation-after-partial-refund",
+    "primaryRootCause": "aggregate-rounding-instead-of-contractual-line-rounding",
+    "failureMode": "one-cent-tax-discrepancy-across-basket-and-refund",
+    "solutionPattern": "explicit-line-level-rounding-contract-with-regression-matrix",
+    "labFormat": "financial-calculation-refactoring-with-regression-contract"
+  }
+}
