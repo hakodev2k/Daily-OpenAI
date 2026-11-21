@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-JSONCASE-001",
+  "runSlot": "2026-11-21-13",
+  "title": "Hospital device JSON property collision",
+  "domain": "dotnet-json-contract",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-21T13:12:09+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "system-text-json",
+    "input-validation",
+    "contract-testing"
+  ],
+  "prerequisites": [
+    "dotnet-8",
+    "json-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "hospital-medication-cold-chain",
+    "scenarioType": "firmware-schema-drift",
+    "primaryRootCause": "case-insensitive-json-property-collision-overwrites-safety-critical-reading",
+    "failureMode": "silent-temperature-alert-suppression",
+    "solutionPattern": "reject-ambiguous-property-names-before-deserialization",
+    "labFormat": "multi-sample-contract-forensics"
+  }
+}

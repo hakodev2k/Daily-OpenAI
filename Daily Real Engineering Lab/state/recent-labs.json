@@ -920,6 +920,27 @@
       "businessContext": "wildfire-evacuation-alert-queue",
       "primaryRootCause": "sortedset-comparer-collapses-distinct-alerts",
       "labFormat": "deterministic-collection-contract-replay"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-13",
+      "status": "SUCCESS",
+      "unitId": "UNIT-JSONCASE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-JSONCASE-001-hospital-device-json-property-collision",
+      "domain": "dotnet-json-contract",
+      "format": "multi-sample-contract-forensics",
+      "primarySkill": "system-text-json-contract-validation",
+      "scenarioCategory": "firmware-schema-drift",
+      "rootCauseCategory": "case-insensitive-json-property-collision-overwrites-safety-critical-reading",
+      "failureMode": "silent-temperature-alert-suppression",
+      "solutionPattern": "reject-ambiguous-property-names-before-deserialization",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T13:12:09+07:00",
+      "validationMode": "static-review",
+      "businessContext": "hospital-medication-cold-chain",
+      "primaryRootCause": "case-insensitive-json-property-collision-overwrites-safety-critical-reading",
+      "labFormat": "multi-sample-contract-forensics"
     }
   ],
   "rolling24": [
