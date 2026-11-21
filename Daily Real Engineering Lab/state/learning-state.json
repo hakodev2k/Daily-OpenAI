@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-EFCONFLICT-001",
-    "runSlot": "2026-11-22-00",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-EFCONFLICT-001-inventory-reservation-lost-update",
+    "unitId": "UNIT-TAXROUND-001",
+    "runSlot": "2026-11-22-01",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-TAXROUND-001-community-market-tax-reconciliation",
     "status": "READY",
-    "createdAt": "2026-11-22T00:14:02+07:00"
+    "createdAt": "2026-11-22T01:07:09+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 642,
-    "totalGenerated": 637,
+    "totalRunSlotsAttempted": 643,
+    "totalGenerated": 638,
     "totalFailed": 5
   },
   "learning": {
