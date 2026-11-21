@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CACHEVARY-001",
+  "runSlot": "2026-11-22-06",
+  "title": "Sai biến thể nội dung tại edge cache của cổng giao thông",
+  "domain": "http-caching",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-22T06:10:05+07:00",
+  "estimatedMinutes": 70,
+  "skills": [
+    "http-cache-key",
+    "vary-header",
+    "cdn-cache",
+    "contract-testing"
+  ],
+  "prerequisites": [
+    "HTTP caching"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-transit-service-advisory",
+    "scenarioType": "multi-variant-edge-cache-architecture",
+    "primaryRootCause": "cache-key-omits-variant-dimensions",
+    "failureMode": "cross-locale-and-audience-response-contamination",
+    "solutionPattern": "bounded-variant-key-with-cacheability-policy-and-contract-tests",
+    "labFormat": "cache-policy-design-and-replay-workshop"
+  }
+}
