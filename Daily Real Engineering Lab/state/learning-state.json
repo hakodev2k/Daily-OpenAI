@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-BATCHFAIR-001",
-    "runSlot": "2026-11-21-15",
-    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-BATCHFAIR-001-city-permit-batch-fairness",
+    "unitId": "UNIT-STREAMCURSOR-001",
+    "runSlot": "2026-11-21-16",
+    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-STREAMCURSOR-001-survey-feed-checkpoint-drift",
     "status": "READY",
-    "createdAt": "2026-11-21T15:08:15+07:00"
+    "createdAt": "2026-11-21T16:08:05+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 635,
-    "totalGenerated": 630,
+    "totalRunSlotsAttempted": 636,
+    "totalGenerated": 631,
     "totalFailed": 5
   },
   "learning": {
