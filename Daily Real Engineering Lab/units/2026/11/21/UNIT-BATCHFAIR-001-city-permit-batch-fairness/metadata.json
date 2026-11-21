@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-BATCHFAIR-001",
+  "runSlot": "2026-11-21-15",
+  "title": "Hàng đợi xử lý hồ sơ: nhanh nhưng không công bằng",
+  "domain": "distributed-job-scheduling",
+  "maturityLevel": "L5",
+  "status": "READY",
+  "createdAt": "2026-11-21T15:08:15+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "queue-scheduling-fairness",
+    "workload-isolation",
+    "service-level-objectives"
+  ],
+  "prerequisites": [
+    "queue-fifo",
+    "worker-pool"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-construction-permit-processing",
+    "scenarioType": "batch-traffic-starves-urgent-work",
+    "primaryRootCause": "single-fifo-queue-has-no-tenant-or-priority-fairness",
+    "failureMode": "urgent-small-tenant-work-waits-behind-bulk-backlog",
+    "solutionPattern": "weighted-fair-queuing-with-bounded-priority-and-aging",
+    "labFormat": "capacity-fairness-design-decision-with-deterministic-replay"
+  }
+}
