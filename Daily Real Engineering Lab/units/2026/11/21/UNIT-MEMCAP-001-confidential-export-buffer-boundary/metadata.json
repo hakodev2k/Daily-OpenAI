@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-MEMCAP-001",
+  "runSlot": "2026-11-21-18",
+  "title": "Confidential export trả về payload dài bất thường",
+  "domain": "dotnet-memory-stream",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-21T18:09:34+07:00",
+  "estimatedMinutes": 35,
+  "skills": [
+    "memorystream-buffer-contract",
+    "binary-payload-integrity",
+    "sha256-evidence"
+  ],
+  "prerequisites": [
+    "C# arrays",
+    "Stream basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "internal-confidential-audit-export",
+    "scenarioType": "binary-response-length-mismatch",
+    "primaryRootCause": "memorystream-getbuffer-exports-capacity-instead-of-length",
+    "failureMode": "trailing-padding-breaks-integrity-check",
+    "solutionPattern": "export-only-logical-stream-content",
+    "labFormat": "deterministic-byte-integrity-contract-lab"
+  }
+}

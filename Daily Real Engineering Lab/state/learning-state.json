@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-STREAMCURSOR-001",
-    "runSlot": "2026-11-21-16",
-    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-STREAMCURSOR-001-survey-feed-checkpoint-drift",
+    "unitId": "UNIT-MEMCAP-001",
+    "runSlot": "2026-11-21-18",
+    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-MEMCAP-001-confidential-export-buffer-boundary",
     "status": "READY",
-    "createdAt": "2026-11-21T16:08:05+07:00"
+    "createdAt": "2026-11-21T18:09:34+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 636,
-    "totalGenerated": 631,
+    "totalRunSlotsAttempted": 637,
+    "totalGenerated": 632,
     "totalFailed": 5
   },
   "learning": {

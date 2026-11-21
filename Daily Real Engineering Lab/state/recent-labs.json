@@ -978,6 +978,26 @@
       "createdAt": "2026-11-21T16:08:05+07:00",
       "validationMode": "static-review",
       "businessContext": "geospatial-survey-data-import"
+    },
+    {
+      "runSlot": "2026-11-21-18",
+      "status": "SUCCESS",
+      "unitId": "UNIT-MEMCAP-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-MEMCAP-001-confidential-export-buffer-boundary",
+      "domain": "dotnet-memory-stream",
+      "format": "deterministic-byte-integrity-contract-lab",
+      "primarySkill": "memorystream-buffer-contract",
+      "scenarioCategory": "binary-response-length-mismatch",
+      "rootCauseCategory": "memorystream-getbuffer-exports-capacity-instead-of-length",
+      "failureMode": "trailing-padding-breaks-integrity-check",
+      "solutionPattern": "export-only-logical-stream-content",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T18:09:34+07:00",
+      "validationMode": "static-review",
+      "businessContext": "internal-confidential-audit-export",
+      "primaryRootCause": "memorystream-getbuffer-exports-capacity-instead-of-length",
+      "labFormat": "deterministic-byte-integrity-contract-lab"
     }
   ],
   "rolling24": [
