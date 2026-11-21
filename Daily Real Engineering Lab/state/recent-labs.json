@@ -998,9 +998,66 @@
       "businessContext": "internal-confidential-audit-export",
       "primaryRootCause": "memorystream-getbuffer-exports-capacity-instead-of-length",
       "labFormat": "deterministic-byte-integrity-contract-lab"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-20",
+      "status": "SUCCESS",
+      "unitId": "UNIT-BODYREPLAY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-BODYREPLAY-001-community-health-intake-body-consumption",
+      "domain": "aspnet-core-request-pipeline",
+      "format": "aspnet-pipeline-contract-investigation",
+      "primarySkill": "aspnet-core-request-body",
+      "scenarioCategory": "audit-middleware-then-handler",
+      "rootCauseCategory": "middleware-consumes-request-body-without-replay",
+      "failureMode": "downstream-handler-observes-empty-body",
+      "solutionPattern": "enable-buffering-and-reset-position-before-next",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T20:06:47+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-health-intake"
     }
   ],
   "rolling24": [
+    {
+      "runSlot": "2026-11-19-04",
+      "status": "SUCCESS",
+      "unitId": "UNIT-EPOCHUNIT-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-EPOCHUNIT-001-cold-chain-sensor-epoch-unit",
+      "domain": "api-time-contract",
+      "format": "multi-source-timestamp-contract-investigation",
+      "primarySkill": "unix-epoch-unit-contract",
+      "scenarioCategory": "mixed-gateway-timestamp-ingestion",
+      "rootCauseCategory": "unix-seconds-interpreted-as-unix-milliseconds",
+      "failureMode": "fresh-sensor-event-misclassified-stale",
+      "solutionPattern": "explicit-versioned-source-timestamp-unit-contract",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T04:09:13+07:00",
+      "validationMode": "static-review",
+      "businessContext": "vaccine-cold-chain-telemetry",
+      "primaryRootCause": "unix-seconds-interpreted-as-unix-milliseconds",
+      "labFormat": "multi-source-timestamp-contract-investigation"
+    },
+    {
+      "runSlot": "2026-11-19-15",
+      "status": "SUCCESS",
+      "unitId": "UNIT-SEMGATE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/19/UNIT-SEMGATE-001-airport-baggage-gateway-permit-leak",
+      "domain": "dotnet-concurrency",
+      "format": "multi-signal-concurrency-incident",
+      "primarySkill": "semaphoreslim-exception-safety",
+      "scenarioCategory": "intermittent-partner-failure-followed-by-capacity-collapse",
+      "rootCauseCategory": "semaphore-permit-not-released-on-exception",
+      "failureMode": "permanent-request-queue-after-partner-errors",
+      "solutionPattern": "exception-safe-lease-release-in-finally",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-19T15:04:49+07:00",
+      "validationMode": "static-review",
+      "businessContext": "airport-baggage-partner-reconciliation"
+    },
     {
       "runSlot": "2026-11-19-17",
       "status": "SUCCESS",
@@ -1337,27 +1394,6 @@
       "businessContext": "aquarium-feeding-sensor-control"
     },
     {
-      "runSlot": "2026-11-21-06",
-      "status": "SUCCESS",
-      "unitId": "UNIT-HEADERBLEED-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-HEADERBLEED-001-tenant-auth-header-cross-contamination",
-      "domain": "dotnet-http-security",
-      "format": "concurrency-security-contract-refactoring",
-      "primarySkill": "httpclient-per-request-authorization",
-      "scenarioCategory": "concurrent-tenant-outbound-api-dispatch",
-      "rootCauseCategory": "shared-httpclient-default-authorization-header-mutated-per-tenant",
-      "failureMode": "tenant-a-request-sent-with-tenant-b-credential",
-      "solutionPattern": "immutable-per-request-authorization-header-on-http-request-message",
-      "maturityLevel": "L4",
-      "difficulty": "D4",
-      "createdAt": "2026-11-21T06:13:26+07:00",
-      "validationMode": "static-review",
-      "businessContext": "multi-tenant-school-photo-processing",
-      "scenarioType": "concurrent-tenant-outbound-api-dispatch",
-      "primaryRootCause": "shared-httpclient-default-authorization-header-mutated-per-tenant",
-      "labFormat": "concurrency-security-contract-refactoring"
-    },
-    {
       "event": "LAB_GENERATED",
       "runSlot": "2026-11-21-08",
       "status": "SUCCESS",
@@ -1378,45 +1414,22 @@
     },
     {
       "event": "LAB_GENERATED",
-      "runSlot": "2026-11-21-10",
+      "runSlot": "2026-11-21-12",
       "status": "SUCCESS",
-      "unitId": "UNIT-SORTEDSET-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-SORTEDSET-001-wildfire-alert-priority-loss",
-      "domain": "csharp-collections",
-      "format": "deterministic-collection-contract-replay",
-      "primarySkill": "sortedset-comparer-contract",
-      "scenarioCategory": "equal-severity-alert-replay",
-      "rootCauseCategory": "sortedset-comparer-collapses-distinct-alerts",
-      "failureMode": "silent-alert-loss",
-      "solutionPattern": "total-order-comparer-with-id-tiebreaker",
+      "unitId": "UNIT-CULTUREPARSE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-CULTUREPARSE-001-weather-station-sensor-import",
+      "domain": "dotnet-globalization",
+      "format": "cross-culture-data-contract-investigation",
+      "primarySkill": "culture-invariant-decimal-parsing",
+      "scenarioCategory": "cross-region-invariant-data-ingestion",
+      "rootCauseCategory": "current-culture-decimal-parsing-of-invariant-protocol",
+      "failureMode": "incorrect-or-rejected-sensor-measurements",
+      "solutionPattern": "explicit-invariant-protocol-parsing-with-fail-closed-validation",
       "maturityLevel": "L2",
       "difficulty": "D4",
-      "createdAt": "2026-11-21T10:07:06+07:00",
+      "createdAt": "2026-11-21T12:05:09+07:00",
       "validationMode": "static-review",
-      "businessContext": "wildfire-evacuation-alert-queue",
-      "primaryRootCause": "sortedset-comparer-collapses-distinct-alerts",
-      "labFormat": "deterministic-collection-contract-replay"
-    },
-    {
-      "event": "LAB_GENERATED",
-      "runSlot": "2026-11-21-13",
-      "status": "SUCCESS",
-      "unitId": "UNIT-JSONCASE-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-JSONCASE-001-hospital-device-json-property-collision",
-      "domain": "dotnet-json-contract",
-      "format": "multi-sample-contract-forensics",
-      "primarySkill": "system-text-json-contract-validation",
-      "scenarioCategory": "firmware-schema-drift",
-      "rootCauseCategory": "case-insensitive-json-property-collision-overwrites-safety-critical-reading",
-      "failureMode": "silent-temperature-alert-suppression",
-      "solutionPattern": "reject-ambiguous-property-names-before-deserialization",
-      "maturityLevel": "L3",
-      "difficulty": "D4",
-      "createdAt": "2026-11-21T13:12:09+07:00",
-      "validationMode": "static-review",
-      "businessContext": "hospital-medication-cold-chain",
-      "primaryRootCause": "case-insensitive-json-property-collision-overwrites-safety-critical-reading",
-      "labFormat": "multi-sample-contract-forensics"
+      "businessContext": "remote-weather-station-calibration"
     },
     {
       "event": "LAB_GENERATED",
@@ -1438,25 +1451,6 @@
       "businessContext": "regional-public-library-circulation"
     },
     {
-      "runSlot": "2026-11-21-15",
-      "status": "SUCCESS",
-      "unitId": "UNIT-BATCHFAIR-001",
-      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-BATCHFAIR-001-city-permit-batch-fairness",
-      "domain": "distributed-job-scheduling",
-      "format": "capacity-fairness-design-decision-with-deterministic-replay",
-      "primarySkill": "queue-scheduling-fairness",
-      "scenarioCategory": "batch-traffic-starves-urgent-work",
-      "rootCauseCategory": "single-fifo-queue-has-no-tenant-or-priority-fairness",
-      "failureMode": "urgent-small-tenant-work-waits-behind-bulk-backlog",
-      "solutionPattern": "weighted-fair-queuing-with-bounded-priority-and-aging",
-      "maturityLevel": "L5",
-      "difficulty": "D4",
-      "createdAt": "2026-11-21T15:08:15+07:00",
-      "businessContext": "municipal-construction-permit-processing",
-      "primaryRootCause": "single-fifo-queue-has-no-tenant-or-priority-fairness",
-      "labFormat": "capacity-fairness-design-decision-with-deterministic-replay"
-    },
-    {
       "event": "LAB_GENERATED",
       "runSlot": "2026-11-21-16",
       "status": "SUCCESS",
@@ -1474,10 +1468,32 @@
       "createdAt": "2026-11-21T16:08:05+07:00",
       "validationMode": "static-review",
       "businessContext": "geospatial-survey-data-import"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-20",
+      "status": "SUCCESS",
+      "unitId": "UNIT-BODYREPLAY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-BODYREPLAY-001-community-health-intake-body-consumption",
+      "domain": "aspnet-core-request-pipeline",
+      "format": "aspnet-pipeline-contract-investigation",
+      "primarySkill": "aspnet-core-request-body",
+      "scenarioCategory": "audit-middleware-then-handler",
+      "rootCauseCategory": "middleware-consumes-request-body-without-replay",
+      "failureMode": "downstream-handler-observes-empty-body",
+      "solutionPattern": "enable-buffering-and-reset-position-before-next",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T20:06:47+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-health-intake"
     }
   ],
   "rollingProfile": {
-    "domain": {
+    "window": 24,
+    "byDomain": {
+      "api-time-contract": 1,
+      "dotnet-concurrency": 1,
       "sql-server-schema-evolution": 1,
       "http-uri-resolution": 1,
       "observability-metrics": 1,
@@ -1491,27 +1507,27 @@
       "dotnet-async-cancellation": 1,
       "aspnet-core-reverse-proxy-security": 1,
       "sql-api-pagination": 1,
-      "csharp-collections": 2,
+      "csharp-collections": 1,
       "dotnet-binary-protocol": 1,
       "http-range-download": 1,
       "dotnet-concurrency-primitives": 1,
-      "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
-      "dotnet-json-contract": 1,
+      "dotnet-globalization": 1,
       "sql-server-disaster-recovery": 1,
-      "distributed-job-scheduling": 1,
-      "dotnet-io-streaming": 1
+      "dotnet-io-streaming": 1,
+      "aspnet-core-request-pipeline": 1
     },
-    "difficulty": {
+    "byDifficulty": {
       "D4": 24
     },
-    "maturityLevel": {
-      "L5": 7,
-      "L2": 12,
-      "L3": 4,
-      "L4": 1
+    "byMaturity": {
+      "L2": 13,
+      "L3": 5,
+      "L5": 6
     },
-    "format": {
+    "byFormat": {
+      "multi-source-timestamp-contract-investigation": 1,
+      "multi-signal-concurrency-incident": 1,
       "migration-decision-tabletop-with-failure-injection": 1,
       "http-routing-evidence-investigation": 1,
       "production-metrics-cardinality-investigation": 1,
@@ -1529,13 +1545,11 @@
       "binary-protocol-forensic-replay": 1,
       "http-response-contract-investigation": 1,
       "cancellation-interleaving-forensic-lab": 1,
-      "concurrency-security-contract-refactoring": 1,
       "security-architecture-decision-workshop": 1,
-      "deterministic-collection-contract-replay": 1,
-      "multi-sample-contract-forensics": 1,
+      "cross-culture-data-contract-investigation": 1,
       "disaster-recovery-evidence-workshop": 1,
-      "capacity-fairness-design-decision-with-deterministic-replay": 1,
-      "io-checkpoint-forensic-replay": 1
+      "io-checkpoint-forensic-replay": 1,
+      "aspnet-pipeline-contract-investigation": 1
     }
   },
   "recentLabs": [
@@ -2472,6 +2486,25 @@
       "createdAt": "2026-11-21T16:08:05+07:00",
       "validationMode": "static-review",
       "businessContext": "geospatial-survey-data-import"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-21-20",
+      "status": "SUCCESS",
+      "unitId": "UNIT-BODYREPLAY-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-BODYREPLAY-001-community-health-intake-body-consumption",
+      "domain": "aspnet-core-request-pipeline",
+      "format": "aspnet-pipeline-contract-investigation",
+      "primarySkill": "aspnet-core-request-body",
+      "scenarioCategory": "audit-middleware-then-handler",
+      "rootCauseCategory": "middleware-consumes-request-body-without-replay",
+      "failureMode": "downstream-handler-observes-empty-body",
+      "solutionPattern": "enable-buffering-and-reset-position-before-next",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-21T20:06:47+07:00",
+      "validationMode": "static-review",
+      "businessContext": "community-health-intake"
     }
   ]
 }
