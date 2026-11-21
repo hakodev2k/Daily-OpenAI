@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-RESTORECHAIN-001",
-    "runSlot": "2026-11-21-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-RESTORECHAIN-001-regional-library-backup-restore-chain",
+    "unitId": "UNIT-BATCHFAIR-001",
+    "runSlot": "2026-11-21-15",
+    "path": "Daily Real Engineering Lab/units/2026/11/21/UNIT-BATCHFAIR-001-city-permit-batch-fairness",
     "status": "READY",
-    "createdAt": "2026-11-21T14:04:21+07:00"
+    "createdAt": "2026-11-21T15:08:15+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 634,
-    "totalGenerated": 629,
+    "totalRunSlotsAttempted": 635,
+    "totalGenerated": 630,
     "totalFailed": 5
   },
   "learning": {
