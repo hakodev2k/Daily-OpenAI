@@ -1,0 +1,11 @@
+seq,route,locale,audience,expected_origin
+1,R10,vi,general,R10|vi|general
+2,R10,en,general,R10|en|general
+3,R10,vi,student,R10|vi|student
+4,R20,en,general,R20|en|general
+5,R20,vi,general,R20|vi|general
+6,R10,vi,general,R10|vi|general
+7,R20,en,general,R20|en|general
+8,R10,en,general,R10|en|general
+9,R10,vi,student,R10|vi|student
+10,R20,vi,general,R20|vi|general
