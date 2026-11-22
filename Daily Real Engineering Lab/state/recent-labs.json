@@ -1277,12 +1277,32 @@
       "businessContext": "regional-food-bank-allocation",
       "primaryRootCause": "sortedset-comparer-treats-distinct-requests-as-equal",
       "labFormat": "collection-invariant-evidence-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-12",
+      "status": "SUCCESS",
+      "unitId": "UNIT-REGEXTIME-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-REGEXTIME-001-municipal-form-regex-timeout",
+      "domain": "dotnet-regex-security",
+      "format": "bounded-input-performance-investigation",
+      "primarySkill": "regex-backtracking-diagnostics",
+      "scenarioCategory": "adversarial-input-validation",
+      "rootCauseCategory": "catastrophic-regex-backtracking-without-timeout",
+      "failureMode": "cpu-amplification-on-near-match",
+      "solutionPattern": "linear-time-validation-with-bounded-input-and-explicit-timeout",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T12:12:15+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-complaint-intake",
+      "primaryRootCause": "catastrophic-regex-backtracking-without-timeout",
+      "labFormat": "bounded-input-performance-investigation"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "http-range-download": 1,
       "dotnet-concurrency-primitives": 1,
       "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
@@ -1305,20 +1325,20 @@
       "dotnet-channels": 1,
       "dotnet-memory-ownership": 1,
       "azure-identity-security": 1,
-      "csharp-collection-ordering": 1
+      "csharp-collection-ordering": 1,
+      "dotnet-regex-security": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 11,
       "L3": 5,
       "L4": 2,
       "L5": 5,
+      "L2": 11,
       "L1": 1
     },
     "byFormat": {
-      "http-response-contract-investigation": 1,
       "cancellation-interleaving-forensic-lab": 1,
       "concurrency-security-contract-refactoring": 1,
       "security-architecture-decision-workshop": 1,
@@ -1341,14 +1361,14 @@
       "producer-consumer-lifecycle-forensic-replay": 1,
       "memory-ownership-forensic-replay": 1,
       "security-rotation-architecture-decision": 1,
-      "collection-invariant-evidence-investigation": 1
+      "collection-invariant-evidence-investigation": 1,
+      "bounded-input-performance-investigation": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "http-range-download": 1,
       "dotnet-concurrency-primitives": 1,
       "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
@@ -1371,20 +1391,20 @@
       "dotnet-channels": 1,
       "dotnet-memory-ownership": 1,
       "azure-identity-security": 1,
-      "csharp-collection-ordering": 1
+      "csharp-collection-ordering": 1,
+      "dotnet-regex-security": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 11,
       "L3": 5,
       "L4": 2,
       "L5": 5,
+      "L2": 11,
       "L1": 1
     },
     "byFormat": {
-      "http-response-contract-investigation": 1,
       "cancellation-interleaving-forensic-lab": 1,
       "concurrency-security-contract-refactoring": 1,
       "security-architecture-decision-workshop": 1,
@@ -1407,7 +1427,8 @@
       "producer-consumer-lifecycle-forensic-replay": 1,
       "memory-ownership-forensic-replay": 1,
       "security-rotation-architecture-decision": 1,
-      "collection-invariant-evidence-investigation": 1
+      "collection-invariant-evidence-investigation": 1,
+      "bounded-input-performance-investigation": 1
     }
   }
 }
