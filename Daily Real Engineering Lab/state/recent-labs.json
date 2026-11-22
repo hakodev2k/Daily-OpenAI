@@ -1214,12 +1214,32 @@
       "createdAt": "2026-11-22T07:04:14+07:00",
       "validationMode": "static-review",
       "businessContext": "river-water-quality-monitoring"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-08",
+      "status": "SUCCESS",
+      "unitId": "UNIT-POOLALIAS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-POOLALIAS-001-relief-dispatch-buffer-alias",
+      "domain": "dotnet-memory-ownership",
+      "format": "memory-ownership-forensic-replay",
+      "primarySkill": "arraypool-memory-ownership",
+      "scenarioCategory": "queued-payload-integrity",
+      "rootCauseCategory": "pooled-array-returned-before-consumer-finished",
+      "failureMode": "queued-payload-mutated-by-buffer-reuse",
+      "solutionPattern": "transfer-owned-copy-before-returning-pool-buffer",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T08:08:33+07:00",
+      "validationMode": "static-review",
+      "businessContext": "disaster-relief-dispatch",
+      "primaryRootCause": "pooled-array-returned-before-consumer-finished",
+      "labFormat": "memory-ownership-forensic-replay"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "sql-api-pagination": 1,
       "csharp-collections": 2,
       "dotnet-binary-protocol": 1,
       "http-range-download": 1,
@@ -1241,7 +1261,8 @@
       "http-rate-limiting": 1,
       "dotnet-timezone-contract": 1,
       "http-caching": 1,
-      "dotnet-channels": 1
+      "dotnet-channels": 1,
+      "dotnet-memory-ownership": 1
     },
     "byDifficulty": {
       "D4": 24
@@ -1254,7 +1275,6 @@
       "L1": 1
     },
     "byFormat": {
-      "sql-page-timeline-investigation": 1,
       "collection-invariant-investigation": 1,
       "binary-protocol-forensic-replay": 1,
       "http-response-contract-investigation": 1,
@@ -1277,14 +1297,14 @@
       "protocol-contract-evidence-matrix": 1,
       "calendar-boundary-contract-investigation": 1,
       "cache-policy-design-and-replay-workshop": 1,
-      "producer-consumer-lifecycle-forensic-replay": 1
+      "producer-consumer-lifecycle-forensic-replay": 1,
+      "memory-ownership-forensic-replay": 1
     }
   },
   "rollingProfile": {
     "window": 24,
+    "count": 24,
     "byDomain": {
-      "aspnet-core-reverse-proxy-security": 1,
-      "sql-api-pagination": 1,
       "csharp-collections": 2,
       "dotnet-binary-protocol": 1,
       "http-range-download": 1,
@@ -1305,21 +1325,21 @@
       "csharp-linq-deferred-execution": 1,
       "http-rate-limiting": 1,
       "dotnet-timezone-contract": 1,
-      "http-caching": 1
+      "http-caching": 1,
+      "dotnet-channels": 1,
+      "dotnet-memory-ownership": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 5,
       "L2": 12,
-      "L3": 4,
+      "L3": 5,
       "L4": 2,
+      "L5": 4,
       "L1": 1
     },
     "byFormat": {
-      "security-decision-tabletop-with-header-chain-replay": 1,
-      "sql-page-timeline-investigation": 1,
       "collection-invariant-investigation": 1,
       "binary-protocol-forensic-replay": 1,
       "http-response-contract-investigation": 1,
@@ -1341,7 +1361,9 @@
       "deterministic-linq-snapshot-contract-investigation": 1,
       "protocol-contract-evidence-matrix": 1,
       "calendar-boundary-contract-investigation": 1,
-      "cache-policy-design-and-replay-workshop": 1
+      "cache-policy-design-and-replay-workshop": 1,
+      "producer-consumer-lifecycle-forensic-replay": 1,
+      "memory-ownership-forensic-replay": 1
     }
   }
 }

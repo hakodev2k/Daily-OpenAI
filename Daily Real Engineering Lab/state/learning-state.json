@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CHANNELCLOSE-001",
-    "runSlot": "2026-11-22-07",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-CHANNELCLOSE-001-river-sensor-batch-premature-completion",
+    "unitId": "UNIT-POOLALIAS-001",
+    "runSlot": "2026-11-22-08",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-POOLALIAS-001-relief-dispatch-buffer-alias",
     "status": "READY",
-    "createdAt": "2026-11-22T07:04:14+07:00"
+    "createdAt": "2026-11-22T08:08:33+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 648,
-    "totalGenerated": 643,
+    "totalRunSlotsAttempted": 649,
+    "totalGenerated": 644,
     "totalFailed": 5
   },
   "learning": {

@@ -1,0 +1,2 @@
+- [ArrayPool<T>](https://learn.microsoft.com/dotnet/api/system.buffers.arraypool-1)
+- [Memory<T> and Span<T> usage guidelines](https://learn.microsoft.com/dotnet/standard/memory-and-spans/memory-t-usage-guidelines)

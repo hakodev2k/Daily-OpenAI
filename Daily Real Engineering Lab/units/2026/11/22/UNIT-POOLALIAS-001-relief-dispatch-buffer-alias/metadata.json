@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-POOLALIAS-001",
+  "runSlot": "2026-11-22-08",
+  "title": "Payload cứu trợ thay đổi sau khi xếp hàng",
+  "domain": "dotnet-memory-ownership",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T08:08:33+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "arraypool-memory-ownership",
+    "read-only-memory",
+    "binary-payload-integrity"
+  ],
+  "prerequisites": [
+    "C# spans",
+    "ArrayPool basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "disaster-relief-dispatch",
+    "scenarioType": "queued-payload-integrity",
+    "primaryRootCause": "pooled-array-returned-before-consumer-finished",
+    "failureMode": "queued-payload-mutated-by-buffer-reuse",
+    "solutionPattern": "transfer-owned-copy-before-returning-pool-buffer",
+    "labFormat": "memory-ownership-forensic-replay"
+  }
+}
