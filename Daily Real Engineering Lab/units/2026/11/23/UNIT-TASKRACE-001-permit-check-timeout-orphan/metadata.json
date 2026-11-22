@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-TASKRACE-001",
+  "runSlot": "2026-11-23-04",
+  "title": "Permit timeout nhưng tác vụ vẫn ghi trạng thái",
+  "domain": "dotnet-task-cancellation",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-23T04:12:31+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "task-whenany",
+    "cancellation-token",
+    "deadline-contract"
+  ],
+  "prerequisites": [
+    "C# async/await",
+    "dotnet 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "construction-permit-verification",
+    "scenarioType": "deadline-expired-while-operation-in-flight",
+    "primaryRootCause": "task-whenany-timeout-does-not-cancel-losing-operation",
+    "failureMode": "late-side-effect-after-timeout-response",
+    "solutionPattern": "cooperative-cancellation-through-operation-boundary",
+    "labFormat": "deadline-lifecycle-evidence-investigation"
+  }
+}

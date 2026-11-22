@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-STREAMPOS-001",
-    "runSlot": "2026-11-23-03",
-    "path": "Daily Real Engineering Lab/units/2026/11/23/UNIT-STREAMPOS-001-archive-upload-hash-position",
+    "unitId": "UNIT-TASKRACE-001",
+    "runSlot": "2026-11-23-04",
+    "path": "Daily Real Engineering Lab/units/2026/11/23/UNIT-TASKRACE-001-permit-check-timeout-orphan",
     "status": "READY",
-    "createdAt": "2026-11-23T03:06:23+07:00"
+    "createdAt": "2026-11-23T04:12:31+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 660,
-    "totalGenerated": 655,
+    "totalRunSlotsAttempted": 661,
+    "totalGenerated": 656,
     "totalFailed": 5
   },
   "learning": {

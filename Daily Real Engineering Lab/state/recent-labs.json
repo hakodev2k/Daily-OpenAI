@@ -1458,12 +1458,32 @@
       "businessContext": "wildlife-audio-archive-ingestion",
       "primaryRootCause": "seekable-stream-position-not-reset-after-checksum",
       "labFormat": "stream-contract-refactoring-regression"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-23-04",
+      "status": "SUCCESS",
+      "unitId": "UNIT-TASKRACE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/23/UNIT-TASKRACE-001-permit-check-timeout-orphan",
+      "domain": "dotnet-task-cancellation",
+      "format": "deadline-lifecycle-evidence-investigation",
+      "primarySkill": "task-whenany-timeout",
+      "scenarioCategory": "deadline-expired-while-operation-in-flight",
+      "rootCauseCategory": "task-whenany-timeout-does-not-cancel-losing-operation",
+      "failureMode": "late-side-effect-after-timeout-response",
+      "solutionPattern": "cooperative-cancellation-through-operation-boundary",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-23T04:12:31+07:00",
+      "validationMode": "static-review",
+      "businessContext": "construction-permit-verification",
+      "primaryRootCause": "task-whenany-timeout-does-not-cancel-losing-operation",
+      "labFormat": "deadline-lifecycle-evidence-investigation"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "dotnet-memory-stream": 1,
       "aspnet-core-request-pipeline": 1,
       "dotnet-time-measurement": 1,
       "dotnet-background-timers": 1,
@@ -1486,20 +1506,20 @@
       "dotnet-buffer-sequences": 1,
       "dotnet-globalization": 1,
       "json-numeric-wire-contract": 1,
-      "dotnet-stream-lifecycle": 1
+      "dotnet-stream-lifecycle": 1,
+      "dotnet-task-cancellation": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L1": 2,
       "L3": 4,
-      "L2": 14,
+      "L2": 15,
       "L4": 2,
-      "L5": 2
+      "L5": 2,
+      "L1": 1
     },
     "byFormat": {
-      "deterministic-byte-integrity-contract-lab": 1,
       "aspnet-pipeline-contract-investigation": 1,
       "clock-drift-evidence-investigation": 1,
       "controlled-scheduler-incident-replay": 1,
@@ -1522,14 +1542,14 @@
       "buffer-segmentation-invariance-investigation": 1,
       "cross-culture-contract-replay": 1,
       "numeric-wire-identity-forensic-replay": 1,
-      "stream-contract-refactoring-regression": 1
+      "stream-contract-refactoring-regression": 1,
+      "deadline-lifecycle-evidence-investigation": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "dotnet-memory-stream": 1,
       "aspnet-core-request-pipeline": 1,
       "dotnet-time-measurement": 1,
       "dotnet-background-timers": 1,
@@ -1552,20 +1572,20 @@
       "dotnet-buffer-sequences": 1,
       "dotnet-globalization": 1,
       "json-numeric-wire-contract": 1,
-      "dotnet-stream-lifecycle": 1
+      "dotnet-stream-lifecycle": 1,
+      "dotnet-task-cancellation": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L1": 2,
       "L3": 4,
-      "L2": 14,
+      "L2": 15,
       "L4": 2,
-      "L5": 2
+      "L5": 2,
+      "L1": 1
     },
     "byFormat": {
-      "deterministic-byte-integrity-contract-lab": 1,
       "aspnet-pipeline-contract-investigation": 1,
       "clock-drift-evidence-investigation": 1,
       "controlled-scheduler-incident-replay": 1,
@@ -1588,7 +1608,8 @@
       "buffer-segmentation-invariance-investigation": 1,
       "cross-culture-contract-replay": 1,
       "numeric-wire-identity-forensic-replay": 1,
-      "stream-contract-refactoring-regression": 1
+      "stream-contract-refactoring-regression": 1,
+      "deadline-lifecycle-evidence-investigation": 1
     }
   }
 }
