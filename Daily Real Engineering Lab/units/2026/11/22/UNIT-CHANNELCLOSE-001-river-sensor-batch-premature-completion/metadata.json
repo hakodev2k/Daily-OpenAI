@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-CHANNELCLOSE-001",
+  "runSlot": "2026-11-22-07",
+  "title": "Trạm quan trắc sông mất bản ghi khi đóng batch",
+  "domain": "dotnet-channels",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-22T07:04:14+07:00",
+  "estimatedMinutes": 55,
+  "skills": [
+    "system-threading-channels",
+    "task-coordination",
+    "async-pipeline-lifecycle"
+  ],
+  "prerequisites": [
+    "task-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "river-water-quality-monitoring",
+    "scenarioType": "multi-producer-batch-finalization",
+    "primaryRootCause": "channel-completed-after-first-producer-finishes",
+    "failureMode": "missing-sensor-readings-and-channel-closed-writes",
+    "solutionPattern": "await-all-producers-before-channel-completion",
+    "labFormat": "producer-consumer-lifecycle-forensic-replay"
+  }
+}
