@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-HEADERBLEED-001",
+  "runSlot": "2026-11-22-13",
+  "title": "Tenant header bị lẫn giữa hai yêu cầu billing",
+  "domain": "dotnet-http-client",
+  "maturityLevel": "L3",
+  "status": "READY",
+  "createdAt": "2026-11-22T13:08:13+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "httpclient-request-headers",
+    "tenant-isolation",
+    "concurrency-testing"
+  ],
+  "prerequisites": [
+    "HttpClient",
+    "async-await"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "multi-tenant-billing-gateway",
+    "scenarioType": "shared-http-client-request-interleaving",
+    "primaryRootCause": "per-request-tenant-identity-stored-in-shared-default-headers",
+    "failureMode": "cross-tenant-header-contamination",
+    "solutionPattern": "request-scoped-http-request-message-headers",
+    "labFormat": "deterministic-http-handler-isolation-investigation"
+  }
+}
