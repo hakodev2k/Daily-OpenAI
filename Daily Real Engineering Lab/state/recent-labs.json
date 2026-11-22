@@ -1380,12 +1380,30 @@
       "businessContext": "museum-annual-pass-issuance",
       "primaryRootCause": "concurrentdictionary-value-factory-executed-more-than-once",
       "labFormat": "deterministic-value-factory-race-replay"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-19",
+      "status": "SUCCESS",
+      "unitId": "UNIT-PIPESEG-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-PIPESEG-001-weather-station-segmented-frames",
+      "domain": "dotnet-buffer-sequences",
+      "format": "buffer-segmentation-invariance-investigation",
+      "primarySkill": "readonlysequence-segmentation",
+      "scenarioCategory": "segmented-transport-payload-decoding",
+      "rootCauseCategory": "read-only-sequence-first-span-only-consumed",
+      "failureMode": "records-lost-when-frame-spans-multiple-segments",
+      "solutionPattern": "full-sequence-consumption-with-bounded-buffer-or-sequence-reader",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T19:11:21+07:00",
+      "validationMode": "static-review",
+      "businessContext": "remote-weather-station-telemetry"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "dotnet-json-contract": 1,
       "sql-server-disaster-recovery": 1,
       "distributed-job-scheduling": 1,
       "dotnet-io-streaming": 1,
@@ -1408,20 +1426,20 @@
       "dotnet-http-client": 1,
       "dotnet-cancellation-lifecycle": 1,
       "ef-core-change-tracking": 1,
-      "dotnet-concurrent-collections": 1
+      "dotnet-concurrent-collections": 1,
+      "dotnet-buffer-sequences": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L3": 5,
       "L5": 4,
-      "L2": 12,
+      "L2": 13,
       "L1": 2,
+      "L3": 4,
       "L4": 1
     },
     "byFormat": {
-      "multi-sample-contract-forensics": 1,
       "disaster-recovery-evidence-workshop": 1,
       "capacity-fairness-design-decision-with-deterministic-replay": 1,
       "io-checkpoint-forensic-replay": 1,
@@ -1444,14 +1462,14 @@
       "deterministic-http-handler-isolation-investigation": 1,
       "cancellation-callback-lifecycle-regression": 1,
       "database-state-divergence-investigation": 1,
-      "deterministic-value-factory-race-replay": 1
+      "deterministic-value-factory-race-replay": 1,
+      "buffer-segmentation-invariance-investigation": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "dotnet-json-contract": 1,
       "sql-server-disaster-recovery": 1,
       "distributed-job-scheduling": 1,
       "dotnet-io-streaming": 1,
@@ -1474,20 +1492,20 @@
       "dotnet-http-client": 1,
       "dotnet-cancellation-lifecycle": 1,
       "ef-core-change-tracking": 1,
-      "dotnet-concurrent-collections": 1
+      "dotnet-concurrent-collections": 1,
+      "dotnet-buffer-sequences": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L3": 5,
       "L5": 4,
-      "L2": 12,
+      "L2": 13,
       "L1": 2,
+      "L3": 4,
       "L4": 1
     },
     "byFormat": {
-      "multi-sample-contract-forensics": 1,
       "disaster-recovery-evidence-workshop": 1,
       "capacity-fairness-design-decision-with-deterministic-replay": 1,
       "io-checkpoint-forensic-replay": 1,
@@ -1510,7 +1528,8 @@
       "deterministic-http-handler-isolation-investigation": 1,
       "cancellation-callback-lifecycle-regression": 1,
       "database-state-divergence-investigation": 1,
-      "deterministic-value-factory-race-replay": 1
+      "deterministic-value-factory-race-replay": 1,
+      "buffer-segmentation-invariance-investigation": 1
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-GETORADD-001",
-    "runSlot": "2026-11-22-18",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-GETORADD-001-museum-pass-duplicate-issuance",
+    "unitId": "UNIT-PIPESEG-001",
+    "runSlot": "2026-11-22-19",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-PIPESEG-001-weather-station-segmented-frames",
     "status": "READY",
-    "createdAt": "2026-11-22T18:09:31+07:00"
+    "createdAt": "2026-11-22T19:11:21+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 656,
-    "totalGenerated": 651,
+    "totalRunSlotsAttempted": 657,
+    "totalGenerated": 652,
     "totalFailed": 5
   },
   "learning": {

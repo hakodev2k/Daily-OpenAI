@@ -1,0 +1,35 @@
+{
+  "unitId": "UNIT-PIPESEG-001",
+  "runSlot": "2026-11-22-19",
+  "title": "Trạm thời tiết nhận thiếu bản ghi khi dữ liệu đi qua nhiều buffer",
+  "domain": "dotnet-buffer-sequences",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T19:11:21+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "readonlysequence",
+    "system-buffers",
+    "utf8-telemetry-parsing"
+  ],
+  "prerequisites": [
+    "csharp-span-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "remote-weather-station-telemetry",
+    "scenarioType": "segmented-transport-payload-decoding",
+    "primaryRootCause": "read-only-sequence-first-span-only-consumed",
+    "failureMode": "records-lost-when-frame-spans-multiple-segments",
+    "solutionPattern": "full-sequence-consumption-with-bounded-buffer-or-sequence-reader",
+    "labFormat": "buffer-segmentation-invariance-investigation"
+  }
+}
