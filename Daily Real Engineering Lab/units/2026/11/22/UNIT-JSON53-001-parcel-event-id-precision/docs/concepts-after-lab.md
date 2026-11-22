@@ -1,0 +1,2 @@
+# Sau lab: precision và wire contracts
+JSON number không mặc định đồng nghĩa với binary floating point. IEEE-754 double chỉ biểu diễn chính xác mọi số nguyên trong phạm vi ±(2^53). Với ID 9007199254740993, chuyển sang double có thể làm tròn thành 9007199254740992. Dictionary không có lỗi; nó nhận khóa đã bị biến đổi. Nếu contract là signed 64-bit integer, parse nguyên vẹn bằng `GetInt64()`; nếu ID vượt phạm vi long hoặc có số 0 đầu cần bảo toàn, định nghĩa ID là string và xác nhận contract đối tác. Không sửa bằng cách thêm random suffix vì phá idempotency.

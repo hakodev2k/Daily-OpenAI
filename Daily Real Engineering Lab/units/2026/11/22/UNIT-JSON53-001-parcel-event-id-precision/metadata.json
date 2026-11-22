@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-JSON53-001",
+  "runSlot": "2026-11-22-23",
+  "title": "Parcel event ID mất độ chính xác",
+  "domain": "json-numeric-wire-contract",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T23:05:22+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "system-text-json",
+    "numeric-precision",
+    "event-idempotency"
+  ],
+  "prerequisites": [
+    "dotnet-console",
+    "json-basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "parcel-scan-ingestion",
+    "scenarioType": "partner-numeric-event-identity-collision",
+    "primaryRootCause": "ieee754-double-loses-integer-precision-above-2pow53",
+    "failureMode": "distinct-event-ids-collapse-during-dedup",
+    "solutionPattern": "parse-int64-without-floating-point-intermediate",
+    "labFormat": "numeric-wire-identity-forensic-replay"
+  }
+}

@@ -1418,6 +1418,25 @@
       "createdAt": "2026-11-22T22:11:06+07:00",
       "validationMode": "static-review",
       "businessContext": "clinical-specimen-intake"
+    },
+    {
+      "runSlot": "2026-11-22-23",
+      "status": "GENERATED",
+      "unitId": "UNIT-JSON53-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-JSON53-001-parcel-event-id-precision",
+      "domain": "json-numeric-wire-contract",
+      "format": "numeric-wire-identity-forensic-replay",
+      "primarySkill": "json-numeric-precision",
+      "scenarioCategory": "partner-numeric-event-identity-collision",
+      "rootCauseCategory": "ieee754-double-loses-integer-precision-above-2pow53",
+      "failureMode": "distinct-event-ids-collapse-during-dedup",
+      "solutionPattern": "parse-int64-without-floating-point-intermediate",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T23:05:22+07:00",
+      "businessContext": "parcel-scan-ingestion",
+      "primaryRootCause": "ieee754-double-loses-integer-precision-above-2pow53",
+      "labFormat": "numeric-wire-identity-forensic-replay"
     }
   ],
   "rolling24": {
