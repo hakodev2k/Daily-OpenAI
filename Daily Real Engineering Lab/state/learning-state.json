@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-SORTCMP-001",
-    "runSlot": "2026-11-22-10",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-SORTCMP-001-food-bank-priority-queue-comparer-collision",
+    "unitId": "UNIT-REGEXTIME-001",
+    "runSlot": "2026-11-22-12",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-REGEXTIME-001-municipal-form-regex-timeout",
     "status": "READY",
-    "createdAt": "2026-11-22T10:13:24+07:00"
+    "createdAt": "2026-11-22T12:12:15+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 651,
-    "totalGenerated": 646,
+    "totalRunSlotsAttempted": 652,
+    "totalGenerated": 647,
     "totalFailed": 5
   },
   "learning": {
