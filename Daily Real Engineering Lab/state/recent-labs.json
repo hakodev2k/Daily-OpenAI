@@ -1298,12 +1298,32 @@
       "businessContext": "municipal-complaint-intake",
       "primaryRootCause": "catastrophic-regex-backtracking-without-timeout",
       "labFormat": "bounded-input-performance-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-13",
+      "status": "SUCCESS",
+      "unitId": "UNIT-HEADERBLEED-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-HEADERBLEED-001-tenant-header-cross-request-leak",
+      "domain": "dotnet-http-client",
+      "format": "deterministic-http-handler-isolation-investigation",
+      "primarySkill": "httpclient-request-headers",
+      "scenarioCategory": "shared-http-client-request-interleaving",
+      "rootCauseCategory": "per-request-tenant-identity-stored-in-shared-default-headers",
+      "failureMode": "cross-tenant-header-contamination",
+      "solutionPattern": "request-scoped-http-request-message-headers",
+      "maturityLevel": "L3",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T13:08:13+07:00",
+      "validationMode": "static-review",
+      "businessContext": "multi-tenant-billing-gateway",
+      "primaryRootCause": "per-request-tenant-identity-stored-in-shared-default-headers",
+      "labFormat": "deterministic-http-handler-isolation-investigation"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "dotnet-concurrency-primitives": 1,
       "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
       "csharp-collections": 1,
@@ -1326,20 +1346,20 @@
       "dotnet-memory-ownership": 1,
       "azure-identity-security": 1,
       "csharp-collection-ordering": 1,
-      "dotnet-regex-security": 1
+      "dotnet-regex-security": 1,
+      "dotnet-http-client": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L3": 5,
       "L4": 2,
       "L5": 5,
       "L2": 11,
+      "L3": 5,
       "L1": 1
     },
     "byFormat": {
-      "cancellation-interleaving-forensic-lab": 1,
       "concurrency-security-contract-refactoring": 1,
       "security-architecture-decision-workshop": 1,
       "deterministic-collection-contract-replay": 1,
@@ -1362,14 +1382,14 @@
       "memory-ownership-forensic-replay": 1,
       "security-rotation-architecture-decision": 1,
       "collection-invariant-evidence-investigation": 1,
-      "bounded-input-performance-investigation": 1
+      "bounded-input-performance-investigation": 1,
+      "deterministic-http-handler-isolation-investigation": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "dotnet-concurrency-primitives": 1,
       "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
       "csharp-collections": 1,
@@ -1392,20 +1412,20 @@
       "dotnet-memory-ownership": 1,
       "azure-identity-security": 1,
       "csharp-collection-ordering": 1,
-      "dotnet-regex-security": 1
+      "dotnet-regex-security": 1,
+      "dotnet-http-client": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L3": 5,
       "L4": 2,
       "L5": 5,
       "L2": 11,
+      "L3": 5,
       "L1": 1
     },
     "byFormat": {
-      "cancellation-interleaving-forensic-lab": 1,
       "concurrency-security-contract-refactoring": 1,
       "security-architecture-decision-workshop": 1,
       "deterministic-collection-contract-replay": 1,
@@ -1428,7 +1448,8 @@
       "memory-ownership-forensic-replay": 1,
       "security-rotation-architecture-decision": 1,
       "collection-invariant-evidence-investigation": 1,
-      "bounded-input-performance-investigation": 1
+      "bounded-input-performance-investigation": 1,
+      "deterministic-http-handler-isolation-investigation": 1
     }
   }
 }
