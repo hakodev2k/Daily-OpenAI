@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CULTKEY-001",
+  "runSlot": "2026-11-22-22",
+  "title": "Mã mẫu xét nghiệm tra cứu khác nhau giữa các máy chủ",
+  "domain": "dotnet-globalization",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T22:11:06+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "culture-sensitive-string-comparison",
+    "dictionary-key-contract",
+    "globalization"
+  ],
+  "prerequisites": [
+    "csharp-dictionary",
+    "string-comparison"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "clinical-specimen-intake",
+    "scenarioType": "cross-host-identifier-lookup",
+    "primaryRootCause": "culture-sensitive-case-normalization-for-protocol-identifiers",
+    "failureMode": "identical-business-id-resolves-differently-by-host-culture",
+    "solutionPattern": "explicit-ordinal-case-insensitive-identity-comparer",
+    "labFormat": "cross-culture-contract-replay"
+  }
+}
