@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-SORTCMP-001",
+  "runSlot": "2026-11-22-10",
+  "title": "Hàng đợi cứu trợ làm mất yêu cầu cùng mức ưu tiên",
+  "domain": "csharp-collection-ordering",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T10:13:24+07:00",
+  "estimatedMinutes": 50,
+  "skills": [
+    "sortedset-comparer-contract",
+    "csharp-collections",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# comparer",
+    "dotnet console"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "regional-food-bank-allocation",
+    "scenarioType": "priority-dispatch-with-equal-ranked-requests",
+    "primaryRootCause": "sortedset-comparer-treats-distinct-requests-as-equal",
+    "failureMode": "silent-loss-of-equal-priority-dispatches",
+    "solutionPattern": "total-order-comparer-with-unique-stable-tie-breaker",
+    "labFormat": "collection-invariant-evidence-investigation"
+  }
+}

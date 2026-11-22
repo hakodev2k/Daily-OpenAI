@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-KEYROTATE-001",
-    "runSlot": "2026-11-22-09",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-KEYROTATE-001-municipal-signage-secret-rotation",
+    "unitId": "UNIT-SORTCMP-001",
+    "runSlot": "2026-11-22-10",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-SORTCMP-001-food-bank-priority-queue-comparer-collision",
     "status": "READY",
-    "createdAt": "2026-11-22T09:08:00+07:00"
+    "createdAt": "2026-11-22T10:13:24+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 650,
-    "totalGenerated": 645,
+    "totalRunSlotsAttempted": 651,
+    "totalGenerated": 646,
     "totalFailed": 5
   },
   "learning": {
