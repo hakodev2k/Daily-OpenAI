@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-REGEXTIME-001",
+  "runSlot": "2026-11-22-12",
+  "title": "Form đăng ký đô thị treo khi kiểm tra mã tham chiếu",
+  "domain": "dotnet-regex-security",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T12:12:15+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "regex-timeout",
+    "input-validation",
+    "performance-diagnostics"
+  ],
+  "prerequisites": [
+    "C# basics",
+    ".NET 8"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "municipal-complaint-intake",
+    "scenarioType": "adversarial-input-validation",
+    "primaryRootCause": "catastrophic-regex-backtracking-without-timeout",
+    "failureMode": "cpu-amplification-on-near-match",
+    "solutionPattern": "linear-time-validation-with-bounded-input-and-explicit-timeout",
+    "labFormat": "bounded-input-performance-investigation"
+  }
+}
