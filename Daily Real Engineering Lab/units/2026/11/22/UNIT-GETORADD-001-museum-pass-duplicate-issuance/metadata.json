@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-GETORADD-001",
+  "runSlot": "2026-11-22-18",
+  "title": "Thẻ tham quan được cấp hai lần khi hai quầy check-in đồng thời",
+  "domain": "dotnet-concurrent-collections",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T18:09:31+07:00",
+  "estimatedMinutes": 45,
+  "skills": [
+    "concurrentdictionary-getoradd",
+    "factory-side-effects",
+    "deterministic-concurrency-tests"
+  ],
+  "prerequisites": [
+    "Task concurrency",
+    "ConcurrentDictionary basics"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "museum-annual-pass-issuance",
+    "scenarioType": "simultaneous-kiosk-pass-issuance",
+    "primaryRootCause": "concurrentdictionary-value-factory-executed-more-than-once",
+    "failureMode": "duplicate-external-pass-issuance-despite-single-cache-entry",
+    "solutionPattern": "lazy-single-flight-per-key-with-failure-eviction",
+    "labFormat": "deterministic-value-factory-race-replay"
+  }
+}

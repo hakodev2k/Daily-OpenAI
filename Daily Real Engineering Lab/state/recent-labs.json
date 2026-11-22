@@ -1359,12 +1359,32 @@
       "createdAt": "2026-11-22T15:05:54+07:00",
       "validationMode": "static-review",
       "businessContext": "public-library-hold-approval"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-18",
+      "status": "SUCCESS",
+      "unitId": "UNIT-GETORADD-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-GETORADD-001-museum-pass-duplicate-issuance",
+      "domain": "dotnet-concurrent-collections",
+      "format": "deterministic-value-factory-race-replay",
+      "primarySkill": "concurrentdictionary-getoradd",
+      "scenarioCategory": "simultaneous-kiosk-pass-issuance",
+      "rootCauseCategory": "concurrentdictionary-value-factory-executed-more-than-once",
+      "failureMode": "duplicate-external-pass-issuance-despite-single-cache-entry",
+      "solutionPattern": "lazy-single-flight-per-key-with-failure-eviction",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T18:09:31+07:00",
+      "validationMode": "static-review",
+      "businessContext": "museum-annual-pass-issuance",
+      "primaryRootCause": "concurrentdictionary-value-factory-executed-more-than-once",
+      "labFormat": "deterministic-value-factory-race-replay"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "csharp-collections": 1,
       "dotnet-json-contract": 1,
       "sql-server-disaster-recovery": 1,
       "distributed-job-scheduling": 1,
@@ -1387,20 +1407,20 @@
       "dotnet-regex-security": 1,
       "dotnet-http-client": 1,
       "dotnet-cancellation-lifecycle": 1,
-      "ef-core-change-tracking": 1
+      "ef-core-change-tracking": 1,
+      "dotnet-concurrent-collections": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 12,
       "L3": 5,
       "L5": 4,
+      "L2": 12,
       "L1": 2,
       "L4": 1
     },
     "byFormat": {
-      "deterministic-collection-contract-replay": 1,
       "multi-sample-contract-forensics": 1,
       "disaster-recovery-evidence-workshop": 1,
       "capacity-fairness-design-decision-with-deterministic-replay": 1,
@@ -1423,14 +1443,14 @@
       "bounded-input-performance-investigation": 1,
       "deterministic-http-handler-isolation-investigation": 1,
       "cancellation-callback-lifecycle-regression": 1,
-      "database-state-divergence-investigation": 1
+      "database-state-divergence-investigation": 1,
+      "deterministic-value-factory-race-replay": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "csharp-collections": 1,
       "dotnet-json-contract": 1,
       "sql-server-disaster-recovery": 1,
       "distributed-job-scheduling": 1,
@@ -1453,20 +1473,20 @@
       "dotnet-regex-security": 1,
       "dotnet-http-client": 1,
       "dotnet-cancellation-lifecycle": 1,
-      "ef-core-change-tracking": 1
+      "ef-core-change-tracking": 1,
+      "dotnet-concurrent-collections": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 12,
       "L3": 5,
       "L5": 4,
+      "L2": 12,
       "L1": 2,
       "L4": 1
     },
     "byFormat": {
-      "deterministic-collection-contract-replay": 1,
       "multi-sample-contract-forensics": 1,
       "disaster-recovery-evidence-workshop": 1,
       "capacity-fairness-design-decision-with-deterministic-replay": 1,
@@ -1489,7 +1509,8 @@
       "bounded-input-performance-investigation": 1,
       "deterministic-http-handler-isolation-investigation": 1,
       "cancellation-callback-lifecycle-regression": 1,
-      "database-state-divergence-investigation": 1
+      "database-state-divergence-investigation": 1,
+      "deterministic-value-factory-race-replay": 1
     }
   }
 }
