@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CACHEVARY-001",
-    "runSlot": "2026-11-22-06",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-CACHEVARY-001-public-portal-cache-variant-leak",
+    "unitId": "UNIT-CHANNELCLOSE-001",
+    "runSlot": "2026-11-22-07",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-CHANNELCLOSE-001-river-sensor-batch-premature-completion",
     "status": "READY",
-    "createdAt": "2026-11-22T06:10:05+07:00"
+    "createdAt": "2026-11-22T07:04:14+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 647,
-    "totalGenerated": 642,
+    "totalRunSlotsAttempted": 648,
+    "totalGenerated": 643,
     "totalFailed": 5
   },
   "learning": {
