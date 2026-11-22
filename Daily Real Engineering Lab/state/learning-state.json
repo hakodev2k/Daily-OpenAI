@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-HEADERBLEED-001",
-    "runSlot": "2026-11-22-13",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-HEADERBLEED-001-tenant-header-cross-request-leak",
+    "unitId": "UNIT-CTREG-001",
+    "runSlot": "2026-11-22-14",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-CTREG-001-heritage-scan-cancellation-callback-lifetime",
     "status": "READY",
-    "createdAt": "2026-11-22T13:08:13+07:00"
+    "createdAt": "2026-11-22T14:07:38+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 653,
-    "totalGenerated": 648,
+    "totalRunSlotsAttempted": 654,
+    "totalGenerated": 649,
     "totalFailed": 5
   },
   "learning": {
