@@ -1319,12 +1319,32 @@
       "businessContext": "multi-tenant-billing-gateway",
       "primaryRootCause": "per-request-tenant-identity-stored-in-shared-default-headers",
       "labFormat": "deterministic-http-handler-isolation-investigation"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-14",
+      "status": "SUCCESS",
+      "unitId": "UNIT-CTREG-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-CTREG-001-heritage-scan-cancellation-callback-lifetime",
+      "domain": "dotnet-cancellation-lifecycle",
+      "format": "cancellation-callback-lifecycle-regression",
+      "primarySkill": "cancellationtoken-registration-lifetime",
+      "scenarioCategory": "completed-job-then-host-shutdown",
+      "rootCauseCategory": "cancellation-token-registration-outlives-completed-job",
+      "failureMode": "late-shutdown-callback-reclassifies-completed-scans-as-cancelled",
+      "solutionPattern": "scope-and-dispose-token-registration-at-operation-boundary",
+      "maturityLevel": "L1",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T14:07:38+07:00",
+      "validationMode": "static-review",
+      "businessContext": "heritage-digitization-scan-queue",
+      "primaryRootCause": "cancellation-token-registration-outlives-completed-job",
+      "labFormat": "cancellation-callback-lifecycle-regression"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
       "csharp-collections": 1,
       "dotnet-json-contract": 1,
@@ -1347,20 +1367,20 @@
       "azure-identity-security": 1,
       "csharp-collection-ordering": 1,
       "dotnet-regex-security": 1,
-      "dotnet-http-client": 1
+      "dotnet-http-client": 1,
+      "dotnet-cancellation-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L4": 2,
       "L5": 5,
       "L2": 11,
       "L3": 5,
-      "L1": 1
+      "L1": 2,
+      "L4": 1
     },
     "byFormat": {
-      "concurrency-security-contract-refactoring": 1,
       "security-architecture-decision-workshop": 1,
       "deterministic-collection-contract-replay": 1,
       "multi-sample-contract-forensics": 1,
@@ -1383,14 +1403,14 @@
       "security-rotation-architecture-decision": 1,
       "collection-invariant-evidence-investigation": 1,
       "bounded-input-performance-investigation": 1,
-      "deterministic-http-handler-isolation-investigation": 1
+      "deterministic-http-handler-isolation-investigation": 1,
+      "cancellation-callback-lifecycle-regression": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
       "csharp-collections": 1,
       "dotnet-json-contract": 1,
@@ -1413,20 +1433,20 @@
       "azure-identity-security": 1,
       "csharp-collection-ordering": 1,
       "dotnet-regex-security": 1,
-      "dotnet-http-client": 1
+      "dotnet-http-client": 1,
+      "dotnet-cancellation-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L4": 2,
       "L5": 5,
       "L2": 11,
       "L3": 5,
-      "L1": 1
+      "L1": 2,
+      "L4": 1
     },
     "byFormat": {
-      "concurrency-security-contract-refactoring": 1,
       "security-architecture-decision-workshop": 1,
       "deterministic-collection-contract-replay": 1,
       "multi-sample-contract-forensics": 1,
@@ -1449,7 +1469,8 @@
       "security-rotation-architecture-decision": 1,
       "collection-invariant-evidence-investigation": 1,
       "bounded-input-performance-investigation": 1,
-      "deterministic-http-handler-isolation-investigation": 1
+      "deterministic-http-handler-isolation-investigation": 1,
+      "cancellation-callback-lifecycle-regression": 1
     }
   }
 }
