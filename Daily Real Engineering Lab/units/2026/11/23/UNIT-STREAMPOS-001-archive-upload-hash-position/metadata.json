@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-STREAMPOS-001",
+  "runSlot": "2026-11-23-03",
+  "title": "Bản ghi âm được xác thực nhưng lưu trữ rỗng",
+  "domain": "dotnet-stream-lifecycle",
+  "maturityLevel": "L4",
+  "status": "READY",
+  "createdAt": "2026-11-23T03:06:23+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "stream-position",
+    "sha256",
+    "copytoasync",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "csharp-streams"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "wildlife-audio-archive-ingestion",
+    "scenarioType": "checksum-then-persist-stream",
+    "primaryRootCause": "seekable-stream-position-not-reset-after-checksum",
+    "failureMode": "persisted-audio-is-empty-despite-valid-checksum",
+    "solutionPattern": "restore-stream-position-before-second-consumer",
+    "labFormat": "stream-contract-refactoring-regression"
+  }
+}

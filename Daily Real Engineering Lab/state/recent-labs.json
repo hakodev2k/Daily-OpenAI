@@ -1437,13 +1437,32 @@
       "businessContext": "parcel-scan-ingestion",
       "primaryRootCause": "ieee754-double-loses-integer-precision-above-2pow53",
       "labFormat": "numeric-wire-identity-forensic-replay"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-23-03",
+      "status": "SUCCESS",
+      "unitId": "UNIT-STREAMPOS-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/23/UNIT-STREAMPOS-001-archive-upload-hash-position",
+      "domain": "dotnet-stream-lifecycle",
+      "format": "stream-contract-refactoring-regression",
+      "primarySkill": "stream-consumer-position-contract",
+      "scenarioCategory": "checksum-then-persist-stream",
+      "rootCauseCategory": "seekable-stream-position-not-reset-after-checksum",
+      "failureMode": "persisted-audio-is-empty-despite-valid-checksum",
+      "solutionPattern": "restore-stream-position-before-second-consumer",
+      "maturityLevel": "L4",
+      "difficulty": "D4",
+      "createdAt": "2026-11-23T03:06:23+07:00",
+      "validationMode": "static-review",
+      "businessContext": "wildlife-audio-archive-ingestion",
+      "primaryRootCause": "seekable-stream-position-not-reset-after-checksum",
+      "labFormat": "stream-contract-refactoring-regression"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "distributed-job-scheduling": 1,
-      "dotnet-io-streaming": 1,
       "dotnet-memory-stream": 1,
       "aspnet-core-request-pipeline": 1,
       "dotnet-time-measurement": 1,
@@ -1465,21 +1484,21 @@
       "ef-core-change-tracking": 1,
       "dotnet-concurrent-collections": 1,
       "dotnet-buffer-sequences": 1,
-      "dotnet-globalization": 1
+      "dotnet-globalization": 1,
+      "json-numeric-wire-contract": 1,
+      "dotnet-stream-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 3,
-      "L2": 14,
       "L1": 2,
       "L3": 4,
-      "L4": 1
+      "L2": 14,
+      "L4": 2,
+      "L5": 2
     },
     "byFormat": {
-      "capacity-fairness-design-decision-with-deterministic-replay": 1,
-      "io-checkpoint-forensic-replay": 1,
       "deterministic-byte-integrity-contract-lab": 1,
       "aspnet-pipeline-contract-investigation": 1,
       "clock-drift-evidence-investigation": 1,
@@ -1501,15 +1520,15 @@
       "database-state-divergence-investigation": 1,
       "deterministic-value-factory-race-replay": 1,
       "buffer-segmentation-invariance-investigation": 1,
-      "cross-culture-contract-replay": 1
+      "cross-culture-contract-replay": 1,
+      "numeric-wire-identity-forensic-replay": 1,
+      "stream-contract-refactoring-regression": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "distributed-job-scheduling": 1,
-      "dotnet-io-streaming": 1,
       "dotnet-memory-stream": 1,
       "aspnet-core-request-pipeline": 1,
       "dotnet-time-measurement": 1,
@@ -1531,21 +1550,21 @@
       "ef-core-change-tracking": 1,
       "dotnet-concurrent-collections": 1,
       "dotnet-buffer-sequences": 1,
-      "dotnet-globalization": 1
+      "dotnet-globalization": 1,
+      "json-numeric-wire-contract": 1,
+      "dotnet-stream-lifecycle": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 3,
-      "L2": 14,
       "L1": 2,
       "L3": 4,
-      "L4": 1
+      "L2": 14,
+      "L4": 2,
+      "L5": 2
     },
     "byFormat": {
-      "capacity-fairness-design-decision-with-deterministic-replay": 1,
-      "io-checkpoint-forensic-replay": 1,
       "deterministic-byte-integrity-contract-lab": 1,
       "aspnet-pipeline-contract-investigation": 1,
       "clock-drift-evidence-investigation": 1,
@@ -1567,7 +1586,9 @@
       "database-state-divergence-investigation": 1,
       "deterministic-value-factory-race-replay": 1,
       "buffer-segmentation-invariance-investigation": 1,
-      "cross-culture-contract-replay": 1
+      "cross-culture-contract-replay": 1,
+      "numeric-wire-identity-forensic-replay": 1,
+      "stream-contract-refactoring-regression": 1
     }
   }
 }
