@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-EFTRACK-001",
+  "runSlot": "2026-11-22-15",
+  "title": "Library Hold: trạng thái giữ sách bị lệch sau cập nhật hàng loạt",
+  "domain": "ef-core-change-tracking",
+  "maturityLevel": "L2",
+  "status": "READY",
+  "createdAt": "2026-11-22T15:05:54+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "ef-core-executeupdate",
+    "change-tracking",
+    "identity-map"
+  ],
+  "prerequisites": [
+    "ef-core-basics",
+    "sqlite"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "public-library-hold-approval",
+    "scenarioType": "bulk-write-then-same-context-read",
+    "primaryRootCause": "set-based-ef-update-bypasses-tracked-identity-map",
+    "failureMode": "stale-api-response-despite-committed-update",
+    "solutionPattern": "post-write-no-tracking-read-model",
+    "labFormat": "database-state-divergence-investigation"
+  }
+}

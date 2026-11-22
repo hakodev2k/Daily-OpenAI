@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-CTREG-001",
-    "runSlot": "2026-11-22-14",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-CTREG-001-heritage-scan-cancellation-callback-lifetime",
+    "unitId": "UNIT-EFTRACK-001",
+    "runSlot": "2026-11-22-15",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-EFTRACK-001-library-hold-tracker-stale-after-bulk-update",
     "status": "READY",
-    "createdAt": "2026-11-22T14:07:38+07:00"
+    "createdAt": "2026-11-22T15:05:54+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 654,
-    "totalGenerated": 649,
+    "totalRunSlotsAttempted": 655,
+    "totalGenerated": 650,
     "totalFailed": 5
   },
   "learning": {

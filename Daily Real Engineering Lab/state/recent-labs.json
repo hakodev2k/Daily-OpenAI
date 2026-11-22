@@ -1340,12 +1340,30 @@
       "businessContext": "heritage-digitization-scan-queue",
       "primaryRootCause": "cancellation-token-registration-outlives-completed-job",
       "labFormat": "cancellation-callback-lifecycle-regression"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-15",
+      "status": "SUCCESS",
+      "unitId": "UNIT-EFTRACK-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-EFTRACK-001-library-hold-tracker-stale-after-bulk-update",
+      "domain": "ef-core-change-tracking",
+      "format": "database-state-divergence-investigation",
+      "primarySkill": "ef-core-executeupdate",
+      "scenarioCategory": "bulk-write-then-same-context-read",
+      "rootCauseCategory": "set-based-ef-update-bypasses-tracked-identity-map",
+      "failureMode": "stale-api-response-despite-committed-update",
+      "solutionPattern": "post-write-no-tracking-read-model",
+      "maturityLevel": "L2",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T15:05:54+07:00",
+      "validationMode": "static-review",
+      "businessContext": "public-library-hold-approval"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "azure-blob-architecture": 1,
       "csharp-collections": 1,
       "dotnet-json-contract": 1,
       "sql-server-disaster-recovery": 1,
@@ -1368,20 +1386,20 @@
       "csharp-collection-ordering": 1,
       "dotnet-regex-security": 1,
       "dotnet-http-client": 1,
-      "dotnet-cancellation-lifecycle": 1
+      "dotnet-cancellation-lifecycle": 1,
+      "ef-core-change-tracking": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 5,
-      "L2": 11,
+      "L2": 12,
       "L3": 5,
+      "L5": 4,
       "L1": 2,
       "L4": 1
     },
     "byFormat": {
-      "security-architecture-decision-workshop": 1,
       "deterministic-collection-contract-replay": 1,
       "multi-sample-contract-forensics": 1,
       "disaster-recovery-evidence-workshop": 1,
@@ -1404,14 +1422,14 @@
       "collection-invariant-evidence-investigation": 1,
       "bounded-input-performance-investigation": 1,
       "deterministic-http-handler-isolation-investigation": 1,
-      "cancellation-callback-lifecycle-regression": 1
+      "cancellation-callback-lifecycle-regression": 1,
+      "database-state-divergence-investigation": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "azure-blob-architecture": 1,
       "csharp-collections": 1,
       "dotnet-json-contract": 1,
       "sql-server-disaster-recovery": 1,
@@ -1434,20 +1452,20 @@
       "csharp-collection-ordering": 1,
       "dotnet-regex-security": 1,
       "dotnet-http-client": 1,
-      "dotnet-cancellation-lifecycle": 1
+      "dotnet-cancellation-lifecycle": 1,
+      "ef-core-change-tracking": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L5": 5,
-      "L2": 11,
+      "L2": 12,
       "L3": 5,
+      "L5": 4,
       "L1": 2,
       "L4": 1
     },
     "byFormat": {
-      "security-architecture-decision-workshop": 1,
       "deterministic-collection-contract-replay": 1,
       "multi-sample-contract-forensics": 1,
       "disaster-recovery-evidence-workshop": 1,
@@ -1470,7 +1488,8 @@
       "collection-invariant-evidence-investigation": 1,
       "bounded-input-performance-investigation": 1,
       "deterministic-http-handler-isolation-investigation": 1,
-      "cancellation-callback-lifecycle-regression": 1
+      "cancellation-callback-lifecycle-regression": 1,
+      "database-state-divergence-investigation": 1
     }
   }
 }
