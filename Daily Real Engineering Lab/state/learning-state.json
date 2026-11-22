@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-REGEXTIME-001",
-    "runSlot": "2026-11-22-12",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-REGEXTIME-001-municipal-form-regex-timeout",
+    "unitId": "UNIT-HEADERBLEED-001",
+    "runSlot": "2026-11-22-13",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-HEADERBLEED-001-tenant-header-cross-request-leak",
     "status": "READY",
-    "createdAt": "2026-11-22T12:12:15+07:00"
+    "createdAt": "2026-11-22T13:08:13+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 652,
-    "totalGenerated": 647,
+    "totalRunSlotsAttempted": 653,
+    "totalGenerated": 648,
     "totalFailed": 5
   },
   "learning": {
