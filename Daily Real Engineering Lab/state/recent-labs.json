@@ -1235,17 +1235,38 @@
       "businessContext": "disaster-relief-dispatch",
       "primaryRootCause": "pooled-array-returned-before-consumer-finished",
       "labFormat": "memory-ownership-forensic-replay"
+    },
+    {
+      "event": "LAB_GENERATED",
+      "runSlot": "2026-11-22-09",
+      "status": "SUCCESS",
+      "unitId": "UNIT-KEYROTATE-001",
+      "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-KEYROTATE-001-municipal-signage-secret-rotation",
+      "domain": "azure-identity-security",
+      "format": "security-rotation-architecture-decision",
+      "primarySkill": "azure-key-vault-rotation",
+      "scenarioCategory": "credential-rotation-cross-service-cutover",
+      "rootCauseCategory": "gateway-client-secret-version-acceptance-window-mismatch",
+      "failureMode": "partial-replica-401-after-key-rotation",
+      "solutionPattern": "staged-dual-version-acceptance-with-canary-and-revoke",
+      "maturityLevel": "L5",
+      "difficulty": "D4",
+      "createdAt": "2026-11-22T09:08:00+07:00",
+      "validationMode": "static-review",
+      "businessContext": "municipal-roadside-signage",
+      "primaryRootCause": "gateway-client-secret-version-acceptance-window-mismatch",
+      "labFormat": "security-rotation-architecture-decision"
     }
   ],
   "rolling24": {
     "count": 24,
     "byDomain": {
-      "csharp-collections": 2,
       "dotnet-binary-protocol": 1,
       "http-range-download": 1,
       "dotnet-concurrency-primitives": 1,
       "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
+      "csharp-collections": 1,
       "dotnet-json-contract": 1,
       "sql-server-disaster-recovery": 1,
       "distributed-job-scheduling": 1,
@@ -1262,20 +1283,20 @@
       "dotnet-timezone-contract": 1,
       "http-caching": 1,
       "dotnet-channels": 1,
-      "dotnet-memory-ownership": 1
+      "dotnet-memory-ownership": 1,
+      "azure-identity-security": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 12,
+      "L2": 11,
       "L3": 5,
       "L4": 2,
-      "L5": 4,
+      "L5": 5,
       "L1": 1
     },
     "byFormat": {
-      "collection-invariant-investigation": 1,
       "binary-protocol-forensic-replay": 1,
       "http-response-contract-investigation": 1,
       "cancellation-interleaving-forensic-lab": 1,
@@ -1298,19 +1319,20 @@
       "calendar-boundary-contract-investigation": 1,
       "cache-policy-design-and-replay-workshop": 1,
       "producer-consumer-lifecycle-forensic-replay": 1,
-      "memory-ownership-forensic-replay": 1
+      "memory-ownership-forensic-replay": 1,
+      "security-rotation-architecture-decision": 1
     }
   },
   "rollingProfile": {
     "window": 24,
     "count": 24,
     "byDomain": {
-      "csharp-collections": 2,
       "dotnet-binary-protocol": 1,
       "http-range-download": 1,
       "dotnet-concurrency-primitives": 1,
       "dotnet-http-security": 1,
       "azure-blob-architecture": 1,
+      "csharp-collections": 1,
       "dotnet-json-contract": 1,
       "sql-server-disaster-recovery": 1,
       "distributed-job-scheduling": 1,
@@ -1327,20 +1349,20 @@
       "dotnet-timezone-contract": 1,
       "http-caching": 1,
       "dotnet-channels": 1,
-      "dotnet-memory-ownership": 1
+      "dotnet-memory-ownership": 1,
+      "azure-identity-security": 1
     },
     "byDifficulty": {
       "D4": 24
     },
     "byMaturity": {
-      "L2": 12,
+      "L2": 11,
       "L3": 5,
       "L4": 2,
-      "L5": 4,
+      "L5": 5,
       "L1": 1
     },
     "byFormat": {
-      "collection-invariant-investigation": 1,
       "binary-protocol-forensic-replay": 1,
       "http-response-contract-investigation": 1,
       "cancellation-interleaving-forensic-lab": 1,
@@ -1363,7 +1385,8 @@
       "calendar-boundary-contract-investigation": 1,
       "cache-policy-design-and-replay-workshop": 1,
       "producer-consumer-lifecycle-forensic-replay": 1,
-      "memory-ownership-forensic-replay": 1
+      "memory-ownership-forensic-replay": 1,
+      "security-rotation-architecture-decision": 1
     }
   }
 }

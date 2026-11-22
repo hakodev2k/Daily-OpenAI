@@ -1,14 +1,14 @@
 {
   "latestGeneratedUnit": {
-    "unitId": "UNIT-POOLALIAS-001",
-    "runSlot": "2026-11-22-08",
-    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-POOLALIAS-001-relief-dispatch-buffer-alias",
+    "unitId": "UNIT-KEYROTATE-001",
+    "runSlot": "2026-11-22-09",
+    "path": "Daily Real Engineering Lab/units/2026/11/22/UNIT-KEYROTATE-001-municipal-signage-secret-rotation",
     "status": "READY",
-    "createdAt": "2026-11-22T08:08:33+07:00"
+    "createdAt": "2026-11-22T09:08:00+07:00"
   },
   "generation": {
-    "totalRunSlotsAttempted": 649,
-    "totalGenerated": 644,
+    "totalRunSlotsAttempted": 650,
+    "totalGenerated": 645,
     "totalFailed": 5
   },
   "learning": {
