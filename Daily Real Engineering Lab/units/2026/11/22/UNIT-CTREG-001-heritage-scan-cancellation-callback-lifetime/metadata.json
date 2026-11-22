@@ -1,0 +1,36 @@
+{
+  "unitId": "UNIT-CTREG-001",
+  "runSlot": "2026-11-22-14",
+  "title": "Callback hủy xuất hiện sau khi scan đã hoàn tất",
+  "domain": "dotnet-cancellation-lifecycle",
+  "maturityLevel": "L1",
+  "status": "READY",
+  "createdAt": "2026-11-22T14:07:38+07:00",
+  "estimatedMinutes": 40,
+  "skills": [
+    "cancellationtoken-registration",
+    "resource-lifetime",
+    "regression-testing"
+  ],
+  "prerequisites": [
+    "C# using/IDisposable",
+    "CancellationToken"
+  ],
+  "validationMode": "static-review",
+  "difficulty": {
+    "generatedLevel": "D4",
+    "dailyBand": [
+      "D3",
+      "D4"
+    ],
+    "programPhase": "investigation-depth"
+  },
+  "novelty": {
+    "businessContext": "heritage-digitization-scan-queue",
+    "scenarioType": "completed-job-then-host-shutdown",
+    "primaryRootCause": "cancellation-token-registration-outlives-completed-job",
+    "failureMode": "late-shutdown-callback-reclassifies-completed-scans-as-cancelled",
+    "solutionPattern": "scope-and-dispose-token-registration-at-operation-boundary",
+    "labFormat": "cancellation-callback-lifecycle-regression"
+  }
+}
